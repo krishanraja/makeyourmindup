@@ -17,18 +17,46 @@ type ShareCard = {
   q4_company_future: Answers['q4'];
 };
 
+async function loadFont(weight: '400' | '600'): Promise<ArrayBuffer | null> {
+  const cssUrl = `https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@${weight}&display=swap`;
+  const css = await fetch(cssUrl, {
+    headers: {
+      'User-Agent':
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+    },
+  }).then((r) => r.text()).catch(() => '');
+  const match = css.match(/src:\s*url\((https:[^)]+\.woff2?)\)/);
+  if (!match) return null;
+  const fontRes = await fetch(match[1]).catch(() => null);
+  if (!fontRes || !fontRes.ok) return null;
+  return fontRes.arrayBuffer();
+}
+
 export async function GET(req: Request, ctx: { params: { id: string } }) {
   const { id } = ctx.params;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '';
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '';
   const supabase = createClient(url, anon, { auth: { persistSession: false } });
 
-  const { data, error } = await supabase.rpc('get_share_card', { p_id: id });
+  const [{ data, error }, fontSemibold, fontMono] = await Promise.all([
+    supabase.rpc('get_share_card', { p_id: id }),
+    loadFont('600'),
+    fetch('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500', {
+      headers: { 'User-Agent': 'Mozilla/5.0 Chrome/115' },
+    })
+      .then((r) => r.text())
+      .then((css) => {
+        const m = css.match(/src:\s*url\((https:[^)]+\.woff2?)\)/);
+        return m ? fetch(m[1]).then((r) => r.arrayBuffer()) : null;
+      })
+      .catch(() => null),
+  ]);
+
   if (error || !data) {
-    return fallbackImage();
+    return fallbackImage(fontSemibold);
   }
   const row = (Array.isArray(data) ? data[0] : data) as ShareCard;
-  if (!row) return fallbackImage();
+  if (!row) return fallbackImage(fontSemibold);
 
   const params = compose({
     q1: row.q1_week_needs_me ?? 50,
@@ -40,6 +68,14 @@ export async function GET(req: Request, ctx: { params: { id: string } }) {
   const title = row.archetype_title ?? 'makeyourmindup.ai';
 
   const sigil = renderSigil(params);
+
+  const fonts: { name: string; data: ArrayBuffer; weight: 400 | 600; style: 'normal' }[] = [];
+  if (fontSemibold) {
+    fonts.push({ name: 'Source Serif 4', data: fontSemibold, weight: 600, style: 'normal' });
+  }
+  if (fontMono) {
+    fonts.push({ name: 'JetBrains Mono', data: fontMono, weight: 400, style: 'normal' });
+  }
 
   return new ImageResponse(
     (
@@ -53,7 +89,7 @@ export async function GET(req: Request, ctx: { params: { id: string } }) {
           justifyContent: 'space-between',
           background: '#F5F1EA',
           padding: '120px 80px',
-          fontFamily: 'serif',
+          fontFamily: 'Source Serif 4, serif',
         }}
       >
         <div
@@ -80,6 +116,7 @@ export async function GET(req: Request, ctx: { params: { id: string } }) {
         >
           <div
             style={{
+              fontFamily: 'Source Serif 4, serif',
               fontSize: 64,
               fontWeight: 600,
               color: '#0A0908',
@@ -93,6 +130,7 @@ export async function GET(req: Request, ctx: { params: { id: string } }) {
           </div>
           <div
             style={{
+              fontFamily: 'JetBrains Mono, monospace',
               fontSize: 22,
               letterSpacing: '0.24em',
               textTransform: 'uppercase',
@@ -108,11 +146,15 @@ export async function GET(req: Request, ctx: { params: { id: string } }) {
     {
       width: 1080,
       height: 1920,
+      fonts: fonts.length ? fonts : undefined,
     },
   );
 }
 
-function fallbackImage() {
+function fallbackImage(fontSemibold?: ArrayBuffer | null) {
+  const fonts = fontSemibold
+    ? [{ name: 'Source Serif 4', data: fontSemibold, weight: 600 as const, style: 'normal' as const }]
+    : undefined;
   return new ImageResponse(
     (
       <div
@@ -124,7 +166,7 @@ function fallbackImage() {
           justifyContent: 'center',
           background: '#0A0908',
           color: '#F5F1EA',
-          fontFamily: 'serif',
+          fontFamily: 'Source Serif 4, serif',
           fontSize: 60,
           letterSpacing: '-0.03em',
         }}
@@ -132,7 +174,7 @@ function fallbackImage() {
         makeyourmindup.ai
       </div>
     ),
-    { width: 1080, height: 1920 },
+    { width: 1080, height: 1920, fonts },
   );
 }
 
