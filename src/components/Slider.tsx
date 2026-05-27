@@ -16,8 +16,9 @@ export function Slider({ initial, onChange, ariaLabel }: Props) {
   const draggingRef = useRef(false);
 
   useEffect(() => {
+    if (!touched) return;
     onChange(value);
-  }, [value, onChange]);
+  }, [value, onChange, touched]);
 
   const setFromClientX = (clientX: number) => {
     const el = trackRef.current;

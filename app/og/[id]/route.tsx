@@ -145,17 +145,17 @@ function renderSigil(params: ReturnType<typeof compose>) {
 
   if (frame === 'ring') {
     nodes.push(
-      <circle key="ring" cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={1.5} />,
+      <circle key="ring" cx={CENTER} cy={CENTER} r={BASE_R + 40} fill="none" stroke={stroke} strokeWidth={2.5} />,
     );
   } else if (frame === 'broken') {
     nodes.push(
-      <path key="b1" d={arcPath(CENTER, CENTER, BASE_R + 30, 100, 260)} fill="none" stroke={stroke} strokeWidth={1.5} strokeLinecap="round" />,
-      <path key="b2" d={arcPath(CENTER, CENTER, BASE_R + 30, 280, 80)} fill="none" stroke={stroke} strokeWidth={1.5} strokeLinecap="round" />,
+      <path key="b1" d={arcPath(CENTER, CENTER, BASE_R + 40, 100, 260)} fill="none" stroke={stroke} strokeWidth={2.5} strokeLinecap="round" />,
+      <path key="b2" d={arcPath(CENTER, CENTER, BASE_R + 40, 280, 80)} fill="none" stroke={stroke} strokeWidth={2.5} strokeLinecap="round" />,
     );
   } else if (frame === 'double') {
     nodes.push(
-      <circle key="d1" cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={1.5} />,
-      <circle key="d2" cx={CENTER} cy={CENTER} r={BASE_R + 42} fill="none" stroke={stroke} strokeWidth={1.5} />,
+      <circle key="d1" cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={2} />,
+      <circle key="d2" cx={CENTER} cy={CENTER} r={BASE_R + 48} fill="none" stroke={stroke} strokeWidth={2} />,
     );
   }
 

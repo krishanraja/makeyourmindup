@@ -18,11 +18,15 @@ export function CyclingPlaceholder({ examples, intervalMs = 3000, className }: P
   }, [examples.length, intervalMs]);
 
   if (reduced) {
-    return <span className={className}>{examples[i]}</span>;
+    return (
+      <span className={className} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        {examples[i]}
+      </span>
+    );
   }
 
   return (
-    <span className={className}>
+    <span className={className} style={{ overflow: 'hidden' }}>
       <AnimatePresence mode="wait">
         <motion.span
           key={i}
@@ -30,7 +34,7 @@ export function CyclingPlaceholder({ examples, intervalMs = 3000, className }: P
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-          style={{ display: 'inline-block' }}
+          style={{ display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
         >
           {examples[i]}
         </motion.span>

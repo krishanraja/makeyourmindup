@@ -22,8 +22,8 @@ export function QuestionCards<T extends string>({ question, onSubmit }: Props<T>
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-between px-6 pb-12 pt-[12vh]">
-      <p className="font-serif text-[clamp(1.5rem,5.5vw,2.1rem)] leading-[1.18] tracking-tightest text-cream">
+    <div className="flex flex-1 flex-col px-6 pb-12 pt-[10vh]">
+      <p className="mb-10 font-serif text-[clamp(1.5rem,5.5vw,2.1rem)] leading-[1.18] tracking-tightest text-cream">
         {question.prompt}
       </p>
       <div className="flex flex-col gap-3 pb-[env(safe-area-inset-bottom)]">

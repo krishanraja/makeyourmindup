@@ -25,30 +25,30 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
       aria-label="Generated sigil"
     >
       {frame === 'ring' && (
-        <circle cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={1.5} />
+        <circle cx={CENTER} cy={CENTER} r={BASE_R + 40} fill="none" stroke={stroke} strokeWidth={2.5} />
       )}
       {frame === 'broken' && (
         <>
           <path
-            d={arcPath(CENTER, CENTER, BASE_R + 30, 100, 260)}
+            d={arcPath(CENTER, CENTER, BASE_R + 40, 100, 260)}
             fill="none"
             stroke={stroke}
-            strokeWidth={1.5}
+            strokeWidth={2.5}
             strokeLinecap="round"
           />
           <path
-            d={arcPath(CENTER, CENTER, BASE_R + 30, 280, 80)}
+            d={arcPath(CENTER, CENTER, BASE_R + 40, 280, 80)}
             fill="none"
             stroke={stroke}
-            strokeWidth={1.5}
+            strokeWidth={2.5}
             strokeLinecap="round"
           />
         </>
       )}
       {frame === 'double' && (
         <>
-          <circle cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={1.5} />
-          <circle cx={CENTER} cy={CENTER} r={BASE_R + 42} fill="none" stroke={stroke} strokeWidth={1.5} />
+          <circle cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={2} />
+          <circle cx={CENTER} cy={CENTER} r={BASE_R + 48} fill="none" stroke={stroke} strokeWidth={2} />
         </>
       )}
 

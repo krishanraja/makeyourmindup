@@ -24,10 +24,10 @@ export function Card({ text, selected, dimmed, onClick }: Props) {
         y: { type: 'spring', stiffness: 380, damping: 30 },
       }}
       className={[
-        'relative w-full rounded-2xl border px-5 py-5 text-left font-serif text-[1.05rem] leading-[1.3]',
+        'relative w-full rounded-2xl border px-5 py-5 text-left font-serif text-[1.05rem] leading-[1.3] backdrop-blur-sm transition-colors',
         selected
-          ? 'border-transparent bg-cream/[0.06] text-cream shadow-[0_18px_50px_-20px_rgba(236,72,153,0.55)]'
-          : 'border-cream/10 text-cream/90 hover:border-cream/25',
+          ? 'border-transparent bg-cream/[0.08] text-cream shadow-[0_18px_50px_-20px_rgba(236,72,153,0.55)]'
+          : 'border-cream/20 bg-cream/[0.02] text-cream/90 hover:border-cream/40 hover:bg-cream/[0.04]',
       ].join(' ')}
     >
       {selected && (
