@@ -21,7 +21,7 @@ export function Threshold({ onContinue, onExit }: Props) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: reduced ? 0 : 2.0, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: reduced ? 0 : 1.4, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="flex flex-col gap-5 pb-[env(safe-area-inset-bottom)]"
       >
         <button
