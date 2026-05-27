@@ -81,7 +81,7 @@ export function Result({ responseId, answers, result, onEmail }: Props) {
               onKeyDown={(e) => {
                 if (e.key === 'Enter') submit();
               }}
-              className="w-full bg-transparent py-2 font-serif text-[1.05rem] text-cream placeholder:text-cream/30"
+              className="w-full bg-transparent py-2 font-serif text-[1.05rem] text-cream placeholder:text-cream/55"
             />
             <button
               type="button"
@@ -93,10 +93,10 @@ export function Result({ responseId, answers, result, onEmail }: Props) {
             </button>
           </div>
         </label>
-        <p className="font-serif text-sm italic text-cream/40">
+        <p className="font-serif text-sm italic text-cream/60">
           We&apos;ll also include three things to read this week that fit what you just told us. From Krish, the operator behind this.
         </p>
-        <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/30">
+        <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
           makeyourmindup.ai · by Mindmaker
         </p>
       </motion.div>

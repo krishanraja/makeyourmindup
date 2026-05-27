@@ -106,7 +106,7 @@ export function Slider({ initial, onChange, ariaLabel }: Props) {
           />
         </div>
       </div>
-      <div className="mt-2 text-right font-mono text-xs text-cream/40" aria-hidden>
+      <div className="mt-2 text-right font-mono text-xs text-cream/60" aria-hidden>
         {touched ? `${value}%` : 'drag'}
       </div>
     </div>

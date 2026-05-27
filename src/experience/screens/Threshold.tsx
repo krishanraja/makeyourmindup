@@ -34,7 +34,7 @@ export function Threshold({ onContinue, onExit }: Props) {
         <button
           type="button"
           onClick={onExit}
-          className="text-left font-serif text-lg text-cream/40 underline-offset-[6px] transition-colors hover:text-cream/70 hover:underline"
+          className="text-left font-serif text-lg text-cream/60 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
         >
           Not today
         </button>

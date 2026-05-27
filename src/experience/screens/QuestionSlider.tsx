@@ -25,9 +25,9 @@ export function QuestionSlider({ question, initial, onSubmit }: Props) {
         <motion.p
           key={sliderLabel(question, value)}
           initial={{ opacity: 0, y: 4 }}
-          animate={{ opacity: touched ? 1 : 0.45, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="font-serif text-lg italic text-cream/70"
+          className={touched ? 'font-serif text-lg italic text-cream/85' : 'font-serif text-lg italic text-cream/60'}
         >
           {touched ? sliderLabel(question, value) : 'Drag to choose.'}
         </motion.p>

@@ -28,7 +28,7 @@ export function QuestionText({ question, onSubmit }: Props) {
           {value.length === 0 && (
             <CyclingPlaceholder
               examples={question.placeholderCycle}
-              className="pointer-events-none absolute inset-x-0 top-1.5 block truncate whitespace-nowrap font-serif italic text-cream/35"
+              className="pointer-events-none absolute inset-x-0 top-1.5 block truncate whitespace-nowrap font-serif italic text-cream/55"
             />
           )}
           <input
@@ -46,7 +46,7 @@ export function QuestionText({ question, onSubmit }: Props) {
             autoCorrect="off"
           />
         </div>
-        <p className="font-serif text-sm italic text-cream/45">{question.hint}</p>
+        <p className="font-serif text-sm italic text-cream/60">{question.hint}</p>
         <button
           type="button"
           onClick={submit}

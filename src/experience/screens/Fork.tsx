@@ -71,7 +71,7 @@ export function Fork({ result, answers, onFork }: Props) {
         ))}
       </div>
 
-      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/30">
+      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
         makeyourmindup.ai · by Mindmaker
       </p>
     </div>
