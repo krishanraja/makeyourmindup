@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: 'What if you were already the version of yourself you keep delaying?',
     url: 'https://makeyourmindup.ai',
     siteName: 'makeyourmindup.ai',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'makeyourmindup.ai' }],
     locale: 'en_GB',
     type: 'website',
   },
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'makeyourmindup.ai',
     description: 'What if you were already the version of yourself you keep delaying?',
+    images: ['/og'],
   },
   robots: { index: true, follow: true },
 };
