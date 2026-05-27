@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+*.log
+.DS_Store
+
+.env
+.env.local
+.env.*.local
+!.env.local.example
+
+.vercel
+.turbo
+.cache
+
+coverage/
+.nyc_output/
+
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# Supabase CLI scratch
+supabase/.temp/
