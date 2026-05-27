@@ -17,45 +17,56 @@ type ShareCard = {
   q4_company_future: Answers['q4'];
 };
 
-async function loadFont(weight: '400' | '600'): Promise<ArrayBuffer | null> {
-  const cssUrl = `https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@${weight}&display=swap`;
-  const css = await fetch(cssUrl, {
-    headers: {
-      'User-Agent':
-        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-    },
-  }).then((r) => r.text()).catch(() => '');
-  const match = css.match(/src:\s*url\((https:[^)]+\.woff2?)\)/);
-  if (!match) return null;
-  const fontRes = await fetch(match[1]).catch(() => null);
-  if (!fontRes || !fontRes.ok) return null;
-  return fontRes.arrayBuffer();
+async function loadGoogleFont(family: string, weight: number): Promise<ArrayBuffer | null> {
+  try {
+    const cssUrl = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family)}:wght@${weight}&display=swap`;
+    const cssRes = await fetch(cssUrl, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+      },
+    });
+    if (!cssRes.ok) return null;
+    const css = await cssRes.text();
+    const match = css.match(/src:\s*url\((https:[^)]+\.woff2?)\)/);
+    if (!match) return null;
+    const fontRes = await fetch(match[1]);
+    if (!fontRes.ok) return null;
+    return await fontRes.arrayBuffer();
+  } catch (err) {
+    console.error('loadGoogleFont failed', family, weight, err);
+    return null;
+  }
 }
 
-export async function GET(req: Request, ctx: { params: { id: string } }) {
+export async function GET(_req: Request, ctx: { params: { id: string } }) {
   const { id } = ctx.params;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '';
-  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '';
-  const supabase = createClient(url, anon, { auth: { persistSession: false } });
 
-  const [{ data, error }, fontSemibold, fontMono] = await Promise.all([
-    supabase.rpc('get_share_card', { p_id: id }),
-    loadFont('600'),
-    fetch('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500', {
-      headers: { 'User-Agent': 'Mozilla/5.0 Chrome/115' },
-    })
-      .then((r) => r.text())
-      .then((css) => {
-        const m = css.match(/src:\s*url\((https:[^)]+\.woff2?)\)/);
-        return m ? fetch(m[1]).then((r) => r.arrayBuffer()) : null;
-      })
-      .catch(() => null),
-  ]);
+  let fontSemibold: ArrayBuffer | null = null;
+  let fontMono: ArrayBuffer | null = null;
+  let row: ShareCard | null = null;
 
-  if (error || !data) {
-    return fallbackImage(fontSemibold);
+  try {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '';
+    const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '';
+    const supabase = createClient(url, anon, { auth: { persistSession: false } });
+
+    const [rpcResult, sf, jm] = await Promise.all([
+      supabase.rpc('get_share_card', { p_id: id }),
+      loadGoogleFont('Source Serif 4', 600),
+      loadGoogleFont('JetBrains Mono', 500),
+    ]);
+    fontSemibold = sf;
+    fontMono = jm;
+
+    if (!rpcResult.error && rpcResult.data) {
+      const data = rpcResult.data;
+      row = (Array.isArray(data) ? data[0] : data) as ShareCard;
+    }
+  } catch (err) {
+    console.error('OG route error', err);
   }
-  const row = (Array.isArray(data) ? data[0] : data) as ShareCard;
+
   if (!row) return fallbackImage(fontSemibold);
 
   const params = compose({
@@ -77,78 +88,83 @@ export async function GET(req: Request, ctx: { params: { id: string } }) {
     fonts.push({ name: 'JetBrains Mono', data: fontMono, weight: 400, style: 'normal' });
   }
 
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          background: '#F5F1EA',
-          padding: '120px 80px',
-          fontFamily: 'Source Serif 4, serif',
-        }}
-      >
+  try {
+    return new ImageResponse(
+      (
         <div
           style={{
-            display: 'flex',
-            width: 640,
-            height: 640,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <svg width={640} height={640} viewBox={`0 0 ${VIEW} ${VIEW}`} xmlns="http://www.w3.org/2000/svg">
-            {sigil}
-          </svg>
-        </div>
-        <div
-          style={{
+            width: '100%',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 40,
-            width: '100%',
+            justifyContent: 'space-between',
+            background: '#F5F1EA',
+            padding: '120px 80px',
+            fontFamily: 'Source Serif 4, serif',
           }}
         >
           <div
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 64,
-              fontWeight: 600,
-              color: '#0A0908',
-              textAlign: 'center',
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-              maxWidth: 880,
+              display: 'flex',
+              width: 640,
+              height: 640,
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            {title}
+            <svg width={640} height={640} viewBox={`0 0 ${VIEW} ${VIEW}`} xmlns="http://www.w3.org/2000/svg">
+              {sigil}
+            </svg>
           </div>
           <div
             style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: 22,
-              letterSpacing: '0.24em',
-              textTransform: 'uppercase',
-              color: '#0A0908',
-              opacity: 0.6,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 40,
+              width: '100%',
             }}
           >
-            makeyourmindup.ai
+            <div
+              style={{
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: 64,
+                fontWeight: 600,
+                color: '#0A0908',
+                textAlign: 'center',
+                lineHeight: 1.1,
+                letterSpacing: '-0.03em',
+                maxWidth: 880,
+              }}
+            >
+              {title}
+            </div>
+            <div
+              style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: 22,
+                letterSpacing: '0.24em',
+                textTransform: 'uppercase',
+                color: '#0A0908',
+                opacity: 0.6,
+              }}
+            >
+              makeyourmindup.ai
+            </div>
           </div>
         </div>
-      </div>
-    ),
-    {
-      width: 1080,
-      height: 1920,
-      fonts: fonts.length ? fonts : undefined,
-    },
-  );
+      ),
+      {
+        width: 1080,
+        height: 1920,
+        fonts: fonts.length ? fonts : undefined,
+      },
+    );
+  } catch (err) {
+    console.error('ImageResponse failed', err);
+    return fallbackImage(fontSemibold);
+  }
 }
 
 function fallbackImage(fontSemibold?: ArrayBuffer | null) {
