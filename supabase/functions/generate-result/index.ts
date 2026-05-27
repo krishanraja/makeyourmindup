@@ -102,6 +102,11 @@ Deno.serve(async (req) => {
   const { error } = await supabase
     .from('cannes_responses')
     .update({
+      q1_week_needs_me: body.answers.q1,
+      q2_extra_self: body.answers.q2,
+      q3_company_ai: body.answers.q3,
+      q4_company_future: body.answers.q4,
+      q5_decision: body.answers.q5,
       archetype_title: archetypeTitle,
       archetype_variant: body.archetype.variant,
       result_prose_12mo: prose.twelve_months,

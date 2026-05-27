@@ -54,6 +54,7 @@ export function Experience({ source, utm }: Props) {
     if (state.responseId || insertingRef.current) return;
     if (!state.answers.q1 && state.answers.q1 !== 0) return;
     insertingRef.current = true;
+    const id = crypto.randomUUID();
     (async () => {
       try {
         const supabase = getSupabase();
@@ -61,20 +62,17 @@ export function Experience({ source, utm }: Props) {
         const normalizedSource = (['qr', 'direct', 'shared'] as Source[]).includes(source as Source)
           ? source
           : 'direct';
-        const { data, error } = await supabase
-          .from('cannes_responses')
-          .insert({
-            q1_week_needs_me: state.answers.q1,
-            user_agent: ua,
-            source: normalizedSource,
-            utm_source: utm.source ?? null,
-            utm_medium: utm.medium ?? null,
-            utm_campaign: utm.campaign ?? null,
-          })
-          .select('id')
-          .single();
+        const { error } = await supabase.from('cannes_responses').insert({
+          id,
+          q1_week_needs_me: state.answers.q1,
+          user_agent: ua,
+          source: normalizedSource,
+          utm_source: utm.source ?? null,
+          utm_medium: utm.medium ?? null,
+          utm_campaign: utm.campaign ?? null,
+        });
         if (error) throw error;
-        dispatch({ type: 'response-id', id: data.id });
+        dispatch({ type: 'response-id', id });
       } catch (err) {
         reportError('insert-row', err);
       } finally {
@@ -82,24 +80,6 @@ export function Experience({ source, utm }: Props) {
       }
     })();
   }, [state.responseId, state.answers.q1, source, utm.source, utm.medium, utm.campaign]);
-
-  useEffect(() => {
-    if (!state.responseId) return;
-    const partial: Record<string, unknown> = {};
-    if (state.answers.q2) partial.q2_extra_self = state.answers.q2;
-    if (typeof state.answers.q3 === 'number') partial.q3_company_ai = state.answers.q3;
-    if (state.answers.q4) partial.q4_company_future = state.answers.q4;
-    if (state.answers.q5) partial.q5_decision = state.answers.q5;
-    if (Object.keys(partial).length === 0) return;
-    const supabase = getSupabase();
-    supabase
-      .from('cannes_responses')
-      .update(partial)
-      .eq('id', state.responseId)
-      .then(({ error }) => {
-        if (error) reportError('update-answers', error);
-      });
-  }, [state.responseId, state.answers.q2, state.answers.q3, state.answers.q4, state.answers.q5]);
 
   useEffect(() => {
     if (state.step !== 6) return;

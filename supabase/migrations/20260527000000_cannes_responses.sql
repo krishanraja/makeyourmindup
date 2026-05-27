@@ -44,13 +44,13 @@ create policy "allow anonymous insert"
   to anon
   with check (true);
 
+-- No SELECT/UPDATE/DELETE policies for anon. The client provides a
+-- client-generated UUID at insert time and passes it back to the edge
+-- functions (which run under service_role) for every subsequent write.
+-- This matches the spec's "No select policy for anon" requirement and
+-- avoids the Postgres-RLS quirk where UPDATE...WHERE without a SELECT
+-- policy silently no-ops because the WHERE filter cannot resolve.
 drop policy if exists "allow update own row" on public.cannes_responses;
-create policy "allow update own row"
-  on public.cannes_responses
-  for update
-  to anon
-  using (true)
-  with check (true);
 
 -- Share-safe read function. Returns only the fields needed by the OG route.
 create or replace function public.get_share_card(p_id uuid)
