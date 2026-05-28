@@ -2,6 +2,8 @@ import type { Answers, ResultPayload, Step } from '@/lib/types';
 
 export type Status = 'idle' | 'generating' | 'ready' | 'error';
 
+// Step indices:
+//   0 threshold | 1 linkedin | 2 q1 | 3 q2 | 4 q3 | 5 q4 | 6 q5 | 7 pause | 8 result | 9 fork
 export type State = {
   step: Step;
   answers: Partial<Answers>;
@@ -15,6 +17,7 @@ export type State = {
 export type Action =
   | { type: 'begin' }
   | { type: 'exit' }
+  | { type: 'linkedin-done' }
   | { type: 'answer'; key: keyof Answers; value: Answers[keyof Answers] }
   | { type: 'response-id'; id: string }
   | { type: 'generating' }
@@ -37,29 +40,31 @@ export function reducer(state: State, action: Action): State {
   switch (action.type) {
     case 'begin':
       return { ...state, step: 1, startedAt: Date.now() };
+    case 'linkedin-done':
+      return { ...state, step: 2 };
     case 'exit':
       return state;
     case 'answer': {
       const nextAnswers = { ...state.answers, [action.key]: action.value };
       const stepFor: Record<keyof Answers, Step> = {
-        q1: 2,
-        q2: 3,
-        q3: 4,
-        q4: 5,
-        q5: 6,
+        q1: 3,
+        q2: 4,
+        q3: 5,
+        q4: 6,
+        q5: 7,
       };
       return { ...state, answers: nextAnswers, step: stepFor[action.key] };
     }
     case 'response-id':
       return { ...state, responseId: action.id };
     case 'generating':
-      return { ...state, status: 'generating', step: 6 };
+      return { ...state, status: 'generating', step: 7 };
     case 'result':
-      return { ...state, status: 'ready', result: action.payload, step: 7 };
+      return { ...state, status: 'ready', result: action.payload, step: 8 };
     case 'error':
       return { ...state, status: 'error' };
     case 'email':
-      return { ...state, email: action.value, step: 8 };
+      return { ...state, email: action.value, step: 9 };
     case 'fork':
       return state;
     default:
