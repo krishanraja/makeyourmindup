@@ -15,6 +15,9 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
   const { frame, form, rotation, scale, dots } = params;
   const r = BASE_R * scale;
 
+  const FRAME_W = 3.5;
+  const FORM_W = 2.75;
+
   return (
     <svg
       width={size}
@@ -23,9 +26,10 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="Generated sigil"
+      style={{ forcedColorAdjust: 'none', colorScheme: 'light' }}
     >
       {frame === 'ring' && (
-        <circle cx={CENTER} cy={CENTER} r={BASE_R + 40} fill="none" stroke={stroke} strokeWidth={2.5} />
+        <circle cx={CENTER} cy={CENTER} r={BASE_R + 40} fill="none" stroke={stroke} strokeWidth={FRAME_W} />
       )}
       {frame === 'broken' && (
         <>
@@ -33,30 +37,30 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
             d={arcPath(CENTER, CENTER, BASE_R + 40, 100, 260)}
             fill="none"
             stroke={stroke}
-            strokeWidth={2.5}
+            strokeWidth={FRAME_W}
             strokeLinecap="round"
           />
           <path
             d={arcPath(CENTER, CENTER, BASE_R + 40, 280, 80)}
             fill="none"
             stroke={stroke}
-            strokeWidth={2.5}
+            strokeWidth={FRAME_W}
             strokeLinecap="round"
           />
         </>
       )}
       {frame === 'double' && (
         <>
-          <circle cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={2} />
-          <circle cx={CENTER} cy={CENTER} r={BASE_R + 48} fill="none" stroke={stroke} strokeWidth={2} />
+          <circle cx={CENTER} cy={CENTER} r={BASE_R + 30} fill="none" stroke={stroke} strokeWidth={FRAME_W - 0.5} />
+          <circle cx={CENTER} cy={CENTER} r={BASE_R + 48} fill="none" stroke={stroke} strokeWidth={FRAME_W - 0.5} />
         </>
       )}
 
       <g transform={`rotate(${rotation} ${CENTER} ${CENTER})`}>
         {form === 'vesica' && (
           <>
-            <circle cx={CENTER} cy={CENTER - r * 0.4} r={r} fill="none" stroke={stroke} strokeWidth={2} />
-            <circle cx={CENTER} cy={CENTER + r * 0.4} r={r} fill="none" stroke={stroke} strokeWidth={2} />
+            <circle cx={CENTER} cy={CENTER - r * 0.4} r={r} fill="none" stroke={stroke} strokeWidth={FORM_W} />
+            <circle cx={CENTER} cy={CENTER + r * 0.4} r={r} fill="none" stroke={stroke} strokeWidth={FORM_W} />
           </>
         )}
         {form === 'lozenge' && (
@@ -67,7 +71,7 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
             height={r * 2}
             fill="none"
             stroke={stroke}
-            strokeWidth={2}
+            strokeWidth={FORM_W}
             transform={`rotate(45 ${CENTER} ${CENTER})`}
           />
         )}
@@ -76,7 +80,7 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
             points={trianglePoints(CENTER, CENTER, r)}
             fill="none"
             stroke={stroke}
-            strokeWidth={2}
+            strokeWidth={FORM_W}
           />
         )}
         {form === 'annulus' && (
@@ -91,7 +95,7 @@ export function Sigil({ params, size = 320, stroke = '#0A0908', fill = '#0A0908'
         const rad = (d.angle * Math.PI) / 180;
         const cx = CENTER + Math.cos(rad) * (BASE_R + 60);
         const cy = CENTER + Math.sin(rad) * (BASE_R + 60);
-        return <circle key={i} cx={cx} cy={cy} r={4} fill={fill} />;
+        return <circle key={i} cx={cx} cy={cy} r={5} fill={fill} />;
       })}
     </svg>
   );
