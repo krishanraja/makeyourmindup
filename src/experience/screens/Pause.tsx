@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import { BrandMonogram } from '@/components/BrandMonogram';
 
 const BEATS = [
   { at: 0, text: 'Reading what you just told us.' },
@@ -12,10 +13,18 @@ export function Pause() {
   const reduced = useReducedMotion();
   return (
     <div
-      className="flex flex-1 flex-col items-start justify-center px-6 pb-12 pt-[18vh]"
+      className="flex flex-1 flex-col items-start justify-center px-6 pb-12 pt-[12vh]"
       role="status"
       aria-live="polite"
     >
+      <motion.div
+        aria-hidden
+        className="mb-12 self-center"
+        animate={reduced ? undefined : { scale: [1, 1.015, 1] }}
+        transition={reduced ? undefined : { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+      >
+        <BrandMonogram size={140} animated />
+      </motion.div>
       <div className="flex flex-col gap-5">
         {BEATS.map((b) => (
           <motion.p
@@ -23,7 +32,7 @@ export function Pause() {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: reduced ? 0 : b.at,
+              delay: reduced ? 0 : b.at + 0.8,
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1],
             }}

@@ -50,7 +50,7 @@ Deno.serve(async (req) => {
   const { data: row, error: readErr } = await supabase
     .from('cannes_responses')
     .select(
-      'q1_week_needs_me, q2_extra_self, q3_company_ai, q4_company_future, q5_decision, archetype_title, result_prose_12mo, result_prose_3yr',
+      'q1_week_needs_me, q2_extra_self, q3_company_ai, q4_company_future, q5_decision, archetype_title, result_prose_12mo, result_prose_3yr, enrichment_status, enrichment_name, enrichment_company',
     )
     .eq('id', body.id)
     .single();
@@ -64,7 +64,11 @@ Deno.serve(async (req) => {
     .update({ email: body.email, email_captured_at: new Date().toISOString() })
     .eq('id', body.id);
 
-  const userMessage = [
+  const enrichmentReady = row.enrichment_status === 'ready';
+  const firstName = enrichmentReady ? firstNameOf(row.enrichment_name) : null;
+  const company = enrichmentReady ? (row.enrichment_company ?? null) : null;
+
+  const messageLines = [
     `Their Q5 (the decision they keep not making): "${row.q5_decision ?? ''}"`,
     '',
     `Their archetype title: "${row.archetype_title ?? ''}"`,
@@ -72,13 +76,25 @@ Deno.serve(async (req) => {
     `Q2 (extra version of them): ${row.q2_extra_self ?? ''}`,
     `Q3 (AI could handle, 0-100): ${row.q3_company_ai ?? 0}`,
     `Q4 (company they want in 3yr): ${row.q4_company_future ?? ''}`,
+  ];
+  if (firstName || company) {
+    messageLines.push('');
+    messageLines.push('Background:');
+    if (firstName) messageLines.push(`- first name: ${firstName}`);
+    if (company) messageLines.push(`- company: ${company}`);
+    messageLines.push(
+      'Use the first name at most once, naturally, never as a greeting. Never name-drop the company.',
+    );
+  }
+  messageLines.push(
     '',
     `12-month prose to reuse verbatim:`,
     row.result_prose_12mo ?? '',
     '',
     `3-year prose to reuse verbatim:`,
     row.result_prose_3yr ?? '',
-  ].join('\n');
+  );
+  const userMessage = messageLines.join('\n');
 
   let emailBody: string | null = null;
   try {
@@ -192,6 +208,12 @@ function escapeHtml(s: string): string {
 function isEmail(v: string | undefined): boolean {
   if (!v) return false;
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
+
+function firstNameOf(full: string | null): string | null {
+  if (!full) return null;
+  const first = full.trim().split(/\s+/)[0];
+  return first || null;
 }
 
 function serviceClient() {

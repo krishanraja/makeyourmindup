@@ -56,6 +56,15 @@ type LLMOut = {
   three_years: string;
 };
 
+type EnrichmentRow = {
+  enrichment_status: string | null;
+  enrichment_name: string | null;
+  enrichment_role: string | null;
+  enrichment_company: string | null;
+  enrichment_company_blurb: string | null;
+  enrichment_signals: string[] | null;
+};
+
 Deno.serve(async (req) => {
   const pre = preflight(req);
   if (pre) return pre;
@@ -72,7 +81,8 @@ Deno.serve(async (req) => {
   }
 
   const supabase = serviceClient();
-  const userMessage = buildUserMessage(body);
+  const enrichment = await waitForEnrichment(supabase, body.id);
+  const userMessage = buildUserMessage(body, enrichment);
 
   let prose: LLMOut | null = null;
   let usedFallback = false;
@@ -155,9 +165,9 @@ function extractJson(text: string): LLMOut | null {
   }
 }
 
-function buildUserMessage(body: Body): string {
+function buildUserMessage(body: Body, enrichment: EnrichmentRow | null): string {
   const a = body.answers;
-  return [
+  const lines = [
     `Archetype title: "${body.archetype.title}"`,
     '',
     `Q1 (week that actually needs them, 0-100): ${a.q1}`,
@@ -165,9 +175,64 @@ function buildUserMessage(body: Body): string {
     `Q3 (how much AI could handle today, 0-100): ${a.q3}`,
     `Q4 (the company they want to be running in 3yr): ${a.q4}`,
     `Q5 (the decision they keep not making): "${a.q5}"`,
-    '',
-    'Return JSON only with keys title_adjustment, twelve_months, three_years.',
-  ].join('\n');
+  ];
+
+  if (enrichment && enrichment.enrichment_status === 'ready') {
+    const e = enrichment;
+    const known: string[] = [];
+    if (e.enrichment_name) known.push(`name: ${e.enrichment_name}`);
+    if (e.enrichment_role) known.push(`role: ${e.enrichment_role}`);
+    if (e.enrichment_company) known.push(`company: ${e.enrichment_company}`);
+    if (e.enrichment_company_blurb) known.push(`company does: ${e.enrichment_company_blurb}`);
+    if (e.enrichment_signals && e.enrichment_signals.length) {
+      known.push(`signals: ${e.enrichment_signals.join(' | ')}`);
+    }
+    if (known.length) {
+      lines.push('');
+      lines.push('Background you have on them (use sparingly):');
+      for (const k of known) lines.push(`- ${k}`);
+      lines.push('');
+      lines.push(
+        'Use at most one or two of these specifics across both paragraphs. Never list them. Never name-drop the company in the archetype title. Never reveal you researched them. The specifics must feel intuited, not pulled.',
+      );
+    }
+  }
+
+  lines.push('');
+  lines.push('Return JSON only with keys title_adjustment, twelve_months, three_years.');
+  return lines.join('\n');
+}
+
+async function readEnrichment(
+  supabase: ReturnType<typeof serviceClient>,
+  id: string,
+): Promise<EnrichmentRow | null> {
+  const { data, error } = await supabase
+    .from('cannes_responses')
+    .select(
+      'enrichment_status, enrichment_name, enrichment_role, enrichment_company, enrichment_company_blurb, enrichment_signals',
+    )
+    .eq('id', id)
+    .single();
+  if (error || !data) return null;
+  return data as EnrichmentRow;
+}
+
+async function waitForEnrichment(
+  supabase: ReturnType<typeof serviceClient>,
+  id: string,
+): Promise<EnrichmentRow | null> {
+  let row = await readEnrichment(supabase, id);
+  if (!row || row.enrichment_status !== 'pending') return row;
+  await sleep(2000);
+  row = await readEnrichment(supabase, id);
+  if (!row || row.enrichment_status !== 'pending') return row;
+  await sleep(2000);
+  return await readEnrichment(supabase, id);
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function serviceClient() {

@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { TypedLine } from '@/components/TypedLine';
+import { BrandMonogram } from '@/components/BrandMonogram';
 
 type Props = {
   onContinue: () => void;
@@ -11,7 +12,15 @@ type Props = {
 export function Threshold({ onContinue, onExit }: Props) {
   const reduced = useReducedMotion();
   return (
-    <div className="flex flex-1 flex-col px-6 pb-12 pt-[18vh]">
+    <div className="flex flex-1 flex-col px-6 pb-12 pt-[8vh]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: reduced ? 0 : 0.4, duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+        className="pb-[8vh]"
+      >
+        <BrandMonogram size={28} />
+      </motion.div>
       <div className="flex-1">
         <TypedLine
           text="What if you were already the version of yourself you keep delaying?"
