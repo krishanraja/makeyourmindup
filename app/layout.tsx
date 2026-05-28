@@ -5,14 +5,14 @@ import { ServiceWorkerRegister } from './sw-register';
 export const metadata: Metadata = {
   metadataBase: new URL('https://makeyourmindup.ai'),
   title: 'makeyourmindup.ai',
-  description: 'What if you were already the version of yourself you keep delaying?',
+  description: 'What if you were already the version of you you keep delaying?',
   applicationName: 'makeyourmindup.ai',
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
     title: 'makeyourmindup.ai',
-    description: 'What if you were already the version of yourself you keep delaying?',
+    description: 'What if you were already the version of you you keep delaying?',
     url: 'https://makeyourmindup.ai',
     siteName: 'makeyourmindup.ai',
     images: [{ url: '/og', width: 1200, height: 630, alt: 'makeyourmindup.ai' }],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'makeyourmindup.ai',
-    description: 'What if you were already the version of yourself you keep delaying?',
+    description: 'What if you were already the version of you you keep delaying?',
     images: ['/og'],
   },
   robots: { index: true, follow: true },

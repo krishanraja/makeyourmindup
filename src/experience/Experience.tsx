@@ -7,6 +7,7 @@ import { resolveArchetype } from '@/lib/archetypes';
 import { events } from '@/lib/analytics';
 import { reportError } from '@/lib/telemetry';
 import { anonHeaders, functionsUrl, getSupabase } from '@/lib/supabase';
+import { useVariant } from './VariantProvider';
 import { initialState, reducer, completionMs } from './machine';
 import { Threshold } from './screens/Threshold';
 import { LinkedInDrop } from './screens/LinkedInDrop';
@@ -24,6 +25,7 @@ type Props = {
 };
 
 export function Experience({ source, utm }: Props) {
+  const { variant } = useVariant();
   const [state, dispatch] = useReducer(reducer, undefined, initialState);
   const insertingRef = useRef(false);
   const generatingRef = useRef(false);
@@ -42,6 +44,7 @@ export function Experience({ source, utm }: Props) {
           id,
           user_agent: ua,
           source: normalizedSource,
+          entry_variant: variant,
           utm_source: utm.source ?? null,
           utm_medium: utm.medium ?? null,
           utm_campaign: utm.campaign ?? null,
@@ -53,7 +56,7 @@ export function Experience({ source, utm }: Props) {
         return false;
       }
     },
-    [normalizedSource, utm.source, utm.medium, utm.campaign],
+    [normalizedSource, variant, utm.source, utm.medium, utm.campaign],
   );
 
   const onLinkedInSubmit = useCallback(
@@ -140,6 +143,7 @@ export function Experience({ source, utm }: Props) {
             id: state.responseId,
             answers: state.answers,
             archetype,
+            variant,
           }),
         });
         if (!res.ok) throw new Error(`generate-result ${res.status}`);
@@ -178,7 +182,7 @@ export function Experience({ source, utm }: Props) {
         generatingRef.current = false;
       }
     })();
-  }, [state.step, state.result, state.answers, state.responseId, state.startedAt]);
+  }, [state.step, state.result, state.answers, state.responseId, state.startedAt, variant]);
 
   const onEmail = useCallback(
     async (email: string) => {
@@ -189,13 +193,13 @@ export function Experience({ source, utm }: Props) {
         await fetch(functionsUrl('send-result-email'), {
           method: 'POST',
           headers: anonHeaders(),
-          body: JSON.stringify({ id: state.responseId, email }),
+          body: JSON.stringify({ id: state.responseId, email, variant }),
         });
       } catch (err) {
         reportError('send-result-email', err);
       }
     },
-    [state.responseId],
+    [state.responseId, variant],
   );
 
   const onFork = useCallback(
@@ -206,13 +210,13 @@ export function Experience({ source, utm }: Props) {
         await fetch(functionsUrl('track-fork'), {
           method: 'POST',
           headers: anonHeaders(),
-          body: JSON.stringify({ id: state.responseId, destination }),
+          body: JSON.stringify({ id: state.responseId, destination, variant }),
         });
       } catch (err) {
         reportError('track-fork', err);
       }
     },
-    [state.responseId],
+    [state.responseId, variant],
   );
 
   const completion = useMemo(() => completionMs(state), [state]);

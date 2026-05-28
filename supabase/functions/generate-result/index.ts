@@ -4,6 +4,7 @@ import { callAnthropic } from '../_shared/anthropic.ts';
 import { checkVoice } from '../_shared/voice-guard.ts';
 import { TimeoutError } from '../_shared/with-timeout.ts';
 import { FALLBACK_PROSE } from '../_shared/fallbacks.ts';
+import { isVariant, RESULT_LENS, type Variant } from '../_shared/variant-lenses.ts';
 
 const SYSTEM_PROMPT = `You are writing as Krish Raja, founder of Mindmaker, AI product builder, Forbes 30 Under 30. You are speaking to a leader who just spent 60 seconds telling you five things about themselves and their company. Your job is to write them a 90-word future memory.
 
@@ -48,6 +49,7 @@ type Body = {
     q5: string;
   };
   archetype: { title: string; variant: 'A' | 'B'; key: string };
+  variant?: Variant;
 };
 
 type LLMOut = {
@@ -80,6 +82,9 @@ Deno.serve(async (req) => {
     return json({ error: 'missing fields' }, 400);
   }
 
+  const variant = isVariant(body.variant) ? body.variant : null;
+  const system = variant ? `${SYSTEM_PROMPT}\n\n${RESULT_LENS[variant]}` : SYSTEM_PROMPT;
+
   const supabase = serviceClient();
   const enrichment = await waitForEnrichment(supabase, body.id);
   const userMessage = buildUserMessage(body, enrichment);
@@ -88,10 +93,10 @@ Deno.serve(async (req) => {
   let usedFallback = false;
 
   try {
-    prose = await attempt(SYSTEM_PROMPT, userMessage);
+    prose = await attempt(system, userMessage);
     if (!prose) {
       const retryPrompt = `${userMessage}\n\nYour previous response was invalid or violated voice rules. Rewrite without em dashes, without exclamation marks, without any of the banned buzzwords, and as strict JSON only.`;
-      prose = await attempt(SYSTEM_PROMPT, retryPrompt);
+      prose = await attempt(system, retryPrompt);
     }
   } catch (err) {
     if (err instanceof TimeoutError) {
@@ -132,6 +137,7 @@ Deno.serve(async (req) => {
     archetype_title: archetypeTitle,
     twelve_months: prose.twelve_months,
     three_years: prose.three_years,
+    variant,
     fallback: usedFallback,
   });
 });

@@ -1,3 +1,5 @@
+import type { Variant } from './variants';
+
 type Payload = Record<string, unknown>;
 
 declare global {
@@ -6,10 +8,19 @@ declare global {
   }
 }
 
+// Properties merged into every event. The VariantProvider sets entry_variant
+// here so the whole flow (screen views, answers, fork, etc.) carries the door
+// the reader came through, without threading it through every call site.
+let context: Payload = {};
+
+export function setAnalyticsContext(ctx: Payload): void {
+  context = { ...context, ...ctx };
+}
+
 export function track(event: string, payload: Payload = {}): void {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, ...payload, ts: Date.now() });
+  window.dataLayer.push({ event, ...context, ...payload, ts: Date.now() });
 }
 
 export const events = {
@@ -21,3 +32,11 @@ export const events = {
   fork: (destination: string) => track('fork_click', { destination }),
   error: (stage: string, message: string) => track('error', { stage, message }),
 };
+
+export function trackLandingViewed(): void {
+  track('landing_viewed');
+}
+
+export function trackLandingCardClicked(variant: Variant): void {
+  track('landing_card_clicked', { variant });
+}
