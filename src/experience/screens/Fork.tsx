@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Sigil } from '@/components/sigil/Sigil';
 import { compose } from '@/components/sigil/compose';
+import { BrandMonogram } from '@/components/BrandMonogram';
 import type { Answers, ResultPayload } from '@/lib/types';
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
 const FORKS: { destination: string; href: string; label: string }[] = [
   {
     destination: 'substack',
-    href: 'https://krishanraja.substack.com',
+    href: 'https://live.themindmaker.ai',
     label: 'Read the Sunday brief',
   },
   {
@@ -71,8 +72,10 @@ export function Fork({ result, answers, onFork }: Props) {
         ))}
       </div>
 
-      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
-        makeyourmindup.ai · by Mindmaker
+      <p className="mt-6 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
+        <span>makeyourmindup.ai · by</span>
+        <BrandMonogram size={12} className="opacity-80" />
+        <span>Mindmaker</span>
       </p>
     </div>
   );
