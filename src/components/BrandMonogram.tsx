@@ -46,7 +46,7 @@ export function BrandMonogram({ size = 32, className, animated = false }: Props)
       <motion.rect x="48" y="100" width="50" height="50" fill={`url(#${gradId})`} {...shapeProps(0)} />
       <motion.rect x="102" y="100" width="50" height="50" fill={`url(#${gradId})`} {...shapeProps(1)} />
       <motion.polygon points="65,96 81,96 89,72 57,72" fill={`url(#${gradId})`} {...shapeProps(2)} />
-      <motion.polygon points="104,96 148,96 138,52 114,52" fill={`url(#${gradId})`} {...shapeProps(3)} />
+      <motion.polygon points="114,96 138,96 148,52 104,52" fill={`url(#${gradId})`} {...shapeProps(3)} />
     </svg>
   );
 }
