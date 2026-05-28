@@ -22,10 +22,12 @@ type Accepted =
 export function LinkedInDrop({ onSubmit, onSkip }: Props) {
   const reduced = useReducedMotion();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const urlInputRef = useRef<HTMLInputElement>(null);
   const [accepted, setAccepted] = useState<Accepted | null>(null);
   const [showText, setShowText] = useState(false);
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
+  const [urlInput, setUrlInput] = useState('');
   const [dragOver, setDragOver] = useState(false);
   const submittedRef = useRef(false);
 
@@ -159,11 +161,10 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
         While you answer five things, we&apos;ll quietly read up on you. The result lands sharper.
       </motion.p>
 
-      <motion.label
+      <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6, ease: EASE }}
-        htmlFor="linkedin-file"
         onDragOver={(e) => {
           e.preventDefault();
           if (!submittedRef.current) setDragOver(true);
@@ -171,24 +172,47 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={[
-          'mt-8 flex min-h-[34vh] cursor-pointer flex-col items-center justify-center gap-3 rounded-3xl border px-6 py-8 text-center transition-colors',
+          'mt-8 flex min-h-[28vh] flex-col items-stretch justify-center gap-4 rounded-3xl border px-6 py-7 transition-colors',
           accepted
             ? 'border-transparent bg-cream/[0.04]'
             : dragOver
               ? 'border-cream/50 bg-cream/[0.04]'
-              : 'border-cream/15 hover:border-cream/30',
+              : 'border-cream/15',
         ].join(' ')}
       >
         {accepted ? (
           <AcceptedView accepted={accepted} />
         ) : (
           <>
-            <p className="font-serif text-[1.05rem] text-cream/90">
-              Paste your LinkedIn link
-            </p>
-            <p className="font-serif text-sm italic text-cream/55">
-              or drop a screenshot, or tap to choose one
-            </p>
+            <input
+              ref={urlInputRef}
+              type="url"
+              inputMode="url"
+              autoComplete="url"
+              spellCheck={false}
+              autoCapitalize="none"
+              placeholder="Paste your LinkedIn link"
+              value={urlInput}
+              onChange={(e) => {
+                const v = e.target.value;
+                setUrlInput(v);
+                if (LINKEDIN_URL_RE.test(v.trim())) handleUrl(v);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleUrl(urlInput);
+                }
+              }}
+              className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-3 text-center font-serif text-[1.05rem] text-cream placeholder:text-cream/60 focus:border-cream/55"
+            />
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="font-serif text-sm italic text-cream/65 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
+            >
+              or drop a screenshot · tap to upload
+            </button>
           </>
         )}
         <input
@@ -202,7 +226,7 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
             if (file) handleFile(file);
           }}
         />
-      </motion.label>
+      </motion.div>
 
       {!accepted && (
         <motion.div

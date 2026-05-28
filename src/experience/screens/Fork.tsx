@@ -41,13 +41,25 @@ export function Fork({ result, answers, onFork }: Props) {
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="flex flex-col items-center gap-3 rounded-3xl bg-cream py-8"
+        className="flex flex-col items-center gap-3 rounded-3xl py-8"
+        style={{
+          backgroundColor: '#F5F1EA',
+          color: '#0A0908',
+          colorScheme: 'light',
+          forcedColorAdjust: 'none',
+        }}
       >
         <Sigil params={sigilParams} size={200} />
-        <p className="px-6 text-center font-serif text-base font-semibold text-ink">
+        <p
+          className="px-6 text-center font-serif text-base font-semibold"
+          style={{ color: '#0A0908' }}
+        >
           {result.archetypeTitle}
         </p>
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/60">
+        <p
+          className="font-mono text-[11px] uppercase tracking-[0.18em]"
+          style={{ color: 'rgba(10, 9, 8, 0.6)' }}
+        >
           makeyourmindup.ai
         </p>
       </motion.div>
