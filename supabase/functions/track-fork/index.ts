@@ -1,7 +1,8 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4';
 import { json, preflight } from '../_shared/cors.ts';
+import { isVariant, type Variant } from '../_shared/variant-lenses.ts';
 
-type Body = { id: string; destination: string };
+type Body = { id: string; destination: string; variant?: Variant };
 
 const ALLOWED = new Set(['substack', 'mindmaker', 'ctrl']);
 
@@ -21,12 +22,16 @@ Deno.serve(async (req) => {
   }
 
   const supabase = serviceClient();
+  const update: Record<string, unknown> = {
+    fork_choice: body.destination,
+    fork_clicked_at: new Date().toISOString(),
+  };
+  // Backfill the entry door on the row in case the initial insert missed it.
+  if (isVariant(body.variant)) update.entry_variant = body.variant;
+
   const { error } = await supabase
     .from('cannes_responses')
-    .update({
-      fork_choice: body.destination,
-      fork_clicked_at: new Date().toISOString(),
-    })
+    .update(update)
     .eq('id', body.id);
 
   if (error) {

@@ -3,6 +3,7 @@ import { json, preflight } from '../_shared/cors.ts';
 import { callAnthropic } from '../_shared/anthropic.ts';
 import { checkVoice } from '../_shared/voice-guard.ts';
 import { withTimeout } from '../_shared/with-timeout.ts';
+import { EMAIL_LENS, isVariant, type Variant } from '../_shared/variant-lenses.ts';
 
 const EMAIL_SYSTEM_PROMPT = `You are writing as Krish Raja. The reader just spent 60 seconds answering five questions on makeyourmindup.ai. You are writing them a personal email immediately after. It must read like a person wrote it.
 
@@ -28,7 +29,7 @@ Structure (6 to 9 sentences total, not counting the sign-off):
 
 Output plain text only. No subject line. No markdown. No greeting like "Hi" or "Hey". Start with the quoted Q5 line directly.`;
 
-type Body = { id: string; email: string };
+type Body = { id: string; email: string; variant?: Variant };
 
 Deno.serve(async (req) => {
   const pre = preflight(req);
@@ -44,6 +45,11 @@ Deno.serve(async (req) => {
   if (!body?.id || !isEmail(body.email)) {
     return json({ error: 'missing or invalid fields' }, 400);
   }
+
+  const variant = isVariant(body.variant) ? body.variant : null;
+  const system = variant
+    ? `${EMAIL_SYSTEM_PROMPT}\n\n${EMAIL_LENS[variant].systemAddition}`
+    : EMAIL_SYSTEM_PROMPT;
 
   const supabase = serviceClient();
 
@@ -99,7 +105,7 @@ Deno.serve(async (req) => {
   let emailBody: string | null = null;
   try {
     const raw = await callAnthropic({
-      system: EMAIL_SYSTEM_PROMPT,
+      system,
       messages: [{ role: 'user', content: userMessage }],
       temperature: 0.7,
       maxTokens: 700,
@@ -126,7 +132,7 @@ Deno.serve(async (req) => {
     ].join('\n');
   }
 
-  const subject = buildSubject(row.q5_decision ?? '');
+  const subject = variant ? EMAIL_LENS[variant].subject : buildSubject(row.q5_decision ?? '');
 
   const resendRes = await sendViaResend({
     to: body.email,

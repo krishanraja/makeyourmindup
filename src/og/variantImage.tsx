@@ -1,10 +1,15 @@
 import { ImageResponse } from '@vercel/og';
+import type { Variant } from '@/lib/variants';
 
-export const runtime = 'edge';
+// Variant accent, shared with the landing cards.
+const ACCENT: Record<Variant, string> = {
+  decide: '#FF8A65',
+  extend: '#7BB3FF',
+  imagine: '#C8A2FF',
+};
 
-// Landing OG for the picker at /. Tagline plus three accent stripes that
-// stand in for the three doors (decide, extend, imagine) without naming them.
-export async function GET() {
+// 1080x1920 entry OG: brand monogram, variant title, an accent rule, and the URL.
+export function variantOgImage(slug: Variant, title: string, subtitle: string): ImageResponse {
   return new ImageResponse(
     (
       <div
@@ -34,38 +39,43 @@ export async function GET() {
         <div
           style={{
             display: 'flex',
-            marginTop: 72,
-            fontSize: 56,
+            marginTop: 88,
+            fontSize: 62,
             fontWeight: 600,
             color: '#F5F1EA',
             textAlign: 'center',
-            lineHeight: 1.15,
+            lineHeight: 1.12,
             letterSpacing: '-0.02em',
-            maxWidth: 760,
+            maxWidth: 820,
           }}
         >
-          What if you were already the version of you you keep delaying?
-        </div>
-        <div style={{ display: 'flex', gap: 16, marginTop: 56 }}>
-          <div style={{ width: 90, height: 8, borderRadius: 8, background: '#FF8A65' }} />
-          <div style={{ width: 90, height: 8, borderRadius: 8, background: '#7BB3FF' }} />
-          <div style={{ width: 90, height: 8, borderRadius: 8, background: '#C8A2FF' }} />
+          {title}
         </div>
         <div
           style={{
             display: 'flex',
+            width: 120,
+            height: 8,
             marginTop: 56,
-            fontSize: 22,
-            letterSpacing: '0.24em',
+            borderRadius: 8,
+            background: ACCENT[slug],
+          }}
+        />
+        <div
+          style={{
+            display: 'flex',
+            marginTop: 56,
+            fontSize: 24,
+            letterSpacing: '0.22em',
             textTransform: 'uppercase',
             color: '#F5F1EA',
-            opacity: 0.55,
+            opacity: 0.6,
           }}
         >
-          makeyourmindup.ai
+          {subtitle}
         </div>
       </div>
     ),
-    { width: 1200, height: 630 },
+    { width: 1080, height: 1920 },
   );
 }

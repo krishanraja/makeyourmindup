@@ -1,10 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sigil } from '@/components/sigil/Sigil';
 import { compose } from '@/components/sigil/compose';
 import { BrandMonogram } from '@/components/BrandMonogram';
+import { track } from '@/lib/analytics';
+import { useVariant } from '../VariantProvider';
 import type { Answers, ResultPayload } from '@/lib/types';
 
 type Props = {
@@ -16,9 +18,14 @@ type Props = {
 };
 
 export function Result({ responseId, answers, result, onEmail }: Props) {
+  const { bundle } = useVariant();
   const sigilParams = useMemo(() => compose(answers), [answers]);
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    track(bundle.analytics.completeEvent);
+  }, [bundle.analytics.completeEvent]);
 
   const submit = async () => {
     const trimmed = email.trim();
@@ -44,6 +51,9 @@ export function Result({ responseId, answers, result, onEmail }: Props) {
         transition={{ delay: 0.45, duration: 0.6 }}
         className="flex flex-col gap-6 font-serif text-[1.05rem] leading-[1.5] text-cream/85"
       >
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cream/55">
+          {bundle.resultLens.resultIntroLine}
+        </p>
         <p>{result.twelveMonths}</p>
         <p>{result.threeYears}</p>
       </motion.div>
@@ -71,7 +81,7 @@ export function Result({ responseId, answers, result, onEmail }: Props) {
           className="font-mono text-[11px] uppercase tracking-[0.18em]"
           style={{ color: 'rgba(10, 9, 8, 0.6)' }}
         >
-          makeyourmindup.ai
+          {bundle.resultLens.shareCardSubtitle}
         </p>
       </motion.div>
 

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { TypedLine } from '@/components/TypedLine';
 import { BrandMonogram } from '@/components/BrandMonogram';
+import { useVariant } from '../VariantProvider';
 
 type Props = {
   onContinue: () => void;
@@ -11,6 +12,9 @@ type Props = {
 
 export function Threshold({ onContinue, onExit }: Props) {
   const reduced = useReducedMotion();
+  const { bundle } = useVariant();
+  const { eyebrow, headline, body, cta } = bundle.hero;
+
   return (
     <div className="flex flex-1 flex-col px-6 pb-12 pt-[8vh]">
       <motion.div
@@ -22,10 +26,21 @@ export function Threshold({ onContinue, onExit }: Props) {
         <BrandMonogram size={28} />
       </motion.div>
       <div className="flex-1">
+        <p className="pb-5 font-mono text-xs uppercase tracking-[0.24em] text-cream/55">
+          {eyebrow}
+        </p>
         <TypedLine
-          text="What if you were already the version of yourself you keep delaying?"
-          className="max-w-[18ch] font-serif text-[clamp(2rem,7vw,2.75rem)] leading-[1.1] tracking-tightest text-cream"
+          text={headline}
+          className="font-serif text-[clamp(2.25rem,9vw,3.25rem)] leading-[1.05] tracking-tightest text-cream"
         />
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: reduced ? 0 : 1.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-7 max-w-[26ch] font-serif text-lg leading-[1.45] text-cream/75"
+        >
+          {body}
+        </motion.p>
       </div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -38,7 +53,7 @@ export function Threshold({ onContinue, onExit }: Props) {
           onClick={onContinue}
           className="text-left font-serif text-lg text-cream/90 underline-offset-[6px] transition-colors hover:text-cream hover:underline"
         >
-          Show me
+          {cta}
         </button>
         <button
           type="button"

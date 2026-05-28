@@ -6,7 +6,7 @@ export default function manifest() {
   return {
     name: 'makeyourmindup.ai',
     short_name: 'Mindmaker',
-    description: 'What if you were already the version of yourself you keep delaying?',
+    description: 'What if you were already the version of you you keep delaying?',
     start_url: '/',
     display: 'standalone',
     background_color: '#0a0908',
