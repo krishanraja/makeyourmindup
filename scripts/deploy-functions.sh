@@ -8,7 +8,7 @@ if ! command -v supabase >/dev/null 2>&1; then
   exit 1
 fi
 
-for fn in generate-result send-result-email track-fork; do
+for fn in enrich-profile generate-result send-result-email track-fork; do
   echo "Deploying $fn..."
   supabase functions deploy "$fn" \
     --project-ref "$PROJECT_REF" \
