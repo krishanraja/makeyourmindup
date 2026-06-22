@@ -10,11 +10,15 @@ type Props = {
   onSkip: () => void;
 };
 
-const LINKEDIN_URL_RE = /^https?:\/\/(?:[a-z]{2,3}\.)?linkedin\.com\/[A-Za-z0-9_\-/?=&%.#]+/i;
+// Scheme is optional so linkedin.com/in/... and www./m./country subdomains all
+// pass; the backend re-normalizes everything (strips UTM, extracts the slug).
+const LINKEDIN_URL_RE = /^(?:https?:\/\/)?(?:[a-z]{2,3}\.)?(?:m\.)?linkedin\.com\/.+/i;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SHARED_KEY = 'myu_shared';
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 type Accepted =
+  | { kind: 'email'; email: string }
   | { kind: 'url'; url: string }
   | { kind: 'image'; preview: string }
   | { kind: 'text'; name: string; company: string };
@@ -22,9 +26,10 @@ type Accepted =
 export function LinkedInDrop({ onSubmit, onSkip }: Props) {
   const reduced = useReducedMotion();
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const urlInputRef = useRef<HTMLInputElement>(null);
   const [accepted, setAccepted] = useState<Accepted | null>(null);
   const [showText, setShowText] = useState(false);
+  const [showUrl, setShowUrl] = useState(false);
+  const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
   const [urlInput, setUrlInput] = useState('');
@@ -40,6 +45,16 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
       window.setTimeout(() => onSubmit(payload), reduced ? 0 : 450);
     },
     [onSubmit, reduced],
+  );
+
+  const handleEmail = useCallback(
+    (raw: string) => {
+      const trimmed = raw.trim();
+      if (!EMAIL_RE.test(trimmed)) return false;
+      submit({ kind: 'email', email: trimmed }, { kind: 'email', email: trimmed });
+      return true;
+    },
+    [submit],
   );
 
   const handleUrl = useCallback(
@@ -69,7 +84,7 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
     [submit],
   );
 
-  // Window-level paste listener (URL or image).
+  // Window-level paste listener (LinkedIn URL or image still work anywhere).
   useEffect(() => {
     const onPaste = (e: ClipboardEvent) => {
       if (submittedRef.current) return;
@@ -126,10 +141,7 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
     const n = name.trim();
     const c = company.trim();
     if (!n && !c) return;
-    submit(
-      { kind: 'text', name: n, company: c },
-      { kind: 'text', name: n, company: c },
-    );
+    submit({ kind: 'text', name: n, company: c }, { kind: 'text', name: n, company: c });
   };
 
   return (
@@ -149,16 +161,17 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
         transition={{ duration: 0.6, ease: EASE }}
         className="max-w-[18ch] font-serif text-[clamp(1.85rem,6vw,2.35rem)] leading-[1.12] tracking-tightest text-cream"
       >
-        Drop your card. We&apos;ll do the homework.
+        Your email. We&apos;ll do the homework.
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.25, duration: 0.6, ease: EASE }}
-        className="mt-4 max-w-[28ch] font-serif text-base italic text-cream/65"
+        className="mt-4 max-w-[30ch] font-serif text-base italic text-cream/65"
       >
-        While you answer five things, we&apos;ll quietly read up on you. The result lands sharper.
+        We look you up to make the result sharper. Work or personal, whichever you
+        prefer. You can skip this.
       </motion.p>
 
       <motion.div
@@ -185,34 +198,62 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
         ) : (
           <>
             <input
-              ref={urlInputRef}
-              type="url"
-              inputMode="url"
-              autoComplete="url"
+              type="email"
+              inputMode="email"
+              autoComplete="email"
               spellCheck={false}
               autoCapitalize="none"
-              placeholder="Paste your LinkedIn link"
-              value={urlInput}
-              onChange={(e) => {
-                const v = e.target.value;
-                setUrlInput(v);
-                if (LINKEDIN_URL_RE.test(v.trim())) handleUrl(v);
-              }}
+              placeholder="you@company.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   e.preventDefault();
-                  handleUrl(urlInput);
+                  handleEmail(email);
                 }
               }}
               className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-3 text-center font-serif text-[1.05rem] text-cream placeholder:text-cream/60 focus:border-cream/55"
             />
             <button
               type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="font-serif text-sm italic text-cream/65 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
+              onClick={() => handleEmail(email)}
+              disabled={!EMAIL_RE.test(email.trim())}
+              className="font-serif text-base text-cream/90 underline-offset-[6px] transition-opacity hover:underline disabled:opacity-30"
             >
-              or drop a screenshot · tap to upload
+              Done
             </button>
+
+            {showUrl ? (
+              <input
+                type="url"
+                inputMode="url"
+                autoComplete="url"
+                spellCheck={false}
+                autoCapitalize="none"
+                placeholder="linkedin.com/in/you"
+                value={urlInput}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  setUrlInput(v);
+                  if (LINKEDIN_URL_RE.test(v.trim())) handleUrl(v);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleUrl(urlInput);
+                  }
+                }}
+                className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-2.5 text-center font-mono text-sm text-cream placeholder:text-cream/50 focus:border-cream/55"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setShowUrl(true)}
+                className="font-serif text-sm italic text-cream/65 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
+              >
+                or paste a LinkedIn link · drop a screenshot
+              </button>
+            )}
           </>
         )}
         <input
@@ -228,6 +269,16 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
         />
       </motion.div>
 
+      {!accepted && showUrl && (
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="mt-4 self-start font-serif text-sm italic text-cream/55 underline-offset-[6px] transition-colors hover:text-cream/85 hover:underline"
+        >
+          upload a screenshot
+        </button>
+      )}
+
       {!accepted && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -241,7 +292,7 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
               onClick={() => setShowText(true)}
               className="font-serif text-base text-cream/65 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
             >
-              or type it
+              or type your name and company
             </button>
           ) : (
             <div className="flex flex-col gap-3">
@@ -258,10 +309,12 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
               <div className="flex items-center border-b border-cream/20 focus-within:border-cream/60">
                 <input
                   type="text"
-                  placeholder="Your company"
+                  placeholder="Company domain (acme.com)"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   autoComplete="organization"
+                  autoCapitalize="none"
+                  spellCheck={false}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') submitText();
                   }}
@@ -314,6 +367,16 @@ function AcceptedView({ accepted }: { accepted: Accepted }) {
         <p className="font-serif text-base text-cream/85">Got it. Reading you in.</p>
         <p className="max-w-[26ch] truncate font-mono text-[11px] text-cream/55">
           {accepted.url}
+        </p>
+      </div>
+    );
+  }
+  if (accepted.kind === 'email') {
+    return (
+      <div className="flex flex-col items-center gap-2">
+        <p className="font-serif text-base text-cream/85">Got it. Reading you in.</p>
+        <p className="max-w-[26ch] truncate font-mono text-[11px] text-cream/55">
+          {accepted.email}
         </p>
       </div>
     );
