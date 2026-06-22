@@ -30,9 +30,10 @@ export type Step = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export type ForkDestination = 'substack' | 'mindmaker' | 'ctrl';
 
-export type EnrichmentKind = 'url' | 'image' | 'text';
+export type EnrichmentKind = 'email' | 'url' | 'image' | 'text';
 
 export type EnrichmentPayload =
+  | { kind: 'email'; email: string }
   | { kind: 'url'; url: string }
   | { kind: 'image'; image: string; mediaType: string }
   | { kind: 'text'; name: string; company: string };

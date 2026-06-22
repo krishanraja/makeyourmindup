@@ -38,11 +38,31 @@ The migration is idempotent (uses `create table if not exists`, `drop policy if 
 
 Three Deno edge functions in `supabase/functions/`:
 
+- `enrich-profile` — resolves whoever the user is from an email / LinkedIn URL / name+domain via a multi-provider waterfall (see below), writing the result into the `enrichment_*` + resolver columns.
 - `generate-result` — calls Anthropic (`claude-sonnet-4-5`), validates voice rules, retries once, falls back to per-Q4 stub prose on failure.
 - `send-result-email` — generates a personal email via Anthropic, sends via Resend from `krish@themindmaker.ai`.
 - `track-fork` — records which fork link (Substack / Mindmaker / CTRL) the user took.
 
-All three depend on these Supabase project secrets being set: `ANTHROPIC_API_KEY`, `RESEND_API_KEY`. `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are auto-injected.
+All depend on these Supabase project secrets being set: `ANTHROPIC_API_KEY`, `RESEND_API_KEY`. `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are auto-injected.
+
+### Person resolver (`enrich-profile`)
+
+`enrich-profile` normalizes the input (`_shared/identity.ts` — strips LinkedIn UTM params, fills a missing scheme, extracts the vanity slug, derives the company domain from an email) and runs an ordered, fault-isolated waterfall in `_shared/resolvers/`:
+
+1. **Identity (parallel, flips `enrichment_status` to `ready` early):** People Data Labs + Apollo people-match resolve email / domain / linkedin_url to a real profile. Work emails are rarely "linked" to LinkedIn publicly, so when a provider returns the person but no profile URL we chain `name + domain` to the other provider, then fall back to an Exa/Brave `site:linkedin.com/in` search.
+2. **Company context (parallel, late patch):** Brandfetch (blurb/logo/colors), Apollo org (industry/headcount/funding), BuiltWith (tech stack), Tranco (popularity rank).
+3. **Signals:** Exa / Perplexity / Brave / NewsAPI snippets, compressed by Claude into the `company_blurb` + `public_signals` contract (Claude summarizes fetched facts, it never invents identity).
+4. **Live scrape (last resort):** Apify LinkedIn profile actor, only when a URL is known but the structured result is thin. LinkedIn ToS/legal risk — keep gated.
+
+Each provider key is read by env-var name and is optional: a missing key just skips that provider. Set the ones you use as Supabase function secrets:
+
+```
+PEOPLE_DATA_LABS_API_KEY  APOLLO_API_KEY        # identity (recommended baseline)
+NEVERBOUNCE_API_KEY                              # email deliverability gate
+BRANDFETCH_API_KEY  BUILTWITH_API_KEY  TRANCO_API_KEY   # company context
+EXA_API_KEY  PERPLEXITY_API_KEY  BRAVE_API_KEY  NEWSAPI_KEY   # signals
+APIFY_API_KEY  APIFY_LINKEDIN_ACTOR             # optional live-scrape fallback
+```
 
 Deploy:
 
