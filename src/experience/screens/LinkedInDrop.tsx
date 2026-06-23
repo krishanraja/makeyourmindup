@@ -212,13 +212,13 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
                   handleEmail(email);
                 }
               }}
-              className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-3 text-center font-serif text-[1.05rem] text-cream placeholder:text-cream/60 focus:border-cream/55"
+              className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-3 text-left font-serif text-[1.05rem] text-cream placeholder:text-cream/60 focus:border-cream/55"
             />
             <button
               type="button"
               onClick={() => handleEmail(email)}
               disabled={!EMAIL_RE.test(email.trim())}
-              className="font-serif text-base text-cream/90 underline-offset-[6px] transition-opacity hover:underline disabled:opacity-30"
+              className="self-start text-left font-serif text-base text-cream/90 underline-offset-[6px] transition-opacity hover:underline disabled:opacity-30"
             >
               Done
             </button>
@@ -243,13 +243,13 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
                     handleUrl(urlInput);
                   }
                 }}
-                className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-2.5 text-center font-mono text-sm text-cream placeholder:text-cream/50 focus:border-cream/55"
+                className="w-full rounded-2xl border border-cream/20 bg-cream/[0.04] px-4 py-2.5 text-left font-mono text-sm text-cream placeholder:text-cream/50 focus:border-cream/55"
               />
             ) : (
               <button
                 type="button"
                 onClick={() => setShowUrl(true)}
-                className="font-serif text-sm italic text-cream/65 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
+                className="self-start text-left font-serif text-sm italic text-cream/65 underline-offset-[6px] transition-colors hover:text-cream/90 hover:underline"
               >
                 or paste a LinkedIn link · drop a screenshot
               </button>
@@ -350,7 +350,7 @@ export function LinkedInDrop({ onSubmit, onSkip }: Props) {
 function AcceptedView({ accepted }: { accepted: Accepted }) {
   if (accepted.kind === 'image') {
     return (
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-start gap-3">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={accepted.preview}
@@ -363,7 +363,7 @@ function AcceptedView({ accepted }: { accepted: Accepted }) {
   }
   if (accepted.kind === 'url') {
     return (
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-start gap-2">
         <p className="font-serif text-base text-cream/85">Got it. Reading you in.</p>
         <p className="max-w-[26ch] truncate font-mono text-[11px] text-cream/55">
           {accepted.url}
@@ -373,7 +373,7 @@ function AcceptedView({ accepted }: { accepted: Accepted }) {
   }
   if (accepted.kind === 'email') {
     return (
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-start gap-2">
         <p className="font-serif text-base text-cream/85">Got it. Reading you in.</p>
         <p className="max-w-[26ch] truncate font-mono text-[11px] text-cream/55">
           {accepted.email}
