@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sigil } from '@/components/sigil/Sigil';
 import { compose } from '@/components/sigil/compose';
-import { BrandMonogram } from '@/components/BrandMonogram';
+import { MindmakerEndorsement } from '@/components/MindmakerEndorsement';
 import { track } from '@/lib/analytics';
 import { useVariant } from '../VariantProvider';
 import type { Answers, ResultPayload } from '@/lib/types';
@@ -119,11 +119,7 @@ export function Result({ responseId, answers, result, onEmail }: Props) {
         <p className="font-serif text-sm italic text-cream/60">
           We&apos;ll also include three things to read this week that fit what you just told us. From Krish, the operator behind this.
         </p>
-        <p className="mt-6 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
-          <span>makeyourmindup.ai · by</span>
-          <BrandMonogram size={12} className="opacity-80" />
-          <span>Mindmaker</span>
-        </p>
+        <MindmakerEndorsement className="mt-6" />
       </motion.div>
     </div>
   );

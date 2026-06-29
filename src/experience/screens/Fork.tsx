@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Sigil } from '@/components/sigil/Sigil';
 import { compose } from '@/components/sigil/compose';
-import { BrandMonogram } from '@/components/BrandMonogram';
+import { MindmakerEndorsement } from '@/components/MindmakerEndorsement';
 import type { Answers, ResultPayload } from '@/lib/types';
 
 type Props = {
@@ -84,11 +84,7 @@ export function Fork({ result, answers, onFork }: Props) {
         ))}
       </div>
 
-      <p className="mt-6 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
-        <span>makeyourmindup.ai · by</span>
-        <BrandMonogram size={12} className="opacity-80" />
-        <span>Mindmaker</span>
-      </p>
+      <MindmakerEndorsement className="mt-6" />
     </div>
   );
 }
