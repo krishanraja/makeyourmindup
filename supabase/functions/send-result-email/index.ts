@@ -4,6 +4,7 @@ import { callAnthropic } from '../_shared/anthropic.ts';
 import { checkVoice } from '../_shared/voice-guard.ts';
 import { withTimeout } from '../_shared/with-timeout.ts';
 import { EMAIL_LENS, isVariant, type Variant } from '../_shared/variant-lenses.ts';
+import { fetchSharedPool, pickThreeReads, type PoolCard } from '../_shared/reads.ts';
 
 const EMAIL_SYSTEM_PROMPT = `You are writing as Krish Raja. The reader just spent 60 seconds answering five questions on makeyourmindup.ai. You are writing them a personal email immediately after. It must read like a person wrote it.
 
@@ -132,13 +133,37 @@ Deno.serve(async (req) => {
     ].join('\n');
   }
 
+  // Three things to read - delivered (finally) from CTRL's shared corroborated
+  // pool, ranked against the decision they just named. Best-effort: if the pool
+  // is empty or unreachable, the email sends without the section rather than
+  // breaking the promise with a placeholder.
+  let readsText = '';
+  let readsHtml = '';
+  try {
+    const pool = await fetchSharedPool(supabase);
+    if (pool.length > 0) {
+      const reads = pickThreeReads(pool, {
+        q5: row.q5_decision,
+        q2: row.q2_extra_self,
+        q4: row.q4_company_future,
+      });
+      if (reads.length === 3) {
+        readsText = buildReadsText(reads);
+        readsHtml = buildReadsHtml(reads);
+      }
+    }
+  } catch (err) {
+    console.error('reads error', err);
+  }
+
+  const fullText = readsText ? `${emailBody}\n\n${readsText}` : emailBody;
   const subject = variant ? EMAIL_LENS[variant].subject : buildSubject(row.q5_decision ?? '');
 
   const resendRes = await sendViaResend({
     to: body.email,
     subject,
-    text: emailBody,
-    html: bodyAsHtml(emailBody),
+    text: fullText,
+    html: bodyAsHtml(emailBody, readsHtml),
   });
 
   if (!resendRes.ok) {
@@ -195,12 +220,38 @@ async function sendViaResend({
   );
 }
 
-function bodyAsHtml(text: string): string {
+function bodyAsHtml(text: string, extraHtml = ''): string {
   const paragraphs = text
     .split(/\n{2,}/)
     .map((p) => `<p style="margin:0 0 18px 0;">${escapeHtml(p).replace(/\n/g, '<br/>')}</p>`)
     .join('');
-  return `<!doctype html><html><body style="font-family:Georgia,'Source Serif 4',serif;font-size:17px;line-height:1.55;color:#111;max-width:560px;margin:0 auto;padding:24px;">${paragraphs}</body></html>`;
+  return `<!doctype html><html><body style="font-family:Georgia,'Source Serif 4',serif;font-size:17px;line-height:1.55;color:#111;max-width:560px;margin:0 auto;padding:24px;">${paragraphs}${extraHtml}</body></html>`;
+}
+
+// Plain-text "three things to read" block (voice-safe: no buzzwords, no em
+// dash, no exclamation). The card's own grounded line is reused verbatim.
+function buildReadsText(reads: PoolCard[]): string {
+  const lines = ['Three things worth your time this week, picked against the decision you named:', ''];
+  reads.forEach((r, i) => {
+    lines.push(`${i + 1}. ${r.headline}`);
+    if (r.say) lines.push(`   ${r.say}`);
+    lines.push(`   ${r.source ? r.source + ' - ' : ''}${r.url}`);
+    lines.push('');
+  });
+  return lines.join('\n').trimEnd();
+}
+
+function buildReadsHtml(reads: PoolCard[]): string {
+  const items = reads
+    .map((r) => {
+      const head = escapeHtml(r.headline ?? '');
+      const say = r.say ? `<div style="color:#555;font-size:15px;margin:2px 0 0 0;">${escapeHtml(r.say)}</div>` : '';
+      const src = r.source ? `<span style="color:#888;">${escapeHtml(r.source)}</span> ` : '';
+      const url = escapeHtml(r.url ?? '#');
+      return `<li style="margin:0 0 14px 0;"><a href="${url}" style="color:#06746d;text-decoration:none;font-weight:600;">${head}</a>${say}<div style="color:#888;font-size:13px;margin-top:2px;">${src}</div></li>`;
+    })
+    .join('');
+  return `<hr style="border:none;border-top:1px solid #e5e5e3;margin:28px 0 18px 0;"/><p style="margin:0 0 10px 0;font-size:15px;color:#333;">Three things worth your time this week, picked against the decision you named:</p><ol style="margin:0;padding-left:20px;">${items}</ol>`;
 }
 
 function escapeHtml(s: string): string {
