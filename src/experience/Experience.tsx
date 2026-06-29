@@ -203,17 +203,20 @@ export function Experience({ source, utm }: Props) {
   );
 
   const onFork = useCallback(
-    async (destination: string) => {
-      if (!state.responseId) return;
+    async (destination: string, consent = false): Promise<string | null> => {
+      if (!state.responseId) return null;
       events.fork(destination);
       try {
-        await fetch(functionsUrl('track-fork'), {
+        const res = await fetch(functionsUrl('track-fork'), {
           method: 'POST',
           headers: anonHeaders(),
-          body: JSON.stringify({ id: state.responseId, destination, variant }),
+          body: JSON.stringify({ id: state.responseId, destination, variant, consent }),
         });
+        const data = (await res.json().catch(() => null)) as { handoff?: string } | null;
+        return data?.handoff ?? null;
       } catch (err) {
         reportError('track-fork', err);
+        return null;
       }
     },
     [state.responseId, variant],
