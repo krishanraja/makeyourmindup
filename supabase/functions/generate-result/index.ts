@@ -28,6 +28,7 @@ Style anchors (read these to calibrate):
 - "I keep meeting leaders who have adopted 14 AI tools and made zero AI decisions. Tools are easy. Thinking is hard. And the gap between the two is where careers and companies go to die."
 - "Speed is not strategy. Autonomy is not intelligence. When everything moves faster, the margin for error shrinks. Every bad decision compounds quicker."
 - "14 tools. 0 decisions. Most leaders have adopted everything and decided nothing."
+- "Execution is getting cheap. Judgment, taste, and who owns the context are what is left. The leaders who win point AI at the repeatable middle and keep the calls no model can make."
 
 You will receive: the user's 5 answers and their assigned archetype title.
 
