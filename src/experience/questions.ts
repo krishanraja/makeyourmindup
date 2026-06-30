@@ -83,6 +83,8 @@ export const Q5: TextQuestion = {
     "How to tell my board what's really happening",
     'Whether to rebuild the team around AI',
     'What to do with the people AI is replacing',
+    'Where my real moat is now that anyone can clone the product',
+    'What only I should still decide, and what to hand to AI',
   ],
   hint: 'Say it out loud. No one sees this but you.',
   maxLength: 80,
