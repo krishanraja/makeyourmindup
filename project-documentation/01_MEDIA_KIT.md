@@ -100,17 +100,39 @@ failed, whatever else it did well.
 **`venture_formats.mandate` in Mindmaker OS is the only truth for what each
 format is.** Read it from there. What follows is the shape, not the mandate.
 
-| Format | Day | The question your.call asks | Diagram |
-|---|---|---|---|
-| **split.the.bill** | Wednesday | Is the money still here in eighteen months? | the money map |
-| **mind.the.gap** | Friday, the hero | What is actually happening, against what everyone says is happening? | the timeline |
+**Three standing subchannels.** Ruling (Krish, 2026-09-19), reversing the
+2026-09-18 retirement of lift.the.lid. One table, because two tables in one
+section is how a reader ends up choosing which one to believe.
 
-**The standing shape is two formats plus a rotating third.** The media kit as
-written on 17 September carried three, with lift.the.lid on Mondays. It was
-retired on 18 September before it ever ran, and the evidence is in
-`calibration/2026-09-17-commissioning-round-1.json`: across four lift.the.lid
-ideas Krish gave no excellent at all, while the other two formats took four
-between them. The rotating third slot is where it can come back.
+| Slug | Label | Day | The question your.call asks | Diagram |
+|---|---|---|---|---|
+| `split_the_bill` | split.the.bill | Wednesdays | What does it really cost to run, and who ends up holding the bill? | the money map |
+| `mind_the_gap` | mind.the.gap | Fridays, the hero | What is actually happening, against what everyone says is happening? | the timeline |
+| `lift_the_lid` | lift.the.lid | No fixed day | Does this make its user sharper, or dependent? | the annotated product shot |
+
+The slug is what the database stores and what every system writes. The label is
+what a reader sees. They are never interchangeable in code.
+
+The earlier table in this section gave split.the.bill's your.call question as
+"is the money still here in eighteen months". The live mandate has that as its
+THIRD question, under the standing one above. The kit had promoted it, which is
+the kind of drift a file copy makes and a read from the table does not.
+
+`lift_the_lid` publishes when a subject earns it rather than on a fixed slot,
+because a third fixed day costs hours the two-to-four-hour rule does not have.
+
+**The boundary between `split_the_bill` and `lift_the_lid` is the question,
+never the surface.** Both can be handed the same pricing page. What it costs and
+who pays is `split_the_bill`. Sharper or dependent is `lift_the_lid`. Product
+surfaces are `lift_the_lid`'s own territory and are evidence, never a subject,
+for `split_the_bill`.
+
+The calibration is worth keeping in view rather than treating as settled:
+across four lift.the.lid ideas in
+`calibration/2026-09-17-commissioning-round-1.json` Krish gave no excellent at
+all, while the other two took four between them. One round of fifteen votes is
+a direction, not a verdict, and the five newer lift.the.lid ideas were never
+judged.
 
 Six themes tracked across all of them over time: distribution, buyer versus
 user, the labour shape, data rights, trust, pricing.

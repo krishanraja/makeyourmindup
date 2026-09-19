@@ -13,7 +13,7 @@ and an eager session told to build the machine will build straight past it.
 | Decision | State |
 |---|---|
 | The apex domain | **open.** Cover on the apex, publication on `read.` is the recommendation |
-| Does lift.the.lid survive | **settled 2026-09-18.** Retired. Standing shape is two formats plus a rotating third |
+| Does lift.the.lid survive | **settled 2026-09-19.** Yes. Three standing subchannels, and lift.the.lid owns product surfaces |
 | Is your.call the device | **settled.** Yes |
 | Where the panel lives | **settled 2026-09-19.** Here, `panel/`. Shares the publish bar with the award panel so one standard runs across the business |
 

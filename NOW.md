@@ -129,11 +129,12 @@ Waiting on Krish, none of which a tool should answer:
   current. Parked 2026-09-19. It is a Cannes Lions funnel on a different
   Supabase project and it ranks against a category vocabulary retired on
   2026-08-27. Its own `PARKED.md` says so.
-- **The media kit's three-format structure**, where it conflicts with
-  `venture_formats`. The kit is dated 17 September and carries lift.the.lid on
-  Mondays; lift.the.lid was retired on 18 September, and the live table has two
-  active formats. The standing shape is two formats plus a rotating third. The
-  database wins.
+- **Any claim that the publication runs two formats.** Ruling (Krish,
+  2026-09-19): it runs **three subchannels**, `split_the_bill`, `mind_the_gap`
+  and `lift_the_lid`. That reversed the 2026-09-18 retirement of lift.the.lid,
+  which had never had a row in `venture_formats` at all. Anything in this repo
+  or elsewhere still saying two is stale, including a line that stood here
+  earlier on 2026-09-19.
 - **Any format mandate written into a file in this repo.** There are none, and
   there should be none. `venture_formats.mandate` in Mindmaker OS holds both in
   full prose and a copy drifts while the table does not.

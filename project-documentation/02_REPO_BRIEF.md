@@ -36,7 +36,7 @@ The split above is the target, not the state. As of 2026-09-19:
 ## Retired names, complete
 
 Built with AI, The Money of AI, Mindmaker, Mindmaker Live, Techonomic,
-The Builder Economy, lift.the.lid, inspect.the.build, follow.the.money,
+The Builder Economy, inspect.the.build, follow.the.money,
 Newsflash, Money Trace, The Artifact, First Version, The Third Why.
 
 `makeyourmindup` is **not** retired. It is the publication's own name as of the
