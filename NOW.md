@@ -3,7 +3,7 @@ kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
 as_of: 2026-09-19
-head: 01828ab0
+head: f3c8bfda
 lifecycle: building
 production_url: https://makeyourmindup.ai
 state_doc: project-documentation/03_STEP_PLAN.md
@@ -46,17 +46,27 @@ the canon it will be built from, which until now existed only as Claude
 artifacts from 17 and 18 September and in no repository at all.
 
 **Live.** `makeyourmindup.ai` and `www.makeyourmindup.ai` serve the Cannes Lions
-2026 lead-capture funnel, from the Vercel project `makeyourmindup`, production
-deployment READY. That code now sits in `parked/cannes-2026/` and is marked not
-live work. **Parking the folder did not move the deployment.** Vercel builds
-production from `main`, and this change is on a branch, so nothing has changed
-for a visitor. The flip is two ordered steps and neither has been taken: merge
-this branch to `main`, then set the project's Root Directory to
-`parked/cannes-2026`. Doing either alone breaks the next production build.
+2026 lead-capture funnel from the last READY production build (commit
+`01828ab`). That code now sits in `parked/cannes-2026/` and is marked not live
+work. The first of the two ordered flip steps is done: this branch is merged to
+`main`. The second is not: the Vercel project's Root Directory is still the repo
+root, so every production build since the merge fails with "No Next.js version
+detected" and the site keeps serving the old build. A failed build never
+replaces a live one, so nothing has changed for a visitor. Setting Root
+Directory to `parked/cannes-2026` is one project setting and needs an account
+that can update the project; the connector used on 2026-09-19 could not.
 
 **Built and not live.** The canon in this repo: the media kit, the panel, the
 rubric, the kill list and its executable check, the format specs and the
-recorded calibration. `apps/machine/` is a scaffold with no jobs in it.
+recorded calibration. The format vocabulary is in the database and enforced
+there: three subchannels in `venture_formats` (`kind = subchannel`), a
+`general` holding lane, an `either` row, the `format_aliases` rename ledger,
+and six foreign keys with `_was` columns (`migrations/2026-09-19-*.sql`,
+applied and read back). `intake_items` is live in Mindmaker OS with 623 rows
+(the migration lives in control-center, `20260919120000_one_intake.sql`), and
+its runner is specified in `engine/INTAKE_RUNNER_SPEC.md` but not built.
+`apps/machine/slate-page/` holds the phone-first ruling page template and how a
+verdict travels; `apps/machine/` has no jobs in it.
 
 **Not started.** The four jobs, the cover, and the dry runs. The dry runs are
 the gate: `calibration/2026-09-17-dry-run-picks.json` records one of three
@@ -74,6 +84,33 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-09-19 **Three subchannels, one vocabulary, and a rename that history
+  survives.** Ruling (Krish): split.the.bill, mind.the.gap and lift.the.lid are
+  the three main subchannels, reversing the 2026-09-18 retirement of
+  lift.the.lid, which had never had a row. Three migrations, applied and read
+  back: the subchannel rows with the boundary written into both contested
+  mandates as a test on the question rather than the surface; `kind`, the
+  holding lane and `format_aliases`; six foreign keys to
+  `venture_formats(slug)` with `_was` columns, because Krish ruled the schema
+  must let the past be compared with the present. A typo is refused by name.
+  The 2026-09-17 calibration record was not edited; it gained a `superseded`
+  key. `7c3f9af`.
+- 2026-09-19 **The table reads one way.** Retired rows shared `sort_order` 1
+  and 2 with live ones, so an order by sort_order could show a retired brand as
+  the hero. Retired rows moved to the 900 band. lift_the_lid's null `gear`
+  became Gear A, because the voice doctrine settled that Gear B is a surface
+  register (YouTube, TikTok) and not a format. `ca4fb20`.
+- 2026-09-19 **The intake runner is specified, and the ruling page has a
+  home.** `engine/INTAKE_RUNNER_SPEC.md`: deterministic gates first, one
+  batched model call against the mandates verbatim, fixed-template reasons,
+  the anti-echo rule written into what the runner may read. `apps/machine/
+  slate-page/`: the template Krish rules on, writing each verdict into the
+  bank through his own Supabase connector and holding a local copy if that is
+  not granted. `128893c`, `f3c8bfd`.
+- 2026-09-19 **The media kit stopped carrying two format tables.** One with
+  two formats and one with three sat in the same section, and the older one
+  had promoted split.the.bill's third question to its your.call question. One
+  table now, taken from the live mandates.
 - 2026-09-19 **The canon landed in a repository for the first time.** Why: the
   fleet brief pointed five separate authorities at this repo, including
   `panel/PANEL.md` and `quality/panel/kill-list.v1.json`, and not one of them
@@ -99,8 +136,15 @@ three is picked.
 
 Waiting on Krish, none of which a tool should answer:
 
-- **Rotate the credentials** shared in chat on 2026-09-19, and fix the rejected
-  `ANTHROPIC_API_KEY` in content-engine. No code change substitutes for either.
+- **Set the Vercel Root Directory** to `parked/cannes-2026`. Main is merged;
+  production builds fail until this is done and the site serves the old build.
+- **Rotate the credentials** shared in chat on 2026-09-19 plus the five the VPS
+  audit named, and fix the rejected `ANTHROPIC_API_KEY` in content-engine. No
+  code change substitutes for either.
+- **Build the intake runner** from `engine/INTAKE_RUNNER_SPEC.md`. The data
+  model, the kill list and the rubric exist; the pure steps can be built and
+  tested on fixtures now; the model call and the slate write wait on the dry
+  runs by the step plan.
 - **Pick the remaining two dry run subjects.** split.the.bill and mind.the.gap
   are unpicked.
 - **The apex.** A Substack custom domain takes the whole host, so the cover and
@@ -125,6 +169,8 @@ Waiting on Krish, none of which a tool should answer:
 
 ## Do not trust
 
+- `apps/machine/` as a working machine. It holds a spec and a page template.
+  Nothing in it runs on a schedule yet.
 - **`parked/cannes-2026/**`** in its entirety, as a description of anything
   current. Parked 2026-09-19. It is a Cannes Lions funnel on a different
   Supabase project and it ranks against a category vocabulary retired on

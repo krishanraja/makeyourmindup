@@ -7,6 +7,14 @@ Older entries rolled out of `NOW.md`. Newest first.
 
 ## 2026-09-19
 
+Later the same day, reconciled at `f3c8bfda`: the three-subchannel ruling was
+applied to Mindmaker OS as three migrations (subchannels and the question
+boundary, identity and the alias ledger, six foreign keys with `_was` columns),
+plus a fourth for ordering and gear. The intake runner was specified and the
+ruling page template committed under `apps/machine/`. The branch was merged to
+`main`; the Vercel Root Directory flip is still owed and production builds fail
+until it is made.
+
 The repository was reorganised from a Cannes Lions lead-capture funnel into the
 publication's machine. The funnel moved to `parked/cannes-2026/` with a marker
 recording why it is kept and where it is going. The publication canon, produced
