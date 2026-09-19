@@ -212,7 +212,7 @@ details li{margin:2px 0}
       chars_before: before.length, chars_after: after.length,
       pct_shorter: Math.round((1 - after.length / Math.max(1, before.length)) * 100),
       sentences_before: count(before, /[.!?](\s|$)/g), sentences_after: count(after, /[.!?](\s|$)/g),
-      em_dashes_removed: Math.max(0, count(before, /—/g) - count(after, /—/g)),
+      em_dashes_removed: Math.max(0, count(before, /\u2014/g) - count(after, /\u2014/g)),
       exclamations_removed: Math.max(0, count(before, /!/g) - count(after, /!/g)),
       question_removed: /\?/.test(before) && !/\?/.test(after) ? 1 : 0,
       opening_rewritten: before.split('\n')[0] !== after.split('\n')[0] ? 1 : 0,
