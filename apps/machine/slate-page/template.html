@@ -1,0 +1,320 @@
+<title>The Slate</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F3F4F1; --panel:#FBFBF9; --ink:#15171A; --ink-2:#4C5259; --ink-3:#8A9097; --rule:#D9DCD6;
+  --act:#106B6A; --act-ink:#FFFFFF; --ok:#1E7A46; --warn:#9A6A00; --bad:#A83A2E;
+  --bill:#B07A0B; --gap:#3F5F8F; --lid:#8A4A2E; --general:#6B6F73;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-head:"Fraunces","Iowan Old Style",Georgia,serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121417; --panel:#1A1D21; --ink:#E8E9E6; --ink-2:#B4B9BE; --ink-3:#7E858C; --rule:#2B3036;
+    --act:#3FB3AE; --act-ink:#0E1412; --ok:#5FCB8B; --warn:#E0B24A; --bad:#EE7B6E;
+    --bill:#E0B24A; --gap:#8FB0E6; --lid:#E1936E; --general:#9AA0A6;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121417; --panel:#1A1D21; --ink:#E8E9E6; --ink-2:#B4B9BE; --ink-3:#7E858C; --rule:#2B3036;
+  --act:#3FB3AE; --act-ink:#0E1412; --ok:#5FCB8B; --warn:#E0B24A; --bad:#EE7B6E;
+  --bill:#E0B24A; --gap:#8FB0E6; --lid:#E1936E; --general:#9AA0A6;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;margin:0}
+.wrap{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:0 96px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);padding-block:12px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.bar h1{font-family:var(--font-head);font-weight:500;font-size:22px;margin:0;letter-spacing:-0.01em}
+.bar .prog{font-family:var(--font-mono);font-size:13px;color:var(--ink-2);white-space:nowrap}
+.intro{padding-block:20px 8px;color:var(--ink-2);max-width:60ch}
+.intro p{margin:0 0 8px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3)}
+section.fmt{margin-top:28px;border-top:1px solid var(--rule);padding-top:16px}
+.fmt-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:6px}
+.fmt-head .slug{font-family:var(--font-mono);font-size:15px;font-weight:500}
+.fmt-head .cad{font-size:13px;color:var(--ink-3)}
+.standing{font-family:var(--font-head);font-size:17px;line-height:1.35;color:var(--ink-2);margin:0 0 14px;text-wrap:balance}
+.card{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--general);border-radius:6px;padding:14px 14px 12px;margin-bottom:12px}
+.card[data-fmt="split_the_bill"]{border-left-color:var(--bill)}
+.card[data-fmt="mind_the_gap"]{border-left-color:var(--gap)}
+.card[data-fmt="lift_the_lid"]{border-left-color:var(--lid)}
+.card.lead .headline{font-family:var(--font-head);font-size:24px;line-height:1.2;font-weight:600;margin:4px 0 8px;text-wrap:balance}
+.card .headline{font-family:var(--font-head);font-size:19px;line-height:1.25;font-weight:600;margin:4px 0 6px;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-family:var(--font-mono);font-size:12px;color:var(--ink-3);align-items:center}
+.swing{color:var(--warn);font-weight:500}
+.reason{margin:8px 0 0;color:var(--ink)}
+.reason b{font-weight:600}
+.q{margin:10px 0 0;padding:10px 12px;border:1px dashed var(--rule);border-radius:4px;font-family:var(--font-head);font-size:16px;line-height:1.35;color:var(--ink-2)}
+.q .eyebrow{display:block;margin-bottom:4px}
+details{margin-top:10px}
+summary{cursor:pointer;color:var(--ink-2);font-size:14px}
+details ul{margin:6px 0 0;padding-left:18px;color:var(--ink-2);font-size:14px}
+details li{margin:2px 0}
+.deriv{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.deriv span{font-family:var(--font-mono);font-size:12px;padding:3px 8px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2)}
+.deriv span.do{border-color:var(--ok);color:var(--ok)}
+.deriv span.skip{text-decoration:line-through;opacity:.7}
+.verdicts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+.verdicts button{font:inherit;font-weight:500;font-size:14px;padding:10px 6px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer;min-height:44px}
+.verdicts button:focus-visible{outline:2px solid var(--act);outline-offset:2px}
+.verdicts button.primary{background:var(--act);color:var(--act-ink);border-color:var(--act)}
+.verdicts button[disabled]{opacity:.5;cursor:default}
+.defer{margin-top:8px;font-size:13px;color:var(--ink-3);background:none;border:0;padding:6px 0;cursor:pointer;text-decoration:underline;font-family:inherit}
+.editor{margin-top:10px;display:grid;gap:8px}
+.editor label{font-size:13px;color:var(--ink-2)}
+.editor textarea,.editor input[type=text]{font:inherit;width:100%;padding:10px;border:1px solid var(--rule);border-radius:6px;background:var(--panel);color:var(--ink);resize:vertical;min-height:72px}
+.editor input[type=text]{min-height:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--ink-2);cursor:pointer}
+.chips button[aria-pressed="true"]{border-color:var(--act);color:var(--act)}
+.editor .row{display:flex;gap:8px;justify-content:flex-end}
+.editor .row button{font:inherit;padding:10px 14px;border-radius:6px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;min-height:44px}
+.editor .row button.primary{background:var(--act);color:var(--act-ink);border-color:var(--act)}
+.state{margin-top:10px;font-size:13px;font-family:var(--font-mono);display:flex;gap:8px;align-items:center;min-height:20px}
+.state .dot{width:8px;height:8px;border-radius:50%;background:var(--ink-3);flex:none}
+.state.ok .dot{background:var(--ok)} .state.ok{color:var(--ok)}
+.state.held .dot{background:var(--warn)} .state.held{color:var(--warn)}
+.state.bad .dot{background:var(--bad)} .state.bad{color:var(--bad)}
+.card.ruled{opacity:.72}
+.alts .eyebrow{margin:14px 0 6px;display:block}
+.handoff{border-left-color:var(--ink-3)}
+.handoff .says{margin:6px 0 0;color:var(--ink-2)}
+.handoff .fix{margin:6px 0 0;font-size:14px;color:var(--ink-3)}
+.foot{margin-top:36px;border-top:1px solid var(--rule);padding-top:14px;color:var(--ink-3);font-size:13px}
+.foot code{font-family:var(--font-mono);font-size:12px}
+.banner{margin:14px 0 0;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;font-size:14px;color:var(--ink-2);background:var(--panel)}
+.banner.bad{border-color:var(--bad);color:var(--bad)}
+@media (prefers-reduced-motion: no-preference){ .card{transition:opacity .2s ease} }
+@media (max-width:400px){ .verdicts{grid-template-columns:repeat(2,1fr)} .card.lead .headline{font-size:22px} }
+</style>
+
+<div class="wrap">
+  <header class="bar">
+    <h1>The Slate</h1>
+    <div class="prog" id="prog">…</div>
+  </header>
+
+  <div class="intro">
+    <p id="intro-line"></p>
+    <p>Every card is a suggestion with the machine's reason under it. Your ruling and the gap between the two is what teaches it. <b>Accept</b> if it stands as written. <b>Tweak</b> if the shape is right and a line is wrong. <b>Replace</b> if the slot is right and the pick is not. <b>Reject</b> needs a reason, because a reject with no reason teaches nothing.</p>
+    <div id="conn" class="banner" hidden></div>
+  </div>
+
+  <main id="slate"></main>
+
+  <section class="fmt" id="handoffs-section" hidden>
+    <div class="fmt-head"><span class="slug">what the machine would not decide</span></div>
+    <p class="standing">Each of these stopped for a named reason. Nothing here was quietly picked.</p>
+    <div id="handoffs"></div>
+  </section>
+
+  <footer class="foot">
+    <div id="foot-line"></div>
+  </footer>
+</div>
+
+<script id="slate-data" type="application/json">__SLATE_JSON__</script>
+
+<script>
+(() => {
+  'use strict';
+  const DATA = JSON.parse(document.getElementById('slate-data').textContent);
+  const PROJECT_ID = DATA.project_id;
+  const T0 = performance.now();
+  const REASON_CODES = [
+    ['wrong_format','wrong format'], ['too_safe','too safe'], ['too_preachy','preaches'], ['weak_evidence','evidence is thin'],
+    ['not_fresh','not fresh'], ['done_before','done before'], ['no_number','no load-bearing number'], ['wrong_question','asks the wrong question'], ['other','other'],
+  ];
+  const FMT_LABEL = { split_the_bill:'split.the.bill', mind_the_gap:'mind.the.gap', lift_the_lid:'lift.the.lid', general:'general (holding)' };
+  const DERIV_LABEL = { written_piece:'written piece', your_call_artifact:'your.call artifact', long_video:'long video', short_cuts:'short cuts', ig_carousel:'IG carousel' };
+
+  const $ = (sel, el=document) => el.querySelector(sel);
+  const el = (tag, attrs={}, ...kids) => { const n = document.createElement(tag); for (const [k,v] of Object.entries(attrs)) { if (k==='class') n.className=v; else if (k==='html') n.innerHTML=v; else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else if (v!==false && v!=null) n.setAttribute(k, v===true?'':v); } for (const k of kids) if (k!=null) n.append(k.nodeType?k:document.createTextNode(String(k))); return n; };
+
+  // ── capabilities: light up when they resolve; the page never waits on them ──
+  let mcp = null, db = null;
+  const local = new Map();   // suggestion_id -> verdict record held here
+  const state = new Map();   // suggestion_id -> {kind, text}
+  const capReady = (async () => {
+    try { [mcp, db] = await Promise.all([window.claude?.use?.('mcp') ?? null, window.claude?.use?.('db') ?? null]); } catch (e) { mcp = null; db = null; }
+    const conn = $('#conn');
+    if (!mcp) { conn.hidden = false; conn.textContent = 'This view cannot reach your Supabase connector, so rulings will be held on this page and not yet in the bank. Open the link in the Claude app to write them through.'; }
+    if (db) {
+      try {
+        const snap = await db.collection('verdicts').get();
+        snap.docs.forEach(d => { if (d.exists) { const v = d.data(); local.set(d.id, v); setState(d.id, v.in_bank ? 'ok' : 'held', v.in_bank ? `in the bank · ${v.verdict}${v.round>1?' · round '+v.round:''}` : `held here, not in the bank yet · ${v.verdict}`); } });
+        renderProgress();
+      } catch (e) { /* render without it */ }
+    }
+  })();
+
+  // ── rendering ──
+  function renderProgress() {
+    const total = DATA.suggestions.filter(s => !s.handoff_reason).length;
+    const ruled = DATA.suggestions.filter(s => !s.handoff_reason && local.has(s.id)).length;
+    $('#prog').textContent = `${ruled} of ${total} ruled`;
+  }
+  function setState(id, kind, text) {
+    state.set(id, {kind, text});
+    const node = document.getElementById('st-' + id); if (!node) return;
+    node.className = 'state ' + kind; node.innerHTML = ''; node.append(el('span',{class:'dot'}), el('span',{}, text));
+    const card = document.getElementById('card-' + id); if (card) card.classList.toggle('ruled', kind==='ok' || kind==='held');
+  }
+
+  function verdictControls(s) {
+    const box = el('div');
+    const row = el('div', {class:'verdicts'});
+    const mk = (label, kind, primary) => el('button', {type:'button', class: primary?'primary':'', onclick: () => open(s, kind, box)}, label);
+    row.append(mk('Accept','accepted',true), mk('Tweak','tweaked'), mk('Replace','replaced'), mk('Reject','rejected'));
+    const defer = el('button', {type:'button', class:'defer', onclick: () => submit(s, {verdict:'deferred'}, box)}, 'Not now');
+    const st = el('div', {class:'state', id:'st-'+s.id});
+    box.append(row, defer, st);
+    return box;
+  }
+
+  function open(s, kind, box) {
+    const old = $('.editor', box); if (old) old.remove();
+    if (kind === 'accepted') return submit(s, {verdict:'accepted', final: s.proposed}, box);
+    const ed = el('div', {class:'editor'});
+    const before = s.proposed?.headline ? `${s.proposed.headline}\n\n${s.proposed.your_call_question || ''}`.trim() : JSON.stringify(s.proposed);
+    let ta = null;
+    if (kind === 'tweaked' || kind === 'replaced') {
+      ed.append(el('label', {for:'ta-'+s.id}, kind==='tweaked' ? 'Your version (headline, then the your.call question on a new line)' : 'What goes in this slot instead'));
+      ta = el('textarea', {id:'ta-'+s.id}); ta.value = kind==='tweaked' ? before : ''; ed.append(ta);
+    }
+    let code = null;
+    const chips = el('div', {class:'chips', role:'group', 'aria-label':'reason'});
+    for (const [c, label] of REASON_CODES) chips.append(el('button', {type:'button', 'aria-pressed':'false', onclick: (ev) => { code = c; chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b===ev.currentTarget ? 'true':'false')); }}, label));
+    ed.append(el('label', {}, kind==='rejected' ? 'Why (required)' : 'Why (optional, one tap)'), chips);
+    const note = el('input', {type:'text', id:'note-'+s.id, placeholder: kind==='rejected' ? 'or say it in your own words' : 'a note, if the chips do not cover it'});
+    ed.append(note);
+    const rowb = el('div', {class:'row'});
+    rowb.append(el('button', {type:'button', onclick: () => ed.remove()}, 'Cancel'));
+    rowb.append(el('button', {type:'button', class:'primary', onclick: () => {
+      const text = ta ? ta.value.trim() : '';
+      if ((kind==='tweaked' || kind==='replaced') && !text) { note.placeholder = 'write something first'; ta.focus(); return; }
+      if (kind==='rejected' && !code && note.value.trim().length < 8) { note.placeholder = 'a reject needs a reason: tap a chip or write eight characters'; note.focus(); return; }
+      const [h, ...rest] = text.split('\n'); const q = rest.join('\n').trim();
+      const final = (kind==='tweaked' || kind==='replaced') ? { ...s.proposed, headline: h.trim(), your_call_question: q || s.proposed?.your_call_question } : null;
+      submit(s, {verdict:kind, final, reason_code: code, note: note.value.trim() || null, before, after: text}, box).then(() => ed.remove());
+    }}, kind==='rejected' ? 'Reject' : 'Save'));
+    ed.append(rowb);
+    box.append(ed); (ta || note).focus();
+  }
+
+  // ── the delta: form and craft only, never the subject ──
+  async function sha(s) { try { const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''); } catch { return null; } }
+  const count = (t, re) => (t.match(re) || []).length;
+  async function delta(before, after) {
+    if (!before || !after) return null;
+    const d = {
+      chars_before: before.length, chars_after: after.length,
+      pct_shorter: Math.round((1 - after.length / Math.max(1, before.length)) * 100),
+      sentences_before: count(before, /[.!?](\s|$)/g), sentences_after: count(after, /[.!?](\s|$)/g),
+      em_dashes_removed: Math.max(0, count(before, /—/g) - count(after, /—/g)),
+      exclamations_removed: Math.max(0, count(before, /!/g) - count(after, /!/g)),
+      question_removed: /\?/.test(before) && !/\?/.test(after) ? 1 : 0,
+      opening_rewritten: before.split('\n')[0] !== after.split('\n')[0] ? 1 : 0,
+      rounds: 1,
+    };
+    const [bh, ah] = await Promise.all([sha(before), sha(after)]);
+    if (bh) d.before_hash = bh; if (ah) d.after_hash = ah;
+    return d;
+  }
+
+  // ── writing the verdict: the bank first, the page's own store always ──
+  const q = (v) => v == null ? 'null' : `'${String(v).replace(/\u0000/g,'').replace(/'/g, "''")}'`;
+  const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  async function submit(s, v, box) {
+    if (!UUID.test(s.id)) { setState(s.id, 'bad', 'this card has no bank id, so it cannot be ruled on'); return; }
+    const prior = local.get(s.id);
+    const round = prior ? (prior.round || 1) + 1 : 1;
+    const secs = Math.round((performance.now() - T0) / 1000);
+    const d = await delta(v.before, v.after);
+    if (d) d.rounds = round;
+    const rec = { suggestion_id: s.id, round, verdict: v.verdict, final: v.final ?? null, delta: d, reason_code: v.reason_code ?? null, note: v.note ?? null, seconds_to_verdict: secs, in_bank: false };
+    local.set(s.id, rec); setState(s.id, 'held', 'saving…'); renderProgress();
+    await capReady;
+    // 1. the artifact's own store, so nothing is lost
+    if (db) { try { await db.doc('verdicts/' + s.id).set(rec); } catch (e) { /* the bank write below still counts */ } }
+    // 2. the bank, through your Supabase connector
+    if (!mcp) { setState(s.id, 'held', `held here, not in the bank yet · ${v.verdict}`); return; }
+    const sql = `insert into public.suggestion_verdicts (suggestion_id, round, verdict, final, delta, reason_code, note, seconds_to_verdict, actor)
+values (${q(s.id)}, ${round}, ${q(v.verdict)}, ${rec.final==null?'null':q(JSON.stringify(rec.final))+'::jsonb'}, ${d==null?'null':q(JSON.stringify(d))+'::jsonb'}, ${q(rec.reason_code)}, ${q(rec.note)}, ${secs}, 'krish')
+on conflict (suggestion_id, round) do update set verdict = excluded.verdict, final = excluded.final, delta = excluded.delta, reason_code = excluded.reason_code, note = excluded.note
+returning id`;
+    try {
+      await mcp.callTool('Supabase', 'execute_sql', { project_id: PROJECT_ID, query: sql }, { cache: false });
+      rec.in_bank = true; local.set(s.id, rec);
+      if (db) { try { await db.doc('verdicts/' + s.id).update({ in_bank: true }); } catch {} }
+      setState(s.id, 'ok', `in the bank · ${v.verdict}${round>1?' · round '+round:''}`);
+    } catch (e) {
+      const code = e && e.code || 'upstream_error';
+      const copy = {
+        needs_reauth: 'Supabase needs reconnecting in claude.ai Settings, Connectors. Held here meanwhile.',
+        server_not_connected: 'Add Supabase in claude.ai Settings, Connectors. Held here meanwhile.',
+        not_in_manifest: 'You declined the Supabase connector for this page. Held here meanwhile.',
+        consent_required: 'The connector is waiting for your consent. Tap the verdict again once you have allowed it.',
+        tool_error: 'The bank refused the row: ' + (e.message || '').slice(0, 140),
+        server_unavailable: 'Supabase did not answer. Held here; tap the verdict again in a moment.',
+      }[code] || ('Not written to the bank (' + code + '). Held here.');
+      setState(s.id, code==='tool_error' ? 'bad' : 'held', copy);
+    }
+  }
+
+  function card(s, lead) {
+    const p = s.proposed || {};
+    const c = el('article', {class: 'card' + (lead?' lead':''), id:'card-'+s.id, 'data-fmt': p.format || 'general'});
+    const meta = el('div', {class:'meta'});
+    meta.append(el('span', {}, lead ? 'the pick' : `alternate ${p.rank ?? ''}`));
+    if (s.confidence != null) meta.append(el('span', {}, `confidence ${Number(s.confidence).toFixed(2)}`));
+    if (s.is_swing) meta.append(el('span', {class:'swing'}, 'the swing'));
+    c.append(meta);
+    c.append(el('h3', {class:'headline'}, p.headline || '(no headline)'));
+    c.append(el('p', {class:'reason', html: `<b>Why:</b> ${escapeHtml(s.reason || '')}`}));
+    if (p.your_call_question) { const qq = el('div', {class:'q'}); qq.append(el('span', {class:'eyebrow'}, 'your.call asks'), p.your_call_question); c.append(qq); }
+    if (Array.isArray(p.derivative_plan) && p.derivative_plan.length) {
+      const dv = el('div', {class:'deriv'});
+      for (const d of p.derivative_plan) dv.append(el('span', {class: d.do ? 'do' : 'skip', title: d.why || ''}, DERIV_LABEL[d.kind] || d.kind));
+      c.append(dv);
+    }
+    if (Array.isArray(s.alternatives) && s.alternatives.length) {
+      const det = el('details'); det.append(el('summary', {}, 'what else it considered'));
+      const ul = el('ul'); for (const a of s.alternatives) ul.append(el('li', {}, `${a.format || a.candidate_id || ''}: ${a.why_lost || ''}`)); det.append(ul); c.append(det);
+    }
+    if (s.is_swing && s.swing_why) { const det = el('details'); det.append(el('summary', {}, 'why this is the swing'), el('p', {}, s.swing_why)); c.append(det); }
+    c.append(verdictControls(s));
+    return c;
+  }
+  function escapeHtml(t) { return String(t).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+
+  // ── build ──
+  $('#intro-line').textContent = `Week of ${DATA.week_of}. ${DATA.summary || ''}`;
+  const main = $('#slate');
+  for (const f of DATA.formats) {
+    const sec = el('section', {class:'fmt'});
+    const head = el('div', {class:'fmt-head'}); head.append(el('span', {class:'slug'}, FMT_LABEL[f.slug] || f.slug), el('span', {class:'cad'}, f.cadence)); sec.append(head);
+    sec.append(el('p', {class:'standing'}, f.standing_question));
+    const picks = DATA.suggestions.filter(s => s.surface==='slate_pick' && !s.handoff_reason && (s.proposed||{}).format===f.slug).sort((a,b)=>(a.proposed.rank??9)-(b.proposed.rank??9));
+    if (!picks.length) { sec.append(el('p', {class:'reason'}, f.empty_note || 'No candidate earned this slot this week, and the machine says so rather than filling it.')); main.append(sec); continue; }
+    sec.append(card(picks[0], true));
+    if (picks.length > 1) { const alts = el('div', {class:'alts'}); alts.append(el('span', {class:'eyebrow'}, 'alternates')); for (const s of picks.slice(1)) alts.append(card(s, false)); sec.append(alts); }
+    main.append(sec);
+  }
+  const hs = DATA.suggestions.filter(s => s.handoff_reason);
+  if (hs.length) {
+    $('#handoffs-section').hidden = false;
+    for (const h of hs) {
+      const c = el('article', {class:'card handoff'});
+      c.append(el('div', {class:'meta'}, el('span', {}, h.handoff_reason)));
+      c.append(el('h3', {class:'headline'}, (h.proposed_hint || h.title || h.subject_id)));
+      c.append(el('p', {class:'says'}, h.says || h.reason || ''));
+      if (h.fix_hint) c.append(el('p', {class:'fix'}, h.fix_hint));
+      $('#handoffs').append(c);
+    }
+  }
+  $('#foot-line').innerHTML = `Proposed by <code>${escapeHtml(DATA.producer || 'the machine')}</code> on ${escapeHtml(DATA.proposed_on || '')}. ${DATA.suggestions.length} suggestion rows in <code>public.suggestions</code>; your rulings write to <code>public.suggestion_verdicts</code>. Every surface here is on the <code>propose</code> rung: nothing moves until you say so, and it asks for promotion with evidence, never on its own.`;
+  renderProgress();
+})();
+</script>
