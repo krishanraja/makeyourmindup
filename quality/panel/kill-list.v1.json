@@ -1,0 +1,35 @@
+{
+  "version": "kill-list.v1",
+  "adopted": "2026-09-17",
+  "what_this_is": "The deterministic gate. No model calls, no secrets, runs in seconds on everything. It decides only what is decidable without judgement. Run it before any model call: spending a draft-gate token on an em dash is waste.",
+  "canon_exemption": {
+    "front_matter_key": "kill_list_scope",
+    "value": "canon",
+    "why": "A canon document names retired brands in order to forbid them. A gate that blocks its own rulebook does not survive contact with a deadline."
+  },
+  "vetoes": [
+    { "id": "em_dash", "pattern": "\\u2014", "says": "No em dashes anywhere, including code and on-screen text." },
+    { "id": "exclamation", "pattern": "!", "says": "No exclamation marks in editorial copy." },
+    { "id": "retired_name", "words": [
+        "Built with AI", "The Money of AI", "Mindmaker", "Mindmaker Live", "Techonomic",
+        "The Builder Economy", "inspect.the.build", "follow.the.money", "Newsflash"
+      ], "says": "A retired name. See project-documentation/02_REPO_BRIEF.md." },
+    { "id": "product_in_editorial", "words": ["Mindmake", "CTRL", "mind/make OS"],
+      "says": "Mindmake and CTRL never appear inside an editorial piece. CTRL beta access in the paid tier is the only permitted connection." },
+    { "id": "banned_vocabulary", "words": [
+        "game-changer", "game changer", "leverage", "unlock", "delve into", "dive in",
+        "let us dive", "in today's", "revolutionise", "revolutionize", "seamless",
+        "supercharge", "transformative", "paradigm shift", "at the end of the day"
+      ], "says": "Corporate filler." },
+    { "id": "preach_pattern", "patterns": [
+        "what this means for leaders", "the lesson here", "the takeaway is",
+        "we must all", "it is time to", "the real question for leaders",
+        "in the AI era", "leaders who fail to"
+      ], "says": "A closing moral or a lesson for leaders. Unappealable." }
+  ],
+  "warnings": [
+    { "id": "unattributed_number", "says": "A figure with no named producer nearby. A regex cannot decide attribution, so this flags a candidate and the Fact Checker holds the veto." },
+    { "id": "evidence_before_arithmetic", "says": "Arithmetic with no preceding paragraph on the quality of the evidence. Flagged, not blocked, for the same reason." }
+  ],
+  "why_two_are_warnings": "A crude heuristic with an absolute veto produces false blocks and gets the gate switched off in week two. The Fact Checker holds both vetoes."
+}

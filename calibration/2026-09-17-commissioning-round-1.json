@@ -1,0 +1,29 @@
+{
+  "recorded": "2026-09-17T22:44:53.708Z",
+  "source": "Commissioning Bench artifact, its own shared database, read 2026-09-19",
+  "what_this_is": "Krish's votes and hand-tuned rubric weights, verbatim. This is the only recorded calibration the commissioning rubric has, and it is why the rubric is a tested function rather than a guess. Anything that changes the weights must keep these findings reproducible.",
+  "weights_as_he_left_them": {
+    "angle": 2.5, "number": 2.0, "fresh": 2.5, "fun": 2.5,
+    "fit": 2.0, "make": 1.5, "preach": 2.5, "exists": 2.0
+  },
+  "weights_he_moved": {
+    "fun": { "from": 3.0, "to": 2.5 },
+    "make": { "from": 2.0, "to": 1.5 },
+    "number": { "from": 1.5, "to": 2.0 }
+  },
+  "weights_he_left_alone": ["angle", "fresh", "fit", "preach", "exists"],
+  "scale": { "2": "excellent", "1": "good", "-1": "weak", "-2": "no" },
+  "votes": {
+    "bill0": 2, "bill1": 1, "bill2": 1, "bill3": 1, "bill4": 1,
+    "gap1": 2, "gap2": 2, "gap3": 1, "gap4": -1, "gap5": 2, "gap6": 1,
+    "lid1": 1, "lid2": 1, "lid3": 1, "lid4": -1
+  },
+  "findings": [
+    "Four excellents, and they are the launch bank: bill0 Canva cutting its own growth forecast, gap1 the hidden AI users as unpaid research, gap2 the calculator kids, gap5 2,500 years of blaming the tool.",
+    "Two weaks: gap4 what leaders will not hand over, which the pitch itself called the closest to preaching, and lid4 the six-agent honesty bench, which was the only idea needing fresh primary research.",
+    "lift.the.lid took no excellent at all across four ideas. That is the evidence behind the question of whether the format survives, and the reason the standing shape is two formats plus a rotating third.",
+    "Fifteen of twenty ideas were voted. The five new lift.the.lid ideas added in round two were never judged, so round two is open, not concluded.",
+    "He moved fun DOWN and number UP, which is the opposite of what the round-one write-up predicted. A rubric that cannot reproduce that is mis-tuned."
+  ],
+  "do_not": "Feed these votes into the candidate scorer. Ranking a candidate higher because it resembles something he already approved is the anti-echo rule's exact prohibition, and the failure is invisible because a mirror still returns a full slate."
+}

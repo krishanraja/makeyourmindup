@@ -1,104 +1,48 @@
-# makeyourmindup.ai
+---
+kill_list_scope: canon
+---
+# makeyourmindup
 
-Single-screen, mobile-first interactive launching at Cannes Lions 2026. Built on Next.js 14 + Supabase + Anthropic + Resend, deployed to Vercel.
+The machine behind the publication. It watches what moved, scores it, assembles
+a brief with its evidence, and dispatches the right package to the right place
+at the right hour.
 
-## Local development
+**It holds no screens.** Control Center holds every pixel. If the machine needs
+to say something, it writes a row Control Center reads.
 
-```bash
-cp .env.local.example .env.local
-# Fill in NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
-npm install
-npm run dev
-```
+## Start here
 
-Open http://localhost:3000 on a phone (over LAN) or in Chrome devtools mobile emulation.
+1. `NOW.md` for where it actually is, and what is waiting on Krish.
+2. `AGENTS.md` for the operating rules and where authority stops.
+3. `project-documentation/01_MEDIA_KIT.md` for editorial truth.
 
-## Scripts
-
-- `npm run dev` — Next dev server
-- `npm run build` — production build
-- `npm run typecheck` — `tsc --noEmit`
-- `npm run lint` — ESLint
-- `npm run voice:lint` — scan static copy for banned words / em dashes
-
-## Database migration
-
-The schema lives in `supabase/migrations/`. Apply to the existing Supabase project (`bkyuxvschuwngtcdhsyg`) via the Management API:
-
-```bash
-export SUPABASE_ACCESS_TOKEN=...   # personal access token from supabase.com/dashboard/account/tokens
-./scripts/apply-migration.sh
-```
-
-Or paste the SQL into the Supabase dashboard SQL editor.
-
-The migration is idempotent (uses `create table if not exists`, `drop policy if exists`, `create or replace function`).
-
-## Edge functions
-
-Three Deno edge functions in `supabase/functions/`:
-
-- `enrich-profile` — resolves whoever the user is from an email / LinkedIn URL / name+domain via a multi-provider waterfall (see below), writing the result into the `enrichment_*` + resolver columns.
-- `generate-result` — calls Anthropic (`claude-sonnet-4-5`), validates voice rules, retries once, falls back to per-Q4 stub prose on failure.
-- `send-result-email` — generates a personal email via Anthropic, sends via Resend from `krish@themindmaker.ai`.
-- `track-fork` — records which fork link (Substack / Mindmaker / CTRL) the user took.
-
-All depend on these Supabase project secrets being set: `ANTHROPIC_API_KEY`, `RESEND_API_KEY`. `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are auto-injected.
-
-### Person resolver (`enrich-profile`)
-
-`enrich-profile` normalizes the input (`_shared/identity.ts` — strips LinkedIn UTM params, fills a missing scheme, extracts the vanity slug, derives the company domain from an email) and runs an ordered, fault-isolated waterfall in `_shared/resolvers/`:
-
-1. **Identity (parallel, flips `enrichment_status` to `ready` early):** People Data Labs + Apollo people-match resolve email / domain / linkedin_url to a real profile. Work emails are rarely "linked" to LinkedIn publicly, so when a provider returns the person but no profile URL we chain `name + domain` to the other provider, then fall back to an Exa/Brave `site:linkedin.com/in` search.
-2. **Company context (parallel, late patch):** Brandfetch (blurb/logo/colors), Apollo org (industry/headcount/funding), BuiltWith (tech stack), Tranco (popularity rank).
-3. **Signals:** Exa / Perplexity / Brave / NewsAPI snippets, compressed by Claude into the `company_blurb` + `public_signals` contract (Claude summarizes fetched facts, it never invents identity).
-4. **Live scrape (last resort):** Apify LinkedIn profile actor, only when a URL is known but the structured result is thin. LinkedIn ToS/legal risk — keep gated.
-
-Each provider key is read by env-var name and is optional: a missing key just skips that provider. Set the ones you use as Supabase function secrets:
+## Run the gate
 
 ```
-PEOPLE_DATA_LABS_API_KEY  APOLLO_API_KEY        # identity (recommended baseline)
-NEVERBOUNCE_API_KEY                              # email deliverability gate
-BRANDFETCH_API_KEY  BUILTWITH_API_KEY  TRANCO_API_KEY   # company context
-EXA_API_KEY  PERPLEXITY_API_KEY  BRAVE_API_KEY  NEWSAPI_KEY   # signals
-APIFY_API_KEY  APIFY_LINKEDIN_ACTOR             # optional live-scrape fallback
+node scripts/qa/kill-list.mjs <path> [...]
+node scripts/qa/kill-list.mjs --stdin < piece.md
+npm test
 ```
 
-Deploy:
+The kill list is deterministic: no model calls, no secrets, no network. **Run it
+before any model call.** Spending a draft-gate token on an em dash is waste.
 
-```bash
-./scripts/deploy-functions.sh
-```
+## What is where
 
-Requires the Supabase CLI locally and an authenticated session (`supabase login`).
+| Path | What |
+|---|---|
+| `project-documentation/` | Media kit, repo brief, step plan |
+| `panel/` | The ten judges, the publish bar, the machine-readable roster |
+| `quality/panel/` | The commissioning rubric and the kill list, as data |
+| `scripts/qa/` | The kill list and its self-test |
+| `engine/` | What the machine is, and what it may not become |
+| `calibration/` | Krish's recorded votes and weights. The only calibration there is |
+| `dry-runs/` | The pitches, and the guard on their unverified numbers |
+| `apps/machine/` | Scaffold. No jobs in it yet |
+| `parked/cannes-2026/` | **Not live work.** A finished Cannes Lions funnel, kept so nobody revives it by accident. See its own `PARKED.md` |
 
-## Vercel
+## Format mandates are not in this repo
 
-1. Connect the repo to a Vercel project.
-2. Set env vars: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_APP_URL`.
-3. Attach the `makeyourmindup.ai` domain. Update DNS (A `76.76.21.21` or CNAME `cname.vercel-dns.com`).
-
-## OG share image
-
-`GET /og/[id]` renders a 1080×1920 image (sigil + archetype title + URL) via `@vercel/og` (Satori) on the Edge runtime. Reads share-safe fields from the `get_share_card(uuid)` Postgres function.
-
-## Voice rules
-
-All in-app static copy and LLM output must obey: no em dashes, no exclamation marks, no emoji, no buzzwords (`transformation`, `journey`, `unlock`, `empower`, `supercharge`, `harness`, `leverage`, `game-changer`, `synergy`, `holistic`, `ecosystem`, `best-in-class`, `paradigm`, `mindset`).
-
-- Static copy: enforced by `npm run voice:lint` (CI guard).
-- LLM output: enforced server-side by `voice-guard.ts` in the edge function, retry-once on violation, fall back to stub prose on second failure.
-
-## File map
-
-```
-app/                       # Next App Router shell + OG route
-src/experience/            # State machine + 9 screens
-src/components/sigil/      # Four-layer constructive sigil system
-src/components/            # Slider, Card, TypedLine, CyclingPlaceholder, BrandMonogram
-src/lib/                   # supabase, archetypes, variant, voice, analytics, telemetry
-supabase/migrations/       # Database schema
-supabase/functions/        # Edge functions + _shared helpers
-scripts/                   # apply-migration.sh, deploy-functions.sh, voice-lint.mjs
-public/                    # favicon, og fallback
-```
+They live in `venture_formats.mandate` in Mindmaker OS, in full prose. A
+repository file that restates a mandate is a copy, and the copy drifts while the
+table does not.

@@ -1,0 +1,8 @@
+{
+  "recorded": "2026-09-17T22:28:49.308Z",
+  "source": "Dry Run Pitches artifact, its own shared database, read 2026-09-19",
+  "picks": { "lift_the_lid": "lid1", "split_the_bill": null, "mind_the_gap": null },
+  "lid1": "Meta put an agent in front of two billion people. Three things are real.",
+  "state": "one of three locked",
+  "why_it_matters": "The dry runs fix the template, and the template gates every pipeline downstream. Two subjects are unpicked, so the gate is closed. A pipeline built against the template now is work that gets thrown away when it lands."
+}

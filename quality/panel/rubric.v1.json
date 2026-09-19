@@ -1,0 +1,51 @@
+{
+  "version": "rubric.v1",
+  "adopted": "2026-09-17",
+  "asks": "Is this idea worth a slot this week?",
+  "not_to_be_confused_with": [
+    "arc_cards.components, which asks whether an arc is real at all",
+    "quality/panel, which asks whether finished work is good enough to ship"
+  ],
+  "note": "Three different questions. Run them in order. Never average them into one number.",
+  "scale": { "min": 0, "max": 5, "per": "criterion, scored by the machine before Krish votes" },
+  "criteria": [
+    { "key": "angle", "label": "Owned angle", "weight": 2.5, "inverted": false,
+      "covers": "A way in nobody else has taken." },
+    { "key": "number", "label": "The number", "weight": 2.0, "inverted": false,
+      "covers": "A figure to chase that changes what the reader thinks." },
+    { "key": "fresh", "label": "Freshness", "weight": 2.5, "inverted": false,
+      "covers": "How uncovered this is." },
+    { "key": "fun", "label": "Fun", "weight": 2.5, "inverted": false,
+      "covers": "Funny, surprising or delightful rather than grim. Entertained ranked first of six on the felt result." },
+    { "key": "fit", "label": "Reader fit", "weight": 2.0, "inverted": false,
+      "covers": "Does the leader of a five to fifty million pound business see themselves in it." },
+    { "key": "make", "label": "Makeable", "weight": 1.5, "inverted": false,
+      "covers": "Two to four of Krish's hours with the engine doing the rest." },
+    { "key": "preach", "label": "Preach risk", "weight": 2.5, "inverted": true,
+      "covers": "How close it sits to a sermon. Inverted: a high raw score is bad." },
+    { "key": "exists", "label": "Material exists", "weight": 2.0, "inverted": false,
+      "covers": "Does the evidence already exist, or must it be created. He has never once commissioned a piece needing fresh primary research." }
+  ],
+  "gates": [
+    { "id": "over_covered", "action": "cut",
+      "rule": "A signature idea with fresh <= 2 is cut unless fun >= 4 or angle >= 4. Broad-coverage pieces are exempt but capped.",
+      "why": "A well-covered topic only survives if it has been forced into a genuinely funny or unique angle." },
+    { "id": "broad_cap", "action": "cap",
+      "rule": "At most two broad-coverage pieces live at once.",
+      "why": "They exist for relevance, not for the archive." },
+    { "id": "preach_flag", "action": "flag",
+      "rule": "preach >= 4 is flagged, never cut.",
+      "why": "It gets written, then checked hard on the closing paragraph. A flag is not a verdict." },
+    { "id": "no_number", "action": "cut",
+      "rule": "number < 3 is cut.",
+      "why": "An idea without a number to chase is a thought, not a piece." }
+  ],
+  "the_vote": {
+    "two_votes_never_one": "A quality call and a separate timing call. 'Not now' is a scheduling verdict, and scoring it as a quality verdict punishes an idea for arriving in the wrong week.",
+    "quality": [ { "value": 2, "label": "Excellent" }, { "value": 1, "label": "Good" }, { "value": -1, "label": "Weak" }, { "value": -2, "label": "No" } ],
+    "timing": [ "This batch", "Not this batch" ],
+    "force_a_better_angle": "Sends an idea back to be re-pitched rather than killing it.",
+    "note": "A free-text note per idea, and the machine score shown beside the vote. The delta is the training signal and the reason the board exists."
+  },
+  "calibration": "calibration/2026-09-17-commissioning-round-1.json"
+}
