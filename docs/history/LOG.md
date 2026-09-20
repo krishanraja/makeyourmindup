@@ -5,6 +5,38 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+## 2026-09-20
+
+- reconciled at `daf27e47`: three non-steward commits since `f3c8bfda`. The first slate was
+  selected, banked and published, and the selection rules moved out of a workflow script into
+  `apps/machine/slate-page` as four stages, with `engine/runs/2026-W38` keeping what the week
+  was built from. `NOW.md` re-headed with two bullets, and its "Do not trust" line about
+  `apps/machine/` corrected: the stages have been run once by hand, but nothing there is
+  scheduled and no draft, derivative or send is built by it.
+- moved from `NOW.md` on reconciliation, verbatim, to hold the file under 200 lines:
+
+  - 2026-09-19 **The media kit stopped carrying two format tables.** One with
+    two formats and one with three sat in the same section, and the older one
+    had promoted split.the.bill's third question to its your.call question. One
+    table now, taken from the live mandates.
+  - 2026-09-19 **The canon landed in a repository for the first time.** Why: the
+    fleet brief pointed five separate authorities at this repo, including
+    `panel/PANEL.md` and `quality/panel/kill-list.v1.json`, and not one of them
+    existed. The work had been done on 17 and 18 September and left in artifacts,
+    which meant the publication's rubric, judges and kill list had no home a tool
+    could read and no history anyone could diff.
+  - 2026-09-19 **The Cannes funnel was parked** in `parked/cannes-2026/` with a
+    marker saying why and where it is going. Why: it is finished, it is still
+    deployed, and a repo named after the publication that contains only an
+    unrelated funnel reads as the publication having no code.
+  - 2026-09-17 **Krish voted a commissioning round and hand-tuned the weights**,
+    recorded verbatim in `calibration/2026-09-17-commissioning-round-1.json`.
+    Fifteen of twenty ideas judged, four excellent, two weak, and lift.the.lid
+    took no excellent at all. He moved `fun` down from 3.0 to 2.5, `make` down
+    from 2.0 to 1.5, and `number` up from 1.5 to 2.0. That file is the reason the
+    rubric is a tested function and not a guess.
+
+
 ## 2026-09-19
 
 Later the same day, reconciled at `f3c8bfda`: the three-subchannel ruling was

@@ -2,8 +2,8 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-09-19
-head: f3c8bfda
+as_of: 2026-09-20
+head: daf27e47
 lifecycle: building
 production_url: https://makeyourmindup.ai
 state_doc: project-documentation/03_STEP_PLAN.md
@@ -39,7 +39,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-09-19)
+## Where it is right now (as of 2026-09-20)
 
 Lifecycle is `building`. The machine does not exist yet. What landed today is
 the canon it will be built from, which until now existed only as Claude
@@ -84,6 +84,29 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-09-20 **The first slate exists, and the rules that picked it are in this
+  repo rather than in a workflow that has to be re-run to be read.** 216
+  candidates cleared the intake gates, 210 were scored, 81 cleared the 6.5 bar,
+  and nine cards were published: one pick and two alternates for each of the
+  three subchannels. 30 more rows say why the machine would not decide, 14 as
+  named hand-offs and 16 as `claim_not_in_source`, a reason slug added the same
+  day because that refusal recurred sixteen times and had no name. All 39 rows
+  are in `public.suggestions` under `run_id = 'first-slate:2026-W38'`, every one
+  on the `propose` rung. The selection is four scripts in
+  `apps/machine/slate-page`, each reading a file and writing a file, so a stage
+  can be re-run without the ones before it. Every rule is stated and travels
+  with the row in `producer.selection_rules`. `engine/runs/2026-W38` keeps what
+  the week was built from, and running the four stages against it reproduces
+  the published page byte for byte. lift.the.lid cleared its raised bar of 7.5
+  with 7.83, the closest call on the slate. `daf27e4`.
+- 2026-09-19 **A card says which model produced it.** A run that spans a model
+  switch has more than one author, and the first one did. `provenance.py` reads
+  the run journal for labels and each transcript for the model that actually
+  served it; each card carries "scored by X, checked by Y" and an unchecked one
+  says so rather than leaving the reader to assume. The point is not the names:
+  a ruling is evidence about the thing that made the suggestion, and the bank
+  cannot tell you whether a producer improved if it does not know which
+  producer it was. `a597669`, `e89699f`.
 - 2026-09-19 **Three subchannels, one vocabulary, and a rename that history
   survives.** Ruling (Krish): split.the.bill, mind.the.gap and lift.the.lid are
   the three main subchannels, reversing the 2026-09-18 retirement of
@@ -107,26 +130,6 @@ format because none of them was ever composed.
   slate-page/`: the template Krish rules on, writing each verdict into the
   bank through his own Supabase connector and holding a local copy if that is
   not granted. `128893c`, `f3c8bfd`.
-- 2026-09-19 **The media kit stopped carrying two format tables.** One with
-  two formats and one with three sat in the same section, and the older one
-  had promoted split.the.bill's third question to its your.call question. One
-  table now, taken from the live mandates.
-- 2026-09-19 **The canon landed in a repository for the first time.** Why: the
-  fleet brief pointed five separate authorities at this repo, including
-  `panel/PANEL.md` and `quality/panel/kill-list.v1.json`, and not one of them
-  existed. The work had been done on 17 and 18 September and left in artifacts,
-  which meant the publication's rubric, judges and kill list had no home a tool
-  could read and no history anyone could diff.
-- 2026-09-19 **The Cannes funnel was parked** in `parked/cannes-2026/` with a
-  marker saying why and where it is going. Why: it is finished, it is still
-  deployed, and a repo named after the publication that contains only an
-  unrelated funnel reads as the publication having no code.
-- 2026-09-17 **Krish voted a commissioning round and hand-tuned the weights**,
-  recorded verbatim in `calibration/2026-09-17-commissioning-round-1.json`.
-  Fifteen of twenty ideas judged, four excellent, two weak, and lift.the.lid
-  took no excellent at all. He moved `fun` down from 3.0 to 2.5, `make` down
-  from 2.0 to 1.5, and `number` up from 1.5 to 2.0. That file is the reason the
-  rubric is a tested function and not a guess.
 
 ## What is next and what is waiting on Krish
 
@@ -169,8 +172,11 @@ Waiting on Krish, none of which a tool should answer:
 
 ## Do not trust
 
-- `apps/machine/` as a working machine. It holds a spec and a page template.
-  Nothing in it runs on a schedule yet.
+- `apps/machine/` as a scheduled machine. Its four slate stages have been run
+  once, by hand, and they reproduce the week they produced. Nothing in it runs
+  on a schedule yet, and no draft, derivative or send is built by it: the
+  derivative plan on each card is a proposal about what should be made, not a
+  thing that was made.
 - **`parked/cannes-2026/**`** in its entirety, as a description of anything
   current. Parked 2026-09-19. It is a Cannes Lions funnel on a different
   Supabase project and it ranks against a category vocabulary retired on
