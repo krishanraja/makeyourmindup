@@ -7,6 +7,7 @@ Older entries rolled out of `NOW.md`. Newest first.
 
 ## 2026-09-20
 
+- reconciled at `ac2668e2`: the Vercel Root Directory recommendation was withdrawn and NOW.md re-headed. No other non-steward commit since `daf27e47`.
 - withdrawn: "set the Vercel Root Directory to `parked/cannes-2026`", which stood in NOW.md as a waiting-on-Krish action from 2026-09-19. Ruling (Krish, 2026-09-20): the Cannes funnel moves to the mm-ctrl app when ready, which `PARKED.md` had said all along. Pointing the publication repo's Vercel project at the parked folder would make a parked thing a first-class deploy target, have to be undone at migration, and hold `makeyourmindup.ai` on a Cannes funnel while the publication wants that domain. The urgency was also false: `makeyourmindup.ai` returns HTTP 200 and serves the funnel, and NOW.md itself said "a failed build never replaces a live one, so nothing has changed for a visitor" in the same paragraph the action line was read from.
 - reconciled at `daf27e47`: three non-steward commits since `f3c8bfda`. The first slate was
   selected, banked and published, and the selection rules moved out of a workflow script into
