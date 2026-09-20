@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Slate</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -52,6 +57,8 @@ section.fmt{margin-top:28px;border-top:1px solid var(--rule);padding-top:16px}
 details{margin-top:10px}
 summary{cursor:pointer;color:var(--ink-2);font-size:14px}
 details ul{margin:6px 0 0;padding-left:18px;color:var(--ink-2);font-size:14px}
+details p{margin:6px 0 0;color:var(--ink-2);font-size:14px;line-height:1.45}
+details p.detail{font-size:13px;color:var(--ink-3)}
 details li{margin:2px 0}
 .deriv{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .deriv span{font-family:var(--font-mono);font-size:12px;padding:3px 8px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2)}
@@ -90,6 +97,8 @@ details li{margin:2px 0}
 @media (prefers-reduced-motion: no-preference){ .card{transition:opacity .2s ease} }
 @media (max-width:400px){ .verdicts{grid-template-columns:repeat(2,1fr)} .card.lead .headline{font-size:22px} }
 </style>
+</head>
+<body>
 
 <div class="wrap">
   <header class="bar">
@@ -290,6 +299,12 @@ returning id`;
       for (const d of p.derivative_plan) dv.append(el('span', {class: d.do ? 'do' : 'skip', title: d.why || ''}, DERIV_LABEL[d.kind] || d.kind));
       c.append(dv);
     }
+    if (p.check_note) {
+      const det = el('details'); det.append(el('summary', {}, 'what the check found'));
+      det.append(el('p', {}, p.check_note));
+      if (p.check_detail) det.append(el('p', {class:'detail'}, p.check_detail));
+      c.append(det);
+    }
     if (Array.isArray(s.alternatives) && s.alternatives.length) {
       const det = el('details'); det.append(el('summary', {}, 'what else it considered'));
       const ul = el('ul'); for (const a of s.alternatives) ul.append(el('li', {}, `${a.format || a.candidate_id || ''}: ${a.why_lost || ''}`)); det.append(ul); c.append(det);
@@ -329,3 +344,5 @@ returning id`;
   renderProgress();
 })();
 </script>
+</body>
+</html>

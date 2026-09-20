@@ -39,6 +39,72 @@ which is replaced with a JSON object of this shape before publishing:
 `id` must be the row's real uuid in `public.suggestions`: a verdict is a
 foreign key to it, and the page refuses to rule on a card with no bank id.
 
+## The four stages that fill it
+
+The page is the last stage. Everything before it is four scripts, run in order,
+and each one writes a file the next one reads, so a stage can be re-run without
+re-running the ones before it. That mattered the first time: the check stage was
+stopped part way and the slate was finished from what was already on disk.
+
+| Stage | Script | In | Out |
+|---|---|---|---|
+| Select | `select.py` | `scored.json`, `verdicts.json`, `candidates.json` | `selection.json` |
+| Compose | `emit.py` | `selection.json`, `mandates.json` | `slate.json` |
+| Bank | `emit_sql.py` | `slate.json`, `prov-slate.json` | the INSERT, and `ids.json` from its RETURNING |
+| Fill | `fill.py` | `slate.json`, `ids.json`, `mandates.json`, `prov-slate.json` | the page |
+
+### The selection rules, all of them
+
+Every rule is stated and deterministic, so the same inputs give the same slate
+and a ruling that overturns one is a ruling about the rule rather than about a
+mood. The rules travel with the row: `suggestions.producer.selection_rules`
+carries them, so a verdict six months from now can be read against the rule that
+was in force when the suggestion was made.
+
+- **The bar is 6.5.** Below it a candidate is not eligible, whatever else is true
+  of it.
+- **The gates come first.** `not_us` true or `material_exists` false removes a
+  candidate before any score is looked at.
+- **Order is composite, then how many independent sources carry the story, then
+  recency.** Never by age: an older row whose story is still live is not worse
+  than a new one, it is only older.
+- **A pick must be checked on all three lenses.** A candidate that scored higher
+  but has not been checked is held as an alternate and its card says why. The
+  machine does not lead with something it has not verified, and the first slate
+  had exactly this case at the top of split.the.bill.
+- **A candidate the evidence lens refuted is never a pick or an alternate.** It
+  becomes a `claim_not_in_source` row instead.
+- **One pick and up to two alternates per format.**
+- **At most two cards from one publication across the whole slate**, so a single
+  newsletter cannot own the week.
+- **lift.the.lid fills against a raised bar of 7.5**, the standing 6.5 plus a
+  point for being an extra piece rather than a scheduled one. Its target is 0.5
+  a week and its mandate says it publishes when a subject earns it. It is
+  deliberately not judged against the other two picks: a standing format that
+  only ran in a weak week would be running for the wrong reason.
+- **Exactly one card is the swing**: the one with the weakest load-bearing
+  number, so unlike every other card it has to work on the angle rather than the
+  figure. That is the bet, and the card says it is one.
+
+### The derivative plan, also a rule
+
+Each card carries five assets with a do-or-skip and a reason, from the piece's
+own scores rather than from a preference:
+
+- `written_piece` and `your_call_artifact` always run. The first is the spine
+  everything else is cut from; the second is the format's standing question, and
+  it is the interactive piece rather than a decoration on the article.
+- `long_video` runs when the number scores 7 or more, because below that a long
+  video is a person asserting rather than showing.
+- `short_cuts` run when the piece scores 7 or more for life, because short cuts
+  off a flat piece are the fastest way to look like everyone else.
+- `ig_carousel` runs when both the number and the angle score 7 or more, because
+  a carousel with nothing countable in it is the headline broken over six slides.
+
+A skip is shown struck through with its reason on hover, not hidden. The point
+is that the machine proposed an amplification plan and said why, so a ruling can
+disagree with the rule rather than with a blank.
+
 ## How a verdict travels
 
 Every ruling is written twice, and the card says which happened:
