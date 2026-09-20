@@ -3,7 +3,7 @@ kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
 as_of: 2026-09-20
-head: daf27e47
+head: f478e312
 lifecycle: building
 production_url: https://makeyourmindup.ai
 state_doc: project-documentation/03_STEP_PLAN.md
@@ -139,8 +139,13 @@ three is picked.
 
 Waiting on Krish, none of which a tool should answer:
 
-- **Set the Vercel Root Directory** to `parked/cannes-2026`. Main is merged;
-  production builds fail until this is done and the site serves the old build.
+- **Move the Cannes funnel to mm-ctrl.** A migration, not a Vercel setting.
+  `parked/cannes-2026/PARKED.md` holds the destination and the facts. Until it
+  moves, do NOTHING to the Vercel project: "set Root Directory to
+  `parked/cannes-2026`" was recommended here on 2026-09-19 and withdrawn on
+  2026-09-20 (ruling, Krish: it moves to mm-ctrl when ready). The failing builds
+  are cosmetic. Checked 2026-09-20: the site returns HTTP 200 and serves the
+  funnel, because a failed build never replaces a live one.
 - **Rotate the credentials** shared in chat on 2026-09-19 plus the five the VPS
   audit named, and fix the rejected `ANTHROPIC_API_KEY` in content-engine. No
   code change substitutes for either.
