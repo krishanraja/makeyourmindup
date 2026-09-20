@@ -1,0 +1,1034 @@
+{
+ "week_of": "2026-09-21",
+ "summary": "219 candidates in, 164 dropped at the gates, 213 scored, 82 over the 6.5 bar. 3 picks and 6 alternates here, 14 hand-offs the machine would not decide, and 16 rows it checked and refused. Nothing on this page has been published, sent or scheduled.",
+ "suggestions": [
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0141",
+   "title": "Z.AI's $5 billion, inspected.",
+   "confidence": 0.85,
+   "reason": "The piece asks whether the money is still here in eighteen months, because Z.AI's filing shows about $2 billion from 22 million new H shares at HK$714 and about $3 billion from a zero-coupon convertible due 2027 with a conversion price of HK$892.50, so something already fixed, a bond that must convert above that price or be repaid within about a year, decides the verdict.",
+   "alternatives": [
+    {
+     "format": "mind_the_gap",
+     "why_lost": "Being named in the US distillation advisory five days before the raise is a timeline moment, but the piece's spine is the money map and the maturity date, not a claim followed over time."
+    }
+   ],
+   "proposed": {
+    "format": "split_the_bill",
+    "rank": 1,
+    "headline": "Z.AI's $5 billion, inspected.",
+    "your_call_question": "Z.AI just raised $5 billion, $3 billion of it as a bond due next year. Is this money still here in eighteen months?",
+    "candidate_id": "c0141",
+    "source_url": "https://www.reuters.com/world/asia-pacific/chinas-zai-raises-5-billion-new-share-convertible-bond-sales-filing-shows-2026-09-13/",
+    "source_kind": "idea",
+    "received_at": "2026-09-15T11:30:23Z",
+    "composite": 8.2,
+    "scores": {
+     "angle": 8,
+     "number": 9,
+     "fresh": 9,
+     "fun": 7,
+     "fit": 7,
+     "make": 9,
+     "preach": 8,
+     "exists": 9
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Route: Reuters returned 401 to curl and a Cloudflare challenge via r.jina.ai; Bamboo Works returned 403 on both routes; archive.ph reset the connection. Only Caixin was directly readable (curl with a browser UA, HTTP 200), plus a WebSearch pass that surfaced the Reuters wire in syndication (The Standard, Business Standard, Express Tribune, MarketScreener, Qz). Figure by figure: the $5bn TOTAL is CONFIRMED by a named producer, Caixin, byline Yang Zirui, 14 Sep 2026, human-written lede: 'raised about HK$39.3 billion ($5 billion) through a share placement and a concurrent convertible bond sale', and corroborated by the Reuters headline itself ('raises $5 billion... filing shows'), which sources to an HKEX filing, so lens item 1 passes on a filing plus two bylined outlets, not an aggregator stub. The ~$2bn PLACEMENT at 22 million H shares and HK$714 is CONFIRMED but with a sourcing caveat and one numeric correction: the figures ('offered 21.97 million shares at HK$714 each') sit in Caixin's Digest Hub / Who's Who panels, which the page explicitly labels 'AI generated, for reference only', not in its human-written free text; HK$714 is independently corroborated by the syndicated Reuters copy ('a 25 percent premium to the HK$714 share placement price'), and the arithmetic reconciles (21.97m x HK$714 = HK$15.69bn = ~$2.0bn). The ~$3bn CONVERTIBLE is CONFIRMED by two independent routes that agree on the same yuan figure: Caixin's panel ('issued 20.14 billion yuan in bonds') and the syndicated Reuters copy ('20.14 billion yuan (HK$23.55 billion) of zero-coupon bonds due in September 2027'); HK$39.3bn total minus HK$15.69bn placement = HK$23.6bn, which closes the loop. ZERO-COUPON, DUE 2027 and CONVERSION PRICE HK$892.50 are corroborated only through the search engine's rendering of syndicated Reuters text, not from any page I could open and archive, and I am flagging that plainly rather than calling them read. HK$892.50 is exactly HK$714 x 1.25, matching the reported 25% premium, so it is arithmetically self-consistent, and Caixin's free text independently proves I am not pattern-matching a different deal: 'zero-coupon convertible bond' appears attributed to MiniMax for the July raise, NOT to Z.AI, so treat zero-coupon-for-Z.AI as corroborated but unread. No figure here needs evidence that must be CREATED: this is a filing-reading piece, so lens item 3 passes cleanly. Corrections the record needs before drafting: (1) '22 million H shares' is 21.97 million, so write 'about 22 million' or use the precise number; (2) the bond is yuan-denominated (20.14bn yuan / HK$23.55bn) and settled in US dollars, so '$3 billion' is an FX translation, not a fixed dollar liability, which is material for a split.the.bill piece whose whole hinge is the size of a debt; (3) the machine's reason says 'a fixed maturity decides the verdict', which is incomplete: the syndicated copy reports an issuer call from 18 February 2027 if shares trade at or above 130% of the conversion price for 20 of 30 trading days, so maturity is not the only date that settles it; (4) the bonds were issued at 100.5% of face, a zero-coupon priced above par, a negative yield to maturity for holders and worth one line; (5) the your.call's eighteen-month horizon (to about March 2028) sits past the September 2027 maturity, which is coherent, so keep it; (6) before print, pull the HKEX filing itself or a readable syndication (The Standard or Business Standard both resolved in search) so the three bond terms have a directly read, archived source rather than a search summary.",
+    "evidence_refs": [
+     "https://www.reuters.com/world/asia-pacific/chinas-zai-raises-5-billion-new-share-convertible-bond-sales-filing-shows-2026-09-13/",
+     "https://www.caixinglobal.com/2026-09-14/zai-raises-5-billion-in-share-placement-convertible-bond-sale-102484813.html",
+     "https://thebambooworks.com/z-ai-to-raise-5-billion-from-share-placement-and-convertible-bonds/",
+     "33a3ca30-617c-4b25-a522-5dc7ceebe050"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (9 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 7 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 9, angle 8) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0105",
+   "title": "The frontier premium, inspected.",
+   "confidence": 0.85,
+   "reason": "This asks what the frontier premium really costs and who holds that bill when the cheap open model is 4.4 months behind at a fifth of the price per task, so it is split_the_bill; the per-task cost figures rest on pricing pages that move, so archive them before recording.",
+   "alternatives": [
+    {
+     "format": "lift_the_lid",
+     "why_lost": "It never asks whether the model makes its user sharper or dependent; it asks what the head start costs, and the question decides."
+    }
+   ],
+   "proposed": {
+    "format": "split_the_bill",
+    "rank": 2,
+    "headline": "The frontier premium, inspected.",
+    "your_call_question": "Mozilla says paying for a frontier model buys a four-month head start at five times the cost per task. What does that head start really cost, and who ends up holding the bill?",
+    "candidate_id": "c0105",
+    "source_url": "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/",
+    "source_kind": "idea",
+    "received_at": "2026-09-17T11:30:23Z",
+    "composite": 8.11,
+    "scores": {
+     "angle": 8,
+     "number": 9,
+     "fresh": 9,
+     "fun": 7,
+     "fit": 8,
+     "make": 8,
+     "preach": 8,
+     "exists": 8
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "The claim and both numbers exist today and are attributed to named producers, and the piece needs no bench, survey or experiment to be built. Verified chain: (1) The candidate URL, Ars Technica, byline Jeremy Hsu, published 2026-09-15, headline \"Exclusive: Paying for frontier AI models buys 4-month head start at 5x the cost\". It states the gap \"has closed to just 4.4 months, according to a Mozilla report\", quotes Raffi Krikorian, Mozilla CTO, by email, and attributes the per-task cost to Vals AI's Terminal-Bench 2.1 run: GLM 5.2 \"costing about five times less per completed task\" than Claude Opus 4.7 and 4.8. Hsu's own summary sentence, \"about a four-month head start at about five times the per-task cost, but only when currently looking at tasks taking between eight and 12 hours\", is the candidate claim almost word for word. WebFetch was blocked on arstechnica.com, so I fetched it with curl through the proxy and read the full article text. (2) Independent corroboration: Tom's Hardware, byline Shane Downing, 2026-09-16, reports the same 4.4 months (Mozilla fit on METR data, in line with Epoch AI's four months) and \"less than one-fifth the cost per test\". (3) Primary source: stateofopensource.ai, \"The State of Open Source AI, v1.1, September 2026\", with Raffi Krikorian's letter and an 8-page PDF at stateofopensource.ai/state-of-open-source-ai-v1-1.pdf (downloaded, 8.3 MB, valid PDF). The report's own text reads \"≈4.4 mo measured open–closed lag (Mozilla fit on METR data); Epoch: 4 months\" and \"On a neutral harness, the price gap is 5×, Terminal-Bench 2.1 on vals.ai\". The 30% token-price figure cites \"Artificial Analysis; vendor pricing pages, Aug 2026\". The \"who holds the bill\" half of the question also has existing evidence: Krikorian on why organisations still pay closed (compliance packaging, support, accountability), the DoorDash split, the Linux Foundation revenue split (Frank Nagle and Daniel Yue: open 4%, closed 96%, May to Sept 2025), and Tom's Hardware's hardware caveat (the price comparison is API to API at list price; Kimi K3 needs about 1.5 TB and 64 or more accelerators to self-host, so \"open but not runnable by most who hold it\"). Archive note, which is the candidate's existing source_archive_needed gate and not a fail: the candidate URL is a dated news article, not a pricing page, but the 5x figure sits on live boards that have already moved since the report's 1 September data cut (the Artificial Analysis Terminal-Bench 2.1 page now lists Fable 5.1 at 91.4%, and Tom's says the vals.ai board updated 11 September now leads with GPT-6 Astra), and the Mozilla blog URL both outlets link still serves the July 14 v1.0 post. Before recording, archive the v1.1 PDF, the stateofopensource.ai page, the Ars and Tom's articles, and dated snapshots of the vals.ai and Artificial Analysis Terminal-Bench 2.1 boards. Two caveats the writer should carry rather than hide: the 5x per-task comparison is GLM 5.2 against Opus 4.7 and 4.8, not against Fable 5, and Ars and Tom's disagree slightly on the Opus 4.8 gap (within a point versus about four points), so quote the report's chart, not either paraphrase; and Mozilla is an open-model advocate whose CTO called the report partly advocacy (TIME, July 14), which the piece should say. Source refs used: the two candidate URLs plus f2fbe93a-0173-4901-85aa-0b9b120549cb, which is the idea row id, not a URL, so nothing to fetch there.",
+    "evidence_refs": [
+     "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/",
+     "https://www.tomshardware.com/tech-industry/artificial-intelligence/chinas-open-weight-ai-models-are-now-just-4-months-behind-frontier-us-offerings-mozilla-report-claims-models-still-lag-in-some-benchmarks-but-are-drastically-cheaper-to-use",
+     "f2fbe93a-0173-4901-85aa-0b9b120549cb"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (9 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 7 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 9, angle 8) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0164",
+   "title": "OpenAI's inference bill per researcher, inspected.",
+   "confidence": 0.8,
+   "reason": "The piece asks what it really costs to run a research organisation on agents and who holds the bill: OpenAI reports 3.1 agent-workdays per human workday, a median researcher above $600 a day of inference and a 90th percentile above $7,000, all priced at API list rates rather than OpenAI's internal cost, which is the gap between the sticker price the buyer pays and the cost the vendor pays.",
+   "alternatives": [
+    {
+     "format": "mind_the_gap",
+     "why_lost": "The automated research intern milestone against the bill underneath it is an inversion, but the boundary test decides it: the piece asks what it costs and who holds the bill."
+    },
+    {
+     "format": "lift_the_lid",
+     "why_lost": "There is no product surface to take apart."
+    }
+   ],
+   "proposed": {
+    "format": "split_the_bill",
+    "rank": 3,
+    "headline": "OpenAI's inference bill per researcher, inspected.",
+    "your_call_question": "OpenAI's own researchers burn up to $7,000 a day at the prices you pay. What does it really cost to run, and who ends up holding the bill?",
+    "candidate_id": "c0164",
+    "source_url": "https://rakeshgohel.substack.com/p/openai-has-reached-the-automated",
+    "source_kind": "idea",
+    "received_at": "2026-09-08T22:00:57Z",
+    "composite": 8.06,
+    "scores": {
+     "angle": 8,
+     "number": 9,
+     "fresh": 8,
+     "fun": 8,
+     "fit": 9,
+     "make": 9,
+     "preach": 7,
+     "exists": 7
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Refutation failed: the evidence exists today and is primary. OpenAI's own page \"Research acceleration: The view inside OpenAI\" (https://openai.com/index/research-acceleration-view-inside-openai) carries all three numbers verbatim, in OpenAI's first person: \"By mid-August, the median researcher was integrating agents daily into their work, using more than $600 per day of inference at API prices. The 90th percentile user in our research organization now uses more than $7,000 of tokens per day.\" and \"as of mid-August, in total, the research organization uses 3.1 agent-workdays of effort for every workday of human labor.\" The candidate URL (Rakesh Gohel, Substack, 8 Sep 2026) relays the same figures, attributes them to OpenAI, and links the OpenAI page in its references, so the chain from digest to producer holds. Three things for the recorder and writer. First, openai.com returns HTTP 403 to WebFetch and curl; the figures were confirmed through a reader-proxy render of the live page and the full text is saved at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/openai_jina.txt (figures at lines 28 and 30). Store that capture when recording. The page is a blog article, not a pricing, changelog or docs page, so no archive handoff is needed. Second, the Business Insider corroboration named in the evidence refs could not be located this session (web search budget exhausted, Bing and DuckDuckGo returned only the homepage); it is not load-bearing because OpenAI's own wording \"at API prices\" supplies the sticker-price framing, but the writer should not cite Business Insider until someone has the URL. Third, OpenAI does not publish its internal inference cost anywhere on the page, so the piece must treat \"what it really costs\" as an undisclosed gap it points at, not a number it computes. That is writable from evidence that exists; no bench, survey or experiment is required. Keep OpenAI's exact phrasing: the \"at API prices\" qualifier sits on the $600 sentence and the $7,000 sentence says \"of tokens per day\".",
+    "evidence_refs": [
+     "https://rakeshgohel.substack.com/p/openai-has-reached-the-automated",
+     "655bf5f5-9fc5-4228-bad1-1cb87c034e39",
+     "https://openai.com/index/research-acceleration-view-inside-openai (primary cited by the digest; the page is JS-gated to curl, so confirm the figures in a browser before recording)",
+     "Business Insider report of the same figures, noting they are estimates at API pricing rather than OpenAI's internal cost"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (9 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 8 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 9, angle 8) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0104",
+   "title": "OpenAI's Navier-Stokes claim, inspected.",
+   "confidence": 0.9,
+   "reason": "This asks what is actually happening against the claim that an AI solved a Millennium Prize problem, traced through one proof, the year of human work before it and the Clay Institute's unchanged listing, so it is mind_the_gap.",
+   "alternatives": [
+    {
+     "format": "split_the_bill",
+     "why_lost": "The 22.5 million dollars of tokens is a list-price estimate for a bill OpenAI's investors hold, not the reader, and the spine is the credit dispute, not the cost."
+    }
+   ],
+   "proposed": {
+    "format": "mind_the_gap",
+    "rank": 1,
+    "headline": "OpenAI's Navier-Stokes claim, inspected.",
+    "your_call_question": "Everyone says an AI solved a Millennium Prize problem in 88 hours. The Clay Institute still lists it as open, and 25 Fields medalists signed a letter about who did the work first. What is actually happening?",
+    "candidate_id": "c0104",
+    "source_url": "https://lastweekin.ai/p/last-week-in-ai-344-navierstokes",
+    "source_kind": "newsletter",
+    "received_at": "2026-09-17",
+    "composite": 8.46,
+    "scores": {
+     "angle": 9,
+     "number": 8,
+     "fresh": 9,
+     "fun": 9,
+     "fit": 9,
+     "make": 9,
+     "preach": 6,
+     "exists": 9
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Could not refute. Every leg of the mind_the_gap spine exists today in a named, dated, public source, and none of it would have to be created. (1) The candidate url (Last Week in AI #344, Andrey Kurenkov, 17 Sep 2026) carries the claim and all four numbers verbatim: about 10,000 concurrent agents, resolution about 88 hours after launch, 300 billion output tokens for the week, and 22.5 million dollars, with the tokens and timing attributed to OpenAI and the dollar figure attributed to TechCrunch. (2) OpenAI's own post, \"On the Navier–Stokes Millennium Prize Problem\" (openai.com/index/navier-stokes-solution/), read through a reader proxy because openai.com serves a Cloudflare challenge to this environment, states \"This resolves the Navier–Stokes Millennium Prize problem\", \"on the order of 10,000 concurrent agents\", \"about 88 hours after the first agents were launched\", \"used about 300 billion output tokens\" across all problems and \"approximately 130 billion output tokens\" on Navier-Stokes itself, and says \"We recognize the priority of their work on forced Euler\" naming Alpöge and Buckmaster. (3) TechCrunch (Russell Brandom, 8 Sep 2026) owns the dollar arithmetic: \"300 billion output tokens — $22.5 million worth of compute, if charged at current Astra rates\", so the piece must present it as a TechCrunch list-price estimate, not a cost OpenAI reported. (4) The Clay Mathematics Institute page for the problem, fetched today, describes it as open and contains no mention of any claimed solution or AI, which is the unchanged-listing leg. (5) The Fields medalist letter is a real primary document: \"A Severe Misalignment of AI in Mathematics\" at mathandai.org, dated 11 Sep 2026, containing the line \"this raises severe attribution and plagiarism questions\". Tao's Mathstodon post says 25 signed; the page today lists 27, so the writer should cite \"25 when published, 27 as of 19 Sep\" or snapshot the list at write time. (6) The year of human work before it is on record: Tao's blog (7 Sep 2026) credits Alpöge and Buckmaster building on Córdoba and Martínez-Zoroa (arXiv 2410.22920v3), and MIT Technology Review (Grace Huckins, 8 Sep 2026) says Buckmaster and Alpöge worked on their version for almost a year and quotes Bubeck saying the team was inspired after hearing a rumour of their efforts. Quanta (Konstantin Kakaes, 8 Sep 2026) independently confirms the claim, the 10,000 agents and 88 hours. One housekeeping fix: the Technology Review url in evidence_refs 404s; the live one is https://www.technologyreview.com/2026/09/08/1143747/what-openais-latest-controversy-tells-us-about-the-future-of-math/. The candidate url is a newsletter, not a pricing, changelog or docs page, so no archive handoff is triggered. Not verified directly: CNBC, Nature and Science pages blocked this environment, but nothing in the spine depends on them.",
+    "evidence_refs": [
+     "https://openai.com/index/navier-stokes-solution/",
+     "https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/",
+     "https://www.technologyreview.com/2026/09/08/what-openais-latest-controversy-tells-us-about-the-future-of-math/",
+     "https://lastweekin.ai/p/last-week-in-ai-344-navierstokes",
+     "1a0ae6d18bf1e303:0",
+     "e450b94b-d42e-4e11-b7e4-c31b3167ba63",
+     "d69cd3c5-3751-4b26-a390-03ca71b69d19"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (8 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 9 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 8, angle 9) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0039",
+   "title": "The 72-hour breach, inspected.",
+   "confidence": 0.65,
+   "reason": "The piece asks what is actually happening to frontier lab security against what everyone says, tracing one breach over 72 hours from a stalled Opus 4.8 to a three-hour exploit, a 6,500 dollar bounty and a token bill under 3,000 dollars, which is mind.the.gap's timeline shape on a single topic.",
+   "alternatives": [
+    {
+     "format": "split_the_bill",
+     "why_lost": "The cost of the break-in is the headline figure, but a reader holding a renewal quote cannot act on an attacker's token bill, and the piece is a story over time rather than a money map."
+    },
+    {
+     "format": "lift_the_lid",
+     "why_lost": "No product surface is being taken apart; the model is the tool in the story, not the subject."
+    }
+   ],
+   "proposed": {
+    "format": "mind_the_gap",
+    "rank": 2,
+    "headline": "The 72-hour breach, inspected.",
+    "your_call_question": "Three researchers, a rival's model, under 3,000 dollars in tokens and OpenAI's internal GitHub in 72 hours: what is actually happening to lab security, against what everyone says is happening?",
+    "candidate_id": "c0039",
+    "source_url": "https://www.hacktron.ai/blog/hacking-openai",
+    "source_kind": "newsletter",
+    "received_at": "2026-09-18",
+    "composite": 8.14,
+    "scores": {
+     "angle": 8,
+     "number": 9,
+     "fresh": 9,
+     "fun": 9,
+     "fit": 6,
+     "make": 8,
+     "preach": 7,
+     "exists": 9
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Both load bearing numbers are on the page and attributed to a named producer. Hacktron AI published the post on 13 September 2026 under three named researchers: Harsh Jaiswal, Mohan Pedhapati and Rahul Maini. The page says \"OpenAI also paid us a $6,500 bounty\" and \"The whole HEIF Heist research project going after Slack, Meta, adn more took two-months, cost less than $3,000 in tokens in total, and was conducted by three researchers\" (the typo is in the original). The under 72 hours route into OpenAI's internal monorepo is there too, as a PR opened in openai/openai via an employee's Codex. So the piece can be written from evidence that exists today, and the money side holds.\n\nTwo fixes the writer has to make, neither of them a missing evidence problem. First, the 3,000 dollars covers the whole two month campaign across several targets, not the OpenAI break in on its own, so the headline \"A 3,000 dollar break in, priced\" claims more than the source supports. Say what the number actually covers. Second, the candidate snippet says Opus 5 produced the exploit \"in about three hours\". That figure is not on the page. The page says Opus 4.8 struggled across several sessions to get a working exploit with ASLR enabled, and that Opus 5 succeeded within hours of its release. Drop the three hours or reword it to match.\n\nTwo caveats to carry into the draft. The token cost and the bounty are both self reported by the team that did the work, so attribute them to Hacktron rather than stating them flat. And the other half of the bill, what OpenAI, Slack or Meta spent on remediation, is not on the page and I found no public figure for it. The piece has to leave that as the open question, which is what the your call question already does, and must not put a number on it.\n\nOn archiving: the url is a research blog post, not a pricing page, a changelog or a docs page, so the source_not_archived handoff does not apply. It is still a vendor page that can be edited or pulled, and the two figures are the whole argument, so archiving it the way c0037 and c0038 were archived is worth doing before recording.",
+    "evidence_refs": [
+     "https://www.hacktron.ai/blog/hacking-openai",
+     "1a0b41df7855c550:0"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (9 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 9 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 9, angle 8) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0124",
+   "title": "The last AI built by humans, inspected: 491 papers on a five-rung ladder.",
+   "confidence": 0.85,
+   "reason": "The piece asks what is actually happening in recursive self-improvement research, 75 percent of 491 papers on the bottom two rungs and under 6 percent at the top, against what everyone says is happening, the last AI built by humans, and the ladder gives one topic to trace from I. J. Good's 1965 intelligence explosion to this paper.",
+   "alternatives": [
+    {
+     "format": "lift_the_lid",
+     "why_lost": "There is no product surface, only a paper, and the sharper or dependent question does not apply to a taxonomy of research."
+    },
+    {
+     "format": "split_the_bill",
+     "why_lost": "No cost and no bill; the number is a count of papers, not dollars."
+    }
+   ],
+   "proposed": {
+    "format": "mind_the_gap",
+    "rank": 3,
+    "headline": "The last AI built by humans, inspected: 491 papers on a five-rung ladder.",
+    "your_call_question": "Everyone says AI is about to build its own successors. Of 491 papers on the subject, where does the work actually sit?",
+    "candidate_id": "c0124",
+    "source_url": "https://arxiv.org/pdf/2609.11873",
+    "source_kind": "newsletter",
+    "received_at": "2026-09-16",
+    "composite": 7.83,
+    "scores": {
+     "angle": 7,
+     "number": 8,
+     "fresh": 9,
+     "fun": 7,
+     "fit": 8,
+     "make": 8,
+     "preach": 7,
+     "exists": 9
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Could not refute. The evidence exists today in one primary source and I checked it directly. WebFetch returned only the PDF's compressed streams, so I downloaded the PDF (7.8 MB, HTTP 200) and the abstract page with curl and extracted the text locally with pypdf (79 pages). Verified: arXiv 2609.11873, title \"The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement\", submitted 10 Sep 2026, revised 15 Sep 2026 (v2), 36 named authors. Figure 18 in Appendix A gives \"Distribution of 491 surveyed papers\" by autonomy level: L1 215 (43.8%), L2 155 (31.6%), L3 64 (13.0%), L4 28 (5.7%), L5 29 (5.9%); the counts sum to 491. L1 plus L2 is 370 of 491, which is 75.4 percent, so \"75 percent on the bottom two rungs\" holds. L5 is 29 of 491, which is 5.9 percent, so \"under 6 percent at the top\" holds. The five-level ladder is the paper's own framework (section 3, \"we review RSI techniques across five levels\"). The \"everyone says\" side is also sourced inside the paper: it cites Anthropic Institute, \"When AI builds itself\" (June 2026, accessed 2026-09-08), describing the strongest form as \"an AI system autonomously designing and developing its own successor\", plus OpenAI [68], Tencent [69] and Alibaba [30]. The authors' own words support the gap: \"end-to-end L5 evidence is concentrated in bounded prototypes\" and \"L5 evolution of the improver itself remain[s] largely unexplored\". arXiv is a permanent versioned archive, so no source_not_archived handoff; record the version as v2 and the figure as Figure 18, since v2 already replaced v1 and a v3 could renumber. Three corrections the writer must carry. First, attribution: the newsletter's \"ByteDance, Tsinghua and Shanghai AI Lab\" is partial. The lead affiliations are Shanghai Jiao Tong University and Theseus Labs (the corresponding author Xuanhe Zhou sits there); ByteDance, Tsinghua and Shanghai AI Lab are secondary among ten institutions. Second, the paper does not cite I. J. Good or the 1965 intelligence explosion anywhere; its own lineage runs through Schmidhuber's Gödel machine [14] and the Darwin Gödel Machine [16]. Good 1965 is a real published paper (Advances in Computers, vol. 6) so the trace can be written from existing evidence, but it must be sourced separately and the piece must not say the paper traces to Good. Third, the level percentages are by paper count and the paper's B0 baseline is not one of the 491, so \"five rungs\" is exact and \"six\" would be wrong. Local copies: /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/2609.11873.pdf and 2609.11873.txt.",
+    "evidence_refs": [
+     "https://arxiv.org/pdf/2609.11873",
+     "1a0a9b0738b55f62:3"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (8 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 7 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 8, angle 7) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0037",
+   "title": "Astra for Law, inspected.",
+   "confidence": 0.8,
+   "reason": "The piece asks whether a legal research tool that gets 54 percent of its own test right makes the lawyer sharper or dependent, and it takes apart what a firm can actually reach on day one behind Trusted Access, which is lift.the.lid's standing question on a big-company launch.",
+   "alternatives": [
+    {
+     "format": "split_the_bill",
+     "why_lost": "The launch names no price and no bill, so the cost question has nothing to lead with yet."
+    },
+    {
+     "format": "mind_the_gap",
+     "why_lost": "One launch on one day is a product surface to annotate, not a topic traced over time."
+    }
+   ],
+   "proposed": {
+    "format": "lift_the_lid",
+    "rank": 1,
+    "headline": "Astra for Law, inspected.",
+    "your_call_question": "OpenAI's legal model scores 54 percent on OpenAI's own legal test and opens to selected firms first: does it make its user sharper, or dependent?",
+    "candidate_id": "c0037",
+    "source_url": "https://openai.com/index/astra-for-law/",
+    "source_kind": "newsletter",
+    "received_at": "2026-09-18",
+    "composite": 7.83,
+    "scores": {
+     "angle": 7,
+     "number": 9,
+     "fresh": 9,
+     "fun": 7,
+     "fit": 8,
+     "make": 8,
+     "preach": 7,
+     "exists": 8
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "I tried to refute this and could not. OpenAI's own launch page, \"Introducing Astra for Law\", dated 17 September 2026, carries every load bearing fact in the candidate: \"Astra for Law passed the evaluation's overall correctness check on 54.0% of questions, compared with 38.7% for GPT-6 Astra using web search alone\"; a test of \"200 U.S. legal research questions\"; a legal search index over \"more than 230 million URLs, with sources added daily\"; \"we're launching 26 partner-built plugins\"; and \"Astra for Law will be initially offered to selected law firms through Trusted Access in ChatGPT and Codex, and will be coming soon to the API.\" The producer is named (OpenAI), and the day one gap the piece wants to inspect is stated by OpenAI itself, so nothing has to be created and no bench, survey or experiment is needed. Every number now traces to the producer's page rather than to a second hand retelling. Archiving is done, so there is no source handoff: the live url returns HTTP 403 to WebFetch and to curl from this session, but that is a bot block and not a missing page, since openai.com/index/ answers the same way, and ten Wayback snapshots exist between 17 and 19 September. I saved the 18 September snapshot to /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0037_openai_astra_law.html, the extracted text beside it as c0037_openai_astra_law.txt, and a manifest with hashes and quotes at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0037_archive_manifest.txt. Three fact fixes the writer must take before drafting. First, the 200 questions come from the private validation set of Vals AI's Legal Research Bench, a third party, so \"about half its own test questions\" is wrong: it is OpenAI running someone else's bench at the highest reasoning effort for both systems. Second, Harvey and Legora are named as API customers who will build on Astra for Law, not as plugin partners; the named plugin partners are iManage, Intapp, DeepJudge and Thomson Reuters. Third, community plugins number 9, from LegalQuants, LECG and Skills.law, with 47 custom skills, so secondary coverage saying \"47 community plugins\" is wrong. The two alternatives were rightly rejected: the page names no price and points to a sales contact, which kills split_the_bill.",
+    "evidence_refs": [
+     "https://openai.com/index/astra-for-law/",
+     "https://x.com/OpenAI/status/2100679992720142459",
+     "1a0b41df7855c550:2",
+     "1a0b484369a132be:11"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (9 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 7 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 9, angle 7) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0080",
+   "title": "Meta's Muse, inspected.",
+   "confidence": 0.85,
+   "reason": "The piece asks whether an agent that sends your email, books your travel and spends your money from a Meta-held machine makes its user sharper or dependent, and the gap between the launch claim and what ships on day one is on the record in a named executive's own words, that Meta could technically look inside the VM and that the encrypted version comes later; the product page and its default settings will change when encryption ships, so archive the surface before recording.",
+   "alternatives": [
+    {
+     "format": "split_the_bill",
+     "why_lost": "Free for most users raises who holds the bill, but Meta's answer is advertising, which is media monetisation and out of split.the.bill's turf, and the piece's question is dependency, not cost."
+    },
+    {
+     "format": "mind_the_gap",
+     "why_lost": "The months-long safety hold against a free agent shipping is a gap beat, but it belongs on the slowdown timeline in c0076, not here."
+    }
+   ],
+   "proposed": {
+    "format": "lift_the_lid",
+    "rank": 2,
+    "headline": "Meta's Muse, inspected.",
+    "your_call_question": "Muse will run your inbox, your bookings and your card from a machine Meta holds and says it will not look inside. Does that make you sharper, or dependent?",
+    "candidate_id": "c0080",
+    "source_url": "https://lastweekin.ai/p/last-week-in-ai-344-navierstokes",
+    "source_kind": "newsletter",
+    "received_at": "2026-09-17",
+    "composite": 7.69,
+    "scores": {
+     "angle": 8,
+     "number": 5,
+     "fresh": 9,
+     "fun": 8,
+     "fit": 9,
+     "make": 9,
+     "preach": 5,
+     "exists": 9
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Verified today: (1) The newsletter at lastweekin.ai/p/last-week-in-ai-344-navierstokes carries every part of the claim and attributes each part to a named outlet: NYT for email, travel, forms, negotiation, purchases, Sentinel, background operation, and \"free for most users, with paid subscriptions for people who want to do more\"; The Verge for the per-user cloud VM; WIRED (via NYT) for David Singleton saying policy bars looking inside the machines but Meta technically could; NYT for the encrypted \"confidential\" version planned later this year. Launch date 8 September 2026, US, iOS, Android and web. (2) Meta's own research blog, \"How We Built Safety Into Muse\" by Tarek Sheasha, VP, Meta Superintelligence Labs, 8 September 2026, states in Meta's words that each user gets a dedicated cloud VM, that Sentinel is \"the sole permission authority\" for connectors and \"all egress over the network\", that the current setup \"does not prevent Meta from accessing data when necessary to support, secure or operate the service\", and that Muse Confidential VM is planned \"later this year\" to \"cryptographically and verifiably prevent Meta from accessing data in your VM\". This is stronger than the Singleton quote because it is Meta's own text. (3) SiliconANGLE (Mike Wheatley, 8 September 2026) independently carries the Singleton quote, names him as Superintelligence Labs vice president of engineering for consumer products, credits Wired, and adds the one hard number in the story: Meta said users get \"100 million tokens per week\" free. The \"number\" in the candidate is soft (\"free for most users\"); the 100 million tokens per week figure is the usable number and is attributed to Meta. Nothing needs to be created: no bench, survey or experiment. Not verified: wired.com and theverge.com both block the fetcher, so the Singleton quote is confirmed at second hand through NYT and SiliconANGLE, both crediting WIRED. The product page ai.meta.com/muse/ returned HTTP 200 but is a JavaScript shell with 57 characters of visible text and no mention of pricing, Sentinel, encryption or default settings, so the \"default settings\" phrase in the candidate reason is inferred, not seen; no source described defaults. Wayback lookups returned 429 on every retry, so no snapshot is confirmed. The linked pool idea 57d3de34 cites an \"$18 billion\" child-safety settlement; that figure is outside this candidate's claim and was not checked, so it must not be used without its own verification. Before recording: archive the product page with a rendered snapshot (curl cannot capture it), archive Meta's research blog post, and archive the WIRED original from a machine that can reach it, because the product page and Meta's access language will change when Confidential VM ships.",
+    "evidence_refs": [
+     "https://lastweekin.ai/p/last-week-in-ai-344-navierstokes",
+     "https://ai.meta.com/muse/",
+     "1a0ae6d18bf1e303:5",
+     "57d3de34-dbd5-44eb-a570-e9ea921e0ec7"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": false,
+      "why": "The number scores only 5 of 10, so a long video would be a person asserting rather than showing. Cut it unless the draft finds a figure."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 8 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": false,
+      "why": "Nothing here pages: number 5, angle 8. A carousel would be the headline broken over six slides."
+     }
+    ],
+    "is_swing": true,
+    "swing_why": "This is the week's swing. Its number scores 5 of 10, the weakest on the slate, so unlike every other card it has to work on the angle rather than the figure. One proposal a batch is spent this way on purpose: a slate that only ever proposes the safe shape stops surprising you, and a prompt that is only prohibitions returns joyless work."
+   },
+   "is_swing": true,
+   "swing_why": "This is the week's swing. Its number scores 5 of 10, the weakest on the slate, so unlike every other card it has to work on the angle rather than the figure. One proposal a batch is spent this way on purpose: a slate that only ever proposes the safe shape stops surprising you, and a prompt that is only prohibitions returns joyless work."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0119",
+   "title": "Gemini 3.8 Live, inspected.",
+   "confidence": 0.8,
+   "reason": "The piece asks what actually reaches a normal Gemini account on day one from the 3.8 Live launch against what the demo showed, marking the camera, the background tasks, the 82.6 speech index score and the Extended Thinking narration as real or theatre, and whether an assistant that watches and acts while you talk makes you sharper or dependent; the release notes and tier table must be archived before recording.",
+   "alternatives": [
+    {
+     "format": "split_the_bill",
+     "why_lost": "Which tier pays for Live is evidence, not the question; the piece asks about capability against demo, not about the bill."
+    },
+    {
+     "format": "mind_the_gap",
+     "why_lost": "A single launch, not a topic traced over time."
+    }
+   ],
+   "proposed": {
+    "format": "lift_the_lid",
+    "rank": 3,
+    "headline": "Gemini 3.8 Live, inspected.",
+    "your_call_question": "Does a voice assistant that watches through your camera and runs tasks while you talk make you sharper, or dependent?",
+    "candidate_id": "c0119",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+    "source_kind": "newsletter",
+    "received_at": "2026-09-16",
+    "composite": 7.66,
+    "scores": {
+     "angle": 7,
+     "number": 7,
+     "fresh": 8,
+     "fun": 7,
+     "fit": 9,
+     "make": 9,
+     "preach": 7,
+     "exists": 8
+    },
+    "check_state": "verified",
+    "check_note": "Checked on all three lenses: the evidence exists and is attributed, the format boundary holds, and the voice is not preaching.",
+    "check_detail": "Could not refute. The url is Google's own launch post (blog.google, HTTP 200, dated Sep 15 2026, revised Sep 17, bylined Tom Ouyang and Malini Jaganathan). Every claim in the candidate is on the page verbatim: \"processes visual inputs in near real-time\", \"executes tools and API calls in the background while continuing the conversation\", \"live progress narration to walk users through multi-step background tasks\", \"All audio generated by our AI products is watermarked with SynthID\", 97 languages, and \"#1 overall spot on Artificial Analysis' Speech to Speech Quality Index (82.6)\". The number is attributed to a named producer, Artificial Analysis, and that producer's own page (artificialanalysis.ai/speech-to-speech) shows Gemini 3.8 Live Extended Thinking (High) at 82.6 in first place and plain Gemini 3.8 Live at 76.0 in fifth. The tier table the piece turns on is in the post's own rollout section: plain 3.8 Live reaches everyone only inside Search Live; the Gemini app gets Extended Thinking in Gemini Live; Docs Live is for AI Pro and Ultra only; Gmail and Keep for all Google AI subscribers; enterprise is private preview. The two demo videos (sketch to React components, multi-step bookings) are developer demos, so the demo-versus-day-one gap is already documented. The Gemini API changelog (ai.google.dev) has a September 15 2026 GA entry with model ids gemini-3.8-live and gemini-3.8-live-extended-thinking, default asynchronous function calling and background reasoning during live audio; the Live API guide documents video input at a maximum of one frame per second. Nothing has to be bought, installed or run to write the piece; docs, changelog and rollout table are public, which is the format's MATERIAL EXISTS test. Archive done: blog post, Artificial Analysis index, Gemini app release notes and API changelog saved with sha256 hashes at 2026-09-19T18:57:25Z in scratchpad/slate/c0119_archive_manifest.txt. Caveat for the writer: the consumer app's release notes page (gemini.google/release-notes) carries no 3.8 Live entry yet (newest entry 2026.09.10), so \"release notes\" here means the API changelog plus the blog's rollout table; recheck the app page at recording. The blog was already revised once between Sep 15 and Sep 17, so the archived copy is the version to quote.",
+    "evidence_refs": [
+     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+     "1a0a9eb13e02ccfc:1",
+     "1a0aa380d51c4e67:10",
+     "1a0a9b0738b55f62:5",
+     "6559fd3c-2bf3-4cd5-8191-de5160b87692"
+    ],
+    "derivative_plan": [
+     {
+      "kind": "written_piece",
+      "do": true,
+      "why": "The spine. Everything else is cut from it, so it is written first whatever else runs."
+     },
+     {
+      "kind": "your_call_artifact",
+      "do": true,
+      "why": "The format's standing question is the artifact. It is the interactive piece, not a decoration on the article."
+     },
+     {
+      "kind": "long_video",
+      "do": true,
+      "why": "The number is load-bearing (7 of 10), so there is something to walk through on screen rather than talk over."
+     },
+     {
+      "kind": "short_cuts",
+      "do": true,
+      "why": "Scores 7 of 10 for life, so at least one line carries on its own off the page."
+     },
+     {
+      "kind": "ig_carousel",
+      "do": true,
+      "why": "A countable structure (number 7, angle 7) pages well: one figure a card, the turn on the last."
+     }
+    ],
+    "is_swing": false
+   },
+   "is_swing": false
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0027",
+   "title": "The Apple Watch feature Apple will not call AI, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "lift_the_lid because the piece asks whether a watch that samples heart rate every five seconds instead of every five minutes and hands back a 0 to 10 Readiness score makes its user sharper about their body or dependent on the number, and Apple's launch copy, which markets Siri as AI but not the health models, is the product surface to mark up; the format is decided, and the Apple feature page must be archived before recording because it changes.",
+   "says": "lift_the_lid because the piece asks whether a watch that samples heart rate every five seconds instead of every five minutes and hands back a 0 to 10 Readiness score makes its user sharper about their body or dependent on the number, and Apple's launch copy, which markets Siri as AI but not the health models, is the product surface to mark up; the format is decided, and the Apple feature page must be archived before recording because it changes.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "The Apple Watch feature Apple will not call AI, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0028",
+   "title": "Slack's Dreamforce keynote, inspected from a normal account.",
+   "handoff_reason": "source_not_archived",
+   "reason": "lift_the_lid because the piece asks what Salesforce demoed at Dreamforce against what a normal Slack account can reach on day one, with two-way voice promised for later in 2026 and video generation for later this fall and Parker Harris on record saying you may never log in to Salesforce again, and whether a Slack that builds your interface from a sentence makes its user sharper or dependent; the coverage arriving on a Salesforce-paid trip is part of what gets marked as theatre. Format decided; the announcement pages and Slack's release notes must be archived first.",
+   "says": "lift_the_lid because the piece asks what Salesforce demoed at Dreamforce against what a normal Slack account can reach on day one, with two-way voice promised for later in 2026 and video generation for later this fall and Parker Harris on record saying you may never log in to Salesforce again, and whether a Slack that builds your interface from a sentence makes its user sharper or dependent; the coverage arriving on a Salesforce-paid trip is part of what gets marked as theatre. Format decided; the announcement pages and Slack's release notes must be archived first.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "Slack's Dreamforce keynote, inspected from a normal account."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0031",
+   "title": "Perplexity's effort dial, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "lift_the_lid because the piece asks whether a dial that trades cost, speed and intelligence, and the default Perplexity chooses for it, makes its user sharper about what a question is worth or dependent on the default, and default settings are the format's own territory; the cost question separates cleanly because one seat of Perplexity Computer is not a bill a fifty million pound business notices. Format decided; the post and the setting must be archived before recording, and the post was not reachable through this session's proxy so its figures are unconfirmed.",
+   "says": "lift_the_lid because the piece asks whether a dial that trades cost, speed and intelligence, and the default Perplexity chooses for it, makes its user sharper about what a question is worth or dependent on the default, and default settings are the format's own territory; the cost question separates cleanly because one seat of Perplexity Computer is not a bill a fifty million pound business notices. Format decided; the post and the setting must be archived before recording, and the post was not reachable through this session's proxy so its figures are unconfirmed.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "Perplexity's effort dial, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0163",
+   "title": "ChatGPT's inbox connectors, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "The piece asks whether ChatGPT drafting from your inbox, drive and Slack makes its user sharper or dependent, and whether the approval step is real or theatre, which is a lift.the.lid question, but it rests on the connector settings, the default state and the plan gating as they stand today, and none of that surface is archived yet.",
+   "says": "The piece asks whether ChatGPT drafting from your inbox, drive and Slack makes its user sharper or dependent, and whether the approval step is real or theatre, which is a lift.the.lid question, but it rests on the connector settings, the default state and the plan gating as they stand today, and none of that surface is archived yet.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "ChatGPT's inbox connectors, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0159",
+   "title": "Copilot's model picker, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "The piece asks whether a Copilot that picks its own model mid-task makes its user sharper or dependent, which is a lift.the.lid question, but it rests on the Copilot changelog, the model picker and the plan gating for the research preview, none of which is archived yet, and those surfaces change.",
+   "says": "The piece asks whether a Copilot that picks its own model mid-task makes its user sharper or dependent, which is a lift.the.lid question, but it rests on the Copilot changelog, the model picker and the plan gating for the research preview, none of which is archived yet, and those surfaces change.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "Copilot's model picker, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0196",
+   "title": "The Managed Agents changelog, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "The piece asks which of the four Managed Agents controls shipped on August 7 a normal account can actually reach and whether they make the person running the agent sharper or dependent, which is the lift.the.lid question, but the whole piece rests on Anthropic's changelog and I could not confirm an archived copy exists (the Wayback lookup was rate-limited), so it is held until the changelog is archived.",
+   "says": "The piece asks which of the four Managed Agents controls shipped on August 7 a normal account can actually reach and whether they make the person running the agent sharper or dependent, which is the lift.the.lid question, but the whole piece rests on Anthropic's changelog and I could not confirm an archived copy exists (the Wayback lookup was rate-limited), so it is held until the changelog is archived.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "The Managed Agents changelog, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0045",
+   "title": "The sponsored MCP report, inspected.",
+   "handoff_reason": "evidence_must_be_created",
+   "reason": "The only evidence is a sponsored test by a connector vendor whose business needs Claude Code to fail at building connectors, and a verdict on whether the one-in-eight score holds would need the build to be run, which is evidence created rather than found.",
+   "says": "The only evidence is a sponsored test by a connector vendor whose business needs Claude Code to fail at building connectors, and a verdict on whether the one-in-eight score holds would need the build to be run, which is evidence created rather than found.",
+   "rule": "This needs primary research that has not been done. The material gate says a piece whose evidence must be created rather than found is not commissioned, however good the idea.",
+   "fix_hint": "Either find a named producer who already published the missing half, or drop it. The material gate does not commission primary research, however good the idea.",
+   "proposed_hint": "The sponsored MCP report, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0182",
+   "title": "Entra Agent ID, inspected.",
+   "handoff_reason": "format_ambiguous_question",
+   "reason": "The same public surface, Microsoft's Entra Agent ID docs and the $15 per user per month Agent 365 price, carries two equal questions, what agent identity costs when it is priced per human user in companies where agents now outnumber humans, and whether an identity layer that only works inside one cloud makes its admin sharper or dependent, and the candidate's own claim (three clouds converging, despite a title that says Anthropic) asks neither, so the question test does not separate them.",
+   "says": "The same public surface, Microsoft's Entra Agent ID docs and the $15 per user per month Agent 365 price, carries two equal questions, what agent identity costs when it is priced per human user in companies where agents now outnumber humans, and whether an identity layer that only works inside one cloud makes its admin sharper or dependent, and the candidate's own claim (three clouds converging, despite a title that says Anthropic) asks neither, so the question test does not separate them.",
+   "rule": "This subject fits split.the.bill and lift.the.lid equally and the question it asks is not clear enough to separate them.",
+   "fix_hint": "Decide the question, not the subject. What it costs and who pays is split.the.bill; sharper or dependent is lift.the.lid. Say which and the row becomes writable.",
+   "proposed_hint": "Entra Agent ID, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0211",
+   "title": "Anthropic's price premium, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "The piece asks whether Anthropic's 2x price premium for Fable 5 over Opus 5 buys anything when Anthropic's own evals show Opus 5 winning most of the work, which is a split.the.bill question with Anthropic named, but the load-bearing numbers live on a pricing page and an eval table that are not archived and both change, so the piece needs the surface captured before it can be commissioned.",
+   "says": "The piece asks whether Anthropic's 2x price premium for Fable 5 over Opus 5 buys anything when Anthropic's own evals show Opus 5 winning most of the work, which is a split.the.bill question with Anthropic named, but the load-bearing numbers live on a pricing page and an eval table that are not archived and both change, so the piece needs the surface captured before it can be commissioned.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "Anthropic's price premium, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0167",
+   "title": "CrowdStrike's ID card for agents, inspected.",
+   "handoff_reason": "source_not_archived",
+   "reason": "The piece asks what CrowdStrike's Agentic IdP actually ships against what the announcement claims, and whether one authoritative directory makes the security team sharper or dependent on it, which is a lift.the.lid question, but the article gives no availability, pricing or docs and the CrowdStrike surface that would answer that is not archived.",
+   "says": "The piece asks what CrowdStrike's Agentic IdP actually ships against what the announcement claims, and whether one authoritative directory makes the security team sharper or dependent on it, which is a lift.the.lid question, but the article gives no availability, pricing or docs and the CrowdStrike surface that would answer that is not archived.",
+   "rule": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.",
+   "fix_hint": "Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.",
+   "proposed_hint": "CrowdStrike's ID card for agents, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0123",
+   "title": "One reader's AI vet coordinator, and the 20 clinics on the other end.",
+   "handoff_reason": "evidence_must_be_created",
+   "reason": "The only evidence is one anonymous community post about one afternoon, and the piece worth writing, what lands on the 20 clinics when hundreds of readers do the same, needs research on the receiving end that nobody has done.",
+   "says": "The only evidence is one anonymous community post about one afternoon, and the piece worth writing, what lands on the 20 clinics when hundreds of readers do the same, needs research on the receiving end that nobody has done.",
+   "rule": "This needs primary research that has not been done. The material gate says a piece whose evidence must be created rather than found is not commissioned, however good the idea.",
+   "fix_hint": "Either find a named producer who already published the missing half, or drop it. The material gate does not commission primary research, however good the idea.",
+   "proposed_hint": "One reader's AI vet coordinator, and the 20 clinics on the other end."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0155",
+   "title": "The model router, inspected.",
+   "handoff_reason": "format_ambiguous_question",
+   "reason": "The candidate mixes a cost claim (routing tools claiming 30 to 45 percent savings) with a product-surface claim (GitHub choosing the model at runtime without the user seeing which one answered), and the question it asks is not clear enough to separate split.the.bill from lift.the.lid.",
+   "says": "The candidate mixes a cost claim (routing tools claiming 30 to 45 percent savings) with a product-surface claim (GitHub choosing the model at runtime without the user seeing which one answered), and the question it asks is not clear enough to separate split.the.bill from lift.the.lid.",
+   "rule": "This subject fits split.the.bill and lift.the.lid equally and the question it asks is not clear enough to separate them.",
+   "fix_hint": "Decide the question, not the subject. What it costs and who pays is split.the.bill; sharper or dependent is lift.the.lid. Say which and the row becomes writable.",
+   "proposed_hint": "The model router, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0030",
+   "title": "Arrow 2, inspected.",
+   "handoff_reason": "evidence_must_be_created",
+   "reason": "general with a handoff because the only evidence is a launch post on X, and to check the claim that the vectors are precise and editable someone would have to run the model and make the test files, which the material gate says is not commissioned however good the idea.",
+   "says": "general with a handoff because the only evidence is a launch post on X, and to check the claim that the vectors are precise and editable someone would have to run the model and make the test files, which the material gate says is not commissioned however good the idea.",
+   "rule": "This needs primary research that has not been done. The material gate says a piece whose evidence must be created rather than found is not commissioned, however good the idea.",
+   "fix_hint": "Either find a named producer who already published the missing half, or drop it. The material gate does not commission primary research, however good the idea.",
+   "proposed_hint": "Arrow 2, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0210",
+   "title": "Applied Intuition's 20x, inspected.",
+   "handoff_reason": "evidence_must_be_created",
+   "reason": "The only source is the investor's own newsletter carrying the portfolio company's CTO saying development got 20x faster, and a piece that tests that claim would need research nobody has done, so the material gate says it is not commissioned.",
+   "says": "The only source is the investor's own newsletter carrying the portfolio company's CTO saying development got 20x faster, and a piece that tests that claim would need research nobody has done, so the material gate says it is not commissioned.",
+   "rule": "This needs primary research that has not been done. The material gate says a piece whose evidence must be created rather than found is not commissioned, however good the idea.",
+   "fix_hint": "Either find a named producer who already published the missing half, or drop it. The material gate does not commission primary research, however good the idea.",
+   "proposed_hint": "Applied Intuition's 20x, inspected."
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0044",
+   "title": "The Enigma token bill, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The meter is not where the candidate says it is. The cited url, the ChatGPT site page, carries the decode, the 14 to 15 September 2026 working dates and links out to CryptoCellar and the Crypto Museum, but it has no byline, no hours, no token count, no plan percentage and no goal quote. Its only attribution line is \"Researcher-led · GPT-6 Astra & specialist agents · September 2026\", so it does not even name Carter Leffen. The one named outlet that reported the story, the-decoder (Matthias Bastian, 17 September 2026), confirms the ten hours and names Leffen as a product development coach at Bloomberg LP, but sources that to his LinkedIn post and carries neither the 650 million tokens nor the 70 percent. Those two numbers, and the \"don't stop working until you solve the problem\" goal, trace only to The Rundown AI's own summary of him and the blogs that copied it. Leffen's X post cannot be fetched (HTTP 402), so the figure the whole piece rests on is currently a newsletter paraphrase with no archived primary and no c0044 file in the slate archive. There is a second hole that survives archiving: a lift-the-lid on the plan limit needs the limit, and OpenAI publishes no token-denominated weekly Pro figure, so the denominator behind \"70 percent\" is one user's estimate of an unpublished number. The ten hours alone would hold up, but strip the token count and the percentage and this candidate loses its subject, its headline and its number score. To revive it, archive Leffen's own post (X or LinkedIn) showing the 650 million and the 70 percent, and swap that into evidence_refs in place of the ChatGPT site page. Separate check on the standing instruction about fable: nothing in this repo routes to it. The only three hits, api/_models.ts:86, api/_content.ts:288 and scripts/check-model-routing.mts:91, are pattern matches that would classify a fable model if one were ever passed. No model constant, no price row in api/_prices.ts and no proxy allowlist entry names it, and this review used no fable model.",
+   "says": "The meter is not where the candidate says it is. The cited url, the ChatGPT site page, carries the decode, the 14 to 15 September 2026 working dates and links out to CryptoCellar and the Crypto Museum, but it has no byline, no hours, no token count, no plan percentage and no goal quote. Its only attribution line is \"Researcher-led · GPT-6 Astra & specialist agents · September 2026\", so it does not even name Carter Leffen. The one named outlet that reported the story, the-decoder (Matthias Bastian, 17 September 2026), confirms the ten hours and names Leffen as a product development coach at Bloomberg LP, but sources that to his LinkedIn post and carries neither the 650 million tokens nor the 70 percent. Those two numbers, and the \"don't stop working until you solve the problem\" goal, trace only to The Rundown AI's own summary of him and the blogs that copied it. Leffen's X post cannot be fetched (HTTP 402), so the figure the whole piece rests on is currently a newsletter paraphrase with no archived primary and no c0044 file in the slate archive. There is a second hole that survives archiving: a lift-the-lid on the plan limit needs the limit, and OpenAI publishes no token-denominated weekly Pro figure, so the denominator behind \"70 percent\" is one user's estimate of an unpublished number. The ten hours alone would hold up, but strip the token count and the percentage and this candidate loses its subject, its headline and its number score. To revive it, archive Leffen's own post (X or LinkedIn) showing the 650 million and the 70 percent, and swap that into evidence_refs in place of the ChatGPT site page. Separate check on the standing instruction about fable: nothing in this repo routes to it. The only three hits, api/_models.ts:86, api/_content.ts:288 and scripts/check-model-routing.mts:91, are pattern matches that would classify a fable model if one were ever passed. No model constant, no price row in api/_prices.ts and no proxy allowlist entry names it, and this review used no fable model.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The Enigma token bill, inspected.",
+   "composite": 8.17
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0151",
+   "title": "Fifteen cents a million tokens, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The cited URL is DeepSeek-AI's Hugging Face model card. It confirms the 552B backbone, the 8B prefill / 16B decode activation, and a frontier table against Opus-5.0 and GPT-5.6 Sol. Counting that table programmatically: 15 rows carry both an Opus-5.0 and a V4.1-Flash score, not 16, and V4.1-Flash wins 5 of them (Terminal-Bench 2.1, DeepSWE v1.1, HLE with tools, AutomationBench, Agent's Last Exam), two of those by only 0.2 and 0.3 points. The headline number is not on the cited page: the model card states no price, no release date, and nothing about a default model. The fifteen cents lives on DeepSeek's pricing page (api-docs.deepseek.com/quick_start/pricing), and there it is the off-peak cache-miss input price. Peak price is $0.30 per million, off-peak is defined as half of peak, and peak hours are 01:00 to 04:00 and 06:00 to 10:00 UTC on weekdays. So the true gap to Opus 5 is 17x at list price and 33x in the discount window, and the headline must say which. The $5 per million for Claude Opus 5 is confirmed on Anthropic's pricing docs (platform.claude.com/docs/en/about-claude/pricing). The 10 September 2026 date is confirmed by DeepSeek's changelog (api-docs.deepseek.com/updates) and by the Hugging Face repo createdAt of 2026-09-10T02:17:58Z. The claim that DeepSeek 'made it the default model' is on none of the four producer pages; the changelog says only that deepseek-flash now calls V4.1-Flash and the retired V4 Flash names route to it. The $4 GPT-5.6 Sol figure was not checked. The 'what does it really cost to run' half of the question has no producer evidence for V4.1-Flash: DeepSeek's only inference-cost disclosure is the February 2025 V3/R1 system overview (545% theoretical cost profit margin), so run cost can only be estimated from the activation figures plus third-party GPU prices, and the piece must label it an estimate. Every page that holds the price and the date is a pricing or changelog page and none is in the source archive yet. Working copies with sha256 are at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0151_archive_manifest.txt (c0151_deepseek_pricing.html, c0151_anthropic_pricing_docs.html, c0151_deepseek_updates.html, c0151_hf_readme.md, c0151_hf_api.json).",
+   "says": "The cited URL is DeepSeek-AI's Hugging Face model card. It confirms the 552B backbone, the 8B prefill / 16B decode activation, and a frontier table against Opus-5.0 and GPT-5.6 Sol. Counting that table programmatically: 15 rows carry both an Opus-5.0 and a V4.1-Flash score, not 16, and V4.1-Flash wins 5 of them (Terminal-Bench 2.1, DeepSWE v1.1, HLE with tools, AutomationBench, Agent's Last Exam), two of those by only 0.2 and 0.3 points. The headline number is not on the cited page: the model card states no price, no release date, and nothing about a default model. The fifteen cents lives on DeepSeek's pricing page (api-docs.deepseek.com/quick_start/pricing), and there it is the off-peak cache-miss input price. Peak price is $0.30 per million, off-peak is defined as half of peak, and peak hours are 01:00 to 04:00 and 06:00 to 10:00 UTC on weekdays. So the true gap to Opus 5 is 17x at list price and 33x in the discount window, and the headline must say which. The $5 per million for Claude Opus 5 is confirmed on Anthropic's pricing docs (platform.claude.com/docs/en/about-claude/pricing). The 10 September 2026 date is confirmed by DeepSeek's changelog (api-docs.deepseek.com/updates) and by the Hugging Face repo createdAt of 2026-09-10T02:17:58Z. The claim that DeepSeek 'made it the default model' is on none of the four producer pages; the changelog says only that deepseek-flash now calls V4.1-Flash and the retired V4 Flash names route to it. The $4 GPT-5.6 Sol figure was not checked. The 'what does it really cost to run' half of the question has no producer evidence for V4.1-Flash: DeepSeek's only inference-cost disclosure is the February 2025 V3/R1 system overview (545% theoretical cost profit margin), so run cost can only be estimated from the activation figures plus third-party GPU prices, and the piece must label it an estimate. Every page that holds the price and the date is a pricing or changelog page and none is in the source archive yet. Working copies with sha256 are at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0151_archive_manifest.txt (c0151_deepseek_pricing.html, c0151_anthropic_pricing_docs.html, c0151_deepseek_updates.html, c0151_hf_readme.md, c0151_hf_api.json).",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Fifteen cents a million tokens, inspected.",
+   "composite": 7.83
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0059",
+   "title": "Anthropic's 2.16 gigawatt lease, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The claim is real but the number in the headline does not describe what the headline says it describes, and the half of the question about who holds the bill has no evidence behind it today. What was verified: the Reuters URL itself is behind a JavaScript wall (HTTP 401 on direct fetch, WebFetch blocked), so the wire text was read from WTAQ's verbatim Reuters syndication (Sydney, Sept 16). Reuters says Anthropic \"signed its first data centre lease agreement in Australia\" and that \"the lease covers a data centre campus with planned capacity totalling 2.16 gigawatts\", developer Zerra DC, sourced to \"two people familiar with the deal\"; \"Anthropic and Zerra DC declined to comment\"; subject to Foreign Investment Review Board approval. So 2.16 GW is the campus's planned capacity, not what Anthropic leased. Converge Digest states plainly that \"lease documentation covers the first stage of the campus\" and \"financial terms and the amount of capacity specifically committed to Anthropic in the first stage have not been publicly disclosed\". The developer's own planning filing (Urbis report to Western Downs Regional Council, filed August 2026, as reported by Mingtiandi 25 Aug and brisbanedevelopment.com.au) gives 1.44 GW of IT load across four 360 MW buildings, 2.16 GVA of total facility demand across four stages, A$14.5 billion construction cost, and A$31.9 billion \"private capital investment\"; the same filing said Zerra \"has yet to identify a customer\". The on-record source is Queensland Premier David Crisafulli in Parliament (ABC, Brewster and Nakamura, 16 Sept), who gives the A$32 billion figure and \"agreement to use part of\" the site; ABC does not carry the 2.16 GW number at all. What does not exist: the lease value, term, or megawatts committed; any Zerra DC or Anthropic statement (none found); the Queensland media statement (not located); any financing structure for the A$32 billion beyond one trade outlet naming Macquarie Capital and Dexus-backed Australian Data Centres as consortium members, and Stonepeak's 2023 preferred investment of up to US$650 million into Zerra's parent AGP, which is a fraction of the project. The candidate's third evidence_ref, the counterparty's own announcement of the agreement, remains unlocated. A split_the_bill piece can be written from the planning filing about what a 2.16 GVA campus costs to run, but it would be about Zerra DC's campus, not \"Anthropic's 2.16 gigawatt lease\", and it would have to say the tenant's share and the money are undisclosed. Rewrite the headline and your_call_question around the campus filing and the stage-one lease before this is scored again, and add the Urbis report or the council DA as the counterparty source.",
+   "says": "The claim is real but the number in the headline does not describe what the headline says it describes, and the half of the question about who holds the bill has no evidence behind it today. What was verified: the Reuters URL itself is behind a JavaScript wall (HTTP 401 on direct fetch, WebFetch blocked), so the wire text was read from WTAQ's verbatim Reuters syndication (Sydney, Sept 16). Reuters says Anthropic \"signed its first data centre lease agreement in Australia\" and that \"the lease covers a data centre campus with planned capacity totalling 2.16 gigawatts\", developer Zerra DC, sourced to \"two people familiar with the deal\"; \"Anthropic and Zerra DC declined to comment\"; subject to Foreign Investment Review Board approval. So 2.16 GW is the campus's planned capacity, not what Anthropic leased. Converge Digest states plainly that \"lease documentation covers the first stage of the campus\" and \"financial terms and the amount of capacity specifically committed to Anthropic in the first stage have not been publicly disclosed\". The developer's own planning filing (Urbis report to Western Downs Regional Council, filed August 2026, as reported by Mingtiandi 25 Aug and brisbanedevelopment.com.au) gives 1.44 GW of IT load across four 360 MW buildings, 2.16 GVA of total facility demand across four stages, A$14.5 billion construction cost, and A$31.9 billion \"private capital investment\"; the same filing said Zerra \"has yet to identify a customer\". The on-record source is Queensland Premier David Crisafulli in Parliament (ABC, Brewster and Nakamura, 16 Sept), who gives the A$32 billion figure and \"agreement to use part of\" the site; ABC does not carry the 2.16 GW number at all. What does not exist: the lease value, term, or megawatts committed; any Zerra DC or Anthropic statement (none found); the Queensland media statement (not located); any financing structure for the A$32 billion beyond one trade outlet naming Macquarie Capital and Dexus-backed Australian Data Centres as consortium members, and Stonepeak's 2023 preferred investment of up to US$650 million into Zerra's parent AGP, which is a fraction of the project. The candidate's third evidence_ref, the counterparty's own announcement of the agreement, remains unlocated. A split_the_bill piece can be written from the planning filing about what a 2.16 GVA campus costs to run, but it would be about Zerra DC's campus, not \"Anthropic's 2.16 gigawatt lease\", and it would have to say the tenant's share and the money are undisclosed. Rewrite the headline and your_call_question around the campus filing and the stage-one lease before this is scored again, and add the Urbis report or the council DA as the counterparty source.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Anthropic's 2.16 gigawatt lease, inspected.",
+   "composite": 7.77
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0147",
+   "title": "Twenty years for superintelligence, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The number and the producer check out, but the piece's frame is refuted by the dates and by the bill's status. Verified from the Sanders press release and its one-page summary PDF (both saved at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/sanders_c0147.html and c0147_summary.pdf): Sen. Bernie Sanders (I-Vt.) and Rep. Greg Casar (D-Texas), dated September 3, 2026, verbatim \"persons shall be subject to not more than 20 years in prison, which is similar to existing penalties related to unlawfully developing nuclear weapons\", and \"temporarily pause advanced AI development until a federal regulator has established safety rules\". Three things fail. (1) The candidate says \"introduced\" and the reason says \"became a bill\" and \"the bill text gives a hard, citable number\". The press release says \"today announced ... forthcoming legislation\" and its own headline says \"to Introduce\". There is no bill number and no bill text on the page or in the summary; 63 news items through September 19 show no S. or H.R. number (MeriTalk on September 8 still says \"to Introduce\"); congress.gov and GovTrack returned 403 so I could not confirm introduction either way. The 20-year figure comes from a press release and a one-page summary, not statute. (2) \"The same week the labs asked for a slowdown\" is false. Amodei's \"We Must Pace the Frontier\" was published September 12 (darioamodei.com feed pubDate, with BBC, Guardian and Politico coverage that day); Nadella backed it September 13, others September 13 to 14. That is nine days after the September 3 announcement, in a different week. (3) \"The labs asked for a pause. The Senate answered with a felony.\" reverses the order. The felony proposal came first; the labs' ask came nine days later, and Amodei's post does not mention Sanders, Casar, a ban or prison. It is also one senator and one representative, not the Senate. The candidate's evidence_refs cover only the Sanders page (the second id is a duplicate of the same URL per the drop ledger); nothing references the labs' ask at all. The raw material for an honest version exists today (September 3 announcement with the 20-year figure, September 12 pacing post with named backers, and the press release's citation of 2023 and last-year lab commitments), but it would have to say \"announced, not introduced\", cite the summary rather than bill text, and drop the same-week and answered-with-a-felony framing. As specified, the piece cannot be written from the evidence.",
+   "says": "The number and the producer check out, but the piece's frame is refuted by the dates and by the bill's status. Verified from the Sanders press release and its one-page summary PDF (both saved at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/sanders_c0147.html and c0147_summary.pdf): Sen. Bernie Sanders (I-Vt.) and Rep. Greg Casar (D-Texas), dated September 3, 2026, verbatim \"persons shall be subject to not more than 20 years in prison, which is similar to existing penalties related to unlawfully developing nuclear weapons\", and \"temporarily pause advanced AI development until a federal regulator has established safety rules\". Three things fail. (1) The candidate says \"introduced\" and the reason says \"became a bill\" and \"the bill text gives a hard, citable number\". The press release says \"today announced ... forthcoming legislation\" and its own headline says \"to Introduce\". There is no bill number and no bill text on the page or in the summary; 63 news items through September 19 show no S. or H.R. number (MeriTalk on September 8 still says \"to Introduce\"); congress.gov and GovTrack returned 403 so I could not confirm introduction either way. The 20-year figure comes from a press release and a one-page summary, not statute. (2) \"The same week the labs asked for a slowdown\" is false. Amodei's \"We Must Pace the Frontier\" was published September 12 (darioamodei.com feed pubDate, with BBC, Guardian and Politico coverage that day); Nadella backed it September 13, others September 13 to 14. That is nine days after the September 3 announcement, in a different week. (3) \"The labs asked for a pause. The Senate answered with a felony.\" reverses the order. The felony proposal came first; the labs' ask came nine days later, and Amodei's post does not mention Sanders, Casar, a ban or prison. It is also one senator and one representative, not the Senate. The candidate's evidence_refs cover only the Sanders page (the second id is a duplicate of the same URL per the drop ledger); nothing references the labs' ask at all. The raw material for an honest version exists today (September 3 announcement with the 20-year figure, September 12 pacing post with named backers, and the press release's citation of 2023 and last-year lab commitments), but it would have to say \"announced, not introduced\", cite the summary rather than bill text, and drop the same-week and answered-with-a-felony framing. As specified, the piece cannot be written from the evidence.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Twenty years for superintelligence, inspected.",
+   "composite": 7.77
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0033",
+   "title": "The UN's 21 percent, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The cited url does not carry the spine. I fetched the Google blog post (Prem Ramaswami, Head of Data Commons, 17 Sep 2026) and read it in full. It confirms the first half of the claim: the UN System Data Commons is built on Google's open source Data Commons, it supports MCP, AI agents can fetch figures from it directly, and the UN targets 80 percent of its statistical datasets by 2027. It contains no accuracy figure, no 21 percent, and no UNICEF measurement of any kind. UNICEF appears once, in passing, in a line about a child poverty report. A writer following the recorded evidence_refs would print a number their source does not contain.\n\nThe number does exist today, but at a different source and in a weaker form than the claim states. TechCrunch (Jagmeet Singh, 17 Sep 2026) reports a UNICEF benchmark of six models across more than 133,000 responses with an average accuracy score of 21.2 percent, given by João Pedro Azevedo, UNICEF's chief statistician, in a virtual press briefing. The models named are GPT-4o, GPT-4o-mini, Claude Sonnet 4.5, Claude Haiku 4.5, Gemini 2.5 Flash and Gemini 2.0 Flash. The same report states the study is a UNICEF working paper being prepared for journal submission, not yet peer reviewed, with methodology, code and data promised but not released. I searched for a primary UNICEF document and found none. Every public trace of the figure leads back to that one briefing.\n\nTwo further problems. The claim restates the finding as models answering correctly only 21 percent of the time, which is not what was measured: it was an average accuracy score, and about three in five responses gave no usable number at all. And the piece promises to inspect the world's numbers while its own central number cannot be inspected by anyone outside UNICEF.\n\nThis is not a kill, and the evidence does not have to be created: UNICEF ran the bench, it is simply unreleased. The path to a pass is to add the briefing report as the ref for the number, attribute it to Azevedo by name with the date, say plainly that the paper is not out and not peer reviewed, and lean on the two figures that are easier to stand behind, three in five answers with no usable number, and repeat runs two days later agreeing only about half the time. I default to false here because the recorded evidence does not support the spine as written.\n\nBoth pages are archived at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0033_google_blog.html and /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0033_techcrunch.html, with text extracts beside them.",
+   "says": "The cited url does not carry the spine. I fetched the Google blog post (Prem Ramaswami, Head of Data Commons, 17 Sep 2026) and read it in full. It confirms the first half of the claim: the UN System Data Commons is built on Google's open source Data Commons, it supports MCP, AI agents can fetch figures from it directly, and the UN targets 80 percent of its statistical datasets by 2027. It contains no accuracy figure, no 21 percent, and no UNICEF measurement of any kind. UNICEF appears once, in passing, in a line about a child poverty report. A writer following the recorded evidence_refs would print a number their source does not contain.\n\nThe number does exist today, but at a different source and in a weaker form than the claim states. TechCrunch (Jagmeet Singh, 17 Sep 2026) reports a UNICEF benchmark of six models across more than 133,000 responses with an average accuracy score of 21.2 percent, given by João Pedro Azevedo, UNICEF's chief statistician, in a virtual press briefing. The models named are GPT-4o, GPT-4o-mini, Claude Sonnet 4.5, Claude Haiku 4.5, Gemini 2.5 Flash and Gemini 2.0 Flash. The same report states the study is a UNICEF working paper being prepared for journal submission, not yet peer reviewed, with methodology, code and data promised but not released. I searched for a primary UNICEF document and found none. Every public trace of the figure leads back to that one briefing.\n\nTwo further problems. The claim restates the finding as models answering correctly only 21 percent of the time, which is not what was measured: it was an average accuracy score, and about three in five responses gave no usable number at all. And the piece promises to inspect the world's numbers while its own central number cannot be inspected by anyone outside UNICEF.\n\nThis is not a kill, and the evidence does not have to be created: UNICEF ran the bench, it is simply unreleased. The path to a pass is to add the briefing report as the ref for the number, attribute it to Azevedo by name with the date, say plainly that the paper is not out and not peer reviewed, and lean on the two figures that are easier to stand behind, three in five answers with no usable number, and repeat runs two days later agreeing only about half the time. I default to false here because the recorded evidence does not support the spine as written.\n\nBoth pages are archived at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0033_google_blog.html and /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0033_techcrunch.html, with text extracts beside them.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The UN's 21 percent, inspected.",
+   "composite": 7.49
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0076",
+   "title": "The slowdown scorecard, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The candidate's claim is fully confirmed: the X post (fetched via fxtwitter and syndication after x.com returned 402) is by Mark Zuckerberg, @finkd, 2026-09-15, and all four elements (each lab's own responsibility and incentive to pace safely, the months-long Muse safety hold, alignment as the differentiating capability, the majority of compute committed to serving people rather than recursive self-improvement) are in his own words. Bloomberg via Yahoo (2026-09-16) and The Deep View (2026-09-16) attribute the same to him. The eight-name scorecard also exists in public statements by named producers: Amodei's essay (weekend of 12 to 13 September), Hassabis on X the same day, Altman and Musk cosigning, Huang at the All-In Summit on 09-14 (\"We're not going to let that happen, sir\"), Trump on the same call (\"It's a hoax\"), and Beijing through foreign ministry spokesman Guo Jiakun on 09-14 (\"fearmongering\"). The piece fails on its stated evidence base, not on the claim. Its argument is \"what the labs actually did in the fortnight after the slowdown call\" and \"what each shipped in the same window\". The call landed on 12 to 13 September, so the fortnight closes on 26 or 27 September; today is 19 September and half the window has not happened. The ship timeline the piece rests on does not exist yet, and the your_call question (which of the eight actually slowed down) needs a release-cadence comparison across the full window that nobody has published; one week of release notes cannot show a slowdown. Writable from 27 September, or now if the window is honestly narrowed to the first week and the question is softened to who said what versus who shipped what in week one.",
+   "says": "The candidate's claim is fully confirmed: the X post (fetched via fxtwitter and syndication after x.com returned 402) is by Mark Zuckerberg, @finkd, 2026-09-15, and all four elements (each lab's own responsibility and incentive to pace safely, the months-long Muse safety hold, alignment as the differentiating capability, the majority of compute committed to serving people rather than recursive self-improvement) are in his own words. Bloomberg via Yahoo (2026-09-16) and The Deep View (2026-09-16) attribute the same to him. The eight-name scorecard also exists in public statements by named producers: Amodei's essay (weekend of 12 to 13 September), Hassabis on X the same day, Altman and Musk cosigning, Huang at the All-In Summit on 09-14 (\"We're not going to let that happen, sir\"), Trump on the same call (\"It's a hoax\"), and Beijing through foreign ministry spokesman Guo Jiakun on 09-14 (\"fearmongering\"). The piece fails on its stated evidence base, not on the claim. Its argument is \"what the labs actually did in the fortnight after the slowdown call\" and \"what each shipped in the same window\". The call landed on 12 to 13 September, so the fortnight closes on 26 or 27 September; today is 19 September and half the window has not happened. The ship timeline the piece rests on does not exist yet, and the your_call question (which of the eight actually slowed down) needs a release-cadence comparison across the full window that nobody has published; one week of release notes cannot show a slowdown. Writable from 27 September, or now if the window is honestly narrowed to the first week and the question is softened to who said what versus who shipped what in week one.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The slowdown scorecard, inspected.",
+   "composite": 7.37
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0034",
+   "title": "Intel's Ohio fab, inspected for who holds the bill.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "Refuted. The only url, the SK Hynix newsroom page at news.skhynix.com/en/fact-10/ dated 2026-09-16, is a denial rather than a source. SK Hynix states that no specific plans or arrangements have been finalized and that no decisions have been made on either reported scenario, the Ohio fab lease or the Intel and cloud joint venture. The page carries no cost figure of any kind, so there is no memory cost line and no number attributed to a named producer. The second ref, 1a0b41df7855c550:5, is the newsletter entry that points at the same url and repeats the same single sentence, so it adds no number either, and no c0034 archive file exists in the slate directory. The piece asks what memory in an AI server really costs to run and who ends up holding the bill. A split_the_bill piece needs a bill, and there is no bill in the cited evidence. The reason line also assumes a fab that was paid for, left standing empty and now leased, which is exactly what the named producer declines to confirm, so the framing asserts more than the source supports. No handoff code fits: the page is a press release, not a pricing, changelog or docs page, so source_not_archived is not the issue, and the missing memory cost figure is the kind of number that exists publicly today from server cost and DRAM reporting, so it does not have to be created. It is simply absent from this candidate's refs. Separate note on the request to make sure nothing uses fable from here: nothing does. No claude-fable model id appears anywhere in /home/user/control-center. The only matches are fable-5 as a pattern alternative in two behaviour flag regexes, api/_models.ts line 86 and api/_content.ts line 288, plus the detection regex in scripts/check-model-routing.mts line 91. BRIEFABLE in src/components/GuestCard.tsx and bluffable in docs/focus-purpose/OPERATING-MANUAL.md are substring coincidences. I changed nothing, because editing those flag regexes would alter model behaviour and sits outside a lens check.",
+   "says": "Refuted. The only url, the SK Hynix newsroom page at news.skhynix.com/en/fact-10/ dated 2026-09-16, is a denial rather than a source. SK Hynix states that no specific plans or arrangements have been finalized and that no decisions have been made on either reported scenario, the Ohio fab lease or the Intel and cloud joint venture. The page carries no cost figure of any kind, so there is no memory cost line and no number attributed to a named producer. The second ref, 1a0b41df7855c550:5, is the newsletter entry that points at the same url and repeats the same single sentence, so it adds no number either, and no c0034 archive file exists in the slate directory. The piece asks what memory in an AI server really costs to run and who ends up holding the bill. A split_the_bill piece needs a bill, and there is no bill in the cited evidence. The reason line also assumes a fab that was paid for, left standing empty and now leased, which is exactly what the named producer declines to confirm, so the framing asserts more than the source supports. No handoff code fits: the page is a press release, not a pricing, changelog or docs page, so source_not_archived is not the issue, and the missing memory cost figure is the kind of number that exists publicly today from server cost and DRAM reporting, so it does not have to be created. It is simply absent from this candidate's refs. Separate note on the request to make sure nothing uses fable from here: nothing does. No claude-fable model id appears anywhere in /home/user/control-center. The only matches are fable-5 as a pattern alternative in two behaviour flag regexes, api/_models.ts line 86 and api/_content.ts line 288, plus the detection regex in scripts/check-model-routing.mts line 91. BRIEFABLE in src/components/GuestCard.tsx and bluffable in docs/focus-purpose/OPERATING-MANUAL.md are substring coincidences. I changed nothing, because editing those flag regexes would alter model behaviour and sits outside a lens check.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Intel's Ohio fab, inspected for who holds the bill.",
+   "composite": 7.34
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0024",
+   "title": "25,000 robotaxis, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The event is real and well sourced, but the question the piece asks is not answerable from anything published today.\n\nWhat I checked. The FT link in the candidate could not be fetched (FT is hard paywalled and the fetch was refused), so I confirmed the claim against other named producers instead. TechCrunch, Electrek and InsideEVs all carry the Lucid and Bolt announcement of 17 September 2026 for at least 25,000 autonomous vehicles on Lucid's midsize platform, running Nvidia Hyperion and aimed at SAE Level 4. TechCrunch quotes the press release that Bolt intends to own and operate the fleet. So the claim and the 25,000 number are confirmed and attributed.\n\nWhy it still fails. The your-call question has two halves. The second half, who holds the bill, has a published answer: Bolt's autonomous driving unit owns and operates. The first half, what one robotaxi costs to put on the road, has no source at all. TechCrunch states plainly that no money has changed hands and Bolt has not placed an order, and every report says no deal value was disclosed. There is no per-vehicle price, no capital commitment and no cost breakdown anywhere in the record. Lucid's roughly $50,000 midsize target is for the consumer car, not the Midsize Plus robotaxi build with the AV hardware bolted on, and that car does not start production until late 2028. Nvidia does not publish a Hyperion sensor and compute price. To cost one robotaxi the writer would have to build the figure from parts that are either unannounced or unpriced, then run the piece on a spreadsheet estimate presented as the headline number. That is a number created for the piece, not evidence that exists today, which is why the gate material_exists should read false for the cost side even though it is true for the event.\n\nTwo further traps for whoever picks this up. The FT url should not be the citation because neither the writer nor a reader can open it; the Lucid investor relations release and TechCrunch cover the same facts and are open. And Lucid already has a separate 25,000 unit minimum quantity guarantee with Uber from April 2026, so a piece headlined \"twenty five thousand robotaxis\" can easily merge two different commitments from the same carmaker.\n\nSuggested corrected format. A version that does work on today's record is the gap between what Lucid has promised (two separate lots of 25,000) and what it actually built last year, reported as 18,378 cars. Treat that last figure as a lead, not verified: I saw it only in a search headline and it needs checking at Lucid's own filings before use.\n\nOn the standing instruction about fable: nothing uses it. Across the repo the string appears only inside defensive regexes, at /home/user/control-center/api/_models.ts (THINKS_BY_DEFAULT), /home/user/control-center/api/_content.ts (NO_SAMPLING_MODELS) and /home/user/control-center/scripts/check-model-routing.mts (the MODEL pattern). No call site selects claude-fable-5, and PROXY_ALLOWED_MODELS does not list it. No Fable model was used in this run.",
+   "says": "The event is real and well sourced, but the question the piece asks is not answerable from anything published today.\n\nWhat I checked. The FT link in the candidate could not be fetched (FT is hard paywalled and the fetch was refused), so I confirmed the claim against other named producers instead. TechCrunch, Electrek and InsideEVs all carry the Lucid and Bolt announcement of 17 September 2026 for at least 25,000 autonomous vehicles on Lucid's midsize platform, running Nvidia Hyperion and aimed at SAE Level 4. TechCrunch quotes the press release that Bolt intends to own and operate the fleet. So the claim and the 25,000 number are confirmed and attributed.\n\nWhy it still fails. The your-call question has two halves. The second half, who holds the bill, has a published answer: Bolt's autonomous driving unit owns and operates. The first half, what one robotaxi costs to put on the road, has no source at all. TechCrunch states plainly that no money has changed hands and Bolt has not placed an order, and every report says no deal value was disclosed. There is no per-vehicle price, no capital commitment and no cost breakdown anywhere in the record. Lucid's roughly $50,000 midsize target is for the consumer car, not the Midsize Plus robotaxi build with the AV hardware bolted on, and that car does not start production until late 2028. Nvidia does not publish a Hyperion sensor and compute price. To cost one robotaxi the writer would have to build the figure from parts that are either unannounced or unpriced, then run the piece on a spreadsheet estimate presented as the headline number. That is a number created for the piece, not evidence that exists today, which is why the gate material_exists should read false for the cost side even though it is true for the event.\n\nTwo further traps for whoever picks this up. The FT url should not be the citation because neither the writer nor a reader can open it; the Lucid investor relations release and TechCrunch cover the same facts and are open. And Lucid already has a separate 25,000 unit minimum quantity guarantee with Uber from April 2026, so a piece headlined \"twenty five thousand robotaxis\" can easily merge two different commitments from the same carmaker.\n\nSuggested corrected format. A version that does work on today's record is the gap between what Lucid has promised (two separate lots of 25,000) and what it actually built last year, reported as 18,378 cars. Treat that last figure as a lead, not verified: I saw it only in a search headline and it needs checking at Lucid's own filings before use.\n\nOn the standing instruction about fable: nothing uses it. Across the repo the string appears only inside defensive regexes, at /home/user/control-center/api/_models.ts (THINKS_BY_DEFAULT), /home/user/control-center/api/_content.ts (NO_SAMPLING_MODELS) and /home/user/control-center/scripts/check-model-routing.mts (the MODEL pattern). No call site selects claude-fable-5, and PROXY_ALLOWED_MODELS does not list it. No Fable model was used in this run.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "25,000 robotaxis, inspected.",
+   "composite": 7.26
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0130",
+   "title": "Zero retention in writing, inspected: who got it and who did not.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The headline and the your_call_question both say Palantir got zero retention in writing. No source says that. The cited Yahoo page is a Quartz rewrite (bylined Chris Morris and Cris Tolomia, 14 September 2026) of a Reuters wire that relays The Information's report, sourced to \"a person familiar with the discussions\". Its exact words are: \"Palantir has pressed Anthropic to provide guarantees of zero data retention before making its models available through Palantir's software.\" The Reuters wire (14 September 2026) says \"Palantir has pressed Anthropic to provide irrevocable zero-data-retention guarantees\". Pressing for a term is not getting it. Anthropic's own Enterprise Frontier Safeguards post (1 September 2026) says \"eligible customers will receive ZDR on Fable 5 and Fable 5.1 until EFS is ready\" but names no customer, so the \"who got it and who did not\" list has no named holder anywhere in public evidence today. The number is real and attributed to a named producer: Anthropic's API and data retention docs page says Fable 5, Fable 5.1, Mythos 5 and Mythos 5.1 \"require 30-day data retention and are not available under ZDR unless expressly authorized by Anthropic\", and the Reuters wire dates the change to June. That page is a docs page and would need archiving before recording. The Booz Allen bar and the Nvidia limit are single-sourced to The Information's anonymous source via Reuters, not public decisions by named companies as the format description claims. The intake record (c4e7612e) carries the same overreach: its snippet says Palantir \"will not ship the models inside its software until Anthropic guarantees it keeps nothing\", which is a paraphrase of \"pressed for\", and its title says Palantir \"got\" it. A reframed piece (Palantir is demanding an irrevocable guarantee, Booz Allen barred it from proprietary cyber work, Nvidia keeps it to less sensitive tasks, and a normal account gets 30 days by Anthropic's own docs) can be written from evidence that exists today, but that is a different claim from the candidate as written.",
+   "says": "The headline and the your_call_question both say Palantir got zero retention in writing. No source says that. The cited Yahoo page is a Quartz rewrite (bylined Chris Morris and Cris Tolomia, 14 September 2026) of a Reuters wire that relays The Information's report, sourced to \"a person familiar with the discussions\". Its exact words are: \"Palantir has pressed Anthropic to provide guarantees of zero data retention before making its models available through Palantir's software.\" The Reuters wire (14 September 2026) says \"Palantir has pressed Anthropic to provide irrevocable zero-data-retention guarantees\". Pressing for a term is not getting it. Anthropic's own Enterprise Frontier Safeguards post (1 September 2026) says \"eligible customers will receive ZDR on Fable 5 and Fable 5.1 until EFS is ready\" but names no customer, so the \"who got it and who did not\" list has no named holder anywhere in public evidence today. The number is real and attributed to a named producer: Anthropic's API and data retention docs page says Fable 5, Fable 5.1, Mythos 5 and Mythos 5.1 \"require 30-day data retention and are not available under ZDR unless expressly authorized by Anthropic\", and the Reuters wire dates the change to June. That page is a docs page and would need archiving before recording. The Booz Allen bar and the Nvidia limit are single-sourced to The Information's anonymous source via Reuters, not public decisions by named companies as the format description claims. The intake record (c4e7612e) carries the same overreach: its snippet says Palantir \"will not ship the models inside its software until Anthropic guarantees it keeps nothing\", which is a paraphrase of \"pressed for\", and its title says Palantir \"got\" it. A reframed piece (Palantir is demanding an irrevocable guarantee, Booz Allen barred it from proprietary cyber work, Nvidia keeps it to less sensitive tasks, and a normal account gets 30 days by Anthropic's own docs) can be written from evidence that exists today, but that is a different claim from the candidate as written.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Zero retention in writing, inspected: who got it and who did not.",
+   "composite": 7.26
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0099",
+   "title": "Moonshot's two billion dollar target, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "Half of this piece exists in evidence today and half does not. The half that exists: Anthropic's own report (PDF, pages 148 to 149, case GTG-16002) says Moonshot \"relayed almost 300,000 customer requests to Anthropic\" over a ten day period, mostly to Opus, through 5,380 fraudulent accounts in Singapore and Japan, and that Moonshot showed Claude's answers to Kimi users as Kimi's own. The same page gives \"over 23 million exchanges observed\" as the total distillation activity attributable to Moonshot between May and July 2026. The revenue side is Bloomberg reporting (11 September), carried by TechCrunch (Russell Brandom) and Channel Insider: a $2 billion annualised target by year end, run rate over $1 billion in August, up from $300 million in June. Moonshot has not responded (Bloomberg: did not respond; Dealroom: has not addressed it). Two problems. First, the candidate's question says \"23 million of Kimi's exchanges ran through Claude\", which misreads the source: the 23 million is Moonshot's total distillation exchanges with Claude, and the figure for Kimi users actually served Claude is the 300,000 in one ten day window. Second, and the one that fails the lens: the spine is \"what does Kimi really cost to run\", and no such evidence exists. Moonshot is private and has disclosed no cost of serving, gross margin, compute spend, losses or burn rate. TechCrunch, Wikipedia, Channel Insider and a targeted search for margin, loss or burn all return nothing beyond Tech Wire Asia's line that the reporting \"does not disclose its operating profit, gross margins, or the cost of serving the workloads\". What exists is list pricing (K3 at $3 and $15 per million tokens), OpenRouter token volumes (around 300 billion tokens a day) and a disputed Bloomberg report of Alibaba Cloud supplying 20,000 H200s, which Alibaba denied. To answer the cost question the writer would have to build a cost model from those inputs, which is creating evidence, not reading it. One further gap: the Bloomberg piece is paywalled (403), so whether the $2 billion is Moonshot's own public statement or Bloomberg's unnamed sources is unverified; \"Moonshot says\" in the question is not confirmed. A narrower piece about who is holding the bill (Anthropic unknowingly served the 300,000 requests, Alibaba on GPUs, investors at the $35 billion July round) could be written from what exists, but that is not this candidate.",
+   "says": "Half of this piece exists in evidence today and half does not. The half that exists: Anthropic's own report (PDF, pages 148 to 149, case GTG-16002) says Moonshot \"relayed almost 300,000 customer requests to Anthropic\" over a ten day period, mostly to Opus, through 5,380 fraudulent accounts in Singapore and Japan, and that Moonshot showed Claude's answers to Kimi users as Kimi's own. The same page gives \"over 23 million exchanges observed\" as the total distillation activity attributable to Moonshot between May and July 2026. The revenue side is Bloomberg reporting (11 September), carried by TechCrunch (Russell Brandom) and Channel Insider: a $2 billion annualised target by year end, run rate over $1 billion in August, up from $300 million in June. Moonshot has not responded (Bloomberg: did not respond; Dealroom: has not addressed it). Two problems. First, the candidate's question says \"23 million of Kimi's exchanges ran through Claude\", which misreads the source: the 23 million is Moonshot's total distillation exchanges with Claude, and the figure for Kimi users actually served Claude is the 300,000 in one ten day window. Second, and the one that fails the lens: the spine is \"what does Kimi really cost to run\", and no such evidence exists. Moonshot is private and has disclosed no cost of serving, gross margin, compute spend, losses or burn rate. TechCrunch, Wikipedia, Channel Insider and a targeted search for margin, loss or burn all return nothing beyond Tech Wire Asia's line that the reporting \"does not disclose its operating profit, gross margins, or the cost of serving the workloads\". What exists is list pricing (K3 at $3 and $15 per million tokens), OpenRouter token volumes (around 300 billion tokens a day) and a disputed Bloomberg report of Alibaba Cloud supplying 20,000 H200s, which Alibaba denied. To answer the cost question the writer would have to build a cost model from those inputs, which is creating evidence, not reading it. One further gap: the Bloomberg piece is paywalled (403), so whether the $2 billion is Moonshot's own public statement or Bloomberg's unnamed sources is unverified; \"Moonshot says\" in the question is not confirmed. A narrower piece about who is holding the bill (Anthropic unknowingly served the 300,000 requests, Alibaba on GPUs, investors at the $35 billion July round) could be written from what exists, but that is not this candidate.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Moonshot's two billion dollar target, inspected.",
+   "composite": 7.14
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0006",
+   "title": "The hunt for smaller data centres, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The source is real, current and fetchable, but it does not carry the piece as framed. Direct WebFetch of the CNBC URL returns HTTP 403; the full text came through a reader and is saved at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/c0006_jina.txt. It is a news story, not a pricing, changelog or docs page, byline Kai Nicol-Schwarz, published 18 September 2026, so no archive gate applies and no evidence would have to be created. The claim checks out word for word: both labs are looking at compute deals of 20 to 30 MW, against the multi hundred megawatt and gigawatt deals of the past year. Three things refute the piece as scored. First, that 20 to 30 MW figure rests on four people who asked to stay anonymous; Anthropic did not comment and OpenAI said it does not comment on specific commercial discussions, so no named party stands behind the number the piece turns on. Second, the your_call_question asks what capacity costs to run and who holds the bill, and the article carries no cost at all: no dollars per megawatt, no power price, no colocation rate. A split_the_bill piece needs a bill, and there is not one here. Third, the piece names lease term as one of the three fixed things that decide the answer, and the word lease does not appear in the article. The only dollar figure paired with capacity, roughly 45 billion for about 460 MW at Nscale, has no term attached in this source, so an annual running cost cannot be derived from it. What is attributed to named producers points at a different story: JLL puts inference at 9 percent of data centre workloads in 2025 against 14 percent for training, and 37 percent against 13 percent by 2030, and Jabez Tan, head of research at Structure Research, is on record that a few megawatts at an already powered site beats waiting for a larger block in one place. That is evidence about power and speed to usable capacity, not about who pays. The cost angle would need pricing evidence that is in neither of the two evidence_refs.",
+   "says": "The source is real, current and fetchable, but it does not carry the piece as framed. Direct WebFetch of the CNBC URL returns HTTP 403; the full text came through a reader and is saved at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/c0006_jina.txt. It is a news story, not a pricing, changelog or docs page, byline Kai Nicol-Schwarz, published 18 September 2026, so no archive gate applies and no evidence would have to be created. The claim checks out word for word: both labs are looking at compute deals of 20 to 30 MW, against the multi hundred megawatt and gigawatt deals of the past year. Three things refute the piece as scored. First, that 20 to 30 MW figure rests on four people who asked to stay anonymous; Anthropic did not comment and OpenAI said it does not comment on specific commercial discussions, so no named party stands behind the number the piece turns on. Second, the your_call_question asks what capacity costs to run and who holds the bill, and the article carries no cost at all: no dollars per megawatt, no power price, no colocation rate. A split_the_bill piece needs a bill, and there is not one here. Third, the piece names lease term as one of the three fixed things that decide the answer, and the word lease does not appear in the article. The only dollar figure paired with capacity, roughly 45 billion for about 460 MW at Nscale, has no term attached in this source, so an annual running cost cannot be derived from it. What is attributed to named producers points at a different story: JLL puts inference at 9 percent of data centre workloads in 2025 against 14 percent for training, and 37 percent against 13 percent by 2030, and Jabez Tan, head of research at Structure Research, is on record that a few megawatts at an already powered site beats waiting for a larger block in one place. That is evidence about power and speed to usable capacity, not about who pays. The cost angle would need pricing evidence that is in neither of the two evidence_refs.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The hunt for smaller data centres, inspected.",
+   "composite": 7.11
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0116",
+   "title": "The AI-powered attack, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The raw material is real and attributed: the BleepingComputer page (Bill Toulas, 10 September 2026) states \"at least 440 PaperCut instances linked to 395 distinct organizations\", sourced to GreyNoise, and GreyNoise's own post of 9 September 2026 exists, names its method (a sensor network) and contains the seven-minute high-school line. But the piece as reasoned cannot be written from this evidence, because the evidence contradicts its spine on three points. First, there is no 2023 disclosure in this story: the exploited flaws are CVE-2026-81578 and CVE-2026-82078, disclosed by PaperCut on 27 August 2026 as zero-days already under attack; none of the three sources mentions 2023 or any CVE-2023 PaperCut flaw, and the only 2023 CVE in GreyNoise's toolkit table is a Veeam flaw. The candidate has fused this campaign with the separate 2023 PaperCut flaws. Second, \"the AI scripted a known exploit\" is not what the source says: GreyNoise says the attacker used AI \"to develop, test, and use exploits\", going \"from an empty workspace to first achieving RCE against a real victim in just under four hours\", and no source cites a public proof-of-concept before the campaign. Third, \"print servers nobody patched\" does not hold: the emergency patch was four days old when the campaign started on 31 August, so this is a patch lag of days, not years. The gap the format wants to expose (AI merely re-ran an old exploit) is therefore not in the found material. The material does support a different gap that a rewrite could use: \"AI-powered\" meant an OpenAI Codex harness plus a DeepSeek model with commodity tools, and GreyNoise records that the attacker's own 28-country avoid list failed, \"a good example of agents gone wild\". That is a different piece with a different your_call_question, so this one fails as written.",
+   "says": "The raw material is real and attributed: the BleepingComputer page (Bill Toulas, 10 September 2026) states \"at least 440 PaperCut instances linked to 395 distinct organizations\", sourced to GreyNoise, and GreyNoise's own post of 9 September 2026 exists, names its method (a sensor network) and contains the seven-minute high-school line. But the piece as reasoned cannot be written from this evidence, because the evidence contradicts its spine on three points. First, there is no 2023 disclosure in this story: the exploited flaws are CVE-2026-81578 and CVE-2026-82078, disclosed by PaperCut on 27 August 2026 as zero-days already under attack; none of the three sources mentions 2023 or any CVE-2023 PaperCut flaw, and the only 2023 CVE in GreyNoise's toolkit table is a Veeam flaw. The candidate has fused this campaign with the separate 2023 PaperCut flaws. Second, \"the AI scripted a known exploit\" is not what the source says: GreyNoise says the attacker used AI \"to develop, test, and use exploits\", going \"from an empty workspace to first achieving RCE against a real victim in just under four hours\", and no source cites a public proof-of-concept before the campaign. Third, \"print servers nobody patched\" does not hold: the emergency patch was four days old when the campaign started on 31 August, so this is a patch lag of days, not years. The gap the format wants to expose (AI merely re-ran an old exploit) is therefore not in the found material. The material does support a different gap that a rewrite could use: \"AI-powered\" meant an OpenAI Codex harness plus a DeepSeek model with commodity tools, and GreyNoise records that the attacker's own 28-country avoid list failed, \"a good example of agents gone wild\". That is a different piece with a different your_call_question, so this one fails as written.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The AI-powered attack, inspected.",
+   "composite": 6.89
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0041",
+   "title": "The self-built data centre, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "Refuted. The money spine is not in the evidence, and the one number it rests on says the opposite of what the piece claims.\n\nWhat the url gives. https://z.ai/blog/glm-built-its-inference-infrastructure is live (HTTP 200) and is a first-person blog post by a named producer, Z AI, titled \"Toward Recursive Self-Improvement: How GLM Built Its Own Inference Infrastructure\". It confirms the infrastructure half exactly: \"We built a complete production-grade inference service from scratch on a cluster of more than 100,000 Chinese-made AI accelerators\", \"Much of the work was carried out by an Infra Agent powered by GLM-5.3\", and the quote \"our successors are the AI systems we are creating ourselves\". It also carries roughly 3x end-to-end serving gains, 62 trillion tokens in six days under the name Ox-Alpha, and the honest caveat \"we have not yet reached recursive self-improvement\". Archiving note: the page is a JavaScript app, so a plain fetch of the url returns a 2 KB shell with no article text. The prose lives in /blog/assets/glm-built-its-inference-infrastructure-qEyLd6aI.js. Saved copies: /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/c0041_zai.html, c0041_zai_bundle.js and c0041_zai_article.txt in the same folder.\n\nWhat the url does not give. Nothing about money. No price, no dollar figure, no \"9x cheaper\", no 75,000 output tokens, no 34.5 percent, no MIT license, no mention of Crusoe. I grepped the full extracted article for all of it. The only cost sentence is qualitative: \"per-token cost reached levels comparable to mainstream NVIDIA GPUs\".\n\nWhere the numbers actually come from. Every money figure sits in the second ref, 1a0af5cfeb0d8dbf:4, which newsletters.json marks \"sponsored\": true, outlet Crusoe, in The Deep View of 2026-09-17. That is a vendor ad from a company selling compute, not reporting. Its own url is https://console.crusoecloud.com/request-foundry, a login and lead-capture console page that does not carry the numbers and cannot be archived as their source.\n\nThe premise inverts the source. The ad reads: GLM-5.3 \"reaches 34.5 percent on Z.ai's code bench using about 75K output tokens per task versus GLM-5.2's 96K\". The 75K is presented as a drop of about 22 percent from the previous model, a saving. The candidate turns the same figure into \"an expensive habit\" and \"burns 75,000 output tokens\". The only source for the number says it is going the other way.\n\nThe arithmetic cannot be done. The piece promises a cost per solved task for the cheap model. The 9x ratio and the MIT license belong to GLM-5.3-Flash. The 75K tokens and 34.5 percent belong to GLM-5.3, the large model. Multiplying one model's price by another model's token burn is not arithmetic, it is a category error. No published source gives output tokens per task for Flash, so getting that number means running the bench, which is evidence that would have to be created. There is also no price at all in either ref, only a ratio, so the headline word \"priced\" has nothing behind it. Public list prices for Flash do exist (about 0.15 dollars per million input and 0.50 per million output), but they sit on a z.ai pricing page that is outside the candidate's evidence_refs and unarchived, and a price alone still does not give cost per solved task.\n\nSuggested salvage. The mind_the_gap alternative is fully supported by the fetched page today, with a named producer, a direct quote, a hard number (100,000 accelerators, 3x throughput, two weeks) and the company's own limit on the claim. Recommend routing c0041 there and dropping the split_the_bill framing unless someone runs the Flash bench.\n\nOn the standing instruction about fable: nothing here used or proposed a Fable model. This check ran on claude-opus-5. In the repo, api/_prices.ts lists no fable row and api/_models.ts selects sonnet-5, haiku-4-5 and opus-4-8; the two \"fable-5\" strings at api/_models.ts:86 and api/_content.ts:288 are capability regexes, not model choices.",
+   "says": "Refuted. The money spine is not in the evidence, and the one number it rests on says the opposite of what the piece claims.\n\nWhat the url gives. https://z.ai/blog/glm-built-its-inference-infrastructure is live (HTTP 200) and is a first-person blog post by a named producer, Z AI, titled \"Toward Recursive Self-Improvement: How GLM Built Its Own Inference Infrastructure\". It confirms the infrastructure half exactly: \"We built a complete production-grade inference service from scratch on a cluster of more than 100,000 Chinese-made AI accelerators\", \"Much of the work was carried out by an Infra Agent powered by GLM-5.3\", and the quote \"our successors are the AI systems we are creating ourselves\". It also carries roughly 3x end-to-end serving gains, 62 trillion tokens in six days under the name Ox-Alpha, and the honest caveat \"we have not yet reached recursive self-improvement\". Archiving note: the page is a JavaScript app, so a plain fetch of the url returns a 2 KB shell with no article text. The prose lives in /blog/assets/glm-built-its-inference-infrastructure-qEyLd6aI.js. Saved copies: /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/c0041_zai.html, c0041_zai_bundle.js and c0041_zai_article.txt in the same folder.\n\nWhat the url does not give. Nothing about money. No price, no dollar figure, no \"9x cheaper\", no 75,000 output tokens, no 34.5 percent, no MIT license, no mention of Crusoe. I grepped the full extracted article for all of it. The only cost sentence is qualitative: \"per-token cost reached levels comparable to mainstream NVIDIA GPUs\".\n\nWhere the numbers actually come from. Every money figure sits in the second ref, 1a0af5cfeb0d8dbf:4, which newsletters.json marks \"sponsored\": true, outlet Crusoe, in The Deep View of 2026-09-17. That is a vendor ad from a company selling compute, not reporting. Its own url is https://console.crusoecloud.com/request-foundry, a login and lead-capture console page that does not carry the numbers and cannot be archived as their source.\n\nThe premise inverts the source. The ad reads: GLM-5.3 \"reaches 34.5 percent on Z.ai's code bench using about 75K output tokens per task versus GLM-5.2's 96K\". The 75K is presented as a drop of about 22 percent from the previous model, a saving. The candidate turns the same figure into \"an expensive habit\" and \"burns 75,000 output tokens\". The only source for the number says it is going the other way.\n\nThe arithmetic cannot be done. The piece promises a cost per solved task for the cheap model. The 9x ratio and the MIT license belong to GLM-5.3-Flash. The 75K tokens and 34.5 percent belong to GLM-5.3, the large model. Multiplying one model's price by another model's token burn is not arithmetic, it is a category error. No published source gives output tokens per task for Flash, so getting that number means running the bench, which is evidence that would have to be created. There is also no price at all in either ref, only a ratio, so the headline word \"priced\" has nothing behind it. Public list prices for Flash do exist (about 0.15 dollars per million input and 0.50 per million output), but they sit on a z.ai pricing page that is outside the candidate's evidence_refs and unarchived, and a price alone still does not give cost per solved task.\n\nSuggested salvage. The mind_the_gap alternative is fully supported by the fetched page today, with a named producer, a direct quote, a hard number (100,000 accelerators, 3x throughput, two weeks) and the company's own limit on the claim. Recommend routing c0041 there and dropping the split_the_bill framing unless someone runs the Flash bench.\n\nOn the standing instruction about fable: nothing here used or proposed a Fable model. This check ran on claude-opus-5. In the repo, api/_prices.ts lists no fable row and api/_models.ts selects sonnet-5, haiku-4-5 and opus-4-8; the two \"fable-5\" strings at api/_models.ts:86 and api/_content.ts:288 are capability regexes, not model choices.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The self-built data centre, inspected.",
+   "composite": 6.86
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0091",
+   "title": "Meta's deleted faceprints, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "Verified (fetched and read): the newsletter url is live and carries the claim, and it attributes it to Wired. The Wired piece exists (Dhruv Mehrotra, 11 Sep 2026) and carries the numbers: $650m Illinois settlement (2020), \"more than a billion faceprints\" to be deleted (Nov 2021), $1.4bn Texas (2024), $5,000 per BIPA violation, class \"in the millions\". The 66-page complaint, Alvarez v. Meta Platforms, 1:26-cv-10773 (N.D. Ill., filed 4 Sep 2026), is public on CourtListener; I downloaded it and searched the full text. Meta's 2 Nov 2021 post (Jerome Pesenti) is live. None of these is a pricing, changelog or docs page, so no archive is needed. Refuted: the piece's premise. The candidate says the complaint alleges the 2021 faceprints were \"kept and reused\". It does not. The complaint never mentions the November 2021 shutdown, the billion-template deletion, DeepFace or Pesenti (zero hits for each). Its theory is fresh extraction from photos uploaded since 4 Sep 2021, pleaded \"upon information and belief\". Wired itself writes that it \"could not determine where the underlying faceprint data came from\", and the complaint only says the NameTag faceprints are \"possibly derived\" from Facebook and Instagram images. Meta's reply is \"we are not building a universal face database\". So the headline \"Meta's deleted faceprints, inspected\" and the your_call question \"what is actually happening to the faceprints Meta said it deleted\" have no evidence on the \"actually happening\" side: nobody outside Meta has inspected those templates, no filing alleges they survived, and the answer sits inside Meta or in discovery that has not happened. A mind_the_gap piece needs the real state to be documentable; here only the 2021 promise is. Inferred, not verified: the class period starting 4 Sep 2021 looks like the five-year BIPA lookback from the filing date rather than anything to do with the deletion (the complaint gives no reason). A different gap could be written today from documents that exist (the 2021 promise, Facebook Verified launching on facial embeddings in July 2026 with unstated retention, and a complaint alleging new faceprints built since), but that is a different question and headline, so this candidate fails as written.",
+   "says": "Verified (fetched and read): the newsletter url is live and carries the claim, and it attributes it to Wired. The Wired piece exists (Dhruv Mehrotra, 11 Sep 2026) and carries the numbers: $650m Illinois settlement (2020), \"more than a billion faceprints\" to be deleted (Nov 2021), $1.4bn Texas (2024), $5,000 per BIPA violation, class \"in the millions\". The 66-page complaint, Alvarez v. Meta Platforms, 1:26-cv-10773 (N.D. Ill., filed 4 Sep 2026), is public on CourtListener; I downloaded it and searched the full text. Meta's 2 Nov 2021 post (Jerome Pesenti) is live. None of these is a pricing, changelog or docs page, so no archive is needed. Refuted: the piece's premise. The candidate says the complaint alleges the 2021 faceprints were \"kept and reused\". It does not. The complaint never mentions the November 2021 shutdown, the billion-template deletion, DeepFace or Pesenti (zero hits for each). Its theory is fresh extraction from photos uploaded since 4 Sep 2021, pleaded \"upon information and belief\". Wired itself writes that it \"could not determine where the underlying faceprint data came from\", and the complaint only says the NameTag faceprints are \"possibly derived\" from Facebook and Instagram images. Meta's reply is \"we are not building a universal face database\". So the headline \"Meta's deleted faceprints, inspected\" and the your_call question \"what is actually happening to the faceprints Meta said it deleted\" have no evidence on the \"actually happening\" side: nobody outside Meta has inspected those templates, no filing alleges they survived, and the answer sits inside Meta or in discovery that has not happened. A mind_the_gap piece needs the real state to be documentable; here only the 2021 promise is. Inferred, not verified: the class period starting 4 Sep 2021 looks like the five-year BIPA lookback from the filing date rather than anything to do with the deletion (the complaint gives no reason). A different gap could be written today from documents that exist (the 2021 promise, Facebook Verified launching on facial embeddings in July 2026 with unstated retention, and a complaint alleging new faceprints built since), but that is a different question and headline, so this candidate fails as written.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Meta's deleted faceprints, inspected.",
+   "composite": 6.83
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0003",
+   "title": "Oracle's own AI rollout, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The cited url fails the confirmation test on two of three points. It is a biztoc aggregator stub, not the reporting. Its body does not carry the claim: \"didn't go so smoothly\" appears only in the headline, and the body runs the other way, saying Oracle \"hadn't found broad internal uses for the tools\" a year ago and then cutting off mid sentence at \"That changed this spring when Oracle rolled out OpenAI tools and\". It contains no number of any kind. It credits businessinsider.com as an outlet but names no reporter. The two evidence_refs are also one source rather than two: the url and the source_ref uuid b6f7a789-d8c9-4da8-98f0-c00d3a4b13a9 are the same item.\n\nThe deeper problem is that the claim is wrong. The fuller record contradicts it. Oracle's rollout was fast, not rocky: 80 percent of roughly 160,000 staff were on the new tools within three months of the April and May launch of ChatGPT Enterprise and Codex. Magouyrk's line \"I don't think we figured out how to make AI really that useful for ourselves\" describes a town hall a year earlier, before that launch. A piece built on the candidate's stated claim would misread its own source.\n\nEvidence for a piece does exist today, so this is not evidence_must_be_created. Ana Maria Constantin at The Next Web, 18 September 2026, working from the Business Insider original, carries a named byline and real numbers: 80 percent adoption in three months, developers producing in a week what took a team two to three quarters, a 60 to 70 percent false positive rate on vulnerability detection, more potential vulnerabilities found in two weeks than in the previous year, and GPT-6 Astra costing two and a half times the cheaper option. Those numbers support a different and better gap: AI made code writing fast, the testing, validation and release pipeline became the constraint, and customers saw no faster delivery. mind_the_gap still fits as a format, but the gap has to be re-pointed from \"what Oracle says against what Oracle does\" to \"code written fast against software actually shipped\".\n\nOne further hole in the candidate as filed: the format argues Oracle's internal reality against what Oracle sells everyone else, and it carries no evidence ref at all for that second half. Oracle's public claims, capex guidance and marketing are not sourced anywhere in the entry.\n\nFailing for now. Before this can be recorded the source has to move to the named-reporter reporting and be archived.\n\nSeparate note for the run owner, on the instruction to make sure nothing uses fable: nothing in this repo selects a fable model. The only real hits are defensive regexes at api/_models.ts line 86 (THINKS_BY_DEFAULT) and api/_content.ts line 288 (NO_SAMPLING_MODELS), plus a name-matching regex at scripts/check-model-routing.mts line 91. Those list claude-fable-5 as a model to guard if it ever turns up, they do not route anything to it. The live constants are sonnet-5 for synthesis and utility, haiku-4-5 for judge, opus-4-8 for ladder. The other two matches, BRIEFABLE in src/components/GuestCard.tsx and \"bluffable\" in docs/focus-purpose/OPERATING-MANUAL.md, are substring coincidences. I changed no files.",
+   "says": "The cited url fails the confirmation test on two of three points. It is a biztoc aggregator stub, not the reporting. Its body does not carry the claim: \"didn't go so smoothly\" appears only in the headline, and the body runs the other way, saying Oracle \"hadn't found broad internal uses for the tools\" a year ago and then cutting off mid sentence at \"That changed this spring when Oracle rolled out OpenAI tools and\". It contains no number of any kind. It credits businessinsider.com as an outlet but names no reporter. The two evidence_refs are also one source rather than two: the url and the source_ref uuid b6f7a789-d8c9-4da8-98f0-c00d3a4b13a9 are the same item.\n\nThe deeper problem is that the claim is wrong. The fuller record contradicts it. Oracle's rollout was fast, not rocky: 80 percent of roughly 160,000 staff were on the new tools within three months of the April and May launch of ChatGPT Enterprise and Codex. Magouyrk's line \"I don't think we figured out how to make AI really that useful for ourselves\" describes a town hall a year earlier, before that launch. A piece built on the candidate's stated claim would misread its own source.\n\nEvidence for a piece does exist today, so this is not evidence_must_be_created. Ana Maria Constantin at The Next Web, 18 September 2026, working from the Business Insider original, carries a named byline and real numbers: 80 percent adoption in three months, developers producing in a week what took a team two to three quarters, a 60 to 70 percent false positive rate on vulnerability detection, more potential vulnerabilities found in two weeks than in the previous year, and GPT-6 Astra costing two and a half times the cheaper option. Those numbers support a different and better gap: AI made code writing fast, the testing, validation and release pipeline became the constraint, and customers saw no faster delivery. mind_the_gap still fits as a format, but the gap has to be re-pointed from \"what Oracle says against what Oracle does\" to \"code written fast against software actually shipped\".\n\nOne further hole in the candidate as filed: the format argues Oracle's internal reality against what Oracle sells everyone else, and it carries no evidence ref at all for that second half. Oracle's public claims, capex guidance and marketing are not sourced anywhere in the entry.\n\nFailing for now. Before this can be recorded the source has to move to the named-reporter reporting and be archived.\n\nSeparate note for the run owner, on the instruction to make sure nothing uses fable: nothing in this repo selects a fable model. The only real hits are defensive regexes at api/_models.ts line 86 (THINKS_BY_DEFAULT) and api/_content.ts line 288 (NO_SAMPLING_MODELS), plus a name-matching regex at scripts/check-model-routing.mts line 91. Those list claude-fable-5 as a model to guard if it ever turns up, they do not route anything to it. The live constants are sonnet-5 for synthesis and utility, haiku-4-5 for judge, opus-4-8 for ladder. The other two matches, BRIEFABLE in src/components/GuestCard.tsx and \"bluffable\" in docs/focus-purpose/OPERATING-MANUAL.md, are substring coincidences. I changed no files.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "Oracle's own AI rollout, inspected.",
+   "composite": 6.63
+  },
+  {
+   "surface": "slate_pick",
+   "subject_id": "c0042",
+   "title": "The longevity benchmark, inspected.",
+   "handoff_reason": "claim_not_in_source",
+   "reason": "The source is real and has a named producer, but the claim as written is not in it and neither is a number. The url resolves to Liquid AI's engineering blog post \"Setting the Frontier of Aging Biology with Liquid Foundation Models\", dated 17 September 2026, which credits Insilico Medicine for the collaboration and cites a Cell Press manuscript by Zhavoronkov, Alex, et al. It is a blog post, not a pricing page, changelog or docs page, so no archive gate applies, and a local copy was saved anyway at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0042_liquid_longevitybench.html and .txt. Three problems. First, attribution: the page never names GPT-5, Gemini or Claude. A search of the full 15,376 character page text returns zero hits for \"Gemini\" and zero for \"Claude\", and the only two \"GPT\" hits are bibliography citations to scGPT and CpGPT, which are unrelated papers. What the page actually says is \"We compared our Longevity-LLMs with 18 frontier LLMs\" and that on three named tasks the LFM2 models \"outperformed every frontier model evaluated\". Those 18 models are not listed here, so \"topped GPT-5, Gemini and Claude\" cannot be sourced from this url. Second, there is no number. The page gives ordinal ranks only, second and fourth, with zero hits for \"accuracy\" and zero for \"score\", and it states that the complete benchmark results sit in the Cell Press paper, which this check did not open. Third, the angle itself is weakened by the page: the best overall rank in the family went to L-Qwen3.5-9B, a domain-adapted 9B Qwen, not to either of the two small LFM2 models. So the real finding is that domain fine-tuning beats scale, not that two small models beat the frontier labs on their own ground, which is the spine of the proposed piece. A piece on this topic can be written from evidence that exists today, so this is not a case of evidence having to be created, but this claim and this number cannot be written from the cited url. To proceed, open the Cell Press paper, name the frontier models it actually tested, and carry a real score rather than a rank. Separately, on the instruction about fable: nothing in this run used it, and no literal claude-fable model id is selected anywhere in the repo. The three matches are family-matching regexes at /home/user/control-center/api/_models.ts:86, /home/user/control-center/api/_content.ts:288 and /home/user/control-center/scripts/check-model-routing.mts:91.",
+   "says": "The source is real and has a named producer, but the claim as written is not in it and neither is a number. The url resolves to Liquid AI's engineering blog post \"Setting the Frontier of Aging Biology with Liquid Foundation Models\", dated 17 September 2026, which credits Insilico Medicine for the collaboration and cites a Cell Press manuscript by Zhavoronkov, Alex, et al. It is a blog post, not a pricing page, changelog or docs page, so no archive gate applies, and a local copy was saved anyway at /tmp/claude-0/-home-user-control-center/6c3d966a-1816-585c-8f36-8d23bd6fee46/scratchpad/slate/c0042_liquid_longevitybench.html and .txt. Three problems. First, attribution: the page never names GPT-5, Gemini or Claude. A search of the full 15,376 character page text returns zero hits for \"Gemini\" and zero for \"Claude\", and the only two \"GPT\" hits are bibliography citations to scGPT and CpGPT, which are unrelated papers. What the page actually says is \"We compared our Longevity-LLMs with 18 frontier LLMs\" and that on three named tasks the LFM2 models \"outperformed every frontier model evaluated\". Those 18 models are not listed here, so \"topped GPT-5, Gemini and Claude\" cannot be sourced from this url. Second, there is no number. The page gives ordinal ranks only, second and fourth, with zero hits for \"accuracy\" and zero for \"score\", and it states that the complete benchmark results sit in the Cell Press paper, which this check did not open. Third, the angle itself is weakened by the page: the best overall rank in the family went to L-Qwen3.5-9B, a domain-adapted 9B Qwen, not to either of the two small LFM2 models. So the real finding is that domain fine-tuning beats scale, not that two small models beat the frontier labs on their own ground, which is the spine of the proposed piece. A piece on this topic can be written from evidence that exists today, so this is not a case of evidence having to be created, but this claim and this number cannot be written from the cited url. To proceed, open the Cell Press paper, name the frontier models it actually tested, and carry a real score rather than a rank. Separately, on the instruction about fable: nothing in this run used it, and no literal claude-fable model id is selected anywhere in the repo. The three matches are family-matching regexes at /home/user/control-center/api/_models.ts:86, /home/user/control-center/api/_content.ts:288 and /home/user/control-center/scripts/check-model-routing.mts:91.",
+   "rule": null,
+   "fix_hint": "Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.",
+   "proposed_hint": "The longevity benchmark, inspected.",
+   "composite": 5.74
+  }
+ ],
+ "selection_rules": {
+  "bar": 6.5,
+  "order": "composite, then how many independent sources carry the story, then recency. Never by age.",
+  "lift_the_lid": "fills against a raised bar of 7.5, the standing 6.5 plus a point for being an extra piece rather than a scheduled one",
+  "source_cap": "at most two cards from one publication across the whole slate",
+  "swing": "the card with the weakest load-bearing number, marked as the bet it is"
+ },
+ "lid_filled": true,
+ "rerun": "Re-run on 2026-09-20 over the enlarged pool, 219 candidates against 216, after the nine ideas recovered from the newsletters a dead Anthropic key ate were added to it. The slate did not move: same three picks, same six alternates, same order. Ten of the thirteen new rows were stories the pool already held, with the same figures already in the claim. One cleared the bar, an antitrust complaint filed on 18 September against Anthropic, OpenAI, SpaceXAI and Google over the slowdown agreement, and it ranked thirteenth of twenty-eight in split.the.bill at 7.34."
+}

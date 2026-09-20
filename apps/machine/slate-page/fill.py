@@ -99,6 +99,10 @@ data = {
     'producer': 'intake-and-first-slate',
     'proposed_on': '2026-09-19',
     'summary': slate.get('summary') or '',
+    # Set when the week is selected again over a pool that has changed since the
+    # first publish. It travels in slate.json rather than being written here, so
+    # the note is part of the run rather than part of the renderer.
+    'rerun': slate.get('rerun') or '',
     'prov_note': prov_note,
     'formats': fmt_rows,
     'suggestions': out_sugs,

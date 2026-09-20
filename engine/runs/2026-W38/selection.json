@@ -1,0 +1,469 @@
+{
+ "chosen": {
+  "mind_the_gap": {
+   "pick": {
+    "candidate_id": "c0104",
+    "format": "mind_the_gap",
+    "handoff_reason": null,
+    "reason": "This asks what is actually happening against the claim that an AI solved a Millennium Prize problem, traced through one proof, the year of human work before it and the Clay Institute's unchanged listing, so it is mind_the_gap.",
+    "confidence": 0.9,
+    "alternatives": [
+     {
+      "format": "split_the_bill",
+      "why_lost": "The 22.5 million dollars of tokens is a list-price estimate for a bill OpenAI's investors hold, not the reader, and the spine is the credit dispute, not the cost."
+     }
+    ],
+    "headline": "OpenAI's Navier-Stokes claim, inspected.",
+    "your_call_question": "Everyone says an AI solved a Millennium Prize problem in 88 hours. The Clay Institute still lists it as open, and 25 Fields medalists signed a letter about who did the work first. What is actually happening?",
+    "scores": {
+     "angle": 9,
+     "number": 8,
+     "fresh": 9,
+     "fun": 9,
+     "fit": 9,
+     "make": 9,
+     "preach": 6,
+     "exists": 9
+    },
+    "composite": 8.46,
+    "gates": {
+     "not_us": false,
+     "material_exists": true,
+     "source_archive_needed": false,
+     "preach_risk": true
+    },
+    "evidence_refs": [
+     "https://openai.com/index/navier-stokes-solution/",
+     "https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/",
+     "https://www.technologyreview.com/2026/09/08/what-openais-latest-controversy-tells-us-about-the-future-of-math/",
+     "https://lastweekin.ai/p/last-week-in-ai-344-navierstokes",
+     "1a0ae6d18bf1e303:0",
+     "e450b94b-d42e-4e11-b7e4-c31b3167ba63",
+     "d69cd3c5-3751-4b26-a390-03ca71b69d19"
+    ],
+    "check_state": "verified",
+    "lenses": [
+     "evidence",
+     "format",
+     "voice"
+    ],
+    "domain": "lastweekin.ai",
+    "sources": 4,
+    "received": "2026-09-17"
+   },
+   "alts": [
+    {
+     "candidate_id": "c0039",
+     "format": "mind_the_gap",
+     "handoff_reason": null,
+     "reason": "The piece asks what is actually happening to frontier lab security against what everyone says, tracing one breach over 72 hours from a stalled Opus 4.8 to a three-hour exploit, a 6,500 dollar bounty and a token bill under 3,000 dollars, which is mind.the.gap's timeline shape on a single topic.",
+     "confidence": 0.65,
+     "alternatives": [
+      {
+       "format": "split_the_bill",
+       "why_lost": "The cost of the break-in is the headline figure, but a reader holding a renewal quote cannot act on an attacker's token bill, and the piece is a story over time rather than a money map."
+      },
+      {
+       "format": "lift_the_lid",
+       "why_lost": "No product surface is being taken apart; the model is the tool in the story, not the subject."
+      }
+     ],
+     "headline": "The 72-hour breach, inspected.",
+     "your_call_question": "Three researchers, a rival's model, under 3,000 dollars in tokens and OpenAI's internal GitHub in 72 hours: what is actually happening to lab security, against what everyone says is happening?",
+     "scores": {
+      "angle": 8,
+      "number": 9,
+      "fresh": 9,
+      "fun": 9,
+      "fit": 6,
+      "make": 8,
+      "preach": 7,
+      "exists": 9
+     },
+     "composite": 8.14,
+     "gates": {
+      "not_us": false,
+      "material_exists": true,
+      "source_archive_needed": false,
+      "preach_risk": false
+     },
+     "evidence_refs": [
+      "https://www.hacktron.ai/blog/hacking-openai",
+      "1a0b41df7855c550:0"
+     ],
+     "check_state": "verified",
+     "lenses": [
+      "evidence",
+      "format",
+      "voice"
+     ],
+     "domain": "hacktron.ai",
+     "sources": 2,
+     "received": "2026-09-18"
+    },
+    {
+     "candidate_id": "c0124",
+     "format": "mind_the_gap",
+     "handoff_reason": null,
+     "reason": "The piece asks what is actually happening in recursive self-improvement research, 75 percent of 491 papers on the bottom two rungs and under 6 percent at the top, against what everyone says is happening, the last AI built by humans, and the ladder gives one topic to trace from I. J. Good's 1965 intelligence explosion to this paper.",
+     "confidence": 0.85,
+     "alternatives": [
+      {
+       "format": "lift_the_lid",
+       "why_lost": "There is no product surface, only a paper, and the sharper or dependent question does not apply to a taxonomy of research."
+      },
+      {
+       "format": "split_the_bill",
+       "why_lost": "No cost and no bill; the number is a count of papers, not dollars."
+      }
+     ],
+     "headline": "The last AI built by humans, inspected: 491 papers on a five-rung ladder.",
+     "your_call_question": "Everyone says AI is about to build its own successors. Of 491 papers on the subject, where does the work actually sit?",
+     "scores": {
+      "angle": 7,
+      "number": 8,
+      "fresh": 9,
+      "fun": 7,
+      "fit": 8,
+      "make": 8,
+      "preach": 7,
+      "exists": 9
+     },
+     "composite": 7.83,
+     "gates": {
+      "not_us": false,
+      "material_exists": true,
+      "source_archive_needed": false,
+      "preach_risk": false
+     },
+     "evidence_refs": [
+      "https://arxiv.org/pdf/2609.11873",
+      "1a0a9b0738b55f62:3"
+     ],
+     "check_state": "verified",
+     "lenses": [
+      "evidence",
+      "format",
+      "voice"
+     ],
+     "domain": "arxiv.org",
+     "sources": 1,
+     "received": "2026-09-16"
+    }
+   ]
+  },
+  "split_the_bill": {
+   "pick": {
+    "candidate_id": "c0141",
+    "format": "split_the_bill",
+    "handoff_reason": null,
+    "reason": "The piece asks whether the money is still here in eighteen months, because Z.AI's filing shows about $2 billion from 22 million new H shares at HK$714 and about $3 billion from a zero-coupon convertible due 2027 with a conversion price of HK$892.50, so something already fixed, a bond that must convert above that price or be repaid within about a year, decides the verdict.",
+    "confidence": 0.85,
+    "alternatives": [
+     {
+      "format": "mind_the_gap",
+      "why_lost": "Being named in the US distillation advisory five days before the raise is a timeline moment, but the piece's spine is the money map and the maturity date, not a claim followed over time."
+     }
+    ],
+    "headline": "Z.AI's $5 billion, inspected.",
+    "your_call_question": "Z.AI just raised $5 billion, $3 billion of it as a bond due next year. Is this money still here in eighteen months?",
+    "scores": {
+     "angle": 8,
+     "number": 9,
+     "fresh": 9,
+     "fun": 7,
+     "fit": 7,
+     "make": 9,
+     "preach": 8,
+     "exists": 9
+    },
+    "composite": 8.2,
+    "gates": {
+     "not_us": false,
+     "material_exists": true,
+     "source_archive_needed": false,
+     "preach_risk": false
+    },
+    "evidence_refs": [
+     "https://www.reuters.com/world/asia-pacific/chinas-zai-raises-5-billion-new-share-convertible-bond-sales-filing-shows-2026-09-13/",
+     "https://www.caixinglobal.com/2026-09-14/zai-raises-5-billion-in-share-placement-convertible-bond-sale-102484813.html",
+     "https://thebambooworks.com/z-ai-to-raise-5-billion-from-share-placement-and-convertible-bonds/",
+     "33a3ca30-617c-4b25-a522-5dc7ceebe050"
+    ],
+    "check_state": "verified",
+    "lenses": [
+     "evidence",
+     "format",
+     "voice"
+    ],
+    "domain": "reuters.com",
+    "sources": 1,
+    "received": "2026-09-15T11:30:23Z"
+   },
+   "alts": [
+    {
+     "candidate_id": "c0105",
+     "format": "split_the_bill",
+     "handoff_reason": null,
+     "reason": "This asks what the frontier premium really costs and who holds that bill when the cheap open model is 4.4 months behind at a fifth of the price per task, so it is split_the_bill; the per-task cost figures rest on pricing pages that move, so archive them before recording.",
+     "confidence": 0.85,
+     "alternatives": [
+      {
+       "format": "lift_the_lid",
+       "why_lost": "It never asks whether the model makes its user sharper or dependent; it asks what the head start costs, and the question decides."
+      }
+     ],
+     "headline": "The frontier premium, inspected.",
+     "your_call_question": "Mozilla says paying for a frontier model buys a four-month head start at five times the cost per task. What does that head start really cost, and who ends up holding the bill?",
+     "scores": {
+      "angle": 8,
+      "number": 9,
+      "fresh": 9,
+      "fun": 7,
+      "fit": 8,
+      "make": 8,
+      "preach": 8,
+      "exists": 8
+     },
+     "composite": 8.11,
+     "gates": {
+      "not_us": false,
+      "material_exists": true,
+      "source_archive_needed": true,
+      "preach_risk": false
+     },
+     "evidence_refs": [
+      "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/",
+      "https://www.tomshardware.com/tech-industry/artificial-intelligence/chinas-open-weight-ai-models-are-now-just-4-months-behind-frontier-us-offerings-mozilla-report-claims-models-still-lag-in-some-benchmarks-but-are-drastically-cheaper-to-use",
+      "f2fbe93a-0173-4901-85aa-0b9b120549cb"
+     ],
+     "check_state": "verified",
+     "lenses": [
+      "evidence",
+      "format",
+      "voice"
+     ],
+     "domain": "arstechnica.com",
+     "sources": 1,
+     "received": "2026-09-17T11:30:23Z"
+    },
+    {
+     "candidate_id": "c0164",
+     "format": "split_the_bill",
+     "handoff_reason": null,
+     "reason": "The piece asks what it really costs to run a research organisation on agents and who holds the bill: OpenAI reports 3.1 agent-workdays per human workday, a median researcher above $600 a day of inference and a 90th percentile above $7,000, all priced at API list rates rather than OpenAI's internal cost, which is the gap between the sticker price the buyer pays and the cost the vendor pays.",
+     "confidence": 0.8,
+     "alternatives": [
+      {
+       "format": "mind_the_gap",
+       "why_lost": "The automated research intern milestone against the bill underneath it is an inversion, but the boundary test decides it: the piece asks what it costs and who holds the bill."
+      },
+      {
+       "format": "lift_the_lid",
+       "why_lost": "There is no product surface to take apart."
+      }
+     ],
+     "headline": "OpenAI's inference bill per researcher, inspected.",
+     "your_call_question": "OpenAI's own researchers burn up to $7,000 a day at the prices you pay. What does it really cost to run, and who ends up holding the bill?",
+     "scores": {
+      "angle": 8,
+      "number": 9,
+      "fresh": 8,
+      "fun": 8,
+      "fit": 9,
+      "make": 9,
+      "preach": 7,
+      "exists": 7
+     },
+     "composite": 8.06,
+     "gates": {
+      "not_us": false,
+      "material_exists": true,
+      "source_archive_needed": false,
+      "preach_risk": false
+     },
+     "evidence_refs": [
+      "https://rakeshgohel.substack.com/p/openai-has-reached-the-automated",
+      "655bf5f5-9fc5-4228-bad1-1cb87c034e39",
+      "https://openai.com/index/research-acceleration-view-inside-openai (primary cited by the digest; the page is JS-gated to curl, so confirm the figures in a browser before recording)",
+      "Business Insider report of the same figures, noting they are estimates at API pricing rather than OpenAI's internal cost"
+     ],
+     "check_state": "verified",
+     "lenses": [
+      "evidence",
+      "format",
+      "voice"
+     ],
+     "domain": "rakeshgohel.substack.com",
+     "sources": 1,
+     "received": "2026-09-08T22:00:57Z"
+    }
+   ]
+  },
+  "lift_the_lid": {
+   "pick": {
+    "candidate_id": "c0037",
+    "format": "lift_the_lid",
+    "handoff_reason": null,
+    "reason": "The piece asks whether a legal research tool that gets 54 percent of its own test right makes the lawyer sharper or dependent, and it takes apart what a firm can actually reach on day one behind Trusted Access, which is lift.the.lid's standing question on a big-company launch.",
+    "confidence": 0.8,
+    "alternatives": [
+     {
+      "format": "split_the_bill",
+      "why_lost": "The launch names no price and no bill, so the cost question has nothing to lead with yet."
+     },
+     {
+      "format": "mind_the_gap",
+      "why_lost": "One launch on one day is a product surface to annotate, not a topic traced over time."
+     }
+    ],
+    "headline": "Astra for Law, inspected.",
+    "your_call_question": "OpenAI's legal model scores 54 percent on OpenAI's own legal test and opens to selected firms first: does it make its user sharper, or dependent?",
+    "scores": {
+     "angle": 7,
+     "number": 9,
+     "fresh": 9,
+     "fun": 7,
+     "fit": 8,
+     "make": 8,
+     "preach": 7,
+     "exists": 8
+    },
+    "composite": 7.83,
+    "gates": {
+     "not_us": false,
+     "material_exists": true,
+     "source_archive_needed": true,
+     "preach_risk": false
+    },
+    "evidence_refs": [
+     "https://openai.com/index/astra-for-law/",
+     "https://x.com/OpenAI/status/2100679992720142459",
+     "1a0b41df7855c550:2",
+     "1a0b484369a132be:11"
+    ],
+    "check_state": "verified",
+    "lenses": [
+     "evidence",
+     "format",
+     "voice"
+    ],
+    "domain": "openai.com",
+    "sources": 2,
+    "received": "2026-09-18"
+   },
+   "alts": [
+    {
+     "candidate_id": "c0080",
+     "format": "lift_the_lid",
+     "handoff_reason": null,
+     "reason": "The piece asks whether an agent that sends your email, books your travel and spends your money from a Meta-held machine makes its user sharper or dependent, and the gap between the launch claim and what ships on day one is on the record in a named executive's own words, that Meta could technically look inside the VM and that the encrypted version comes later; the product page and its default settings will change when encryption ships, so archive the surface before recording.",
+     "confidence": 0.85,
+     "alternatives": [
+      {
+       "format": "split_the_bill",
+       "why_lost": "Free for most users raises who holds the bill, but Meta's answer is advertising, which is media monetisation and out of split.the.bill's turf, and the piece's question is dependency, not cost."
+      },
+      {
+       "format": "mind_the_gap",
+       "why_lost": "The months-long safety hold against a free agent shipping is a gap beat, but it belongs on the slowdown timeline in c0076, not here."
+      }
+     ],
+     "headline": "Meta's Muse, inspected.",
+     "your_call_question": "Muse will run your inbox, your bookings and your card from a machine Meta holds and says it will not look inside. Does that make you sharper, or dependent?",
+     "scores": {
+      "angle": 8,
+      "number": 5,
+      "fresh": 9,
+      "fun": 8,
+      "fit": 9,
+      "make": 9,
+      "preach": 5,
+      "exists": 9
+     },
+     "composite": 7.69,
+     "gates": {
+      "not_us": false,
+      "material_exists": true,
+      "source_archive_needed": true,
+      "preach_risk": true
+     },
+     "evidence_refs": [
+      "https://lastweekin.ai/p/last-week-in-ai-344-navierstokes",
+      "https://ai.meta.com/muse/",
+      "1a0ae6d18bf1e303:5",
+      "57d3de34-dbd5-44eb-a570-e9ea921e0ec7"
+     ],
+     "check_state": "verified",
+     "lenses": [
+      "evidence",
+      "format",
+      "voice"
+     ],
+     "domain": "lastweekin.ai",
+     "sources": 2,
+     "received": "2026-09-17"
+    },
+    {
+     "candidate_id": "c0119",
+     "format": "lift_the_lid",
+     "handoff_reason": null,
+     "reason": "The piece asks what actually reaches a normal Gemini account on day one from the 3.8 Live launch against what the demo showed, marking the camera, the background tasks, the 82.6 speech index score and the Extended Thinking narration as real or theatre, and whether an assistant that watches and acts while you talk makes you sharper or dependent; the release notes and tier table must be archived before recording.",
+     "confidence": 0.8,
+     "alternatives": [
+      {
+       "format": "split_the_bill",
+       "why_lost": "Which tier pays for Live is evidence, not the question; the piece asks about capability against demo, not about the bill."
+      },
+      {
+       "format": "mind_the_gap",
+       "why_lost": "A single launch, not a topic traced over time."
+      }
+     ],
+     "headline": "Gemini 3.8 Live, inspected.",
+     "your_call_question": "Does a voice assistant that watches through your camera and runs tasks while you talk make you sharper, or dependent?",
+     "scores": {
+      "angle": 7,
+      "number": 7,
+      "fresh": 8,
+      "fun": 7,
+      "fit": 9,
+      "make": 9,
+      "preach": 7,
+      "exists": 8
+     },
+     "composite": 7.66,
+     "gates": {
+      "not_us": false,
+      "material_exists": true,
+      "source_archive_needed": true,
+      "preach_risk": false
+     },
+     "evidence_refs": [
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+      "1a0a9eb13e02ccfc:1",
+      "1a0aa380d51c4e67:10",
+      "1a0a9b0738b55f62:5",
+      "6559fd3c-2bf3-4cd5-8191-de5160b87692"
+     ],
+     "check_state": "verified",
+     "lenses": [
+      "evidence",
+      "format",
+      "voice"
+     ],
+     "domain": "blog.google",
+     "sources": 4,
+     "received": "2026-09-16"
+    }
+   ]
+  }
+ },
+ "counts": {
+  "eligible": 82,
+  "refuted": 16,
+  "below_bar": 98
+ },
+ "lid_fills": true,
+ "floor": 7.5
+}
