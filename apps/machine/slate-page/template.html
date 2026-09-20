@@ -34,6 +34,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-
 .bar .prog{font-family:var(--font-mono);font-size:13px;color:var(--ink-2);white-space:nowrap}
 .intro{padding-block:20px 8px;color:var(--ink-2);max-width:60ch}
 .intro p{margin:0 0 8px}
+.rerun{border-left:2px solid var(--rule);padding-left:10px;color:var(--ink-3);font-size:14px}
 .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3)}
 section.fmt{margin-top:28px;border-top:1px solid var(--rule);padding-top:16px}
 .fmt-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:6px}
@@ -108,6 +109,7 @@ details li{margin:2px 0}
 
   <div class="intro">
     <p id="intro-line"></p>
+    <p id="rerun-line" class="rerun" hidden></p>
     <p>Every card is a suggestion with the machine's reason under it. Your ruling and the gap between the two is what teaches it. <b>Accept</b> if it stands as written. <b>Tweak</b> if the shape is right and a line is wrong. <b>Replace</b> if the slot is right and the pick is not. <b>Reject</b> needs a reason, because a reject with no reason teaches nothing.</p>
     <div id="conn" class="banner" hidden></div>
   </div>
@@ -317,6 +319,10 @@ returning id`;
 
   // ── build ──
   $('#intro-line').textContent = `Week of ${DATA.week_of}. ${DATA.summary || ''}`;
+  // A re-run of the same week over a changed pool. The page says whether the
+  // slate moved, because "we checked again and it did not" is a finding and a
+  // page that silently redraws the same cards does not report it.
+  if (DATA.rerun) { const r = $('#rerun-line'); r.textContent = DATA.rerun; r.hidden = false; }
   const main = $('#slate');
   for (const f of DATA.formats) {
     const sec = el('section', {class:'fmt'});
