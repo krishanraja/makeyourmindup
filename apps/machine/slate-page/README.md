@@ -59,6 +59,28 @@ exclamation marks, a rewritten opening, hashes of before and after), never the
 subject, because the bank's CHECK refuses any other key. See
 `delta_keys_are_form_only()` in control-center.
 
+## Which model produced each card
+
+More than one model can produce one slate: a run that is stopped and resumed
+picks up whatever model the session is on, and a week's work can span a switch.
+The first slate did, so the page says so rather than implying one author.
+
+`provenance.py <workflow-dir>` reads the run's journal for agent labels and each
+agent transcript for the model that actually served it, and emits `{label: model}`.
+`fill.py` maps that onto candidates: the scoring batch a candidate fell in
+(`score:batch-<i>` where `i` is its index divided by the batch size) and its
+three checks (`verify:evidence|format|voice:<candidate_id>`).
+
+Each card then carries one line, "scored by X, checked by Y", and the footer
+carries the totals. A card nobody checked says "not yet checked" rather than
+leaving the reader to assume. An agent that was served by more than one model
+mid-run reports both, joined by a plus, rather than picking one.
+
+The point is not the model names. It is that a ruling is evidence about the
+thing that produced the suggestion, and the bank cannot tell you whether a
+producer improved if it does not know which producer it was. `suggestions.producer`
+carries the same fact for the row.
+
 ## Rules the page holds
 
 - Accept, Tweak, Replace, Reject, and Not now. A reject needs a reason chip or

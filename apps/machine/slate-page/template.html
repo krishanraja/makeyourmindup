@@ -43,6 +43,8 @@ section.fmt{margin-top:28px;border-top:1px solid var(--rule);padding-top:16px}
 .card .headline{font-family:var(--font-head);font-size:19px;line-height:1.25;font-weight:600;margin:4px 0 6px;text-wrap:balance}
 .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-family:var(--font-mono);font-size:12px;color:var(--ink-3);align-items:center}
 .swing{color:var(--warn);font-weight:500}
+.prov{width:100%;color:var(--ink-3);font-size:11px;letter-spacing:0.02em}
+.prov b{font-weight:500;color:var(--ink-2)}
 .reason{margin:8px 0 0;color:var(--ink)}
 .reason b{font-weight:600}
 .q{margin:10px 0 0;padding:10px 12px;border:1px dashed var(--rule);border-radius:4px;font-family:var(--font-head);font-size:16px;line-height:1.35;color:var(--ink-2)}
@@ -271,6 +273,15 @@ returning id`;
     if (s.confidence != null) meta.append(el('span', {}, `confidence ${Number(s.confidence).toFixed(2)}`));
     if (s.is_swing) meta.append(el('span', {class:'swing'}, 'the swing'));
     c.append(meta);
+    if (s.prov) {
+      const short = m => String(m).replace('claude-', '').replace('-5-1', ' 5.1').replace('-5', ' 5');
+      const v = (s.prov.verified_by || []).map(short);
+      const uniq = [...new Set(v)];
+      c.append(el('div', {class:'prov', html:
+        'scored by <b>' + escapeHtml(short(s.prov.scored_by || 'unknown')) + '</b>'
+        + (uniq.length ? ', checked by <b>' + escapeHtml(uniq.join(' and ')) + '</b>' : ', not yet checked')
+      }));
+    }
     c.append(el('h3', {class:'headline'}, p.headline || '(no headline)'));
     c.append(el('p', {class:'reason', html: `<b>Why:</b> ${escapeHtml(s.reason || '')}`}));
     if (p.your_call_question) { const qq = el('div', {class:'q'}); qq.append(el('span', {class:'eyebrow'}, 'your.call asks'), p.your_call_question); c.append(qq); }
@@ -314,7 +325,7 @@ returning id`;
       $('#handoffs').append(c);
     }
   }
-  $('#foot-line').innerHTML = `Proposed by <code>${escapeHtml(DATA.producer || 'the machine')}</code> on ${escapeHtml(DATA.proposed_on || '')}. ${DATA.suggestions.length} suggestion rows in <code>public.suggestions</code>; your rulings write to <code>public.suggestion_verdicts</code>. Every surface here is on the <code>propose</code> rung: nothing moves until you say so, and it asks for promotion with evidence, never on its own.`;
+  $('#foot-line').innerHTML = `Proposed by <code>${escapeHtml(DATA.producer || 'the machine')}</code> on ${escapeHtml(DATA.proposed_on || '')}. ${DATA.suggestions.length} suggestion rows in <code>public.suggestions</code>; your rulings write to <code>public.suggestion_verdicts</code>. Two models produced this slate and each card says which. ${escapeHtml(DATA.prov_note || '')} Every surface here is on the <code>propose</code> rung: nothing moves until you say so, and it asks for promotion with evidence, never on its own.`;
   renderProgress();
 })();
 </script>
