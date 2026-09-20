@@ -3,7 +3,7 @@ kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
 as_of: 2026-09-20
-head: ac2668e2
+head: 68deb1ad
 lifecycle: building
 production_url: https://makeyourmindup.ai
 state_doc: project-documentation/03_STEP_PLAN.md
@@ -83,6 +83,23 @@ content-engine deployment. Every arc card written on 2026-09-18 carries a null
 format because none of them was ever composed.
 
 ## What changed recently
+
+- 2026-09-20 **W38 was selected again over the enlarged pool and the slate did
+  not move.** The 20 newsletters a dead Anthropic key had eaten were recovered
+  that morning and produced 9 ideas, so the week was re-run against 219
+  candidates instead of 216. Ten of the thirteen rows that arrived after the cut
+  were duplicates of stories the pool already held, with the same figures already
+  in the claim, which is the finding: the outage ate newsletters whose stories
+  ran elsewhere too. One new candidate cleared the bar, `c0217`, the antitrust
+  complaint filed on 18 September against Anthropic, OpenAI, SpaceXAI and Google
+  over the slowdown agreement, and it ranks thirteenth of twenty-eight in
+  split.the.bill at 7.34. Same three picks, same six alternates, same order, so
+  no new rows were banked. The page gained a re-run line that says all of it,
+  because a page that silently redraws the same cards reports nothing.
+  `engine/runs/2026-W38/extend.py` is the stage that did it, with every gate
+  decision and every score written out with its reason, and it is idempotent.
+  `slate.first-run.json` and `selection.json` are committed so the two runs can
+  be diffed rather than taken on trust.
 
 - 2026-09-20 **The first slate exists, and the rules that picked it are in this
   repo rather than in a workflow that has to be re-run to be read.** 216
