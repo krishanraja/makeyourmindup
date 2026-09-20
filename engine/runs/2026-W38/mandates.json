@@ -1,0 +1,66 @@
+{
+  "source": {
+    "supabase_project_id": "gojpffsrxybbpbdzzrvs",
+    "read_at": "2026-09-19",
+    "tables": ["public.venture_formats (kind = 'subchannel')", "public.format_aliases", "public.handoff_reasons", "public.suggestion_surfaces"]
+  },
+  "formats": [
+    {
+      "slug": "lift_the_lid",
+      "label": "lift.the.lid",
+      "cadence_label": "No fixed day",
+      "target_per_week": 0.5,
+      "hero": false,
+      "mandate": "Look underneath the product changes happening in AI. Take a launch, a release or a live product surface apart and separate what actually ships from what was demoed. THE STANDING QUESTION, and the one the opening artifact asks the reader: does this make its user sharper, or dependent? SUBJECTS: product surfaces are this format's own territory, not evidence borrowed from another - pricing pages, default settings, changelogs, free tiers, release notes, error states, and the gap between what a keynote claimed and what a normal account can reach on day one. Big-company launches first, because the distribution makes the stakes legible; after that, whoever leaves the best paper trail. THE BOUNDARY WITH split.the.bill, and it decides every contested subject: if the piece asks what it costs and who ends up holding the bill, it is split.the.bill. If it asks whether the thing makes its user sharper or dependent, it is lift.the.lid. The same pricing page can be either. The question decides, never the surface. Diagram language: the annotated product shot, with what is real marked against what is theatre. CADENCE: standing subchannel with no fixed day. It publishes when a subject earns it, because a third fixed slot costs hours the two-to-four-hour rule does not have. HARD GATES, applied before scoring. NOT US: the subject is never Krish, mind/make, CTRL or his own builds, however available the material. MATERIAL EXISTS: if the evidence has to be created rather than found, it is not commissioned, however good the idea. A product that must be bought, installed and run to be inspected fails this gate; a product whose changelog, docs and pricing page are public passes it. TIMESTAMP EVERYTHING: pricing pages and changelogs change, so archive the surface before recording or the piece rots in a week. NO PREACHING: no closing moral, no lesson for leaders, no sentence telling the reader what to conclude. The verdict is the reader's to reach."
+    },
+    {
+      "slug": "mind_the_gap",
+      "label": "mind.the.gap",
+      "cadence_label": "Fridays",
+      "target_per_week": 1.0,
+      "hero": true,
+      "mandate": "The gap between what everyone says is happening and what is actually happening, traced through ONE topic per piece. The topic is the spine and the gap is the argument: take a subject, follow it over time, and show where the claim and the reality separated. A piece that surveys several topics is not this format. Carries public decisions and what they say about the macro picture, historical shifts, and the human stories underneath the technology. Absorbs the retired Newsflash digest and the Opinions strand, and folds Resources into the Friday piece. The question the opening artifact asks the reader: what is actually happening, against what everyone says is happening. Diagram language: the timeline. Register is human, observant and connected to the real world. Strongest subjects invert a well-covered story rather than restating it: the people hiding their AI use are unpaid research rather than a risk, the calculator panic and what the skill actually became, the best users of a tool being nowhere near the industry that sells it. HARD RULE, and the one that overrides every other instruction in this mandate: no preaching. No closing moral, no lesson for leaders, no sentence telling the reader what to conclude or become. The north star reaches the page through what we choose to inspect, never through a statement. Thought leadership does that job elsewhere. The not-us gate applies here too: the subject is never Krish, mind/make, CTRL or his own operating loop, however available the material."
+    },
+    {
+      "slug": "split_the_bill",
+      "label": "split.the.bill",
+      "cadence_label": "Wednesdays",
+      "target_per_week": 1.0,
+      "hero": false,
+      "mandate": "Work out what it really costs to run, and who ends up holding the bill. That is the standing question and it leads every piece. Second question: who is funding the hype and what do they need to be true. Third: is the money still here in eighteen months. How the digital world gets paid for as attention and distribution change is OUT - the media-monetisation strand was rejected on 2026-09-18 and is not a split.the.bill subject. THE READER is the buyer with a bill landing: a leader of a five to fifty million pound business who has just seen the renewal quote. Not the vendor pricing it, which was rejected outright. Second is the operator who has to make the number work whichever side of the invoice they sit on; third is the investor. SUBJECTS are giants, and after that whoever leaves the best paper trail. Reader-sized businesses and the mid-market vendor both tested weak: the evidence is thin at that scale and the reader would rather look up than sideways. Product surfaces - pricing pages, default settings, changelogs, free tiers - are evidence for the money question and are never a split.the.bill subject in their own right. The surface belongs to lift.the.lid, which asks a different question of it. THE BOUNDARY, and it decides every contested subject: if the piece asks what it costs and who ends up holding the bill, it is split.the.bill. If it asks whether the thing makes its user sharper or dependent, it is lift.the.lid. The question decides, never the surface. NAMING: name whoever the number came from. If it is in their own filing, their own pricing page or their own keynote, they are named, including the person who said it. A public decision by a named executive is fair game; their character is not. The old rule of never naming a person is retired. PEG: the event is the excuse to open the door, the mechanism is the piece. Loosely pegged, always. THE CLOSE is a verdict: this money is real, or it is not, and here is the constraint that decides it. The strongest close names something already fixed that has not yet shown up in the price - a lease, a depreciation schedule, a contractual liability cap - so the reader can act on it rather than wait for it. A number with its source supports the verdict; it is no longer the close itself. An itemised bill as a close tested weak twice and is retired. Diagram language: the money map, showing where the dollars enter and where they leave. THREE HARD GATES, applied before scoring. NOT US: the subject is never Krish, mind/make, CTRL or his own accounts, however available the material. NOT HOME TURF: media, publishing and advertising monetisation are out; the channel does not go where he is already comfortable. MATERIAL EXISTS: if the evidence has to be created rather than found, it is not commissioned, however good the idea."
+    }
+  ],
+  "format_aliases": [
+    {"alias": "builder_economy", "slug": "general"},
+    {"alias": "mindmaker_live", "slug": "general"},
+    {"alias": "techonomic", "slug": "general"},
+    {"alias": "built", "slug": "lift_the_lid"},
+    {"alias": "built_with_ai", "slug": "lift_the_lid"},
+    {"alias": "money_of_ai", "slug": "split_the_bill"},
+    {"alias": "paid", "slug": "split_the_bill"}
+  ],
+  "handoff_reasons": [
+    {"slug": "corpus_playbook_missing", "says": "There is no corpus playbook for this channel, so the model would work from a one-paragraph synopsis and produce something plausible and generic.", "severity": "degraded"},
+    {"slug": "evidence_must_be_created", "says": "This needs primary research that has not been done. The material gate says a piece whose evidence must be created rather than found is not commissioned, however good the idea.", "severity": "blocking"},
+    {"slug": "external_action_needs_krish", "says": "This would publish, send, schedule or spend, and that always stops here.", "severity": "blocking"},
+    {"slug": "factory_channel_unmapped", "says": "Nothing maps this piece to a production target, and the fallback drops it into the teardowns folder where nobody looks.", "severity": "blocking"},
+    {"slug": "format_ambiguous_question", "says": "This subject fits split.the.bill and lift.the.lid equally and the question it asks is not clear enough to separate them.", "severity": "blocking"},
+    {"slug": "format_not_in_venture_formats", "says": "This piece names a format that venture_formats does not have, so there is no mandate to write against and I will not guess one.", "severity": "blocking"},
+    {"slug": "no_outcome_data", "says": "No numbers arrived for this piece. That is not zero reach, it is an absent measurement, and the two must never be averaged together.", "severity": "advisory"},
+    {"slug": "rubric_unmatched_slot", "says": "The final pass has no rubric for this slot, so it would fall back to the generic house register and quietly lose the format's voice.", "severity": "degraded"},
+    {"slug": "source_not_archived", "says": "This rests on a pricing page or changelog that is not archived, and those change. The piece would stop being checkable within a week.", "severity": "blocking"},
+    {"slug": "tool_not_trusted_yet", "says": "This surface is still on propose, so the work is prepared and left for you rather than done.", "severity": "advisory"}
+  ],
+  "suggestion_surfaces": [
+    "amplification",
+    "artifact_design",
+    "autonomy_promotion",
+    "carousel_layout",
+    "derivative_plan",
+    "format_assignment",
+    "headline",
+    "publish_timing",
+    "slate_pick",
+    "video_cuts"
+  ]
+}
