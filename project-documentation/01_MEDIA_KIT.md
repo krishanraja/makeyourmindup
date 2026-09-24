@@ -106,9 +106,9 @@ section is how a reader ends up choosing which one to believe.
 
 | Slug | Label | Day | The question your.call asks | Diagram |
 |---|---|---|---|---|
-| `split_the_bill` | split.the.bill | Wednesdays | What does it really cost to run, and who ends up holding the bill? | the money map |
-| `mind_the_gap` | mind.the.gap | Fridays, the hero | What is actually happening, against what everyone says is happening? | the timeline |
-| `lift_the_lid` | lift.the.lid | No fixed day | Does this make its user sharper, or dependent? | the annotated product shot |
+| `split_the_bill` | split.the.bill | Wednesdays | Where does the money move, and who ends up better or worse off? | the money map |
+| `mind_the_gap` | mind.the.gap | Fridays, the hero | What is the pattern here, and what does it mean is coming? | the timeline |
+| `lift_the_lid` | lift.the.lid | No fixed day | What would you build differently having seen inside this? | the annotated product shot |
 
 The slug is what the database stores and what every system writes. The label is
 what a reader sees. They are never interchangeable in code.
@@ -121,11 +121,22 @@ the kind of drift a file copy makes and a read from the table does not.
 `lift_the_lid` publishes when a subject earns it rather than on a fixed slot,
 because a third fixed day costs hours the two-to-four-hour rule does not have.
 
-**The boundary between `split_the_bill` and `lift_the_lid` is the question,
-never the surface.** Both can be handed the same pricing page. What it costs and
-who pays is `split_the_bill`. Sharper or dependent is `lift_the_lid`. Product
-surfaces are `lift_the_lid`'s own territory and are evidence, never a subject,
-for `split_the_bill`.
+**The boundary between all three is what the reader changes next, never the
+surface.** Ruling (Krish, 2026-09-24). Any of the three can be handed the same
+pricing page. If the reader would go and change a price, a budget or a contract,
+it is `split_the_bill`. If they would change what they build or buy, it is
+`lift_the_lid`. If they would change how they think or what they expect, it is
+`mind_the_gap`. Product surfaces remain evidence, never a subject, for
+`split_the_bill`.
+
+**The three mandates were rewritten on 2026-09-24** to what Krish actually
+means by each channel, after the questions in this table were found to say
+something else. split.the.bill is now the whole money system from any side of
+the invoice, including the seller's; lift.the.lid leads on build guidance with
+"sharper or dependent" kept as its second question; mind.the.gap is pattern and
+prediction, and its "ONE topic per piece" rule is replaced by several threads
+resolving into one spine. The ban on media and advertising monetisation is
+lifted. The previous text is in `venture_formats_mandate_backup_20260924`.
 
 The calibration is worth keeping in view rather than treating as settled:
 across four lift.the.lid ideas in
