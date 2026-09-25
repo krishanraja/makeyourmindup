@@ -1,0 +1,7 @@
+# The unpacked kit is rebuilt by `npm run brand-kit` in apps/cover. Git keeps
+# the zip that holds all of it, the readme and a preview.
+/*
+!/.gitignore
+!/README.md
+!/makeyourmindup-brand-kit.zip
+!/preview.png
