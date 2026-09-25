@@ -1,0 +1,21 @@
+{
+  "siteUrl": "https://makeyourmindup.ai",
+  "substackUrl": "https://mindmakerlive.substack.com",
+  "feedUrl": "https://mindmakerlive.substack.com/feed",
+  "relaunchDate": "2026-09-25",
+  "latestCount": 3,
+  "scoreboard": {
+    "show": true,
+    "calls": []
+  },
+  "platforms": {
+    "youtube": null,
+    "instagram": null,
+    "tiktok": null,
+    "spotify": null
+  },
+  "links": {
+    "krish": "https://www.krishraja.com",
+    "linkedin": "https://www.linkedin.com/in/krish-raja/"
+  }
+}

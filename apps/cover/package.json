@@ -1,0 +1,37 @@
+{
+  "name": "makeyourmindup-cover",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The cover: makeyourmindup's front door at makeyourmindup.ai.",
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "typecheck": "tsc --noEmit",
+    "kill-list": "node ../../scripts/qa/kill-list.mjs content/site.json substack-kit/COPY.md",
+    "assets": "node scripts/make-assets.mjs",
+    "kit": "node scripts/render-kit.mjs",
+    "shots": "node scripts/screenshots.mjs",
+    "verify": "npm run kill-list && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.0",
+    "next": "15.5.26",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.4.20",
+    "playwright-core": "^1.55.0",
+    "postcss": "^8.4.49",
+    "sharp": "^0.34.4",
+    "tailwindcss": "3.4.19",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
