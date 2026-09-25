@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  makeyourmindup cover. Grammar borrowed from the retired Builder Economy page
+  (full-bleed colour blocks, hard offset shadows, highlighter swipes, grain),
+  re-keyed to the logo. Each colour has one job:
+    mint   the brand, every primary action, the answer
+    coral  mind.the.gap, the headliner and the loudest block
+    butter follow.the.money
+    lilac  under.the.hood
+*/
+
+:root {
+  --ink: #0c1512;
+  --ink-deep: #070d0b;
+  --mint: #7ef0c0;
+  --cream: #f4efe4;
+  --coral: #ff6a4d;
+  --butter: #ffd84d;
+  --lilac: #b7a6ff;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--butter);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.on-light :focus-visible {
+  outline-color: var(--ink);
+}
+
+@layer components {
+  /* Display type. Anton rhymes with the logo's condensed caps. */
+  .display {
+    font-family: var(--font-anton), 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 0.88;
+    letter-spacing: 0.005em;
+  }
+
+  /* The heavy rounded face of the logo's UP. */
+  .heavy {
+    font-family: var(--font-archivo), system-ui, sans-serif;
+    font-weight: 900;
+    font-variation-settings: 'wdth' 112;
+    letter-spacing: -0.02em;
+  }
+
+  .dek {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .mono-label {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 md:px-10;
+  }
+
+  /* Hard offset shadows, the brutal look. */
+  .brutal {
+    box-shadow: 6px 6px 0 0 var(--ink);
+  }
+  .brutal-mint {
+    box-shadow: 6px 6px 0 0 var(--mint);
+  }
+  .brutal-cream {
+    box-shadow: 6px 6px 0 0 var(--cream);
+  }
+  .brutal-sm {
+    box-shadow: 3px 3px 0 0 var(--ink);
+  }
+
+  /* Highlighter swipe behind a word. */
+  .swipe {
+    position: relative;
+    z-index: 0;
+    white-space: nowrap;
+  }
+  .swipe::before {
+    content: '';
+    position: absolute;
+    inset: 20% -0.06em 4% -0.06em;
+    background: var(--swipe, var(--mint));
+    transform: skewX(-8deg) rotate(-1deg);
+    z-index: -1;
+  }
+
+  /* Film grain over dark blocks. */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    z-index: 1;
+  }
+
+  /* Halftone dots for the colour blocks, printed-page texture. */
+  .halftone {
+    background-image: radial-gradient(rgba(12, 21, 18, 0.13) 1.1px, transparent 1.2px);
+    background-size: 14px 14px;
+  }
+
+  .sticker {
+    @apply mono-label inline-flex max-w-full items-center justify-center rounded-full border-2 border-ink px-4 py-2 text-center text-ink;
+    font-weight: 600;
+    box-shadow: 3px 3px 0 0 var(--ink);
+  }
+
+  .stamp {
+    @apply mono-label inline-block border-[3px] px-2 py-1;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .dot-leader {
+    flex: 1;
+    border-bottom: 2px dotted currentColor;
+    opacity: 0.35;
+    transform: translateY(-0.35em);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Money moving along its flow. */
+@keyframes money-flow {
+  to { stroke-dashoffset: -32; }
+}
+.money-flow {
+  animation: money-flow 0.9s linear infinite;
+  transition: opacity 0.4s 1.2s;
+}
+
+/* The torn edge of a till roll. */
+.receipt {
+  --tooth: 8px;
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--tooth)) 100%;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--tooth)) 100%;
+}
+.receipt-shadow {
+  filter: drop-shadow(5px 5px 0 #0c1512);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .money-flow { animation: none; }
+}
+
+/*
+  Entrance motion. Every hidden starting state is scoped to html.js, which an
+  inline script sets before paint. Without it (no JavaScript, a failed bundle)
+  everything simply shows. Reduced motion collapses every animation to its end.
+*/
+.reveal {
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s);
+}
+.js .reveal:not(.is-in) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(70px); filter: blur(14px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes drop {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes slide {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes slap {
+  from { opacity: 0; transform: scale(1.8) rotate(calc(var(--r, 0deg) - 18deg)); }
+  to { opacity: 1; transform: scale(1) rotate(var(--r, 0deg)); }
+}
+.enter, .drop, .slide, .slap { animation-fill-mode: both; }
+.js .enter { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both; }
+.js .drop { animation: drop 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.js .slide { animation: slide 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both; }
+.slap { transform: rotate(var(--r, 0deg)); }
+.js .slap { animation: slap 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s) both; }
+
+/* The scoreboard's split-flap tiles flip in once the board is in view. */
+.flap {
+  transition: transform 0.6s cubic-bezier(0.34, 1.4, 0.64, 1) var(--d, 0s), opacity 0.3s var(--d, 0s);
+  transform: perspective(600px) rotateX(0);
+}
+.js .board:not(.is-in) .flap {
+  opacity: 0;
+  transform: perspective(600px) rotateX(-90deg);
+}
+
+/* The receipt prints itself. */
+.receipt {
+  transition: clip-path 1.6s linear 0.5s;
+  clip-path: inset(0 0 0 0);
+}
+.js .receipt-wrap:not(.is-in) .receipt {
+  clip-path: inset(0 0 100% 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal:not(.is-in),
+  .js .board:not(.is-in) .flap,
+  .js .receipt-wrap:not(.is-in) .receipt {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}

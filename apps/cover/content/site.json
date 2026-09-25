@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "title": "makeyourmindup: AI, unpicked",
+    "description": "We follow the money, look under the hood and mind the gap. You make your mind up. A free publication on how AI really works, every Monday, Wednesday and Friday."
+  },
+  "strap": {
+    "left": "Vol. 01",
+    "centre": "Mon · Wed · Fri",
+    "right": "Free to read*"
+  },
+  "cover": {
+    "kicker": "Cover story",
+    "splash": [
+      "AI,",
+      "unpicked."
+    ],
+    "dek": "We follow the money, look under the hood and mind the gap. You make your mind up.",
+    "coverLinesTitle": "Inside, every week",
+    "stickers": [
+      "Reading age 12",
+      "Zero preaching",
+      "Contains British spelling"
+    ],
+    "badge": "Subscribe free • Subscribe free • ",
+    "badgeLabel": "Subscribe free on Substack",
+    "barcodePrice": "Free*",
+    "footnote": "*Every piece, in full. That is the whole small print.",
+    "thisWeek": "Inside this week",
+    "issue": "Issue 00"
+  },
+  "subscribe": {
+    "label": "Get every piece in your inbox",
+    "placeholder": "you@work.com",
+    "button": "Subscribe free",
+    "note": "Takes you to Substack to confirm. Unsubscribe in one click.",
+    "sent": "Nearly there. Confirm in the Substack tab."
+  },
+  "marquee": [
+    "mind.the.gap · Fridays",
+    "Reading age 12",
+    "follow.the.money · Wednesdays",
+    "Zero preaching",
+    "under.the.hood · Mondays",
+    "Every call scored in public",
+    "Contains British spelling"
+  ],
+  "contents": {
+    "eyebrow": "Contents",
+    "title": "What's inside, every week."
+  },
+  "subchannels": [
+    {
+      "slug": "mind_the_gap",
+      "label": "mind.the.gap",
+      "day": "Fridays",
+      "tag": "The headliner",
+      "page": "04",
+      "coverLine": "What's coming, before it's obvious.",
+      "oneLiner": "The patterns, and where they lead.",
+      "body": "Most weeks, a pile of AI stories look like they have nothing to do with each other. Every Friday we lay the threads side by side, show where they cross, and put a date on what we think happens next.",
+      "questionLabel": "The question every piece answers",
+      "question": "What is the pattern, and what does it mean is coming?",
+      "diagram": {
+        "threads": [
+          "the price",
+          "the chips",
+          "the people"
+        ],
+        "axis": [
+          "then",
+          "now",
+          "next"
+        ],
+        "meet": "the pattern",
+        "call": "our call, dated"
+      },
+      "caption": "Illustration. The real ones come with dates and sources.",
+      "headline": [
+        "What's coming,",
+        "before it's",
+        "obvious."
+      ]
+    },
+    {
+      "slug": "follow_the_money",
+      "label": "follow.the.money",
+      "day": "Wednesdays",
+      "tag": "Bring a calculator",
+      "page": "08",
+      "coverLine": "Who gets paid when AI gets bought.",
+      "oneLiner": "How money gets made with AI, and by whom.",
+      "body": "Every AI deal has a bill, and somebody pays it. Every Wednesday we trace the money from the invoice to the bank account, and show who comes out ahead and who gets stuck with the tab.",
+      "questionLabel": "The question every piece answers",
+      "question": "Where does the money move, and who ends up better or worse off?",
+      "diagram": {
+        "buyer": "you, the buyer",
+        "app": "the app",
+        "cloud": "the cloud",
+        "lab": "the model lab",
+        "ghost": "your old supplier",
+        "ghostNote": "money that stopped coming",
+        "receiptTitle": "Receipt",
+        "receiptLines": [
+          "Who paid",
+          "Who got paid",
+          "Who's better off",
+          "Who's worse off"
+        ],
+        "receiptTotal": "Answers: Wednesday"
+      },
+      "caption": "Illustration. The real ones name every source.",
+      "headline": [
+        "Who gets paid",
+        "when AI gets",
+        "bought."
+      ]
+    },
+    {
+      "slug": "under_the_hood",
+      "label": "under.the.hood",
+      "day": "Mondays",
+      "tag": "Screwdriver included",
+      "page": "12",
+      "coverLine": "Real, or theatre? We take it apart.",
+      "oneLiner": "How it gets built, and why it works.",
+      "body": "Every Monday we open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.",
+      "questionLabel": "The question every piece answers",
+      "question": "What actually goes together in a shipped thing, and why did this one work?",
+      "diagram": {
+        "centre": "the shiny new thing",
+        "parts": [
+          {
+            "name": "the model",
+            "mark": "real"
+          },
+          {
+            "name": "the launch video",
+            "mark": "theatre"
+          },
+          {
+            "name": "the data",
+            "mark": "real"
+          },
+          {
+            "name": "the waitlist",
+            "mark": "theatre"
+          },
+          {
+            "name": "the people checking it",
+            "mark": "real"
+          }
+        ],
+        "real": "Real",
+        "theatre": "Theatre"
+      },
+      "caption": "Illustration. The real ones show the evidence for every stamp.",
+      "headline": [
+        "Real, or",
+        "theatre?",
+        "We take it apart."
+      ]
+    }
+  ],
+  "scoreboard": {
+    "eyebrow": "The back page",
+    "title": "Every piece makes a call. We keep score.",
+    "body": "Each piece ends with a prediction, a date and how sure we are. When the date arrives, we mark it held, broke or unclear. Misses go up as big as hits.",
+    "columns": [
+      "Held",
+      "Broke",
+      "Unclear",
+      "Open"
+    ],
+    "empty": "The board opens with the first piece.",
+    "sticker": "Misses included",
+    "due": "Due",
+    "confidence": "Confidence"
+  },
+  "newsstand": {
+    "eyebrow": "On the newsstand",
+    "title": "Fresh off the press.",
+    "emptyTitle": "The first piece is on the press.",
+    "emptyBody": "It lands on Substack first. Subscribe now and it arrives in your inbox the moment it is out.",
+    "cta": "Subscribe free",
+    "read": "Read it"
+  },
+  "platforms": {
+    "eyebrow": "Also available in",
+    "title": "Pick your screen.",
+    "live": "Live",
+    "soon": "At the printers",
+    "soonCta": "Hear when it's live",
+    "tiles": [
+      {
+        "key": "substack",
+        "name": "Substack",
+        "blurb": "The home of every piece. Read it in full, free, in your inbox or on the web.",
+        "cta": "Read on Substack"
+      },
+      {
+        "key": "youtube",
+        "name": "YouTube",
+        "blurb": "One Short per piece. The whole argument, fast."
+      },
+      {
+        "key": "instagram",
+        "name": "Instagram",
+        "blurb": "The Short, plus a flipbook carousel you swipe through."
+      },
+      {
+        "key": "tiktok",
+        "name": "TikTok",
+        "blurb": "The same Shorts, on your For You page."
+      },
+      {
+        "key": "spotify",
+        "name": "Spotify",
+        "blurb": "The audio edition, read by Krish."
+      }
+    ]
+  },
+  "staff": {
+    "eyebrow": "The staff box",
+    "title": "Who makes this.",
+    "rows": [
+      {
+        "k": "Editor",
+        "v": "Krish Raja"
+      },
+      {
+        "k": "Written for",
+        "v": "Busy people who want AI explained without the sales pitch"
+      },
+      {
+        "k": "Checked by",
+        "v": "A blind panel of AI judges, then Krish, who gets the final say"
+      },
+      {
+        "k": "Reading age",
+        "v": "12"
+      },
+      {
+        "k": "Preaching",
+        "v": "None. A machine checks."
+      },
+      {
+        "k": "Em dashes",
+        "v": "Also none"
+      }
+    ],
+    "bio": "Krish writes every piece, reads the audio edition and fronts the Shorts. He has spent sixteen years building commercial businesses across media, tech and telecoms, and now spends most days building with AI.",
+    "photoAlt": "Krish Raja, editor of makeyourmindup",
+    "site": "krishraja.com",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "line": "Made in public. Corrections welcome in the Substack comments.",
+    "copyright": "makeyourmindup",
+    "subscribe": "Subscribe free",
+    "top": "Back to the cover"
+  },
+  "notFound": {
+    "title": "This page hasn't made its mind up.",
+    "body": "Neither have we, about this one. The cover is a safer bet.",
+    "cta": "Back to the cover"
+  },
+  "a11y": {
+    "skip": "Skip to the contents",
+    "masthead": "makeyourmindup",
+    "newTab": "opens in a new tab",
+    "illustration": "Illustration"
+  }
+}
