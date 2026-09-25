@@ -38,6 +38,10 @@ Every piece ends with a call and a date. We keep score in public, misses include
 
 Krish
 
+## Profile bio
+
+Editor of makeyourmindup. Sixteen years building commercial businesses across media, tech and telecoms, now building with AI. Brooklyn-based, British-Australian by way of everywhere else.
+
 ## Image alt text
 
 The makeyourmindup logo above the line "AI, unpicked", with the three sections: mind.the.gap, follow.the.money and under.the.hood.
