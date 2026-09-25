@@ -139,7 +139,7 @@ body {
   }
 
   .sticker {
-    @apply mono-label inline-flex items-center justify-center rounded-full border-2 border-ink px-4 py-2 text-ink;
+    @apply mono-label inline-flex max-w-full items-center justify-center rounded-full border-2 border-ink px-4 py-2 text-center text-ink;
     font-weight: 600;
     box-shadow: 3px 3px 0 0 var(--ink);
   }
@@ -167,8 +167,10 @@ body {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
   }
 }
 

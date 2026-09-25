@@ -24,14 +24,14 @@ export function StickyBar() {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="page flex h-14 items-center justify-between gap-4">
-            <a href="#top" aria-label={SITE.footer.top} className="block w-[150px] sm:w-[220px]">
+            <a href="#top" aria-label={SITE.footer.top} className="block w-[128px] sm:w-[220px]">
               <Image src="/brand/wordmark.png" alt="" width={3319} height={391} sizes="220px" className="h-auto w-full" />
             </a>
             <a
               href={subscribeUrl()}
               target="_blank"
               rel="noopener"
-              className="heavy inline-flex min-h-[44px] items-center whitespace-nowrap border-2 border-ink bg-mint px-4 text-sm uppercase text-ink"
+              className="heavy inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap border-2 border-ink bg-mint px-3 text-sm uppercase text-ink"
             >
               {SITE.subscribe.button}
             </a>

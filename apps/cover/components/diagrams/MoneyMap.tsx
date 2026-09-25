@@ -21,18 +21,20 @@ export function MoneyMap({
   const still = reduce || !mounted
   const on = still || inView
 
+  // Three columns on a 480 grid with 12px margins. Left: x 12 to 168.
+  // Middle: 204 to 312. Right: 340 to 468. Rows mirror the centre line y 190.
   const nodes: Node[] = [
-    { key: 'buyer', x: 12, y: 150, w: 140, h: 64, label: labels.buyer },
-    { key: 'app', x: 196, y: 150, w: 112, h: 64, label: labels.app },
-    { key: 'cloud', x: 350, y: 44, w: 118, h: 58, label: labels.cloud },
-    { key: 'lab', x: 336, y: 262, w: 132, h: 58, label: labels.lab },
-    { key: 'ghost', x: 12, y: 290, w: 160, h: 52, label: labels.ghost, ghost: true },
+    { key: 'buyer', x: 12, y: 160, w: 156, h: 60, label: labels.buyer },
+    { key: 'app', x: 204, y: 160, w: 108, h: 60, label: labels.app },
+    { key: 'cloud', x: 340, y: 52, w: 128, h: 60, label: labels.cloud },
+    { key: 'lab', x: 340, y: 268, w: 128, h: 60, label: labels.lab },
+    { key: 'ghost', x: 12, y: 296, w: 156, h: 56, label: labels.ghost, ghost: true },
   ]
 
   const flows = [
-    { d: 'M152,182 L196,182', w: 30, delay: 0.3 },
-    { d: 'M308,170 C334,170 326,73 350,73', w: 16, delay: 0.7 },
-    { d: 'M308,196 C330,196 318,291 336,291', w: 11, delay: 0.9 },
+    { d: 'M168,190 L204,190', w: 30, delay: 0.3 },
+    { d: 'M312,178 C330,178 322,82 340,82', w: 16, delay: 0.7 },
+    { d: 'M312,202 C330,202 322,298 340,298', w: 11, delay: 0.9 },
   ]
 
   const grow = (delay: number) =>
@@ -62,7 +64,7 @@ export function MoneyMap({
       aria-label={`Money flows from ${labels.buyer} to ${labels.app}, then on to ${labels.cloud} and ${labels.lab}. ${labels.ghost}: ${labels.ghostNote}.`}
     >
       {/* The money that stopped coming stays on the map as a ghost. */}
-      <path d="M82,214 L82,290" stroke={C.cream} strokeOpacity="0.35" strokeWidth="10" strokeDasharray="6 8" fill="none" />
+      <path d="M90,220 L90,296" stroke={C.cream} strokeOpacity="0.35" strokeWidth="10" strokeDasharray="6 8" fill="none" />
 
       {flows.map((f, i) => (
         <g key={i}>
@@ -110,9 +112,9 @@ export function MoneyMap({
 /** A till roll that prints the four questions every piece answers. */
 export function Receipt({ title, lines, total }: { title: string; lines: string[]; total: string }) {
   return (
-    <InView className="receipt-wrap receipt-shadow rotate-3">
+    <InView className="receipt-wrap receipt-shadow mr-1.5 max-w-full rotate-3">
     <div
-      className="receipt w-[250px] bg-cream px-5 pb-8 pt-4 text-ink"
+      className="receipt w-[250px] max-w-full bg-cream px-5 pb-8 pt-4 text-ink"
       style={{ fontFamily: 'var(--font-plex-mono)' }}
       aria-hidden="true"
     >

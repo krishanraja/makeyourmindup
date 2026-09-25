@@ -31,7 +31,7 @@ export function Marquee() {
   )
   return (
     <div className="overflow-hidden border-y-2 border-mint/40 bg-ink-deep py-4 md:py-5">
-      <div className="flex w-max animate-marquee motion-reduce:animate-none">
+      <div data-bleed className="flex w-max animate-marquee motion-reduce:animate-none">
         {row(false)}
         {row(true)}
       </div>

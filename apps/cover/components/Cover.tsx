@@ -32,7 +32,7 @@ function SpinBadge() {
         target="_blank"
         rel="noopener"
         aria-label={`${t.badgeLabel} (${SITE.a11y.newTab})`}
-        className="group relative block h-[120px] w-[120px] md:h-[164px] md:w-[164px]"
+        className="group relative block h-[104px] w-[104px] sm:h-[120px] sm:w-[120px] md:h-[164px] md:w-[164px]"
       >
         <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-spin-slow" aria-hidden="true">
           <defs>
@@ -74,7 +74,7 @@ export function Cover({ latest }: { latest?: Post }) {
     <header className="grain relative overflow-hidden bg-ink">
       <div className="page relative z-10 flex min-h-[100svh] flex-col pb-10 pt-4 md:pb-14">
         {/* The strap: every magazine has one. */}
-        <div className="mono-label flex items-center justify-between gap-4 border-y border-cream/25 py-2 text-cream/75">
+        <div className="mono-label flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-y border-cream/25 py-2 text-cream/75">
           <span>
             {SITE.strap.left} <span aria-hidden="true">·</span> {t.issue}
           </span>
@@ -111,7 +111,7 @@ export function Cover({ latest }: { latest?: Post }) {
             <span style={d(0.25)} className="enter mono-label inline-block bg-coral px-2 py-1 font-semibold text-ink">
               {t.kicker}
             </span>
-            <h2 className="display mt-4 text-[clamp(4.2rem,15vw,8.6rem)] text-cream" aria-label={`${line1} ${line2}`}>
+            <h2 className="display mt-4 text-[clamp(3.6rem,17vw,8.6rem)] text-cream" aria-label={`${line1} ${line2}`}>
               <span style={d(0.4)} className="enter block" aria-hidden="true">
                 {line1}
               </span>
@@ -166,7 +166,7 @@ export function Cover({ latest }: { latest?: Post }) {
               {SITE.subchannels.map((s, i) => (
                 <li key={s.slug} style={d(0.7 + i * 0.12)} className="slide border-b border-cream/25">
                   <a href={`#${s.slug}`} className="group block py-4 transition-transform duration-200 hover:translate-x-2">
-                    <span className="flex items-center gap-3">
+                    <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
                       <span className={`mono-label px-2 py-0.5 font-semibold text-ink ${ACCENT[s.slug].bg}`}>{s.label}</span>
                       <span className="mono-label text-cream/60">{s.day}</span>
                     </span>
@@ -186,18 +186,18 @@ export function Cover({ latest }: { latest?: Post }) {
         </div>
 
         {/* The price box and the badge. */}
-        <div className="mt-10 flex items-end justify-between gap-6">
-          <div className="flex items-end gap-4">
+        <div className="mt-10 flex flex-wrap items-end justify-between gap-6">
+          <div className="flex flex-wrap items-end gap-4">
             <div className="flex flex-col items-start bg-cream p-2 text-ink">
               <span className="mono-label text-[0.6rem]">{t.issue}</span>
               <Barcode />
             </div>
-            <div>
+            <div className="min-w-[8rem] flex-1">
               <p className="display text-5xl text-butter md:text-6xl">{t.barcodePrice}</p>
               <p className="mt-1 max-w-[16rem] text-xs text-cream/60">{t.footnote}</p>
             </div>
           </div>
-          <div className="lg:hidden">
+          <div className="ml-auto lg:hidden">
             <SpinBadge />
           </div>
         </div>

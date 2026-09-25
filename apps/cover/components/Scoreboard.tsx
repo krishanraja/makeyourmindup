@@ -22,8 +22,8 @@ export function Scoreboard() {
   return (
     <section id="scoreboard" className="grain relative scroll-mt-16 bg-ink" aria-labelledby="scoreboard-title">
       <div className="page relative z-10 py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
-          <Reveal className="lg:col-span-6">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-end">
+          <Reveal className="min-w-0 lg:col-span-6">
             <p className="mono-label flex items-center gap-3 text-mint">
               <span className="h-px w-10 bg-mint" aria-hidden="true" />
               {t.eyebrow}
@@ -34,7 +34,7 @@ export function Scoreboard() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85 md:text-xl">{t.body}</p>
           </Reveal>
 
-          <div className="relative lg:col-span-6">
+          <div className="relative min-w-0 lg:col-span-6">
             <span className="sticker absolute -top-6 right-0 z-10 rotate-6 bg-butter">{t.sticker}</span>
             <InView className="board border-2 border-cream/20 bg-ink-deep p-4 md:p-6">
               <p className="sr-only">{t.columns.map((col, i) => `${col}: ${count(keys[i])}`).join(', ')}</p>

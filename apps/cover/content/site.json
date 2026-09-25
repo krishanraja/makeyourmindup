@@ -74,7 +74,12 @@
         "meet": "the pattern",
         "call": "our call, dated"
       },
-      "caption": "Illustration. The real ones come with dates and sources."
+      "caption": "Illustration. The real ones come with dates and sources.",
+      "headline": [
+        "What's coming,",
+        "before it's",
+        "obvious."
+      ]
     },
     {
       "slug": "follow_the_money",
@@ -103,7 +108,12 @@
         ],
         "receiptTotal": "Answers: Wednesday"
       },
-      "caption": "Illustration. The real ones name every source."
+      "caption": "Illustration. The real ones name every source.",
+      "headline": [
+        "Who gets paid",
+        "when AI gets",
+        "bought."
+      ]
     },
     {
       "slug": "under_the_hood",
@@ -143,7 +153,12 @@
         "real": "Real",
         "theatre": "Theatre"
       },
-      "caption": "Illustration. The real ones show the evidence for every stamp."
+      "caption": "Illustration. The real ones show the evidence for every stamp.",
+      "headline": [
+        "Real, or",
+        "theatre?",
+        "We take it apart."
+      ]
     }
   ],
   "scoreboard": {

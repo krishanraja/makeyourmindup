@@ -6,8 +6,8 @@ export function StaffBox() {
   const t = SITE.staff
   return (
     <section id="staff" className="on-light scroll-mt-16 bg-cream text-ink" aria-labelledby="staff-title">
-      <div className="page grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:items-center">
-        <Reveal className="lg:col-span-5">
+      <div className="page grid grid-cols-1 gap-12 py-20 md:py-28 lg:grid-cols-12 lg:items-center">
+        <Reveal className="min-w-0 lg:col-span-5">
           <figure className="relative mx-auto w-full max-w-[420px] -rotate-2">
             <span className="absolute -top-4 left-1/2 z-10 h-8 w-28 -translate-x-1/2 rotate-2 bg-butter/80" aria-hidden="true" />
             <div className="brutal border-2 border-ink bg-cream p-3 pb-12">
@@ -17,7 +17,7 @@ export function StaffBox() {
           </figure>
         </Reveal>
 
-        <div className="lg:col-span-7">
+        <div className="min-w-0 lg:col-span-7">
           <Reveal>
             <p className="mono-label flex items-center gap-3 text-ink/70">
               <span className="h-px w-10 bg-ink" aria-hidden="true" />

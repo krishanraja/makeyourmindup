@@ -25,6 +25,7 @@ async function walk(page) {
 
 const runs = [
   { name: 'phone', viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
+  { name: 'android', viewport: { width: 360, height: 780 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
   { name: 'desktop', viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 },
 ]
 
@@ -44,6 +45,8 @@ for (const r of runs) {
   for (const id of ['mind_the_gap', 'follow_the_money', 'under_the_hood', 'scoreboard', 'latest', 'platforms', 'staff']) {
     await page.locator(`#${id}`).screenshot({ path: `${OUT}/${r.name}-${id}.png` })
   }
+  // Page scroll width alone misses content clipped by overflow-hidden; run
+  // scripts/audit-layout.mjs for the full check.
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
   console.log(r.name, 'horizontal overflow px:', overflow, 'errors:', errors.length ? errors : 'none')
   await ctx.close()

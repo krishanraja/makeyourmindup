@@ -7,10 +7,11 @@ import { bez, C, DISPLAY, MONO } from './shared'
 
 type Pt = [number, number]
 const MEET: Pt = [300, 190]
+// Three threads spaced evenly around the meeting point, 112 above and below.
 const THREADS: [Pt, Pt, Pt, Pt][] = [
-  [[24, 74], [130, 74], [210, 120], MEET],
-  [[24, 214], [150, 214], [220, 196], MEET],
-  [[24, 306], [130, 306], [210, 262], MEET],
+  [[24, 78], [130, 78], [210, 124], MEET],
+  [[24, 206], [150, 206], [220, 194], MEET],
+  [[24, 302], [130, 302], [210, 256], MEET],
 ]
 const d = (p: [Pt, Pt, Pt, Pt]) => `M${p[0]} C${p[1]} ${p[2]} ${p[3]}`
 
@@ -61,7 +62,7 @@ export function Threads({ labels, axis, meet, call }: { labels: string[]; axis: 
           <text x="24" y={p[0][1] - 22} fill={C.cream} fontSize="17" style={MONO}>
             {labels[i]}
           </text>
-          {[0.45, 0.72].map((t, j) => {
+          {[0.55, 0.8].map((t, j) => {
             const [x, y] = bez(...p, t)
             return <motion.circle key={j} cx={x} cy={y} r="7" fill={C.ink} stroke={C.cream} strokeWidth="3.5" {...pop(1.2 + i * 0.15 + j * 0.1)} />
           })}
@@ -71,17 +72,18 @@ export function Threads({ labels, axis, meet, call }: { labels: string[]; axis: 
       {/* Where they meet is the pattern. */}
       <motion.circle cx={MEET[0]} cy={MEET[1]} r="26" fill="none" stroke={C.coral} strokeWidth="3" {...pop(1.9)} />
       <motion.circle cx={MEET[0]} cy={MEET[1]} r="14" fill={C.coral} {...pop(1.8)} />
-      <motion.text x={MEET[0] + 18} y={MEET[1] + 62} fill={C.coral} fontSize="32" {...pop(2.0, DISPLAY)}>
+      <motion.text x="456" y={MEET[1] + 64} fill={C.coral} fontSize="32" textAnchor="end" {...pop(2.0, DISPLAY)}>
         {meet}
       </motion.text>
 
       {/* What it means is coming, with a date on it. */}
-      <motion.path d="M300,190 C350,190 380,150 430,128" fill="none" stroke={C.coral} strokeWidth="4" strokeDasharray="10 9" {...draw(2.2, 0.8)} />
+      <motion.path d="M300,190 C348,190 384,150 424,128" fill="none" stroke={C.coral} strokeWidth="4" strokeDasharray="10 9" {...draw(2.2, 0.8)} />
+      {/* The flag, its label and the axis all end on the same right margin, x 456. */}
       <motion.g {...pop(2.9)}>
-        <line x1="430" y1="128" x2="430" y2="62" stroke={C.cream} strokeWidth="3" />
-        <path d="M430,62 L470,76 L430,90 Z" fill={C.coral} />
+        <line x1="424" y1="128" x2="424" y2="62" stroke={C.cream} strokeWidth="3" />
+        <path d="M424,62 L456,74 L424,86 Z" fill={C.coral} />
       </motion.g>
-      <motion.text x="418" y="52" fill={C.cream} fontSize="16" textAnchor="end" {...pop(3.0, MONO)}>
+      <motion.text x="456" y="46" fill={C.cream} fontSize="16" textAnchor="end" {...pop(3.0, MONO)}>
         {call}
       </motion.text>
     </svg>

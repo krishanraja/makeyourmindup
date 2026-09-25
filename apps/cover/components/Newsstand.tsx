@@ -22,8 +22,8 @@ export function Newsstand({ posts }: { posts: Post[] }) {
 
         {posts.length === 0 ? (
           <Reveal delay={0.1}>
-            <div className="brutal mt-12 grid gap-8 border-2 border-ink bg-butter p-6 md:grid-cols-12 md:items-center md:p-10">
-              <div className="md:col-span-8">
+            <div className="brutal mt-12 grid grid-cols-1 gap-8 border-2 border-ink bg-butter p-6 md:grid-cols-12 md:items-center md:p-10">
+              <div className="min-w-0 md:col-span-8">
                 <p className="display text-[clamp(2.4rem,5.5vw,4.4rem)]">{t.emptyTitle}</p>
                 <p className="mt-4 max-w-xl text-lg md:text-xl">{t.emptyBody}</p>
               </div>
@@ -43,7 +43,7 @@ export function Newsstand({ posts }: { posts: Post[] }) {
             </div>
           </Reveal>
         ) : (
-          <ul className="mt-12 grid gap-8 md:grid-cols-3">
+          <ul className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {posts.map((p, i) => (
               <li key={p.link}>
                 <Reveal delay={i * 0.08}>

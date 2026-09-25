@@ -7,13 +7,15 @@ import { C, SANS } from './shared'
 
 type Part = { name: string; mark: string }
 
-// Where each part lands once the thing comes apart. Centre is 240,190.
+// Where each part lands once the thing comes apart, on a mirrored grid:
+// left column x 16 to 164, right column 316 to 464, the centre box 180 to 300,
+// and the bottom part centred on x 240. Centre of the whole is 240,190.
 const SLOTS = [
-  { x: 16, y: 34, w: 156 },
-  { x: 308, y: 34, w: 156 },
-  { x: 16, y: 168, w: 132 },
-  { x: 332, y: 168, w: 132 },
-  { x: 122, y: 306, w: 236 },
+  { x: 16, y: 40, w: 148 },
+  { x: 316, y: 40, w: 148 },
+  { x: 16, y: 167, w: 148 },
+  { x: 316, y: 167, w: 148 },
+  { x: 122, y: 312, w: 236 },
 ]
 const CX = 240
 const CY = 190
@@ -37,7 +39,7 @@ export function RealOrTheatre({ centre, parts, real, theatre }: { centre: string
     <div ref={ref}>
     <svg
       key={still ? 'still' : 'moving'}
-      viewBox="0 0 480 380"
+      viewBox="0 0 480 390"
       className="h-auto w-full"
       role="img"
       aria-label={`${centre}, taken apart: ${parts.map(p => `${p.name} is ${p.mark === 'real' ? real : theatre}`).join(', ')}.`}
@@ -62,7 +64,7 @@ export function RealOrTheatre({ centre, parts, real, theatre }: { centre: string
 
       {/* The shiny new thing. */}
       <g>
-        <rect x={CX - 74} y={CY - 38} width="148" height="76" fill={C.lilac} stroke={C.ink} strokeWidth="3" />
+        <rect x={CX - 60} y={CY - 38} width="120" height="76" fill={C.lilac} stroke={C.ink} strokeWidth="3" />
         <text x={CX} y={CY - 6} textAnchor="middle" fontSize="19" fill={C.ink} style={SANS}>
           {c1}
         </text>
@@ -77,7 +79,7 @@ export function RealOrTheatre({ centre, parts, real, theatre }: { centre: string
         const colour = isReal ? C.mint : C.lilac
         const label = (isReal ? real : theatre).toUpperCase()
         const sw = label.length * 11 + 18
-        // The stamp sits on the part's top edge, right aligned, inside the frame.
+        // Every stamp sits on its part's top edge, right aligned, at one angle.
         const sx = s.x + s.w - sw / 2 + 4
         const sy = s.y - 10
         return (
@@ -100,7 +102,7 @@ export function RealOrTheatre({ centre, parts, real, theatre }: { centre: string
               transition={{ type: 'spring', stiffness: 520, damping: 20, delay: 1.3 + i * 0.22 }}
               style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
             >
-              <g transform={`rotate(${isReal ? -6 : 5} ${sx} ${sy})`}>
+              <g transform={`rotate(-4 ${sx} ${sy})`}>
                 <rect x={sx - sw / 2} y={sy - 14} width={sw} height="28" fill={C.ink} stroke={colour} strokeWidth="3" />
                 <text
                   x={sx}

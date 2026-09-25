@@ -41,7 +41,10 @@ the root would let a production build succeed from the wrong folder.
 ```
 npm ci
 npm run verify     # kill list over the copy, type check, production build
-npm run shots      # screenshots at 390px and 1440px into .shots/, server on :3100 first
+npm run audit      # server on :3100 first: fails on any text past the screen edge at
+                   # 320 to 768px (100% and 130% text), and on any spread whose rows do
+                   # not line up with the other two
+npm run shots      # screenshots at 360px, 390px and 1440px into .shots/
 npm run kit        # re-render the Substack kit and the social card
 npm run assets     # re-derive every logo file from brand/
 ```
@@ -55,6 +58,9 @@ npm run assets     # re-derive every logo file from brand/
   the media kit.
 - No invented numbers. The scoreboard shows zeros until a real call is ruled.
 - Every diagram is labelled as an illustration.
+- The three spreads share one structure and line up row for row: headlines are
+  set as three lines in `content/site.json` (`headline`), and the audit fails
+  if any slot drifts by more than a pixel. Keep new copy to the same line counts.
 
 ## Deployment
 

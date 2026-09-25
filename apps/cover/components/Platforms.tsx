@@ -20,9 +20,9 @@ export function Platforms() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {/* The hub gets the biggest tile. */}
-          <Reveal className="md:col-span-2 lg:row-span-2">
+          <Reveal className="min-w-0 md:col-span-2 lg:row-span-2">
             <a
               href={CONFIG.substackUrl}
               target="_blank"
@@ -49,7 +49,7 @@ export function Platforms() {
             const url = CONFIG.platforms[key]
             const Icon = PLATFORM_ICON[key]
             return (
-              <Reveal key={tile.key} delay={0.06 * (i + 1)}>
+              <Reveal key={tile.key} delay={0.06 * (i + 1)} className="min-w-0">
                 <div className="brutal relative flex h-full min-h-[220px] flex-col border-2 border-ink bg-cream p-5">
                   <span className="flex items-start justify-between">
                     <Icon className="h-9 w-9" />
