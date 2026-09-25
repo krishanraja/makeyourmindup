@@ -7,6 +7,12 @@
     "value": "canon",
     "why": "A canon document names retired brands in order to forbid them. A gate that blocks its own rulebook does not survive contact with a deadline."
   },
+  "paid_tier_exemption": {
+    "front_matter_key": "kill_list_scope",
+    "value": "paid_tier",
+    "allows": { "product_in_editorial": ["CTRL"] },
+    "why": "The media kit makes CTRL beta access in the paid tier the one permitted connection between the channel and mind/make. Paid-tier copy names it; every other rule still runs, Mindmake included."
+  },
   "vetoes": [
     { "id": "em_dash", "pattern": "\\u2014", "says": "No em dashes anywhere, including code and on-screen text." },
     { "id": "exclamation", "pattern": "!", "says": "No exclamation marks in editorial copy." },

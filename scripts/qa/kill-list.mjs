@@ -18,6 +18,10 @@
  * nothing but em dashes. Canon names retired brands in order to forbid them,
  * and a gate that blocks its own rulebook does not survive a deadline.
  *
+ * A file declaring `kill_list_scope: paid_tier` may name CTRL, because CTRL
+ * beta access in the paid tier is the one permitted connection. Every other
+ * rule still runs on it, Mindmake included.
+ *
  * The day check needs live data and will not read a mandate out of this repo.
  * `venture_formats` in Mindmaker OS is the only truth for what runs when, so
  * pass a JSON file of {"<format_slug>": "<weekday>"} with --formats, or the
@@ -73,6 +77,9 @@ export function check(text, { path = '<stdin>', formats = null } = {}) {
     return { path, canon: true, findings }
   }
 
+  const paid = RULES.paid_tier_exemption
+  const allowed = front.kill_list_scope === paid.value ? paid.allows : {}
+
   for (const rule of RULES.vetoes) {
     if (rule.id === 'em_dash') continue
     if (rule.id === 'exclamation') {
@@ -80,6 +87,7 @@ export function check(text, { path = '<stdin>', formats = null } = {}) {
       continue
     }
     for (const phrase of rule.words || rule.patterns || []) {
+      if ((allowed[rule.id] || []).includes(phrase)) continue
       for (const m of findPhrase(body, phrase)) {
         add('veto', rule.id, lineOf(body, m.index), rule.says, m[0])
       }
