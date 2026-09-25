@@ -28,8 +28,13 @@ function Diagram({ s }: { s: Subchannel }) {
     head:   meta row (one line), tag, headline (three set lines), dek (two lines)
     fig:    diagram card (one aspect ratio for all three) and caption
     detail: question (fixed height), body, then the receipt on the money spread
-  Below lg the slots stack head, fig, detail. From lg the figure takes the
-  other column and its top lines up with the meta row.
+  On phones the slots stack head, fig, detail. From tablet up the figure takes
+  the other column and its top lines up with the meta row.
+
+  Every spread fits on one screen. Vertical sizes follow the screen's height
+  (svh) as well as its width, the diagram is capped by height and sits on the
+  outer margin, and phones leave out the caption, the body and the receipt:
+  the headline, the diagram and the question carry the idea.
 */
 export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
   const a = ACCENT[s.slug]
@@ -40,8 +45,8 @@ export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
   ) : null
 
   const areas = flip
-    ? "lg:[grid-template-areas:'fig_head'_'fig_detail']"
-    : "lg:[grid-template-areas:'head_fig'_'detail_fig']"
+    ? "md:[grid-template-areas:'fig_head'_'fig_detail']"
+    : "md:[grid-template-areas:'head_fig'_'detail_fig']"
 
   return (
     <section
@@ -52,7 +57,7 @@ export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
     >
       <div className="halftone pointer-events-none absolute inset-0" aria-hidden="true" />
       <div
-        className={`page relative grid grid-cols-1 items-start gap-y-10 py-20 [grid-template-areas:'head'_'fig'_'detail'] md:py-28 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-12 lg:gap-y-8 ${areas}`}
+        className={`page relative grid grid-cols-1 items-start gap-y-[clamp(0.75rem,2.2svh,2.5rem)] py-[clamp(1rem,3.6svh,7rem)] md:py-[clamp(1.25rem,5svh,7rem)] [grid-template-areas:'head'_'fig'_'detail'] md:grid-cols-2 md:grid-rows-[auto_1fr] md:gap-x-8 md:gap-y-[clamp(0.9rem,2.6svh,2rem)] lg:gap-x-12 ${areas}`}
       >
         <div className="min-w-0 [grid-area:head]">
           <Reveal>
@@ -61,13 +66,13 @@ export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
               <span className="mono-label font-semibold">{s.day}</span>
               <span className="mono-label ml-auto hidden text-ink/80 sm:inline">p.{s.page}</span>
             </div>
-            <div data-slot="tag" className="mt-5">
+            <div data-slot="tag" className="mt-[clamp(0.4rem,1.6svh,1.25rem)] hidden md:block">
               <span className="sticker -rotate-3 bg-cream text-[0.68rem]">{s.tag}</span>
             </div>
             <h2
               id={`${s.slug}-title`}
               data-slot="headline"
-              className="display mt-6 text-[clamp(2.6rem,13vw,5.6rem)] lg:text-[clamp(3rem,6.4vw,5.6rem)]"
+              className="display mt-[clamp(0.4rem,1.8svh,1.5rem)] text-[clamp(1.8rem,min(12vw,6svh),5.6rem)] md:text-[clamp(1.9rem,min(5.2vw,8svh),5.6rem)] lg:text-[clamp(2rem,min(6.4vw,8.5svh),5.6rem)]"
             >
               {(s.headline as string[]).map(line => (
                 <span key={line} className="block">
@@ -75,7 +80,7 @@ export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
                 </span>
               ))}
             </h2>
-            <p data-slot="dek" className="dek mt-5 min-h-[2.75em] text-[1.5rem] leading-snug sm:min-h-0 md:text-[1.8rem]">
+            <p data-slot="dek" className="dek mt-[clamp(0.4rem,1.4svh,1.25rem)] min-h-[2.75em] [@media(max-width:767px)_and_(max-height:600px)]:hidden text-[clamp(1rem,2.8svh,1.8rem)] leading-snug sm:min-h-0">
               {s.oneLiner}
             </p>
           </Reveal>
@@ -83,19 +88,24 @@ export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
 
         <div className="min-w-0 [grid-area:fig]">
           <Reveal delay={0.1}>
-            <figure className="relative">
-              <div data-slot="card" className="brutal border-2 border-ink bg-ink p-2 sm:p-4 md:p-6">
+            <figure
+              className={`relative flex w-full items-start gap-3 md:block md:max-w-[calc((100svh-12rem)*1.2)] ${isMoney ? 'lg:max-w-[calc((100svh-21rem)*1.2)]' : ''} ${flip ? '' : 'md:ml-auto'}`}
+            >
+              <div data-slot="card" className="brutal w-[min(32svh,62%)] shrink-0 border-2 border-ink bg-ink p-2 sm:p-4 md:w-auto md:p-[clamp(0.5rem,2svh,1.5rem)]">
                 <Diagram s={s} />
               </div>
+              <div className="mt-3 min-w-0 flex-1 md:hidden">
+                <span className="sticker -rotate-3 bg-cream text-[0.62rem]">{s.tag}</span>
+              </div>
               {isMoney ? (
-                <div className="relative z-10 flex items-start justify-between gap-4 lg:-mt-12">
-                  <figcaption data-slot="caption" className="mono-label mt-4 min-h-[3em] text-ink/85 sm:min-h-0 lg:mt-16 lg:max-w-[14rem]">
+                <div className="relative z-10 hidden gap-4 md:flex md:flex-col lg:-mt-12 lg:flex-row lg:items-start lg:justify-between">
+                  <figcaption data-slot="caption" className="mono-label mt-4 text-ink/85 lg:mt-16 lg:max-w-[14rem]">
                     {s.caption}
                   </figcaption>
-                  <div className="hidden lg:block">{receipt}</div>
+                  <div className="self-end lg:self-auto">{receipt}</div>
                 </div>
               ) : (
-                <figcaption data-slot="caption" className="mono-label mt-4 min-h-[3em] text-ink/85 sm:min-h-0">
+                <figcaption data-slot="caption" className="mono-label mt-4 hidden text-ink/85 md:block">
                   {s.caption}
                 </figcaption>
               )}
@@ -105,14 +115,13 @@ export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
 
         <div className="min-w-0 [grid-area:detail]">
           <Reveal delay={0.15}>
-            <div data-slot="question" className="brutal max-w-xl border-2 border-ink bg-cream p-5 lg:max-w-none">
+            <div data-slot="question" className="brutal max-w-xl border-2 border-ink bg-cream p-[clamp(0.75rem,2svh,1.25rem)] md:max-w-none">
               <p className="mono-label text-ink/70">{s.questionLabel}</p>
-              <p className="heavy mt-2 min-h-[5.5em] text-xl leading-snug sm:min-h-[4.125em] md:text-2xl lg:min-h-0">{s.question}</p>
+              <p className="heavy mt-1.5 min-h-[5.5em] text-[clamp(0.95rem,2.4svh,1.5rem)] leading-snug sm:min-h-[4.125em] md:min-h-0">{s.question}</p>
             </div>
-            <p data-slot="body" className="mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
+            <p data-slot="body" className="mt-[clamp(0.75rem,2.4svh,2rem)] hidden max-w-xl text-[clamp(0.95rem,2.3svh,1.25rem)] leading-relaxed md:block">
               {s.body}
             </p>
-            {receipt && <div className="mt-10 flex justify-end lg:hidden">{receipt}</div>}
           </Reveal>
         </div>
       </div>

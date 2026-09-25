@@ -4,10 +4,10 @@ import { InView, Reveal } from './Reveal'
 function Flap({ value, delay }: { value: string; delay: number }) {
   return (
     <span
-      className="flap relative flex h-24 w-16 items-center justify-center overflow-hidden rounded-sm bg-ink-soft"
+      className="flap relative flex h-[clamp(3.25rem,9svh,6rem)] w-[clamp(2.25rem,6svh,4rem)] items-center justify-center overflow-hidden rounded-sm bg-ink-soft"
       style={{ ['--d' as string]: `${delay}s` }}
     >
-      <span className="display text-6xl text-cream">{value}</span>
+      <span className="display text-[clamp(2.2rem,6svh,3.75rem)] text-cream">{value}</span>
       <span className="absolute inset-x-0 top-1/2 h-[2px] bg-ink" aria-hidden="true" />
     </span>
   )
@@ -21,28 +21,28 @@ export function Scoreboard() {
 
   return (
     <section id="scoreboard" className="grain relative scroll-mt-16 bg-ink" aria-labelledby="scoreboard-title">
-      <div className="page relative z-10 py-20 md:py-28">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-end">
-          <Reveal className="min-w-0 lg:col-span-6">
-            <p className="mono-label flex items-center gap-3 text-mint">
+      <div className="page relative z-10 py-[clamp(1.25rem,5svh,7rem)] md:py-[clamp(1.5rem,6svh,7rem)]">
+        <div className="grid grid-cols-1 gap-[clamp(1.25rem,4svh,3rem)] md:grid-cols-12 md:items-end">
+          <Reveal className="min-w-0 md:col-span-6">
+            <p className="mono-label flex items-center gap-3 text-mint [@media(max-width:767px)_and_(max-height:600px)]:hidden">
               <span className="h-px w-10 bg-mint" aria-hidden="true" />
               {t.eyebrow}
             </p>
-            <h2 id="scoreboard-title" className="display mt-4 text-[clamp(3rem,7.5vw,6rem)] text-cream">
+            <h2 id="scoreboard-title" className="display mt-[clamp(0.5rem,1.6svh,1rem)] text-[clamp(1.9rem,min(7.5vw,8svh),6rem)] text-cream md:text-[clamp(1.9rem,min(5.4vw,8svh),6rem)]">
               {t.title}
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85 md:text-xl">{t.body}</p>
+            <p className="mt-[clamp(0.6rem,2svh,1.5rem)] max-w-xl text-[clamp(0.95rem,2.4svh,1.25rem)] leading-relaxed text-cream/85">{t.body}</p>
           </Reveal>
 
-          <div className="relative min-w-0 lg:col-span-6">
+          <div className="relative min-w-0 md:col-span-6">
             <span className="sticker absolute -top-6 right-0 z-10 rotate-6 bg-butter">{t.sticker}</span>
-            <InView className="board border-2 border-cream/20 bg-ink-deep p-4 md:p-6">
+            <InView className="board border-2 border-cream/20 bg-ink-deep p-[clamp(0.75rem,2.2svh,1.5rem)]">
               <p className="sr-only">{t.columns.map((col, i) => `${col}: ${count(keys[i])}`).join(', ')}</p>
-              <div className="grid grid-cols-2 gap-6 sm:grid-cols-4" aria-hidden="true">
+              <div className="grid grid-cols-2 gap-[clamp(0.6rem,2svh,1.5rem)] sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4" aria-hidden="true">
                 {t.columns.map((col, i) => {
                   const n = String(count(keys[i])).padStart(2, '0')
                   return (
-                    <div key={col} className="flex flex-col items-center gap-3">
+                    <div key={col} className="flex flex-col items-center gap-[clamp(0.35rem,1.2svh,0.75rem)]">
                       <span className="flex gap-1">
                         <Flap value={n[0]} delay={0.1 + i * 0.12} />
                         <Flap value={n[1]} delay={0.16 + i * 0.12} />
@@ -53,7 +53,7 @@ export function Scoreboard() {
                 })}
               </div>
               {calls.length === 0 ? (
-                <p className="mono-label mt-6 border-t border-cream/15 pt-4 text-center text-cream/60">
+                <p className="mono-label mt-[clamp(0.75rem,2svh,1.5rem)] border-t border-cream/15 pt-[clamp(0.5rem,1.4svh,1rem)] text-center text-cream/60">
                   <span className="mr-2 inline-block h-2 w-2 animate-blink rounded-full bg-mint align-middle" aria-hidden="true" />
                   {t.empty}
                 </p>

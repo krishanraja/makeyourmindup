@@ -42,8 +42,11 @@ the root would let a production build succeed from the wrong folder.
 npm ci
 npm run verify     # kill list over the copy, type check, production build
 npm run audit      # server on :3100 first: fails on any text past the screen edge at
-                   # 320 to 768px (100% and 130% text), and on any spread whose rows do
-                   # not line up with the other two
+                   # 320 to 768px (100% and 130% text), on any spread whose rows do
+                   # not line up with the other two, and on any section taller than
+                   # the screen, from an iPhone SE in Safari to a 2560px desktop.
+                   # ONLY=fit (or overflow, alignment) runs one phase
+npm run brand-kit  # rebuild ../../brand-kit and its zip from the cover's own files
 npm run shots      # screenshots at 360px, 390px and 1440px into .shots/
 npm run kit        # re-render the Substack kit and the social card
 npm run assets     # re-derive every logo file from brand/
@@ -61,6 +64,11 @@ npm run assets     # re-derive every logo file from brand/
 - The three spreads share one structure and line up row for row: headlines are
   set as three lines in `content/site.json` (`headline`), and the audit fails
   if any slot drifts by more than a pixel. Keep new copy to the same line counts.
+- Every section fits on one screen, below the sticky bar, on any device.
+  Vertical sizes follow the screen's height (`svh`) as well as its width, and
+  phones leave out what the next screen repeats: the cover's section list, the
+  price box, the spreads' body and caption, the platform blurbs, the staff bio.
+  Longer copy has to fit too: the audit's fit phase fails otherwise.
 
 ## Deployment
 
@@ -68,11 +76,8 @@ The Vercel project `makeyourmindup` serves makeyourmindup.ai (the apex redirects
 to www). The cover went live on 25 September 2026 through a production
 deployment created with `rootDirectory: apps/cover` for that deployment only.
 
-The project's own Root Directory setting still points at the repo root, so a
-push to `main` builds from the root and fails harmlessly: the live cover stays
-up, and the change does not deploy. Until Krish sets Root Directory to
-`apps/cover` in the Vercel project settings, every cover change needs the same
-one-off production deployment. After that, pushes to `main` deploy it.
+Root Directory is `apps/cover` on the Vercel project, so a push to `main`
+builds and deploys the cover by itself. Pushes to other branches build previews.
 
 Rollback is one action in Vercel: promote the previous production deployment.
 The Cannes funnel's last deployment is `dpl_4C3o6boULM69QUQY98UNq35R58oi`.

@@ -6,7 +6,7 @@ export function Footer() {
   const t = SITE.footer
   return (
     <footer className="grain relative bg-ink-deep text-cream">
-      <div className="page relative z-10 pb-10 pt-20 md:pt-28">
+      <div className="page relative z-10 pb-[clamp(1rem,3svh,2.5rem)] pt-[clamp(1.5rem,6svh,7rem)]">
         <Image
           src="/brand/wordmark.png"
           alt="makeyourmindup"
@@ -15,7 +15,7 @@ export function Footer() {
           sizes="(min-width: 1400px) 1320px, 94vw"
           className="h-auto w-full"
         />
-        <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mt-[clamp(1rem,3.5svh,3rem)] flex flex-col gap-[clamp(1rem,3svh,2rem)] md:flex-row md:items-end md:justify-between">
           <p className="dek max-w-md text-xl text-cream/80">{t.line}</p>
           <Magnetic strength={0.4}>
             <a
@@ -28,7 +28,7 @@ export function Footer() {
             </a>
           </Magnetic>
         </div>
-        <div className="mono-label mt-14 flex flex-col gap-4 border-t border-cream/20 pt-6 text-cream/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mono-label mt-[clamp(1rem,4svh,3.5rem)] flex flex-col gap-[clamp(0.25rem,1.4svh,1rem)] border-t border-cream/20 pt-[clamp(0.5rem,2svh,1.5rem)] text-cream/60 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getUTCFullYear()} {t.copyright}
           </span>
