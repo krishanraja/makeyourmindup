@@ -36,7 +36,7 @@ const BASE = `
   .pill{display:inline-block;color:#0C1512;padding:.3em .6em}
   .sticker{display:inline-block;border:3px solid #0C1512;border-radius:999px;padding:.5em 1.1em;color:#0C1512;box-shadow:4px 4px 0 #0C1512}
 `
-const LINES = `<span class="pill mono" style="background:#FF6A4D">mind.the.gap</span> <span class="pill mono" style="background:#FFD84D">follow.the.money</span> <span class="pill mono" style="background:#B7A6FF">under.the.hood</span>`
+const LINES = `<span class="pill mono" style="background:#B7A6FF">under.the.hood</span> <span class="pill mono" style="background:#FFD84D">follow.the.money</span> <span class="pill mono" style="background:#FF6A4D">mind.the.gap</span>`
 
 const pages = {
   // The social card, used by Substack and by the site itself.
@@ -46,11 +46,11 @@ const pages = {
       <img src="${brand('masthead.png')}" style="width:560px">
       <div>
         <p class="display" style="font-size:118px">AI, <span class="swipe">unpicked.</span></p>
-        <p class="dek" style="font-size:32px;margin-top:40px;max-width:980px;color:rgba(244,239,228,.92)">We follow the money, look under the hood and mind the gap. You make your mind up.</p>
+        <p class="dek" style="font-size:32px;margin-top:40px;max-width:860px;color:rgba(244,239,228,.92)">We look under the hood, follow the money and mind the gap. You make your mind up.</p>
       </div>
       <p style="font-size:17px">${LINES}</p>
-      <span class="sticker mono" style="position:absolute;right:64px;top:70px;background:#FFD84D;font-size:18px;transform:rotate(-8deg)">Reading age 12</span>
-      <span class="sticker mono" style="position:absolute;right:92px;top:150px;background:#FF6A4D;font-size:18px;transform:rotate(5deg)">Zero preaching</span>
+      <span class="sticker mono" style="position:absolute;right:64px;top:70px;background:#FFD84D;font-size:18px;transform:rotate(-8deg)">Free from jargon</span>
+      <span class="sticker mono" style="position:absolute;right:92px;top:150px;background:#FF6A4D;font-size:18px;transform:rotate(5deg)">No added sermons</span>
     </div>`,
   },
   // Substack cover image: square, at least 600.
@@ -58,7 +58,7 @@ const pages = {
     w: 1200, h: 1200, scale: 1,
     html: `<div class="grain" style="width:1200px;height:1200px;padding:90px;display:flex;flex-direction:column;justify-content:center;gap:70px">
       <img src="${brand('masthead.png')}" style="width:1020px">
-      <p class="dek" style="font-size:52px;line-height:1.2;color:rgba(244,239,228,.92)">We follow the money, look under the hood and mind the gap. You make your mind up.</p>
+      <p class="dek" style="font-size:52px;line-height:1.2;color:rgba(244,239,228,.92)">We look under the hood, follow the money and mind the gap. You make your mind up.</p>
       <p style="font-size:26px">${LINES}</p>
     </div>`,
   },

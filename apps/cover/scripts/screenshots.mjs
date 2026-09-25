@@ -44,7 +44,7 @@ for (const r of runs) {
   // The sticky bar is fixed, so it would paint over every section capture.
   await page.addStyleTag({ content: '[data-sticky]{display:none!important}' })
   await page.screenshot({ path: `${OUT}/${r.name}-full.png`, fullPage: true })
-  for (const id of ['mind_the_gap', 'follow_the_money', 'under_the_hood', 'scoreboard', 'latest', 'platforms', 'staff']) {
+  for (const id of ['under_the_hood', 'follow_the_money', 'mind_the_gap', 'scoreboard', 'latest', 'platforms', 'staff']) {
     await page.locator(`#${id}`).screenshot({ path: `${OUT}/${r.name}-${id}.png` })
   }
   // Page scroll width alone misses content clipped by overflow-hidden; run

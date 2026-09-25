@@ -52,6 +52,14 @@ test('a closing moral is a veto', () => {
   assert.ok(ids('The lesson here is that defaults matter.').includes('preach_pattern'))
 })
 
+test('paid tier may name CTRL and nothing else is relaxed', () => {
+  const paid = body => `---\nkill_list_scope: paid_tier\n---\n${body}\n`
+  assert.deepEqual(ids(paid('Beta access to CTRL.')), [], 'CTRL is the permitted paid-tier connection')
+  assert.ok(ids('Beta access to CTRL.\n').includes('product_in_editorial'), 'CTRL stays vetoed outside the paid tier')
+  assert.ok(ids(paid('Built by Mindmake.')).includes('product_in_editorial'), 'Mindmake stays vetoed in the paid tier')
+  assert.ok(ids(paid('A line — with an em dash.')).includes('em_dash'), 'em dashes stay vetoed in the paid tier')
+})
+
 test('canon is scanned for em dashes and nothing else', () => {
   const canon = '---\nkill_list_scope: canon\n---\nRetired: Built with AI, The Money of AI, Techonomic.\n'
   assert.deepEqual(ids(canon), [], 'canon must be allowed to name what it forbids')

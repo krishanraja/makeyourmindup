@@ -205,9 +205,15 @@ template before then.
 
 - **Free to everyone:** the written signature pieces in full, and the shorts.
   These carry reach and pickup and are never gated.
-- **Paid, eight to ten pounds a month:** CTRL beta access, artifacts and
-  diagrams as reusable files, audio and video versions, a monthly live session,
-  the full Resources library and the verdict archive.
+- **Paid:** CTRL beta access, artifacts and diagrams as reusable files, audio
+  and video versions, a monthly live session, the full Resources library and
+  the verdict archive.
+
+**Prices are the live Substack plans**, confirmed by Krish on 2026-09-25: 8 US
+dollars a month, 80 a year, a founding plan at 150, and a seven-day free trial.
+They replace the earlier "eight to ten pounds a month". Substack is the truth
+for price; if the two disagree, Substack wins and this line is stale. No price
+appears on the cover or in the channel's copy.
 
 CTRL beta access is the only visible connection between the channel and
 mind/make. That is deliberate.
