@@ -64,6 +64,15 @@ npm run assets     # re-derive every logo file from brand/
 
 ## Deployment
 
-The Vercel project `makeyourmindup` builds this folder (Root Directory
-`apps/cover`) and serves makeyourmindup.ai. Rollback is one action in Vercel:
-promote the previous production deployment.
+The Vercel project `makeyourmindup` serves makeyourmindup.ai (the apex redirects
+to www). The cover went live on 25 September 2026 through a production
+deployment created with `rootDirectory: apps/cover` for that deployment only.
+
+The project's own Root Directory setting still points at the repo root, so a
+push to `main` builds from the root and fails harmlessly: the live cover stays
+up, and the change does not deploy. Until Krish sets Root Directory to
+`apps/cover` in the Vercel project settings, every cover change needs the same
+one-off production deployment. After that, pushes to `main` deploy it.
+
+Rollback is one action in Vercel: promote the previous production deployment.
+The Cannes funnel's last deployment is `dpl_4C3o6boULM69QUQY98UNq35R58oi`.
