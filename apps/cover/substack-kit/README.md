@@ -4,9 +4,9 @@ kill_list_scope: canon
 # Substack refresh kit
 
 Everything the Substack needs to match the cover. Nothing here posts itself:
-Krish pastes it in. The copy lives in `COPY.md`, which the kill list scans
-(`npm run kill-list`). This README is marked canon because it quotes the old
-tagline in order to remove it.
+Krish pastes it in. The copy lives in `COPY.md`, and the paid-tier copy in
+`PAID.md`, both scanned by the kill list (`npm run kill-list`). This README is
+marked canon because it quotes the old tagline in order to remove it.
 
 ## Why it exists
 
@@ -60,11 +60,15 @@ website editor at `https://mindmakerlive.substack.com/publish/website-editor/hom
    About section of `COPY.md`.
 5. Settings, Emails, Edit next to Email header & footer: upload the banner,
    then send a test email.
-6. Settings, Emails, Edit next to Welcome email to free subscribers: the
-   welcome email in `COPY.md`. Leave the paid, imported and founding ones.
-7. `https://substack.com/profile/edit`, Bio: the profile bio in `COPY.md`. This
+6. Settings, Emails, Edit next to each welcome email: free from `COPY.md`,
+   paid from `PAID.md`, and founding as paid plus its extra line (Substack
+   sends founding members the paid email by default). Leave the imported one.
+7. Settings, Payments, Subscription benefits: the lists in `PAID.md`. On
+   2026-09-25 Substack's defaults were live, promising free readers only
+   "Occasional public posts", which contradicts the cover.
+8. `https://substack.com/profile/edit`, Bio: the profile bio in `COPY.md`. This
    is where the 30 Under 30 and themindmaker.ai lines live.
-8. Leave the old posts where they are. The cover only lists posts published on
+9. Leave the old posts where they are. The cover only lists posts published on
    or after the relaunch date in `content/config.json`.
 
 ## Custom domain

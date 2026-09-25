@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start -p 3100",
     "typecheck": "tsc --noEmit",
-    "kill-list": "node ../../scripts/qa/kill-list.mjs content/site.json substack-kit/COPY.md",
+    "kill-list": "node ../../scripts/qa/kill-list.mjs content/site.json substack-kit/COPY.md substack-kit/PAID.md",
     "assets": "node scripts/make-assets.mjs",
     "kit": "node scripts/render-kit.mjs",
     "shots": "node scripts/screenshots.mjs",
