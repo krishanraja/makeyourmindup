@@ -6,3 +6,5 @@ next-env.d.ts
 .vercel
 .shots/
 substack-kit/.tmp/
+.review/
+.shots-live/

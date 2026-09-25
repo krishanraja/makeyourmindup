@@ -8,7 +8,9 @@ const OUT = process.argv[3] || '.shots'
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 mkdirSync(OUT, { recursive: true })
 
-const browser = await chromium.launch({ executablePath: CHROME })
+// In a proxied sandbox, pass the proxy so a deployed URL is reachable.
+const PROXY = process.env.SHOTS_PROXY || ''
+const browser = await chromium.launch({ executablePath: CHROME, ...(PROXY ? { proxy: { server: PROXY } } : {}) })
 
 async function walk(page) {
   const h = await page.evaluate(() => document.documentElement.scrollHeight)
