@@ -35,7 +35,9 @@ for (const r of runs) {
   const errors = []
   page.on('pageerror', e => errors.push(String(e)))
   page.on('console', m => m.type() === 'error' && errors.push(m.text()))
-  await page.goto(BASE, { waitUntil: 'networkidle' })
+  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
+  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
+  await page.evaluate(() => document.fonts.ready)
   await page.waitForTimeout(3200)
   await page.screenshot({ path: `${OUT}/${r.name}-fold.png` })
   await walk(page)
@@ -56,7 +58,9 @@ for (const r of runs) {
 {
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, reducedMotion: 'reduce' })
   const page = await ctx.newPage()
-  await page.goto(BASE, { waitUntil: 'networkidle' })
+  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
+  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
+  await page.evaluate(() => document.fonts.ready)
   await page.waitForTimeout(800)
   await page.screenshot({ path: `${OUT}/reduced-full.png`, fullPage: true })
   await ctx.close()
@@ -66,7 +70,9 @@ for (const r of runs) {
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false })
   const page = await ctx.newPage()
-  await page.goto(BASE, { waitUntil: 'networkidle' })
+  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
+  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
+  await page.evaluate(() => document.fonts.ready)
   await page.screenshot({ path: `${OUT}/nojs-full.png`, fullPage: true })
   await ctx.close()
 }
@@ -75,7 +81,7 @@ for (const r of runs) {
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } })
   const page = await ctx.newPage()
-  const res = await page.goto(`${BASE}/no-such-page`, { waitUntil: 'networkidle' })
+  const res = await page.goto(`${BASE}/no-such-page`, { waitUntil: 'load', timeout: 90000 })
   await page.waitForTimeout(500)
   await page.screenshot({ path: `${OUT}/404.png` })
   console.log('404 status', res?.status())

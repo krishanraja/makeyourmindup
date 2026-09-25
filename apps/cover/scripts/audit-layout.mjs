@@ -16,7 +16,10 @@ for (const scale of SCALES) {
   for (const width of WIDTHS) {
     const ctx = await browser.newContext({ viewport: { width, height: 800 }, deviceScaleFactor: 1, reducedMotion: 'reduce' })
     const page = await ctx.newPage()
-    await page.goto(BASE, { waitUntil: 'networkidle' })
+    await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
+    await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
+    // Measure with the real fonts, never the fallback: a wider fallback wraps lines.
+    await page.evaluate(() => document.fonts.ready)
     if (scale !== 1) await page.evaluate(s => { document.documentElement.style.fontSize = `${s * 100}%` }, scale)
     await page.waitForTimeout(300)
     const found = await page.evaluate(() => {
@@ -74,7 +77,10 @@ let misaligned = 0
 for (const width of [...STACKED, ...WIDE]) {
   const ctx = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
   const page = await ctx.newPage()
-  await page.goto(BASE, { waitUntil: 'networkidle' })
+  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
+    await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
+    // Measure with the real fonts, never the fallback: a wider fallback wraps lines.
+    await page.evaluate(() => document.fonts.ready)
   await page.waitForTimeout(300)
   const spreads = await page.evaluate(slots => [...document.querySelectorAll('[data-spread]')].map(sec => {
     const grid = sec.querySelector('.page')
