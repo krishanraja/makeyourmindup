@@ -31,7 +31,11 @@ test('an exclamation mark is a veto', () => {
 test('a retired name is a veto', () => {
   assert.ok(ids('This ran in Built with AI last year.').includes('retired_name'))
   assert.ok(ids('Mindmaker Live covered it.').includes('retired_name'))
-  assert.ok(ids('It was a follow.the.money piece.').includes('retired_name'))
+  assert.ok(ids('It was a split.the.bill piece.').includes('retired_name'))
+  assert.ok(ids('It was a lift.the.lid piece.').includes('retired_name'))
+  // Live again since the 2026-09-25 rename, so they must stay quiet.
+  assert.ok(!ids('Wednesdays are follow.the.money.').includes('retired_name'))
+  assert.ok(!ids('Open it up in under.the.hood.').includes('retired_name'))
 })
 
 test('a product name inside editorial is a veto', () => {
