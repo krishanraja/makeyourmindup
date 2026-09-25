@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "makeyourmindup: AI, unpicked",
-    "description": "We follow the money, look under the hood and mind the gap. You make your mind up. A free publication on how AI really works, every Wednesday and Friday."
+    "description": "We follow the money, look under the hood and mind the gap. You make your mind up. A free publication on how AI really works, every Monday, Wednesday and Friday."
   },
   "strap": {
     "left": "Vol. 01",
-    "centre": "Wednesdays and Fridays",
+    "centre": "Mon · Wed · Fri",
     "right": "Free to read*"
   },
   "cover": {
@@ -40,7 +40,7 @@
     "Reading age 12",
     "follow.the.money · Wednesdays",
     "Zero preaching",
-    "under.the.hood · when it earns it",
+    "under.the.hood · Mondays",
     "Every call scored in public",
     "Contains British spelling"
   ],
@@ -118,12 +118,12 @@
     {
       "slug": "under_the_hood",
       "label": "under.the.hood",
-      "day": "When it earns it",
+      "day": "Mondays",
       "tag": "Screwdriver included",
       "page": "12",
       "coverLine": "Real, or theatre? We take it apart.",
       "oneLiner": "How it gets built, and why it works.",
-      "body": "When something ships and actually works, we open it up. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.",
+      "body": "Every Monday we open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.",
       "questionLabel": "The question every piece answers",
       "question": "What actually goes together in a shipped thing, and why did this one work?",
       "diagram": {

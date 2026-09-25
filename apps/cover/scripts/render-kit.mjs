@@ -68,7 +68,7 @@ const pages = {
     html: `<div class="grain" style="width:1100px;height:220px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:6px solid #7EF0C0">
       <img src="${brand('wordmark.png')}" style="width:600px">
       <div style="text-align:right">
-        <p class="mono" style="font-size:16px;color:rgba(244,239,228,.8)">Wednesdays and Fridays</p>
+        <p class="mono" style="font-size:16px;color:rgba(244,239,228,.8)">Mondays, Wednesdays, Fridays</p>
         <p class="mono" style="font-size:16px;margin-top:10px;color:#7EF0C0">Free to read</p>
       </div>
     </div>`,
