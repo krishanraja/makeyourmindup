@@ -13,6 +13,7 @@
     "kit": "node scripts/render-kit.mjs",
     "shots": "node scripts/screenshots.mjs",
     "audit": "node scripts/audit-layout.mjs",
+    "brand-kit": "node scripts/build-brand-kit.mjs",
     "verify": "npm run kill-list && npm run typecheck && npm run build"
   },
   "dependencies": {

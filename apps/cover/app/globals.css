@@ -28,6 +28,13 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* The shortest phones (an iPhone SE in Safari shows about 553px) take 15px
+   type rather than 16px, so every section still fits on one screen. Tap
+   targets are set in px and keep their full 44px. */
+@media (max-width: 767px) and (max-height: 600px) {
+  html { font-size: 93.75%; }
+}
+
 body {
   background: var(--ink);
   color: var(--cream);
