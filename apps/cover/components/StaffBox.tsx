@@ -8,7 +8,7 @@ export function StaffBox() {
     <figure className={`relative ${small ? 'w-[clamp(5.5rem,15svh,8rem)] shrink-0' : 'mx-auto w-full max-w-[min(420px,50svh)]'} -rotate-2`}>
       <span className={`absolute left-1/2 z-10 -translate-x-1/2 rotate-2 bg-butter/80 ${small ? '-top-2 h-4 w-14' : '-top-4 h-8 w-28'}`} aria-hidden="true" />
       <div className={`brutal border-2 border-ink bg-cream ${small ? 'p-1.5 pb-4' : 'p-3 pb-[clamp(1.5rem,5svh,3rem)]'}`}>
-        <Image src="/krish.jpg" alt={t.photoAlt} width={720} height={720} sizes={small ? '128px' : '(min-width: 1024px) 400px, 90vw'} className="h-auto w-full border-2 border-ink" />
+        <Image src="/krish-closer-look.jpg" alt={t.photoAlt} width={940} height={940} sizes={small ? '128px' : '(min-width: 1024px) 400px, 90vw'} className="h-auto w-full border-2 border-ink" />
         {!small && <figcaption className="dek mt-[clamp(0.25rem,1.2svh,0.75rem)] text-center text-[clamp(1rem,2.6svh,1.25rem)]">{t.rows[0].v}</figcaption>}
       </div>
     </figure>

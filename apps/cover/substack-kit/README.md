@@ -28,9 +28,17 @@ there, so the hub has to match the front door.
 | `images/cover-1200x1200.png` | Website editor, Welcome page, Image | 1200 square |
 | `images/email-banner-1100x220.png` | Settings, Emails, Email header & footer: banner | 1100 x 220 at 2x |
 | `images/social-preview-1200x630.png` | Per post, not a setting: post Settings, Social preview, Upload New, for a post with no image of its own | 1200 x 630 |
+| `images/krish-profile-900.jpg` | `https://substack.com/profile/edit`, profile photo. It shows beside every post at about 40px, where a smile reads and a squint looks like a wince. The squint is the site's staff box photo | 900 square |
 
 Substack builds the publication's own share card from the logo, name and short
 description, so there is no publication-level social image to upload.
+
+The welcome image and the social card are the cover itself: the operating
+theatre photo, its REAL and THEATRE stamps and "AI, UNPICKED.", built from
+`public/cover/` and the words in `content/site.json`. The social card is also
+the site's own share image (`app/opengraph-image.jpg`). The logo, wordmarks and
+email banner stay typographic: they identify the sender at sizes where a photo
+would be a smudge.
 
 Sizes follow Substack's own guidance (help centre, checked 2026-09-25): logo
 at least 256 square, wordmark 1344 x 256, cover at least 600 square, email
@@ -67,7 +75,8 @@ website editor at `https://mindmakerlive.substack.com/publish/website-editor/hom
    2026-09-25 Substack's defaults were live, promising free readers only
    "Occasional public posts", which contradicts the cover.
 8. `https://substack.com/profile/edit`, Bio: the profile bio in `COPY.md`. This
-   is where the 30 Under 30 and themindmaker.ai lines live.
+   is where the 30 Under 30 and themindmaker.ai lines live. Upload
+   `images/krish-profile-900.jpg` as the profile photo on the same page.
 9. Leave the old posts where they are. The cover only lists posts published on
    or after the relaunch date in `content/config.json`.
 
