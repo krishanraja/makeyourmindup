@@ -1,4 +1,4 @@
-# makeyourmindup brand kit, v1.3
+# makeyourmindup brand kit, v1.4
 
 26 September 2026. Everything here is built from the live cover at makeyourmindup.ai by
 `npm run brand-kit` in `apps/cover`, so it matches what readers see.
@@ -7,9 +7,9 @@
 
 ## Start here
 
-Open `guidelines/makeyourmindup-brand-book.pdf`. Fifteen pages: the name, the
+Open `guidelines/makeyourmindup-brand-book.pdf`. Seventeen pages: the name, the
 logo, colour, type, the kit of parts, the three sections, texture and motion,
-voice, and the brand in use.
+the felt-robot photography and its stamps, voice, and the brand in use.
 
 ## What is inside
 
@@ -23,6 +23,7 @@ voice, and the brand in use.
 | `tokens/` | CSS variables, JSON tokens, a Tailwind preset | Building anything on screen |
 | `fonts/` | Anton, Archivo, Fraunces, IBM Plex Mono, each with its licence | Installing the type |
 | `applications/` | Social card, Substack cover, email banner, site screenshots | Seeing it done right |
+| `photography/` | The felt robot lying down and standing up, as sources and as cut onto ink with their threads, plus the editor's two photos | Anything that needs the robot or Krish |
 
 ## The five rules that matter most
 

@@ -5,7 +5,7 @@ import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { resolve } from 'node:path'
 import sharp from 'sharp'
-import { cutOnInk, liftThreads, behindGrey } from './photo-cut.mjs'
+import { STANDING, cutOnInk, liftThreads, behindGrey } from './photo-cut.mjs'
 
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 const OUT = 'substack-kit/images'
@@ -59,10 +59,9 @@ const DATELINE = `<p class="date"><span>${DAYS}</span><span class="strong">${FRE
 // The operating theatre, as the cover uses it (npm run assets).
 const THEATRE = { w: 2000, h: 550, photo: file('public/cover/theatre.webp'), threads: { src: file('public/cover/threads.png'), x: 1080, y: 542, w: 175 } }
 // The waving robot, for the welcome page: cut at the plinth's top edge.
-const WAVE_CUT = 1308
-await cutOnInk('brand/robot-standing-source.webp', { width: 1360, cut: WAVE_CUT }, `${TMP}/wave.webp`)
-await liftThreads('brand/robot-standing-source.webp', { left: 560, top: WAVE_CUT - 8, width: 260, height: 1456 - (WAVE_CUT - 8) }, `${TMP}/wave-threads.png`, behindGrey)
-const WAVE = { w: 1360, h: WAVE_CUT, photo: file(`${TMP}/wave.webp`), threads: { src: file(`${TMP}/wave-threads.png`), x: 560, y: WAVE_CUT - 8, w: 260 } }
+await cutOnInk(STANDING.src, STANDING, `${TMP}/wave.webp`)
+await liftThreads(STANDING.src, STANDING.threads, `${TMP}/wave-threads.png`, behindGrey)
+const WAVE = { w: STANDING.width, h: STANDING.cut, photo: file(`${TMP}/wave.webp`), threads: { src: file(`${TMP}/wave-threads.png`), x: STANDING.threads.left, y: STANDING.threads.top, w: STANDING.threads.width } }
 
 // Stamps and leaders, in each photo's source pixels. The card is wider than
 // its type allows, so its visor note tucks in closer than the cover's.

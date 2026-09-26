@@ -5,14 +5,34 @@ import sharp from 'sharp'
 
 export const INK = { r: 12, g: 21, b: 18 }
 
+// The two photographs, in source pixels: where each is cut, and the box that
+// holds the threads hanging below the cut.
+export const THEATRE = { src: 'brand/theatre-source.webp', width: 2000, cut: 550, threads: { left: 1080, top: 542, width: 175, height: 120 } }
+// The standing shot's spotlight glow runs to its top edge, so its top fades into ink.
+export const STANDING = { src: 'brand/robot-standing-source.webp', width: 1360, cut: 1308, fadeTop: 220, threads: { left: 560, top: 1300, width: 260, height: 156 } }
+
 // The photo above the cut, lightened onto ink. The backdrops are darker than
-// ink, so they disappear into the page.
-export async function cutOnInk(src, { width, cut }, out) {
+// ink, so they disappear into the page. fadeTop, in source pixels, eases any
+// glow at the top edge into ink; it touches only the dark backdrop, never the felt.
+export async function cutOnInk(src, { width, cut, fadeTop = 0 }, out) {
   const top = await sharp(src).extract({ left: 0, top: 0, width, height: cut }).toBuffer()
-  await sharp({ create: { width, height: cut, channels: 3, background: INK } })
-    .composite([{ input: top, blend: 'lighten' }])
-    .webp({ quality: 90 })
-    .toFile(out)
+  let img = sharp({ create: { width, height: cut, channels: 3, background: INK } }).composite([{ input: top, blend: 'lighten' }])
+  if (fadeTop) {
+    const { data, info } = await img.raw().toBuffer({ resolveWithObject: true })
+    for (let y = 0; y < Math.min(fadeTop, info.height); y++) {
+      const t = 1 - y / fadeTop
+      for (let x = 0; x < info.width; x++) {
+        const i = (y * info.width + x) * info.channels
+        const dark = Math.max(0, Math.min(1, (170 - (data[i] + data[i + 1] + data[i + 2])) / 60))
+        const k = t * dark
+        data[i] += (INK.r - data[i]) * k
+        data[i + 1] += (INK.g - data[i + 1]) * k
+        data[i + 2] += (INK.b - data[i + 2]) * k
+      }
+    }
+    img = sharp(data, { raw: { width: info.width, height: info.height, channels: info.channels } })
+  }
+  await img.webp({ quality: 90 }).toFile(out)
 }
 
 // How much of a pixel is thread. Every thread is lilac, butter or coral.

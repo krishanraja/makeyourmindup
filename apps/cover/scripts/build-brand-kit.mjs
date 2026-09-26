@@ -5,15 +5,16 @@
 // Out: logos, colour tokens, fonts with their licences, finished
 // applications, the brand book as HTML and PDF, and one zip of all of it.
 import { chromium } from 'playwright-core'
-import { mkdirSync, writeFileSync, copyFileSync, existsSync, rmSync, readFileSync } from 'node:fs'
+import { mkdirSync, writeFileSync, copyFileSync, existsSync, rmSync, readFileSync, readdirSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { resolve, join } from 'node:path'
 import sharp from 'sharp'
+import { THEATRE, STANDING, cutOnInk, liftThreads, behindGrey } from './photo-cut.mjs'
 
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 const KIT = resolve('../../brand-kit')
 const NAME = 'makeyourmindup-brand-kit'
-const VERSION = '1.3'
+const VERSION = '1.4'
 const DATED = '26 September 2026'
 const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 
@@ -21,7 +22,7 @@ const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 // so the kit still builds when no fresh screenshots exist.
 const SHOTS = [['.shots/desktop-fold.png', 'website-desktop.png'], ['.shots/phone-fold.png', 'website-phone.png']]
 const kept = Object.fromEntries(SHOTS.map(([, out]) => [out, existsSync(join(KIT, 'applications', out)) ? readFileSync(join(KIT, 'applications', out)) : null]))
-for (const d of ['logos', 'colours', 'tokens', 'fonts', 'applications', 'guidelines']) {
+for (const d of ['logos', 'colours', 'tokens', 'fonts', 'applications', 'photography', 'guidelines']) {
   rmSync(join(KIT, d), { recursive: true, force: true })
   mkdirSync(join(KIT, d), { recursive: true })
 }
@@ -172,6 +173,57 @@ for (const [f, out] of APPS) copyFileSync(f, join(KIT, 'applications', out))
 for (const [f, out] of SHOTS) {
   if (existsSync(f)) copyFileSync(f, join(KIT, 'applications', out))
   else if (kept[out]) writeFileSync(join(KIT, 'applications', out), kept[out])
+}
+
+// ---------------------------------------------------------------- photography
+// The felt robot, as the sources and as the cover and the welcome image cut
+// them (scripts/photo-cut.mjs), with the editor's two photos.
+const PHOTO = join(KIT, 'photography')
+mkdirSync(join(PHOTO, 'editor'), { recursive: true })
+copyFileSync(THEATRE.src, join(PHOTO, 'robot-theatre.webp'))
+copyFileSync(STANDING.src, join(PHOTO, 'robot-standing.webp'))
+await cutOnInk(THEATRE.src, THEATRE, join(PHOTO, 'robot-theatre-cut.webp'))
+await liftThreads(THEATRE.src, THEATRE.threads, join(PHOTO, 'robot-theatre-threads.png'))
+await cutOnInk(STANDING.src, STANDING, join(PHOTO, 'robot-standing-cut.webp'))
+await liftThreads(STANDING.src, STANDING.threads, join(PHOTO, 'robot-standing-threads.png'), behindGrey)
+copyFileSync('public/krish-closer-look.jpg', join(PHOTO, 'editor', 'krish-closer-look.jpg'))
+copyFileSync('substack-kit/images/krish-profile-900.jpg', join(PHOTO, 'editor', 'krish-profile-900.jpg'))
+
+// A cut photo on the page, its threads hanging below the cut. w is its width on the page.
+// stage is the height both photos stand in, so their cut edges share a baseline.
+const cutShot = (spec, name, w, caption, stage) => {
+  const h = (w * spec.cut) / spec.width
+  const k = w / spec.width
+  return `<figure style="width:${w}px;flex:none">
+    <div style="position:relative;width:${w}px;height:${h}px;margin-top:${stage - h}px">
+      <img src="../photography/robot-${name}-cut.webp" style="position:absolute;inset:0;width:100%;height:100%">
+      <img src="../photography/robot-${name}-threads.png" style="position:absolute;left:${spec.threads.left * k}px;top:${spec.threads.top * k}px;width:${spec.threads.width * k}px">
+    </div>
+    <figcaption class="label" style="color:var(--mint);margin-top:58px">${caption}</figcaption>
+  </figure>`
+}
+// The phone cover's window onto the theatre photo, stamps and leaders at the cover's positions.
+const stampDemo = () => {
+  const s = 0.8, x0 = 902, y0 = 74, w = 808, h = Math.round((THEATRE.cut - y0) * s)
+  const note = (x, y, part, stamp, real, right) => `<div style="position:absolute;left:${x * s}px;top:${y * s}px;display:flex;flex-direction:column;gap:9px;align-items:${right ? 'flex-end;transform:translateX(-100%)' : 'flex-start'}">
+      <span class="mono" style="font-weight:500;font-size:19px;letter-spacing:.06em;color:var(--cream);line-height:1">${part}</span>
+      <span class="mono" style="font-weight:700;font-size:20px;letter-spacing:.18em;text-transform:uppercase;border:3px solid var(--cream);padding:.2em .3em .2em .5em;line-height:1.1;${real ? 'background:var(--cream);color:var(--ink);transform:rotate(3deg)' : 'background:var(--ink);color:var(--cream);transform:rotate(-4deg)'}">${stamp}</span>
+    </div>`
+  const th = THEATRE.threads
+  return `<div style="position:relative;width:${w}px;height:${h}px;clip-path:inset(0 0 -${Math.ceil((th.top + th.height - THEATRE.cut) * s) + 4}px 0);flex:none">
+    <div style="position:absolute;left:${-x0 * s}px;top:${-y0 * s}px;width:${THEATRE.width * s}px;height:${THEATRE.cut * s}px">
+      <img src="../photography/robot-theatre-cut.webp" style="position:absolute;inset:0;width:100%;height:100%">
+      <img src="../photography/robot-theatre-threads.png" style="position:absolute;left:${th.left * s}px;top:${th.top * s}px;width:${th.width * s}px">
+      <svg viewBox="0 0 ${THEATRE.width} ${THEATRE.cut}" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+        <path d="M1160 170 L1212 258" fill="none" stroke="#F4EFE4" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+        <path d="M1651 170 L1628 290" fill="none" stroke="#F4EFE4" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+        <circle cx="1212" cy="258" r="9" fill="#0C1512" stroke="#F4EFE4" stroke-width="1.8" vector-effect="non-scaling-stroke"/>
+        <circle cx="1628" cy="292" r="9" fill="#0C1512" stroke="#F4EFE4" stroke-width="1.8" vector-effect="non-scaling-stroke"/>
+      </svg>
+      ${note(1110, 94, SITE.cover.theatre.stuffing.part, SITE.cover.theatre.stuffing.stamp, true, false)}
+      ${note(1704, 94, SITE.cover.theatre.visor.part, SITE.cover.theatre.visor.stamp, false, true)}
+    </div>
+  </div>`
 }
 
 // ---------------------------------------------------------------- the brand book
@@ -441,9 +493,48 @@ const pages = [
     </div>
   </section>`,
 
-  // 13. Voice
+  // 13. Photography
+  `<section class="page ink grain">
+    ${strap('p. 13', 'Photography')}
+    <div style="position:absolute;left:80px;top:110px;right:80px">
+      <h2 class="display" style="font-size:88px">The felt robot.</h2>
+      <div style="display:flex;align-items:flex-start;gap:70px;margin-top:26px">
+        ${cutShot(THEATRE, 'theatre', 820, 'Lying down: the cover', 340)}
+        ${cutShot(STANDING, 'standing', 353, 'Standing up: welcome page', 340)}
+      </div>
+      <div class="tri" style="margin-top:30px;row-gap:24px">
+        <div><p class="label" style="color:var(--mint)">The subject</p><p class="small">A hand-sewn felt robot: cream felt, grey patches, a blank dark visor. The only subject.</p></div>
+        <div><p class="label" style="color:var(--mint)">The stuffing</p><p class="small">Just visible at the unpicked seam. Never a plume, never clumps on the table.</p></div>
+        <div><p class="label" style="color:var(--mint)">The threads</p><p class="small">Lilac, butter and coral, one per section. The mint seam ripper is the only other colour.</p></div>
+        <div><p class="label" style="color:var(--mint)">The backdrop</p><p class="small">Darker than ink, so the photo lightens into the page. No frame, no box, no edge.</p></div>
+        <div><p class="label" style="color:var(--mint)">The cut</p><p class="small">At an edge, the table or the plinth. The threads hang past it into the headline.</p></div>
+        <div><p class="label" style="color:var(--mint)">Never</p><p class="small">Stretch the robot, recolour it, or give it company. One robot, taken apart.</p></div>
+      </div>
+    </div>
+  </section>`,
+
+  // 14. Stamps on the photo
+  `<section class="page ink grain">
+    ${strap('p. 14', 'Stamps on the photo')}
+    <div style="position:absolute;left:80px;top:110px;right:80px">
+      <h2 class="display" style="font-size:88px">${SITE.cover.theatre.chartLine}</h2>
+      <div style="display:flex;gap:56px;margin-top:40px;align-items:flex-start">
+        ${stampDemo()}
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div><p class="label" style="color:var(--mint)">Two words</p><p class="small">A stamp says REAL or THEATRE. Nothing else.</p></div>
+          <div><p class="label" style="color:var(--mint)">The part</p><p class="small">Lowercase mono above the stamp names the part being judged: the stuffing, the visor, the wave.</p></div>
+          <div><p class="label" style="color:var(--mint)">The stamp</p><p class="small">Bold mono, 0.18em tracking, a 3px border. REAL is filled cream and tilts +3°. THEATRE is an outline at -4°.</p></div>
+          <div><p class="label" style="color:var(--mint)">The leader</p><p class="small">A thin cream line from the stamp to an ink dot on the part itself.</p></div>
+          <div><p class="label" style="color:var(--mint)">Reading order</p><p class="small">Stamps annotate the photo and never sit in the headline's line. The logo is the name, never part of a sentence.</p></div>
+          <div><p class="label" style="color:var(--mint)">On cream</p><p class="small">In the spreads, stamps take their section's colours instead, as on p. 10.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>`,
+
+  // 15. Voice
   `<section class="page butter halftone on-light">
-    ${strap('p. 13', 'Voice', false)}
+    ${strap('p. 15', 'Voice', false)}
     <div class="cols" style="top:120px">
       <div style="width:600px">
         <h2 class="display" style="font-size:96px">The house rules.</h2>
@@ -471,9 +562,9 @@ const pages = [
     </div>
   </section>`,
 
-  // 14. Applications
+  // 16. Applications
   `<section class="page ink grain">
-    ${strap('p. 14', 'In the wild')}
+    ${strap('p. 16', 'In the wild')}
     <div style="position:absolute;left:80px;top:110px;right:80px">
       <h2 class="display" style="font-size:88px">In the wild.</h2>
       <div class="apps">
@@ -487,7 +578,7 @@ const pages = [
     </div>
   </section>`,
 
-  // 15. Back cover
+  // 17. Back cover
   `<section class="page ink grain">
     <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
       <img src="${L('horizontal/makeyourmindup-horizontal-transparent.png')}" style="width:900px">
@@ -616,9 +707,9 @@ ${DATED}. Everything here is built from the live cover at makeyourmindup.ai by
 
 ## Start here
 
-Open \`guidelines/makeyourmindup-brand-book.pdf\`. Fifteen pages: the name, the
+Open \`guidelines/makeyourmindup-brand-book.pdf\`. Seventeen pages: the name, the
 logo, colour, type, the kit of parts, the three sections, texture and motion,
-voice, and the brand in use.
+the felt-robot photography and its stamps, voice, and the brand in use.
 
 ## What is inside
 
@@ -632,6 +723,7 @@ voice, and the brand in use.
 | \`tokens/\` | CSS variables, JSON tokens, a Tailwind preset | Building anything on screen |
 | \`fonts/\` | Anton, Archivo, Fraunces, IBM Plex Mono, each with its licence | Installing the type |
 | \`applications/\` | Social card, Substack cover, email banner, site screenshots | Seeing it done right |
+| \`photography/\` | The felt robot lying down and standing up, as sources and as cut onto ink with their threads, plus the editor's two photos | Anything that needs the robot or Krish |
 
 ## The five rules that matter most
 
@@ -658,4 +750,28 @@ mkdirSync(STAGE, { recursive: true })
 execFileSync('cp', ['-r', KIT, join(STAGE, NAME)])
 execFileSync('zip', ['-q', '-r', '-X', ZIP, NAME], { cwd: STAGE })
 rmSync(STAGE, { recursive: true, force: true })
-console.log('brand kit built:', KIT)
+
+// ---------------------------------------------------------------- docs/brandbooknew
+// The two downloads, where Krish collects them: the whole kit, and the book on
+// its own, as the PDF with every page as an image.
+const DOCS = resolve('../../docs/brandbooknew')
+const BOOK = 'makeyourmindup-brand-book'
+const PAGES = readdirSync(resolve('.review/brand-book')).filter(f => f.endsWith('.png')).sort()
+mkdirSync(DOCS, { recursive: true })
+copyFileSync(ZIP, join(DOCS, `${NAME}.zip`))
+rmSync(join(DOCS, `${BOOK}.zip`), { force: true })
+mkdirSync(join(STAGE, BOOK, 'pages'), { recursive: true })
+copyFileSync(join(KIT, 'guidelines', `${BOOK}.pdf`), join(STAGE, BOOK, `${BOOK}.pdf`))
+for (const f of PAGES) copyFileSync(resolve('.review/brand-book', f), join(STAGE, BOOK, 'pages', f))
+execFileSync('zip', ['-q', '-r', '-X', join(DOCS, `${BOOK}.zip`), BOOK], { cwd: STAGE })
+rmSync(STAGE, { recursive: true, force: true })
+writeFileSync(join(DOCS, 'README.md'), `# makeyourmindup brand book and kit, v${VERSION}
+
+${DATED}. Two downloads, rebuilt together by \`npm run brand-kit\` in \`apps/cover\`.
+
+| File | What is inside |
+|---|---|
+| \`${NAME}.zip\` | Everything: the brand book, logos, colours, tokens, fonts, photography and finished applications |
+| \`${BOOK}.zip\` | The brand book on its own: the PDF, and each of its ${PAGES.length} pages as an image |
+`)
+console.log('brand kit built:', KIT, 'downloads in', DOCS)

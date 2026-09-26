@@ -6,15 +6,11 @@
 // public/cover/threads.png   the three threads below that cut, on
 //                            transparency, so they hang into the headline
 import { mkdirSync } from 'node:fs'
-import { cutOnInk, liftThreads } from './photo-cut.mjs'
+import { THEATRE, cutOnInk, liftThreads } from './photo-cut.mjs'
 
-const SRC = 'brand/theatre-source.webp'
 const OUT = 'public/cover'
-const W = 2000
-const CUT = 550 // the table's edge, in source pixels
 mkdirSync(OUT, { recursive: true })
 
-await cutOnInk(SRC, { width: W, cut: CUT }, `${OUT}/theatre.webp`)
-const box = { left: 1080, top: CUT - 8, width: 175, height: 662 - (CUT - 8) }
-await liftThreads(SRC, box, `${OUT}/threads.png`)
-console.log('theatre', W, 'x', CUT, 'threads', box)
+await cutOnInk(THEATRE.src, THEATRE, `${OUT}/theatre.webp`)
+await liftThreads(THEATRE.src, THEATRE.threads, `${OUT}/threads.png`)
+console.log('theatre', THEATRE.width, 'x', THEATRE.cut, 'threads', THEATRE.threads)
