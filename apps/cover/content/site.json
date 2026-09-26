@@ -9,24 +9,26 @@
     "right": "Free to read*"
   },
   "cover": {
-    "kicker": "Cover story",
     "splash": [
       "AI,",
       "unpicked."
     ],
     "dek": "We look under the hood, follow the money and mind the gap. You make your mind up.",
-    "coverLinesTitle": "Inside, every week",
-    "stickers": [
-      "Free from jargon",
-      "No added sermons",
-      "Contains British spelling"
-    ],
-    "badge": "Subscribe free • Subscribe free • ",
-    "badgeLabel": "Subscribe free on Substack",
-    "barcodePrice": "Free*",
+    "issue": "Issue 00",
     "footnote": "*Every piece, in full. That is the whole small print.",
-    "thisWeek": "Inside this week",
-    "issue": "Issue 00"
+    "theatre": {
+      "photoAlt": "A hand-sewn felt robot lies on an operating table under a surgical lamp. Its chest seam is unpicked and the stuffing shows.",
+      "chartSection": "under.the.hood",
+      "chartLine": "Real, or theatre?",
+      "stuffing": {
+        "part": "the stuffing",
+        "stamp": "Real"
+      },
+      "visor": {
+        "part": "the visor",
+        "stamp": "Theatre"
+      }
+    }
   },
   "subscribe": {
     "label": "Get every piece in your inbox",

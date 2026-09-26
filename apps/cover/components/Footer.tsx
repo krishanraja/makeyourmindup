@@ -7,14 +7,13 @@ export function Footer() {
   return (
     <footer className="grain relative bg-ink-deep text-cream">
       <div className="page relative z-10 pb-[clamp(1rem,3svh,2.5rem)] pt-[clamp(1.5rem,6svh,7rem)]">
-        {/* The stacked lockup signs off the page; the masthead opens it. */}
         <Image
-          src="/brand/masthead.png"
+          src="/brand/wordmark.png"
           alt="makeyourmindup"
-          width={2415}
-          height={740}
-          sizes="(min-width: 768px) 560px, 94vw"
-          className="h-auto w-[min(100%,560px,50svh)]"
+          width={3319}
+          height={391}
+          sizes="(min-width: 1400px) 1320px, 94vw"
+          className="h-auto w-full"
         />
         <div className="mt-[clamp(1rem,3.5svh,3rem)] flex flex-col gap-[clamp(1rem,3svh,2rem)] md:flex-row md:items-end md:justify-between">
           <p className="dek max-w-md text-xl text-cream/80">{t.line}</p>

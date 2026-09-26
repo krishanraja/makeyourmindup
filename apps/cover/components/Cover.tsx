@@ -1,225 +1,134 @@
 'use client'
 
 import Image from 'next/image'
-import { ACCENT, SITE, subscribeUrl } from '@/lib/content'
-import type { Post } from '@/lib/rss'
-import { Magnetic } from './Magnetic'
-import { SubscribeForm } from './SubscribeForm'
-
-// A deterministic barcode, so two builds render the same bars.
-const BARS = '3121123211311213121131221213111231121321'.split('').map(Number)
-
-function Barcode() {
-  let x = 0
-  const rects = BARS.map((w, i) => {
-    const r = i % 2 === 0 ? <rect key={i} x={x} y={0} width={w * 2} height={58} /> : null
-    x += w * 2
-    return r
-  })
-  return (
-    <svg viewBox={`0 0 ${x} 58`} className="h-12 w-auto" aria-hidden="true" fill="currentColor">
-      {rects}
-    </svg>
-  )
-}
-
-function SpinBadge() {
-  const t = SITE.cover
-  return (
-    <Magnetic strength={0.35}>
-      <a
-        href={subscribeUrl()}
-        target="_blank"
-        rel="noopener"
-        aria-label={`${t.badgeLabel} (${SITE.a11y.newTab})`}
-        className="group relative block h-[min(140px,15svh)] w-[min(140px,15svh)]"
-      >
-        <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-spin-slow" aria-hidden="true">
-          <defs>
-            <path id="badge-circle" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" />
-          </defs>
-          <circle cx="100" cy="100" r="99" fill="#7EF0C0" />
-          <text fill="#0C1512" fontSize="17" fontWeight="700" style={{ fontFamily: 'var(--font-plex-mono)', letterSpacing: '0.12em' }}>
-            <textPath href="#badge-circle" textLength="500" lengthAdjust="spacing">
-              {t.badge.repeat(2).toUpperCase()}
-            </textPath>
-          </text>
-        </svg>
-        <span className="absolute inset-[26%] flex items-center justify-center rounded-full border-2 border-ink bg-ink transition-transform duration-300 group-hover:scale-110">
-          <svg viewBox="0 0 24 24" className="h-1/2 w-1/2 text-mint" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="square">
-            <path d="M7 17 17 7M9 7h8v8" />
-          </svg>
-        </span>
-      </a>
-    </Magnetic>
-  )
-}
-
-function Sticker({ children, className, delay, rotate }: { children: React.ReactNode; className: string; delay: number; rotate: number }) {
-  return (
-    <span className={`sticker slap ${className}`} style={{ ['--r' as string]: `${rotate}deg`, ['--d' as string]: `${delay}s` }}>
-      {children}
-    </span>
-  )
-}
+import { useState } from 'react'
+import { CONFIG, SITE } from '@/lib/content'
+import styles from './Cover.module.css'
 
 const d = (s: number) => ({ ['--d' as string]: `${s}s` }) as React.CSSProperties
 
-export function Cover({ latest }: { latest?: Post }) {
-  const t = SITE.cover
-  const [line1, line2] = t.splash
-  const [s1, s2, s3] = t.stickers
+/*
+  The cover: the operating theatre. Chosen by Krish on 26 September 2026 after
+  three rounds of blind judging (115 of 140, first with both judges).
 
-  const priceBox = (
-    <div className="flex flex-wrap items-end gap-4">
-      <div className="flex flex-col items-start bg-cream p-2 text-ink">
-        <span className="mono-label text-[0.6rem]">{t.issue}</span>
-        <Barcode />
-      </div>
-      <div className="min-w-[8rem] flex-1">
-        <p className="display text-[clamp(2.4rem,6svh,3.75rem)] text-butter">{t.barcodePrice}</p>
-        <p className="mt-1 max-w-[16rem] text-xs text-cream/60">{t.footnote}</p>
-      </div>
-    </div>
+  Reading order, top to bottom: the name (the stacked logo, never part of a
+  sentence), the dateline, the photo with its two stamps, "AI, UNPICKED.",
+  then the dek, the sections and the form. The photo is cut at the table's
+  edge and the three threads hang into the headline.
+*/
+export function Cover() {
+  const t = SITE.cover
+  const th = t.theatre
+  const s = SITE.subscribe
+  const [sent, setSent] = useState(false)
+  const [line1, line2] = t.splash
+  const cls: Record<string, string> = { under_the_hood: styles.uth, follow_the_money: styles.ftm, mind_the_gap: styles.mtg }
+  const short = (day: string) => day.slice(0, 3)
+
+  const key = (variant: string) => (
+    <ul className={`${styles.key} ${variant}`} aria-label="Sections">
+      {SITE.subchannels.map(sc => (
+        <li key={sc.slug} className={cls[sc.slug]}>
+          <span className={styles.nm}>{sc.label}</span>
+          <span className={styles.dy}>
+            <span aria-hidden="true">{short(sc.day)}</span>
+            <span className="sr-only">{sc.day}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
   )
 
-  /*
-    One screen, on any device. Everything that stacks vertically is sized by
-    the screen's height as well as its width (svh), so a short laptop gets a
-    smaller cover rather than a longer one. Phones leave out what the next
-    screens repeat: the section list (the contents), the price box and badge
-    (the form is right there), and two of the three stickers (the marquee).
-    The cover fills the screen only where it has the content to: tablet up,
-    and tall phones, which get the section list back. Shorter phones end at
-    the form and the next section shows underneath.
-  */
   return (
     <header className="grain relative overflow-hidden bg-ink">
-      <div className="page relative z-10 flex flex-col pb-[clamp(0.75rem,3svh,3.5rem)] pt-[clamp(0.5rem,1.6svh,1rem)] md:min-h-[100svh] [@media(min-height:840px)]:min-h-[100svh]">
-        {/*
-          The masthead: a wide, shallow band, the way a magazine sets its name,
-          so the cover line underneath is the one loud thing. From tablet up
-          the subscribe badge sits at the end of the band.
-        */}
-        <div className="drop relative mt-[clamp(0.25rem,1.2svh,0.75rem)] flex items-center justify-between gap-6">
+      <div className={styles.cover}>
+        <div className={`${styles.mast} drop`}>
           <h1 className="sr-only">{SITE.a11y.masthead}</h1>
           <Image
-            src="/brand/wordmark.png"
+            src="/brand/masthead.png"
             alt=""
-            width={3319}
-            height={391}
+            width={2415}
+            height={740}
             priority
-            sizes="(min-width: 768px) 1100px, 94vw"
-            className="h-auto w-full min-w-0 md:w-[min(100%,100svh)]"
+            sizes="(min-width: 1200px) 260px, (min-width: 701px) and (orientation: landscape) 260px, 45vw"
+            className={styles.logo}
           />
-          <div className="hidden shrink-0 md:block">
-            <SpinBadge />
+          <div className={styles.mastR}>
+            {key(styles.keyWide)}
+            <p className={styles.dateline}>
+              <span className={styles.vol}>
+                {SITE.strap.left} · {t.issue}
+              </span>
+              <span className={styles.days}>{SITE.strap.centre}</span>
+              <span className={styles.price}>{SITE.strap.right}</span>
+            </p>
           </div>
         </div>
 
-        {/* The dateline, under the masthead. */}
-        <div className="mono-label mt-[clamp(0.5rem,1.6svh,1rem)] flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-y border-cream/25 py-2 text-cream/75">
-          <span>
-            {SITE.strap.left} <span aria-hidden="true">·</span> {t.issue}
-          </span>
-          <span className="hidden sm:inline">{SITE.strap.centre}</span>
-          <span>{SITE.strap.right}</span>
-        </div>
-
-        {/* The splash and the cover lines. */}
-        <div className="mt-[clamp(0.75rem,2.6svh,2rem)] grid flex-1 grid-cols-1 gap-8 md:grid-cols-12 md:gap-8">
-          <div className="flex min-w-0 flex-col md:col-span-7">
-            <span style={d(0.25)} className="enter mono-label inline-block self-start bg-coral px-2 py-1 font-semibold text-ink">
-              {t.kicker}
-            </span>
-            <div className="relative">
-              <h2
-                className="display mt-[clamp(0.4rem,1.4svh,1rem)] text-[clamp(2.6rem,min(19vw,11.5svh),8.6rem)] text-cream md:text-[clamp(2.6rem,min(11vw,12svh),9.5rem)]"
-                aria-label={`${line1} ${line2}`}
-              >
-                <span style={d(0.4)} className="enter block" aria-hidden="true">
-                  {line1}
-                </span>
-                <span style={d(0.55)} className="enter mt-[0.12em] block" aria-hidden="true">
-                  <span className="swipe text-ink" style={{ ['--swipe' as string]: '#7EF0C0' }}>
-                    {line2}
-                  </span>
-                </span>
-              </h2>
-              {/* A sticker slaps on beside the short first line, where it costs no height. */}
-              <div className="absolute right-0 top-[18%] md:hidden">
-                <Sticker className="bg-butter text-[0.62rem]" delay={1.0} rotate={-6}>
-                  {s1}
-                </Sticker>
-              </div>
-              <div className="absolute right-[6%] top-[16%] hidden md:block">
-                <Sticker className="bg-coral" delay={1.15} rotate={5}>
-                  {s2}
-                </Sticker>
-              </div>
+        <section className={styles.theatre} aria-label={SITE.a11y.illustration}>
+          <div className={styles.plate}>
+            <Image src="/cover/theatre.webp" alt={th.photoAlt} width={2000} height={550} priority sizes="100vw" className={styles.photo} />
+            <Image src="/cover/threads.png" alt="" width={175} height={120} className={styles.threads} />
+            <svg className={styles.leaders} viewBox="0 0 2000 550" preserveAspectRatio="none" aria-hidden="true">
+              <g className={styles.leadWide}>
+                <path d="M1212 258 L1040 172 L872 172" />
+                <path d="M1628 292 L1700 172 L1728 172" />
+                <circle cx="1212" cy="258" r="7" />
+                <circle cx="1628" cy="292" r="7" />
+              </g>
+              <g className={styles.leadPhone}>
+                <path d="M1160 170 L1212 258" />
+                <path d="M1651 170 L1628 290" />
+                <circle cx="1212" cy="258" r="9" />
+                <circle cx="1628" cy="292" r="9" />
+              </g>
+            </svg>
+            <div className={`${styles.chart} ${styles.at}`}>
+              <span className={styles.chartSec}>{th.chartSection}</span>
+              <span className={styles.chartQ}>{th.chartLine}</span>
             </div>
-            <p style={d(0.8)} className="enter dek mt-[clamp(0.5rem,2.2svh,2rem)] max-w-xl text-[clamp(1rem,2.8svh,1.65rem)] leading-snug text-cream/90">
-              {t.dek}
-            </p>
-
-            {/* Tall phones have room for the cover lines again, as a real cover does. */}
-            <ul className="mt-[clamp(0.75rem,2.4svh,1.5rem)] hidden border-t border-cream/25 [@media(max-width:767px)_and_(min-height:840px)]:block" aria-label={t.coverLinesTitle}>
-              {SITE.subchannels.map(s => (
-                <li key={s.slug} className="border-b border-cream/25">
-                  <a href={`#${s.slug}`} className="block py-2.5">
-                    <span className="flex items-center gap-2">
-                      <span className={`mono-label px-1.5 py-0.5 text-[0.65rem] font-semibold text-ink ${ACCENT[s.slug].bg}`}>{s.label}</span>
-                      <span className="mono-label text-[0.65rem] text-cream/60">{s.day}</span>
-                    </span>
-                    <span className="display mt-1 block text-[1.45rem] text-cream">{s.coverLine}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <div style={d(1.0)} className="enter mt-auto pt-[clamp(0.75rem,2.6svh,1.75rem)]">
-              <SubscribeForm tone="dark" id="cover" />
-              <p className="mt-1 text-xs text-cream/60 md:hidden">{t.footnote}</p>
+            <div className={`${styles.note} ${styles.at} ${styles.nStuff}`}>
+              <span className={styles.part}>{th.stuffing.part}</span>
+              <span className={`${styles.stamp} ${styles.stampReal}`}>{th.stuffing.stamp}</span>
+            </div>
+            <div className={`${styles.note} ${styles.at} ${styles.nVisor}`}>
+              <span className={styles.part}>{th.visor.part}</span>
+              <span className={styles.stamp}>{th.visor.stamp}</span>
             </div>
           </div>
+        </section>
 
-          <aside className="relative hidden min-w-0 md:col-span-5 md:flex md:flex-col md:pl-4" aria-labelledby="cover-lines">
-            <p id="cover-lines" className="mono-label border-b border-cream/25 pb-2 text-cream/70">
-              {latest ? t.thisWeek : t.coverLinesTitle}
-            </p>
-            {latest && (
-              <a
-                style={d(0.6)}
-                href={latest.link}
-                target="_blank"
-                rel="noopener"
-                className="enter group block border-b border-cream/25 py-[clamp(0.5rem,1.6svh,1rem)]"
-              >
-                <span className="display block text-[clamp(1.4rem,min(4vw,4.6svh),3rem)] text-mint group-hover:underline">{latest.title}</span>
-              </a>
-            )}
-            <ul>
-              {SITE.subchannels.map((s, i) => (
-                <li key={s.slug} style={d(0.7 + i * 0.12)} className="slide border-b border-cream/25">
-                  <a href={`#${s.slug}`} className="group block py-[clamp(0.5rem,1.6svh,1rem)] transition-transform duration-200 hover:translate-x-2">
-                    <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <span className={`mono-label px-2 py-0.5 font-semibold text-ink ${ACCENT[s.slug].bg}`}>{s.label}</span>
-                      <span className="mono-label text-cream/60">{s.day}</span>
-                    </span>
-                    <span className={`display mt-[clamp(0.25rem,0.8svh,0.5rem)] block text-[clamp(1.3rem,min(3.6vw,4.2svh),2.9rem)] text-cream transition-colors ${ACCENT[s.slug].hoverText}`}>
-                      {s.coverLine}
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-[clamp(0.5rem,1.6svh,1rem)]">
-              <Sticker className="bg-lilac" delay={1.3} rotate={-3}>
-                {s3}
-              </Sticker>
+        <h2 className={`${styles.hed} enter`} style={d(0.2)} aria-label={`${line1} ${line2}`}>
+          <span aria-hidden="true">{line1}</span> <span aria-hidden="true">{line2}</span>
+        </h2>
+
+        <div className={`${styles.foot} enter`} style={d(0.45)}>
+          <div className={styles.lede}>
+            <p className={styles.dek}>{t.dek}</p>
+            {key(styles.keyNarrow)}
+            <p className={`${styles.small} ${styles.footnoteWide}`}>{t.footnote}</p>
+          </div>
+          {/* A plain GET form to Substack, which prefills the email. Works with JavaScript off. */}
+          <form
+            className={styles.sub}
+            action={`${CONFIG.substackUrl}/subscribe`}
+            method="get"
+            target="_blank"
+            onSubmit={() => setSent(true)}
+            aria-describedby="cover-note"
+          >
+            <label className={styles.label} htmlFor="cover-email">
+              {s.label}
+            </label>
+            <div className={styles.bar}>
+              <input id="cover-email" name="email" type="email" inputMode="email" autoComplete="email" placeholder={s.placeholder} required />
+              <button type="submit">{s.button}</button>
             </div>
-            <div className="mt-auto pt-[clamp(0.75rem,2.4svh,2rem)]">{priceBox}</div>
-          </aside>
+            <p id="cover-note" className={`${styles.small} ${styles.note2}`} aria-live="polite">
+              {sent ? s.sent : s.note}
+            </p>
+            <p className={`${styles.small} ${styles.footnotePhone}`}>{t.footnote}</p>
+          </form>
         </div>
       </div>
     </header>

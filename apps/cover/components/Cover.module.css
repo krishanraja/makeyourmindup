@@ -1,0 +1,537 @@
+/*
+  The cover: the operating theatre. The photo is the hero, cut at the table's
+  edge; "AI, UNPICKED." hangs from that edge and the three threads fall into
+  it. The stacked logo is the masthead, the name, never part of the headline.
+
+  The whole composition scales from one unit, so it always fits one screen:
+  --u on desktop and landscape tablets, --p on phones and portrait tablets.
+  Each is bounded by the width and by the height left over once the
+  fixed-size parts (form, small print) are counted, so a short screen gets a
+  smaller picture, never a longer cover.
+*/
+
+.cover {
+  --cream-70: rgba(244, 239, 228, 0.72);
+  --cream-20: rgba(244, 239, 228, 0.2);
+  position: relative;
+  overflow: hidden;
+  color: var(--cream);
+}
+
+/* masthead: the name, on ink, over the hairline the lamp hangs from */
+.mast {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ink);
+  border-bottom: 1px solid var(--cream-20);
+}
+.logo {
+  display: block;
+  height: var(--logo-h);
+  width: auto;
+}
+.mastR {
+  display: flex;
+  align-items: center;
+}
+.dateline {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cream-70);
+  text-align: right;
+  line-height: 1.6;
+}
+.dateline span {
+  display: block;
+}
+.price {
+  color: var(--cream);
+  font-weight: 700;
+}
+.dateline .days {
+  display: none;
+}
+
+/* section key */
+.key {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  line-height: 1.2;
+  list-style: none;
+}
+.nm {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.dy {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cream);
+}
+.uth .nm {
+  color: var(--lilac);
+}
+.ftm .nm {
+  color: var(--butter);
+}
+.mtg .nm {
+  color: var(--coral);
+}
+
+/* the theatre: the photo plate, cut at the table's edge (source 2000 x 550) */
+.theatre {
+  position: relative;
+  z-index: 2;
+  height: var(--plate-vis);
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.plate {
+  position: absolute;
+  top: var(--plate-y);
+  left: var(--plate-x);
+  width: var(--plate-w);
+  aspect-ratio: 2000 / 550;
+}
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.threads {
+  position: absolute;
+  left: calc(1080 / 2000 * 100%);
+  top: calc(542 / 550 * 100%);
+  width: calc(175 / 2000 * 100%);
+  height: auto;
+  pointer-events: none;
+}
+.leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.leaders path {
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.9;
+}
+.leaders circle {
+  fill: var(--ink);
+  stroke: var(--cream);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+.leadPhone {
+  display: none;
+}
+
+/* annotations, placed in source-photo coordinates */
+.at {
+  position: absolute;
+  left: calc(var(--x) / 2000 * 100%);
+  top: calc(var(--y) / 550 * 100%);
+}
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--note-gap);
+}
+.part {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: var(--part-fs);
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  line-height: 1;
+  white-space: nowrap;
+}
+.stamp {
+  display: inline-block;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 700;
+  font-size: var(--stamp-fs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 3px solid currentColor;
+  padding: 3px 5px 3px 8px;
+  line-height: 1.1;
+  color: var(--cream);
+  background: var(--ink);
+  white-space: nowrap;
+  transform: rotate(-4deg);
+}
+.stampReal {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+  transform: rotate(3deg);
+}
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.chartSec {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: var(--sec-fs);
+  letter-spacing: 0.02em;
+  color: var(--lilac);
+  line-height: 1;
+}
+.chartQ {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 380;
+  font-size: var(--q-fs);
+  line-height: 1;
+  color: var(--cream);
+  white-space: nowrap;
+}
+
+/* the cover line, hung from the table's edge */
+.hed {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-anton), 'Arial Narrow', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.88;
+  color: var(--cream);
+  font-size: var(--hed-fs);
+  margin-top: var(--hed-gap);
+  white-space: nowrap;
+}
+.hed span {
+  display: inline-block;
+}
+
+/* dek and form */
+.dek {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 360;
+  color: var(--cream);
+  text-wrap: balance;
+}
+.sub {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  display: block;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: var(--label-fs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.bar {
+  display: flex;
+  border: 2px solid var(--cream);
+  height: var(--bar-h);
+}
+.bar input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--cream);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-size: 17px;
+  padding: 0 14px;
+}
+.bar input::placeholder {
+  color: rgba(244, 239, 228, 0.55);
+}
+.bar button {
+  flex: 0 0 auto;
+  background: var(--mint);
+  color: var(--ink);
+  border: 0;
+  border-left: 2px solid var(--cream);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 900;
+  font-variation-settings: 'wdth' 112;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: var(--btn-fs);
+  padding: 0 18px;
+  cursor: pointer;
+}
+.bar:focus-within {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+}
+.small {
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--cream-70);
+  text-wrap: balance;
+}
+.footnotePhone {
+  display: none;
+}
+
+/* ---------- landscape tablet and desktop ---------- */
+@media (min-width: 1200px), (min-width: 701px) and (orientation: landscape) {
+  .cover {
+    --u: min(1vw, calc((100svh - 90px) / 57));
+    --logo-h: calc(5.4 * var(--u));
+    --plate-w: calc(100 * var(--u));
+    --plate-x: 0px;
+    --plate-y: 0px;
+    --plate-vis: calc(100 * var(--u) * 550 / 2000);
+    --hed-fs: calc(19.05 * var(--u));
+    --hed-gap: calc(0.8 * var(--u));
+    --part-fs: 14px;
+    --stamp-fs: 15px;
+    --sec-fs: 13px;
+    --q-fs: calc(2.3 * var(--u));
+    --note-gap: 9px;
+    --label-fs: 13px;
+    --bar-h: 54px;
+    --btn-fs: 17px;
+    width: calc(100 * var(--u));
+    margin: 0 auto;
+  }
+  .mast {
+    height: calc(6.3 * var(--u));
+    padding: 0 calc(2.78 * var(--u));
+  }
+  .mastR {
+    gap: calc(3.4 * var(--u));
+  }
+  .keyWide {
+    display: flex;
+    gap: calc(1.9 * var(--u));
+    font-size: 13px;
+  }
+  .keyWide li {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+  }
+  .keyNarrow {
+    display: none;
+  }
+  .dateline {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .hed {
+    padding-left: calc(2.78 * var(--u));
+  }
+  .foot {
+    display: grid;
+    grid-template-columns: calc(45.5 * var(--u)) minmax(0, 1fr);
+    column-gap: calc(5 * var(--u));
+    padding: calc(3 * var(--u)) calc(2.78 * var(--u)) 0;
+  }
+  .lede {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .dek {
+    font-size: calc(1.72 * var(--u));
+    line-height: 1.2;
+  }
+  .label {
+    margin-bottom: 10px;
+  }
+  .note2 {
+    margin-top: 10px;
+  }
+  .nStuff {
+    --x: 862;
+    --y: 150;
+    transform: translateX(-100%);
+    align-items: flex-end;
+  }
+  .nVisor {
+    --x: 1738;
+    --y: 150;
+  }
+  .chart {
+    --x: 56;
+    --y: 40;
+  }
+}
+
+/* ---------- phones and portrait tablets ---------- */
+@media (max-width: 700px), (max-width: 1199px) and (orientation: portrait) {
+  .cover {
+    /* 146p of picture and headline, 262px of form and small print */
+    --p: min(1vw, calc((100svh - 262px) / 146));
+    --logo-h: calc(13.6 * var(--p));
+    /* the photo at 0.64 of source, window x 1085 to 1729, rows 74 to 550 (below the lamp).
+       When a short screen shrinks the photo, --shift slides it right so the drape
+       still meets the right edge, and the headline's indent follows the threads. */
+    --shift: max(0px, calc(100vw - 142.14 * var(--p)));
+    --plate-w: calc(310.68 * var(--p));
+    --plate-x: calc(var(--shift) - 168.54 * var(--p));
+    --plate-y: calc(-11.5 * var(--p));
+    --plate-vis: calc(73.94 * var(--p));
+    --hed-fs: calc(24.55 * var(--p));
+    --hed-gap: calc(2.4 * var(--p));
+    /* the labels on the photo grow with it on a tablet, never below 12px */
+    --part-fs: max(12px, calc(2.9 * var(--p)));
+    --stamp-fs: max(12px, calc(2.9 * var(--p)));
+    --sec-fs: 11px;
+    --q-fs: 18px;
+    --note-gap: 7px;
+    --label-fs: 12px;
+    --bar-h: 52px;
+    --btn-fs: 15px;
+  }
+  .mast {
+    height: calc(17.2 * var(--p));
+    padding: 0 16px;
+  }
+  .keyWide {
+    display: none;
+  }
+  .dateline {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .dateline .vol {
+    display: none;
+  }
+  .dateline .days {
+    display: block;
+    color: var(--cream);
+  }
+  .hed {
+    padding-left: 16px;
+  }
+  .hed span {
+    display: block;
+  }
+  .hed span:first-child {
+    margin-left: calc(23.5 * var(--p) + var(--shift));
+  }
+  .hed span + span {
+    margin-top: 0.2em;
+  }
+  .foot {
+    padding: calc(4.4 * var(--p)) 16px 0;
+  }
+  .dek {
+    font-size: 18.5px;
+    line-height: 1.28;
+  }
+  .keyNarrow {
+    display: flex;
+    justify-content: space-between;
+    margin: calc(4.6 * var(--p)) 0 calc(5.8 * var(--p));
+    font-size: 12px;
+  }
+  .keyNarrow li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .footnoteWide {
+    display: none;
+  }
+  .footnotePhone {
+    display: block;
+    margin-top: 6px;
+  }
+  .label {
+    margin-bottom: 8px;
+  }
+  .note2 {
+    margin-top: 8px;
+  }
+  .bar input {
+    padding: 0 12px;
+    font-size: 16px;
+  }
+  .bar button {
+    padding: 0 14px;
+  }
+  .leadWide {
+    display: none;
+  }
+  .leadPhone {
+    display: inline;
+  }
+  .nStuff {
+    --x: 1110;
+    --y: 94;
+  }
+  .nVisor {
+    --x: 1704;
+    --y: 94;
+    transform: translateX(-100%);
+    align-items: flex-end;
+  }
+  /* on the phone the two stamps stand alone, so the row cannot read as a sentence */
+  .chart {
+    display: none;
+  }
+}
+
+/* the narrowest phones: the section key steps down a size to stay on screen */
+@media (max-width: 359px) {
+  .keyNarrow {
+    font-size: 11px;
+  }
+  .nm {
+    letter-spacing: 0;
+  }
+}
+
+/* short phones (an iPhone in Safari is 664 tall): the section key goes, since
+   the dek names the three sections and the dateline gives their days, and the
+   picture keeps the height it frees */
+@media (max-width: 700px) and (max-height: 860px) {
+  .cover {
+    --p: min(1vw, calc((100svh - 216px) / 142));
+  }
+  .lede {
+    margin-bottom: 16px;
+  }
+  .foot {
+    padding-top: 12px;
+  }
+  .dek {
+    font-size: 17px;
+  }
+  .keyNarrow {
+    display: none;
+  }
+  .label {
+    margin-bottom: 6px;
+  }
+  .note2 {
+    margin-top: 6px;
+  }
+  .footnotePhone {
+    margin-top: 2px;
+  }
+}
+
+/* the narrowest short phones, where the dek and small print wrap once more */
+@media (max-width: 359px) and (max-height: 860px) {
+  .cover {
+    --p: min(1vw, calc((100svh - 258px) / 142));
+  }
+}
