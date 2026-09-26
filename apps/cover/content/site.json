@@ -27,6 +27,10 @@
       "visor": {
         "part": "the visor",
         "stamp": "Theatre"
+      },
+      "wave": {
+        "part": "the wave",
+        "stamp": "Theatre"
       }
     }
   },

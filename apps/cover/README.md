@@ -19,7 +19,7 @@ the root would let a production build succeed from the wrong folder.
 | `content/config.json` | Substack address, relaunch date, platform links, the scoreboard switch and its calls |
 | `components/` | One file per section of the page, plus the three signature diagrams in `diagrams/` |
 | `lib/rss.ts` | Reads the Substack feed at build and hourly after, keeping only posts on or after the relaunch date |
-| `brand/` | The two Canva exports every logo file is derived from, and the operating-theatre photo the cover is cut from |
+| `brand/` | The two Canva exports every logo file is derived from, the operating-theatre photo the cover is cut from, and the standing robot the Substack welcome image is cut from |
 | `public/brand/`, `app/icon.png`, `app/apple-icon.png` | Derived logo files. Regenerate with `npm run assets` |
 | `public/cover/` | The cover's photo, cut at the table's edge, and the threads that hang into the headline. Regenerate with `npm run assets` |
 | `substack-kit/` | The Substack refresh kit: paste-in copy and images. See its own README |

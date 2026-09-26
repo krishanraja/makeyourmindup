@@ -33,10 +33,14 @@ there, so the hub has to match the front door.
 Substack builds the publication's own share card from the logo, name and short
 description, so there is no publication-level social image to upload.
 
-The welcome image and the social card are the cover itself: the operating
-theatre photo, its REAL and THEATRE stamps and "AI, UNPICKED.", built from
-`public/cover/` and the words in `content/site.json`. The social card is also
-the site's own share image (`app/opengraph-image.jpg`). The logo, wordmarks and
+The social card is the cover itself: the operating-theatre photo, its REAL
+and THEATRE stamps and "AI, UNPICKED.", built from `public/cover/` and the words
+in `content/site.json`. It is also the site's own share image
+(`app/opengraph-image.jpg`). The welcome image is the same idea with the robot
+standing up to greet new readers: the wave is stamped THEATRE, the stuffing
+REAL. Its photo is `brand/robot-standing-source.webp`, whose stuffing was
+calmed with an image edit (GPT Image 2.5 through Higgsfield, 26 September 2026)
+so it is just visible, never a plume. The logo, wordmarks and
 email banner stay typographic: they identify the sender at sizes where a photo
 would be a smudge.
 

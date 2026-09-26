@@ -44,4 +44,4 @@ Editor of makeyourmindup. Sixteen years building commercial businesses across me
 
 ## Image alt text
 
-The makeyourmindup logo above a felt robot lying on an operating table, its chest seam unpicked. The stuffing is stamped real and the visor theatre. Below it, the line "AI, unpicked".
+The makeyourmindup logo above a felt robot standing on a plinth, waving, its chest seam unpicked. The wave is stamped theatre and the stuffing real. Below it, the line "AI, unpicked".
