@@ -3,7 +3,7 @@ kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
 as_of: 2026-09-26
-head: 68deb1ad
+head: dcfb0213
 lifecycle: building
 production_url: https://makeyourmindup.ai
 state_doc: project-documentation/03_STEP_PLAN.md

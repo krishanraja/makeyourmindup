@@ -7,6 +7,7 @@ Older entries rolled out of `NOW.md`. Newest first.
 
 ## 2026-09-26
 
+- reconciled at `dcfb0213`: 34 non-steward commits since `68deb1ad`. The cover went live and its brand kit reached v1.4 in another session without a reconciliation, so NOW.md still described the Cannes funnel as live; it now records the cover, the Monday cadence and the rename.
 - moved from `NOW.md` on reconciliation, verbatim, to hold the file under 200 lines. They keep the
   subchannel names they were written with (split.the.bill and lift.the.lid, renamed follow.the.money
   and under.the.hood by Krish on 2026-09-25):
