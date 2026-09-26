@@ -13,8 +13,8 @@ import sharp from 'sharp'
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 const KIT = resolve('../../brand-kit')
 const NAME = 'makeyourmindup-brand-kit'
-const VERSION = '1.0'
-const DATED = '25 September 2026'
+const VERSION = '1.1'
+const DATED = '26 September 2026'
 const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 
 // Screenshots of the live cover come from `npm run shots`. Keep the last ones
@@ -477,7 +477,7 @@ const pages = [
     <div style="position:absolute;left:80px;top:110px;right:80px">
       <h2 class="display" style="font-size:88px">In the wild.</h2>
       <div class="apps">
-        <figure><img src="../applications/website-desktop.png" style="height:560px;object-fit:cover;object-position:left top"><figcaption class="label">The cover, makeyourmindup.ai</figcaption></figure>
+        <figure><img src="../applications/website-desktop.png" style="width:100%;height:auto"><figcaption class="label">The cover, makeyourmindup.ai</figcaption></figure>
         <div style="display:flex;flex-direction:column;gap:22px">
           <figure><img src="../applications/social-card-1200x630.png"><figcaption class="label">Social card, 1200 by 630</figcaption></figure>
           <figure><img src="../applications/email-banner-1100x220.png"><figcaption class="label">Email banner, 1100 by 220</figcaption></figure>
