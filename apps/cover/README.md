@@ -19,8 +19,9 @@ the root would let a production build succeed from the wrong folder.
 | `content/config.json` | Substack address, relaunch date, platform links, the scoreboard switch and its calls |
 | `components/` | One file per section of the page, plus the three signature diagrams in `diagrams/` |
 | `lib/rss.ts` | Reads the Substack feed at build and hourly after, keeping only posts on or after the relaunch date |
-| `brand/` | The two Canva exports every logo file is derived from |
+| `brand/` | The two Canva exports every logo file is derived from, and the operating-theatre photo the cover is cut from |
 | `public/brand/`, `app/icon.png`, `app/apple-icon.png` | Derived logo files. Regenerate with `npm run assets` |
+| `public/cover/` | The cover's photo, cut at the table's edge, and the threads that hang into the headline. Regenerate with `npm run assets` |
 | `substack-kit/` | The Substack refresh kit: paste-in copy and images. See its own README |
 | `scripts/` | Asset derivation, kit rendering and screenshots |
 
@@ -32,7 +33,7 @@ the root would let a production build succeed from the wrong folder.
   with `statement`, `due`, `confidence`, `status` (`open`, `held`, `broke` or
   `unclear`) and optionally `href`. Only Krish rules a call.
 - **The first issue lands:** change `cover.issue` in `content/site.json`.
-  Pieces appear on the cover by themselves once they are on the Substack.
+  Pieces appear in the newsstand by themselves once they are on the Substack.
 - **Substack moves to its own domain:** change `substackUrl` and `feedUrl`.
 - **Hide the scoreboard:** set `scoreboard.show` to `false`.
 
@@ -49,7 +50,7 @@ npm run audit      # server on :3100 first: fails on any text past the screen ed
 npm run brand-kit  # rebuild ../../brand-kit and its zip from the cover's own files
 npm run shots      # screenshots at 360px, 390px and 1440px into .shots/
 npm run kit        # re-render the Substack kit and the social card
-npm run assets     # re-derive every logo file from brand/
+npm run assets     # re-derive every logo file and the cover photo from brand/
 ```
 
 ## Rules this page keeps
@@ -66,9 +67,14 @@ npm run assets     # re-derive every logo file from brand/
   if any slot drifts by more than a pixel. Keep new copy to the same line counts.
 - Every section fits on one screen, below the sticky bar, on any device.
   Vertical sizes follow the screen's height (`svh`) as well as its width, and
-  phones leave out what the next screen repeats: the cover's section list, the
-  price box, the spreads' body and caption, the platform blurbs, the staff bio.
+  phones leave out what the next screen repeats: the cover's section key (on
+  short phones), the price box, the spreads' body and caption, the platform blurbs, the staff bio.
   Longer copy has to fit too: the audit's fit phase fails otherwise.
+- The cover scales from one unit in `components/Cover.module.css`: `--u` on
+  desktop and landscape tablets, `--p` on phones and portrait tablets. A short
+  screen gets a smaller picture, never a longer cover. If you add a line to
+  the cover's foot, raise the fixed-pixel figure in the `--p` or `--u` formula
+  by its height.
 
 ## Deployment
 

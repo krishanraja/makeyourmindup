@@ -26,7 +26,7 @@ export default async function Page() {
       <span id="top" />
       <StickyBar />
       <main>
-        <Cover latest={posts[0]} />
+        <Cover />
         <Marquee />
         <Contents />
         {CONFIG.scoreboard.show && <Scoreboard />}
