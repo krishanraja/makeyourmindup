@@ -32,7 +32,7 @@ function SpinBadge() {
         target="_blank"
         rel="noopener"
         aria-label={`${t.badgeLabel} (${SITE.a11y.newTab})`}
-        className="group relative block h-[min(164px,17svh)] w-[min(164px,17svh)]"
+        className="group relative block h-[min(140px,15svh)] w-[min(140px,15svh)]"
       >
         <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-spin-slow" aria-hidden="true">
           <defs>
@@ -89,40 +89,41 @@ export function Cover({ latest }: { latest?: Post }) {
     smaller cover rather than a longer one. Phones leave out what the next
     screens repeat: the section list (the contents), the price box and badge
     (the form is right there), and two of the three stickers (the marquee).
+    The cover fills the screen only where it has the content to: tablet up,
+    and tall phones, which get the section list back. Shorter phones end at
+    the form and the next section shows underneath.
   */
   return (
     <header className="grain relative overflow-hidden bg-ink">
-      <div className="page relative z-10 flex min-h-[100svh] flex-col pb-[clamp(0.75rem,3svh,3.5rem)] pt-[clamp(0.5rem,1.6svh,1rem)]">
-        {/* The strap: every magazine has one. */}
-        <div className="mono-label flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-y border-cream/25 py-2 text-cream/75">
+      <div className="page relative z-10 flex flex-col pb-[clamp(0.75rem,3svh,3.5rem)] pt-[clamp(0.5rem,1.6svh,1rem)] md:min-h-[100svh] [@media(min-height:840px)]:min-h-[100svh]">
+        {/*
+          The masthead: a wide, shallow band, the way a magazine sets its name,
+          so the cover line underneath is the one loud thing. From tablet up
+          the subscribe badge sits at the end of the band.
+        */}
+        <div className="drop relative mt-[clamp(0.25rem,1.2svh,0.75rem)] flex items-center justify-between gap-6">
+          <h1 className="sr-only">{SITE.a11y.masthead}</h1>
+          <Image
+            src="/brand/wordmark.png"
+            alt=""
+            width={3319}
+            height={391}
+            priority
+            sizes="(min-width: 768px) 1100px, 94vw"
+            className="h-auto w-full min-w-0 md:w-[min(100%,100svh)]"
+          />
+          <div className="hidden shrink-0 md:block">
+            <SpinBadge />
+          </div>
+        </div>
+
+        {/* The dateline, under the masthead. */}
+        <div className="mono-label mt-[clamp(0.5rem,1.6svh,1rem)] flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-y border-cream/25 py-2 text-cream/75">
           <span>
             {SITE.strap.left} <span aria-hidden="true">·</span> {t.issue}
           </span>
           <span className="hidden sm:inline">{SITE.strap.centre}</span>
           <span>{SITE.strap.right}</span>
-        </div>
-
-        {/* The masthead. */}
-        <div className="drop relative mt-[clamp(0.6rem,2.4svh,2rem)]">
-          <h1 className="sr-only">{SITE.a11y.masthead}</h1>
-          <Image
-            src="/brand/masthead.png"
-            alt=""
-            width={2415}
-            height={740}
-            priority
-            sizes="(min-width: 768px) 700px, 94vw"
-            className="h-auto w-[min(100%,700px,56svh)] md:w-[min(100%-11rem,700px,calc(80svh-210px))] lg:w-[min(100%,700px,calc(80svh-210px))]"
-          />
-          {/* From tablet up the badge fills the space beside the masthead. */}
-          <div className="absolute right-0 top-0 hidden md:block lg:right-6">
-            <SpinBadge />
-            <div className="absolute -left-24 top-[62%] hidden lg:block">
-              <Sticker className="bg-butter text-[0.8rem]" delay={1.0} rotate={-9}>
-                {s1}
-              </Sticker>
-            </div>
-          </div>
         </div>
 
         {/* The splash and the cover lines. */}
@@ -133,7 +134,7 @@ export function Cover({ latest }: { latest?: Post }) {
             </span>
             <div className="relative">
               <h2
-                className="display mt-[clamp(0.4rem,1.4svh,1rem)] text-[clamp(2.4rem,min(17vw,10svh),8.6rem)] text-cream md:text-[clamp(2.4rem,min(10.5vw,11svh),8.6rem)]"
+                className="display mt-[clamp(0.4rem,1.4svh,1rem)] text-[clamp(2.6rem,min(19vw,11.5svh),8.6rem)] text-cream md:text-[clamp(2.6rem,min(11vw,12svh),9.5rem)]"
                 aria-label={`${line1} ${line2}`}
               >
                 <span style={d(0.4)} className="enter block" aria-hidden="true">
@@ -161,7 +162,22 @@ export function Cover({ latest }: { latest?: Post }) {
               {t.dek}
             </p>
 
-            <div style={d(1.0)} className="enter mt-[clamp(0.75rem,2.6svh,1.75rem)] md:mt-auto md:pt-[clamp(0.75rem,2.6svh,1.75rem)]">
+            {/* Tall phones have room for the cover lines again, as a real cover does. */}
+            <ul className="mt-[clamp(0.75rem,2.4svh,1.5rem)] hidden border-t border-cream/25 [@media(max-width:767px)_and_(min-height:840px)]:block" aria-label={t.coverLinesTitle}>
+              {SITE.subchannels.map(s => (
+                <li key={s.slug} className="border-b border-cream/25">
+                  <a href={`#${s.slug}`} className="block py-2.5">
+                    <span className="flex items-center gap-2">
+                      <span className={`mono-label px-1.5 py-0.5 text-[0.65rem] font-semibold text-ink ${ACCENT[s.slug].bg}`}>{s.label}</span>
+                      <span className="mono-label text-[0.65rem] text-cream/60">{s.day}</span>
+                    </span>
+                    <span className="display mt-1 block text-[1.45rem] text-cream">{s.coverLine}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div style={d(1.0)} className="enter mt-auto pt-[clamp(0.75rem,2.6svh,1.75rem)]">
               <SubscribeForm tone="dark" id="cover" />
               <p className="mt-1 text-xs text-cream/60 md:hidden">{t.footnote}</p>
             </div>
