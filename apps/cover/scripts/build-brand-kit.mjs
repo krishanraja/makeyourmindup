@@ -13,7 +13,7 @@ import sharp from 'sharp'
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 const KIT = resolve('../../brand-kit')
 const NAME = 'makeyourmindup-brand-kit'
-const VERSION = '1.1'
+const VERSION = '1.2'
 const DATED = '26 September 2026'
 const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 

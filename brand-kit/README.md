@@ -1,4 +1,4 @@
-# makeyourmindup brand kit, v1.1
+# makeyourmindup brand kit, v1.2
 
 26 September 2026. Everything here is built from the live cover at makeyourmindup.ai by
 `npm run brand-kit` in `apps/cover`, so it matches what readers see.
