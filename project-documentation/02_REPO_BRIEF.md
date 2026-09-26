@@ -36,13 +36,15 @@ The split above is the target, not the state. As of 2026-09-19:
 ## Retired names, complete
 
 Built with AI, The Money of AI, Mindmaker, Mindmaker Live, Techonomic,
-The Builder Economy, inspect.the.build, follow.the.money,
+The Builder Economy, inspect.the.build, split.the.bill, lift.the.lid,
 Newsflash, Money Trace, The Artifact, First Version, The Third Why.
 
 `makeyourmindup` is **not** retired. It is the publication's own name as of the
 17 September 2026 relaunch, and it previously meant the CTRL lead-magnet
 surface. A tool that treats it as retired will reject the one name that is now
-correct.
+correct. The same goes for follow.the.money and under.the.hood: both are live
+subchannel names again, renamed from split.the.bill and lift.the.lid by Krish
+on 2026-09-25.
 
 ## Open conflicts. None of these is a tool's to close.
 
@@ -56,7 +58,7 @@ vocabularies collide on five strings. `control-center/scripts/check-content-taxo
 deliberately does not enforce those five and says so.
 
 **2. `arc_cards.format` is a story shape, not a format slug.** The fleet brief
-calls it a dead taxonomy that should carry `split_the_bill` or `mind_the_gap`.
+calls it a dead taxonomy that should carry `follow_the_money` or `mind_the_gap`.
 It should not. Its eight non-null values were written in one batch on
 2026-08-26, they appear on both lanes, and writing a publication slug into it
 merges two deliberately separate vocabularies. Routing needs a separate column

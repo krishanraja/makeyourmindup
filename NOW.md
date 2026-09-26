@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-09-20
+as_of: 2026-09-26
 head: 68deb1ad
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -39,22 +39,20 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-09-20)
+## Where it is right now (as of 2026-09-26)
 
-Lifecycle is `building`. The machine does not exist yet. What landed today is
-the canon it will be built from, which until now existed only as Claude
+Lifecycle is `building`. The machine does not exist yet. What landed on
+2026-09-19 and 20 is the canon it will be built from, which until now existed only as Claude
 artifacts from 17 and 18 September and in no repository at all.
 
-**Live.** `makeyourmindup.ai` and `www.makeyourmindup.ai` serve the Cannes Lions
-2026 lead-capture funnel from the last READY production build (commit
-`01828ab`). That code now sits in `parked/cannes-2026/` and is marked not live
-work. The first of the two ordered flip steps is done: this branch is merged to
-`main`. The second is not: the Vercel project's Root Directory is still the repo
-root, so every production build since the merge fails with "No Next.js version
-detected" and the site keeps serving the old build. A failed build never
-replaces a live one, so nothing has changed for a visitor. Setting Root
-Directory to `parked/cannes-2026` is one project setting and needs an account
-that can update the project; the connector used on 2026-09-19 could not.
+**Live.** Since 2026-09-25 `makeyourmindup.ai` redirects to
+`www.makeyourmindup.ai`, which serves the cover from `apps/cover/` (`73735f5`,
+ruling Krish 2026-09-25: the cover takes the domain, and the Cannes funnel stays
+offline until mm-ctrl hosts it). `apps/cover/README.md` says how it deploys and
+what regenerates its assets. The brand book and kit, v1.4 on 2026-09-26, are in
+`docs/brandbooknew/`, rebuilt by `npm run brand-kit` in `apps/cover`. This
+paragraph was corrected on 2026-09-26; it had still described the Cannes funnel
+as live.
 
 **Built and not live.** The canon in this repo: the media kit, the panel, the
 rubric, the kill list and its executable check, the format specs and the
@@ -68,7 +66,7 @@ its runner is specified in `engine/INTAKE_RUNNER_SPEC.md` but not built.
 `apps/machine/slate-page/` holds the phone-first ruling page template and how a
 verdict travels; `apps/machine/` has no jobs in it.
 
-**Not started.** The four jobs, the cover, and the dry runs. The dry runs are
+**Not started.** The four jobs and the dry runs. The dry runs are
 the gate: `calibration/2026-09-17-dry-run-picks.json` records one of three
 subjects picked, so the template is not fixed and anything built against it now
 is invalidated when it is.
@@ -84,23 +82,33 @@ format because none of them was ever composed.
 
 ## What changed recently
 
-- 2026-09-20 **W38 was selected again over the enlarged pool and the slate did
-  not move.** The 20 newsletters a dead Anthropic key had eaten were recovered
-  that morning and produced 9 ideas, so the week was re-run against 219
-  candidates instead of 216. Ten of the thirteen rows that arrived after the cut
-  were duplicates of stories the pool already held, with the same figures already
-  in the claim, which is the finding: the outage ate newsletters whose stories
-  ran elsewhere too. One new candidate cleared the bar, `c0217`, the antitrust
-  complaint filed on 18 September against Anthropic, OpenAI, SpaceXAI and Google
-  over the slowdown agreement, and it ranks thirteenth of twenty-eight in
-  split.the.bill at 7.34. Same three picks, same six alternates, same order, so
-  no new rows were banked. The page gained a re-run line that says all of it,
-  because a page that silently redraws the same cards reports nothing.
-  `engine/runs/2026-W38/extend.py` is the stage that did it, with every gate
-  decision and every score written out with its reason, and it is idempotent.
-  `slate.first-run.json` and `selection.json` are committed so the two runs can
-  be diffed rather than taken on trust.
+- 2026-09-26 **under.the.hood runs every Monday, and the old names are gone from
+  the living files.** Rulings (Krish, 2026-09-25 and 2026-09-26): the
+  subchannels are follow.the.money and under.the.hood, "every single instance";
+  then "Correct the engine's table and anywhere else, its out of date", after
+  the cover promised Mon, Wed and Fri. `venture_formats` and `content_cadence`
+  read Mondays, 1 a week (control-center migration `20260926150000`). The
+  slate picker now fills under.the.hood as a fixed slot like the other two
+  (it was a half slot behind a raised bar of 7.5), and prints the standing
+  questions the cover prints. The media kit, the intake spec, the dry runs and
+  this file use the live names; the retired list in
+  `project-documentation/02_REPO_BRIEF.md` had follow.the.money as retired and
+  now lists split.the.bill and lift.the.lid instead. The rulings log, the applied
+  migrations, the calibration records and the W38 run keep the names they were
+  written with.
 
+- 2026-09-24 to 26 **The cover is live, with its brand kit.** Ruling (Krish,
+  2026-09-25): the cover takes makeyourmindup.ai, and the Cannes funnel stays
+  offline until mm-ctrl hosts it (`73735f5`). `apps/cover` is the front door
+  (`7c5572e`): Monday first, the new house rules and the paid-tier copy
+  (`b07469b`), every section on one screen (`522e7f3`), the operating-theatre
+  cover and the standing robot for the Substack welcome image (`e845606`,
+  `a97d922`). The Substack kit, the paid welcome email and the media kit's paid
+  prices landed alongside (`b64822a`, `345dc8e`, `3842d31`); the kill list gained
+  a `paid_tier` scope that may name CTRL and nothing else (`0849068`) and retired
+  the old subchannel names (`b8718b3`); the media kit carries the three questions
+  as Krish means them (`78a9859`). Brand book and kit v1.4, with the felt robot
+  and its stamps, are in `docs/brandbooknew/` (`a995a0c`).
 - 2026-09-20 **The first slate exists, and the rules that picked it are in this
   repo rather than in a workflow that has to be re-run to be read.** 216
   candidates cleared the intake gates, 210 were scored, 81 cleared the 6.5 bar,
@@ -114,39 +122,9 @@ format because none of them was ever composed.
   can be re-run without the ones before it. Every rule is stated and travels
   with the row in `producer.selection_rules`. `engine/runs/2026-W38` keeps what
   the week was built from, and running the four stages against it reproduces
-  the published page byte for byte. lift.the.lid cleared its raised bar of 7.5
-  with 7.83, the closest call on the slate. `daf27e4`.
-- 2026-09-19 **A card says which model produced it.** A run that spans a model
-  switch has more than one author, and the first one did. `provenance.py` reads
-  the run journal for labels and each transcript for the model that actually
-  served it; each card carries "scored by X, checked by Y" and an unchecked one
-  says so rather than leaving the reader to assume. The point is not the names:
-  a ruling is evidence about the thing that made the suggestion, and the bank
-  cannot tell you whether a producer improved if it does not know which
-  producer it was. `a597669`, `e89699f`.
-- 2026-09-19 **Three subchannels, one vocabulary, and a rename that history
-  survives.** Ruling (Krish): split.the.bill, mind.the.gap and lift.the.lid are
-  the three main subchannels, reversing the 2026-09-18 retirement of
-  lift.the.lid, which had never had a row. Three migrations, applied and read
-  back: the subchannel rows with the boundary written into both contested
-  mandates as a test on the question rather than the surface; `kind`, the
-  holding lane and `format_aliases`; six foreign keys to
-  `venture_formats(slug)` with `_was` columns, because Krish ruled the schema
-  must let the past be compared with the present. A typo is refused by name.
-  The 2026-09-17 calibration record was not edited; it gained a `superseded`
-  key. `7c3f9af`.
-- 2026-09-19 **The table reads one way.** Retired rows shared `sort_order` 1
-  and 2 with live ones, so an order by sort_order could show a retired brand as
-  the hero. Retired rows moved to the 900 band. lift_the_lid's null `gear`
-  became Gear A, because the voice doctrine settled that Gear B is a surface
-  register (YouTube, TikTok) and not a format. `ca4fb20`.
-- 2026-09-19 **The intake runner is specified, and the ruling page has a
-  home.** `engine/INTAKE_RUNNER_SPEC.md`: deterministic gates first, one
-  batched model call against the mandates verbatim, fixed-template reasons,
-  the anti-echo rule written into what the runner may read. `apps/machine/
-  slate-page/`: the template Krish rules on, writing each verdict into the
-  bank through his own Supabase connector and holding a local copy if that is
-  not granted. `128893c`, `f3c8bfd`.
+  the published page byte for byte until the rules changed on 2026-09-26.
+  under.the.hood cleared its raised bar of 7.5 with 7.83, the closest call on
+  the slate. `daf27e4`.
 
 ## What is next and what is waiting on Krish
 
@@ -157,12 +135,9 @@ three is picked.
 Waiting on Krish, none of which a tool should answer:
 
 - **Move the Cannes funnel to mm-ctrl.** A migration, not a Vercel setting.
-  `parked/cannes-2026/PARKED.md` holds the destination and the facts. Until it
-  moves, do NOTHING to the Vercel project: "set Root Directory to
-  `parked/cannes-2026`" was recommended here on 2026-09-19 and withdrawn on
-  2026-09-20 (ruling, Krish: it moves to mm-ctrl when ready). The failing builds
-  are cosmetic. Checked 2026-09-20: the site returns HTTP 200 and serves the
-  funnel, because a failed build never replaces a live one.
+  `parked/cannes-2026/PARKED.md` holds the destination and the facts. It has
+  been offline since 2026-09-25, when the cover took the domain; its last
+  deployment is the cover's rollback (`apps/cover/README.md`).
 - **Rotate the credentials** shared in chat on 2026-09-19 plus the five the VPS
   audit named, and fix the rejected `ANTHROPIC_API_KEY` in content-engine. No
   code change substitutes for either.
@@ -170,11 +145,11 @@ Waiting on Krish, none of which a tool should answer:
   model, the kill list and the rubric exist; the pure steps can be built and
   tested on fixtures now; the model call and the slate write wait on the dry
   runs by the step plan.
-- **Pick the remaining two dry run subjects.** split.the.bill and mind.the.gap
+- **Pick the remaining two dry run subjects.** follow.the.money and mind.the.gap
   are unpicked.
-- **The apex.** A Substack custom domain takes the whole host, so the cover and
-  the publication cannot share `makeyourmindup.ai`. The recommendation is cover
-  on the apex, publication on `read.`. Not decided.
+- **The apex.** The cover took `makeyourmindup.ai` on 2026-09-25 and the
+  Substack keeps its own address, so what is left is whether the publication
+  later moves to `read.makeyourmindup.ai`. Not decided.
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
@@ -195,7 +170,9 @@ Waiting on Krish, none of which a tool should answer:
 ## Do not trust
 
 - `apps/machine/` as a scheduled machine. Its four slate stages have been run
-  once, by hand, and they reproduce the week they produced. Nothing in it runs
+  once, by hand. They reproduced the week they produced until under.the.hood
+  became a fixed Monday slot on 2026-09-26; `engine/runs/2026-W38` keeps the
+  week as it was picked. Nothing in it runs
   on a schedule yet, and no draft, derivative or send is built by it: the
   derivative plan on each card is a proposal about what should be made, not a
   thing that was made.
@@ -204,8 +181,8 @@ Waiting on Krish, none of which a tool should answer:
   Supabase project and it ranks against a category vocabulary retired on
   2026-08-27. Its own `PARKED.md` says so.
 - **Any claim that the publication runs two formats.** Ruling (Krish,
-  2026-09-19): it runs **three subchannels**, `split_the_bill`, `mind_the_gap`
-  and `lift_the_lid`. That reversed the 2026-09-18 retirement of lift.the.lid,
+  2026-09-19): it runs **three subchannels**, `follow_the_money`, `mind_the_gap`
+  and `under_the_hood`. That reversed the 2026-09-18 retirement of under.the.hood,
   which had never had a row in `venture_formats` at all. Anything in this repo
   or elsewhere still saying two is stale, including a line that stood here
   earlier on 2026-09-19.

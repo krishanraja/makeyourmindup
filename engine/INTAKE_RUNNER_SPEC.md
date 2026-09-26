@@ -164,7 +164,7 @@ The model returns strict JSON per item and nothing else:
 ```
 {
   "id": "<intake id>",
-  "format": "split_the_bill" | "mind_the_gap" | "lift_the_lid" | "general" | "ambiguous",
+  "format": "follow_the_money" | "mind_the_gap" | "under_the_hood" | "general" | "ambiguous",
   "question": "who pays" | "sharper or dependent" | "the gap over time" | "none",
   "coverage": "signature" | "broad",
   "scores": { "angle": 0-5, "number": 0-5, "fresh": 0-5, "fun": 0-5,
@@ -229,13 +229,11 @@ Three questions, run in order, never one number.
 ### 10. The slate
 
 Slots come from `venture_formats.target_per_week`: `mind_the_gap` 1,
-`split_the_bill` 1, `lift_the_lid` 0.5. A fixed slot is filled by the best
-scoring survivor claimed by that format. A half slot is offered only when that
-format's best survivor scores at or above the lower of the two fixed picks;
-otherwise its best survivor is listed as an alternative and the slot is
-reported empty. This is a rule proposed here, not a ruling, and it is the
-first thing to revisit when the counts show lift.the.lid never getting a slot
-or always getting one.
+`follow_the_money` 1, `under_the_hood` 1. Each is a fixed slot, filled by the
+best scoring survivor claimed by that format. under.the.hood was a half slot
+(0.5, no fixed day) until 2026-09-26, when it moved to Mondays because the
+makeyourmindup cover page promises Mon, Wed and Fri; the half-slot rule this
+section used to propose went with it.
 
 Caps, applied after ranking: at most two `coverage = broad` picks across the
 slate (rubric gate `broad_cap`); at most two picks from one intake source
@@ -353,8 +351,8 @@ Hand-off:
 `proposed` on `format_assignment`:
 
 ```
-{ "format": "lift_the_lid", "question": "sharper or dependent",
-  "second": "split_the_bill", "second_question": "who pays" }
+{ "format": "under_the_hood", "question": "sharper or dependent",
+  "second": "follow_the_money", "second_question": "who pays" }
 ```
 
 `alternatives`, both surfaces:
@@ -418,8 +416,8 @@ the ten learning-bank rows and the migration adds eight more;
 
 Inferred, and marked as such where it matters: that Jaccard at 0.5 on titles
 is good enough for a first story clustering (mm-ctrl runs it live, but on
-headlines from wire services, not on newsletter subjects); the half-slot rule
-for lift.the.lid; that the kill list should run whole on third-party text.
+headlines from wire services, not on newsletter subjects); that the kill list
+should run whole on third-party text.
 Each is a number or a rule the run counts will test in the first month.
 
 ## The phase note

@@ -91,14 +91,14 @@ test('arithmetic after an evidence paragraph is quiet', () => {
 })
 
 test('the wrong day is a veto, and only when live format data is supplied', () => {
-  const piece = '---\nformat: split_the_bill\ndate: 2026-09-18\n---\nThe renewal quote landed.\n'
+  const piece = '---\nformat: follow_the_money\ndate: 2026-09-18\n---\nThe renewal quote landed.\n'
   assert.deepEqual(ids(piece), [], 'without --formats the check is skipped, not guessed')
   assert.ok(check(piece).findings.some(f => f.id === 'day_check_skipped'))
-  // 2026-09-18 is a Friday, and split.the.bill runs Wednesdays.
-  assert.ok(check(piece, { formats: { split_the_bill: 'Wednesday' } })
+  // 2026-09-18 is a Friday, and follow.the.money runs Wednesdays.
+  assert.ok(check(piece, { formats: { follow_the_money: 'Wednesday' } })
     .findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
-  const right = '---\nformat: split_the_bill\ndate: 2026-09-16\n---\nThe renewal quote landed.\n'
-  assert.deepEqual(check(right, { formats: { split_the_bill: 'Wednesday' } })
+  const right = '---\nformat: follow_the_money\ndate: 2026-09-16\n---\nThe renewal quote landed.\n'
+  assert.deepEqual(check(right, { formats: { follow_the_money: 'Wednesday' } })
     .findings.filter(f => f.level === 'veto'), [])
 })
 

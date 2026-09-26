@@ -22,7 +22,7 @@ SAYS = {h['slug']: h['says'] for h in mand['handoff_reasons']}
 FIX = {
   'source_not_archived': 'Archive the surface first: save the page to the Wayback Machine and put that timestamped url on the row. Then it is checkable a week from now and the piece can be written.',
   'evidence_must_be_created': 'Either find a named producer who already published the missing half, or drop it. The material gate does not commission primary research, however good the idea.',
-  'format_ambiguous_question': 'Decide the question, not the subject. What it costs and who pays is split.the.bill; sharper or dependent is lift.the.lid. Say which and the row becomes writable.',
+  'format_ambiguous_question': 'Decide what the reader changes next, not the subject. A price, a budget or a contract is follow.the.money; what they build or buy is under.the.hood; how they think or what they expect is mind.the.gap. Say which and the row becomes writable.',
   'claim_not_in_source': 'Point the row at the reporting that carries the claim, or restate the claim to what the source actually says. Either makes it writable; neither is a guess the machine may make for you.',
 }
 
@@ -105,7 +105,7 @@ def mk(cid, fmt, rank):
         row['proposed']['swing_why'] = row['swing_why']
     return row
 
-for f in ('split_the_bill', 'mind_the_gap', 'lift_the_lid'):
+for f in ('follow_the_money', 'mind_the_gap', 'under_the_hood'):
     v = sel['chosen'][f]
     if v.get('pick'):
         cards.append(mk(v['pick']['candidate_id'], f, 1))
@@ -160,11 +160,10 @@ out = {'week_of': '2026-09-21', 'summary': summary,
        'selection_rules': {
          'bar': 6.5,
          'order': 'composite, then how many independent sources carry the story, then recency. Never by age.',
-         'lift_the_lid': 'fills against a raised bar of 7.5, the standing 6.5 plus a point for being an extra piece rather than a scheduled one',
+         'under_the_hood': 'a fixed Monday slot since 2026-09-26, filled like the other two',
          'source_cap': 'at most two cards from one publication across the whole slate',
          'swing': 'the card with the weakest load-bearing number, marked as the bet it is',
-       },
-       'lid_filled': sel['lid_fills']}
+       }}
 json.dump(out, io.open('slate.json', 'w'), indent=1, ensure_ascii=False)
 print(summary)
 print('swing:', swing)

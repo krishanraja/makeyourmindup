@@ -7,7 +7,7 @@ kill_list_scope: canon
 unverified.**
 
 That is deliberate rather than sloppy. In this channel a contested number is the
-subject, not the evidence. The whole point of split.the.bill is tracing a figure
+subject, not the evidence. The whole point of follow.the.money is tracing a figure
 back to whoever produced it and finding out what it counts.
 
 **The rule:** production checks each one against the primary source before a

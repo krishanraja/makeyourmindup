@@ -101,48 +101,51 @@ failed, whatever else it did well.
 format is.** Read it from there. What follows is the shape, not the mandate.
 
 **Three standing subchannels.** Ruling (Krish, 2026-09-19), reversing the
-2026-09-18 retirement of lift.the.lid. One table, because two tables in one
+2026-09-18 retirement of under.the.hood. One table, because two tables in one
 section is how a reader ends up choosing which one to believe.
 
 | Slug | Label | Day | The question your.call asks | Diagram |
 |---|---|---|---|---|
-| `split_the_bill` | split.the.bill | Wednesdays | Where does the money move, and who ends up better or worse off? | the money map |
+| `follow_the_money` | follow.the.money | Wednesdays | Where does the money move, and who ends up better or worse off? | the money map |
 | `mind_the_gap` | mind.the.gap | Fridays, the hero | What is the pattern here, and what does it mean is coming? | the timeline |
-| `lift_the_lid` | lift.the.lid | No fixed day | What would you build differently having seen inside this? | the annotated product shot |
+| `under_the_hood` | under.the.hood | Mondays | What would you build differently having seen inside this? | real or theatre: the annotated product shot |
 
 The slug is what the database stores and what every system writes. The label is
 what a reader sees. They are never interchangeable in code.
 
-The earlier table in this section gave split.the.bill's your.call question as
+The earlier table in this section gave follow.the.money's your.call question as
 "is the money still here in eighteen months". The live mandate has that as its
 THIRD question, under the standing one above. The kit had promoted it, which is
 the kind of drift a file copy makes and a read from the table does not.
 
-`lift_the_lid` publishes when a subject earns it rather than on a fixed slot,
-because a third fixed day costs hours the two-to-four-hour rule does not have.
+`under_the_hood` publishes every Monday, one a week, since 2026-09-26. Ruling
+(Krish, 2026-09-26): "Correct the engine's table and anywhere else, its out of
+date", after the cover page went live promising Mon, Wed and Fri. Until then it
+published when a subject earned it, because a third fixed day cost hours the
+two-to-four-hour rule did not have.
 
 **The boundary between all three is what the reader changes next, never the
 surface.** Ruling (Krish, 2026-09-24). Any of the three can be handed the same
 pricing page. If the reader would go and change a price, a budget or a contract,
-it is `split_the_bill`. If they would change what they build or buy, it is
-`lift_the_lid`. If they would change how they think or what they expect, it is
+it is `follow_the_money`. If they would change what they build or buy, it is
+`under_the_hood`. If they would change how they think or what they expect, it is
 `mind_the_gap`. Product surfaces remain evidence, never a subject, for
-`split_the_bill`.
+`follow_the_money`.
 
 **The three mandates were rewritten on 2026-09-24** to what Krish actually
 means by each channel, after the questions in this table were found to say
-something else. split.the.bill is now the whole money system from any side of
-the invoice, including the seller's; lift.the.lid leads on build guidance with
+something else. follow.the.money is now the whole money system from any side of
+the invoice, including the seller's; under.the.hood leads on build guidance with
 "sharper or dependent" kept as its second question; mind.the.gap is pattern and
 prediction, and its "ONE topic per piece" rule is replaced by several threads
 resolving into one spine. The ban on media and advertising monetisation is
 lifted. The previous text is in `venture_formats_mandate_backup_20260924`.
 
 The calibration is worth keeping in view rather than treating as settled:
-across four lift.the.lid ideas in
+across four under.the.hood ideas in
 `calibration/2026-09-17-commissioning-round-1.json` Krish gave no excellent at
 all, while the other two took four between them. One round of fifteen votes is
-a direction, not a verdict, and the five newer lift.the.lid ideas were never
+a direction, not a verdict, and the five newer under.the.hood ideas were never
 judged.
 
 Six themes tracked across all of them over time: distribution, buyer versus
@@ -183,7 +186,8 @@ means it is decoration, and the device reverts to a written verdict.
 | | |
 |---|---|
 | Sunday | Commission the week from what the pipeline surfaced |
-| Wednesday | split.the.bill: piece, artifact, diagram, audio, vertical cut |
+| Monday | under.the.hood: piece, artifact, diagram, audio, vertical cut |
+| Wednesday | follow.the.money: piece, artifact, diagram, audio, vertical cut |
 | Friday | mind.the.gap: piece plus Resources folded in, artifact, diagram, audio, vertical cut |
 
 Plus one narrative film a month. A signature piece is a package, not a post:

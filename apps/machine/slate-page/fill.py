@@ -49,23 +49,22 @@ for r in ids:
 
 # ---- format headers, from the live mandates -------------------------------
 formats = mand['formats'] if isinstance(mand, dict) and 'formats' in mand else mand
-CAD = {'split_the_bill': 'Wednesdays', 'mind_the_gap': 'Fridays, the hero', 'lift_the_lid': 'standing, no fixed day'}
+CAD = {'follow_the_money': 'Wednesdays', 'mind_the_gap': 'Fridays, the hero', 'under_the_hood': 'Mondays'}
+# The standing questions as the cover page prints them (makeyourmindup.ai,
+# 2026-09-26), which match the mandates rewritten on 2026-09-24.
 QUESTION = {
-    'split_the_bill': 'What does it really cost to run, and who ends up holding the bill?',
-    'mind_the_gap': 'What is actually happening, against what everyone says is happening?',
-    'lift_the_lid': 'Does this make its user sharper, or dependent?',
+    'follow_the_money': 'Where does the money move, and who ends up better or worse off?',
+    'mind_the_gap': 'What is the pattern, and what does it mean is coming?',
+    'under_the_hood': 'What actually goes together in a shipped thing, and why did this one work?',
 }
 fmt_rows = []
-for slug in ('split_the_bill', 'mind_the_gap', 'lift_the_lid'):
+for slug in ('follow_the_money', 'mind_the_gap', 'under_the_hood'):
     live = next((f for f in formats if f.get('slug') == slug), {})
     fmt_rows.append({
         'slug': slug,
         'cadence': live.get('cadence_label') or CAD[slug],
         'standing_question': QUESTION[slug],
-        'empty_note': ('No candidate earned this slot this week. lift.the.lid has no fixed day, '
-                       'so an empty week is the format working as specified, not a gap.')
-        if slug == 'lift_the_lid' else
-        'No candidate cleared the bar for this slot this week, and the machine says so rather than filling it.',
+        'empty_note': 'No candidate cleared the bar for this slot this week, and the machine says so rather than filling it.',
     })
 
 # ---- suggestions, with their real ids --------------------------------------

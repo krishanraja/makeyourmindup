@@ -20,15 +20,15 @@ which is replaced with a JSON object of this shape before publishing:
   "proposed_on": "2026-09-19",
   "summary": "six lines a person reads on a phone",
   "formats": [
-    { "slug": "split_the_bill", "cadence": "Wednesdays", "standing_question": "...", "empty_note": "..." },
+    { "slug": "follow_the_money", "cadence": "Wednesdays", "standing_question": "...", "empty_note": "..." },
     { "slug": "mind_the_gap",   "cadence": "Fridays, the hero", "standing_question": "..." },
-    { "slug": "lift_the_lid",   "cadence": "standing, no fixed day", "standing_question": "..." }
+    { "slug": "under_the_hood",   "cadence": "Mondays", "standing_question": "..." }
   ],
   "suggestions": [
     { "id": "<uuid from public.suggestions>", "surface": "slate_pick", "subject_id": "c0012",
-      "proposed": { "format": "split_the_bill", "headline": "...", "your_call_question": "...",
+      "proposed": { "format": "follow_the_money", "headline": "...", "your_call_question": "...",
                     "rank": 1, "derivative_plan": [ { "kind": "written_piece", "do": true, "why": "..." } ] },
-      "reason": "...", "confidence": 0.82, "alternatives": [ { "format": "lift_the_lid", "why_lost": "..." } ],
+      "reason": "...", "confidence": 0.82, "alternatives": [ { "format": "under_the_hood", "why_lost": "..." } ],
       "is_swing": false, "swing_why": null, "handoff_reason": null },
     { "id": "<uuid>", "surface": "slate_pick", "subject_id": "c0044", "proposed": null,
       "handoff_reason": "evidence_must_be_created", "says": "...", "fix_hint": "...", "title": "..." }
@@ -71,17 +71,16 @@ was in force when the suggestion was made.
 - **A pick must be checked on all three lenses.** A candidate that scored higher
   but has not been checked is held as an alternate and its card says why. The
   machine does not lead with something it has not verified, and the first slate
-  had exactly this case at the top of split.the.bill.
+  had exactly this case at the top of follow.the.money.
 - **A candidate the evidence lens refuted is never a pick or an alternate.** It
   becomes a `claim_not_in_source` row instead.
 - **One pick and up to two alternates per format.**
 - **At most two cards from one publication across the whole slate**, so a single
   newsletter cannot own the week.
-- **lift.the.lid fills against a raised bar of 7.5**, the standing 6.5 plus a
-  point for being an extra piece rather than a scheduled one. Its target is 0.5
-  a week and its mandate says it publishes when a subject earns it. It is
-  deliberately not judged against the other two picks: a standing format that
-  only ran in a weak week would be running for the wrong reason.
+- **under.the.hood is a fixed Monday slot**, filled like the other two, since
+  2026-09-26, when the makeyourmindup cover page went live promising Mon, Wed
+  and Fri. Until then it was a half slot that filled only against a raised bar
+  of 7.5, as an extra piece rather than a scheduled one.
 - **Exactly one card is the swing**: the one with the weakest load-bearing
   number, so unlike every other card it has to work on the angle rather than the
   figure. That is the bet, and the card says it is one.

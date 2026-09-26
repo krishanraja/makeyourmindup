@@ -9,7 +9,7 @@
 :root{
   --paper:#F3F4F1; --panel:#FBFBF9; --ink:#15171A; --ink-2:#4C5259; --ink-3:#8A9097; --rule:#D9DCD6;
   --act:#106B6A; --act-ink:#FFFFFF; --ok:#1E7A46; --warn:#9A6A00; --bad:#A83A2E;
-  --bill:#B07A0B; --gap:#3F5F8F; --lid:#8A4A2E; --general:#6B6F73;
+  --money:#B07A0B; --gap:#3F5F8F; --hood:#8A4A2E; --general:#6B6F73;
   --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --font-head:"Fraunces","Iowan Old Style",Georgia,serif;
   --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -18,13 +18,13 @@
   :root:not([data-theme="light"]){
     --paper:#121417; --panel:#1A1D21; --ink:#E8E9E6; --ink-2:#B4B9BE; --ink-3:#7E858C; --rule:#2B3036;
     --act:#3FB3AE; --act-ink:#0E1412; --ok:#5FCB8B; --warn:#E0B24A; --bad:#EE7B6E;
-    --bill:#E0B24A; --gap:#8FB0E6; --lid:#E1936E; --general:#9AA0A6;
+    --money:#E0B24A; --gap:#8FB0E6; --hood:#E1936E; --general:#9AA0A6;
   }
 }
 :root[data-theme="dark"]{
   --paper:#121417; --panel:#1A1D21; --ink:#E8E9E6; --ink-2:#B4B9BE; --ink-3:#7E858C; --rule:#2B3036;
   --act:#3FB3AE; --act-ink:#0E1412; --ok:#5FCB8B; --warn:#E0B24A; --bad:#EE7B6E;
-  --bill:#E0B24A; --gap:#8FB0E6; --lid:#E1936E; --general:#9AA0A6;
+  --money:#E0B24A; --gap:#8FB0E6; --hood:#E1936E; --general:#9AA0A6;
 }
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.5;margin:0}
@@ -42,9 +42,9 @@ section.fmt{margin-top:28px;border-top:1px solid var(--rule);padding-top:16px}
 .fmt-head .cad{font-size:13px;color:var(--ink-3)}
 .standing{font-family:var(--font-head);font-size:17px;line-height:1.35;color:var(--ink-2);margin:0 0 14px;text-wrap:balance}
 .card{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--general);border-radius:6px;padding:14px 14px 12px;margin-bottom:12px}
-.card[data-fmt="split_the_bill"]{border-left-color:var(--bill)}
+.card[data-fmt="follow_the_money"]{border-left-color:var(--money)}
 .card[data-fmt="mind_the_gap"]{border-left-color:var(--gap)}
-.card[data-fmt="lift_the_lid"]{border-left-color:var(--lid)}
+.card[data-fmt="under_the_hood"]{border-left-color:var(--hood)}
 .card.lead .headline{font-family:var(--font-head);font-size:24px;line-height:1.2;font-weight:600;margin:4px 0 8px;text-wrap:balance}
 .card .headline{font-family:var(--font-head);font-size:19px;line-height:1.25;font-weight:600;margin:4px 0 6px;text-wrap:balance}
 .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-family:var(--font-mono);font-size:12px;color:var(--ink-3);align-items:center}
@@ -139,7 +139,7 @@ details li{margin:2px 0}
     ['wrong_format','wrong format'], ['too_safe','too safe'], ['too_preachy','preaches'], ['weak_evidence','evidence is thin'],
     ['not_fresh','not fresh'], ['done_before','done before'], ['no_number','no load-bearing number'], ['wrong_question','asks the wrong question'], ['other','other'],
   ];
-  const FMT_LABEL = { split_the_bill:'split.the.bill', mind_the_gap:'mind.the.gap', lift_the_lid:'lift.the.lid', general:'general (holding)' };
+  const FMT_LABEL = { follow_the_money:'follow.the.money', mind_the_gap:'mind.the.gap', under_the_hood:'under.the.hood', general:'general (holding)' };
   const DERIV_LABEL = { written_piece:'written piece', your_call_artifact:'your.call artifact', long_video:'long video', short_cuts:'short cuts', ig_carousel:'IG carousel' };
 
   const $ = (sel, el=document) => el.querySelector(sel);
