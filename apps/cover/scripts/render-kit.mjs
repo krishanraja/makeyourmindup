@@ -5,6 +5,7 @@ import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { resolve } from 'node:path'
 import sharp from 'sharp'
+import { STANDING, cutOnInk, liftThreads, behindGrey } from './photo-cut.mjs'
 
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 const OUT = 'substack-kit/images'
@@ -44,37 +45,45 @@ const BASE = `
 `
 
 // The social card and the welcome image are the cover itself, built from its
-// own parts: the photo and threads from `npm run assets`, the words from
-// content/site.json, and the stamps and leader lines at the cover's positions
-// (components/Cover.tsx and Cover.module.css), in source-photo pixels.
+// own parts: the photos cut at an edge with their threads hanging below
+// (scripts/photo-cut.mjs), the words from content/site.json, and the stamps and
+// leader lines placed in source-photo pixels.
 const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 const TH = SITE.cover.theatre
 const [HED1, HED2] = SITE.cover.splash
 const DAYS = SITE.strap.centre
 const FREE = SITE.strap.right.replace(/\*$/, '') // no small print here, so no asterisk
-const cover = f => `file://${resolve('public/cover', f)}`
+const file = f => `file://${resolve(f)}`
 const DATELINE = `<p class="date"><span>${DAYS}</span><span class="strong">${FREE}</span></p>`
-// The card is wider than its type allows, so its visor note tucks in closer than the cover's.
+
+// The operating theatre, as the cover uses it (npm run assets).
+const THEATRE = { w: 2000, h: 550, photo: file('public/cover/theatre.webp'), threads: { src: file('public/cover/threads.png'), x: 1080, y: 542, w: 175 } }
+// The waving robot, for the welcome page: cut at the plinth's top edge.
+await cutOnInk(STANDING.src, STANDING, `${TMP}/wave.webp`)
+await liftThreads(STANDING.src, STANDING.threads, `${TMP}/wave-threads.png`, behindGrey)
+const WAVE = { w: STANDING.width, h: STANDING.cut, photo: file(`${TMP}/wave.webp`), threads: { src: file(`${TMP}/wave-threads.png`), x: STANDING.threads.left, y: STANDING.threads.top, w: STANDING.threads.width } }
+
+// Stamps and leaders, in each photo's source pixels. The card is wider than
+// its type allows, so its visor note tucks in closer than the cover's.
 const CARD = {
   leaders: '<path d="M1212 258 L1040 172 L872 172"/><path d="M1628 292 L1668 172 L1682 172"/><circle cx="1212" cy="258" r="7"/><circle cx="1628" cy="292" r="7"/>',
-  stuff: { x: 862, y: 150, right: true },
-  visor: { x: 1692, y: 150, right: false },
+  notes: [{ x: 862, y: 150, right: true, t: TH.stuffing, real: true }, { x: 1692, y: 150, t: TH.visor }],
 }
-const PHONE = {
-  leaders: '<path d="M1160 170 L1212 258"/><path d="M1651 170 L1628 290"/><circle cx="1212" cy="258" r="9"/><circle cx="1628" cy="292" r="9"/>',
-  stuff: { x: 1110, y: 94, right: false },
-  visor: { x: 1704, y: 94, right: true },
+const HELLO = {
+  leaders: '<path d="M330 205 L250 150 L236 150"/><path d="M672 330 L860 250 L878 250"/><circle cx="330" cy="205" r="9"/><circle cx="672" cy="330" r="9"/>',
+  notes: [{ x: 226, y: 110, right: true, t: TH.wave }, { x: 888, y: 210, t: TH.stuffing, real: true }],
 }
-// A window onto the photo: s is px per source pixel, (x0, y0) the source point at its top left.
-function theatre({ s, x0, y0, h, set, extra = '' }) {
-  const note = (n, t, real) =>
-    `<div class="note" style="left:${n.x * s}px;top:${n.y * s}px;align-items:${n.right ? 'flex-end;transform:translateX(-100%)' : 'flex-start'}"><span class="part">${t.part}</span><span class="stamp${real ? ' real' : ''}">${t.stamp}</span></div>`
+// A window onto a photo: s is px per source pixel, (x0, y0) the source point at its top left.
+function plate({ img, s, x0, y0, h, set, extra = '' }) {
+  const note = n =>
+    `<div class="note" style="left:${n.x * s}px;top:${n.y * s}px;align-items:${n.right ? 'flex-end;transform:translateX(-100%)' : 'flex-start'}"><span class="part">${n.t.part}</span><span class="stamp${n.real ? ' real' : ''}">${n.t.stamp}</span></div>`
+  const th = img.threads
   return `<div style="position:relative;height:${h}px;z-index:2">
-    <div style="position:absolute;left:${-x0 * s}px;top:${-y0 * s}px;width:${2000 * s}px;height:${550 * s}px">
-      <img src="${cover('theatre.webp')}" style="position:absolute;inset:0;width:100%;height:100%">
-      <img src="${cover('threads.png')}" style="position:absolute;left:${1080 * s}px;top:${542 * s}px;width:${175 * s}px">
-      <svg class="lead" viewBox="0 0 2000 550" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">${set.leaders}</svg>
-      ${extra}${note(set.stuff, TH.stuffing, true)}${note(set.visor, TH.visor, false)}
+    <div style="position:absolute;left:${-x0 * s}px;top:${-y0 * s}px;width:${img.w * s}px;height:${img.h * s}px">
+      <img src="${img.photo}" style="position:absolute;inset:0;width:100%;height:100%">
+      <img src="${th.src}" style="position:absolute;left:${th.x * s}px;top:${th.y * s}px;width:${th.w * s}px">
+      <svg class="lead" viewBox="0 0 ${img.w} ${img.h}" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">${set.leaders}</svg>
+      ${extra}${set.notes.map(note).join('')}
     </div>
   </div>`
 }
@@ -86,18 +95,19 @@ const pages = {
     vars: '--part:20px;--stamp:21px;--bw:3px;--gap:10px;--sw:2',
     html: `<div class="grain" style="width:1200px;height:630px;position:relative;overflow:hidden">
       <div class="mast" style="height:78px;padding:0 33px"><img src="${brand('masthead.png')}" style="height:62px"><div style="font-size:17px">${DATELINE}</div></div>
-      ${theatre({ s: 0.6, x0: 0, y0: 30, h: 312, set: CARD, extra: `<div style="position:absolute;left:34px;top:42px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:17px;color:#B7A6FF">${TH.chartSection}</span><span class="dek" style="font-size:30px;font-weight:380;line-height:1">${TH.chartLine}</span></div>` })}
+      ${plate({ img: THEATRE, s: 0.6, x0: 0, y0: 30, h: 312, set: CARD, extra: `<div style="position:absolute;left:34px;top:42px;display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:17px;color:#B7A6FF">${TH.chartSection}</span><span class="dek" style="font-size:30px;font-weight:380;line-height:1">${TH.chartLine}</span></div>` })}
       <p class="display" style="font-size:218px;padding-left:33px;margin-top:9px">${HED1} ${HED2}</p>
     </div>`,
   },
-  // Substack welcome image, square: the phone cover, with "AI," beside the threads.
+  // Substack welcome image, square: the robot waving hello, which is theatre,
+  // over the stuffing, which is real. The threads hang into the headline.
   'cover-1200x1200': {
     w: 1200, h: 1200, scale: 1,
     vars: '--part:28px;--stamp:30px;--bw:4px;--gap:13px;--sw:2.5',
     html: `<div class="grain" style="width:1200px;height:1200px;position:relative;overflow:hidden">
       <div class="mast" style="height:132px;padding:0 44px"><img src="${brand('masthead.png')}" style="height:100px"><div style="font-size:24px">${DATELINE}</div></div>
-      ${theatre({ s: 1.19, x0: 902, y0: 74, h: 566, set: PHONE })}
-      <p class="display" style="font-size:236px;padding-left:40px;margin-top:22px"><span style="display:block;margin-left:${Math.round((1255 - 902) * 1.19 - 22)}px">${HED1}</span><span style="display:block;margin-top:.2em">${HED2}</span></p>
+      ${plate({ img: WAVE, s: 0.615, x0: -315, y0: -20, h: 822, set: HELLO })}
+      <p class="display" style="font-size:218px;padding-left:40px;margin-top:12px">${HED1} ${HED2}</p>
     </div>`,
   },
   // Email banner: 1100 by 220, rendered at 2x.
