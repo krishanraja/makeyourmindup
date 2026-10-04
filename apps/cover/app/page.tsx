@@ -1,3 +1,4 @@
+import { AvatarSprite } from '@/components/AvatarSprite'
 import { Contents } from '@/components/Contents'
 import { Cover } from '@/components/Cover'
 import { Footer } from '@/components/Footer'
@@ -25,6 +26,7 @@ export default async function Page() {
         {SITE.a11y.skip}
       </a>
       <span id="top" />
+      <AvatarSprite />
       <StickyBar />
       <main>
         <Cover />

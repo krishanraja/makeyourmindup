@@ -269,17 +269,17 @@ body {
   }
 }
 
-/* The panel rises from the bottom of a phone and settles mid-screen on a desktop. */
-@keyframes sheet-in {
-  from { opacity: 0; transform: translateY(48px); }
+/* The panel card rises from the bottom of a phone and settles mid-screen on a desktop. */
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(32px); }
   to { opacity: 1; transform: none; }
 }
 @keyframes backdrop-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.panel-sheet[open] { animation: sheet-in 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
-.panel-sheet[open]::backdrop { animation: backdrop-in 0.3s ease-out; }
+.panel-card[open] { animation: card-in 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.panel-card[open]::backdrop { animation: backdrop-in 0.3s ease-out; }
 @media (prefers-reduced-motion: reduce) {
-  .panel-sheet[open], .panel-sheet[open]::backdrop { animation: none; }
+  .panel-card[open], .panel-card[open]::backdrop { animation: none; }
 }

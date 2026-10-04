@@ -270,13 +270,9 @@
   },
   "panel": {
     "eyebrow": "The panel",
-    "line": "Ten robots read every draft blind: no byline, no author, no idea what Krish liked last time. Any of them can stop a piece. None of them can approve one.",
-    "bar": [
-      "Every judge 7.5 or more",
-      "Average 8.4 or more",
-      "No veto standing",
-      "A veto clears by fixing the work, never by a vote"
-    ],
+    "line": "Ten judges read every draft blind: no byline, no author, no idea what Krish liked last time. Any of them can stop a piece. None of them can approve one.",
+    "hint": "Tap a face to meet one.",
+    "counter": "{n} of {total}",
     "stamps": {
       "absolute": "Absolute veto",
       "veto": "Veto",
@@ -287,10 +283,7 @@
     "offLimits": "Off limits",
     "turn": "Turn over",
     "turnBack": "Turn back",
-    "meet": "Meet the panel",
     "close": "Close",
-    "previous": "Previous judge",
-    "next": "Next judge",
     "cards": [
       {
         "id": "preacher_catcher",
@@ -299,7 +292,7 @@
         "says": "That last line wants to be a poster. Net.",
         "asks": "Does any sentence tell you what to conclude, believe or become?",
         "offLimits": "Everything else. Reads for one thing. Has never been moved by a closing line, and is proud of it.",
-        "alt": "A felt robot in a pith helmet holding an enormous butterfly net with a tiny felt pulpit caught inside"
+        "alt": "A smug judge in a pith helmet with a butterfly net, a tiny pulpit caught in it"
       },
       {
         "id": "fact_checker",
@@ -308,7 +301,7 @@
         "says": "Lovely number. Who made it?",
         "asks": "Who produced this number, when, counting what?",
         "offLimits": "Whether the argument is any good. Would check the sums on a birthday card.",
-        "alt": "A small felt robot in sleeve garters with a jeweller's loupe in its visor, holding a ledger bigger than itself"
+        "alt": "A frowning judge with a jeweller's loupe in one eye, holding a ledger"
       },
       {
         "id": "cold_reader",
@@ -317,7 +310,7 @@
         "says": "I've had fifteen seconds and half a coffee. What is this?",
         "asks": "Fifteen seconds in, can you say what this is about and why it matters to you?",
         "offLimits": "Craft. Has never noticed a semicolon. Not a psychic, and has asked us to stop saying so.",
-        "alt": "A felt robot in a dressing gown with a mug and an egg timer, its visor half lowered like a sleepy eyelid"
+        "alt": "A barely awake judge in a dressing gown, with bed hair and a steaming mug"
       },
       {
         "id": "sceptic",
@@ -326,7 +319,7 @@
         "says": "Fine. Now argue it with someone who knows.",
         "asks": "What would a well-informed person who disagrees say, and does this survive it?",
         "offLimits": "Tone and style. Could not be charmed by a brass band.",
-        "alt": "A felt robot with its arms folded and one felt eyebrow stitched permanently raised"
+        "alt": "A judge with arms folded and one eyebrow raised very high"
       },
       {
         "id": "line_editor",
@@ -335,7 +328,7 @@
         "says": "Is that an em dash? In this house?",
         "asks": "Would a good editor let this line through?",
         "offLimits": "Argument, evidence and pictures. Would correct the grammar on a ransom note.",
-        "alt": "A felt robot with reading glasses on a chain, holding a red pencil the size of a lance"
+        "alt": "A judge peering over half-moon glasses on a chain, holding an enormous pencil"
       },
       {
         "id": "art_director",
@@ -344,7 +337,7 @@
         "says": "Lovely chart. What's it for?",
         "asks": "Does the picture carry the argument, or decorate it?",
         "offLimits": "Copy. May sigh at a headline. May not touch it. Sighs a lot.",
-        "alt": "A felt robot in a black polo neck and round black glasses, holding up a colour swatch fan and one thumb"
+        "alt": "A bald judge in a black polo neck and round black glasses, holding up a thumb"
       },
       {
         "id": "distribution",
@@ -354,7 +347,7 @@
         "asks": "Does this survive a thumbnail, a muted autoplay and a collapsed first line?",
         "offLimits": "Long-form structure. Has not finished a paragraph this decade.*",
         "footnote": "*Unverified. The Fact Checker has been told.",
-        "alt": "A felt robot holding a phone as big as its head, thumb mid-scroll, unplugged earbuds dangling"
+        "alt": "A judge staring down at a glowing phone, earbuds dangling unplugged"
       },
       {
         "id": "continuity",
@@ -363,7 +356,7 @@
         "says": "We said this three pieces ago. Differently.",
         "asks": "Have we said this, contradicted this, or used this angle before?",
         "offLimits": "The piece in isolation. Remembers everything we have published and holds it against us.",
-        "alt": "A felt robot with a card-index drawer for a chest, holding a ball of red string"
+        "alt": "A judge with a pencil through a bun and a card-index drawer for a chest"
       },
       {
         "id": "agency",
@@ -372,7 +365,7 @@
         "says": "Can they check it themselves?",
         "asks": "Does a reader finish more able to judge for themselves, or just better informed?",
         "offLimits": "Stating the mission. Has the banner ready. The Preacher-Catcher will not let them unroll it.",
-        "alt": "A felt robot clutching a rolled-up protest banner tied shut with string"
+        "alt": "A judge mid-sentence, holding a rolled-up banner tied shut on a pole"
       },
       {
         "id": "commissioner",
@@ -381,7 +374,7 @@
         "says": "Fine piece. Wrong week.",
         "asks": "Against everything else we could have run this week, was this the right use of the day?",
         "offLimits": "Craft, evidence and pictures. No veto, because opportunity cost is Krish's call. Finds this maddening.",
-        "alt": "A felt robot in a pinstripe waistcoat and green eyeshade, with a pocket watch and a wall calendar under one arm"
+        "alt": "An unimpressed judge with a moustache, a green eyeshade and a waistcoat with a watch chain"
       },
       {
         "id": "chair",
@@ -390,7 +383,8 @@
         "says": "The interesting bit is where they split.",
         "asks": "Where did the panel disagree, and which vetoes are still standing?",
         "offLimits": "Scoring, vetoing and softening a finding. Adds up, names, writes one paragraph. Very comfortable.",
-        "alt": "A felt wingback armchair with a robot visor stitched onto its headrest"
+        "alt": "A wingback armchair with a calm face on its backrest",
+        "footnote": "The bar: every judge 7.5 or more, an average of 8.4 or more, and no veto standing."
       }
     ]
   },

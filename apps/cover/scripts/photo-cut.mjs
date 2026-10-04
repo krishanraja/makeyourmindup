@@ -55,13 +55,3 @@ export async function liftThreads(src, box, out, alpha = behindTeal) {
   }
   await sharp(px, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toFile(out)
 }
-
-// A square cut from a studio photo, lightened onto ink and sized for the
-// panel's cards. box is in source pixels.
-export async function squareOnInk(src, box, size, out) {
-  const cut = await sharp(src).extract(box).resize(size, size).toBuffer()
-  await sharp({ create: { width: size, height: size, channels: 3, background: INK } })
-    .composite([{ input: cut, blend: 'lighten' }])
-    .webp({ quality: 86 })
-    .toFile(out)
-}

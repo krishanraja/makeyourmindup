@@ -57,8 +57,10 @@ conversation worth having.
 
 ## The faces on the cover are costume
 
-The cover introduces the ten, and the Chair, as felt robots with a prop and a
-one-line joke each (`apps/cover/content/site.json`, under `panel`). That is
+The cover introduces the ten, and the Chair, as drawn faces with a prop and a
+one-line joke each (`apps/cover/content/site.json`, under `panel`, drawn in
+`apps/cover/lib/avatars.ts`). They are never the felt robot, which stays the
+publication's one photograph. That is
 costume for readers and nothing else. **It never enters `panel/judges.json` or
 any judge's prompt**, for the reason above: a persona returns a caricature, and
 a comic persona returns a worse one. The jokes are allowed only because each is
