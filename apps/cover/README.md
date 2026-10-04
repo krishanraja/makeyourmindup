@@ -22,6 +22,7 @@ the root would let a production build succeed from the wrong folder.
 | `brand/` | The two Canva exports every logo file is derived from, the operating-theatre photo the cover is cut from, and the standing robot the Substack welcome image is cut from |
 | `public/brand/`, `app/icon.png`, `app/apple-icon.png` | Derived logo files. Regenerate with `npm run assets` |
 | `public/cover/` | The cover's photo, cut at the table's edge, and the threads that hang into the headline. Regenerate with `npm run assets` |
+| `brand/panel/`, `public/panel/` | The panel's portraits, one source per judge as `<id>-source.webp`, and the cut portraits and heads strip the staff box and the panel sheet use. A judge without a source gets the standing robot as a stand-in. Regenerate with `npm run assets` |
 | `substack-kit/` | The Substack refresh kit: paste-in copy and images. See its own README |
 | `scripts/` | Asset derivation, kit rendering and screenshots |
 

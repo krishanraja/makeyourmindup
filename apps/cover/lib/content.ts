@@ -14,6 +14,21 @@ export type Call = {
 
 export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'spotify'
 
+/** A staff box row. `link` opens the panel, at one judge when it names one. */
+export type StaffRow = { k: string; v: string; link?: { text: string; judge?: string }; heads?: boolean }
+
+export type Judge = {
+  id: string
+  name: string
+  stamp: 'absolute' | 'veto' | 'none' | 'chair'
+  says: string
+  asks: string
+  offLimits: string
+  footnote?: string
+  alt: string
+}
+export const JUDGES = site.panel.cards as Judge[]
+
 export const SITE = site
 type Config = Omit<typeof config, 'scoreboard' | 'platforms'> & {
   scoreboard: { show: boolean; calls: Call[] }

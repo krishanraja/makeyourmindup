@@ -236,7 +236,11 @@
       },
       {
         "k": "Checked by",
-        "v": "A blind panel of AI judges, then Krish, who gets the final say"
+        "v": "A blind panel of AI judges, then Krish, who gets the final say",
+        "link": {
+          "text": "A blind panel of AI judges"
+        },
+        "heads": true
       },
       {
         "k": "Jargon",
@@ -244,17 +248,151 @@
       },
       {
         "k": "Sermons",
-        "v": "None. A machine checks."
+        "v": "None. A machine checks.",
+        "link": {
+          "text": "A machine",
+          "judge": "preacher_catcher"
+        }
       },
       {
         "k": "Em dashes",
-        "v": "Also none"
+        "v": "Also none",
+        "link": {
+          "text": "Also none",
+          "judge": "line_editor"
+        }
       }
     ],
     "bio": "Krish writes every piece, reads the audio edition and fronts the Shorts. He has spent sixteen years building commercial businesses across media, tech and telecoms, and now spends most days building with AI.",
     "photoAlt": "Krish Raja, editor of makeyourmindup, pushing his glasses up for a closer look",
     "site": "krishraja.com",
     "linkedin": "LinkedIn"
+  },
+  "panel": {
+    "eyebrow": "The panel",
+    "line": "Ten robots read every draft blind: no byline, no author, no idea what Krish liked last time. Any of them can stop a piece. None of them can approve one.",
+    "bar": [
+      "Every judge 7.5 or more",
+      "Average 8.4 or more",
+      "No veto standing",
+      "A veto clears by fixing the work, never by a vote"
+    ],
+    "stamps": {
+      "absolute": "Absolute veto",
+      "veto": "Veto",
+      "none": "No veto",
+      "chair": "Not a judge"
+    },
+    "asks": "Asks",
+    "offLimits": "Off limits",
+    "turn": "Turn over",
+    "turnBack": "Turn back",
+    "meet": "Meet the panel",
+    "close": "Close",
+    "previous": "Previous judge",
+    "next": "Next judge",
+    "cards": [
+      {
+        "id": "preacher_catcher",
+        "name": "The Preacher-Catcher",
+        "stamp": "absolute",
+        "says": "That last line wants to be a poster. Net.",
+        "asks": "Does any sentence tell you what to conclude, believe or become?",
+        "offLimits": "Everything else. Reads for one thing. Has never been moved by a closing line, and is proud of it.",
+        "alt": "A felt robot in a pith helmet holding an enormous butterfly net with a tiny felt pulpit caught inside"
+      },
+      {
+        "id": "fact_checker",
+        "name": "The Fact Checker",
+        "stamp": "absolute",
+        "says": "Lovely number. Who made it?",
+        "asks": "Who produced this number, when, counting what?",
+        "offLimits": "Whether the argument is any good. Would check the sums on a birthday card.",
+        "alt": "A small felt robot in sleeve garters with a jeweller's loupe in its visor, holding a ledger bigger than itself"
+      },
+      {
+        "id": "cold_reader",
+        "name": "The Cold Reader",
+        "stamp": "veto",
+        "says": "I've had fifteen seconds and half a coffee. What is this?",
+        "asks": "Fifteen seconds in, can you say what this is about and why it matters to you?",
+        "offLimits": "Craft. Has never noticed a semicolon. Not a psychic, and has asked us to stop saying so.",
+        "alt": "A felt robot in a dressing gown with a mug and an egg timer, its visor half lowered like a sleepy eyelid"
+      },
+      {
+        "id": "sceptic",
+        "name": "The Sceptic",
+        "stamp": "veto",
+        "says": "Fine. Now argue it with someone who knows.",
+        "asks": "What would a well-informed person who disagrees say, and does this survive it?",
+        "offLimits": "Tone and style. Could not be charmed by a brass band.",
+        "alt": "A felt robot with its arms folded and one felt eyebrow stitched permanently raised"
+      },
+      {
+        "id": "line_editor",
+        "name": "The Line Editor",
+        "stamp": "veto",
+        "says": "Is that an em dash? In this house?",
+        "asks": "Would a good editor let this line through?",
+        "offLimits": "Argument, evidence and pictures. Would correct the grammar on a ransom note.",
+        "alt": "A felt robot with reading glasses on a chain, holding a red pencil the size of a lance"
+      },
+      {
+        "id": "art_director",
+        "name": "The Art Director",
+        "stamp": "veto",
+        "says": "Lovely chart. What's it for?",
+        "asks": "Does the picture carry the argument, or decorate it?",
+        "offLimits": "Copy. May sigh at a headline. May not touch it. Sighs a lot.",
+        "alt": "A felt robot in a black polo neck and round black glasses, holding up a colour swatch fan and one thumb"
+      },
+      {
+        "id": "distribution",
+        "name": "The Distribution Judge",
+        "stamp": "veto",
+        "says": "Sound's off. Thumbnail's the size of a stamp. Still with me?",
+        "asks": "Does this survive a thumbnail, a muted autoplay and a collapsed first line?",
+        "offLimits": "Long-form structure. Has not finished a paragraph this decade.*",
+        "footnote": "*Unverified. The Fact Checker has been told.",
+        "alt": "A felt robot holding a phone as big as its head, thumb mid-scroll, unplugged earbuds dangling"
+      },
+      {
+        "id": "continuity",
+        "name": "The Continuity Judge",
+        "stamp": "veto",
+        "says": "We said this three pieces ago. Differently.",
+        "asks": "Have we said this, contradicted this, or used this angle before?",
+        "offLimits": "The piece in isolation. Remembers everything we have published and holds it against us.",
+        "alt": "A felt robot with a card-index drawer for a chest, holding a ball of red string"
+      },
+      {
+        "id": "agency",
+        "name": "The Agency Judge",
+        "stamp": "veto",
+        "says": "Can they check it themselves?",
+        "asks": "Does a reader finish more able to judge for themselves, or just better informed?",
+        "offLimits": "Stating the mission. Has the banner ready. The Preacher-Catcher will not let them unroll it.",
+        "alt": "A felt robot clutching a rolled-up protest banner tied shut with string"
+      },
+      {
+        "id": "commissioner",
+        "name": "The Commissioner",
+        "stamp": "none",
+        "says": "Fine piece. Wrong week.",
+        "asks": "Against everything else we could have run this week, was this the right use of the day?",
+        "offLimits": "Craft, evidence and pictures. No veto, because opportunity cost is Krish's call. Finds this maddening.",
+        "alt": "A felt robot in a pinstripe waistcoat and green eyeshade, with a pocket watch and a wall calendar under one arm"
+      },
+      {
+        "id": "chair",
+        "name": "The Chair",
+        "stamp": "chair",
+        "says": "The interesting bit is where they split.",
+        "asks": "Where did the panel disagree, and which vetoes are still standing?",
+        "offLimits": "Scoring, vetoing and softening a finding. Adds up, names, writes one paragraph. Very comfortable.",
+        "alt": "A felt wingback armchair with a robot visor stitched onto its headrest"
+      }
+    ]
   },
   "footer": {
     "line": "Made in public. Corrections welcome in the Substack comments.",

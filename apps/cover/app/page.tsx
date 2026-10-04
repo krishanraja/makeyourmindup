@@ -3,6 +3,7 @@ import { Cover } from '@/components/Cover'
 import { Footer } from '@/components/Footer'
 import { Marquee } from '@/components/Marquee'
 import { Newsstand } from '@/components/Newsstand'
+import { PanelSheet } from '@/components/PanelSheet'
 import { Platforms } from '@/components/Platforms'
 import { Scoreboard } from '@/components/Scoreboard'
 import { StaffBox } from '@/components/StaffBox'
@@ -33,6 +34,7 @@ export default async function Page() {
         <Newsstand posts={posts} />
         <Platforms />
         <StaffBox />
+        <PanelSheet />
       </main>
       <Footer />
     </>

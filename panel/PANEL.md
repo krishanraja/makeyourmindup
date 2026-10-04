@@ -55,6 +55,16 @@ power to soften a finding. **The split is the interesting part.** Unanimity at 8
 is competence. A 9.5 from the Cold Reader against a 6 from the Sceptic is the
 conversation worth having.
 
+## The faces on the cover are costume
+
+The cover introduces the ten, and the Chair, as felt robots with a prop and a
+one-line joke each (`apps/cover/content/site.json`, under `panel`). That is
+costume for readers and nothing else. **It never enters `panel/judges.json` or
+any judge's prompt**, for the reason above: a persona returns a caricature, and
+a comic persona returns a worse one. The jokes are allowed only because each is
+a real rule from this roster, taken literally. When the roster changes, the
+cards change with it. The cards never change the roster.
+
 ## Blind means blind
 
 A judge sees the artifact and its format contract. Nothing else. No author, no
