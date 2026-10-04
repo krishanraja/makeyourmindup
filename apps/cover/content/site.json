@@ -6,7 +6,7 @@
   "strap": {
     "left": "Vol. 01",
     "centre": "Mon · Wed · Fri",
-    "right": "Free to read*"
+    "right": "Free to read"
   },
   "cover": {
     "splash": [
@@ -15,7 +15,6 @@
     ],
     "dek": "We look under the hood, follow the money and mind the gap. You make your mind up.",
     "issue": "Issue 00",
-    "footnote": "*Every piece, in full. That is the whole small print.",
     "theatre": {
       "photoAlt": "A hand-sewn felt robot lies on an operating table under a surgical lamp. Its chest seam is unpicked and the stuffing shows.",
       "chartSection": "under.the.hood",
@@ -37,9 +36,7 @@
   "subscribe": {
     "label": "Get every piece in your inbox",
     "placeholder": "you@work.com",
-    "button": "Subscribe free",
-    "note": "Takes you to Substack to confirm. Unsubscribe in one click.",
-    "sent": "Nearly there. Confirm in the Substack tab."
+    "button": "Subscribe free"
   },
   "marquee": [
     "under.the.hood · Mondays",

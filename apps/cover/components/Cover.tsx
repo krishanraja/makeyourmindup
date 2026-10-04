@@ -1,7 +1,4 @@
-'use client'
-
 import Image from 'next/image'
-import { useState } from 'react'
 import { CONFIG, SITE } from '@/lib/content'
 import styles from './Cover.module.css'
 
@@ -20,7 +17,6 @@ export function Cover() {
   const t = SITE.cover
   const th = t.theatre
   const s = SITE.subscribe
-  const [sent, setSent] = useState(false)
   const [line1, line2] = t.splash
   const cls: Record<string, string> = { under_the_hood: styles.uth, follow_the_money: styles.ftm, mind_the_gap: styles.mtg }
   const short = (day: string) => day.slice(0, 3)
@@ -106,7 +102,6 @@ export function Cover() {
           <div className={styles.lede}>
             <p className={styles.dek}>{t.dek}</p>
             {key(styles.keyNarrow)}
-            <p className={`${styles.small} ${styles.footnoteWide}`}>{t.footnote}</p>
           </div>
           {/* A plain GET form to Substack, which prefills the email. Works with JavaScript off. */}
           <form
@@ -114,8 +109,6 @@ export function Cover() {
             action={`${CONFIG.substackUrl}/subscribe`}
             method="get"
             target="_blank"
-            onSubmit={() => setSent(true)}
-            aria-describedby="cover-note"
           >
             <label className={styles.label} htmlFor="cover-email">
               {s.label}
@@ -124,10 +117,6 @@ export function Cover() {
               <input id="cover-email" name="email" type="email" inputMode="email" autoComplete="email" placeholder={s.placeholder} required />
               <button type="submit">{s.button}</button>
             </div>
-            <p id="cover-note" className={`${styles.small} ${styles.note2}`} aria-live="polite">
-              {sent ? s.sent : s.note}
-            </p>
-            <p className={`${styles.small} ${styles.footnotePhone}`}>{t.footnote}</p>
           </form>
         </div>
       </div>
