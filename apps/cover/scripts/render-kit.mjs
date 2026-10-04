@@ -52,7 +52,7 @@ const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 const TH = SITE.cover.theatre
 const [HED1, HED2] = SITE.cover.splash
 const DAYS = SITE.strap.centre
-const FREE = SITE.strap.right.replace(/\*$/, '') // no small print here, so no asterisk
+const FREE = SITE.strap.right
 const file = f => `file://${resolve(f)}`
 const DATELINE = `<p class="date"><span>${DAYS}</span><span class="strong">${FREE}</span></p>`
 
