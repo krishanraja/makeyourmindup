@@ -149,9 +149,10 @@ Waiting on Krish, none of which a tool should answer:
   runs by the step plan.
 - **Pick the remaining two dry run subjects.** follow.the.money and mind.the.gap
   are unpicked.
-- **The apex.** The cover took `makeyourmindup.ai` on 2026-09-25 and the
-  Substack keeps its own address, so what is left is whether the publication
-  later moves to `read.makeyourmindup.ai`. Not decided.
+- **The Substack address.** Settled on 2026-10-05: the publication lives at
+  `home.makeyourmindup.ai`, a word that covers the videos as well as the
+  writing. The cover's Subscribe button and feed point there; Substack's own
+  name for it, `mindmakerlive`, stays in its API.
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.

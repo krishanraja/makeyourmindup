@@ -60,8 +60,8 @@ teal background `#042f2e` and a green accent `#059669`.
 
 ## Steps
 
-Settings live at `https://mindmakerlive.substack.com/publish/settings`; the
-website editor at `https://mindmakerlive.substack.com/publish/website-editor/home`.
+Settings live at `https://home.makeyourmindup.ai/publish/settings`; the
+website editor at `https://home.makeyourmindup.ai/publish/website-editor/home`.
 
 1. Publication name: already `makeyourmindup`. Leave it.
 2. Settings, Basics, Short description: the line under "Short description" in
