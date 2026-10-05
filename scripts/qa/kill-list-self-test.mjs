@@ -31,7 +31,11 @@ test('an exclamation mark is a veto', () => {
 test('a retired name is a veto', () => {
   assert.ok(ids('This ran in Built with AI last year.').includes('retired_name'))
   assert.ok(ids('Mindmaker Live covered it.').includes('retired_name'))
-  assert.ok(ids('It was a follow.the.money piece.').includes('retired_name'))
+  assert.ok(ids('It was a split.the.bill piece.').includes('retired_name'))
+  assert.ok(ids('It was a lift.the.lid piece.').includes('retired_name'))
+  // Live again since the 2026-09-25 rename, so they must stay quiet.
+  assert.ok(!ids('Mondays are follow.the.money.').includes('retired_name'))
+  assert.ok(!ids('Open it up in under.the.hood.').includes('retired_name'))
 })
 
 test('a product name inside editorial is a veto', () => {
@@ -46,6 +50,14 @@ test('corporate filler is a veto', () => {
 test('a closing moral is a veto', () => {
   assert.ok(ids('What this means for leaders is simple.').includes('preach_pattern'))
   assert.ok(ids('The lesson here is that defaults matter.').includes('preach_pattern'))
+})
+
+test('paid tier may name CTRL and nothing else is relaxed', () => {
+  const paid = body => `---\nkill_list_scope: paid_tier\n---\n${body}\n`
+  assert.deepEqual(ids(paid('Beta access to CTRL.')), [], 'CTRL is the permitted paid-tier connection')
+  assert.ok(ids('Beta access to CTRL.\n').includes('product_in_editorial'), 'CTRL stays vetoed outside the paid tier')
+  assert.ok(ids(paid('Built by Mindmake.')).includes('product_in_editorial'), 'Mindmake stays vetoed in the paid tier')
+  assert.ok(ids(paid('A line — with an em dash.')).includes('em_dash'), 'em dashes stay vetoed in the paid tier')
 })
 
 test('canon is scanned for em dashes and nothing else', () => {
@@ -79,15 +91,20 @@ test('arithmetic after an evidence paragraph is quiet', () => {
 })
 
 test('the wrong day is a veto, and only when live format data is supplied', () => {
-  const piece = '---\nformat: split_the_bill\ndate: 2026-09-18\n---\nThe renewal quote landed.\n'
+  const piece = '---\nformat: follow_the_money\ndate: 2026-09-18\n---\nThe renewal quote landed.\n'
   assert.deepEqual(ids(piece), [], 'without --formats the check is skipped, not guessed')
   assert.ok(check(piece).findings.some(f => f.id === 'day_check_skipped'))
-  // 2026-09-18 is a Friday, and split.the.bill runs Wednesdays.
-  assert.ok(check(piece, { formats: { split_the_bill: 'Wednesday' } })
-    .findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
-  const right = '---\nformat: split_the_bill\ndate: 2026-09-16\n---\nThe renewal quote landed.\n'
-  assert.deepEqual(check(right, { formats: { split_the_bill: 'Wednesday' } })
-    .findings.filter(f => f.level === 'veto'), [])
+  // 2026-09-18 is a Friday, and follow.the.money runs Mondays (since 2026-10-05).
+  const live = { formats: { follow_the_money: 'Monday', under_the_hood: 'Wednesday', mind_the_gap: 'Friday' } }
+  assert.ok(check(piece, live).findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
+  // Its old day is now the wrong day.
+  const oldDay = '---\nformat: follow_the_money\ndate: 2026-10-07\n---\nThe renewal quote landed.\n'
+  assert.ok(check(oldDay, live).findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
+  const right = '---\nformat: follow_the_money\ndate: 2026-10-05\n---\nThe renewal quote landed.\n'
+  assert.deepEqual(check(right, live).findings.filter(f => f.level === 'veto'), [])
+  // And under.the.hood moved to Wednesdays.
+  const hood = '---\nformat: under_the_hood\ndate: 2026-10-07\n---\nThe part list came apart.\n'
+  assert.deepEqual(check(hood, live).findings.filter(f => f.level === 'veto'), [])
 })
 
 test('a date is not a load-bearing number', () => {

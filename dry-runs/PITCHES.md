@@ -12,8 +12,8 @@ Read `UNVERIFIED.md` before using any number here.
 
 `calibration/2026-09-17-dry-run-picks.json` records **one of three** locked:
 
-- **lift.the.lid:** `lid1`, Meta put an agent in front of two billion people.
-- **split.the.bill:** not picked.
+- **under.the.hood:** `lid1`, Meta put an agent in front of two billion people.
+- **follow.the.money:** not picked.
 - **mind.the.gap:** not picked.
 
 The template is not fixed until all three are written and judged. That is the
@@ -36,7 +36,7 @@ thing:
 Each winner is then rebuilt as written, audio and vertical video, because that
 is where the template stops being theoretical.
 
-## split.the.bill candidates
+## follow.the.money candidates
 
 | id | Headline | The number to chase |
 |---|---|---|

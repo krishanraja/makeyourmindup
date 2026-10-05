@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "title": "makeyourmindup: AI, unpicked",
+    "description": "We follow the money, look under the hood and mind the gap. You make your mind up. A free publication on how AI really works, every Monday, Wednesday and Friday."
+  },
+  "strap": {
+    "left": "Vol. 01",
+    "centre": "Mon · Wed · Fri",
+    "right": "Free to read"
+  },
+  "cover": {
+    "splash": [
+      "AI,",
+      "unpicked."
+    ],
+    "dek": "We follow the money, look under the hood and mind the gap. You make your mind up.",
+    "issue": "Issue 00",
+    "theatre": {
+      "photoAlt": "A hand-sewn felt robot lies on an operating table under a surgical lamp. Its chest seam is unpicked and the stuffing shows.",
+      "chartSection": "under.the.hood",
+      "chartLine": "Real, or theatre?",
+      "stuffing": {
+        "part": "the stuffing",
+        "stamp": "Real"
+      },
+      "visor": {
+        "part": "the visor",
+        "stamp": "Theatre"
+      },
+      "wave": {
+        "part": "the wave",
+        "stamp": "Theatre"
+      }
+    }
+  },
+  "subscribe": {
+    "label": "Get every piece in your inbox",
+    "placeholder": "you@work.com",
+    "button": "Subscribe free"
+  },
+  "marquee": [
+    "follow.the.money · Mondays",
+    "No added sermons",
+    "under.the.hood · Wednesdays",
+    "Free from jargon",
+    "mind.the.gap · Fridays",
+    "Every call scored in public",
+    "Contains British spelling"
+  ],
+  "contents": {
+    "eyebrow": "Contents",
+    "title": "What's inside, every week."
+  },
+  "subchannels": [
+    {
+      "slug": "follow_the_money",
+      "label": "follow.the.money",
+      "day": "Mondays",
+      "tag": "Bring a calculator",
+      "page": "04",
+      "coverLine": "Who gets paid when AI gets bought.",
+      "oneLiner": "How money gets made with AI, and by whom.",
+      "body": "Every AI deal has a bill, and somebody pays it. Every Monday we trace the money from the invoice to the bank account, and show who comes out ahead and who gets stuck with the tab.",
+      "questionLabel": "The question every piece answers",
+      "question": "Where does the money move, and who ends up better or worse off?",
+      "diagram": {
+        "buyer": "you, the buyer",
+        "app": "the app",
+        "cloud": "the cloud",
+        "lab": "the model lab",
+        "ghost": "your old supplier",
+        "ghostNote": "money that stopped coming",
+        "receiptTitle": "Receipt",
+        "receiptLines": [
+          "Who paid",
+          "Who got paid",
+          "Who's better off",
+          "Who's worse off"
+        ],
+        "receiptTotal": "Answers: Monday"
+      },
+      "caption": "Illustration. The real ones name every source.",
+      "headline": [
+        "Who gets paid",
+        "when AI gets",
+        "bought."
+      ]
+    },
+    {
+      "slug": "under_the_hood",
+      "label": "under.the.hood",
+      "day": "Wednesdays",
+      "tag": "Screwdriver included",
+      "page": "08",
+      "coverLine": "Real, or theatre? We take it apart.",
+      "oneLiner": "How it gets built, and why it works.",
+      "body": "Every Wednesday we open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.",
+      "questionLabel": "The question every piece answers",
+      "question": "What actually goes together in a shipped thing, and why did this one work?",
+      "diagram": {
+        "centre": "the shiny new thing",
+        "parts": [
+          {
+            "name": "the model",
+            "mark": "real"
+          },
+          {
+            "name": "the launch video",
+            "mark": "theatre"
+          },
+          {
+            "name": "the data",
+            "mark": "real"
+          },
+          {
+            "name": "the waitlist",
+            "mark": "theatre"
+          },
+          {
+            "name": "the people checking it",
+            "mark": "real"
+          }
+        ],
+        "real": "Real",
+        "theatre": "Theatre"
+      },
+      "caption": "Illustration. The real ones show the evidence for every stamp.",
+      "headline": [
+        "Real, or",
+        "theatre?",
+        "We take it apart."
+      ]
+    },
+    {
+      "slug": "mind_the_gap",
+      "label": "mind.the.gap",
+      "day": "Fridays",
+      "tag": "The headliner",
+      "page": "12",
+      "coverLine": "What's coming, before it's obvious.",
+      "oneLiner": "The patterns, and where they lead.",
+      "body": "Most weeks, a pile of AI stories look like they have nothing to do with each other. Every Friday we lay the threads side by side, show where they cross, and put a date on what we think happens next.",
+      "questionLabel": "The question every piece answers",
+      "question": "What is the pattern, and what does it mean is coming?",
+      "diagram": {
+        "threads": [
+          "the price",
+          "the chips",
+          "the people"
+        ],
+        "axis": [
+          "then",
+          "now",
+          "next"
+        ],
+        "meet": "the pattern",
+        "call": "our call, dated"
+      },
+      "caption": "Illustration. The real ones come with dates and sources.",
+      "headline": [
+        "What's coming,",
+        "before it's",
+        "obvious."
+      ]
+    }
+  ],
+  "scoreboard": {
+    "eyebrow": "The back page",
+    "title": "Every piece makes a call. We keep score.",
+    "body": "Each piece ends with a prediction, a date and how sure we are. When the date arrives, we mark it held, broke or unclear. Misses go up as big as hits.",
+    "columns": [
+      "Held",
+      "Broke",
+      "Unclear",
+      "Open"
+    ],
+    "empty": "The board opens with the first piece.",
+    "sticker": "Misses included",
+    "due": "Due",
+    "confidence": "Confidence"
+  },
+  "newsstand": {
+    "eyebrow": "On the newsstand",
+    "title": "Fresh off the press.",
+    "emptyTitle": "The first piece is on the press.",
+    "emptyBody": "It lands on Substack first. Subscribe now and it arrives in your inbox the moment it is out.",
+    "cta": "Subscribe free",
+    "read": "Read it"
+  },
+  "platforms": {
+    "eyebrow": "Also available in",
+    "title": "Pick your screen.",
+    "live": "Live",
+    "soon": "At the printers",
+    "soonCta": "Hear when it's live",
+    "tiles": [
+      {
+        "key": "substack",
+        "name": "Substack",
+        "blurb": "The home of every piece. Read it in full, free, in your inbox or on the web.",
+        "cta": "Read on Substack"
+      },
+      {
+        "key": "youtube",
+        "name": "YouTube",
+        "blurb": "One Short per piece. The whole argument, fast."
+      },
+      {
+        "key": "instagram",
+        "name": "Instagram",
+        "blurb": "The Short, plus a flipbook carousel you swipe through."
+      },
+      {
+        "key": "tiktok",
+        "name": "TikTok",
+        "blurb": "The same Shorts, on your For You page."
+      },
+      {
+        "key": "spotify",
+        "name": "Spotify",
+        "blurb": "The audio edition, read by Krish."
+      }
+    ]
+  },
+  "staff": {
+    "eyebrow": "The staff box",
+    "title": "Who makes this.",
+    "rows": [
+      {
+        "k": "Editor",
+        "v": "Krish Raja"
+      },
+      {
+        "k": "Written for",
+        "v": "Busy people who want AI explained without the sales pitch"
+      },
+      {
+        "k": "Checked by",
+        "v": "A blind panel of AI judges, then Krish, who gets the final say",
+        "link": {
+          "text": "A blind panel of AI judges"
+        },
+        "heads": true
+      },
+      {
+        "k": "Jargon",
+        "v": "Translated on arrival"
+      },
+      {
+        "k": "Sermons",
+        "v": "None. A machine checks.",
+        "link": {
+          "text": "A machine",
+          "judge": "preacher_catcher"
+        }
+      },
+      {
+        "k": "Em dashes",
+        "v": "Also none",
+        "link": {
+          "text": "Also none",
+          "judge": "line_editor"
+        }
+      }
+    ],
+    "bio": "Krish writes every piece, reads the audio edition and fronts the Shorts. He has spent sixteen years building commercial businesses across media, tech and telecoms, and now spends most days building with AI.",
+    "photoAlt": "Krish Raja, editor of makeyourmindup, pushing his glasses up for a closer look",
+    "site": "krishraja.com",
+    "linkedin": "LinkedIn"
+  },
+  "panel": {
+    "eyebrow": "The panel",
+    "line": "Ten judges read every draft blind: no byline, no author, no idea what Krish liked last time. Any of them can stop a piece. None of them can approve one.",
+    "hint": "Tap a face to meet one.",
+    "counter": "{n} of {total}",
+    "stamps": {
+      "absolute": "Absolute veto",
+      "veto": "Veto",
+      "none": "No veto",
+      "chair": "Not a judge"
+    },
+    "asks": "Asks",
+    "offLimits": "Off limits",
+    "turn": "Turn over",
+    "turnBack": "Turn back",
+    "close": "Close",
+    "cards": [
+      {
+        "id": "preacher_catcher",
+        "name": "The Preacher-Catcher",
+        "stamp": "absolute",
+        "says": "That last line wants to be a poster. Net.",
+        "asks": "Does any sentence tell you what to conclude, believe or become?",
+        "offLimits": "Everything else. Reads for one thing. Has never been moved by a closing line, and is proud of it.",
+        "alt": "A smug judge in a pith helmet with a butterfly net, a tiny pulpit caught in it"
+      },
+      {
+        "id": "fact_checker",
+        "name": "The Fact Checker",
+        "stamp": "absolute",
+        "says": "Lovely number. Who made it?",
+        "asks": "Who produced this number, when, counting what?",
+        "offLimits": "Whether the argument is any good. Would check the sums on a birthday card.",
+        "alt": "A frowning judge with a jeweller's loupe in one eye, holding a ledger"
+      },
+      {
+        "id": "cold_reader",
+        "name": "The Cold Reader",
+        "stamp": "veto",
+        "says": "I've had fifteen seconds and half a coffee. What is this?",
+        "asks": "Fifteen seconds in, can you say what this is about and why it matters to you?",
+        "offLimits": "Craft. Has never noticed a semicolon. Not a psychic, and has asked us to stop saying so.",
+        "alt": "A barely awake judge in a dressing gown, with bed hair and a steaming mug"
+      },
+      {
+        "id": "sceptic",
+        "name": "The Sceptic",
+        "stamp": "veto",
+        "says": "Fine. Now argue it with someone who knows.",
+        "asks": "What would a well-informed person who disagrees say, and does this survive it?",
+        "offLimits": "Tone and style. Could not be charmed by a brass band.",
+        "alt": "A judge with arms folded and one eyebrow raised very high"
+      },
+      {
+        "id": "line_editor",
+        "name": "The Line Editor",
+        "stamp": "veto",
+        "says": "Is that an em dash? In this house?",
+        "asks": "Would a good editor let this line through?",
+        "offLimits": "Argument, evidence and pictures. Would correct the grammar on a ransom note.",
+        "alt": "A judge peering over half-moon glasses on a chain, holding an enormous pencil"
+      },
+      {
+        "id": "art_director",
+        "name": "The Art Director",
+        "stamp": "veto",
+        "says": "Lovely chart. What's it for?",
+        "asks": "Does the picture carry the argument, or decorate it?",
+        "offLimits": "Copy. May sigh at a headline. May not touch it. Sighs a lot.",
+        "alt": "A bald judge in a black polo neck and round black glasses, holding up a thumb"
+      },
+      {
+        "id": "distribution",
+        "name": "The Distribution Judge",
+        "stamp": "veto",
+        "says": "Sound's off. Thumbnail's the size of a stamp. Still with me?",
+        "asks": "Does this survive a thumbnail, a muted autoplay and a collapsed first line?",
+        "offLimits": "Long-form structure. Has not finished a paragraph this decade.*",
+        "footnote": "*Unverified. The Fact Checker has been told.",
+        "alt": "A judge staring down at a glowing phone, earbuds dangling unplugged"
+      },
+      {
+        "id": "continuity",
+        "name": "The Continuity Judge",
+        "stamp": "veto",
+        "says": "We said this three pieces ago. Differently.",
+        "asks": "Have we said this, contradicted this, or used this angle before?",
+        "offLimits": "The piece in isolation. Remembers everything we have published and holds it against us.",
+        "alt": "A judge with a pencil through a bun and a card-index drawer for a chest"
+      },
+      {
+        "id": "agency",
+        "name": "The Agency Judge",
+        "stamp": "veto",
+        "says": "Can they check it themselves?",
+        "asks": "Does a reader finish more able to judge for themselves, or just better informed?",
+        "offLimits": "Stating the mission. Has the banner ready. The Preacher-Catcher will not let them unroll it.",
+        "alt": "A judge mid-sentence, holding a rolled-up banner tied shut on a pole"
+      },
+      {
+        "id": "commissioner",
+        "name": "The Commissioner",
+        "stamp": "none",
+        "says": "Fine piece. Wrong week.",
+        "asks": "Against everything else we could have run this week, was this the right use of the day?",
+        "offLimits": "Craft, evidence and pictures. No veto, because opportunity cost is Krish's call. Finds this maddening.",
+        "alt": "An unimpressed judge with a moustache, a green eyeshade and a waistcoat with a watch chain"
+      },
+      {
+        "id": "chair",
+        "name": "The Chair",
+        "stamp": "chair",
+        "says": "The interesting bit is where they split.",
+        "asks": "Where did the panel disagree, and which vetoes are still standing?",
+        "offLimits": "Scoring, vetoing and softening a finding. Adds up, names, writes one paragraph. Very comfortable.",
+        "alt": "A wingback armchair with a calm face on its backrest",
+        "footnote": "The bar: every judge 7.5 or more, an average of 8.4 or more, and no veto standing."
+      }
+    ]
+  },
+  "footer": {
+    "line": "Made in public. Corrections welcome in the Substack comments.",
+    "copyright": "makeyourmindup",
+    "subscribe": "Subscribe free",
+    "top": "Back to the cover"
+  },
+  "notFound": {
+    "title": "This page hasn't made its mind up.",
+    "body": "Neither have we, about this one. The cover is a safer bet.",
+    "cta": "Back to the cover"
+  },
+  "a11y": {
+    "skip": "Skip to the contents",
+    "masthead": "makeyourmindup",
+    "newTab": "opens in a new tab",
+    "illustration": "Illustration"
+  }
+}
