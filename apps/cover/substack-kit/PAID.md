@@ -41,7 +41,7 @@ You went founding member, which means you paid more than you had to. Thank you t
 Free:
 
 - Every written piece, in full
-- under.the.hood on Mondays, follow.the.money on Wednesdays, mind.the.gap on Fridays
+- follow.the.money on Mondays, under.the.hood on Wednesdays, mind.the.gap on Fridays
 
 Paid:
 

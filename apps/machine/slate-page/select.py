@@ -83,11 +83,14 @@ def take(fmt, pool, n):
         if len(out) == n: break
     return out
 
-# Three fixed slots: the hero, then the money slot, then Monday's. under.the.hood
-# was a half slot until 2026-09-26, filling only against a raised bar of 7.5 as
-# an extra piece; it became a weekly Monday slot when the makeyourmindup cover
-# page went live promising Mon, Wed and Fri (Krish: "Correct the engine's table
-# and anywhere else, its out of date"), so it now fills like the other two.
+# Three fixed slots: the hero, then the money slot (Mondays), then
+# under.the.hood (Wednesdays). under.the.hood was a half slot until 2026-09-26,
+# filling only against a raised bar of 7.5 as an extra piece; it became a weekly
+# Monday slot when the makeyourmindup cover page went live promising Mon, Wed
+# and Fri (Krish: "Correct the engine's table and anywhere else, its out of
+# date"), so it now fills like the other two. On 2026-10-05 it moved to
+# Wednesdays and follow.the.money to Mondays (Krish: "Let's just make follow
+# the money permanently a monday thing, and swap it out.").
 for fmt in ('mind_the_gap', 'follow_the_money', 'under_the_hood'):
     verified = [r for r in elig if r['format'] == fmt and r['check_state'] == 'verified']
     pick = take(fmt, verified, 1)

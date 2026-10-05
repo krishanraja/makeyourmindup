@@ -233,7 +233,9 @@ Slots come from `venture_formats.target_per_week`: `mind_the_gap` 1,
 best scoring survivor claimed by that format. under.the.hood was a half slot
 (0.5, no fixed day) until 2026-09-26, when it moved to Mondays because the
 makeyourmindup cover page promises Mon, Wed and Fri; the half-slot rule this
-section used to propose went with it.
+section used to propose went with it. On 2026-10-05 it moved to Wednesdays and
+follow.the.money to Mondays (Krish: "Let's just make follow the money
+permanently a monday thing, and swap it out.").
 
 Caps, applied after ranking: at most two `coverage = broad` picks across the
 slate (rubric gate `broad_cap`); at most two picks from one intake source

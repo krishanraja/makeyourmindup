@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "makeyourmindup: AI, unpicked",
-    "description": "We look under the hood, follow the money and mind the gap. You make your mind up. A free publication on how AI really works, every Monday, Wednesday and Friday."
+    "description": "We follow the money, look under the hood and mind the gap. You make your mind up. A free publication on how AI really works, every Monday, Wednesday and Friday."
   },
   "strap": {
     "left": "Vol. 01",
@@ -13,7 +13,7 @@
       "AI,",
       "unpicked."
     ],
-    "dek": "We look under the hood, follow the money and mind the gap. You make your mind up.",
+    "dek": "We follow the money, look under the hood and mind the gap. You make your mind up.",
     "issue": "Issue 00",
     "theatre": {
       "photoAlt": "A hand-sewn felt robot lies on an operating table under a surgical lamp. Its chest seam is unpicked and the stuffing shows.",
@@ -39,10 +39,10 @@
     "button": "Subscribe free"
   },
   "marquee": [
-    "under.the.hood · Mondays",
-    "Free from jargon",
-    "follow.the.money · Wednesdays",
+    "follow.the.money · Mondays",
     "No added sermons",
+    "under.the.hood · Wednesdays",
+    "Free from jargon",
     "mind.the.gap · Fridays",
     "Every call scored in public",
     "Contains British spelling"
@@ -53,14 +53,48 @@
   },
   "subchannels": [
     {
+      "slug": "follow_the_money",
+      "label": "follow.the.money",
+      "day": "Mondays",
+      "tag": "Bring a calculator",
+      "page": "04",
+      "coverLine": "Who gets paid when AI gets bought.",
+      "oneLiner": "How money gets made with AI, and by whom.",
+      "body": "Every AI deal has a bill, and somebody pays it. Every Monday we trace the money from the invoice to the bank account, and show who comes out ahead and who gets stuck with the tab.",
+      "questionLabel": "The question every piece answers",
+      "question": "Where does the money move, and who ends up better or worse off?",
+      "diagram": {
+        "buyer": "you, the buyer",
+        "app": "the app",
+        "cloud": "the cloud",
+        "lab": "the model lab",
+        "ghost": "your old supplier",
+        "ghostNote": "money that stopped coming",
+        "receiptTitle": "Receipt",
+        "receiptLines": [
+          "Who paid",
+          "Who got paid",
+          "Who's better off",
+          "Who's worse off"
+        ],
+        "receiptTotal": "Answers: Monday"
+      },
+      "caption": "Illustration. The real ones name every source.",
+      "headline": [
+        "Who gets paid",
+        "when AI gets",
+        "bought."
+      ]
+    },
+    {
       "slug": "under_the_hood",
       "label": "under.the.hood",
-      "day": "Mondays",
+      "day": "Wednesdays",
       "tag": "Screwdriver included",
-      "page": "04",
+      "page": "08",
       "coverLine": "Real, or theatre? We take it apart.",
       "oneLiner": "How it gets built, and why it works.",
-      "body": "Every Monday we open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.",
+      "body": "Every Wednesday we open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.",
       "questionLabel": "The question every piece answers",
       "question": "What actually goes together in a shipped thing, and why did this one work?",
       "diagram": {
@@ -95,40 +129,6 @@
         "Real, or",
         "theatre?",
         "We take it apart."
-      ]
-    },
-    {
-      "slug": "follow_the_money",
-      "label": "follow.the.money",
-      "day": "Wednesdays",
-      "tag": "Bring a calculator",
-      "page": "08",
-      "coverLine": "Who gets paid when AI gets bought.",
-      "oneLiner": "How money gets made with AI, and by whom.",
-      "body": "Every AI deal has a bill, and somebody pays it. Every Wednesday we trace the money from the invoice to the bank account, and show who comes out ahead and who gets stuck with the tab.",
-      "questionLabel": "The question every piece answers",
-      "question": "Where does the money move, and who ends up better or worse off?",
-      "diagram": {
-        "buyer": "you, the buyer",
-        "app": "the app",
-        "cloud": "the cloud",
-        "lab": "the model lab",
-        "ghost": "your old supplier",
-        "ghostNote": "money that stopped coming",
-        "receiptTitle": "Receipt",
-        "receiptLines": [
-          "Who paid",
-          "Who got paid",
-          "Who's better off",
-          "Who's worse off"
-        ],
-        "receiptTotal": "Answers: Wednesday"
-      },
-      "caption": "Illustration. The real ones name every source.",
-      "headline": [
-        "Who gets paid",
-        "when AI gets",
-        "bought."
       ]
     },
     {

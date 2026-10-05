@@ -6,15 +6,15 @@ makeyourmindup
 
 ## Short description
 
-We look under the hood, follow the money and mind the gap. You make your mind up.
+We follow the money, look under the hood and mind the gap. You make your mind up.
 
 ## About page
 
 We unpick how AI really works, in plain English, three times a week.
 
-**under.the.hood, every Monday.** We open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.
+**follow.the.money, every Monday.** Every AI deal has a bill, and somebody pays it. We trace the money from the invoice to the bank account, and show who comes out ahead and who gets stuck with the tab.
 
-**follow.the.money, every Wednesday.** Every AI deal has a bill, and somebody pays it. We trace the money from the invoice to the bank account, and show who comes out ahead and who gets stuck with the tab.
+**under.the.hood, every Wednesday.** We open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.
 
 **mind.the.gap, every Friday.** Most weeks, a pile of AI stories look like they have nothing to do with each other. We lay the threads side by side, show where they cross, and put a date on what we think happens next.
 
@@ -32,7 +32,7 @@ Subject: You're in.
 
 Thanks for subscribing to makeyourmindup.
 
-On Mondays, under.the.hood takes apart something that shipped and stamps every part real or theatre. On Wednesdays, follow.the.money traces where the money goes in an AI deal and who ends up better or worse off. On Fridays, mind.the.gap lines up the stories everyone else covered separately and puts a date on what we think comes next.
+On Mondays, follow.the.money traces where the money goes in an AI deal and who ends up better or worse off. On Wednesdays, under.the.hood takes apart something that shipped and stamps every part real or theatre. On Fridays, mind.the.gap lines up the stories everyone else covered separately and puts a date on what we think comes next.
 
 Every piece ends with a call and a date. We keep score in public, misses included.
 

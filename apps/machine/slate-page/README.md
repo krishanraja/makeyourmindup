@@ -20,9 +20,9 @@ which is replaced with a JSON object of this shape before publishing:
   "proposed_on": "2026-09-19",
   "summary": "six lines a person reads on a phone",
   "formats": [
-    { "slug": "follow_the_money", "cadence": "Wednesdays", "standing_question": "...", "empty_note": "..." },
+    { "slug": "follow_the_money", "cadence": "Mondays", "standing_question": "...", "empty_note": "..." },
     { "slug": "mind_the_gap",   "cadence": "Fridays, the hero", "standing_question": "..." },
-    { "slug": "under_the_hood",   "cadence": "Mondays", "standing_question": "..." }
+    { "slug": "under_the_hood",   "cadence": "Wednesdays", "standing_question": "..." }
   ],
   "suggestions": [
     { "id": "<uuid from public.suggestions>", "surface": "slate_pick", "subject_id": "c0012",
@@ -77,10 +77,11 @@ was in force when the suggestion was made.
 - **One pick and up to two alternates per format.**
 - **At most two cards from one publication across the whole slate**, so a single
   newsletter cannot own the week.
-- **under.the.hood is a fixed Monday slot**, filled like the other two, since
+- **under.the.hood is a fixed weekly slot**, filled like the other two, since
   2026-09-26, when the makeyourmindup cover page went live promising Mon, Wed
   and Fri. Until then it was a half slot that filled only against a raised bar
-  of 7.5, as an extra piece rather than a scheduled one.
+  of 7.5, as an extra piece rather than a scheduled one. It ran on Mondays
+  until 2026-10-05, when it moved to Wednesdays and follow.the.money to Mondays.
 - **Exactly one card is the swing**: the one with the weakest load-bearing
   number, so unlike every other card it has to work on the angle rather than the
   figure. That is the bet, and the card says it is one.

@@ -34,7 +34,7 @@ test('a retired name is a veto', () => {
   assert.ok(ids('It was a split.the.bill piece.').includes('retired_name'))
   assert.ok(ids('It was a lift.the.lid piece.').includes('retired_name'))
   // Live again since the 2026-09-25 rename, so they must stay quiet.
-  assert.ok(!ids('Wednesdays are follow.the.money.').includes('retired_name'))
+  assert.ok(!ids('Mondays are follow.the.money.').includes('retired_name'))
   assert.ok(!ids('Open it up in under.the.hood.').includes('retired_name'))
 })
 
@@ -94,12 +94,17 @@ test('the wrong day is a veto, and only when live format data is supplied', () =
   const piece = '---\nformat: follow_the_money\ndate: 2026-09-18\n---\nThe renewal quote landed.\n'
   assert.deepEqual(ids(piece), [], 'without --formats the check is skipped, not guessed')
   assert.ok(check(piece).findings.some(f => f.id === 'day_check_skipped'))
-  // 2026-09-18 is a Friday, and follow.the.money runs Wednesdays.
-  assert.ok(check(piece, { formats: { follow_the_money: 'Wednesday' } })
-    .findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
-  const right = '---\nformat: follow_the_money\ndate: 2026-09-16\n---\nThe renewal quote landed.\n'
-  assert.deepEqual(check(right, { formats: { follow_the_money: 'Wednesday' } })
-    .findings.filter(f => f.level === 'veto'), [])
+  // 2026-09-18 is a Friday, and follow.the.money runs Mondays (since 2026-10-05).
+  const live = { formats: { follow_the_money: 'Monday', under_the_hood: 'Wednesday', mind_the_gap: 'Friday' } }
+  assert.ok(check(piece, live).findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
+  // Its old day is now the wrong day.
+  const oldDay = '---\nformat: follow_the_money\ndate: 2026-10-07\n---\nThe renewal quote landed.\n'
+  assert.ok(check(oldDay, live).findings.some(f => f.id === 'wrong_day' && f.level === 'veto'))
+  const right = '---\nformat: follow_the_money\ndate: 2026-10-05\n---\nThe renewal quote landed.\n'
+  assert.deepEqual(check(right, live).findings.filter(f => f.level === 'veto'), [])
+  // And under.the.hood moved to Wednesdays.
+  const hood = '---\nformat: under_the_hood\ndate: 2026-10-07\n---\nThe part list came apart.\n'
+  assert.deepEqual(check(hood, live).findings.filter(f => f.level === 'veto'), [])
 })
 
 test('a date is not a load-bearing number', () => {

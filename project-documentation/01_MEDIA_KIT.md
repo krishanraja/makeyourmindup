@@ -106,9 +106,9 @@ section is how a reader ends up choosing which one to believe.
 
 | Slug | Label | Day | The question your.call asks | Diagram |
 |---|---|---|---|---|
-| `follow_the_money` | follow.the.money | Wednesdays | Where does the money move, and who ends up better or worse off? | the money map |
+| `follow_the_money` | follow.the.money | Mondays | Where does the money move, and who ends up better or worse off? | the money map |
 | `mind_the_gap` | mind.the.gap | Fridays, the hero | What is the pattern here, and what does it mean is coming? | the timeline |
-| `under_the_hood` | under.the.hood | Mondays | What would you build differently having seen inside this? | real or theatre: the annotated product shot |
+| `under_the_hood` | under.the.hood | Wednesdays | What would you build differently having seen inside this? | real or theatre: the annotated product shot |
 
 The slug is what the database stores and what every system writes. The label is
 what a reader sees. They are never interchangeable in code.
@@ -118,11 +118,14 @@ The earlier table in this section gave follow.the.money's your.call question as
 THIRD question, under the standing one above. The kit had promoted it, which is
 the kind of drift a file copy makes and a read from the table does not.
 
-`under_the_hood` publishes every Monday, one a week, since 2026-09-26. Ruling
-(Krish, 2026-09-26): "Correct the engine's table and anywhere else, its out of
-date", after the cover page went live promising Mon, Wed and Fri. Until then it
-published when a subject earned it, because a third fixed day cost hours the
-two-to-four-hour rule did not have.
+`under_the_hood` has published once a week since 2026-09-26, on Mondays at
+first. Ruling (Krish, 2026-09-26): "Correct the engine's table and anywhere
+else, its out of date", after the cover page went live promising Mon, Wed and
+Fri. Until then it published when a subject earned it, because a third fixed
+day cost hours the two-to-four-hour rule did not have. On 2026-10-05 the days
+changed again: follow.the.money moved to Mondays and under.the.hood to
+Wednesdays. Decision (Krish, 2026-10-05): "Let's just make follow the money
+permanently a monday thing, and swap it out."
 
 **The boundary between all three is what the reader changes next, never the
 surface.** Ruling (Krish, 2026-09-24). Any of the three can be handed the same
@@ -186,8 +189,8 @@ means it is decoration, and the device reverts to a written verdict.
 | | |
 |---|---|
 | Sunday | Commission the week from what the pipeline surfaced |
-| Monday | under.the.hood: piece, artifact, diagram, audio, vertical cut |
-| Wednesday | follow.the.money: piece, artifact, diagram, audio, vertical cut |
+| Monday | follow.the.money: piece, artifact, diagram, audio, vertical cut |
+| Wednesday | under.the.hood: piece, artifact, diagram, audio, vertical cut |
 | Friday | mind.the.gap: piece plus Resources folded in, artifact, diagram, audio, vertical cut |
 
 Plus one narrative film a month. A signature piece is a package, not a post:

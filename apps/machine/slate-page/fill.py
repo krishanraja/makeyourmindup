@@ -49,7 +49,7 @@ for r in ids:
 
 # ---- format headers, from the live mandates -------------------------------
 formats = mand['formats'] if isinstance(mand, dict) and 'formats' in mand else mand
-CAD = {'follow_the_money': 'Wednesdays', 'mind_the_gap': 'Fridays, the hero', 'under_the_hood': 'Mondays'}
+CAD = {'follow_the_money': 'Mondays', 'mind_the_gap': 'Fridays, the hero', 'under_the_hood': 'Wednesdays'}
 # The standing questions as the cover page prints them (makeyourmindup.ai,
 # 2026-09-26), which match the mandates rewritten on 2026-09-24.
 QUESTION = {

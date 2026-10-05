@@ -160,7 +160,7 @@ out = {'week_of': '2026-09-21', 'summary': summary,
        'selection_rules': {
          'bar': 6.5,
          'order': 'composite, then how many independent sources carry the story, then recency. Never by age.',
-         'under_the_hood': 'a fixed Monday slot since 2026-09-26, filled like the other two',
+         'under_the_hood': 'a fixed weekly slot since 2026-09-26, on Wednesdays since 2026-10-05, filled like the other two',
          'source_cap': 'at most two cards from one publication across the whole slate',
          'swing': 'the card with the weakest load-bearing number, marked as the bet it is',
        }}

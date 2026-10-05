@@ -14,8 +14,8 @@ import { THEATRE, STANDING, cutOnInk, liftThreads, behindGrey } from './photo-cu
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
 const KIT = resolve('../../brand-kit')
 const NAME = 'makeyourmindup-brand-kit'
-const VERSION = '1.4'
-const DATED = '26 September 2026'
+const VERSION = '1.5'
+const DATED = '5 October 2026'
 const SITE = JSON.parse(readFileSync('content/site.json', 'utf8'))
 
 // Screenshots of the live cover come from `npm run shots`. Keep the last ones
@@ -33,8 +33,8 @@ const COLOURS = [
   { key: 'ink', hex: '#0C1512', name: 'Ink', job: 'The page. Every dark block, every line of type on a colour block.' },
   { key: 'cream', hex: '#F4EFE4', name: 'Cream', job: 'The reading colour on ink, and the light page.' },
   { key: 'mint', hex: '#7EF0C0', name: 'Mint', job: 'The brand, the answer and every primary action.' },
-  { key: 'lilac', hex: '#B7A6FF', name: 'Lilac', job: 'under.the.hood, Mondays. Nothing else.' },
-  { key: 'butter', hex: '#FFD84D', name: 'Butter', job: 'follow.the.money, Wednesdays. Nothing else.' },
+  { key: 'butter', hex: '#FFD84D', name: 'Butter', job: 'follow.the.money, Mondays. Nothing else.' },
+  { key: 'lilac', hex: '#B7A6FF', name: 'Lilac', job: 'under.the.hood, Wednesdays. Nothing else.' },
   { key: 'coral', hex: '#FF6A4D', name: 'Coral', job: 'mind.the.gap, Fridays. Nothing else.' },
   { key: 'ink-deep', hex: '#070D0B', name: 'Ink deep', job: 'Support. The footer and the deepest blocks.' },
   { key: 'ink-soft', hex: '#16221D', name: 'Ink soft', job: 'Support. Raised panels on ink.' },
@@ -299,7 +299,7 @@ const pages = [
       </div>
       <div style="width:560px">
         <p class="label" style="color:var(--mint)">The three sections, always in this order</p>
-        ${['under_the_hood', 'follow_the_money', 'mind_the_gap'].map(k => { const s = sub(k); return `
+        ${['follow_the_money', 'under_the_hood', 'mind_the_gap'].map(k => { const s = sub(k); return `
         <div class="row-sub">${pill(s, 'font-size:22px;padding:.35em .7em')}<span class="label" style="color:rgba(244,239,228,.75)">${s.day}</span></div>
         <p class="dek" style="font-size:24px;margin:10px 0 26px;color:rgba(244,239,228,.9)">${s.coverLine}</p>`}).join('')}
         <ul class="rules">
@@ -405,7 +405,7 @@ const pages = [
       <div class="type-grid">
         <div class="type-cell"><p class="label" style="color:var(--mint)">Anton · Display</p><p class="display" style="font-size:112px;margin-top:14px">Real, or<br>theatre?</p>
           <p class="small">Headlines and the splash. Always uppercase, line height 0.88, set big. Rhymes with the logo's condensed caps.</p></div>
-        <div class="type-cell"><p class="label" style="color:var(--mint)">Fraunces italic · The dek</p><p class="dek" style="font-size:46px;margin-top:14px;line-height:1.15">We look under the hood, follow the money and mind the gap.</p>
+        <div class="type-cell"><p class="label" style="color:var(--mint)">Fraunces italic · The dek</p><p class="dek" style="font-size:46px;margin-top:14px;line-height:1.15">We follow the money, look under the hood and mind the gap.</p>
           <p class="small">Standfirsts, captions with a voice, the human line under a loud headline. Italic only.</p></div>
         <div class="type-cell"><p class="label" style="color:var(--mint)">Archivo · Structure and body</p><p style="font-size:26px;margin-top:14px;line-height:1.45">Every AI deal has a bill, and somebody pays it.</p><p class="heavy" style="font-size:54px;margin-top:10px">Subscribe free</p>
           <p class="small">Body copy at 400. <b>Heavy</b> is 900 at width 112: buttons, prices, the wordmark in type.</p></div>
@@ -421,7 +421,7 @@ const pages = [
     ${strap('p. 09', 'Hierarchy', false)}
     <div class="cols" style="top:120px">
       <div style="width:620px">
-        <div class="meta">${pill(sub('under_the_hood'), 'background:var(--ink);color:var(--lilac)')}<span class="label">Mondays</span></div>
+        <div class="meta">${pill(sub('under_the_hood'), 'background:var(--ink);color:var(--lilac)')}<span class="label">${sub('under_the_hood').day}</span></div>
         <span class="sticker" style="background:var(--cream);transform:rotate(-3deg);margin-top:22px">Screwdriver included</span>
         <h2 class="display" style="font-size:118px;margin-top:22px">Real, or<br>theatre?<br>We take it apart.</h2>
         <p class="dek" style="font-size:30px;margin-top:22px">How it gets built, and why it works.</p>
@@ -454,7 +454,7 @@ const pages = [
         <div class="part"><div class="demo"><p class="display" style="font-size:44px;white-space:nowrap">AI, <span class="swipe">unpicked.</span></p></div><p class="label">Highlighter swipe</p><p class="small">Mint by default, skewed 8 degrees. One swiped word per headline.</p></div>
         <div class="part"><div class="demo" style="gap:14px"><span class="stamp" style="color:#1d7a55;border-color:#1d7a55;transform:rotate(-4deg)">Real</span><span class="stamp" style="color:var(--coral);border-color:var(--coral);transform:rotate(4deg)">Theatre</span></div><p class="label">Stamp</p><p class="small">3px border, heavy tracking. For verdicts on a part, never on a person.</p></div>
         <div class="part"><div class="demo"><div class="receipt-demo"><p class="label" style="text-align:center">Receipt</p><p class="mono small" style="margin-top:8px">Who paid <span class="leader"></span> ?</p><p class="mono small">Who got paid <span class="leader"></span> ?</p></div></div><p class="label">Receipt</p><p class="small">Till roll with a torn edge. follow.the.money's signature.</p></div>
-        <div class="part"><div class="demo" style="overflow:hidden;background:var(--ink);width:100%;justify-content:flex-start"><p class="heavy up" style="white-space:nowrap;color:var(--cream);font-size:24px">under.the.hood · Mondays <span style="color:var(--mint)">✦</span> Free from jargon <span style="color:var(--mint)">✦</span> follow.the.money</p></div><p class="label">Marquee</p><p class="small">A slow ticker between sections. 38 seconds a loop, stills for reduced motion.</p></div>
+        <div class="part"><div class="demo" style="overflow:hidden;background:var(--ink);width:100%;justify-content:flex-start"><p class="heavy up" style="white-space:nowrap;color:var(--cream);font-size:24px">follow.the.money · Mondays <span style="color:var(--mint)">✦</span> No added sermons <span style="color:var(--mint)">✦</span> under.the.hood</p></div><p class="label">Marquee</p><p class="small">A slow ticker between sections. 38 seconds a loop, stills for reduced motion.</p></div>
       </div>
     </div>
   </section>`,
@@ -463,7 +463,7 @@ const pages = [
   `<section class="page ink">
     ${strap('p. 11', 'The three sections')}
     <div class="three">
-      ${['under_the_hood', 'follow_the_money', 'mind_the_gap'].map(k => { const s = sub(k); const bg = { under_the_hood: 'lilac', follow_the_money: 'butter', mind_the_gap: 'coral' }[k]; const device = { under_the_hood: 'Real or theatre: the shipped thing, apart, every part stamped.', follow_the_money: 'The money map and the receipt: flows between parties, width is the amount.', mind_the_gap: 'Threads on a time axis that bend and meet, ending in a dated call.' }[k]; return `
+      ${['follow_the_money', 'under_the_hood', 'mind_the_gap'].map(k => { const s = sub(k); const bg = { under_the_hood: 'lilac', follow_the_money: 'butter', mind_the_gap: 'coral' }[k]; const device = { under_the_hood: 'Real or theatre: the shipped thing, apart, every part stamped.', follow_the_money: 'The money map and the receipt: flows between parties, width is the amount.', mind_the_gap: 'Threads on a time axis that bend and meet, ending in a dated call.' }[k]; return `
       <div class="third halftone on-light" style="background:var(--${bg})">
         <p class="label">${s.day}</p>
         <p class="pill" style="background:var(--ink);color:var(--${bg});font-size:20px;margin-top:14px">${s.label}</p>
@@ -728,7 +728,7 @@ the felt-robot photography and its stamps, voice, and the brand in use.
 ## The five rules that matter most
 
 1. The name is one word, all lowercase: makeyourmindup.
-2. The sections run under.the.hood, follow.the.money, mind.the.gap. Monday,
+2. The sections run follow.the.money, under.the.hood, mind.the.gap. Monday,
    Wednesday, Friday, in that order, every time.
 3. Every colour has one job. Type on a colour block is always ink.
 4. The logo only sits on ink, level, untouched. A light version does not exist

@@ -1,6 +1,6 @@
-# makeyourmindup brand book and kit, v1.4
+# makeyourmindup brand book and kit, v1.5
 
-26 September 2026. Two downloads, rebuilt together by `npm run brand-kit` in `apps/cover`.
+5 October 2026. Two downloads, rebuilt together by `npm run brand-kit` in `apps/cover`.
 
 | File | What is inside |
 |---|---|

@@ -1,6 +1,6 @@
-# makeyourmindup brand kit, v1.4
+# makeyourmindup brand kit, v1.5
 
-26 September 2026. Everything here is built from the live cover at makeyourmindup.ai by
+5 October 2026. Everything here is built from the live cover at makeyourmindup.ai by
 `npm run brand-kit` in `apps/cover`, so it matches what readers see.
 
 **Download:** `makeyourmindup-brand-kit.zip` in this folder holds all of it.
@@ -28,7 +28,7 @@ the felt-robot photography and its stamps, voice, and the brand in use.
 ## The five rules that matter most
 
 1. The name is one word, all lowercase: makeyourmindup.
-2. The sections run under.the.hood, follow.the.money, mind.the.gap. Monday,
+2. The sections run follow.the.money, under.the.hood, mind.the.gap. Monday,
    Wednesday, Friday, in that order, every time.
 3. Every colour has one job. Type on a colour block is always ink.
 4. The logo only sits on ink, level, untouched. A light version does not exist
