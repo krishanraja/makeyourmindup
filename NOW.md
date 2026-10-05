@@ -2,8 +2,8 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-09-26
-head: dcfb0213
+as_of: 2026-10-05
+head: 7733341
 lifecycle: building
 production_url: https://makeyourmindup.ai
 state_doc: project-documentation/03_STEP_PLAN.md
@@ -39,7 +39,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-09-26)
+## Where it is right now (as of 2026-10-05)
 
 Lifecycle is `building`. The machine does not exist yet. What landed on
 2026-09-19 and 20 is the canon it will be built from, which until now existed only as Claude
@@ -49,7 +49,7 @@ artifacts from 17 and 18 September and in no repository at all.
 `www.makeyourmindup.ai`, which serves the cover from `apps/cover/` (`73735f5`,
 ruling Krish 2026-09-25: the cover takes the domain, and the Cannes funnel stays
 offline until mm-ctrl hosts it). `apps/cover/README.md` says how it deploys and
-what regenerates its assets. The brand book and kit, v1.4 on 2026-09-26, are in
+what regenerates its assets. The brand book and kit, v1.5 on 2026-10-05, are in
 `docs/brandbooknew/`, rebuilt by `npm run brand-kit` in `apps/cover`. This
 paragraph was corrected on 2026-09-26; it had still described the Cannes funnel
 as live.
@@ -82,6 +82,20 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-10-05 **follow.the.money moves to Mondays and under.the.hood to
+  Wednesdays, on the cover and everywhere else.** Decision (Krish,
+  2026-10-05): "Let's just make follow the money permanently a monday thing,
+  and swap it out." The cover lists and lays out the sections in the new
+  order, the brand line is "We follow the money, look under the hood and mind
+  the gap.", the Substack kit, media kit, slate page and kill list self-test
+  follow, and the brand kit is v1.5 with only the days and the order changed
+  (`7733341`). The live table changed with control-center migration
+  `20261005170000`; each section keeps its colour, sticker and question.
+- 2026-10-04 **The cover gained the panel and lost the commentary under the
+  subscribe button.** Ruling (Krish, 2026-10-04): the judges are drawn faces,
+  never the felt robot, on one small card found from the staff box (`c5fcd15`,
+  `e06e8b9`). The form's status line, the footnote and the asterisk on "Free
+  to read" went, and the cover photo took the freed height (`c068dd4`).
 - 2026-09-26 **under.the.hood runs every Monday, and the old names are gone from
   the living files.** Rulings (Krish, 2026-09-25 and 2026-09-26): the
   subchannels are follow.the.money and under.the.hood, "every single instance";
@@ -109,22 +123,6 @@ format because none of them was ever composed.
   the old subchannel names (`b8718b3`); the media kit carries the three questions
   as Krish means them (`78a9859`). Brand book and kit v1.4, with the felt robot
   and its stamps, are in `docs/brandbooknew/` (`a995a0c`).
-- 2026-09-20 **The first slate exists, and the rules that picked it are in this
-  repo rather than in a workflow that has to be re-run to be read.** 216
-  candidates cleared the intake gates, 210 were scored, 81 cleared the 6.5 bar,
-  and nine cards were published: one pick and two alternates for each of the
-  three subchannels. 30 more rows say why the machine would not decide, 14 as
-  named hand-offs and 16 as `claim_not_in_source`, a reason slug added the same
-  day because that refusal recurred sixteen times and had no name. All 39 rows
-  are in `public.suggestions` under `run_id = 'first-slate:2026-W38'`, every one
-  on the `propose` rung. The selection is four scripts in
-  `apps/machine/slate-page`, each reading a file and writing a file, so a stage
-  can be re-run without the ones before it. Every rule is stated and travels
-  with the row in `producer.selection_rules`. `engine/runs/2026-W38` keeps what
-  the week was built from, and running the four stages against it reproduces
-  the published page byte for byte until the rules changed on 2026-09-26.
-  under.the.hood cleared its raised bar of 7.5 with 7.83, the closest call on
-  the slate. `daf27e4`.
 
 ## What is next and what is waiting on Krish
 
@@ -133,6 +131,10 @@ every pipeline built before them is thrown away when they land. One subject of
 three is picked.
 
 Waiting on Krish, none of which a tool should answer:
+
+- **Paste the swapped days into Substack.** The short description, the About
+  page and the welcome email in `apps/cover/substack-kit/COPY.md`, and the
+  free-tier benefits in `PAID.md`, changed on 2026-10-05; Substack has no API.
 
 - **Move the Cannes funnel to mm-ctrl.** A migration, not a Vercel setting.
   `parked/cannes-2026/PARKED.md` holds the destination and the facts. It has

@@ -5,6 +5,29 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+## 2026-10-05
+
+- decision (Krish, 2026-10-05): "Let's just make follow the money permanently a monday thing, and swap it out." Then: "ok, make sure absolutely everywhere reflects this swap in scheduling, including the site, everywhere". follow.the.money is due on Mondays and under.the.hood on Wednesdays; mind.the.gap stays on Fridays and every section keeps its colour, sticker, promise and question. In `7733341`: the cover's copy and section order (`apps/cover/content/site.json`), the Substack kit, the brand kit rebuilt as v1.5, the media kit, the intake runner spec, the slate page and the kill list self-test. The live table changed with control-center migration `20261005170000`. The 2026-09-26 entries, the W38 run and its `mandates.json` keep the days they were written with.
+- reconciled at `7733341`: NOW.md takes the schedule swap, brand kit v1.5 and the Substack paste for Krish, plus the cover's panel and subscribe-button changes of 2026-10-04 (`c068dd4` to `e06e8b9`), read from their commit messages. The rest of "Where it is right now" was not re-verified in this pass.
+- moved from `NOW.md` on reconciliation, verbatim, to hold the file under 200 lines:
+
+  - 2026-09-20 **The first slate exists, and the rules that picked it are in this
+    repo rather than in a workflow that has to be re-run to be read.** 216
+    candidates cleared the intake gates, 210 were scored, 81 cleared the 6.5 bar,
+    and nine cards were published: one pick and two alternates for each of the
+    three subchannels. 30 more rows say why the machine would not decide, 14 as
+    named hand-offs and 16 as `claim_not_in_source`, a reason slug added the same
+    day because that refusal recurred sixteen times and had no name. All 39 rows
+    are in `public.suggestions` under `run_id = 'first-slate:2026-W38'`, every one
+    on the `propose` rung. The selection is four scripts in
+    `apps/machine/slate-page`, each reading a file and writing a file, so a stage
+    can be re-run without the ones before it. Every rule is stated and travels
+    with the row in `producer.selection_rules`. `engine/runs/2026-W38` keeps what
+    the week was built from, and running the four stages against it reproduces
+    the published page byte for byte until the rules changed on 2026-09-26.
+    under.the.hood cleared its raised bar of 7.5 with 7.83, the closest call on
+    the slate. `daf27e4`.
+
 ## 2026-09-26
 
 - reconciled at `dcfb0213`: 34 non-steward commits since `68deb1ad`. The cover went live and its brand kit reached v1.4 in another session without a reconciliation, so NOW.md still described the Cannes funnel as live; it now records the cover, the Monday cadence and the rename.
