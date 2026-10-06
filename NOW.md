@@ -39,7 +39,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-10-05)
+## Where it is right now (as of 2026-10-06)
 
 Lifecycle is `building`. The machine does not exist yet. What landed on
 2026-09-19 and 20 is the canon it will be built from, which until now existed only as Claude
