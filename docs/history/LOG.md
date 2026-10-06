@@ -5,6 +5,10 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+## 2026-10-06
+
+- feedback (Krish, 2026-10-06), of a subscriber's Outlook showing the launch post's email with no pictures: "is there any way around this?" Outlook hides pictures from a sender the reader has not trusted yet. In `45f76de`, the welcome email in `apps/cover/substack-kit/COPY.md` asks new readers to add the sender to their contacts; Krish pastes it into Substack. content-engine's page tool now shows the email with pictures off (its walk log F66).
+
 ## 2026-10-05
 
 - decision (Krish, 2026-10-05): "mindmakerlive.substack.com is now replaced with home.makeyourmindup.ai as the substack homepage. should I call it something different? if not, sub this out absolutely everywhere", and on "read" as the alternative: "there are loads of videos planned, is read still the right word?". The name stays "home". In `f09652a`, shipped once Substack served the new address: the cover's `substackUrl` and `feedUrl`, which carry the Subscribe button, the footer and platform links and the latest-pieces feed, and the Substack kit's settings links. NOW.md's open question about the address is closed.
