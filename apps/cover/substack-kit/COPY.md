@@ -36,6 +36,8 @@ On Mondays, follow.the.money traces where the money goes in an AI deal and who e
 
 Every piece ends with a call and a date. We keep score in public, misses included.
 
+One small thing: if the pictures in these emails don't show, your email app is hiding them until it trusts us. Add this sender to your contacts, or press "show pictures" once, and they'll appear from then on.
+
 Krish
 
 ## Profile bio
