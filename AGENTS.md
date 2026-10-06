@@ -91,6 +91,17 @@ test before the quality test, not after.
 Only Krish. The panel advises and blocks and never approves. A piece that
 clears the publish bar is eligible, not approved.
 
+## Google Drive
+
+Content, films and sales material live in Krish's Drive under `04_Content`.
+The map of what goes where is `docs/DRIVE.md` in `krishanraja/content-engine`,
+with the same map as `READ ME FIRST - what goes where.txt` at the top of
+`04_Content`. Sales material goes in `04_Content > Sales Materials`; one-off
+main-channel video scripts in `04_Content > One Off Content Ideas`; brand films
+in `04_Content > Films`. `Video Engine` and `makeyourmindup` are read by path by
+the home computers: never move or rename them, or any folder above them. Read
+the map before putting anything in Drive or tidying a folder.
+
 <!-- krish-canon:start release=v2026.10.05.1 sha=a2d63b221532 rendered=2026-10-06 -->
 ## Krish canon
 
