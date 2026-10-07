@@ -55,6 +55,11 @@ export async function latestPosts(): Promise<Post[]> {
           image: enclosure ? enclosure[1] : undefined,
         }
       })
+      // Articles only. Krish posts each piece's video on Substack too, titled
+      // "VIDEO: ..." (2026-10-07: "I updated some of the titles on my Substack
+      // posts to distinguish between video and article"), and those took the
+      // newsstand's slots and pushed articles off the cover page.
+      .filter(p => !/^video\s*:/i.test(p.title))
       .filter(p => p.title && p.link && new Date(p.date).getTime() >= since)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, CONFIG.latestCount)
