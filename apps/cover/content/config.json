@@ -6,7 +6,22 @@
   "latestCount": 3,
   "scoreboard": {
     "show": true,
-    "calls": []
+    "calls": [
+      {
+        "statement": "By 30 June 2027, Amazon opens an authorised route for shopping agents, and that route still shows them sponsored listings.",
+        "href": "https://home.makeyourmindup.ai/p/muse-dot-and-the-next-wave-of-agents",
+        "due": "30 June 2027",
+        "confidence": 70,
+        "status": "open"
+      },
+      {
+        "statement": "By 30 June 2027, Higgsfield raises money at a valuation of $10 billion or more.",
+        "href": "https://home.makeyourmindup.ai/p/higgsfield-taken-apart-the-1bn-ai",
+        "due": "30 June 2027",
+        "confidence": 85,
+        "status": "open"
+      }
+    ]
   },
   "platforms": {
     "youtube": "https://www.youtube.com/@makeyourmind-up",

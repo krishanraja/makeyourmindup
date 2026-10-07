@@ -250,6 +250,20 @@ body {
   transform: perspective(600px) rotateX(-90deg);
 }
 
+/* Each change of a scoreboard digit drops in like a station-board flap. */
+.flap-digit {
+  display: inline-block;
+  animation: flap-tick 0.12s ease-out both;
+  transform-origin: 50% 50%;
+}
+@keyframes flap-tick {
+  from { transform: perspective(400px) rotateX(-70deg); opacity: 0.4; }
+  to { transform: perspective(400px) rotateX(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flap-digit { animation: none; }
+}
+
 /* The receipt prints itself. */
 .receipt {
   transition: clip-path 1.6s linear 0.5s;

@@ -50,29 +50,48 @@ export function Platforms() {
             const Icon = PLATFORM_ICON[key]
             return (
               <Reveal key={tile.key} delay={0.06 * (i + 1)} className="min-w-0">
-                <div className="brutal relative flex h-full flex-col border-2 border-ink bg-cream p-[clamp(0.75rem,2svh,1.25rem)]">
-                  <span className="flex items-start justify-between">
-                    <Icon className="h-[clamp(1.75rem,4.4svh,2.25rem)] w-[clamp(1.75rem,4.4svh,2.25rem)]" />
-                    {url ? (
-                      <span className="mono-label flex items-center gap-2 border-2 border-ink px-2 py-0.5 font-semibold">
-                        <span className="h-2 w-2 animate-blink rounded-full bg-ink" aria-hidden="true" />
-                        {t.live}
-                      </span>
-                    ) : (
-                      <span className="stamp rotate-6 border-ink/70 text-[0.62rem] text-ink/80">{t.soon}</span>
-                    )}
-                  </span>
-                  <span className="heavy mt-[clamp(0.4rem,2svh,1.5rem)] text-[clamp(1rem,min(5vw,3svh),1.5rem)]">{tile.name}</span>
-                  <span className="mt-1 hidden text-[clamp(0.9rem,2.2svh,1rem)] text-ink/80 md:block">{tile.blurb}</span>
+                {url ? (
+                  // A live platform looks like the live Substack tile: ink, a mint
+                  // badge and a mint button, and the whole tile is the link
+                  // (Krish, 2026-10-07: "YouTube should probably be a different
+                  // greenish colour to indicate that it's on and link through").
                   <a
-                    href={url ?? subscribeUrl()}
+                    href={url}
                     target="_blank"
                     rel="noopener"
-                    className="mono-label mt-auto hidden min-h-[44px] items-center pt-2 font-semibold underline decoration-2 underline-offset-4 hover:decoration-4 md:inline-flex"
+                    className="brutal group relative flex h-full flex-col border-2 border-ink bg-ink p-[clamp(0.75rem,2svh,1.25rem)] text-cream transition-transform hover:-translate-x-1 hover:-translate-y-1"
                   >
-                    {url ? `${tile.name} ↗` : `${t.soonCta} ↗`}
+                    <span className="flex items-start justify-between">
+                      <Icon className="h-[clamp(1.75rem,4.4svh,2.25rem)] w-[clamp(1.75rem,4.4svh,2.25rem)] text-mint" />
+                      <span className="mono-label flex items-center gap-2 border-2 border-mint px-2 py-0.5 font-semibold text-mint">
+                        <span className="h-2 w-2 animate-blink rounded-full bg-mint" aria-hidden="true" />
+                        {t.live}
+                      </span>
+                    </span>
+                    <span className="heavy mt-[clamp(0.4rem,2svh,1.5rem)] text-[clamp(1rem,min(5vw,3svh),1.5rem)]">{tile.name}</span>
+                    <span className="mt-1 hidden text-[clamp(0.9rem,2.2svh,1rem)] text-cream/85 md:block">{tile.blurb}</span>
+                    <span className="heavy mt-auto inline-flex min-h-[44px] w-fit items-center whitespace-nowrap border-2 border-mint bg-mint px-2.5 text-[clamp(0.68rem,3.2vw,1rem)] uppercase text-ink transition-transform group-hover:translate-x-1">
+                      {tile.cta} <span className="ml-2" aria-hidden="true">↗</span>
+                    </span>
                   </a>
-                </div>
+                ) : (
+                  <div className="brutal relative flex h-full flex-col border-2 border-ink bg-cream p-[clamp(0.75rem,2svh,1.25rem)]">
+                    <span className="flex items-start justify-between">
+                      <Icon className="h-[clamp(1.75rem,4.4svh,2.25rem)] w-[clamp(1.75rem,4.4svh,2.25rem)]" />
+                      <span className="stamp rotate-6 border-ink/70 text-[0.62rem] text-ink/80">{t.soon}</span>
+                    </span>
+                    <span className="heavy mt-[clamp(0.4rem,2svh,1.5rem)] text-[clamp(1rem,min(5vw,3svh),1.5rem)]">{tile.name}</span>
+                    <span className="mt-1 hidden text-[clamp(0.9rem,2.2svh,1rem)] text-ink/80 md:block">{tile.blurb}</span>
+                    <a
+                      href={subscribeUrl()}
+                      target="_blank"
+                      rel="noopener"
+                      className="mono-label mt-auto hidden min-h-[44px] items-center pt-2 font-semibold underline decoration-2 underline-offset-4 hover:decoration-4 md:inline-flex"
+                    >
+                      {`${t.soonCta} ↗`}
+                    </a>
+                  </div>
+                )}
               </Reveal>
             )
           })}

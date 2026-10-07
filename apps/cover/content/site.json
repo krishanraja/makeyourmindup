@@ -167,12 +167,12 @@
   "scoreboard": {
     "eyebrow": "The back page",
     "title": "Every piece makes a call. We keep score.",
-    "body": "Each piece ends with a prediction, a date and how sure we are. When the date arrives, we mark it held, broke or unclear. Misses go up as big as hits.",
+    "body": "Each piece ends with a prediction, a date and how sure we are. When the date arrives, we mark it right, wrong or too close to call. The wrong ones go up as big as the right ones.",
     "columns": [
-      "Held",
-      "Broke",
-      "Unclear",
-      "Open"
+      "Right",
+      "Wrong",
+      "Too close to call",
+      "Not due yet"
     ],
     "empty": "The board opens with the first piece.",
     "sticker": "Misses included",
@@ -203,22 +203,26 @@
       {
         "key": "youtube",
         "name": "YouTube",
-        "blurb": "One Short per piece. The whole argument, fast."
+        "blurb": "One Short per piece. The whole argument, fast.",
+        "cta": "Watch now"
       },
       {
         "key": "instagram",
         "name": "Instagram",
-        "blurb": "The Short, plus a flipbook carousel you swipe through."
+        "blurb": "The Short, plus a flipbook carousel you swipe through.",
+        "cta": "Follow"
       },
       {
         "key": "tiktok",
         "name": "TikTok",
-        "blurb": "The same Shorts, on your For You page."
+        "blurb": "The same Shorts, on your For You page.",
+        "cta": "Watch now"
       },
       {
         "key": "spotify",
         "name": "Spotify",
-        "blurb": "The audio edition, read by Krish."
+        "blurb": "The audio edition, read by Krish.",
+        "cta": "Listen now"
       }
     ]
   },
