@@ -31,7 +31,13 @@ export const JUDGES = site.panel.cards as Judge[]
 
 export const SITE = site
 type Config = Omit<typeof config, 'scoreboard' | 'platforms'> & {
-  scoreboard: { show: boolean; calls: Call[] }
+  scoreboard: {
+    show: boolean
+    calls: Call[]
+    /** Krish, 2026-10-07: until the real board has numbers worth showing, the
+     * cover shows an illustration of how it reads, labelled as an example. */
+    example?: { counts: Record<Call['status'], number>; calls: Call[] }
+  }
   platforms: Record<PlatformKey, string | null>
 }
 export const CONFIG = config as unknown as Config

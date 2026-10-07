@@ -12,8 +12,8 @@ import { StickyBar } from '@/components/StickyBar'
 import { CONFIG, SITE } from '@/lib/content'
 import { latestPosts } from '@/lib/rss'
 
-// Static, refreshed hourly. If Substack is down, the last good page keeps serving.
-export const revalidate = 3600
+// Static, refreshed every 15 minutes (Krish, 2026-10-07: "how do I ensure it always stays up to date without me constantly having to ask you?"). If Substack is down, the last good page keeps serving.
+export const revalidate = 900
 
 export default async function Page() {
   const posts = await latestPosts()

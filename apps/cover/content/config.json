@@ -21,7 +21,36 @@
         "confidence": 85,
         "status": "open"
       }
-    ]
+    ],
+    "example": {
+      "counts": {
+        "held": 14,
+        "broke": 5,
+        "unclear": 2,
+        "open": 9
+      },
+      "calls": [
+        {
+          "statement": "A major airline lets an AI agent rebook a missed flight with no human in the loop.",
+          "due": "30 June 2026",
+          "confidence": 70,
+          "status": "held"
+        },
+        {
+          "statement": "A top-ten bank lets you open an account by talking to an AI agent alone.",
+          "due": "31 August 2026",
+          "confidence": 60,
+          "status": "broke"
+        },
+        {
+          "statement": "By 30 June 2027, Higgsfield raises money at a valuation of $10 billion or more.",
+          "due": "30 June 2027",
+          "confidence": 85,
+          "status": "open",
+          "href": "https://home.makeyourmindup.ai/p/higgsfield-taken-apart-the-1bn-ai"
+        }
+      ]
+    }
   },
   "platforms": {
     "youtube": "https://www.youtube.com/@makeyourmind-up",

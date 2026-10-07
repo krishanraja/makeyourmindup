@@ -50,11 +50,11 @@ export function Newsstand({ posts }: { posts: Post[] }) {
                   <a href={p.link} target="_blank" rel="noopener" className="brutal group flex h-full flex-col border-2 border-ink bg-cream transition-transform hover:-translate-x-1 hover:-translate-y-1">
                     {p.image && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.image} alt="" className="hidden aspect-[16/9] w-full border-b-2 border-ink object-cover md:block md:max-h-[22svh]" loading="lazy" />
+                      <img src={p.image} alt="" className="block aspect-[1.91/1] w-full border-b-2 border-ink bg-ink object-cover" loading="lazy" />
                     )}
                     <span className="flex flex-1 flex-col p-[clamp(0.75rem,2svh,1.25rem)]">
                       <span className="mono-label text-ink/60">{fmt(p.date)}</span>
-                      <span className="heavy mt-1 text-[clamp(1.1rem,2.8svh,1.5rem)] leading-tight">{p.title}</span>
+                      <span className="heavy mt-1 line-clamp-3 text-[clamp(1.05rem,2.6svh,1.4rem)] leading-tight">{p.title}</span>
                       {p.blurb && <span className="mt-2 hidden text-ink/80 md:line-clamp-3">{p.blurb}</span>}
                       <span className="mono-label mt-auto pt-[clamp(0.5rem,1.6svh,1rem)] font-semibold group-hover:underline">{t.read} ↗</span>
                     </span>

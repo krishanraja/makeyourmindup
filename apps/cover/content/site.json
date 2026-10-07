@@ -177,7 +177,9 @@
     "empty": "The board opens with the first piece.",
     "sticker": "Misses included",
     "due": "Due",
-    "confidence": "Confidence"
+    "confidence": "Confidence",
+    "exampleLabel": "Example board",
+    "exampleNote": "An example of how the board reads. The full scoreboard opens once there are enough calls to count."
   },
   "newsstand": {
     "eyebrow": "On the newsstand",
@@ -270,7 +272,8 @@
     "bio": "Krish writes every piece, reads the audio edition and fronts the Shorts. He has spent sixteen years building commercial businesses across media, tech and telecoms, and now spends most days building with AI.",
     "photoAlt": "Krish Raja, editor of makeyourmindup, pushing his glasses up for a closer look",
     "site": "krishraja.com",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "judgesCta": "Meet the judges"
   },
   "panel": {
     "eyebrow": "The panel",

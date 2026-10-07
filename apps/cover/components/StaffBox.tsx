@@ -3,11 +3,12 @@ import { CONFIG, SITE, type StaffRow } from '@/lib/content'
 import { PanelDoor, PanelHeads } from './PanelSheet'
 import { Reveal } from './Reveal'
 
-// The way into the panel is quiet on purpose: the panel is there to be found.
-// "Checked by" carries a plain underline and the judges' heads (under its label
-// on a phone, where the row has room to spare, and after the line elsewhere);
-// the two rows that already make a joke carry a fainter, dotted door to one
-// judge each.
+// The panel has a door nobody can miss: a mint "Meet the judges" button with
+// their faces, first among the buttons under the rows (Krish, 2026-10-07: "Make
+// it a little bit more obvious that a user can check out the judges because it
+// is quite funny but no one will ever click on it like this"). "Checked by"
+// still carries a plain underline and the heads, and the two rows that already
+// make a joke carry a fainter, dotted door to one judge each.
 const DOOR = 'underline decoration-ink/35 decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink'
 const HIDDEN_DOOR = 'underline decoration-ink/25 decoration-dotted decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink hover:decoration-solid'
 
@@ -82,6 +83,12 @@ export function StaffBox() {
             </dl>
             <p className="mt-[clamp(0.75rem,2.4svh,1.5rem)] hidden max-w-2xl text-[clamp(0.95rem,2.3svh,1.125rem)] leading-relaxed md:block">{t.bio}</p>
             <div className="mt-[clamp(0.75rem,2.4svh,1.5rem)] flex flex-wrap gap-3 sm:gap-4">
+              <PanelDoor className="brutal heavy group flex min-h-[52px] w-full flex-col items-start gap-2 border-2 border-ink bg-mint px-4 py-3 text-[clamp(1rem,2.4svh,1.2rem)] uppercase text-ink transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:py-0">
+                <PanelHeads className="text-[22px] sm:order-2 sm:text-[14px]" />
+                <span className="whitespace-nowrap sm:order-1">
+                  {t.judgesCta} <span aria-hidden="true">↗</span>
+                </span>
+              </PanelDoor>
               <a href={CONFIG.links.krish} target="_blank" rel="noopener" className="mono-label inline-flex min-h-[44px] items-center border-2 border-ink px-4 font-semibold transition-colors hover:bg-ink hover:text-cream">
                 {t.site} ↗
               </a>

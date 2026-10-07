@@ -28,7 +28,7 @@ function decode(s: string) {
 }
 
 /**
- * The newest posts on the Substack, fetched at build and refreshed hourly.
+ * The newest posts on the Substack, fetched at build and refreshed every 15 minutes.
  * Only posts on or after the relaunch date count, so the old voice never
  * reaches the cover. A failed fetch returns nothing and the page shows its
  * designed empty state; on Vercel the last good page keeps serving.
@@ -36,7 +36,7 @@ function decode(s: string) {
 export async function latestPosts(): Promise<Post[]> {
   try {
     const res = await fetch(CONFIG.feedUrl, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 900 },
       headers: { 'user-agent': 'makeyourmindup-cover' },
     })
     if (!res.ok) return []
@@ -46,7 +46,8 @@ export async function latestPosts(): Promise<Post[]> {
     const items = xml.split('<item>').slice(1).map(chunk => chunk.split('</item>')[0])
     return items
       .map(item => {
-        const enclosure = /<enclosure[^>]*url="([^"]+)"/.exec(item)
+        // Only a picture is a cover: a video post's enclosure is its sound file.
+        const enclosure = /<enclosure[^>]*url="([^"]+)"[^>]*type="image\//.exec(item) ?? /<enclosure[^>]*type="image\/[^"]*"[^>]*url="([^"]+)"/.exec(item)
         return {
           title: decode(tag(item, 'title')),
           link: decode(tag(item, 'link')),
