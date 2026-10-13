@@ -1,8 +1,8 @@
 import { ACCENT, type Subchannel } from '@/lib/content'
-import { MoneyMap, Receipt } from './diagrams/MoneyMap'
+import { MoneyMap } from './diagrams/MoneyMap'
 import { RealOrTheatre } from './diagrams/RealOrTheatre'
 import { Threads } from './diagrams/Threads'
-import { Reveal } from './Reveal'
+import { InView } from './Reveal'
 
 function Diagram({ s }: { s: Subchannel }) {
   const d = s.diagram as Record<string, unknown>
@@ -23,108 +23,72 @@ function Diagram({ s }: { s: Subchannel }) {
 }
 
 /*
-  Every spread has the same slots in the same order, so the three line up row
-  for row when they sit side by side:
-    head:   meta row (one line), tag, headline (three set lines), dek (two lines)
-    fig:    diagram card (one aspect ratio for all three) and caption
-    detail: question (fixed height), body, then the receipt on the money spread
-  On phones the slots stack head, fig, detail. From tablet up the figure takes
-  the other column and its top lines up with the meta row.
+  One format, one colour panel. The three panels sit side by side in one
+  section and share its six rows through subgrid, so meta, tag, headline,
+  diagram, question and body line up row for row across all three whatever
+  each one's copy runs to. Below laptop width the panels sit in a swipe row
+  instead, one panel to a screen, with the next one peeking in.
 
-  Every spread fits on one screen. Vertical sizes follow the screen's height
-  (svh) as well as its width, the diagram is capped by height and sits on the
-  outer margin, and phones leave out the caption, the body and the receipt:
-  the headline, the diagram and the question carry the idea.
+  Vertical sizes follow the screen's height (svh) as well as its width so the
+  whole section fits on one screen. The body only shows where there is room
+  for it: the headline, the diagram and the question carry the idea.
 */
-export function SubchannelBlock({ s, flip }: { s: Subchannel; flip: boolean }) {
+export function SubchannelBlock({ s, i }: { s: Subchannel; i: number }) {
   const a = ACCENT[s.slug]
-  const d = s.diagram as Record<string, unknown>
-  const isMoney = s.slug === 'follow_the_money'
-  const receipt = isMoney ? (
-    <Receipt title={d.receiptTitle as string} lines={d.receiptLines as string[]} total={d.receiptTotal as string} />
-  ) : null
-
-  const areas = flip
-    ? "md:[grid-template-areas:'fig_head'_'fig_detail']"
-    : "md:[grid-template-areas:'head_fig'_'detail_fig']"
-
   return (
-    <section
+    <InView
+      as="article"
       id={s.slug}
       data-spread
-      className={`on-light relative scroll-mt-16 overflow-hidden text-ink ${a.bg}`}
       aria-labelledby={`${s.slug}-title`}
+      className={`reveal brutal-sm relative flex w-[86%] shrink-0 snap-start scroll-mt-16 flex-col overflow-hidden border-2 border-ink p-[clamp(0.75rem,2svh,1.25rem)] text-ink md:w-[62%] lg:row-span-6 lg:grid lg:w-auto lg:grid-cols-[minmax(0,1fr)] lg:grid-rows-subgrid lg:gap-y-0 ${a.bg}`}
+      style={{ ['--d' as string]: `${i * 0.08}s` }}
     >
       <div className="halftone pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div
-        className={`page relative grid grid-cols-1 items-start gap-y-[clamp(0.75rem,2.2svh,2.5rem)] py-[clamp(1rem,3.6svh,7rem)] md:py-[clamp(1.25rem,5svh,7rem)] [grid-template-areas:'head'_'fig'_'detail'] md:grid-cols-2 md:grid-rows-[auto_1fr] md:gap-x-8 md:gap-y-[clamp(0.9rem,2.6svh,2rem)] lg:gap-x-12 ${areas}`}
-      >
-        <div className="min-w-0 [grid-area:head]">
-          <Reveal>
-            <div data-slot="meta" className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <span className={`mono-label bg-ink px-2 py-1 font-semibold ${a.text}`}>{s.label}</span>
-              <span className="mono-label font-semibold">{s.day}</span>
-              <span className="mono-label ml-auto hidden text-ink/80 sm:inline">p.{s.page}</span>
-            </div>
-            <div data-slot="tag" className="mt-[clamp(0.4rem,1.6svh,1.25rem)] hidden md:block">
-              <span className="sticker -rotate-3 bg-cream text-[0.68rem]">{s.tag}</span>
-            </div>
-            <h2
-              id={`${s.slug}-title`}
-              data-slot="headline"
-              className="display mt-[clamp(0.4rem,1.8svh,1.5rem)] text-[clamp(1.8rem,min(12vw,6svh),5.6rem)] md:text-[clamp(1.9rem,min(5.2vw,8svh),5.6rem)] lg:text-[clamp(2rem,min(6.4vw,8.5svh),5.6rem)]"
-            >
-              {(s.headline as string[]).map(line => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
-            </h2>
-            <p data-slot="dek" className="dek mt-[clamp(0.4rem,1.4svh,1.25rem)] min-h-[2.75em] [@media(max-width:767px)_and_(max-height:600px)]:hidden text-[clamp(1rem,2.8svh,1.8rem)] leading-snug sm:min-h-0">
-              {s.oneLiner}
-            </p>
-          </Reveal>
-        </div>
 
-        <div className="min-w-0 [grid-area:fig]">
-          <Reveal delay={0.1}>
-            <figure
-              className={`relative flex w-full items-start gap-3 md:block md:max-w-[calc((100svh-12rem)*1.2)] ${isMoney ? 'lg:max-w-[calc((100svh-21rem)*1.2)]' : ''} ${flip ? '' : 'md:ml-auto'}`}
-            >
-              <div data-slot="card" className="brutal w-[min(32svh,62%)] shrink-0 border-2 border-ink bg-ink p-2 sm:p-4 md:w-auto md:p-[clamp(0.5rem,2svh,1.5rem)]">
-                <Diagram s={s} />
-              </div>
-              <div className="mt-3 min-w-0 flex-1 md:hidden">
-                <span className="sticker -rotate-3 bg-cream text-[0.62rem]">{s.tag}</span>
-              </div>
-              {isMoney ? (
-                <div className="relative z-10 hidden gap-4 md:flex md:flex-col lg:-mt-12 lg:flex-row lg:items-start lg:justify-between">
-                  <figcaption data-slot="caption" className="mono-label mt-4 text-ink/85 lg:mt-16 lg:max-w-[14rem]">
-                    {s.caption}
-                  </figcaption>
-                  <div className="self-end lg:self-auto">{receipt}</div>
-                </div>
-              ) : (
-                <figcaption data-slot="caption" className="mono-label mt-4 hidden text-ink/85 md:block">
-                  {s.caption}
-                </figcaption>
-              )}
-            </figure>
-          </Reveal>
-        </div>
-
-        <div className="min-w-0 [grid-area:detail]">
-          <Reveal delay={0.15}>
-            <div data-slot="question" className="brutal max-w-xl border-2 border-ink bg-cream p-[clamp(0.75rem,2svh,1.25rem)] md:max-w-none">
-              <p className="mono-label text-ink/70">{s.questionLabel}</p>
-              <p className="heavy mt-1.5 min-h-[5.5em] text-[clamp(0.95rem,2.4svh,1.5rem)] leading-snug sm:min-h-[4.125em] md:min-h-0">{s.question}</p>
-            </div>
-            <p data-slot="body" className="mt-[clamp(0.75rem,2.4svh,2rem)] hidden max-w-xl text-[clamp(0.95rem,2.3svh,1.25rem)] leading-relaxed md:block">
-              {s.body}
-            </p>
-          </Reveal>
-        </div>
+      <div data-slot="meta" className="relative flex items-center gap-x-3 whitespace-nowrap">
+        <span className={`mono-label bg-ink px-2 py-1 font-semibold ${a.text}`}>{s.label}</span>
+        <span className="mono-label font-semibold">{s.day}</span>
+        <span className="mono-label ml-auto hidden text-ink/80 sm:inline lg:hidden xl:inline">p.{s.page}</span>
       </div>
-    </section>
+
+      <div data-slot="tag" className="relative mt-[clamp(0.5rem,1.6svh,1rem)] hidden lg:block">
+        <span className="sticker -rotate-3 bg-cream px-3 py-1.5 text-[0.62rem]">{s.tag}</span>
+      </div>
+
+      <h3
+        id={`${s.slug}-title`}
+        data-slot="headline"
+        className="display relative mt-[clamp(0.5rem,1.6svh,1rem)] text-[clamp(1.5rem,min(8vw,4.4svh),2.4rem)] lg:text-[clamp(1.3rem,min(2.6vw,3.9svh),2.9rem)]"
+      >
+        {(s.headline as string[]).map(line => (
+          <span key={line} className="block">
+            {line}
+          </span>
+        ))}
+      </h3>
+
+      <figure className="relative mt-[clamp(0.6rem,2svh,1.25rem)] flex items-start gap-3 lg:block">
+        <div
+          data-slot="card"
+          className="brutal w-[min(64%,calc(26svh*1.23))] shrink-0 border-2 border-ink bg-ink p-[clamp(0.35rem,1.2svh,0.75rem)] lg:w-full lg:max-w-[calc(23svh*1.23)]"
+        >
+          <Diagram s={s} />
+        </div>
+        <span className="sticker mt-2 -rotate-3 bg-cream px-3 py-1.5 text-[0.6rem] lg:hidden">{s.tag}</span>
+      </figure>
+
+      <div data-slot="question" className="brutal-sm relative mt-[clamp(0.75rem,2.4svh,1.5rem)] border-2 border-ink bg-cream p-[clamp(0.6rem,1.6svh,1rem)]">
+        <p className="mono-label text-[0.65rem] text-ink/70">{s.questionLabel}</p>
+        <p className="heavy mt-1 text-[clamp(0.9rem,2.1svh,1.15rem)] leading-snug">{s.question}</p>
+      </div>
+
+      <p
+        data-slot="body"
+        className="relative mt-[clamp(0.6rem,1.8svh,1.25rem)] hidden text-[clamp(0.9rem,1.9svh,1.05rem)] leading-relaxed [@media(min-width:1024px)_and_(min-height:1000px)]:block"
+      >
+        {s.body}
+      </p>
+    </InView>
   )
 }

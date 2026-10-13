@@ -31,9 +31,9 @@ export default async function Page() {
       <main>
         <Cover />
         <Marquee />
+        <Newsstand posts={posts} />
         <Contents />
         {CONFIG.scoreboard.show && <Scoreboard />}
-        <Newsstand posts={posts} />
         <Platforms />
         <StaffBox />
         <PanelSheet />

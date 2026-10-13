@@ -13,12 +13,13 @@ export function InView({
   className = '',
   as: Tag = 'div',
   style,
+  ...rest
 }: {
   children: React.ReactNode
   className?: string
-  as?: 'div' | 'span' | 'section' | 'li'
+  as?: 'div' | 'span' | 'section' | 'li' | 'article'
   style?: React.CSSProperties
-}) {
+} & Omit<React.HTMLAttributes<HTMLElement>, 'children' | 'className' | 'style'> & { [data: `data-${string}`]: string | boolean | undefined }) {
   const ref = useRef<HTMLElement>(null)
   useEffect(() => {
     document.documentElement.classList.add('ready')
@@ -43,7 +44,7 @@ export function InView({
     return () => io.disconnect()
   }, [])
   return (
-    <Tag ref={ref as never} className={className} style={style}>
+    <Tag ref={ref as never} className={className} style={style} {...rest}>
       {children}
     </Tag>
   )
