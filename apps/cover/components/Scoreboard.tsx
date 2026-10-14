@@ -55,7 +55,7 @@ export function Scoreboard() {
                           {c.href ? <a href={c.href} target="_blank" rel="noopener" className="underline decoration-mint underline-offset-4">{c.statement}</a> : c.statement}
                         </span>
                         <span className="mono-label mt-1 block text-cream/55">
-                          {t.due} {c.due} · {c.confidence}% sure
+                          {t.due} {c.due}
                         </span>
                       </span>
                       <span className={`stamp shrink-0 whitespace-nowrap text-[0.62rem] ${c.status === 'held' ? 'border-mint text-mint' : c.status === 'broke' ? 'border-cream text-cream' : 'border-cream/45 text-cream/60'}`}>

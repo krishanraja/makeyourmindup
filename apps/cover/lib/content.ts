@@ -7,12 +7,13 @@ export type Subchannel = Site['subchannels'][number]
 export type Call = {
   statement: string
   due: string
-  confidence: number
+  /** No longer shown: Krish, 2026-10-14, predictions carry a date, never a percentage. */
+  confidence?: number
   status: 'held' | 'broke' | 'unclear' | 'open'
   href?: string
 }
 
-export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'spotify'
+export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'x' | 'spotify'
 
 /** A staff box row. `link` opens the panel, at one judge when it names one. */
 export type StaffRow = { k: string; v: string; link?: { text: string; judge?: string }; heads?: boolean }
