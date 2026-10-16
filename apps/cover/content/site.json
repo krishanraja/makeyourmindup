@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "makeyourmindup: AI, unpicked",
-    "description": "We follow the money, look under the hood and mind the gap. You make your mind up. A free publication on how AI really works, every Monday, Wednesday and Friday."
+    "title": "makeyourmindup: what's coming in AI, before it's obvious",
+    "description": "What's coming in AI, before it's obvious. Three times a week Krish takes one AI story apart: who gets paid, what's real, and where it leads. In plain words, while it still counts. Free, every Monday, Wednesday and Friday."
   },
   "strap": {
     "left": "Vol. 01",
@@ -13,7 +13,7 @@
       "AI,",
       "unpicked."
     ],
-    "dek": "We follow the money, look under the hood and mind the gap. You make your mind up.",
+    "dek": "What's coming in AI, before it's obvious. Three times a week I take one AI story apart: who gets paid, what's real, and where it leads. You make your mind up.",
     "issue": "Issue 00",
     "theatre": {
       "photoAlt": "A hand-sewn felt robot lies on an operating table under a surgical lamp. Its chest seam is unpicked and the stuffing shows.",
@@ -49,7 +49,8 @@
   ],
   "contents": {
     "eyebrow": "Contents",
-    "title": "What's inside, every week."
+    "title": "What's inside, every week.",
+    "caption": "Illustrations. The real ones name every source, show the evidence for every stamp and come with dates."
   },
   "subchannels": [
     {
@@ -167,17 +168,19 @@
   "scoreboard": {
     "eyebrow": "The back page",
     "title": "Every piece makes a call. We keep score.",
-    "body": "Each piece ends with a prediction, a date and how sure we are. When the date arrives, we mark it held, broke or unclear. Misses go up as big as hits.",
+    "body": "Each piece ends with a prediction and the date it is due. When the date arrives, we mark it right, wrong or too close to call. The wrong ones go up as big as the right ones.",
     "columns": [
-      "Held",
-      "Broke",
-      "Unclear",
-      "Open"
+      "Right",
+      "Wrong",
+      "Too close to call",
+      "Not due yet"
     ],
     "empty": "The board opens with the first piece.",
     "sticker": "Misses included",
     "due": "Due",
-    "confidence": "Confidence"
+    "confidence": "Confidence",
+    "exampleLabel": "Example board",
+    "exampleNote": "An example of how the board reads. The full scoreboard opens once there are enough calls to count."
   },
   "newsstand": {
     "eyebrow": "On the newsstand",
@@ -203,22 +206,26 @@
       {
         "key": "youtube",
         "name": "YouTube",
-        "blurb": "One Short per piece. The whole argument, fast."
+        "blurb": "One Short per piece. The whole argument, fast.",
+        "cta": "Watch now"
       },
       {
         "key": "instagram",
         "name": "Instagram",
-        "blurb": "The Short, plus a flipbook carousel you swipe through."
+        "blurb": "The Short, plus a flipbook carousel you swipe through.",
+        "cta": "Follow"
       },
       {
         "key": "tiktok",
         "name": "TikTok",
-        "blurb": "The same Shorts, on your For You page."
+        "blurb": "The same Shorts, on your For You page.",
+        "cta": "Watch now"
       },
       {
-        "key": "spotify",
-        "name": "Spotify",
-        "blurb": "The audio edition, read by Krish."
+        "key": "x",
+        "name": "X",
+        "blurb": "Krish on what just moved in AI, as it moves.",
+        "cta": "Follow"
       }
     ]
   },
@@ -266,7 +273,8 @@
     "bio": "Krish writes every piece, reads the audio edition and fronts the Shorts. He has spent sixteen years building commercial businesses across media, tech and telecoms, and now spends most days building with AI.",
     "photoAlt": "Krish Raja, editor of makeyourmindup, pushing his glasses up for a closer look",
     "site": "krishraja.com",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "judgesCta": "Meet the judges"
   },
   "panel": {
     "eyebrow": "The panel",

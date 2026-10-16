@@ -28,7 +28,7 @@ function decode(s: string) {
 }
 
 /**
- * The newest posts on the Substack, fetched at build and refreshed hourly.
+ * The newest posts on the Substack, fetched at build and refreshed every 15 minutes.
  * Only posts on or after the relaunch date count, so the old voice never
  * reaches the cover. A failed fetch returns nothing and the page shows its
  * designed empty state; on Vercel the last good page keeps serving.
@@ -36,7 +36,7 @@ function decode(s: string) {
 export async function latestPosts(): Promise<Post[]> {
   try {
     const res = await fetch(CONFIG.feedUrl, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 900 },
       headers: { 'user-agent': 'makeyourmindup-cover' },
     })
     if (!res.ok) return []
@@ -46,7 +46,8 @@ export async function latestPosts(): Promise<Post[]> {
     const items = xml.split('<item>').slice(1).map(chunk => chunk.split('</item>')[0])
     return items
       .map(item => {
-        const enclosure = /<enclosure[^>]*url="([^"]+)"/.exec(item)
+        // Only a picture is a cover: a video post's enclosure is its sound file.
+        const enclosure = /<enclosure[^>]*url="([^"]+)"[^>]*type="image\//.exec(item) ?? /<enclosure[^>]*type="image\/[^"]*"[^>]*url="([^"]+)"/.exec(item)
         return {
           title: decode(tag(item, 'title')),
           link: decode(tag(item, 'link')),
@@ -55,6 +56,11 @@ export async function latestPosts(): Promise<Post[]> {
           image: enclosure ? enclosure[1] : undefined,
         }
       })
+      // Articles only. Krish posts each piece's video on Substack too, titled
+      // "VIDEO: ..." (2026-10-07: "I updated some of the titles on my Substack
+      // posts to distinguish between video and article"), and those took the
+      // newsstand's slots and pushed articles off the cover page.
+      .filter(p => !/^video\s*:/i.test(p.title))
       .filter(p => p.title && p.link && new Date(p.date).getTime() >= since)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, CONFIG.latestCount)

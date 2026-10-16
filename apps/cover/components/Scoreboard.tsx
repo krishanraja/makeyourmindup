@@ -1,23 +1,15 @@
 import { CONFIG, SITE } from '@/lib/content'
+import { FlapCounter } from './FlapCounter'
 import { InView, Reveal } from './Reveal'
-
-function Flap({ value, delay }: { value: string; delay: number }) {
-  return (
-    <span
-      className="flap relative flex h-[clamp(3.25rem,9svh,6rem)] w-[clamp(2.25rem,6svh,4rem)] items-center justify-center overflow-hidden rounded-sm bg-ink-soft"
-      style={{ ['--d' as string]: `${delay}s` }}
-    >
-      <span className="display text-[clamp(2.2rem,6svh,3.75rem)] text-cream">{value}</span>
-      <span className="absolute inset-x-0 top-1/2 h-[2px] bg-ink" aria-hidden="true" />
-    </span>
-  )
-}
 
 export function Scoreboard() {
   const t = SITE.scoreboard
-  const calls = CONFIG.scoreboard.calls
-  const count = (s: string) => calls.filter(c => c.status === s).length
-  const keys = ['held', 'broke', 'unclear', 'open']
+  const example = CONFIG.scoreboard.example
+  const calls = example ? example.calls : CONFIG.scoreboard.calls
+  const keys = ['held', 'broke', 'unclear', 'open'] as const
+  const count = (s: (typeof keys)[number]) => (example ? example.counts[s] : calls.filter(c => c.status === s).length)
+  // The stamp on a call reads in the same plain words as the counters.
+  const word = (s: (typeof keys)[number]) => t.columns[keys.indexOf(s)]
 
   return (
     <section id="scoreboard" className="grain relative scroll-mt-16 bg-ink" aria-labelledby="scoreboard-title">
@@ -37,17 +29,14 @@ export function Scoreboard() {
           <div className="relative min-w-0 md:col-span-6">
             <span className="sticker absolute -top-6 right-0 z-10 rotate-6 bg-butter">{t.sticker}</span>
             <InView className="board border-2 border-cream/20 bg-ink-deep p-[clamp(0.75rem,2.2svh,1.5rem)]">
-              <p className="sr-only">{t.columns.map((col, i) => `${col}: ${count(keys[i])}`).join(', ')}</p>
+              {example && <p className="mono-label mb-[clamp(0.6rem,1.8svh,1.25rem)] text-cream/60">{t.exampleLabel}</p>}
+              <p className="sr-only">{example ? `${t.exampleLabel}. ` : ''}{t.columns.map((col, i) => `${col}: ${count(keys[i])}`).join(', ')}</p>
               <div className="grid grid-cols-2 gap-[clamp(0.6rem,2svh,1.5rem)] sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4" aria-hidden="true">
                 {t.columns.map((col, i) => {
-                  const n = String(count(keys[i])).padStart(2, '0')
                   return (
                     <div key={col} className="flex flex-col items-center gap-[clamp(0.35rem,1.2svh,0.75rem)]">
-                      <span className="flex gap-1">
-                        <Flap value={n[0]} delay={0.1 + i * 0.12} />
-                        <Flap value={n[1]} delay={0.16 + i * 0.12} />
-                      </span>
-                      <span className={`mono-label font-semibold ${i === 0 ? 'text-mint' : 'text-cream/80'}`}>{col}</span>
+                      <FlapCounter value={count(keys[i])} order={i} />
+                      <span className={`mono-label text-center font-semibold ${i === 0 ? 'text-mint' : 'text-cream/80'}`}>{col}</span>
                     </div>
                   )
                 })}
@@ -58,18 +47,25 @@ export function Scoreboard() {
                   {t.empty}
                 </p>
               ) : (
-                <ul className="mt-6 divide-y divide-cream/15 border-t border-cream/15">
+                <ul className="mt-[clamp(0.75rem,2.4svh,1.5rem)] divide-y divide-cream/15 border-t border-cream/15">
                   {calls.map(c => (
-                    <li key={c.statement} className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between">
-                      <span className="text-cream">{c.href ? <a href={c.href} className="underline decoration-mint underline-offset-4">{c.statement}</a> : c.statement}</span>
-                      <span className="mono-label shrink-0 text-cream/60">
-                        {t.due} {c.due} · {t.confidence} {c.confidence}%
+                    <li key={c.statement} className="flex items-start justify-between gap-3 py-[clamp(0.6rem,1.6svh,1rem)]">
+                      <span className="min-w-0">
+                        <span className="block text-[clamp(0.9rem,2.2svh,1.05rem)] leading-snug text-cream">
+                          {c.href ? <a href={c.href} target="_blank" rel="noopener" className="underline decoration-mint underline-offset-4">{c.statement}</a> : c.statement}
+                        </span>
+                        <span className="mono-label mt-1 block text-cream/55">
+                          {t.due} {c.due}
+                        </span>
                       </span>
-                      <span className={`stamp shrink-0 ${c.status === 'held' ? 'border-mint text-mint' : 'border-cream/70 text-cream/80'}`}>{c.status}</span>
+                      <span className={`stamp shrink-0 whitespace-nowrap text-[0.62rem] ${c.status === 'held' ? 'border-mint text-mint' : c.status === 'broke' ? 'border-cream text-cream' : 'border-cream/45 text-cream/60'}`}>
+                        {word(c.status)}
+                      </span>
                     </li>
                   ))}
                 </ul>
               )}
+              {example && <p className="mt-[clamp(0.5rem,1.4svh,1rem)] text-[0.8rem] leading-snug text-cream/55">{t.exampleNote}</p>}
             </InView>
           </div>
         </div>

@@ -21,6 +21,7 @@ the root would let a production build succeed from the wrong folder.
 | `lib/rss.ts` | Reads the Substack feed at build and hourly after, keeping only posts on or after the relaunch date |
 | `brand/` | The two Canva exports every logo file is derived from, the operating-theatre photo the cover is cut from, and the standing robot the Substack welcome image is cut from |
 | `public/brand/`, `app/icon.png`, `app/apple-icon.png` | Derived logo files. Regenerate with `npm run assets` |
+| `public/brand/email-signature-banner.png` | The email signature banner, served at makeyourmindup.ai/brand/. Made by hand, not by `npm run assets`. See `substack-kit/email-signature/` |
 | `public/cover/` | The cover's photo, cut at the table's edge, and the threads that hang into the headline. Regenerate with `npm run assets` |
 | `substack-kit/` | The Substack refresh kit: paste-in copy and images. See its own README |
 | `scripts/` | Asset derivation, kit rendering and screenshots |

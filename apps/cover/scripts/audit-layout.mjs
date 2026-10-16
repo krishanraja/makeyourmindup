@@ -2,7 +2,7 @@
 //   overflow   no text or container runs past the right edge of the screen,
 //              even where overflow-hidden would clip it silently. Common phone
 //              widths, at 100% and 130% text (Android's larger font setting).
-//   alignment  the three spreads line up slot for slot.
+//   alignment  the three format panels line up slot for slot.
 //   fit        every section fits on one screen, below the sticky bar, from a
 //              small phone in Safari to a large desktop.
 // Usage: node scripts/audit-layout.mjs [baseUrl]   ONLY=fit runs one phase.
@@ -75,61 +75,43 @@ for (const scale of run('overflow') ? SCALES : []) {
     await ctx.close()
   }
 }
-// Alignment: the three spreads share one structure, so every slot must sit at
-// the same height in each, and every slot must share the same left edge.
-const SLOTS = ['meta', 'tag', 'headline', 'dek', 'card', 'caption', 'question', 'body']
+// Alignment: the three format panels sit side by side in one section (a swipe
+// row on phones, three columns from tablet up) and share one set of rows, so
+// every slot must sit at the same height in each panel.
+const SLOTS = ['meta', 'tag', 'headline', 'card', 'question', 'body']
 const STACKED = (process.env.ALIGN_WIDTHS || '360,375,390,412,640,768').split(',').map(Number)
-const WIDE = [1280, 1440]
+const WIDE = [1024, 1280, 1440]
 let misaligned = 0
 for (const width of run('alignment') ? [...STACKED, ...WIDE] : []) {
   const ctx = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
   const page = await ctx.newPage()
   await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
-    await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
-    // Measure with the real fonts, never the fallback: a wider fallback wraps lines.
-    await page.evaluate(() => document.fonts.ready)
+  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
+  // Measure with the real fonts, never the fallback: a wider fallback wraps lines.
+  await page.evaluate(() => document.fonts.ready)
   await page.waitForTimeout(300)
   const spreads = await page.evaluate(slots => [...document.querySelectorAll('[data-spread]')].map(sec => {
-    const grid = sec.querySelector('.page')
-    const g = grid.getBoundingClientRect()
-    const pad = parseFloat(getComputedStyle(grid).paddingLeft)
-    const out = { id: sec.id, left: g.left + pad, right: g.right - parseFloat(getComputedStyle(grid).paddingRight) }
-    out.columns = getComputedStyle(grid).gridTemplateColumns.split(' ').length
+    const g = sec.getBoundingClientRect()
+    const out = { id: sec.id, top: Math.round(g.top * 10) / 10, height: Math.round(g.height * 10) / 10 }
     for (const name of slots) {
       const el = sec.querySelector(`[data-slot="${name}"]`)
-      // A slot a layout leaves out (the body on phones) has nothing to align.
+      // A slot a layout leaves out (the body on short screens) has nothing to align.
       if (!el || !el.getClientRects().length) continue
       const r = el.getBoundingClientRect()
-      out[name] = { top: Math.round((r.top - g.top) * 10) / 10, left: Math.round(r.left * 10) / 10, right: Math.round(r.right * 10) / 10 }
+      out[name] = { top: Math.round((r.top - g.top) * 10) / 10, right: Math.round((r.right - g.left) * 10) / 10, width: Math.round(g.width * 10) / 10 }
     }
     return out
   }), SLOTS)
   const problems = []
-  const stacked = spreads.every(s => s.columns === 1)
   const shown = name => spreads.every(s => s[name])
-  if (stacked) {
-    for (const name of SLOTS.filter(shown)) {
-      const tops = spreads.map(s => s[name].top)
-      if (Math.max(...tops) - Math.min(...tops) > 1) problems.push(`${name} tops differ: ${spreads.map(s => `${s.id} ${s[name].top}`).join(', ')}`)
-    }
-  } else {
-    for (const s of spreads) {
-      if (Math.abs(s.card.top - s.meta.top) > 1) problems.push(`${s.id}: card top ${s.card.top} vs meta top ${s.meta.top}`)
-    }
-    // Side by side, the text column still lines up spread to spread.
-    for (const name of ['meta', 'tag', 'headline', 'dek'].filter(shown)) {
-      const tops = spreads.map(s => s[name].top)
-      if (Math.max(...tops) - Math.min(...tops) > 1) problems.push(`${name} tops differ: ${spreads.map(s => `${s.id} ${s[name].top}`).join(', ')}`)
-    }
-  }
-  // Left edges: in a stacked layout every slot starts on the page margin.
-  if (stacked) {
-    for (const s of spreads) {
-      for (const name of SLOTS.filter(shown)) {
-        if (Math.abs(s[name].left - s.left) > 0.5) problems.push(`${s.id}: ${name} left ${s[name].left} vs margin ${s.left}`)
-      }
-      if (s.card.right > s.right + 0.5) problems.push(`${s.id}: card right ${s.card.right} past margin ${s.right}`)
-    }
+  const spread = xs => Math.max(...xs) - Math.min(...xs)
+  if (spreads.length !== 3) problems.push(`expected 3 panels, found ${spreads.length}`)
+  if (spread(spreads.map(s => s.top)) > 1) problems.push(`panel tops differ: ${spreads.map(s => `${s.id} ${s.top}`).join(', ')}`)
+  if (spread(spreads.map(s => s.height)) > 1) problems.push(`panel heights differ: ${spreads.map(s => `${s.id} ${s.height}`).join(', ')}`)
+  for (const name of SLOTS.filter(shown)) {
+    const tops = spreads.map(s => s[name].top)
+    if (spread(tops) > 1) problems.push(`${name} tops differ: ${spreads.map(s => `${s.id} ${s[name].top}`).join(', ')}`)
+    for (const s of spreads) if (s[name].right > s[name].width + 0.5) problems.push(`${s.id}: ${name} runs past the panel edge`)
   }
   if (problems.length) {
     misaligned += problems.length
@@ -172,5 +154,5 @@ await browser.close()
 if (run('fit')) console.log(unfit ? `${unfit} section(s) taller than the screen` : 'PASS  every section fits on one screen')
 if (!run('overflow') && !run('alignment')) process.exit(unfit ? 1 : 0)
 console.log(failures ? `${failures} overflow(s)` : 'PASS  no overflow at any width')
-console.log(misaligned ? `${misaligned} alignment problem(s)` : 'PASS  spreads aligned at every width')
+console.log(misaligned ? `${misaligned} alignment problem(s)` : 'PASS  panels aligned at every width')
 process.exit(failures || misaligned || unfit ? 1 : 0)

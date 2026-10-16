@@ -10,7 +10,7 @@ state_doc: project-documentation/03_STEP_PLAN.md
 history_log: docs/history/LOG.md
 truth_files: [project-documentation/01_MEDIA_KIT.md, panel/judges.json, quality/panel/rubric.v1.json, quality/panel/kill-list.v1.json]
 authority_order: [venture_formats.mandate in Mindmaker OS, project-documentation/01_MEDIA_KIT.md, panel/PANEL.md, project-documentation/03_STEP_PLAN.md, engine/ENGINE_SPEC.md, AGENTS.md]
-steward: https://github.com/krishanraja/control-center/blob/main/docs/steward/RUNBOOK.md
+steward: https://github.com/krishanraja/ai-harness/blob/main/docs/steward/RUNBOOK.md
 never_publish: [the Supabase project ids, any credential or secret name, the cron secret, any reader verdict tied to a person]
 ---
 # makeyourmindup: where it is right now

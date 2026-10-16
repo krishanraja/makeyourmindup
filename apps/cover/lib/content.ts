@@ -7,12 +7,13 @@ export type Subchannel = Site['subchannels'][number]
 export type Call = {
   statement: string
   due: string
-  confidence: number
+  /** No longer shown: Krish, 2026-10-14, predictions carry a date, never a percentage. */
+  confidence?: number
   status: 'held' | 'broke' | 'unclear' | 'open'
   href?: string
 }
 
-export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'spotify'
+export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'x' | 'spotify'
 
 /** A staff box row. `link` opens the panel, at one judge when it names one. */
 export type StaffRow = { k: string; v: string; link?: { text: string; judge?: string }; heads?: boolean }
@@ -31,7 +32,13 @@ export const JUDGES = site.panel.cards as Judge[]
 
 export const SITE = site
 type Config = Omit<typeof config, 'scoreboard' | 'platforms'> & {
-  scoreboard: { show: boolean; calls: Call[] }
+  scoreboard: {
+    show: boolean
+    calls: Call[]
+    /** Krish, 2026-10-07: until the real board has numbers worth showing, the
+     * cover shows an illustration of how it reads, labelled as an example. */
+    example?: { counts: Record<Call['status'], number>; calls: Call[] }
+  }
   platforms: Record<PlatformKey, string | null>
 }
 export const CONFIG = config as unknown as Config
