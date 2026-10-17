@@ -45,8 +45,6 @@ test before the quality test, not after.
 
 ## Never
 
-- Publish, send, schedule, deploy or spend without exact approval for that
-  action and that target. Approval does not carry forward to the next step.
 - Invent a subscriber number, a customer outcome, a price or an engagement
   figure.
 - Use a retired name. The complete list is in
@@ -63,7 +61,6 @@ test before the quality test, not after.
   resemble what he already said yes to is the anti-echo rule's exact
   prohibition, and the failure is invisible: a mirror still returns seven cards
   a week.
-- Write a credential into source, docs, commit messages, logs or chat.
 
 ## Building
 
@@ -76,12 +73,6 @@ test before the quality test, not after.
 - **A canon document declares `kill_list_scope: canon`** in its front matter,
   because it names retired brands in order to forbid them. A gate that blocks
   its own rulebook does not survive contact with a deadline.
-- **Deterministic checks first.** Tests, schemas, counts, API readback. Do not
-  claim completion from prose, and self-critique is never an independent
-  verifier.
-- **Live state beats documentation, documentation beats memory.** Where two
-  sources disagree, stop and report the conflict rather than picking the
-  convenient one.
 - Commit author is `Krish Raja <hello@krishraja.com>`. When Krish overrules a
   decision, record it in the commit body as
   `Ruling (Krish, YYYY-MM-DD): the ruling, in one line`.
@@ -162,3 +153,9 @@ authoritative for reading; the repository is authoritative for what is correct.
 
 **This repository's own rules:** `AGENTS.md`, `project-documentation/02_REPO_BRIEF.md`, `engine/ENGINE_SPEC.md`
 <!-- krish-canon:end -->
+
+<!-- krish-repo-admin:start brain=13bd661431b5 sha=0cc207a2c492 -->
+## Administer this repository
+
+Use `docs/HARNESS_CONTEXT.md` for the owning workflow, source of truth and checks. Preserve the goal and accepted decisions when a revision changes one part; explain material trade-offs. Verify the downstream result. Record corrections and observed outcomes through the existing capture path. Experimental results retain their conditions; inferred requirements remain proposals.
+<!-- krish-repo-admin:end -->
