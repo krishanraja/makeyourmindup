@@ -104,7 +104,7 @@ in `04_Content > Films`. `Video Engine` and `makeyourmindup` are read by path by
 the home computers: never move or rename them, or any folder above them. Read
 the map before putting anything in Drive or tidying a folder.
 
-<!-- krish-canon:start release=v2026.10.17.1 sha=8ecffe822b48 rendered=2026-10-17 -->
+<!-- krish-canon:start release=v2026.10.17.1 sha=98c8cc91e5f8 rendered=2026-10-18 -->
 ## Krish canon
 
 Rendered from `krishanraja/ai-harness` at release v2026.10.17.1. Nothing inside these
@@ -147,7 +147,7 @@ lives only in a chat window teaches nothing.
 **Route.** principles, then context, then `strategy-brief`, then the producer, then
 `verification-loop`, then the approval gate, then delivery. The narrowest applicable
 skill wins; a broad "always" or "mandatory" claim inside a skill never overrides the
-router. One primary writer; validators may stack after it, competing writers may not.
+router. One primary writer; validators may stack after it, competing writers may not. **North Star:** before any work, read the North Star linked from the `north-star` block in `AGENTS.md` or `CLAUDE.md`, say which part of it the task moves, and say so first when it moves nothing; only Krish changes it, and a repository with none asks him for one.
 
 **Who Krish is.** Purpose: "I see what is coming before it is obvious and make it
 legible to people while it still counts." Mindmake is his mission and his one company;
