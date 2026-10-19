@@ -216,6 +216,13 @@ body {
   opacity: 0;
   transform: translateY(28px);
 }
+/* In a swipe row the panels off to the side never come into view, so a rise
+   would leave them hanging below the row and the row would scroll vertically. */
+@media (max-width: 1023px) {
+  .js [data-swipe] > .reveal:not(.is-in) {
+    transform: none;
+  }
+}
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(70px); filter: blur(14px); }

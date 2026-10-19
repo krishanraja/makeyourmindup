@@ -21,9 +21,12 @@ export function Contents() {
           </div>
           <p className="mono-label hidden max-w-[22rem] pb-1 text-ink/70 lg:block">{t.caption}</p>
         </Reveal>
+        {/* overflow-x alone makes overflow-y compute to auto, so anything
+            hanging below the panels let the swipe row scroll vertically. */}
         <div
           data-bleed
-          className="-mx-4 mt-[clamp(0.75rem,2.6svh,2rem)] flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-2 pr-6 sm:-mx-6 sm:scroll-px-6 sm:px-6 md:-mx-10 md:scroll-px-10 md:px-10 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:overflow-visible lg:p-0 xl:gap-x-8"
+          data-swipe
+          className="-mx-4 mt-[clamp(0.75rem,2.6svh,2rem)] flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain px-4 pb-2 pr-6 sm:-mx-6 sm:scroll-px-6 sm:px-6 md:-mx-10 md:scroll-px-10 md:px-10 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:overflow-visible lg:p-0 xl:gap-x-8"
         >
           {SITE.subchannels.map((s, i) => (
             <SubchannelBlock key={s.slug} s={s} i={i} />
