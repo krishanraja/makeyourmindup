@@ -13,6 +13,12 @@
     "allows": { "product_in_editorial": ["CTRL"] },
     "why": "The media kit makes CTRL beta access in the paid tier the one permitted connection between the channel and mind/make. Paid-tier copy names it; every other rule still runs, Mindmake included."
   },
+  "legal_entity_exemption": {
+    "front_matter_key": "kill_list_scope",
+    "value": "legal_entity",
+    "allows_exact": ["Mindmaker LLC", "Mindmaker Ltd"],
+    "why": "Mindmaker LLC (United States) and Mindmaker Ltd (United Kingdom) are the companies that operate the site, not the retired publication name. A file in this scope may write those two exact strings and nothing more: bare Mindmaker and Mindmaker Live stay vetoed, and every other rule still runs. Krish, 2026-10-19. On the cover the only such file is apps/cover/content/legal-entities.md, read by the footer note and the terms and privacy pages."
+  },
   "vetoes": [
     { "id": "em_dash", "pattern": "\\u2014", "says": "No em dashes anywhere, including code and on-screen text." },
     { "id": "exclamation", "pattern": "!", "says": "No exclamation marks in editorial copy." },

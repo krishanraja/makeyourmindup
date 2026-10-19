@@ -5,6 +5,10 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+## 2026-10-19
+
+- decision (Krish, 2026-10-19): "Can you make sure all of these business sites have consistent sitemap.xmls, terms, privacy and a subtle note saying it's a Mindmaker LLC company? I actually have Mindmaker LTD in the UK and Mindmaker LLC in the USA." The cover gains `/terms`, `/privacy`, both in its sitemap, and a footer note naming Mindmaker LLC and Mindmaker Ltd. Mindmaker stays a retired name: the kill list gains a `legal_entity` scope that allows only those two exact company names, used by `apps/cover/content/legal-entities.md` alone. No contact address was added, because the media kit still marks it open.
+
 ## 2026-10-06
 
 - feedback (Krish, 2026-10-06), of a subscriber's Outlook showing the launch post's email with no pictures: "is there any way around this?" Outlook hides pictures from a sender the reader has not trusted yet. In `45f76de`, the welcome email in `apps/cover/substack-kit/COPY.md` asks new readers to add the sender to their contacts; Krish pastes it into Substack. content-engine's page tool now shows the email with pictures off (its walk log F66).
