@@ -22,6 +22,11 @@
  * beta access in the paid tier is the one permitted connection. Every other
  * rule still runs on it, Mindmake included.
  *
+ * A file declaring `kill_list_scope: legal_entity` may write the two exact
+ * company names Mindmaker LLC and Mindmaker Ltd, which operate the site and are
+ * not the retired publication name. Nothing else is relaxed: bare Mindmaker
+ * still vetoes in that file, and so does every other rule.
+ *
  * The day check needs live data and will not read a mandate out of this repo.
  * `venture_formats` in Mindmaker OS is the only truth for what runs when, so
  * pass a JSON file of {"<format_slug>": "<weekday>"} with --formats, or the
@@ -64,7 +69,13 @@ function findPhrase(body, phrase) {
  * and, just as importantly, that each one stays quiet on clean copy.
  */
 export function check(text, { path = '<stdin>', formats = null } = {}) {
-  const { front, body } = split(text)
+  const { front, body: raw } = split(text)
+  // The legal entity scope blanks out the exact company names, and only them,
+  // keeping their length so every later line number still lines up.
+  const entity = RULES.legal_entity_exemption
+  const body = front.kill_list_scope === entity.value
+    ? entity.allows_exact.reduce((b, name) => b.split(name).join(' '.repeat(name.length)), raw)
+    : raw
   const findings = []
   const add = (level, id, line, says, sample) =>
     findings.push({ level, id, path, line, says, sample })

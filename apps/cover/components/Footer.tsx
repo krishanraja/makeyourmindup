@@ -1,8 +1,11 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { CONFIG, SITE, subscribeUrl } from '@/lib/content'
+import { fill } from '@/lib/legal'
 import { Magnetic } from './Magnetic'
 
-export function Footer() {
+/** `onCover` is false on the terms and privacy pages, where the last link goes home rather than to the top. */
+export function Footer({ onCover = true }: { onCover?: boolean }) {
   const t = SITE.footer
   return (
     <footer className="grain relative bg-ink-deep text-cream">
@@ -29,16 +32,31 @@ export function Footer() {
           </Magnetic>
         </div>
         <div className="mono-label mt-[clamp(1rem,4svh,3.5rem)] flex flex-col gap-[clamp(0.25rem,1.4svh,1rem)] border-t border-cream/20 pt-[clamp(0.5rem,2svh,1.5rem)] text-cream/60 sm:flex-row sm:items-center sm:justify-between">
-          <span>
-            © {new Date().getUTCFullYear()} {t.copyright}
+          <span className="flex flex-col gap-1">
+            <span>
+              © {new Date().getUTCFullYear()} {t.copyright}
+            </span>
+            <span className="[text-wrap:balance]">{fill(t.note)}</span>
           </span>
-          <span className="flex flex-wrap gap-6">
+          <span className="flex flex-wrap gap-x-6">
             <a href={CONFIG.substackUrl} target="_blank" rel="noopener" className="inline-flex min-h-[44px] items-center hover:text-mint">
               Substack ↗
             </a>
-            <a href="#top" className="inline-flex min-h-[44px] items-center hover:text-mint">
-              {t.top} ↑
-            </a>
+            <Link href="/terms" className="inline-flex min-h-[44px] items-center hover:text-mint">
+              {t.terms}
+            </Link>
+            <Link href="/privacy" className="inline-flex min-h-[44px] items-center hover:text-mint">
+              {t.privacy}
+            </Link>
+            {onCover ? (
+              <a href="#top" className="inline-flex min-h-[44px] items-center hover:text-mint">
+                {t.top} ↑
+              </a>
+            ) : (
+              <Link href="/" className="inline-flex min-h-[44px] items-center hover:text-mint">
+                {t.home}
+              </Link>
+            )}
           </span>
         </div>
       </div>

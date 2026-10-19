@@ -399,8 +399,80 @@
   "footer": {
     "line": "Made in public. Corrections welcome in the Substack comments.",
     "copyright": "makeyourmindup",
+    "note": "{brand} is a {llc} company. {ltd} in the UK.",
     "subscribe": "Subscribe free",
-    "top": "Back to the cover"
+    "top": "Back to the cover",
+    "home": "The cover",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "legal": {
+    "updated": "Last updated: 19 October 2026",
+    "who": "Who we are",
+    "operator": "{brand} is operated by {llc}, a United States company, and {ltd}, a United Kingdom company (together, \"we\" and \"us\").",
+    "terms": {
+      "title": "Terms",
+      "description": "The terms for using the makeyourmindup cover.",
+      "sections": [
+        {
+          "heading": "What this site is",
+          "body": ["This site is the cover of a publication. It is one page that shows what we publish and sends you to our Substack, where the writing lives."]
+        },
+        {
+          "heading": "Using what you find here",
+          "body": ["You are welcome to read, share and link to anything on this site. Please credit {brand} when you quote us. The words, pictures and logos are ours unless we say otherwise."]
+        },
+        {
+          "heading": "Substack",
+          "body": ["Subscribing, paying and commenting all happen on Substack. Substack's own terms and privacy policy apply there, not these."]
+        },
+        {
+          "heading": "Not advice",
+          "body": ["What we publish is analysis and opinion. It is not financial, legal or investment advice. Our calls are predictions with a date, and some of them will be wrong."]
+        },
+        {
+          "heading": "Other sites",
+          "body": ["We link to other sites. We do not run them and we are not responsible for what they say or do."]
+        },
+        {
+          "heading": "Changes",
+          "body": ["We may change these terms. When we do, we change the date at the top of this page."]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "What the makeyourmindup cover does and does not collect.",
+      "responsible": "{llc} and {ltd} are responsible for the personal information described in this policy.",
+      "sections": [
+        {
+          "heading": "What this site collects",
+          "body": [
+            "Nothing that we keep. This site has no accounts, no analytics, no advertising and no tracking, and it sets no cookies.",
+            "Our host, Vercel, keeps standard server logs, such as your IP address and the page you asked for, so it can run the site and keep it safe."
+          ]
+        },
+        {
+          "heading": "The subscribe box",
+          "body": ["If you type your email address into the subscribe box, your browser sends it straight to Substack to fill in its subscribe form. This site never receives it or stores it."]
+        },
+        {
+          "heading": "Substack",
+          "body": [
+            "When you subscribe, Substack holds your email address and handles any payment, under its own privacy policy. As the publisher, we can see who subscribes on Substack.",
+            "The pictures beside our latest pieces load from Substack's servers, so Substack sees your browser ask for them. To stop getting our emails, use the unsubscribe link in any of them."
+          ]
+        },
+        {
+          "heading": "Other sites",
+          "body": ["Links to Substack, LinkedIn and other sites take you to services we do not run. Their own privacy policies apply there."]
+        },
+        {
+          "heading": "Changes",
+          "body": ["If what this site does with information changes, we update this page and the date at the top."]
+        }
+      ]
+    }
   },
   "notFound": {
     "title": "This page hasn't made its mind up.",

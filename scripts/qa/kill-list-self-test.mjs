@@ -60,6 +60,18 @@ test('paid tier may name CTRL and nothing else is relaxed', () => {
   assert.ok(ids(paid('A line — with an em dash.')).includes('em_dash'), 'em dashes stay vetoed in the paid tier')
 })
 
+test('the legal entity scope allows the two company names and nothing else', () => {
+  const legal = body => `---\nkill_list_scope: legal_entity\n---\n${body}\n`
+  assert.deepEqual(ids(legal('Mindmaker LLC\nMindmaker Ltd')), [], 'the two operating companies may be named')
+  assert.ok(ids('Run by Mindmaker LLC.\n').includes('retired_name'), 'the company name stays vetoed outside the scope')
+  assert.ok(ids(legal('Mindmaker covered it.')).includes('retired_name'), 'bare Mindmaker stays vetoed in the scope')
+  assert.ok(ids(legal('Mindmaker Live covered it.')).includes('retired_name'), 'Mindmaker Live stays vetoed in the scope')
+  assert.ok(ids(legal('Built by Mindmake.')).includes('product_in_editorial'), 'Mindmake stays vetoed in the scope')
+  assert.ok(ids(legal('Mindmaker LLC \u2014 a line.')).includes('em_dash'), 'em dashes stay vetoed in the scope')
+  assert.equal(check(legal('Mindmaker LLC\nMindmaker covered it.')).findings.find(f => f.id === 'retired_name').line, 2,
+    'line numbers survive the blanking')
+})
+
 test('canon is scanned for em dashes and nothing else', () => {
   const canon = '---\nkill_list_scope: canon\n---\nRetired: Built with AI, The Money of AI, Techonomic.\n'
   assert.deepEqual(ids(canon), [], 'canon must be allowed to name what it forbids')
