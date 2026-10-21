@@ -18,6 +18,8 @@ function decode(s: string) {
   return s
     .replace(/<[^>]+>/g, '')
     .replace(/&amp;/g, '&')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
@@ -33,7 +35,7 @@ function decode(s: string) {
  * reaches the cover. A failed fetch returns nothing and the page shows its
  * designed empty state; on Vercel the last good page keeps serving.
  */
-export async function latestPosts(): Promise<Post[]> {
+export async function latestPosts(limit: number = CONFIG.latestCount): Promise<Post[]> {
   try {
     const res = await fetch(CONFIG.feedUrl, {
       next: { revalidate: 900 },
@@ -63,7 +65,7 @@ export async function latestPosts(): Promise<Post[]> {
       .filter(p => !/^video\s*:/i.test(p.title))
       .filter(p => p.title && p.link && new Date(p.date).getTime() >= since)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, CONFIG.latestCount)
+      .slice(0, limit)
   } catch {
     return []
   }

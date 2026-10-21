@@ -22,9 +22,45 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    creator: '@therealkrisho',
     title: SITE.meta.title,
     description: SITE.meta.description,
   },
+}
+
+// Who publishes this and who writes it, for search and answer engines. Every
+// value comes from content/config.json or the page itself, so nothing here can
+// say more than the site already does.
+const sameAs = [CONFIG.substackUrl, ...Object.values(CONFIG.platforms).filter((u): u is string => Boolean(u))]
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${CONFIG.siteUrl}/#publication`,
+      name: 'makeyourmindup',
+      url: CONFIG.siteUrl,
+      logo: `${CONFIG.siteUrl}/icon.png`,
+      description: SITE.meta.description,
+      founder: { '@id': `${CONFIG.siteUrl}/#krish` },
+      sameAs,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${CONFIG.siteUrl}/#website`,
+      name: 'makeyourmindup',
+      url: CONFIG.siteUrl,
+      inLanguage: 'en-GB',
+      publisher: { '@id': `${CONFIG.siteUrl}/#publication` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${CONFIG.siteUrl}/#krish`,
+      name: 'Krish Raja',
+      url: CONFIG.links.krish,
+      sameAs: [CONFIG.links.linkedin, CONFIG.platforms.x].filter(Boolean),
+    },
+  ],
 }
 
 export const viewport: Viewport = {
@@ -48,6 +84,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('ready'))d.classList.remove('js')},3000)",
           }}
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, '\\u003c') }} />
+        <link rel="alternate" type="application/rss+xml" title="makeyourmindup" href={CONFIG.feedUrl} />
       </head>
       <body>{children}</body>
     </html>

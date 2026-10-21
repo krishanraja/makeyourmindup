@@ -5,7 +5,7 @@
 // the mark. That line fails the repo kill list, so it is cut off here rather
 // than shown anywhere on the site.
 import sharp from 'sharp'
-import { mkdirSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
 
 const INK = '#0C1512'
 mkdirSync('public/brand', { recursive: true })
@@ -92,4 +92,32 @@ async function icon(size, file, pad = 0.18) {
 }
 await icon(512, 'app/icon.png')
 await icon(180, 'app/apple-icon.png', 0.14)
+await icon(192, 'public/icon-192.png')
 console.log('icons done')
+
+// 5. favicon.ico for browsers, feed readers and crawlers that ask for it by
+// name and ignore <link rel="icon">. PNG frames inside an ICO container, which
+// every browser since 2007 reads.
+const frames = []
+for (const size of [16, 32, 48]) {
+  const inner = Math.round(size * 0.82)
+  const m = await sharp(mark.data).resize(inner, inner, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer()
+  frames.push({ size, png: await sharp({ create: { width: size, height: size, channels: 4, background: INK } }).composite([{ input: m, gravity: 'centre' }]).png({ compressionLevel: 9 }).toBuffer() })
+}
+const header = Buffer.alloc(6 + 16 * frames.length)
+header.writeUInt16LE(0, 0)
+header.writeUInt16LE(1, 2)
+header.writeUInt16LE(frames.length, 4)
+let offset = header.length
+frames.forEach((f, i) => {
+  const e = 6 + 16 * i
+  header.writeUInt8(f.size, e)
+  header.writeUInt8(f.size, e + 1)
+  header.writeUInt16LE(1, e + 4)
+  header.writeUInt16LE(32, e + 6)
+  header.writeUInt32LE(f.png.length, e + 8)
+  header.writeUInt32LE(offset, e + 12)
+  offset += f.png.length
+})
+writeFileSync('app/favicon.ico', Buffer.concat([header, ...frames.map(f => f.png)]))
+console.log('favicon done')
