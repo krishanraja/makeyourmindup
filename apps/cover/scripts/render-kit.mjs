@@ -159,7 +159,7 @@ await sharp({ create: { width: 1024, height: 1024, channels: 4, background: '#0C
 
 // The site's own social card is the same image, as a JPEG: it is a photograph
 // now, and WhatsApp drops link previews much over 300KB.
-for (const f of ['app/opengraph-image.jpg', 'app/twitter-image.jpg']) {
+for (const f of ['public/opengraph-image.jpg', 'public/twitter-image.jpg']) {
   await sharp(`${OUT}/social-preview-1200x630.png`).jpeg({ quality: 84, mozjpeg: true }).toFile(f)
 }
 console.log('kit done')
