@@ -36,7 +36,7 @@ description, so there is no publication-level social image to upload.
 The social card is the cover itself: the operating-theatre photo, its REAL
 and THEATRE stamps and "AI, UNPICKED.", built from `public/cover/` and the words
 in `content/site.json`. It is also the site's own share image
-(`app/opengraph-image.jpg`). The welcome image is the same idea with the robot
+(`public/opengraph-image.jpg`). The welcome image is the same idea with the robot
 standing up to greet new readers: the wave is stamped THEATRE, the stuffing
 REAL. Its photo is `brand/robot-standing-source.webp`, whose stuffing was
 calmed with an image edit (GPT Image 2.5 through Higgsfield, 26 September 2026)

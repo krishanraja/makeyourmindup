@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Anton, Archivo, Fraunces, IBM_Plex_Mono } from 'next/font/google'
 import { CONFIG, SITE } from '@/lib/content'
+import { OG_IMAGES, TWITTER_IMAGES } from '@/lib/social'
 import './globals.css'
 
 const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton', display: 'swap' })
@@ -19,10 +20,12 @@ export const metadata: Metadata = {
     siteName: 'makeyourmindup',
     title: SITE.meta.title,
     description: SITE.meta.description,
+    images: OG_IMAGES,
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@therealkrisho',
+    images: TWITTER_IMAGES,
     title: SITE.meta.title,
     description: SITE.meta.description,
   },
