@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-10-06
+as_of: 2026-10-23
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -39,7 +39,9 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-10-06)
+## Where it is right now (as of 2026-10-23)
+
+<!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
 Lifecycle is `building`. The machine does not exist yet. What landed on
 2026-09-19 and 20 is the canon it will be built from, which until now existed only as Claude
@@ -156,6 +158,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
+- North Star check (2026-10-23): holds.
 
 ## Read next
 
