@@ -104,10 +104,10 @@ in `04_Content > Films`. `Video Engine` and `makeyourmindup` are read by path by
 the home computers: never move or rename them, or any folder above them. Read
 the map before putting anything in Drive or tidying a folder.
 
-<!-- krish-canon:start release=v2026.10.26.1 sha=c1969035088f rendered=2026-10-26 -->
+<!-- krish-canon:start release=v2026.10.27.2 sha=3be1940bb667 rendered=2026-10-27 -->
 ## Krish canon
 
-Rendered from `krishanraja/ai-harness` at release v2026.10.26.1. Nothing inside these
+Rendered from `krishanraja/ai-harness` at release v2026.10.27.2. Nothing inside these
 markers is hand-maintained: an edit here is detected and proposed back to the canon,
 never silently overwritten, and never lost. This sync preserves all other text.
 Separately approved repository administration owns only its declared regions and context file.
