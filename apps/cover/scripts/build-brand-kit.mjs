@@ -186,8 +186,8 @@ await cutOnInk(THEATRE.src, THEATRE, join(PHOTO, 'robot-theatre-cut.webp'))
 await liftThreads(THEATRE.src, THEATRE.threads, join(PHOTO, 'robot-theatre-threads.png'))
 await cutOnInk(STANDING.src, STANDING, join(PHOTO, 'robot-standing-cut.webp'))
 await liftThreads(STANDING.src, STANDING.threads, join(PHOTO, 'robot-standing-threads.png'), behindGrey)
-copyFileSync('public/krish-closer-look.jpg', join(PHOTO, 'editor', 'krish-closer-look.jpg'))
-copyFileSync('substack-kit/images/krish-profile-900.jpg', join(PHOTO, 'editor', 'krish-profile-900.jpg'))
+copyFileSync('public/editor-closer-look.jpg', join(PHOTO, 'editor', 'editor-closer-look.jpg'))
+copyFileSync('substack-kit/images/editor-profile-900.jpg', join(PHOTO, 'editor', 'editor-profile-900.jpg'))
 
 // A cut photo on the page, its threads hanging below the cut. w is its width on the page.
 // stage is the height both photos stand in, so their cut edges share a baseline.
