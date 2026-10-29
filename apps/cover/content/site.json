@@ -214,18 +214,6 @@
         "name": "Instagram",
         "blurb": "The Short, plus a flipbook carousel you swipe through.",
         "cta": "Follow"
-      },
-      {
-        "key": "tiktok",
-        "name": "TikTok",
-        "blurb": "The same Shorts, on your For You page.",
-        "cta": "Watch now"
-      },
-      {
-        "key": "x",
-        "name": "X",
-        "blurb": "What just moved in AI, as it moves.",
-        "cta": "Follow"
       }
     ]
   },

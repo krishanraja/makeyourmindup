@@ -30,6 +30,11 @@ the root would let a production build succeed from the wrong folder.
 
 - **A platform goes live:** put its URL in `content/config.json` under
   `platforms`. The tile flips from "At the printers" to live on the next build.
+  A platform shows only if it has a tile in `content/site.json`
+  (`platforms.tiles`). TikTok and X have none since 29 October 2026: Growth's
+  channel records (`growth-makeyourmindup/channels.json`) list only his own
+  accounts there, whose handles name him. Two tiles beside the Substack tile
+  take half a row each; four take a cell each.
 - **A call is published:** add it to `scoreboard.calls` in `content/config.json`
   with `statement`, `due`, `confidence`, `status` (`open`, `held`, `broke` or
   `unclear`) and optionally `href`. Only Krish rules a call.
