@@ -15,7 +15,7 @@ Every written piece on makeyourmindup is free, and it stays free. So you've just
 
 Here's what your subscription gets you:
 
-- Beta access to CTRL, the AI product we're building.
+- Beta access to CTRL.
 - The diagrams and artifacts from every piece, as files you can take and reuse.
 - The audio and video editions.
 - A live session with us, once a month.
