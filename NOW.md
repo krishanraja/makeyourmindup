@@ -77,7 +77,10 @@ verdict travels; `apps/machine/` has no jobs in it.
 
 **Superseded, not started.** The four jobs. The dry runs gated the machine's
 template (`calibration/2026-09-17-dry-run-picks.json` records one of three
-subjects picked); with no machine to build here, they gate nothing in this repo.
+subjects picked); they still settle three decisions the media kit marks open
+(a verdict in the written piece, what is fixed in the template, a name per
+format on shorts); whether they keep that job now that content-engine makes
+the pieces is Krish's (below).
 
 **Elsewhere, and load bearing.** The strategy machinery runs in
 `krishanraja/content-engine` under `apps/control-plane` and stays there: the
