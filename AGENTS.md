@@ -1,3 +1,6 @@
+---
+kill_list_scope: canon
+---
 <!-- north-star:start -->
 ## North Star: read it first, every session
 
@@ -10,9 +13,6 @@ This repository's North Star is [`docs/NORTH_STAR.md`](docs/NORTH_STAR.md): an a
 - Only Krish changes it.
 <!-- north-star:end -->
 
----
-kill_list_scope: canon
----
 # Operating rules for this repository
 
 This repo is the machine behind the publication `makeyourmindup`. Read

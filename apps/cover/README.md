@@ -105,6 +105,9 @@ deployment created with `rootDirectory: apps/cover` for that deployment only.
 
 Root Directory is `apps/cover` on the Vercel project, so a push to `main`
 builds and deploys the cover by itself. Pushes to other branches build previews.
+`vercel.json` here skips the build when a push changes nothing under
+`apps/cover` (`ignoreCommand`, exit 0 skips), so a docs-only merge no longer
+redeploys production.
 
 Rollback is one action in Vercel: promote the previous production deployment.
 The Cannes funnel's last deployment is `dpl_4C3o6boULM69QUQY98UNq35R58oi`.

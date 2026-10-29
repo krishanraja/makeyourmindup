@@ -5,6 +5,52 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+## 2026-10-29
+
+- moved from `NOW.md` verbatim (W2.12), to hold it under the 16 KB cap that `scripts/qa/now-size.mjs` enforces; the 2026-10-28 and 2026-10-29 entries stay there:
+
+  - 2026-10-05 **follow.the.money moves to Mondays and under.the.hood to
+    Wednesdays, on the cover and everywhere else.** Decision (Krish,
+    2026-10-05): "Let's just make follow the money permanently a monday thing,
+    and swap it out." The cover lists and lays out the sections in the new
+    order, the brand line is "We follow the money, look under the hood and mind
+    the gap.", the Substack kit, media kit, slate page and kill list self-test
+    follow, and the brand kit is v1.5 with only the days and the order changed
+    (`7733341`). The live table changed with control-center migration
+    `20261005170000`; each section keeps its colour, sticker and question.
+  - 2026-10-04 **The cover gained the panel and lost the commentary under the
+    subscribe button.** Ruling (Krish, 2026-10-04): the judges are drawn faces,
+    never the felt robot, on one small card found from the staff box (`c5fcd15`,
+    `e06e8b9`). The form's status line, the footnote and the asterisk on "Free
+    to read" went, and the cover photo took the freed height (`c068dd4`).
+  - 2026-09-26 **under.the.hood runs every Monday, and the old names are gone from
+    the living files.** Rulings (Krish, 2026-09-25 and 2026-09-26): the
+    subchannels are follow.the.money and under.the.hood, "every single instance";
+    then "Correct the engine's table and anywhere else, its out of date", after
+    the cover promised Mon, Wed and Fri. `venture_formats` and `content_cadence`
+    read Mondays, 1 a week (control-center migration `20260926150000`). The
+    slate picker now fills under.the.hood as a fixed slot like the other two
+    (it was a half slot behind a raised bar of 7.5), and prints the standing
+    questions the cover prints. The media kit, the intake spec, the dry runs and
+    this file use the live names; the retired list in
+    `project-documentation/02_REPO_BRIEF.md` had follow.the.money as retired and
+    now lists split.the.bill and lift.the.lid instead. The rulings log, the applied
+    migrations, the calibration records and the W38 run keep the names they were
+    written with.
+
+  - 2026-09-24 to 26 **The cover is live, with its brand kit.** Ruling (Krish,
+    2026-09-25): the cover takes makeyourmindup.ai, and the Cannes funnel stays
+    offline until mm-ctrl hosts it (`73735f5`). `apps/cover` is the front door
+    (`7c5572e`): Monday first, the new house rules and the paid-tier copy
+    (`b07469b`), every section on one screen (`522e7f3`), the operating-theatre
+    cover and the standing robot for the Substack welcome image (`e845606`,
+    `a97d922`). The Substack kit, the paid welcome email and the media kit's paid
+    prices landed alongside (`b64822a`, `345dc8e`, `3842d31`); the kill list gained
+    a `paid_tier` scope that may name CTRL and nothing else (`0849068`) and retired
+    the old subchannel names (`b8718b3`); the media kit carries the three questions
+    as Krish means them (`78a9859`). Brand book and kit v1.4, with the felt robot
+    and its stamps, are in `docs/brandbooknew/` (`a995a0c`).
+
 ## 2026-10-19
 
 - decision (Krish, 2026-10-19): "Can you make sure all of these business sites have consistent sitemap.xmls, terms, privacy and a subtle note saying it's a Mindmaker LLC company? I actually have Mindmaker LTD in the UK and Mindmaker LLC in the USA." The cover gains `/terms`, `/privacy`, both in its sitemap, and a footer note naming Mindmaker LLC and Mindmaker Ltd. Mindmaker stays a retired name: the kill list gains a `legal_entity` scope that allows only those two exact company names, used by `apps/cover/content/legal-entities.md` alone. No contact address was added, because the media kit still marks it open.
