@@ -3,9 +3,11 @@ kill_list_scope: canon
 ---
 # makeyourmindup
 
-The machine behind the publication. It watches what moved, scores it, assembles
-a brief with its evidence, and dispatches the right package to the right place
-at the right hour.
+The cover and the editorial canon of the publication. content-engine produces
+the publication's content and runs this repository's kill list; the machine
+this repository was to hold (watch, score, assemble, dispatch) is superseded
+(Ruling, Krish, 2026-10-28: "Content-engine produces content for
+makeyourmindup.ai, which is hosted at makeyourmindup repo").
 
 **The machine holds no screens.** Control Center holds every pixel. If the
 machine needs to say something, it writes a row Control Center reads. The one
