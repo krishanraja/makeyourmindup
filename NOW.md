@@ -102,6 +102,7 @@ ruling.
 content-engine deployment. Every arc card written on 2026-09-18 carries a null
 format because none of them was ever composed.
 
+- a Claude Code SessionEnd hook (`scripts/taste_backstop.py`, from growth-makeyourmindup, tagged `publication` (the venture_registry slug) and `krishanraja/makeyourmindup`) keeps only Krish's own lines that a local filter flags as a correction or rejection, scrubbed of secrets, in the ignored `.scratch/taste/backstop.jsonl`; it sends nothing. (2026-10-29)
 - `docs/decisions/2026-10-29-wave-3-for-krish.md` holds what waits on Krish here: the cover redeploy (already live through PR #29's merge; the photo-file rename is PR #32), the dry runs (calibrate or retire, recommended retire), the media kit's three dry-run decisions, the TikTok and X tiles (no tiles live; the handle version needs new publication accounts), and a Substack settings checklist read live on 2026-10-29. (2026-10-29)
 - NOW.md is 11962 bytes under a 16 KB cap that `npm test` and the new `Check` workflow enforce (`scripts/qa/now-size.mjs`); its four "What changed recently" entries from 2026-09-24 to 2026-10-05 now sit verbatim in `docs/history/LOG.md`. (2026-10-29)
 - `apps/cover/vercel.json` carries `ignoreCommand: git diff --quiet HEAD^ HEAD -- .`, so once merged, Vercel builds production only when a push changes `apps/cover`; replayed on past commits it skips the AGENTS.md-only canon sync (`7402394`) and builds the tiles change (`a1cd10b`). (2026-10-29)
@@ -110,6 +111,7 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-10-29 Krish chose "Local file, runner posts" on 29 October 2026, so the runner that holds the Control Center key posts them to `taste_reports`, not the session.
 - 2026-10-29 every merge to main deploys production, so even docs-only PRs here republish the cover; the pack offers an ignored build step for him to decide.
 - 2026-10-29 NOW.md had grown to 14926 bytes with no limit; the cap is growth-makeyourmindup's figure, so the chain's two NOW.md files share one rule.
 - 2026-10-29 NOW.md's "not yet on the live site" was stale; the redeploy happened through the merge of PR #29, and the photo addresses are the one live residual.
@@ -136,7 +138,7 @@ format because none of them was ever composed.
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-10-29): Krish answers the four calls in the pack.
+- Next (2026-10-29): the runner on his home computer reads `.scratch/taste/backstop.jsonl` here as it does in growth-makeyourmindup.
 The single next action is **the canon reconciliation** that the 28 October
 plan schedules for its third wave, by 14 November: this repo's canon read
 against content-engine as the one ideation path. Until then, content-engine
