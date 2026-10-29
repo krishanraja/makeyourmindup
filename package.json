@@ -5,8 +5,9 @@
   "type": "module",
   "description": "The machine behind the makeyourmindup publication: watch, score, assemble, dispatch.",
   "scripts": {
-    "test": "node scripts/qa/kill-list-self-test.mjs",
+    "test": "node scripts/qa/kill-list-self-test.mjs && node scripts/qa/now-size.mjs",
     "kill-list": "node scripts/qa/kill-list.mjs",
-    "gate:canon": "node scripts/qa/kill-list.mjs AGENTS.md NOW.md README.md docs/history/LOG.md engine/ENGINE_SPEC.md panel/PANEL.md project-documentation/*.md dry-runs/*.md parked/cannes-2026/PARKED.md"
+    "gate:canon": "node scripts/qa/kill-list.mjs AGENTS.md NOW.md README.md docs/history/LOG.md engine/ENGINE_SPEC.md panel/PANEL.md project-documentation/*.md dry-runs/*.md parked/cannes-2026/PARKED.md",
+    "now-size": "node scripts/qa/now-size.mjs"
   }
 }
