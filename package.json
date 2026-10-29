@@ -8,6 +8,7 @@
     "test": "node scripts/qa/kill-list-self-test.mjs && node scripts/qa/now-size.mjs",
     "kill-list": "node scripts/qa/kill-list.mjs",
     "gate:canon": "node scripts/qa/kill-list.mjs AGENTS.md NOW.md README.md docs/history/LOG.md engine/ENGINE_SPEC.md panel/PANEL.md project-documentation/*.md dry-runs/*.md parked/cannes-2026/PARKED.md",
+    "test:backstop": "python3 -m unittest discover -s tests -p \"test_*.py\"",
     "now-size": "node scripts/qa/now-size.mjs"
   }
 }
