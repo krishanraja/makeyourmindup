@@ -22,7 +22,7 @@ We unpick how AI really works, in plain English, three times a week.
 
 **The house rules.** Plain English. If jargon sneaks in, we translate it on the spot. No sermons: we show our working, and you make your mind up. Every number names whoever produced it. British spelling, obviously.
 
-**Who makes it.** Krish Raja writes every piece, reads the audio edition and fronts the Shorts. A blind panel of AI judges checks every draft, then Krish makes the final call.
+**Who makes it.** We write every piece, read the audio edition and front the Shorts. A blind panel of AI judges checks every draft, then a human makes the final call.
 
 Every written piece is free to read, in full.
 
@@ -38,11 +38,7 @@ Every piece ends with a call and a date. We keep score in public, misses include
 
 One small thing: if the pictures in these emails don't show, your email app is hiding them until it trusts us. Add this sender to your contacts, or press "show pictures" once, and they'll appear from then on.
 
-Krish
-
-## Profile bio
-
-Editor of makeyourmindup. Sixteen years building commercial businesses across media, tech and telecoms, now building with AI. Brooklyn-based, British-Australian by way of everywhere else.
+makeyourmindup
 
 ## Image alt text
 

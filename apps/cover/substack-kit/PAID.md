@@ -11,24 +11,24 @@ still runs every other rule on this file.
 
 Subject: Thank you, properly.
 
-Every written piece on makeyourmindup is free, and it stays free. So you've just paid for something you could have read for nothing. Thank you. That's a real vote of confidence, and I don't take it lightly.
+Every written piece on makeyourmindup is free, and it stays free. So you've just paid for something you could have read for nothing. Thank you. That's a real vote of confidence, and we don't take it lightly.
 
 Here's what your subscription gets you:
 
-- Beta access to CTRL, the AI product I'm building.
+- Beta access to CTRL, the AI product we're building.
 - The diagrams and artifacts from every piece, as files you can take and reuse.
 - The audio and video editions.
-- A live session with me, once a month.
+- A live session with us, once a month.
 - The full Resources library.
 - The verdict archive: every call we've made, and how each one landed.
 
 A few of these are still at the printers. Each one lands in your inbox the day it's ready.
 
-In the spirit of follow.the.money, here's where your money goes. It pays the running costs of the machinery behind this, so the machines do the grind and I get to spend my time on the thinking and the writing.
+In the spirit of follow.the.money, here's where your money goes. It pays the running costs of the machinery behind this, so the machines do the grind and we get to spend our time on the thinking and the writing.
 
-One favour: hit reply and tell me what you want taken apart first. I read every reply.
+One favour: hit reply and tell us what you want taken apart first. We read every reply.
 
-Krish
+makeyourmindup
 
 ## Welcome email to founding subscribers
 
@@ -48,5 +48,5 @@ Paid:
 - Beta access to CTRL
 - Diagrams and artifacts as files you can reuse
 - The audio and video editions
-- A monthly live session with Krish
+- A monthly live session
 - The full Resources library and the verdict archive

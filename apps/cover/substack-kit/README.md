@@ -28,7 +28,6 @@ there, so the hub has to match the front door.
 | `images/cover-1200x1200.png` | Website editor, Welcome page, Image | 1200 square |
 | `images/email-banner-1100x220.png` | Settings, Emails, Email header & footer: banner | 1100 x 220 at 2x |
 | `images/social-preview-1200x630.png` | Per post, not a setting: post Settings, Social preview, Upload New, for a post with no image of its own | 1200 x 630 |
-| `images/krish-profile-900.jpg` | `https://substack.com/profile/edit`, profile photo. It shows beside every post at about 40px, where a smile reads and a squint looks like a wince. The squint is the site's staff box photo | 900 square |
 
 Substack builds the publication's own share card from the logo, name and short
 description, so there is no publication-level social image to upload.
@@ -78,9 +77,16 @@ website editor at `https://home.makeyourmindup.ai/publish/website-editor/home`.
 7. Settings, Payments, Subscription benefits: the lists in `PAID.md`. On
    2026-09-25 Substack's defaults were live, promising free readers only
    "Occasional public posts", which contradicts the cover.
-8. `https://substack.com/profile/edit`, Bio: the profile bio in `COPY.md`. This
-   is where the 30 Under 30 and themindmaker.ai lines live. Upload
-   `images/krish-profile-900.jpg` as the profile photo on the same page.
+8. No person is the byline. Every piece is the publication's, never authored
+   by a person, and no face sits beside the byline (Ruling, Krish, 2026-10-28:
+   "Remember, no content refers to Krish, ever. I still see that popping up
+   from time to time. Even articles written are not authored by Krish. My face
+   only, for assets and the video format."; Krish picked D3: "Drop it"). So
+   this kit no longer writes a profile bio or photo, and his own profile at
+   `https://substack.com/profile/edit` stays his own (Krish picked D2: "No,
+   personal stays personal"). What makes a post show a person, a name or a
+   face (bylines, the author shown on each post, the copyright line, the email
+   sender name) is in Substack's settings, which only Krish changes.
 9. Leave the old posts where they are. The cover only lists posts published on
    or after the relaunch date in `content/config.json`.
 

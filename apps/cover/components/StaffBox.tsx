@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { CONFIG, SITE, type StaffRow } from '@/lib/content'
+import { SITE, type StaffRow } from '@/lib/content'
 import { PanelDoor, PanelHeads } from './PanelSheet'
 import { Reveal } from './Reveal'
 
@@ -9,6 +9,13 @@ import { Reveal } from './Reveal'
 // is quite funny but no one will ever click on it like this"). "Checked by"
 // still carries a plain underline and the heads, and the two rows that already
 // make a joke carry a fainter, dotted door to one judge each.
+//
+// No name, caption or link here names the person in the photo, and nothing
+// links to his own accounts (Ruling, Krish, 2026-10-28: "Remember, no content
+// refers to Krish, ever. I still see that popping up from time to time. Even
+// articles written are not authored by Krish. My face only, for assets and the
+// video format."; asked about his own accounts, Krish picked: "No, personal
+// stays personal").
 const DOOR = 'underline decoration-ink/35 decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink'
 const HIDDEN_DOOR = 'underline decoration-ink/25 decoration-dotted decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink hover:decoration-solid'
 
@@ -38,7 +45,6 @@ export function StaffBox() {
       <span className={`absolute left-1/2 z-10 -translate-x-1/2 rotate-2 bg-butter/80 ${small ? '-top-2 h-4 w-14' : '-top-4 h-8 w-28'}`} aria-hidden="true" />
       <div className={`brutal border-2 border-ink bg-cream ${small ? 'p-1.5 pb-4' : 'p-3 pb-[clamp(1.5rem,5svh,3rem)]'}`}>
         <Image src="/krish-closer-look.jpg" alt={t.photoAlt} width={940} height={940} sizes={small ? '128px' : '(min-width: 1024px) 400px, 90vw'} className="h-auto w-full border-2 border-ink" />
-        {!small && <figcaption className="dek mt-[clamp(0.25rem,1.2svh,0.75rem)] text-center text-[clamp(1rem,2.6svh,1.25rem)]">{t.rows[0].v}</figcaption>}
       </div>
     </figure>
   )
@@ -89,12 +95,6 @@ export function StaffBox() {
                   {t.judgesCta} <span aria-hidden="true">↗</span>
                 </span>
               </PanelDoor>
-              <a href={CONFIG.links.krish} target="_blank" rel="noopener" className="mono-label inline-flex min-h-[44px] items-center border-2 border-ink px-4 font-semibold transition-colors hover:bg-ink hover:text-cream">
-                {t.site} ↗
-              </a>
-              <a href={CONFIG.links.linkedin} target="_blank" rel="noopener" className="mono-label inline-flex min-h-[44px] items-center border-2 border-ink px-4 font-semibold transition-colors hover:bg-ink hover:text-cream">
-                {t.linkedin} ↗
-              </a>
             </div>
           </Reveal>
         </div>

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "makeyourmindup: what's coming in AI, before it's obvious",
-    "description": "What's coming in AI, before it's obvious. Three times a week Krish takes one AI story apart: who gets paid, what's real, and where it leads. In plain words, while it still counts. Free, every Monday, Wednesday and Friday."
+    "description": "What's coming in AI, before it's obvious. Three times a week we take one AI story apart: who gets paid, what's real, and where it leads. In plain words, while it still counts. Free, every Monday, Wednesday and Friday."
   },
   "strap": {
     "left": "Vol. 01",
@@ -13,7 +13,7 @@
       "AI,",
       "unpicked."
     ],
-    "dek": "What's coming in AI, before it's obvious. Three times a week I take one AI story apart: who gets paid, what's real, and where it leads. You make your mind up.",
+    "dek": "What's coming in AI, before it's obvious. Three times a week we take one AI story apart: who gets paid, what's real, and where it leads. You make your mind up.",
     "issue": "Issue 00",
     "theatre": {
       "photoAlt": "A hand-sewn felt robot lies on an operating table under a surgical lamp. Its chest seam is unpicked and the stuffing shows.",
@@ -224,7 +224,7 @@
       {
         "key": "x",
         "name": "X",
-        "blurb": "Krish on what just moved in AI, as it moves.",
+        "blurb": "What just moved in AI, as it moves.",
         "cta": "Follow"
       }
     ]
@@ -234,16 +234,12 @@
     "title": "Who makes this.",
     "rows": [
       {
-        "k": "Editor",
-        "v": "Krish Raja"
-      },
-      {
         "k": "Written for",
         "v": "Busy people who want AI explained without the sales pitch"
       },
       {
         "k": "Checked by",
-        "v": "A blind panel of AI judges, then Krish, who gets the final say",
+        "v": "A blind panel of AI judges, then a human with the final say",
         "link": {
           "text": "A blind panel of AI judges"
         },
@@ -270,15 +266,13 @@
         }
       }
     ],
-    "bio": "Krish writes every piece, reads the audio edition and fronts the Shorts. He has spent sixteen years building commercial businesses across media, tech and telecoms, and now spends most days building with AI.",
-    "photoAlt": "Krish Raja, editor of makeyourmindup, pushing his glasses up for a closer look",
-    "site": "krishraja.com",
-    "linkedin": "LinkedIn",
+    "bio": "We write every piece, read the audio edition and front the Shorts.",
+    "photoAlt": "Glasses pushed up for a closer look",
     "judgesCta": "Meet the judges"
   },
   "panel": {
     "eyebrow": "The panel",
-    "line": "Ten judges read every draft blind: no byline, no author, no idea what Krish liked last time. Any of them can stop a piece. None of them can approve one.",
+    "line": "Ten judges read every draft blind: no byline, no author, no idea what we liked last time. Any of them can stop a piece. None of them can approve one.",
     "hint": "Tap a face to meet one.",
     "counter": "{n} of {total}",
     "stamps": {
@@ -381,7 +375,7 @@
         "stamp": "none",
         "says": "Fine piece. Wrong week.",
         "asks": "Against everything else we could have run this week, was this the right use of the day?",
-        "offLimits": "Craft, evidence and pictures. No veto, because opportunity cost is Krish's call. Finds this maddening.",
+        "offLimits": "Craft, evidence and pictures. No veto, because opportunity cost is our call. Finds this maddening.",
         "alt": "An unimpressed judge with a moustache, a green eyeshade and a waistcoat with a watch chain"
       },
       {

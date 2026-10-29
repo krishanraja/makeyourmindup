@@ -57,7 +57,13 @@ npm run assets     # re-derive every logo file and the cover photo from brand/
 ## Rules this page keeps
 
 - No em dashes, no exclamation marks, British English, reading age 12.
-- The channel speaks as "we", to "you". Krish is the byline.
+- The channel speaks as "we", to "you". The publication is the byline: no
+  copy, metadata, structured data or link names Krish or credits him as its
+  author, and the site links to none of his own accounts. His face may appear;
+  his name never does (Ruling, Krish, 2026-10-28, in
+  `project-documentation/01_MEDIA_KIT.md`, Voice). The kill list's
+  `personal_name` veto holds it on every file `npm run kill-list` reads,
+  `app/layout.tsx` and `app/llms.txt/route.ts` included.
 - No Mindmake or CTRL anywhere on the page, and no retired name. One narrow
   exception (Krish, 2026-10-19): the two companies that operate the site,
   Mindmaker LLC and Mindmaker Ltd, are named in the footer note and on
