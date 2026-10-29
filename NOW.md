@@ -62,6 +62,17 @@ what regenerates its assets. The brand book and kit, v1.5 on 2026-10-05, are in
 paragraph was corrected on 2026-09-26; it had still described the Cannes funnel
 as live.
 
+**No name, in the repository and not yet on the live site.** Since
+2026-10-29 the kill list vetoes his name, its spellings and his handles
+(`personal_name`), and the cover and Substack kit speak as "we", with no
+byline, Person node, founder, "Written by" line or link to his own accounts;
+the cover's metadata is Organization JSON-LD and `llms.txt` cites the
+publication. The cover shows Substack, YouTube and Instagram only: TikTok and
+X have no tile, because their only accounts are his own. None of this is
+deployed: the live site and Substack still name him (the old copy, the
+author, footer and sender settings, and the `krish-*.jpg` photo addresses)
+until he says yes to redeploying the cover and changes those settings.
+
 **Built and not live.** The canon in this repo: the media kit, the panel, the
 rubric, the kill list and its executable check, the format specs and the
 recorded calibration. The format vocabulary is in the database and enforced
@@ -93,6 +104,15 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-10-29 **Nothing in this repository's public copy names him.** Ruling
+  (Krish, 2026-10-28): "Remember, no content refers to Krish, ever." He picked
+  "We" for the article's voice, "No, personal stays personal" for his own
+  accounts, "Drop it" for the face in the byline and "Yes, block it" for
+  other people called Krish. The kill list's `personal_name` veto
+  (`dfc9b75`, `aed9b26`), the cover and Substack kit in "we" (`ce9713b`), the
+  media kit's publication byline (`f655c62`), and no TikTok or X tile
+  (`a1cd10b`). content-engine re-vendored the kill list at `c13d8e2`. Not
+  deployed.
 - 2026-10-28 **content-engine is the one ideation path; this repo keeps the
   cover and the canon.** Ruling (Krish, 2026-10-28): "content-engine, which is
   not a mindmake product, it's a makeyourmindup product", and "Content-engine
@@ -150,13 +170,17 @@ format because none of them was ever composed.
 The single next action is **the canon reconciliation** that the 28 October
 plan schedules for its third wave, by 14 November: this repo's canon read
 against content-engine as the one ideation path. Until then, content-engine
-runs the kill list from a copy pinned to commit `54cd67d`, so a change here to
+runs the kill list from a copy pinned to commit `c13d8e2` (re-vendored on
+2026-10-29 with the `personal_name` veto), so a change here to
 `scripts/qa/kill-list.mjs` or `quality/panel/kill-list.v1.json` is re-vendored
 there in the same week, with the new commit and hashes in its
 `vendor/makeyourmindup/kill-list/SOURCE.md`.
 
 Waiting on Krish, none of which a tool should answer:
 
+- **Redeploy makeyourmindup.ai, and change Substack's byline, author,
+  copyright, footer, sender and second admin settings.** Until then the live
+  cover and Substack still name him; the repository no longer does.
 - **Paste the swapped days into Substack.** The short description, the About
   page and the welcome email in `apps/cover/substack-kit/COPY.md`, and the
   free-tier benefits in `PAID.md`, changed on 2026-10-05; Substack has no API.
