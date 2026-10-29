@@ -10,9 +10,10 @@ import { Reveal } from './Reveal'
 // still carries a plain underline and the heads, and the two rows that already
 // make a joke carry a fainter, dotted door to one judge each.
 //
-// No name, caption or link here names the person in the photo, and nothing
-// links to his own accounts: the ruling of 28 October 2026 and its answers on
-// personal accounts, in project-documentation/01_MEDIA_KIT.md, Voice.
+// No name, caption or link here names the person in the photo: the ruling of
+// 28 October 2026 in project-documentation/01_MEDIA_KIT.md, Voice. Nothing links
+// to his own accounts either, because a link whose address or label shows his
+// name or handle names him (what the media kit says follows from that ruling).
 const DOOR = 'underline decoration-ink/35 decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink'
 const HIDDEN_DOOR = 'underline decoration-ink/25 decoration-dotted decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink hover:decoration-solid'
 

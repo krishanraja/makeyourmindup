@@ -81,13 +81,16 @@ the video format." His answers the same day:
   "I".
 - D2, his personal accounts. Krish picked: "No, personal stays personal". His
   own LinkedIn, X, TikTok, Threads and Substack Notes posts may stay first
-  person, but his name never appears in any post text. So the publication's
-  site does not link to those accounts.
+  person, but his name never appears in any post text.
 - D3, the face in the article byline. Krish picked: "Drop it". Covers,
   thumbnails and video keep his face.
 - D4, other people called Krish. Krish picked: "Yes, block it". Any "Krish" in
   public copy is blocked, with no override: the kill list's `personal_name`
   veto.
+
+What follows from the ruling, not from his answers: a link whose address or
+label shows his name or handle names him, so the publication's site does not
+link to his own accounts (krishraja.com, his LinkedIn, @therealkrisho).
 
 Two registers, split by surface:
 
