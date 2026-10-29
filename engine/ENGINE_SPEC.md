@@ -3,6 +3,14 @@ kill_list_scope: canon
 ---
 # The machine
 
+> **Superseded (Ruling, Krish, 2026-10-28).** "content-engine, which is not a
+> mindmake product, it's a makeyourmindup product", and "Content-engine
+> produces content for makeyourmindup.ai, which is hosted at makeyourmindup
+> repo". content-engine's `plan-week` is the one ideation path, so the four
+> jobs below will not be built here. This repository keeps the cover and the
+> editorial canon (`project-documentation/02_REPO_BRIEF.md`, "Who owns
+> what"). The rest of this page is kept as the record of the design.
+
 Four jobs and nothing else. The machine is a conductor: it holds the schedule,
 the rubric and the context assembly. **It holds no screens and it writes no
 prose.**

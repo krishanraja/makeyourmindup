@@ -64,6 +64,9 @@ Director 8 or above.
 
 ## Phase 5: the machine
 
+**Superseded (Ruling, Krish, 2026-10-28).** content-engine's `plan-week` is the
+one ideation path, so this phase will not be built here (`engine/ENGINE_SPEC.md`).
+
 Watch, score, assemble, dispatch, in that order, research and sourcing first.
 
 **The rule:** if a job adds to the two to four hours a piece, it is wrong
