@@ -102,8 +102,18 @@ ruling.
 content-engine deployment. Every arc card written on 2026-09-18 carries a null
 format because none of them was ever composed.
 
+- `docs/decisions/2026-10-29-wave-3-for-krish.md` holds what waits on Krish here: the cover redeploy (already live through PR #29's merge; the photo-file rename is PR #32), the dry runs (calibrate or retire, recommended retire), the media kit's three dry-run decisions, the TikTok and X tiles (no tiles live; the handle version needs new publication accounts), and a Substack settings checklist read live on 2026-10-29. (2026-10-29)
+- NOW.md is 11962 bytes under a 16 KB cap that `npm test` and the new `Check` workflow enforce (`scripts/qa/now-size.mjs`); its four "What changed recently" entries from 2026-09-24 to 2026-10-05 now sit verbatim in `docs/history/LOG.md`. (2026-10-29)
+- `apps/cover/vercel.json` carries `ignoreCommand: git diff --quiet HEAD^ HEAD -- .`, so once merged, Vercel builds production only when a push changes `apps/cover`; replayed on past commits it skips the AGENTS.md-only canon sync (`7402394`) and builds the tiles change (`a1cd10b`). (2026-10-29)
+- the cover's photo files are `editor-*.jpg`, so once deployed no served address names him; the build's `llms.txt` and JSON-LD name the publication only (verified in `.next/server/app`). The live site already serves the no-name copy: merging PR #29 deployed production at `8fbe692` on 2026-10-29, because every push to main deploys the cover. (2026-10-29)
+- `npm run gate:canon` passes (12 files, 0 vetoes); AGENTS.md now opens with its `kill_list_scope: canon` front matter, above the hand-added North Star block, so the kill list reads it as canon again. (2026-10-29)
+
 ## What changed recently
 
+- 2026-10-29 every merge to main deploys production, so even docs-only PRs here republish the cover; the pack offers an ignored build step for him to decide.
+- 2026-10-29 NOW.md had grown to 14926 bytes with no limit; the cap is growth-makeyourmindup's figure, so the chain's two NOW.md files share one rule.
+- 2026-10-29 NOW.md's "not yet on the live site" was stale; the redeploy happened through the merge of PR #29, and the photo addresses are the one live residual.
+- 2026-10-29 the North Star block had been prepended by hand on 2026-10-18 above the front matter; ai-harness owns no writer for that block (its proposal of 2026-10-22 says so), so the fix is here, not in the harness renderer.
 - 2026-10-29 **Nothing in this repository's public copy names him.** Ruling
   (Krish, 2026-10-28): "Remember, no content refers to Krish, ever." He picked
   "We" for the article's voice, "No, personal stays personal" for his own
@@ -126,6 +136,7 @@ format because none of them was ever composed.
 
 ## What is next and what is waiting on Krish
 
+- Next (2026-10-29): Krish answers the four calls in the pack.
 The single next action is **the canon reconciliation** that the 28 October
 plan schedules for its third wave, by 14 November: this repo's canon read
 against content-engine as the one ideation path. Until then, content-engine
