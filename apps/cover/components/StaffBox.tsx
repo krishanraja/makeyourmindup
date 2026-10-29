@@ -11,11 +11,8 @@ import { Reveal } from './Reveal'
 // make a joke carry a fainter, dotted door to one judge each.
 //
 // No name, caption or link here names the person in the photo, and nothing
-// links to his own accounts (Ruling, Krish, 2026-10-28: "Remember, no content
-// refers to Krish, ever. I still see that popping up from time to time. Even
-// articles written are not authored by Krish. My face only, for assets and the
-// video format."; asked about his own accounts, Krish picked: "No, personal
-// stays personal").
+// links to his own accounts: the ruling of 28 October 2026 and its answers on
+// personal accounts, in project-documentation/01_MEDIA_KIT.md, Voice.
 const DOOR = 'underline decoration-ink/35 decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink'
 const HIDDEN_DOOR = 'underline decoration-ink/25 decoration-dotted decoration-2 underline-offset-[0.18em] transition-colors hover:decoration-ink hover:decoration-solid'
 
