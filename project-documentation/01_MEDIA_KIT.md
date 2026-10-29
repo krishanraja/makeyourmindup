@@ -61,10 +61,36 @@ AI".**
 
 ## Voice
 
-**The channel speaks as "we", to "you".** Krish is the byline, the voice on
-audio, the face on camera. First person survives only on his own LinkedIn posts
-and in audio and video intros. Not in Opinions, not on the About page, not in an
+**The channel speaks as "we", to "you".** The publication is the byline. No
+piece, title, subtitle, description, credit, caption or link names Krish or
+credits him as its author, and no face sits beside the byline. He is the voice
+on audio and the face on camera, covers and thumbnails, never the name. First
+person survives only in the video scripts he speaks, in audio and video intros,
+and on his own personal accounts (LinkedIn, X, TikTok, Threads and Substack
+Notes), whose post text never names him. Not in articles, their titles,
+subtitles or descriptions, not in Opinions, not on the About page, not in an
 editor's note.
+
+Ruling (Krish, 2026-10-28), which replaced "Krish is the byline": "Remember, no
+content refers to Krish, ever. I still see that popping up from time to time.
+Even articles written are not authored by Krish. My face only, for assets and
+the video format." His answers the same day:
+
+- D1, the article's voice. Krish picked: "We", the publication, in articles,
+  their titles, subtitles and descriptions; the video scripts he speaks keep
+  "I".
+- D2, his personal accounts. Krish picked: "No, personal stays personal". His
+  own LinkedIn, X, TikTok, Threads and Substack Notes posts may stay first
+  person, but his name never appears in any post text.
+- D3, the face in the article byline. Krish picked: "Drop it". Covers,
+  thumbnails and video keep his face.
+- D4, other people called Krish. Krish picked: "Yes, block it". Any "Krish" in
+  public copy is blocked, with no override: the kill list's `personal_name`
+  veto.
+
+What follows from the ruling, not from his answers: a link whose address or
+label shows his name or handle names him, so the publication's site does not
+link to his own accounts (krishraja.com, his LinkedIn, @therealkrisho).
 
 Two registers, split by surface:
 
@@ -236,6 +262,8 @@ Executable at `scripts/qa/kill-list.mjs` against
 - A joke at a named person
 - Jargon a twelve-year-old could not follow
 - Mindmake or CTRL inside the editorial
+- Krish's name, a spelling or a handle of it, anywhere public (the
+  `personal_name` veto, from the 28 October ruling under Voice)
 - A signature piece without a diagram
 - A closing moral, a lesson for leaders, or any sentence telling the reader what
   to believe

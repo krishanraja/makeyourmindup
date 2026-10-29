@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-10-23
+as_of: 2026-10-29
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -17,12 +17,14 @@ never_publish: [the Supabase project ids, any credential or secret name, the cro
 
 ## What it is
 
-makeyourmindup is a publication that unpicks how AI really works, and this repo
-is the machine behind it. The machine watches what moved, scores it against a
-rubric, assembles a brief with its evidence, and dispatches the right package to
-the right place at the right hour. It holds logic and schedule and it holds no
-screens: Control Center holds every pixel, and if the machine needs to say
-something it writes a row Control Center reads.
+makeyourmindup is a publication that unpicks how AI really works. This repo
+hosts its cover at makeyourmindup.ai and holds its editorial canon: the media
+kit, the panel and its judges, the rubric and the kill list. content-engine
+produces the publication's content and runs that kill list from a pinned copy
+(Ruling, Krish, 2026-10-28: "Content-engine produces content for
+makeyourmindup.ai, which is hosted at makeyourmindup repo"). The machine this
+repo was to hold (watch, score, assemble, dispatch) is superseded by
+content-engine's `plan-week`, the one ideation path.
 
 ## Who it is for and why it matters for Mindmake
 
@@ -39,13 +41,17 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-10-23)
+## Where it is right now (as of 2026-10-29)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
-Lifecycle is `building`. The machine does not exist yet. What landed on
-2026-09-19 and 20 is the canon it will be built from, which until now existed only as Claude
-artifacts from 17 and 18 September and in no repository at all.
+Lifecycle is `building`. The machine will not be built here: on 2026-10-28
+Krish made content-engine the one place ideas are found, judged and made
+(`project-documentation/02_REPO_BRIEF.md`, "Who owns what"), and
+`engine/ENGINE_SPEC.md` and `engine/INTAKE_RUNNER_SPEC.md` are marked
+superseded. What landed on 2026-09-19 and 20 is the canon, which until then
+existed only as Claude artifacts from 17 and 18 September and in no repository
+at all; content-engine runs its kill list.
 
 **Live.** Since 2026-09-25 `makeyourmindup.ai` redirects to
 `www.makeyourmindup.ai`, which serves the cover from `apps/cover/` (`73735f5`,
@@ -56,6 +62,17 @@ what regenerates its assets. The brand book and kit, v1.5 on 2026-10-05, are in
 paragraph was corrected on 2026-09-26; it had still described the Cannes funnel
 as live.
 
+**No name, in the repository and not yet on the live site.** Since
+2026-10-29 the kill list vetoes his name, its spellings and his handles
+(`personal_name`), and the cover and Substack kit speak as "we", with no
+byline, Person node, founder, "Written by" line or link to his own accounts;
+the cover's metadata is Organization JSON-LD and `llms.txt` cites the
+publication. The cover shows Substack, YouTube and Instagram only: TikTok and
+X have no tile, because their only accounts are his own. None of this is
+deployed: the live site and Substack still name him (the old copy, the
+author, footer and sender settings, and the `krish-*.jpg` photo addresses)
+until he says yes to redeploying the cover and changes those settings.
+
 **Built and not live.** The canon in this repo: the media kit, the panel, the
 rubric, the kill list and its executable check, the format specs and the
 recorded calibration. The format vocabulary is in the database and enforced
@@ -64,19 +81,22 @@ there: three subchannels in `venture_formats` (`kind = subchannel`), a
 and six foreign keys with `_was` columns (`migrations/2026-09-19-*.sql`,
 applied and read back). `intake_items` is live in Mindmaker OS with 623 rows
 (the migration lives in control-center, `20260919120000_one_intake.sql`), and
-its runner is specified in `engine/INTAKE_RUNNER_SPEC.md` but not built.
+its runner, specified in `engine/INTAKE_RUNNER_SPEC.md`, is superseded and
+will not be built.
 `apps/machine/slate-page/` holds the phone-first ruling page template and how a
 verdict travels; `apps/machine/` has no jobs in it.
 
-**Not started.** The four jobs and the dry runs. The dry runs are
-the gate: `calibration/2026-09-17-dry-run-picks.json` records one of three
-subjects picked, so the template is not fixed and anything built against it now
-is invalidated when it is.
+**Superseded, not started.** The four jobs. The dry runs gated the machine's
+template (`calibration/2026-09-17-dry-run-picks.json` records one of three
+subjects picked); they still settle three decisions the media kit marks open
+(a verdict in the written piece, what is fixed in the template, a name per
+format on shorts); whether they keep that job now that content-engine makes
+the pieces is Krish's (below).
 
-**Elsewhere, and load bearing.** The strategy machinery this repo is meant to
-own currently runs in `krishanraja/content-engine` under `apps/control-plane`,
-which is about three quarters strategy and desk code by route count and fifteen
-of sixteen crons. The extraction is planned, not done.
+**Elsewhere, and load bearing.** The strategy machinery runs in
+`krishanraja/content-engine` under `apps/control-plane` and stays there: the
+extraction to this repo planned on 2026-09-19 is cancelled by the 28 October
+ruling.
 
 **Broken, and not ours to fix.** `ANTHROPIC_API_KEY` is rejected in the
 content-engine deployment. Every arc card written on 2026-09-18 carries a null
@@ -84,6 +104,25 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-10-29 **Nothing in this repository's public copy names him.** Ruling
+  (Krish, 2026-10-28): "Remember, no content refers to Krish, ever." He picked
+  "We" for the article's voice, "No, personal stays personal" for his own
+  accounts, "Drop it" for the face in the byline and "Yes, block it" for
+  other people called Krish. The kill list's `personal_name` veto
+  (`dfc9b75`, `aed9b26`), the cover and Substack kit in "we" (`ce9713b`), the
+  media kit's publication byline (`f655c62`), and no TikTok or X tile
+  (`a1cd10b`). content-engine re-vendored the kill list at `c13d8e2`. Not
+  deployed.
+- 2026-10-28 **content-engine is the one ideation path; this repo keeps the
+  cover and the canon.** Ruling (Krish, 2026-10-28): "content-engine, which is
+  not a mindmake product, it's a makeyourmindup product", and "Content-engine
+  produces content for makeyourmindup.ai, which is hosted at makeyourmindup
+  repo". `project-documentation/02_REPO_BRIEF.md` now carries the ownership
+  table across content-engine, growth-makeyourmindup and Control Center, and
+  `engine/ENGINE_SPEC.md`, `engine/INTAKE_RUNNER_SPEC.md` and Phase 5 of
+  `project-documentation/03_STEP_PLAN.md` are marked superseded. content-engine
+  vendors `scripts/qa/kill-list.mjs` and `quality/panel/kill-list.v1.json`
+  pinned to commit `54cd67d` and runs them before any paid call.
 - 2026-10-05 **follow.the.money moves to Mondays and under.the.hood to
   Wednesdays, on the cover and everywhere else.** Decision (Krish,
   2026-10-05): "Let's just make follow the money permanently a monday thing,
@@ -128,12 +167,20 @@ format because none of them was ever composed.
 
 ## What is next and what is waiting on Krish
 
-The single next action is **the dry runs**, because they fix the template and
-every pipeline built before them is thrown away when they land. One subject of
-three is picked.
+The single next action is **the canon reconciliation** that the 28 October
+plan schedules for its third wave, by 14 November: this repo's canon read
+against content-engine as the one ideation path. Until then, content-engine
+runs the kill list from a copy pinned to commit `c13d8e2` (re-vendored on
+2026-10-29 with the `personal_name` veto), so a change here to
+`scripts/qa/kill-list.mjs` or `quality/panel/kill-list.v1.json` is re-vendored
+there in the same week, with the new commit and hashes in its
+`vendor/makeyourmindup/kill-list/SOURCE.md`.
 
 Waiting on Krish, none of which a tool should answer:
 
+- **Redeploy makeyourmindup.ai, and change Substack's byline, author,
+  copyright, footer, sender and second admin settings.** Until then the live
+  cover and Substack still name him; the repository no longer does.
 - **Paste the swapped days into Substack.** The short description, the About
   page and the welcome email in `apps/cover/substack-kit/COPY.md`, and the
   free-tier benefits in `PAID.md`, changed on 2026-10-05; Substack has no API.
@@ -145,12 +192,10 @@ Waiting on Krish, none of which a tool should answer:
 - **Rotate the credentials** shared in chat on 2026-09-19 plus the five the VPS
   audit named, and fix the rejected `ANTHROPIC_API_KEY` in content-engine. No
   code change substitutes for either.
-- **Build the intake runner** from `engine/INTAKE_RUNNER_SPEC.md`. The data
-  model, the kill list and the rubric exist; the pure steps can be built and
-  tested on fixtures now; the model call and the slate write wait on the dry
-  runs by the step plan.
-- **Pick the remaining two dry run subjects.** follow.the.money and mind.the.gap
-  are unpicked.
+- **Whether the dry runs still have a job.** They gated the machine's
+  template; the machine is superseded. They could still calibrate the panel
+  against his picks, or be retired. follow.the.money and mind.the.gap are
+  unpicked.
 - **The Substack address.** Settled on 2026-10-05: the publication lives at
   `home.makeyourmindup.ai`, a word that covers the videos as well as the
   writing. The cover's Subscribe button and feed point there; Substack's own
@@ -158,7 +203,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-10-23): holds.
+- North Star check (2026-10-29): holds.
 
 ## Read next
 
@@ -167,10 +212,10 @@ Waiting on Krish, none of which a tool should answer:
 - `panel/PANEL.md` settles who judges the work, on what, and the publish bar.
 - `project-documentation/03_STEP_PLAN.md` settles the order of the work and
   which gates block which phase.
-- `engine/ENGINE_SPEC.md` settles what the machine is and, more usefully, what
-  it is not allowed to become.
-- `project-documentation/02_REPO_BRIEF.md` settles who builds what across the
-  three repositories, and lists the open conflicts.
+- `engine/ENGINE_SPEC.md` records the machine that was superseded on
+  2026-10-28, and what it was not allowed to become.
+- `project-documentation/02_REPO_BRIEF.md` settles who owns what across the
+  repositories, and lists the open conflicts.
 - `AGENTS.md` settles the operating rules and where authority stops.
 
 ## Do not trust

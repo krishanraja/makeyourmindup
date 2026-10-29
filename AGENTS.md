@@ -22,6 +22,17 @@ in Mindmaker OS, in full prose, because a copy drifts and the table does not.
 
 ## The three systems, and where this one stops
 
+**Superseded on 28 October 2026.** Ruling (Krish, 2026-10-28): "Content-engine
+produces content for makeyourmindup.ai, which is hosted at makeyourmindup
+repo". content-engine's `plan-week` is now the one ideation path, so this repo
+builds no Watch, Score, Assemble or Dispatch machine and no intake runner. It
+keeps the cover site and the editorial canon (the kill list and the judges),
+which content-engine runs. Where this file calls the repo "the machine", gives
+it the table's job below, or gates a pipeline on the dry runs (Building), read
+it as history. The current split is `project-documentation/02_REPO_BRIEF.md`,
+"Who owns what". Whether the dry runs still settle the media kit's open
+decisions is Krish's (`NOW.md`).
+
 | Repo | Job |
 |---|---|
 | **makeyourmindup** (here) | Creative strategy. Watch, score, assemble, dispatch. |

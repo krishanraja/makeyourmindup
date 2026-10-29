@@ -3,6 +3,14 @@ kill_list_scope: canon
 ---
 # The intake runner
 
+> **Superseded (Ruling, Krish, 2026-10-28).** "content-engine, which is not a
+> mindmake product, it's a makeyourmindup product", and "Content-engine
+> produces content for makeyourmindup.ai, which is hosted at makeyourmindup
+> repo". content-engine's `plan-week` is the one ideation path, so this runner
+> will not be built here. This repository keeps the cover and the
+> editorial canon (`project-documentation/02_REPO_BRIEF.md`, "Who owns
+> what"). The rest of this page is kept as the record of the design.
+
 The Score job from `ENGINE_SPEC.md`, made concrete over one table. Once a week
 it reads everything that arrived, applies the deterministic gates, scores what
 survives against the three subchannel mandates, proposes a slate, and writes a

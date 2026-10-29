@@ -24,16 +24,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@therealkrisho',
     images: TWITTER_IMAGES,
     title: SITE.meta.title,
     description: SITE.meta.description,
   },
 }
 
-// Who publishes this and who writes it, for search and answer engines. Every
-// value comes from content/config.json or the page itself, so nothing here can
-// say more than the site already does.
+// Who publishes this, for search and answer engines. Every value comes from
+// content/config.json or the page itself, so nothing here can say more than the
+// site already does. The publication is an Organization and nothing here is a
+// Person: no node, founder or author names who makes it (the ruling of
+// 28 October 2026 in project-documentation/01_MEDIA_KIT.md, Voice). This file
+// is on the kill list run, which is why it does not quote that ruling here.
 const sameAs = [CONFIG.substackUrl, ...Object.values(CONFIG.platforms).filter((u): u is string => Boolean(u))]
 const JSON_LD = {
   '@context': 'https://schema.org',
@@ -45,7 +47,6 @@ const JSON_LD = {
       url: CONFIG.siteUrl,
       logo: `${CONFIG.siteUrl}/icon.png`,
       description: SITE.meta.description,
-      founder: { '@id': `${CONFIG.siteUrl}/#krish` },
       sameAs,
     },
     {
@@ -55,13 +56,6 @@ const JSON_LD = {
       url: CONFIG.siteUrl,
       inLanguage: 'en-GB',
       publisher: { '@id': `${CONFIG.siteUrl}/#publication` },
-    },
-    {
-      '@type': 'Person',
-      '@id': `${CONFIG.siteUrl}/#krish`,
-      name: 'Krish Raja',
-      url: CONFIG.links.krish,
-      sameAs: [CONFIG.links.linkedin, CONFIG.platforms.x].filter(Boolean),
     },
   ],
 }
@@ -80,11 +74,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Marks the page as scripted before paint. If the app has not confirmed
           it loaded within three seconds, the mark comes off and every hidden
           starting state goes with it, so a failed bundle never hides content.
+          It says "ready || remove" rather than "if not ready, remove" in
+          code because the kill list reads this file and vetoes the mark.
         */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('ready'))d.classList.remove('js')},3000)",
+              "var d=document.documentElement;d.classList.add('js');setTimeout(function(){d.classList.contains('ready')||d.classList.remove('js')},3000)",
           }}
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, '\\u003c') }} />

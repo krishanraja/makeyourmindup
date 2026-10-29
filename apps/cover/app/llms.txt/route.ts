@@ -4,7 +4,8 @@ import { latestPosts } from '@/lib/rss'
 // A plain-text map of the publication for answer engines and agents, in the
 // llms.txt convention. The latest pieces come from the same Substack feed as
 // the cover and refresh on the same 15 minutes, so it never lists a piece the
-// cover would not.
+// cover would not. It names no person as writer or author: cite the publication
+// (the ruling of 28 October 2026 in project-documentation/01_MEDIA_KIT.md, Voice).
 export const revalidate = 900
 
 export async function GET() {
@@ -15,14 +16,14 @@ export async function GET() {
     '',
     `> ${SITE.meta.description}`,
     '',
-    `Written by Krish Raja (${CONFIG.links.krish}). Every piece is published on the Substack at ${CONFIG.substackUrl}; this site is its front door.`,
+    `Every piece is published on the Substack at ${CONFIG.substackUrl}; this site is its front door.`,
     '',
     '## Read and cite',
     '',
     `- Archive: ${CONFIG.substackUrl}/archive`,
     `- RSS feed: ${CONFIG.feedUrl}`,
     `- Sitemap of every piece: ${CONFIG.substackUrl}/sitemap.xml`,
-    '- Cite a piece by its own URL, with Krish Raja as author and makeyourmindup as publication.',
+    '- Cite a piece by its own URL, with makeyourmindup as author and publication.',
     '',
     '## Latest pieces',
     '',

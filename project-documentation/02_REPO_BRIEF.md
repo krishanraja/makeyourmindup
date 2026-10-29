@@ -3,21 +3,36 @@ kill_list_scope: canon
 ---
 # Who builds what, and what is still in conflict
 
-## The three systems
+Ruling (Krish, 2026-10-28): "content-engine, which is not a mindmake product,
+it's a makeyourmindup product", and "Content-engine produces content for
+makeyourmindup.ai, which is hosted at makeyourmindup repo".
 
-| Repo | Job | Owns |
-|---|---|---|
-| **makeyourmindup** (here) | Creative strategy | Watch, score, assemble, dispatch. The canon, the rubric, the panel, the kill list, the cover. |
-| **control-center** | The desk | Every pixel. The Sunday board, the week view, the verdict archive, the themes tracker, the metrics, the bad-week switch. |
-| **content-engine** | Production | The renderer, the runner, the studio control plane. An approved brief becomes artefacts. |
+So content-engine's `plan-week` is the one ideation path. The Watch, Score,
+Assemble and Dispatch machine (`engine/ENGINE_SPEC.md`) and its intake runner
+(`engine/INTAKE_RUNNER_SPEC.md`) are superseded and will not be built here.
+This repository hosts the cover at makeyourmindup.ai and holds the editorial
+canon that content-engine runs.
 
-In Krish's words: *"content engine should hold stable machinery, control center
-holds the UI, and Claude or Codex should hold anything that is unreliable in a
-custom UI or expensive via API."*
+## Who owns what
 
-## Where the boundary actually is today
+| Repo | Job | Owns | Never |
+|---|---|---|---|
+| **makeyourmindup** (here) | The cover and the canon | The cover at makeyourmindup.ai. The editorial canon: the media kit, the panel and its judges, the rubric, the kill list. content-engine runs the kill list from a copy pinned to a commit of this repository (`vendor/makeyourmindup/kill-list/` there). | A second ideation engine |
+| **content-engine** | Ideation and production | The one ideation path (`plan-week`), the Sunday ideas board and the one publish board, the interview, the article and both scripts, Teleprompter, production and the hero assets (article, two cuts, thumbnails, covers) | Calling itself Mindmake's |
+| **growth-makeyourmindup** | Distribution | Posting after Krish approves, derived carousels, Notes and memes to content-engine's standard, the off-day posts on Tuesday, Thursday, Saturday and Sunday, metrics, the daily engage queue | Any Buffer channel outside its allowlist |
+| **control-center** | The desk | The numbers, next actions, checkpoint owners and alarms, go-live decisions | A second place to pick ideas: the week view becomes a read-only tracker |
 
-The split above is the target, not the state. As of 2026-09-19:
+The table this replaced (2026-09-19) gave this repository the four machine
+jobs and Control Center the Sunday board. In Krish's words then: *"content
+engine should hold stable machinery, control center holds the UI, and Claude
+or Codex should hold anything that is unreliable in a custom UI or expensive
+via API."*
+
+## Where the boundary was on 2026-09-19
+
+Superseded on 2026-10-28 (the ruling above): the strategy stays in
+content-engine and nothing is extracted to this repository. Kept as the
+record of what was measured then. As of 2026-09-19:
 
 - `content-engine/apps/control-plane` is roughly **three quarters strategy and
   desk code by route count, and fifteen of its sixteen crons are strategy**.

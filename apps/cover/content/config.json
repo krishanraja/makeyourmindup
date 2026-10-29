@@ -55,12 +55,8 @@
   "platforms": {
     "youtube": "https://www.youtube.com/@makeyourmind-up",
     "instagram": "https://www.instagram.com/makeyourmind.up",
-    "tiktok": "https://www.tiktok.com/@therealkrisho",
-    "x": "https://x.com/therealkrisho",
+    "tiktok": null,
+    "x": null,
     "spotify": null
-  },
-  "links": {
-    "krish": "https://www.krishraja.com",
-    "linkedin": "https://www.linkedin.com/in/krish-raja/"
   }
 }
