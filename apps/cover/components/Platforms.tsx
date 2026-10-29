@@ -6,6 +6,9 @@ export function Platforms() {
   const t = SITE.platforms
   const [substack, ...rest] = t.tiles
   const SubIcon = PLATFORM_ICON.substack
+  // Two tiles each take half a row, so beside the hub they stack and fill its
+  // height, and a desktop row has no empty cells. Four keep a cell each.
+  const tileSpan = rest.length <= 2 ? 'md:col-span-2' : ''
 
   return (
     <section id="platforms" className="on-light scroll-mt-16 bg-mint text-ink" aria-labelledby="platforms-title">
@@ -49,7 +52,7 @@ export function Platforms() {
             const url = CONFIG.platforms[key]
             const Icon = PLATFORM_ICON[key]
             return (
-              <Reveal key={tile.key} delay={0.06 * (i + 1)} className="min-w-0">
+              <Reveal key={tile.key} delay={0.06 * (i + 1)} className={`min-w-0 ${tileSpan}`}>
                 {url ? (
                   // A live platform looks like the live Substack tile: ink, a mint
                   // badge and a mint button, and the whole tile is the link

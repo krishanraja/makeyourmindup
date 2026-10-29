@@ -30,6 +30,11 @@ the root would let a production build succeed from the wrong folder.
 
 - **A platform goes live:** put its URL in `content/config.json` under
   `platforms`. The tile flips from "At the printers" to live on the next build.
+  A platform shows only if it has a tile in `content/site.json`
+  (`platforms.tiles`). TikTok and X have none since 29 October 2026: Growth's
+  channel records (`growth-makeyourmindup/channels.json`) list only his own
+  accounts there, whose handles name him. Two tiles beside the Substack tile
+  take half a row each; four take a cell each.
 - **A call is published:** add it to `scoreboard.calls` in `content/config.json`
   with `statement`, `due`, `confidence`, `status` (`open`, `held`, `broke` or
   `unclear`) and optionally `href`. Only Krish rules a call.
@@ -57,7 +62,15 @@ npm run assets     # re-derive every logo file and the cover photo from brand/
 ## Rules this page keeps
 
 - No em dashes, no exclamation marks, British English, reading age 12.
-- The channel speaks as "we", to "you". Krish is the byline.
+- The channel speaks as "we", to "you". The publication is the byline: no
+  copy, metadata, structured data or link names Krish or credits him as its
+  author. His face may appear; his name never does (Ruling, Krish, 2026-10-28,
+  in `project-documentation/01_MEDIA_KIT.md`, Voice). A link whose address or
+  label shows his name or handle names him, so the site links to none of his
+  own accounts; the media kit records that as following from the ruling, not
+  as one of his answers. The kill list's `personal_name` veto holds it on
+  every file `npm run kill-list` reads, `app/layout.tsx` and
+  `app/llms.txt/route.ts` included.
 - No Mindmake or CTRL anywhere on the page, and no retired name. One narrow
   exception (Krish, 2026-10-19): the two companies that operate the site,
   Mindmaker LLC and Mindmaker Ltd, are named in the footer note and on
