@@ -15,37 +15,28 @@ This repository's North Star is [`docs/NORTH_STAR.md`](docs/NORTH_STAR.md): an a
 
 # Operating rules for this repository
 
-This repo is the machine behind the publication `makeyourmindup`. Read
-`NOW.md` first. Editorial truth is `project-documentation/01_MEDIA_KIT.md`.
-Format mandates are never in this repo: they live in `venture_formats.mandate`
-in Mindmaker OS, in full prose, because a copy drifts and the table does not.
+This repo hosts the cover site of the publication `makeyourmindup` and its
+editorial canon: the kill list and the judges. content-engine makes the
+publication from it. Read `NOW.md` first. Editorial truth is
+`project-documentation/01_MEDIA_KIT.md`. Format mandates are never in this
+repo: they live in `venture_formats.mandate` in Mindmaker OS, in full prose,
+because a copy drifts and the table does not.
 
-## The three systems, and where this one stops
+## The four systems, and where this one stops
 
-**Superseded on 28 October 2026.** Ruling (Krish, 2026-10-28): "Content-engine
-produces content for makeyourmindup.ai, which is hosted at makeyourmindup
-repo". content-engine's `plan-week` is now the one ideation path, so this repo
-builds no Watch, Score, Assemble or Dispatch machine and no intake runner. It
-keeps the cover site and the editorial canon (the kill list and the judges),
-which content-engine runs. Where this file calls the repo "the machine", gives
-it the table's job below, or gates a pipeline on the dry runs (Building), read
-it as history. The current split is `project-documentation/02_REPO_BRIEF.md`,
-"Who owns what". Whether the dry runs still settle the media kit's open
-decisions is Krish's (`NOW.md`).
+Ruling (Krish, 2026-10-28): "Content-engine produces content for
+makeyourmindup.ai, which is hosted at makeyourmindup repo". content-engine's
+`plan-week` is the one ideation path. This repo builds no Watch, Score,
+Assemble or Dispatch machine and no intake runner (`apps/machine/` is a
+superseded scaffold and will not be built). The full split is
+`project-documentation/02_REPO_BRIEF.md`, "Who owns what".
 
 | Repo | Job |
 |---|---|
-| **makeyourmindup** (here) | Creative strategy. Watch, score, assemble, dispatch. |
-| **control-center** | The desk. Every pixel, every human decision. |
-| **content-engine** | Production. An approved brief becomes artefacts. |
-
-**The machine must never grow a UI.** The moment it renders a screen there are
-two dashboards and no way to tell which is true. The machine holds logic and
-schedule. Control Center holds every pixel. If the machine needs to tell Krish
-something, it writes a row that Control Center reads.
-
-**The machine writes no prose.** It assembles the brief. Anything needing taste
-or more than two attempts is a Claude or Codex session, not a cron.
+| **makeyourmindup** (here) | The cover site and the editorial canon (kill list, judges), which content-engine runs from a pinned copy. |
+| **content-engine** | Ideation (`plan-week`), the hero assets (the article, both cuts, thumbnails and covers) and the publish board, the weekly content calendar at content.krishraja.com, which keeps itself current. |
+| **Growth-MakeYourMindUp** | The derived carousels, Notes, memes and off-day posts, made to content-engine's standards, filed in each post's `3 Posts` folder and posted through its approved route. |
+| **control-center** | Krish's approvals: the Content tab holds two queues, Ideas to approve and Ready to schedule and post. |
 
 ## The rule that governs every design decision
 
@@ -87,10 +78,8 @@ test before the quality test, not after.
 
 ## Building
 
-- **Rules before plumbing.** Integrations are the part most likely to change and
-  the part that is obsolete the moment the dry runs change the template.
-- **The dry runs are a gate.** Until the template is fixed, a pipeline built
-  against it is work that gets thrown away. Check `NOW.md` before building one.
+- **Rules before plumbing.** Integrations are the part most likely to change.
+  This repo builds no pipeline; content-engine does (Ruling, Krish, 2026-10-28).
 - **Run the kill list before any model call.** Spending a draft-gate token on an
   em dash is waste. `node scripts/qa/kill-list.mjs <paths>`.
 - **A canon document declares `kill_list_scope: canon`** in its front matter,
