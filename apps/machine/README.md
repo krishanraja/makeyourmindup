@@ -3,6 +3,8 @@ kill_list_scope: canon
 ---
 # apps/machine
 
+**Superseded on 28 October 2026; this will not be built.** Ruling (Krish, 2026-10-28): content-engine's `plan-week` is the one ideation path. What follows is history.
+
 Scaffold. **There are no jobs in here yet, and that is correct.**
 
 The four jobs are specified in `engine/ENGINE_SPEC.md`: watch, score, assemble,

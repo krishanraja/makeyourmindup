@@ -19,8 +19,8 @@ canon that content-engine runs.
 |---|---|---|---|
 | **makeyourmindup** (here) | The cover and the canon | The cover at makeyourmindup.ai. The editorial canon: the media kit, the panel and its judges, the rubric, the kill list. content-engine runs the kill list from a copy pinned to a commit of this repository (`vendor/makeyourmindup/kill-list/` there). | A second ideation engine |
 | **content-engine** | Ideation and production | The one ideation path (`plan-week`), the Sunday ideas board and the one publish board, the interview, the article and both scripts, Teleprompter, production and the hero assets (article, two cuts, thumbnails, covers) | Calling itself Mindmake's |
-| **growth-makeyourmindup** | Distribution | Posting after Krish approves, derived carousels, Notes and memes to content-engine's standard, the off-day posts on Tuesday, Thursday, Saturday and Sunday, metrics, the daily engage queue | Any Buffer channel outside its allowlist |
-| **control-center** | The desk | The numbers, next actions, checkpoint owners and alarms, go-live decisions | A second place to pick ideas: the week view becomes a read-only tracker |
+| **growth-makeyourmindup** | Distribution | Posting after Krish approves, derived carousels, Notes and memes to content-engine's standard, the off-day posts on Tuesday, Thursday and Saturday (Sunday rests; Ruling, Krish, 2026-11-02), each filed in its post's `3 Posts` folder, never `4 Growth` (Ruling, Krish, 2026-11-03), metrics, the daily engage queue | Any Buffer channel outside its allowlist |
+| **control-center** | The desk | The numbers, next actions, checkpoint owners and alarms, go-live decisions; its Content tab holds only two approval queues, Ideas to approve and Ready to schedule and post (Ruling, Krish, 2026-11-03) | Triaging, composing or scheduling content: the publish board is the weekly calendar |
 
 The table this replaced (2026-09-19) gave this repository the four machine
 jobs and Control Center the Sunday board. In Krish's words then: *"content
