@@ -9,7 +9,7 @@ const d = (s: number) => ({ ['--d' as string]: `${s}s` }) as React.CSSProperties
   three rounds of blind judging (115 of 140, first with both judges).
 
   Reading order, top to bottom: the name (the stacked logo, never part of a
-  sentence), the dateline, the photo with its two stamps, "AI, UNPICKED.",
+  sentence), the photo with its two stamps, "AI, UNPICKED.",
   then the dek, the sections and the form. The photo is cut at the table's
   edge and the three threads hang into the headline.
 */
@@ -49,16 +49,7 @@ export function Cover() {
             sizes="(min-width: 1200px) 260px, (min-width: 701px) and (orientation: landscape) 260px, 45vw"
             className={styles.logo}
           />
-          <div className={styles.mastR}>
-            {key(styles.keyWide)}
-            <p className={styles.dateline}>
-              <span className={styles.vol}>
-                {SITE.strap.left} · {t.issue}
-              </span>
-              <span className={styles.days}>{SITE.strap.centre}</span>
-              <span className={styles.price}>{SITE.strap.right}</span>
-            </p>
-          </div>
+          <div className={styles.mastR}>{key(styles.keyWide)}</div>
         </div>
 
         <section className={styles.theatre} aria-label={SITE.a11y.illustration}>

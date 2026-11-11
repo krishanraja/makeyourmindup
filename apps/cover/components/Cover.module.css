@@ -37,25 +37,6 @@
   display: flex;
   align-items: center;
 }
-.dateline {
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--cream-70);
-  text-align: right;
-  line-height: 1.6;
-}
-.dateline span {
-  display: block;
-}
-.price {
-  color: var(--cream);
-  font-weight: 700;
-}
-.dateline .days {
-  display: none;
-}
 
 /* section key */
 .key {
@@ -320,10 +301,6 @@
   .keyNarrow {
     display: none;
   }
-  .dateline {
-    font-size: 13px;
-    line-height: 1.55;
-  }
   .hed {
     padding-left: calc(2.78 * var(--u));
   }
@@ -388,17 +365,6 @@
   }
   .keyWide {
     display: none;
-  }
-  .dateline {
-    font-size: 12px;
-    line-height: 1.55;
-  }
-  .dateline .vol {
-    display: none;
-  }
-  .dateline .days {
-    display: block;
-    color: var(--cream);
   }
   .hed {
     padding-left: 16px;
@@ -473,7 +439,7 @@
 }
 
 /* short phones (an iPhone in Safari is 664 tall): the section key goes, since
-   the dek names the three sections and the dateline gives their days, and the
+   the dek names the three sections and says three times a week, and the
    picture keeps the height it frees */
 @media (max-width: 700px) and (max-height: 860px) {
   .cover {
