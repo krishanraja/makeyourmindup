@@ -23,7 +23,7 @@ function fake(routes: Record<string, () => Response | Promise<Response>>) {
   }) as typeof fetch
 }
 const json = (v: unknown, status = 200) => () => new Response(JSON.stringify(v), { status, headers: { 'content-type': 'application/json' } })
-const ARCHIVE = 'https://home.makeyourmindup.ai/api/v1/archive', RSS = 'https://home.makeyourmindup.ai/feed', CAT = 'https://content.krishraja.com/api/publish/catalogue'
+const ARCHIVE = 'https://home.makeyourmindup.ai/api/v1/archive', RSS = 'https://home.makeyourmindup.ai/feed', CAT = 'https://content-engine-flame-nu.vercel.app/api/publish/catalogue'
 
 describe('covers', () => {
   test('every archive post keeps its own cover, video posts included', () => {
