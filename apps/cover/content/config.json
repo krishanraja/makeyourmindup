@@ -2,6 +2,8 @@
   "siteUrl": "https://www.makeyourmindup.ai",
   "substackUrl": "https://home.makeyourmindup.ai",
   "feedUrl": "https://home.makeyourmindup.ai/feed",
+  "archiveApi": "https://home.makeyourmindup.ai/api/v1/archive?sort=new&limit=12",
+  "catalogueUrl": "https://content.krishraja.com/api/publish/catalogue",
   "relaunchDate": "2026-09-25",
   "latestCount": 3,
   "scoreboard": {

@@ -14,7 +14,8 @@
     "shots": "node scripts/screenshots.mjs",
     "audit": "node scripts/audit-layout.mjs",
     "brand-kit": "node scripts/build-brand-kit.mjs",
-    "verify": "npm run kill-list && npm run typecheck && npm run build"
+    "verify": "npm run kill-list && npm run typecheck && npm run build",
+    "test": "node --import tsx --test tests/*.test.ts"
   },
   "dependencies": {
     "framer-motion": "^12.23.0",
@@ -31,6 +32,7 @@
     "postcss": "^8.4.49",
     "sharp": "^0.34.4",
     "tailwindcss": "3.4.19",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },
   "engines": {
