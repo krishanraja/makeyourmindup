@@ -188,7 +188,9 @@
     "emptyTitle": "The first piece is on the press.",
     "emptyBody": "It lands on Substack first. Subscribe now and it arrives in your inbox the moment it is out.",
     "cta": "Subscribe free",
-    "read": "Read it"
+    "read": "Read it",
+    "watch": "Watch",
+    "short": "Short"
   },
   "platforms": {
     "eyebrow": "Also available in",

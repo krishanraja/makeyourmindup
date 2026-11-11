@@ -2,6 +2,9 @@ import { SITE, subscribeUrl } from '@/lib/content'
 import type { Post } from '@/lib/rss'
 import { Reveal } from './Reveal'
 
+/** A video's length as m:ss. */
+const mins = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
+
 const fmt = (d: string) =>
   new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 
@@ -47,7 +50,10 @@ export function Newsstand({ posts }: { posts: Post[] }) {
             {posts.map((p, i) => (
               <li key={p.link} className="flex">
                 <Reveal delay={i * 0.08} className="flex w-full">
-                  <a href={p.link} target="_blank" rel="noopener" className="brutal group flex w-full flex-col border-2 border-ink bg-cream transition-transform hover:-translate-x-1 hover:-translate-y-1">
+                  {/* Option A (Krish, 2026-11-11): the card still opens the article from anywhere on it; its video and
+                      Short sit beside "Read it" as their own links. Links cannot nest, so the article link stretches
+                      over the card with ::after and the two video links sit above it. */}
+                  <article className="brutal group relative flex w-full flex-col border-2 border-ink bg-cream transition-transform focus-within:-translate-x-1 focus-within:-translate-y-1 hover:-translate-x-1 hover:-translate-y-1">
                     {p.image && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={p.image} alt="" className="block aspect-[1.91/1] w-full border-b-2 border-ink bg-ink object-cover" loading="lazy" />
@@ -55,11 +61,28 @@ export function Newsstand({ posts }: { posts: Post[] }) {
                     <span className="flex flex-1 flex-col p-[clamp(0.75rem,2svh,1.25rem)]">
                       <span className="mono-label text-ink/60">{fmt(p.date)}</span>
                       {/* Fixed three-line slots, so every card is the same size whatever its copy runs to. */}
-                      <span className="heavy mt-1 line-clamp-3 min-h-[3lh] text-[clamp(1.05rem,2.6svh,1.4rem)] leading-tight">{p.title}</span>
+                      {/* The clamp sits on the inner span: overflow hidden on the link would clip its ::after to the title. */}
+                      <a href={p.link} target="_blank" rel="noopener" className="heavy mt-1 text-[clamp(1.05rem,2.6svh,1.4rem)] leading-tight after:absolute after:inset-0 after:content-['']">
+                        <span className="line-clamp-3 min-h-[3lh]">{p.title}</span>
+                      </a>
                       <span className="mt-2 hidden min-h-[3lh] text-ink/80 md:line-clamp-3">{p.blurb}</span>
-                      <span className="mono-label mt-auto pt-[clamp(0.5rem,1.6svh,1rem)] font-semibold group-hover:underline">{t.read} ↗</span>
+                      <span className="mono-label mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-[clamp(0.5rem,1.6svh,1rem)] font-semibold">
+                        <span className="group-hover:underline">{t.read} ↗</span>
+                        {p.video && (
+                          <a href={p.video.url} target="_blank" rel="noopener" className="relative z-10 inline-flex min-h-[32px] items-center gap-2 bg-ink px-3 text-cream hover:bg-mint hover:text-ink" aria-label={`${t.watch} the video: ${p.title}`}>
+                            <span aria-hidden="true">▶</span>
+                            {t.watch}
+                            {p.seconds ? ` ${mins(p.seconds)}` : ''}
+                          </a>
+                        )}
+                        {p.short && (
+                          <a href={p.short.url} target="_blank" rel="noopener" className="relative z-10 text-ink/70 hover:text-ink hover:underline" aria-label={`${t.short}: ${p.title}`}>
+                            {t.short} ↗
+                          </a>
+                        )}
+                      </span>
                     </span>
-                  </a>
+                  </article>
                 </Reveal>
               </li>
             ))}

@@ -8,6 +8,8 @@ export type Post = {
   blurb: string
   /** The post's own cover, as Substack holds it. */
   image?: string
+  /** The video's length in seconds, as Substack holds it for a video post. */
+  seconds?: number
   /** The piece's 16:9 cut on YouTube, from the content engine's catalogue. */
   video?: Video
   /** The piece's 9:16 cut on YouTube Shorts: always kept apart from the full video. */
@@ -60,7 +62,8 @@ export function readArchive(raw: unknown): Post[] {
     const link = p.canonical_url, date = p.post_date
     if (!https(link) || typeof p.title !== 'string' || typeof date !== 'string' || Number.isNaN(Date.parse(date))) return []
     const blurb = [p.subtitle, p.description].find(s => typeof s === 'string' && s.trim()) as string | undefined
-    return [{ title: p.title.trim(), link, date, blurb: (blurb || '').trim(), image: https(p.cover_image) ? p.cover_image : undefined }]
+    const seconds = typeof p.podcast_duration === 'number' && p.podcast_duration > 0 ? Math.round(p.podcast_duration) : undefined
+    return [{ title: p.title.trim(), link, date, blurb: (blurb || '').trim(), image: https(p.cover_image) ? p.cover_image : undefined, ...(seconds ? { seconds } : {}) }]
   })
 }
 
