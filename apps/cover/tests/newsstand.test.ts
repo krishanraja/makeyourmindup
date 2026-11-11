@@ -35,6 +35,11 @@ describe('covers', () => {
     assert.equal(audio.image, undefined)
     assert.equal(pic.image, 'https://cdn/b.jpg')
   })
+  test('a video post carries its length; an article without one does not', () => {
+    const [v, a] = readArchive({ posts: [post('a', '2026-11-09T17:31:17Z', { podcast_duration: 283.50693 }), post('b', '2026-11-06T17:00:00Z', { type: 'newsletter' })] })
+    assert.equal(v.seconds, 284)
+    assert.equal(a.seconds, undefined)
+  })
   test('a post with no cover shows without one, never with an invented image', () => {
     assert.equal(readArchive({ posts: [post('a', '2026-11-09T17:31:17Z', { cover_image: null })] })[0].image, undefined)
   })
