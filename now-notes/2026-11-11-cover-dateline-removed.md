@@ -1,0 +1,4 @@
+Status: The cover masthead no longer carries the dateline ("Vol. 01 · Issue 00", "Mon · Wed · Fri", "Free to read"), at Krish's request. On a phone the masthead is now the logo alone; on desk and landscape tablets it is the logo and the section key with its days. `cover.issue` and `strap.left` left `content/site.json` with it; `strap.centre` and `strap.right` stay, because the Substack kit (`scripts/render-kit.mjs`) still reads them. Kill list, type check, build and tests pass; checked in a browser at phone and desk width, no sideways scroll.
+Next: None from this change. On short phones the days of the week now show nowhere on the cover (the section key hides there to save height, and the dek says only "three times a week"); Krish decides whether that matters.
+Changed: apps/cover/components/Cover.tsx, Cover.module.css, content/site.json, README.md.
+- North Star check (2026-11-11): holds.

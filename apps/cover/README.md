@@ -38,8 +38,8 @@ the root would let a production build succeed from the wrong folder.
 - **A call is published:** add it to `scoreboard.calls` in `content/config.json`
   with `statement`, `due`, `confidence`, `status` (`open`, `held`, `broke` or
   `unclear`) and optionally `href`. Only Krish rules a call.
-- **The first issue lands:** change `cover.issue` in `content/site.json`.
-  Pieces appear in the newsstand by themselves once they are on the Substack.
+- **A piece lands:** it appears in the newsstand by itself once it is on the
+  Substack.
 - **Substack moves to its own domain:** change `substackUrl` and `feedUrl`.
 - **Hide the scoreboard:** set `scoreboard.show` to `false`.
 
