@@ -1,4 +1,4 @@
-<!-- krish-repo-context:start brain=13bd661431b5 sha=6db6819b5270 -->
+<!-- krish-repo-context:start brain=0a88ee6c1f4a sha=0763d734bea0 -->
 # makeyourmindup: operating context
 
 Generated from the central ai-harness brain. This is a route inventory, not a certification of current architecture. Read the section for the work at hand; repository-owned sources establish current facts. The nightly publisher rechecks source paths and named commands. This file grants no product action or spending authority.
@@ -8,15 +8,16 @@ Generated from the central ai-harness brain. This is a route inventory, not a ce
 - Purpose and system boundaries (orientation): `README.md`.
 - Current repository state (state): `NOW.md`.
 - 02 REPO BRIEF (orientation): `project-documentation/02_REPO_BRIEF.md`.
-- ENGINE SPEC (orientation): `engine/ENGINE_SPEC.md`.
+- The superseded machine spec, history only (history): `engine/ENGINE_SPEC.md`.
 - Repository commands (verification): `package.json`.
 - Repository-owned workflow source (workflow): `project-documentation/01_MEDIA_KIT.md`.
+- The cover: how it is built and checked (workflow): `apps/cover/README.md`.
 
 ## Workflows
 
-### creative-strategy: Watch, score, assemble and prepare editorial handoffs
+### creative-strategy: The cover at makeyourmindup.ai and the editorial canon content-engine runs (media kit, panel, kill list)
 
-Read: `project-documentation/01_MEDIA_KIT.md`, `project-documentation/02_REPO_BRIEF.md`, `engine/ENGINE_SPEC.md`, `NOW.md`.
+Read: `README.md`, `project-documentation/02_REPO_BRIEF.md`, `project-documentation/01_MEDIA_KIT.md`, `apps/cover/README.md`, `NOW.md`.
 Checks: `npm test`; `npm run gate:canon`.
 Run only within existing authority. Check inputs, the owning stage, and the downstream artifact actually consumed.
 
