@@ -5,6 +5,34 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+## 2026-11-12
+
+- moved from `NOW.md` verbatim, to hold it under the 16 KB cap; the first two were its oldest "What changed recently" entries, the third a settled decision that sat under "waiting on Krish":
+
+  - 2026-10-29 **Nothing in this repository's public copy names him.** Ruling
+    (Krish, 2026-10-28): "Remember, no content refers to Krish, ever." He picked
+    "We" for the article's voice, "No, personal stays personal" for his own
+    accounts, "Drop it" for the face in the byline and "Yes, block it" for
+    other people called Krish. The kill list's `personal_name` veto
+    (`dfc9b75`, `aed9b26`), the cover and Substack kit in "we" (`ce9713b`), the
+    media kit's publication byline (`f655c62`), and no TikTok or X tile
+    (`a1cd10b`). content-engine re-vendored the kill list at `c13d8e2`. Not
+    deployed.
+  - 2026-10-28 **content-engine is the one ideation path; this repo keeps the
+    cover and the canon.** Ruling (Krish, 2026-10-28): "content-engine, which is
+    not a mindmake product, it's a makeyourmindup product", and "Content-engine
+    produces content for makeyourmindup.ai, which is hosted at makeyourmindup
+    repo". `project-documentation/02_REPO_BRIEF.md` now carries the ownership
+    table across content-engine, growth-makeyourmindup and Control Center, and
+    `engine/ENGINE_SPEC.md`, `engine/INTAKE_RUNNER_SPEC.md` and Phase 5 of
+    `project-documentation/03_STEP_PLAN.md` are marked superseded. content-engine
+    vendors `scripts/qa/kill-list.mjs` and `quality/panel/kill-list.v1.json`
+    pinned to commit `54cd67d` and runs them before any paid call.
+  - **The Substack address.** Settled on 2026-10-05: the publication lives at
+    `home.makeyourmindup.ai`, a word that covers the videos as well as the
+    writing. The cover's Subscribe button and feed point there; Substack's own
+    name for it, `mindmakerlive`, stays in its API.
+
 ## 2026-10-29
 
 - moved from `NOW.md` verbatim (W2.12), to hold it under the 16 KB cap that `scripts/qa/now-size.mjs` enforces; the 2026-10-28 and 2026-10-29 entries stay there:

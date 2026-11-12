@@ -62,16 +62,16 @@ what regenerates its assets. The brand book and kit, v1.5 on 2026-10-05, are in
 paragraph was corrected on 2026-09-26; it had still described the Cannes funnel
 as live.
 
-**No name, in the repository and not yet on the live site.** Since
-2026-10-29 the kill list vetoes his name, its spellings and his handles
+**No name in the repository or on the cover; Substack still names him.**
+Since 2026-10-29 the kill list vetoes his name, its spellings and his handles
 (`personal_name`), and the cover and Substack kit speak as "we", with no
 byline, Person node, founder, "Written by" line or link to his own accounts;
 the cover's metadata is Organization JSON-LD and `llms.txt` cites the
 publication. The cover shows Substack, YouTube and Instagram only: TikTok and
-X have no tile, because their only accounts are his own. None of this is
-deployed: the live site and Substack still name him (the old copy, the
-author, footer and sender settings, and the `krish-*.jpg` photo addresses)
-until he says yes to redeploying the cover and changes those settings.
+X have no tile, because their only accounts are his own. The live cover is
+deployed that way (read live on 2026-11-12: no name anywhere on the page, the
+photos served as `editor-*.jpg`). Substack's own pages still name him in their
+title, author and contributor until he changes its settings.
 
 **Built and not live.** The canon in this repo: the media kit, the panel, the
 rubric, the kill list and its executable check, the format specs and the
@@ -98,15 +98,17 @@ the pieces is Krish's (below).
 extraction to this repo planned on 2026-09-19 is cancelled by the 28 October
 ruling.
 
-**Broken, and not ours to fix.** `ANTHROPIC_API_KEY` is rejected in the
-content-engine deployment. Every arc card written on 2026-09-18 carries a null
-format because none of them was ever composed.
+**Not ours to fix.** Every arc card written on 2026-09-18 carries a null
+format because none of them was ever composed. The content-engine key once
+reported rejected here works: its fact gate and judges metered hundreds of
+Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 - README.md, AGENTS.md and the repo brief name the publish board as content-engine's view drawn live in Control Centre's Content tab, content.krishraja.com/board as its read-only archive, and point at content-engine docs/PUBLISH_BOARDS.md (Ruling, Krish, 2026-11-11: one live board, in Control Centre; the old board is a read-only archive). This repository puts nothing on the board. (2026-11-12)
+- The newsstand takes each piece's cover from Substack's archive (the RSS enclosure has been the video post's sound file since 24 October) and its YouTube video and Short from content-engine's public catalogue (`catalogueUrl`, the engine's own Vercel host), fed by its hourly publish watcher; the cards show Watch and Short beside "Read it" (option A; Ruling, Krish, 2026-11-11: "A for the cards"). A failed feed keeps the last good page. Live on 2026-11-12. (2026-11-11)
 - The cover masthead no longer carries the dateline ("Vol. 01 · Issue 00", "Mon · Wed · Fri", "Free to read"), at Krish's request. On a phone the masthead is now the logo alone; on desk and landscape tablets it is the logo and the section key with its days. `cover.issue` and `strap.left` left `content/site.json` with it; `strap.centre` and `strap.right` stay, because the Substack kit (`scripts/render-kit.mjs`) still reads them. Kill list, type check, build and tests pass; checked in a browser at phone and desk width, no sideways scroll. (2026-11-11)
-- AGENTS.md, README.md, the repo brief, the step plan and the two machine scaffolds now say what is true: this repo is the cover and the canon; content-engine makes the publication and its publish board, the weekly content calendar that keeps itself current; Growth files every post in its 3 Posts folder; Control Center's Content tab is two approval queues. (2026-11-03)
+- AGENTS.md, README.md, the repo brief, the step plan and the two machine scaffolds now say what is true: this repo is the cover and the canon; content-engine makes the publication and its publish board, the weekly content calendar that keeps itself current; Growth files every post in its 3 Posts folder; Control Center's Content tab was then two approval queues (since 11 November it is the one live board, above). (2026-11-03)
 - a Claude Code SessionEnd hook (`scripts/taste_backstop.py`, from growth-makeyourmindup, tagged `publication` (the venture_registry slug) and `krishanraja/makeyourmindup`) keeps only Krish's own lines that a local filter flags as a correction or rejection, scrubbed of secrets, in the ignored `.scratch/taste/backstop.jsonl`; it sends nothing. (2026-10-29)
-- `docs/decisions/2026-10-29-wave-3-for-krish.md` holds what waits on Krish here: the cover redeploy (already live through PR #29's merge; the photo-file rename is PR #32), the dry runs (calibrate or retire, recommended retire), the media kit's three dry-run decisions, the TikTok and X tiles (no tiles live; the handle version needs new publication accounts), and a Substack settings checklist read live on 2026-10-29. (2026-10-29)
+- `docs/decisions/2026-10-29-wave-3-for-krish.md` holds what waits on Krish here: the cover redeploy (live through PR #29's merge; the photo-file rename, PR #32, merged and live on 2026-10-29), the dry runs (calibrate or retire, recommended retire), the media kit's three dry-run decisions, the TikTok and X tiles (no tiles live; the handle version needs new publication accounts), and a Substack settings checklist read live on 2026-10-29. (2026-10-29)
 - NOW.md is 11962 bytes under a 16 KB cap that `npm test` and the new `Check` workflow enforce (`scripts/qa/now-size.mjs`); its four "What changed recently" entries from 2026-09-24 to 2026-10-05 now sit verbatim in `docs/history/LOG.md`. (2026-10-29)
 - `apps/cover/vercel.json` carries `ignoreCommand: git diff --quiet HEAD^ HEAD -- .`, so once merged, Vercel builds production only when a push changes `apps/cover`; replayed on past commits it skips the AGENTS.md-only canon sync (`7402394`) and builds the tiles change (`a1cd10b`). (2026-10-29)
 - the cover's photo files are `editor-*.jpg`, so once deployed no served address names him; the build's `llms.txt` and JSON-LD name the publication only (verified in `.next/server/app`). The live site already serves the no-name copy: merging PR #29 deployed production at `8fbe692` on 2026-10-29, because every push to main deploys the cover. (2026-10-29)
@@ -114,49 +116,30 @@ format because none of them was ever composed.
 
 ## What changed recently
 
+- 2026-11-12 the newsstand's closeout note of 11 November had a leading dash on its North Star check line, so the fold job failed on every push to main from then; it is folded by hand above. The cover went live without his name on 2026-10-29 and the content-engine key works, so both stale lines were corrected, and two older entries moved to `docs/history/LOG.md`.
 - 2026-11-11 apps/cover/components/Cover.tsx, Cover.module.css, content/site.json, README.md.
 - 2026-10-29 Krish chose "Local file, runner posts" on 29 October 2026, so the runner that holds the Control Center key posts them to `taste_reports`, not the session.
 - 2026-10-29 every merge to main deploys production, so even docs-only PRs here republish the cover; the pack offers an ignored build step for him to decide.
 - 2026-10-29 NOW.md had grown to 14926 bytes with no limit; the cap is growth-makeyourmindup's figure, so the chain's two NOW.md files share one rule.
 - 2026-10-29 NOW.md's "not yet on the live site" was stale; the redeploy happened through the merge of PR #29, and the photo addresses are the one live residual.
 - 2026-10-29 the North Star block had been prepended by hand on 2026-10-18 above the front matter; ai-harness owns no writer for that block (its proposal of 2026-10-22 says so), so the fix is here, not in the harness renderer.
-- 2026-10-29 **Nothing in this repository's public copy names him.** Ruling
-  (Krish, 2026-10-28): "Remember, no content refers to Krish, ever." He picked
-  "We" for the article's voice, "No, personal stays personal" for his own
-  accounts, "Drop it" for the face in the byline and "Yes, block it" for
-  other people called Krish. The kill list's `personal_name` veto
-  (`dfc9b75`, `aed9b26`), the cover and Substack kit in "we" (`ce9713b`), the
-  media kit's publication byline (`f655c62`), and no TikTok or X tile
-  (`a1cd10b`). content-engine re-vendored the kill list at `c13d8e2`. Not
-  deployed.
-- 2026-10-28 **content-engine is the one ideation path; this repo keeps the
-  cover and the canon.** Ruling (Krish, 2026-10-28): "content-engine, which is
-  not a mindmake product, it's a makeyourmindup product", and "Content-engine
-  produces content for makeyourmindup.ai, which is hosted at makeyourmindup
-  repo". `project-documentation/02_REPO_BRIEF.md` now carries the ownership
-  table across content-engine, growth-makeyourmindup and Control Center, and
-  `engine/ENGINE_SPEC.md`, `engine/INTAKE_RUNNER_SPEC.md` and Phase 5 of
-  `project-documentation/03_STEP_PLAN.md` are marked superseded. content-engine
-  vendors `scripts/qa/kill-list.mjs` and `quality/panel/kill-list.v1.json`
-  pinned to commit `54cd67d` and runs them before any paid call.
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-12): none in this repository for the board.
-The single next action is **the canon reconciliation** that the 28 October
-plan schedules for its third wave, by 14 November: this repo's canon read
-against content-engine as the one ideation path. Until then, content-engine
-runs the kill list from a copy pinned to commit `c13d8e2` (re-vendored on
-2026-10-29 with the `personal_name` veto), so a change here to
-`scripts/qa/kill-list.mjs` or `quality/panel/kill-list.v1.json` is re-vendored
-there in the same week, with the new commit and hashes in its
-`vendor/makeyourmindup/kill-list/SOURCE.md`.
+- Next (2026-11-12): **the canon reconciliation** that the 28 October plan
+  schedules for its third wave, by 14 November: this repo's canon read against
+  content-engine as the one ideation path. Until then, content-engine runs the
+  kill list from a copy pinned to commit `c13d8e2` (its hashes still match this
+  repository's main on 2026-11-12), so a change here to
+  `scripts/qa/kill-list.mjs` or `quality/panel/kill-list.v1.json` is
+  re-vendored there in the same week, with the new commit and hashes in its
+  `vendor/makeyourmindup/kill-list/SOURCE.md`.
 
 Waiting on Krish, none of which a tool should answer:
 
-- **Redeploy makeyourmindup.ai, and change Substack's byline, author,
-  copyright, footer, sender and second admin settings.** Until then the live
-  cover and Substack still name him; the repository no longer does.
+- **Change Substack's byline, author, copyright, footer, sender and second
+  admin settings.** The cover is already redeployed and names nobody; until
+  then Substack's pages still name him.
 - **Paste the swapped days into Substack.** The short description, the About
   page and the welcome email in `apps/cover/substack-kit/COPY.md`, and the
   free-tier benefits in `PAID.md`, changed on 2026-10-05; Substack has no API.
@@ -166,16 +149,11 @@ Waiting on Krish, none of which a tool should answer:
   been offline since 2026-09-25, when the cover took the domain; its last
   deployment is the cover's rollback (`apps/cover/README.md`).
 - **Rotate the credentials** shared in chat on 2026-09-19 plus the five the VPS
-  audit named, and fix the rejected `ANTHROPIC_API_KEY` in content-engine. No
-  code change substitutes for either.
+  audit named. No code change substitutes for it.
 - **Whether the dry runs still have a job.** They gated the machine's
   template; the machine is superseded. They could still calibrate the panel
   against his picks, or be retired. follow.the.money and mind.the.gap are
   unpicked.
-- **The Substack address.** Settled on 2026-10-05: the publication lives at
-  `home.makeyourmindup.ai`, a word that covers the videos as well as the
-  writing. The cover's Subscribe button and feed point there; Substack's own
-  name for it, `mindmakerlive`, stays in its API.
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.

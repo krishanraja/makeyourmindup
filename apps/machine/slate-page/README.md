@@ -3,7 +3,7 @@ kill_list_scope: canon
 ---
 # The slate page
 
-**Retired.** The intake runner and the artifact slate are superseded (Ruling, Krish, 2026-10-28); ideas are picked on content-engine's publish board and approved in Control Center's Content tab. What follows is history.
+**Retired.** The intake runner and the artifact slate are superseded (Ruling, Krish, 2026-10-28); ideas are answered on the one live publish board, content-engine's view drawn in Control Centre's Content tab (Ruling, Krish, 2026-11-11). What follows is history.
 
 The phone-first page Krish opens to rule on the week's slate. One template,
 filled once a week with the rows the intake runner wrote to `public.suggestions`,
