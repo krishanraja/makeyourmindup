@@ -16,9 +16,9 @@ the root would let a production build succeed from the wrong folder.
 | Path | What |
 |---|---|
 | `content/site.json` | Every word on the page. Edit copy here, never in components. The kill list scans it |
-| `content/config.json` | Substack address, relaunch date, platform links, the scoreboard switch and its calls |
+| `content/config.json` | Substack address, its archive and feed, content-engine's publish catalogue (`catalogueUrl`), relaunch date, platform links, the scoreboard switch and its calls |
 | `components/` | One file per section of the page, plus the three signature diagrams in `diagrams/` |
-| `lib/rss.ts` | Reads the Substack feed at build and hourly after, keeping only posts on or after the relaunch date |
+| `lib/rss.ts` | Reads the Substack archive and feed at build and hourly after, keeping only posts on or after the relaunch date: each piece's cover from the archive, and its YouTube video and Short from content-engine's public catalogue, joined by the post's address. A feed that fails keeps the last good page; a catalogue that fails shows the articles without their videos |
 | `brand/` | The two Canva exports every logo file is derived from, the operating-theatre photo the cover is cut from, and the standing robot the Substack welcome image is cut from |
 | `public/brand/`, `app/icon.png`, `app/apple-icon.png` | Derived logo files. Regenerate with `npm run assets` |
 | `public/brand/email-signature-banner.png` | The email signature banner, served at makeyourmindup.ai/brand/. Made by hand, not by `npm run assets`. See `substack-kit/email-signature/` |
@@ -39,8 +39,9 @@ the root would let a production build succeed from the wrong folder.
   with `statement`, `due`, `confidence`, `status` (`open`, `held`, `broke` or
   `unclear`) and optionally `href`. Only Krish rules a call.
 - **A piece lands:** it appears in the newsstand by itself once it is on the
-  Substack.
-- **Substack moves to its own domain:** change `substackUrl` and `feedUrl`.
+  Substack, with its cover; its video and Short appear beside "Read it" once
+  content-engine's publish watcher puts them in its catalogue.
+- **Substack moves to its own domain:** change `substackUrl`, `feedUrl` and `archiveApi`.
 - **Hide the scoreboard:** set `scoreboard.show` to `false`.
 
 ## Checks

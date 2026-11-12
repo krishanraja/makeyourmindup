@@ -75,7 +75,7 @@ without anyone asking for it.
 
 ## Phase 6: the Control Center
 
-**Superseded on 3 November 2026.** The publish board is content-engine's weekly content calendar and keeps itself current; Control Center's Content tab holds only two approval queues (Ideas to approve; Ready to schedule and post). Read what follows as history.
+**Superseded on 3 November 2026, and again on 11 November.** The publish board is content-engine's weekly content calendar, drawn live as Control Centre's Content tab, the one live board, where Krish answers every idea and approves every piece (Ruling, Krish, 2026-11-11: one live board, in Control Centre; the old board is a read-only archive). Read what follows as history.
 
 Screens only, no logic. The Sunday board first, because Sunday is the last day
 the whole week can still be saved. Then the week view, the verdict archive, the

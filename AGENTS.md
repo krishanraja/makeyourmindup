@@ -36,7 +36,7 @@ superseded scaffold and will not be built). The full split is
 | **makeyourmindup** (here) | The cover site and the editorial canon (kill list, judges), which content-engine runs from a pinned copy. |
 | **content-engine** | Ideation (`plan-week`), the hero assets (the article, both cuts, thumbnails and covers) and the publish board's view, the weekly content calendar, drawn live in Control Centre's Content tab (Ruling, Krish, 2026-11-11: one live board, in Control Centre; the old board is a read-only archive); content.krishraja.com/board is the read-only archive, and content-engine's `docs/PUBLISH_BOARDS.md` says how to use the board. |
 | **Growth-MakeYourMindUp** | The derived carousels, Notes, memes and off-day posts, made to content-engine's standards, filed in each post's `3 Posts` folder and posted through its approved route. |
-| **control-center** | Krish's approvals: the Content tab holds two queues, Ideas to approve and Ready to schedule and post. |
+| **control-center** | Krish's approvals, on the one live publish board in its Content tab: each idea ends in one of five outcomes (Approve, File for later, Reject and learn, Save as a trend, Improve), and only his Approve puts an idea on a day (Ruling, Krish, 2026-11-11). Every press goes through content-engine's routes. |
 
 ## The rule that governs every design decision
 
