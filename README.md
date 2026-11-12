@@ -10,9 +10,10 @@ this repository was to hold (watch, score, assemble, dispatch) is superseded
 makeyourmindup.ai, which is hosted at makeyourmindup repo").
 
 The one public page this repo owns is the cover, in `apps/cover/`. The
-publication's weekly content calendar is content-engine's publish board at
-content.krishraja.com, which keeps itself current, and Krish approves ideas and
-publish-ready pieces in Control Center's Content tab.
+publication's weekly content calendar is the publish board: content-engine's view,
+drawn live in Control Centre's Content tab, where Krish approves ideas and
+publish-ready pieces (Ruling, Krish, 2026-11-11: one live board, in Control Centre; the old board is a read-only archive). content.krishraja.com/board is the read-only archive;
+how every actor uses the board is content-engine's `docs/PUBLISH_BOARDS.md`.
 
 ## Start here
 
