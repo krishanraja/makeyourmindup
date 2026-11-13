@@ -14,6 +14,9 @@ export type Call = {
 }
 
 export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'x' | 'spotify'
+/** A profile the publication keeps that has no tile on the cover. It is still
+ * listed in the structured data's sameAs and in llms.txt. */
+export type ProfileKey = PlatformKey | 'facebook'
 
 /** A staff box row. `link` opens the panel, at one judge when it names one. */
 export type StaffRow = { k: string; v: string; link?: { text: string; judge?: string }; heads?: boolean }
@@ -39,7 +42,7 @@ type Config = Omit<typeof config, 'scoreboard' | 'platforms'> & {
      * cover shows an illustration of how it reads, labelled as an example. */
     example?: { counts: Record<Call['status'], number>; calls: Call[] }
   }
-  platforms: Record<PlatformKey, string | null>
+  platforms: Record<ProfileKey, string | null>
 }
 export const CONFIG = config as unknown as Config
 

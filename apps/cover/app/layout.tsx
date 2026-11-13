@@ -43,7 +43,8 @@ const JSON_LD = {
     {
       '@type': 'Organization',
       '@id': `${CONFIG.siteUrl}/#publication`,
-      name: 'makeyourmindup',
+      name: 'Make Your Mind Up',
+      alternateName: 'makeyourmindup',
       url: CONFIG.siteUrl,
       logo: `${CONFIG.siteUrl}/icon.png`,
       description: SITE.meta.description,
