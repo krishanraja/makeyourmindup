@@ -1,0 +1,159 @@
+{
+  "pieceId": "mymu-brand-component-proof",
+  "cutId": "headline-close-tall",
+  "format": "voice-led-pictures",
+  "aspect": "9:16",
+  "fps": 30,
+  "durationFrames": 150,
+  "tokens": {
+    "ink": "rgb(12, 21, 18)",
+    "inkDeep": "rgb(7, 13, 11)",
+    "inkSoft": "rgb(22, 34, 29)",
+    "cream": "rgb(244, 239, 228)",
+    "mint": "rgb(126, 240, 192)",
+    "channel": "rgb(183, 166, 255)"
+  },
+  "series": {
+    "label": "under.the.hood",
+    "day": "Wednesdays",
+    "promise": "Free from jargon",
+    "site": "makeyourmindup.ai"
+  },
+  "brand": {
+    "mark": {
+      "src": "mark.png",
+      "pixelWidth": 831,
+      "pixelHeight": 740
+    },
+    "logo": {
+      "src": "horizontal-1200w.png",
+      "pixelWidth": 1200,
+      "pixelHeight": 141
+    },
+    "stacked": {
+      "src": "masthead.png",
+      "pixelWidth": 2415,
+      "pixelHeight": 740
+    }
+  },
+  "segments": [],
+  "audio": {
+    "stem": {
+      "src": "test-stem.wav",
+      "trimBeforeFrames": 0
+    },
+    "sfx": []
+  },
+  "captions": [
+    {
+      "fromFrame": 0,
+      "toFrame": 45,
+      "words": [
+        {
+          "text": "Every",
+          "atFrame": 0
+        },
+        {
+          "text": "part",
+          "atFrame": 8
+        },
+        {
+          "text": "gets",
+          "atFrame": 16
+        },
+        {
+          "text": "a",
+          "atFrame": 24
+        },
+        {
+          "text": "stamp,",
+          "atFrame": 30
+        }
+      ],
+      "swipeIndex": 4
+    },
+    {
+      "fromFrame": 45,
+      "toFrame": 90,
+      "words": [
+        {
+          "text": "real",
+          "atFrame": 45
+        },
+        {
+          "text": "or",
+          "atFrame": 55
+        },
+        {
+          "text": "theatre.",
+          "atFrame": 63
+        }
+      ],
+      "swipeIndex": null
+    }
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "role": "hook",
+      "layout": "STAGE",
+      "fromFrame": 0,
+      "toFrame": 150,
+      "uses": [
+        "headline"
+      ],
+      "transitionOut": "cut",
+      "sectionBeat": true
+    }
+  ],
+  "objects": [
+    {
+      "obj": "headline",
+      "device": "headline",
+      "meaning": "The section's question, set as the beat's headline",
+      "params": {
+        "lines": [
+          "REAL, OR",
+          "THEATRE?"
+        ],
+        "swipe": {
+          "line": 1,
+          "word": 0
+        },
+        "dek": "We take it apart."
+      },
+      "fromFrame": 0,
+      "toFrame": 150
+    }
+  ],
+  "events": [
+    {
+      "id": "show",
+      "obj": "headline",
+      "verb": "enter",
+      "toState": "visible",
+      "atFrame": 3
+    }
+  ],
+  "ending": {
+    "fromFrame": 90,
+    "url": "makeyourmindup.ai",
+    "ticker": false,
+    "tagline": "Built to help you decide.",
+    "cta": "Subscribe free",
+    "days": [
+      {
+        "day": "Mondays",
+        "colour": "#FFD84D"
+      },
+      {
+        "day": "Wednesdays",
+        "colour": "#B7A6FF"
+      },
+      {
+        "day": "Fridays",
+        "colour": "#FF6A4D"
+      }
+    ]
+  }
+}
