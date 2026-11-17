@@ -20,7 +20,6 @@ Here's what your subscription gets you:
 - The audio and video editions.
 - A live session with us, once a month.
 - The full Resources library.
-- The verdict archive: every call we've made, and how each one landed.
 
 A few of these are still at the printers. Each one lands in your inbox the day it's ready.
 
@@ -49,4 +48,4 @@ Paid:
 - Diagrams and artifacts as files you can reuse
 - The audio and video editions
 - A monthly live session
-- The full Resources library and the verdict archive
+- The full Resources library

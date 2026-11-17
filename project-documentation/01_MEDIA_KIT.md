@@ -239,8 +239,9 @@ template before then.
 - **Free to everyone:** the written signature pieces in full, and the shorts.
   These carry reach and pickup and are never gated.
 - **Paid:** CTRL beta access, artifacts and diagrams as reusable files, audio
-  and video versions, a monthly live session, the full Resources library and
-  the verdict archive.
+  and video versions, a monthly live session and the full Resources library.
+  The verdict archive went with scored calls (Ruling, Krish, 2026-11-17: no
+  dated-and-scored calls anywhere).
 
 **Prices are the live Substack plans**, confirmed by Krish on 2026-09-25: 8 US
 dollars a month, 80 a year, a founding plan at 150, and a seven-day free trial.

@@ -1,0 +1,4 @@
+Status: The cover no longer promises scored calls. Ruling (Krish, 2026-11-17): "I don't do dated-and-scored make-your-mind-up pieces because it felt quite tacky and gimmicky. I don't really have the clout such that my opinion can hold up in official scores." The scoreboard section, its components and config are removed; the marquee, captions, mind.the.gap line, legal note, Substack welcome and paid copy, media kit and step plan no longer mention dated or scored calls or the verdict archive.
+Changed: apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
+Next: the live Substack description and profile bio still carry the line; they change only on Krish's yes. History logs and dated decisions are left as the record of what was.
+North Star check (2026-11-17): holds.

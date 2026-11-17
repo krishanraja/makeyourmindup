@@ -55,8 +55,8 @@ a URL as the product name.
 
 ## Phase 4: the cover
 
-A magazine front at the apex. Wordmark, line, the formats, current issue, the
-verdict archive when it exists, one route into the publication. Static, so a
+A magazine front at the apex. Wordmark, line, the formats, current issue, one route into the publication (the verdict archive went
+with scored calls: Ruling, Krish, 2026-11-17). Static, so a
 dead back end never takes it down.
 
 **Gate:** Krish's material approval, shown without commentary, plus Art

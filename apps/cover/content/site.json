@@ -42,13 +42,13 @@
     "under.the.hood · Wednesdays",
     "Free from jargon",
     "mind.the.gap · Fridays",
-    "Every call scored in public",
+    "Every number names its source",
     "Contains British spelling"
   ],
   "contents": {
     "eyebrow": "Contents",
     "title": "What's inside, every week.",
-    "caption": "Illustrations. The real ones name every source, show the evidence for every stamp and come with dates."
+    "caption": "Illustrations. The real ones name every source, and show the evidence for every stamp."
   },
   "subchannels": [
     {
@@ -138,7 +138,7 @@
       "page": "12",
       "coverLine": "What's coming, before it's obvious.",
       "oneLiner": "The patterns, and where they lead.",
-      "body": "Most weeks, a pile of AI stories look like they have nothing to do with each other. Every Friday we lay the threads side by side, show where they cross, and put a date on what we think happens next.",
+      "body": "Most weeks, a pile of AI stories look like they have nothing to do with each other. Every Friday we lay the threads side by side, show where they cross, and say what we think happens next.",
       "questionLabel": "The question every piece answers",
       "question": "What is the pattern, and what does it mean is coming?",
       "diagram": {
@@ -153,9 +153,9 @@
           "next"
         ],
         "meet": "the pattern",
-        "call": "our call, dated"
+        "call": "where it leads"
       },
-      "caption": "Illustration. The real ones come with dates and sources.",
+      "caption": "Illustration. The real ones name their sources.",
       "headline": [
         "What's coming,",
         "before it's",
@@ -163,23 +163,6 @@
       ]
     }
   ],
-  "scoreboard": {
-    "eyebrow": "The back page",
-    "title": "Every piece makes a call. We keep score.",
-    "body": "Each piece ends with a prediction and the date it is due. When the date arrives, we mark it right, wrong or too close to call. The wrong ones go up as big as the right ones.",
-    "columns": [
-      "Right",
-      "Wrong",
-      "Too close to call",
-      "Not due yet"
-    ],
-    "empty": "The board opens with the first piece.",
-    "sticker": "Misses included",
-    "due": "Due",
-    "confidence": "Confidence",
-    "exampleLabel": "Example board",
-    "exampleNote": "An example of how the board reads. The full scoreboard opens once there are enough calls to count."
-  },
   "newsstand": {
     "eyebrow": "On the newsstand",
     "title": "Fresh off the press.",
@@ -410,7 +393,7 @@
         },
         {
           "heading": "Not advice",
-          "body": ["What we publish is analysis and opinion. It is not financial, legal or investment advice. Our calls are predictions with a date, and some of them will be wrong."]
+          "body": ["What we publish is analysis and opinion. It is not financial, legal or investment advice. Some of what we think will turn out wrong."]
         },
         {
           "heading": "Other sites",

@@ -6,7 +6,6 @@ import { Marquee } from '@/components/Marquee'
 import { Newsstand } from '@/components/Newsstand'
 import { PanelSheet } from '@/components/PanelSheet'
 import { Platforms } from '@/components/Platforms'
-import { Scoreboard } from '@/components/Scoreboard'
 import { StaffBox } from '@/components/StaffBox'
 import { StickyBar } from '@/components/StickyBar'
 import { CONFIG, SITE } from '@/lib/content'
@@ -33,7 +32,6 @@ export default async function Page() {
         <Marquee />
         <Newsstand posts={posts} />
         <Contents />
-        {CONFIG.scoreboard.show && <Scoreboard />}
         <Platforms />
         <StaffBox />
         <PanelSheet />
