@@ -4,15 +4,6 @@ import config from '@/content/config.json'
 export type Site = typeof site
 export type Subchannel = Site['subchannels'][number]
 
-export type Call = {
-  statement: string
-  due: string
-  /** No longer shown: Krish, 2026-10-14, predictions carry a date, never a percentage. */
-  confidence?: number
-  status: 'held' | 'broke' | 'unclear' | 'open'
-  href?: string
-}
-
 export type PlatformKey = 'youtube' | 'instagram' | 'tiktok' | 'x' | 'spotify'
 /** A profile the publication keeps that has no tile on the cover. It is still
  * listed in the structured data's sameAs and in llms.txt. */
@@ -34,14 +25,7 @@ export type Judge = {
 export const JUDGES = site.panel.cards as Judge[]
 
 export const SITE = site
-type Config = Omit<typeof config, 'scoreboard' | 'platforms'> & {
-  scoreboard: {
-    show: boolean
-    calls: Call[]
-    /** Krish, 2026-10-07: until the real board has numbers worth showing, the
-     * cover shows an illustration of how it reads, labelled as an example. */
-    example?: { counts: Record<Call['status'], number>; calls: Call[] }
-  }
+type Config = Omit<typeof config, 'platforms'> & {
   platforms: Record<ProfileKey, string | null>
 }
 export const CONFIG = config as unknown as Config

@@ -16,9 +16,7 @@ We unpick how AI really works, in plain English, three times a week.
 
 **under.the.hood, every Wednesday.** We open up something that shipped and actually works. Every part gets a stamp, real or theatre, so you can see what does the work and what is there for the launch video.
 
-**mind.the.gap, every Friday.** Most weeks, a pile of AI stories look like they have nothing to do with each other. We lay the threads side by side, show where they cross, and put a date on what we think happens next.
-
-**Every piece makes a call.** It ends with a prediction, a date and how sure we are. When the date arrives, we mark it held, broke or unclear. Misses go up as big as hits.
+**mind.the.gap, every Friday.** Most weeks, a pile of AI stories look like they have nothing to do with each other. We lay the threads side by side, show where they cross, and say what we think happens next.
 
 **The house rules.** Plain English. If jargon sneaks in, we translate it on the spot. No sermons: we show our working, and you make your mind up. Every number names whoever produced it. British spelling, obviously.
 
@@ -32,9 +30,7 @@ Subject: You're in.
 
 Thanks for subscribing to makeyourmindup.
 
-On Mondays, follow.the.money traces where the money goes in an AI deal and who ends up better or worse off. On Wednesdays, under.the.hood takes apart something that shipped and stamps every part real or theatre. On Fridays, mind.the.gap lines up the stories everyone else covered separately and puts a date on what we think comes next.
-
-Every piece ends with a call and a date. We keep score in public, misses included.
+On Mondays, follow.the.money traces where the money goes in an AI deal and who ends up better or worse off. On Wednesdays, under.the.hood takes apart something that shipped and stamps every part real or theatre. On Fridays, mind.the.gap lines up the stories everyone else covered separately and says what we think comes next.
 
 One small thing: if the pictures in these emails don't show, your email app is hiding them until it trusts us. Add this sender to your contacts, or press "show pictures" once, and they'll appear from then on.
 

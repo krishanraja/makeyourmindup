@@ -16,7 +16,7 @@ the root would let a production build succeed from the wrong folder.
 | Path | What |
 |---|---|
 | `content/site.json` | Every word on the page. Edit copy here, never in components. The kill list scans it |
-| `content/config.json` | Substack address, its archive and feed, content-engine's publish catalogue (`catalogueUrl`), relaunch date, platform links, the scoreboard switch and its calls |
+| `content/config.json` | Substack address, its archive and feed, content-engine's publish catalogue (`catalogueUrl`), relaunch date and platform links |
 | `components/` | One file per section of the page, plus the three signature diagrams in `diagrams/` |
 | `lib/rss.ts` | Reads the Substack archive and feed at build and hourly after, keeping only posts on or after the relaunch date: each piece's cover from the archive, and its YouTube video and Short from content-engine's public catalogue, joined by the post's address. A feed that fails keeps the last good page; a catalogue that fails shows the articles without their videos |
 | `brand/` | The two Canva exports every logo file is derived from, the operating-theatre photo the cover is cut from, and the standing robot the Substack welcome image is cut from |
@@ -35,14 +35,10 @@ the root would let a production build succeed from the wrong folder.
   channel records (`growth-makeyourmindup/channels.json`) list only his own
   accounts there, whose handles name him. Two tiles beside the Substack tile
   take half a row each; four take a cell each.
-- **A call is published:** add it to `scoreboard.calls` in `content/config.json`
-  with `statement`, `due`, `confidence`, `status` (`open`, `held`, `broke` or
-  `unclear`) and optionally `href`. Only Krish rules a call.
 - **A piece lands:** it appears in the newsstand by itself once it is on the
   Substack, with its cover; its video and Short appear beside "Read it" once
   content-engine's publish watcher puts them in its catalogue.
 - **Substack moves to its own domain:** change `substackUrl`, `feedUrl` and `archiveApi`.
-- **Hide the scoreboard:** set `scoreboard.show` to `false`.
 
 ## Checks
 
@@ -82,7 +78,8 @@ npm run assets     # re-derive every logo file and the cover photo from brand/
   `lib/legal.ts`.
 - No contact address and no stored reader responses: both are open decisions in
   the media kit.
-- No invented numbers. The scoreboard shows zeros until a real call is ruled.
+- No invented numbers.
+- No scored or dated calls. Ruling (Krish, 2026-11-17): the scoreboard and every "dated and scored in public" promise are gone from the cover and its copy.
 - Every diagram is labelled as an illustration.
 - The three spreads share one structure and line up row for row: headlines are
   set as three lines in `content/site.json` (`headline`), and the audit fails
