@@ -463,7 +463,7 @@ const pages = [
   `<section class="page ink">
     ${strap('p. 11', 'The three sections')}
     <div class="three">
-      ${['follow_the_money', 'under_the_hood', 'mind_the_gap'].map(k => { const s = sub(k); const bg = { under_the_hood: 'lilac', follow_the_money: 'butter', mind_the_gap: 'coral' }[k]; const device = { under_the_hood: 'Real or theatre: the shipped thing, apart, every part stamped.', follow_the_money: 'The money map and the receipt: flows between parties, width is the amount.', mind_the_gap: 'Threads on a time axis that bend and meet, ending in a dated call.' }[k]; return `
+      ${['follow_the_money', 'under_the_hood', 'mind_the_gap'].map(k => { const s = sub(k); const bg = { under_the_hood: 'lilac', follow_the_money: 'butter', mind_the_gap: 'coral' }[k]; const device = { under_the_hood: 'Real or theatre: the shipped thing, apart, every part stamped.', follow_the_money: 'The money map and the receipt: flows between parties, width is the amount.', mind_the_gap: 'Threads on a time axis that bend and meet, and say where they lead.' }[k]; return `
       <div class="third halftone on-light" style="background:var(--${bg})">
         <p class="label">${s.day}</p>
         <p class="pill" style="background:var(--ink);color:var(--${bg});font-size:20px;margin-top:14px">${s.label}</p>
@@ -543,7 +543,7 @@ const pages = [
           <li>Every number names whoever produced it.</li>
           <li>British spelling, obviously.</li>
           <li>No em dashes. No exclamation marks.</li>
-          <li>Misses go up as big as hits.</li>
+          <li>Where the record runs out, we say so.</li>
           <li>The joke points at the hype, never the reader. The joke is never the finding.</li>
         </ul>
       </div>
