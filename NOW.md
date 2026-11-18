@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-15
+as_of: 2026-11-17
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -41,7 +41,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-15)
+## Where it is right now (as of 2026-11-17)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- The cover no longer promises scored calls. Ruling (Krish, 2026-11-17): "I don't do dated-and-scored make-your-mind-up pieces because it felt quite tacky and gimmicky. I don't really have the clout such that my opinion can hold up in official scores." The scoreboard section, its components and config are removed; the marquee, captions, mind.the.gap line, legal note, Substack welcome and paid copy, media kit and step plan no longer mention dated or scored calls or the verdict archive. (2026-11-17)
 - Video rendering stays in content-engine's video engine on Remotion, which already draws this repository's brand kit (its three logo files match by sha256); HyperFrames is not installed. One branded component was rendered through it as proof (`docs/decisions/2026-11-15-video-rendering.md`). (2026-11-15)
 - The cover's Organization JSON-LD is named "Make Your Mind Up", with makeyourmindup as its alternateName, and its sameAs lists the publication's Facebook page beside Substack, YouTube and Instagram; llms.txt lists the Facebook page too. Facebook has no tile on the cover, and the structured data still carries no Person or founder node. (2026-11-13)
 - README.md, AGENTS.md and the repo brief name the publish board as content-engine's view drawn live in Control Centre's Content tab, content.krishraja.com/board as its read-only archive, and point at content-engine docs/PUBLISH_BOARDS.md (Ruling, Krish, 2026-11-11: one live board, in Control Centre; the old board is a read-only archive). This repository puts nothing on the board. (2026-11-12)
@@ -118,6 +119,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
 - 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
 - 2026-11-13 The requested schema.org block carried a founder node naming him; asked against the 28 October no-name ruling, he chose to leave the founder out (2026-11-13). The Facebook page sits in config.json under platforms as a profile with no tile (ProfileKey in apps/cover/lib/content.ts).
 - 2026-11-12 the newsstand's closeout note of 11 November had a leading dash on its North Star check line, so the fold job failed on every push to main from then; it is folded by hand above. The cover went live without his name on 2026-10-29 and the content-engine key works, so both stale lines were corrected, and two older entries moved to `docs/history/LOG.md`.
@@ -131,7 +133,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-15): a yes or an overrule on the video rendering call in docs/decisions/2026-11-15-video-rendering.md; the 13 November JSON-LD check on the live cover still waits.
+- Next (2026-11-17): the live Substack description and profile bio still carry the line; they change only on Krish's yes. History logs and dated decisions are left as the record of what was.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
@@ -154,7 +156,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-15): holds.
+- North Star check (2026-11-17): holds.
 
 ## Read next
 
