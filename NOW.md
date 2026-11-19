@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- makeyourmindup.ai/members serves 10 figures from 4 published pieces (2, 4, 11 and 13 Nov) behind the members code, each labelled with its printed title; two figures that are screenshots of others' material stay off it. (2026-11-19)
 - Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE. (2026-11-19)
 - The cover no longer promises scored calls. Ruling (Krish, 2026-11-17): "I don't do dated-and-scored make-your-mind-up pieces because it felt quite tacky and gimmicky. I don't really have the clout such that my opinion can hold up in official scores." The scoreboard section, its components and config are removed; the marquee, captions, mind.the.gap line, legal note, Substack welcome and paid copy, media kit and step plan no longer mention dated or scored calls or the verdict archive. (2026-11-17)
 - Video rendering stays in content-engine's video engine on Remotion, which already draws this repository's brand kit (its three logo files match by sha256); HyperFrames is not installed. One branded component was rendered through it as proof (`docs/decisions/2026-11-15-video-rendering.md`). (2026-11-15)
@@ -120,6 +121,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-19 The paid tier's reusable files now exist (Ruling, Krish, 2026-11-19: files on a code-gated members page).
 - 2026-11-19 Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
 - 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
 - 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
@@ -128,7 +130,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-19): Krish sets MEMBERS_CODE in Vercel, then the Cowork brief in growth-makeyourmindup aligns Substack and releases the plans to the 5 paying members.
+- Next (2026-11-19): Add each new piece's figures to members-files and content/members.json when it publishes, starting with 18 Nov's three once it is live.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
