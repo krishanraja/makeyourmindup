@@ -238,10 +238,17 @@ template before then.
 
 - **Free to everyone:** the written signature pieces in full, and the shorts.
   These carry reach and pickup and are never gated.
-- **Paid:** CTRL beta access, artifacts and diagrams as reusable files, audio
-  and video versions, a monthly live session and the full Resources library.
-  The verdict archive went with scored calls (Ruling, Krish, 2026-11-17: no
-  dated-and-scored calls anywhere).
+- **Paid** (Ruling, Krish, 2026-11-19: monthly live session and a teardown for
+  annual; every brain module and a monthly check-in for founding; monthly gets
+  the automated modules). Each plan includes the one above it. Monthly: artifacts
+  and diagrams as reusable files, the audio editions, and one brain module of the
+  reader's choice from the second payment. Annual: plus the monthly live session
+  and the Real-or-Theatre Desk, one AI claim a month sent in by reply and returned
+  as a private written teardown. Founding: plus every brain module free and a
+  monthly check-in to unpick the member's biggest AI bottlenecks, places limited
+  each month (the cap is Krish's to set). CTRL and the video editions are no
+  longer paid perks. The verdict archive went with scored calls (Ruling, Krish,
+  2026-11-17: no dated-and-scored calls anywhere).
 
 **Prices are the live Substack plans**, confirmed by Krish on 2026-09-25: 8 US
 dollars a month, 80 a year, a founding plan at 150, and a seven-day free trial.
@@ -249,8 +256,10 @@ They replace the earlier "eight to ten pounds a month". Substack is the truth
 for price; if the two disagree, Substack wins and this line is stale. No price
 appears on the cover or in the channel's copy.
 
-CTRL beta access is the only visible connection between the channel and
-mind/make. That is deliberate.
+The paid perks are the only connection between the channel and mind/make: the
+brain modules and the founding check-in are mind/make's work, delivered inside the paid tier.
+Paid-tier copy describes them and names neither mind/make nor its site. That is
+deliberate.
 
 ## The kill list
 
