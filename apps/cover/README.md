@@ -23,6 +23,7 @@ the root would let a production build succeed from the wrong folder.
 | `public/brand/`, `app/icon.png`, `app/apple-icon.png` | Derived logo files. Regenerate with `npm run assets` |
 | `public/brand/email-signature-banner.png` | The email signature banner, served at makeyourmindup.ai/brand/. Made by hand, not by `npm run assets`. See `substack-kit/email-signature/` |
 | `public/cover/` | The cover's photo, cut at the table's edge, and the threads that hang into the headline. Regenerate with `npm run assets` |
+| `members-files/`, `content/members.json` | The paid members' files at makeyourmindup.ai/members: one folder per piece, served only by `app/members/files/[piece]/[file]` to a browser holding the `MEMBERS_CODE` cookie, never from `public/`. Each file is listed in `content/members.json` under its piece, labelled with the title printed on it. A figure that shows someone else's material (a screenshot of a chart or an app) stays off the page. After changing `MEMBERS_CODE` in Vercel, redeploy: an env-only change is skipped by `vercel.json` |
 | `substack-kit/` | The Substack refresh kit: paste-in copy and images. See its own README |
 | `scripts/` | Asset derivation, kit rendering and screenshots |
 

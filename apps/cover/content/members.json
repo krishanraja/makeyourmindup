@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "Members",
+    "description": "The working behind every makeyourmindup piece, for paid subscribers."
+  },
+  "title": "Members",
+  "lead": "The working behind every piece: the diagrams and artifacts, as files you can take and reuse.",
+  "form": {
+    "label": "Your members code",
+    "button": "Open the files",
+    "hint": "It is in your paid welcome email. Lost it? Reply to any of our emails and we will send it again.",
+    "wrong": "That code does not open anything. Check your welcome email, or reply to any of our emails."
+  },
+  "closed": "The members page is not open yet. It opens the day the first files are ready.",
+  "empty": "The first files land here with the next piece. Until then, this is a very well-guarded empty room.",
+  "alsoHeading": "Also yours",
+  "also": [
+    "One brain module of your choice. Reply to any of our emails and we will send you a code for it.",
+    "On the annual plan: the monthly live session, and the Real-or-Theatre Desk. Reply with one AI claim a month and it comes back as a written teardown.",
+    "Founding members: every brain module, and a check-in with us once a month, whenever you want one. Reply to book it."
+  ],
+  "pieces": [
+    {
+      "title": "Meta staff were ranked by AI use. They gamed it.",
+      "url": "https://home.makeyourmindup.ai/p/meta-staff-were-ranked-by-a",
+      "files": [
+        {
+          "label": "The token leaderboards (PNG)",
+          "href": "/members/files/2026-11-13-meta-staff-ranked/figure-leaderboard.png"
+        },
+        {
+          "label": "Half the target, more sales (PNG)",
+          "href": "/members/files/2026-11-13-meta-staff-ranked/figure-study.png"
+        },
+        {
+          "label": "How a rat bounty made more rats (PNG)",
+          "href": "/members/files/2026-11-13-meta-staff-ranked/figure-tails.png"
+        },
+        {
+          "label": "The U-turns (PNG)",
+          "href": "/members/files/2026-11-13-meta-staff-ranked/figure-uturns.png"
+        }
+      ]
+    },
+    {
+      "title": "A Reiki master wrote a UK number two, and it's both AI and human",
+      "url": "https://home.makeyourmindup.ai/p/a-reiki-master-wrote-a-uk-n",
+      "files": [
+        {
+          "label": "Easy to make. Hard to get heard. (PNG)",
+          "href": "/members/files/2026-11-11-ai-in-the-music/figure-flood.png"
+        },
+        {
+          "label": "One recording. Two answers (PNG)",
+          "href": "/members/files/2026-11-11-ai-in-the-music/figure-grammys.png"
+        },
+        {
+          "label": "Who did which bit (PNG)",
+          "href": "/members/files/2026-11-11-ai-in-the-music/figure-layers.png"
+        },
+        {
+          "label": "Ask who did which bit (PNG)",
+          "href": "/members/files/2026-11-11-ai-in-the-music/figure-work.png"
+        }
+      ]
+    },
+    {
+      "title": "AI used to reply. Now it acts first. Claude Duet is the start.",
+      "url": "https://home.makeyourmindup.ai/p/ai-used-to-reply-now-it-act",
+      "files": [
+        {
+          "label": "From asking to approving (PNG)",
+          "href": "/members/files/2026-11-04-claude-duet/figure-asking-to-approving.png"
+        }
+      ]
+    },
+    {
+      "title": "Claude's AI is eating the jobs of its own humans. What does that signal?",
+      "url": "https://home.makeyourmindup.ai/p/claudes-ai-is-eating-the-jo",
+      "files": [
+        {
+          "label": "Twice the job came back bigger (PNG)",
+          "href": "/members/files/2026-11-02-who-trains-2030-seniors/figure-ladder.png"
+        }
+      ]
+    }
+  ]
+}

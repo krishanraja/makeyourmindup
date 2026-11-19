@@ -5,6 +5,12 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+
+## 2026-11-19 (moved from NOW.md, to keep it under its size cap)
+
+- 2026-11-11 apps/cover/components/Cover.tsx, Cover.module.css, content/site.json, README.md.
+- 2026-11-12 the newsstand's closeout note of 11 November had a leading dash on its North Star check line, so the fold job failed on every push to main from then; it is folded by hand above. The cover went live without his name on 2026-10-29 and the content-engine key works, so both stale lines were corrected, and two older entries moved to `docs/history/LOG.md`.
+
 ## 2026-11-12
 
 - moved from `NOW.md` verbatim, to hold it under the 16 KB cap; the first two were its oldest "What changed recently" entries, the third a settled decision that sat under "waiting on Krish":
@@ -34,6 +40,14 @@ Older entries rolled out of `NOW.md`. Newest first.
     name for it, `mindmakerlive`, stays in its API.
 
 ## 2026-10-29
+
+Moved from NOW.md "What changed recently" on 2026-11-19, to keep NOW.md under its size cap:
+
+- 2026-10-29 Krish chose "Local file, runner posts" on 29 October 2026, so the runner that holds the Control Center key posts them to `taste_reports`, not the session.
+- 2026-10-29 every merge to main deploys production, so even docs-only PRs here republish the cover; the pack offers an ignored build step for him to decide.
+- 2026-10-29 NOW.md had grown to 14926 bytes with no limit; the cap is growth-makeyourmindup's figure, so the chain's two NOW.md files share one rule.
+- 2026-10-29 NOW.md's "not yet on the live site" was stale; the redeploy happened through the merge of PR #29, and the photo addresses are the one live residual.
+- 2026-10-29 the North Star block had been prepended by hand on 2026-10-18 above the front matter; ai-harness owns no writer for that block (its proposal of 2026-10-22 says so), so the fix is here, not in the harness renderer.
 
 - moved from `NOW.md` verbatim (W2.12), to hold it under the 16 KB cap that `scripts/qa/now-size.mjs` enforces; the 2026-10-28 and 2026-10-29 entries stay there:
 

@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-17
+as_of: 2026-11-19
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -41,7 +41,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-17)
+## Where it is right now (as of 2026-11-19)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -103,6 +103,8 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- makeyourmindup.ai/members serves 10 figures from 4 published pieces (2, 4, 11 and 13 Nov) behind the members code, each labelled with its printed title; two figures that are screenshots of others' material stay off it. (2026-11-19)
+- Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE. (2026-11-19)
 - The cover no longer promises scored calls. Ruling (Krish, 2026-11-17): "I don't do dated-and-scored make-your-mind-up pieces because it felt quite tacky and gimmicky. I don't really have the clout such that my opinion can hold up in official scores." The scoreboard section, its components and config are removed; the marquee, captions, mind.the.gap line, legal note, Substack welcome and paid copy, media kit and step plan no longer mention dated or scored calls or the verdict archive. (2026-11-17)
 - Video rendering stays in content-engine's video engine on Remotion, which already draws this repository's brand kit (its three logo files match by sha256); HyperFrames is not installed. One branded component was rendered through it as proof (`docs/decisions/2026-11-15-video-rendering.md`). (2026-11-15)
 - The cover's Organization JSON-LD is named "Make Your Mind Up", with makeyourmindup as its alternateName, and its sameAs lists the publication's Facebook page beside Substack, YouTube and Instagram; llms.txt lists the Facebook page too. Facebook has no tile on the cover, and the structured data still carries no Person or founder node. (2026-11-13)
@@ -119,21 +121,16 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-19 The paid tier's reusable files now exist (Ruling, Krish, 2026-11-19: files on a code-gated members page).
+- 2026-11-19 Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
 - 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
 - 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
 - 2026-11-13 The requested schema.org block carried a founder node naming him; asked against the 28 October no-name ruling, he chose to leave the founder out (2026-11-13). The Facebook page sits in config.json under platforms as a profile with no tile (ProfileKey in apps/cover/lib/content.ts).
-- 2026-11-12 the newsstand's closeout note of 11 November had a leading dash on its North Star check line, so the fold job failed on every push to main from then; it is folded by hand above. The cover went live without his name on 2026-10-29 and the content-engine key works, so both stale lines were corrected, and two older entries moved to `docs/history/LOG.md`.
-- 2026-11-11 apps/cover/components/Cover.tsx, Cover.module.css, content/site.json, README.md.
-- 2026-10-29 Krish chose "Local file, runner posts" on 29 October 2026, so the runner that holds the Control Center key posts them to `taste_reports`, not the session.
-- 2026-10-29 every merge to main deploys production, so even docs-only PRs here republish the cover; the pack offers an ignored build step for him to decide.
-- 2026-10-29 NOW.md had grown to 14926 bytes with no limit; the cap is growth-makeyourmindup's figure, so the chain's two NOW.md files share one rule.
-- 2026-10-29 NOW.md's "not yet on the live site" was stale; the redeploy happened through the merge of PR #29, and the photo addresses are the one live residual.
-- 2026-10-29 the North Star block had been prepended by hand on 2026-10-18 above the front matter; ai-harness owns no writer for that block (its proposal of 2026-10-22 says so), so the fix is here, not in the harness renderer.
 
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-17): the live Substack description and profile bio still carry the line; they change only on Krish's yes. History logs and dated decisions are left as the record of what was.
+- Next (2026-11-19): Add each new piece's figures to members-files and content/members.json when it publishes, starting with 18 Nov's three once it is live.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
@@ -156,7 +153,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-17): holds.
+- North Star check (2026-11-19): holds.
 
 ## Read next
 

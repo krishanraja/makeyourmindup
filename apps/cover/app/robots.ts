@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { CONFIG } from '@/lib/content'
 
-// Every crawler may read everything. The answer engines are also named,
+// Every crawler may read everything except the members page, which is for paid subscribers. The answer engines are also named,
 // because several of them read "not named" as "not invited". A named group
 // replaces the * group for that agent, so it repeats the same allow.
 //
@@ -19,8 +19,8 @@ const AI_AGENTS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: '*', allow: '/' },
-      { userAgent: AI_AGENTS, allow: '/' },
+      { userAgent: '*', allow: '/', disallow: '/members' },
+      { userAgent: AI_AGENTS, allow: '/', disallow: '/members' },
     ],
     sitemap: [`${CONFIG.siteUrl}/sitemap.xml`, `${CONFIG.substackUrl}/sitemap.xml`],
   }
