@@ -11,7 +11,7 @@ still runs every other rule on this file.
 
 Subject: Thank you, properly.
 
-Every written piece on makeyourmindup is free, and it stays free. So you've just paid for something you could have read for nothing. Thank you. That's a real vote of confidence, and we don't take it lightly.
+Every written piece on makeyourmindup is free, and it stays free. So you've just paid for something you could have read for nothing. That is either a vote of confidence or a billing error, and we are choosing to treat it as the first. Thank you.
 
 Here's what your subscription gets you:
 

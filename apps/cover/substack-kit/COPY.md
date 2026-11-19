@@ -28,11 +28,21 @@ Every written piece is free to read, in full.
 
 Subject: You're in.
 
-Thanks for subscribing to makeyourmindup.
+Welcome to makeyourmindup.
 
-On Mondays, follow.the.money traces where the money goes in an AI deal and who ends up better or worse off. On Wednesdays, under.the.hood takes apart something that shipped and stamps every part real or theatre. On Fridays, mind.the.gap lines up the stories everyone else covered separately and says what we think comes next.
+Most AI coverage is a launch video with a press release stapled to the back. We read the invoice, open the thing up and check which parts are real.
 
-One small thing: if the pictures in these emails don't show, your email app is hiding them until it trusts us. Add this sender to your contacts, or press "show pictures" once, and they'll appear from then on.
+Three emails a week:
+
+Monday, follow.the.money. Every AI deal has a bill. We trace it to the bank account and show who got stuck with the tab.
+
+Wednesday, under.the.hood. We take apart something that shipped and stamp every part real or theatre.
+
+Friday, mind.the.gap. A pile of stories that look unrelated, laid side by side, with what we think comes next.
+
+Every piece is free, in full, and every number names whoever produced it.
+
+One small job, about ten seconds: hit reply and tell us which AI claim you most want taken apart. We read every reply, and a reply also tells your email app that we're welcome. If the pictures in these emails don't show, add this sender to your contacts and they'll appear.
 
 makeyourmindup
 
