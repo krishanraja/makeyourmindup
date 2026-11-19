@@ -252,6 +252,7 @@ template before then.
 
 **Prices are the live Substack plans**, confirmed by Krish on 2026-09-25: 8 US
 dollars a month, 80 a year, a founding plan at 150, and a seven-day free trial.
+Stripe read on 2026-11-19 shows the annual price at 81 US dollars, so the 80 here is stale.
 They replace the earlier "eight to ten pounds a month". Substack is the truth
 for price; if the two disagree, Substack wins and this line is stale. No price
 appears on the cover or in the channel's copy.
