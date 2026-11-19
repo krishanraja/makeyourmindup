@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- The brand-kit builder no longer writes the prediction format: mind.the.gap's device "says where they lead" instead of "ending in a dated call", and the house rules say "Where the record runs out, we say so." instead of "Misses go up as big as hits." (Ruling, Krish, 2026-11-18: "i have abandoned the prediction format, it feels lame"). The Drive brand kit and its PDFs still carry the old copy until the kit is rebuilt. (2026-11-18)
 - makeyourmindup.ai/members serves 10 figures from 4 published pieces (2, 4, 11 and 13 Nov) behind the members code, each labelled with its printed title; two figures that are screenshots of others' material stay off it. (2026-11-19)
 - Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE. (2026-11-19)
 - The cover no longer promises scored calls. Ruling (Krish, 2026-11-17): "I don't do dated-and-scored make-your-mind-up pieces because it felt quite tacky and gimmicky. I don't really have the clout such that my opinion can hold up in official scores." The scoreboard section, its components and config are removed; the marquee, captions, mind.the.gap line, legal note, Substack welcome and paid copy, media kit and step plan no longer mention dated or scored calls or the verdict archive. (2026-11-17)
@@ -130,7 +131,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-19): Add each new piece's figures to members-files and content/members.json when it publishes, starting with 18 Nov's three once it is live.
+- Next (2026-11-18): rebuild the brand kit (npm run brand-kit in apps/cover) on Krish's PC so the Drive kit and both PDFs drop the old lines.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
@@ -153,7 +154,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-19): holds.
+- North Star check (2026-11-18): holds.
 
 ## Read next
 
