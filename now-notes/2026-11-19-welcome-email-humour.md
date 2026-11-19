@@ -1,7 +1,4 @@
-Status: Free and paid welcome email copy rewritten in apps/cover/substack-kit (COPY.md, PAID.md), kill list and check_voice pass. Not pasted into Substack. Uncommitted.
-Next: Krish pastes the Cowork brief (growth-makeyourmindup docs/briefs/2026-11-19-cowork-welcome-tone.md) into Cowork and approves each surface.
-North Star check 2026-11-19: holds. Welcome copy acts on replies and shares, not sign-ups; the weekly number is unchanged by this work.
-Ruling (Krish, 2026-11-19): "and its both - makeyourmindup should always have good humour"
-
-Update 2026-11-19: paid plans ruled and written (PAID.md, media kit). Build plan for fulfilment in docs/plans/2026-11-19-paid-tier-fulfilment.md; first blocker is module checkout accepting promotion codes on mindmake.co.
-Next: Krish approves the Stripe coupon and codes, and the members page build.
+Status: Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE.
+Changed: Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
+Next: Krish sets MEMBERS_CODE in Vercel, then the Cowork brief in growth-makeyourmindup aligns Substack and releases the plans to the 5 paying members.
+North Star check (2026-11-19): holds.
