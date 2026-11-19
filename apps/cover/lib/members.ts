@@ -41,10 +41,23 @@ export function isMember(cookie: string | undefined, code: string | null): boole
   return same(cookie, memberToken(code.toLowerCase()))
 }
 
-/** Only https links on a piece are shown, so a bad manifest entry cannot become a script link. */
+/** Only https links, or this site's own gated file paths, are shown, so a bad manifest entry cannot become a script link. */
 export function safePieces(pieces: MemberPiece[]): MemberPiece[] {
   const ok = (u: string) => { try { return new URL(u).protocol === 'https:' } catch { return false } }
   return pieces
     .filter(p => ok(p.url))
-    .map(p => ({ ...p, files: p.files.filter(f => ok(f.href)) }))
+    .map(p => ({ ...p, files: p.files.filter(f => ok(f.href) || memberFilePath(f.href) !== null) }))
+}
+
+// The files themselves sit in members-files/, outside public/, so nothing serves them except the gated route.
+const FILE = /^\/members\/files\/([a-z0-9-]{1,80})\/([a-z0-9-]{1,80}\.(?:png|pdf|svg|zip))$/
+
+/** The piece folder and file name of a gated file path, or null for anything else, so no path can climb out. */
+export function memberFilePath(href: string): { piece: string; file: string } | null {
+  const m = FILE.exec(href)
+  return m ? { piece: m[1], file: m[2] } : null
+}
+
+export const CONTENT_TYPES: Record<string, string> = {
+  png: 'image/png', pdf: 'application/pdf', svg: 'image/svg+xml', zip: 'application/zip',
 }

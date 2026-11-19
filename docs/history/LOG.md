@@ -5,6 +5,12 @@ kill_list_scope: canon
 
 Older entries rolled out of `NOW.md`. Newest first.
 
+
+## 2026-11-19 (moved from NOW.md, to keep it under its size cap)
+
+- 2026-11-11 apps/cover/components/Cover.tsx, Cover.module.css, content/site.json, README.md.
+- 2026-11-12 the newsstand's closeout note of 11 November had a leading dash on its North Star check line, so the fold job failed on every push to main from then; it is folded by hand above. The cover went live without his name on 2026-10-29 and the content-engine key works, so both stale lines were corrected, and two older entries moved to `docs/history/LOG.md`.
+
 ## 2026-11-12
 
 - moved from `NOW.md` verbatim, to hold it under the 16 KB cap; the first two were its oldest "What changed recently" entries, the third a settled decision that sat under "waiting on Krish":
