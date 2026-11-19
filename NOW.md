@@ -124,8 +124,6 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 - 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
 - 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
 - 2026-11-13 The requested schema.org block carried a founder node naming him; asked against the 28 October no-name ruling, he chose to leave the founder out (2026-11-13). The Facebook page sits in config.json under platforms as a profile with no tile (ProfileKey in apps/cover/lib/content.ts).
-- 2026-11-12 the newsstand's closeout note of 11 November had a leading dash on its North Star check line, so the fold job failed on every push to main from then; it is folded by hand above. The cover went live without his name on 2026-10-29 and the content-engine key works, so both stale lines were corrected, and two older entries moved to `docs/history/LOG.md`.
-- 2026-11-11 apps/cover/components/Cover.tsx, Cover.module.css, content/site.json, README.md.
 
 ## What is next and what is waiting on Krish
 
