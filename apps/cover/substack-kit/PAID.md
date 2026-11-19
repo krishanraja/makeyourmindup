@@ -10,7 +10,7 @@ above it.
 |---|---|
 | Monthly | The working files, the audio editions, and one brain module of their choice, from the second monthly payment. |
 | Annual | Everything monthly gets, plus the monthly live session and the Real-or-Theatre Desk: one AI claim a month, sent in by reply, returned as a private written teardown. |
-| Founding | Everything annual gets, plus every brain module free and a monthly check-in to unpick their biggest AI bottlenecks. Places are limited each month; the cap is set in the media kit. |
+| Founding | Everything annual gets, plus every brain module free and one check-in a month, booked by reply when they want it, to unpick their biggest AI bottlenecks. |
 
 The files sit on the members page; every other perk is claimed by replying, and brain modules come with a one-time
 code. `[MEMBERS CODE]` is filled in at paste time from the Vercel setting, never written here. What has to exist
@@ -45,7 +45,7 @@ makeyourmindup
 
 The paid email above, with this paragraph added straight after the first one:
 
-You went founding member, which means you paid more than you had to. Thank you twice. So every brain module is yours, free, not just one. And once a month we sit down with you to unpick your biggest AI bottleneck: where it slows you down, where it is theatre, and what to change. Places are limited each month, so reply to book yours.
+You went founding member, which means you paid more than you had to. Thank you twice. So every brain module is yours, free, not just one. And once a month, whenever you want one, we sit down with you to unpick your biggest AI bottleneck: where it slows you down, where it is theatre, and what to change. Reply to book it.
 
 ## Subscription benefits (Settings, Payments)
 
@@ -65,7 +65,7 @@ Founding:
 
 - Everything in the annual plan
 - Every brain module, free
-- A monthly check-in to unpick your biggest AI bottlenecks
+- A check-in once a month, whenever you want one, to unpick your biggest AI bottlenecks
 
 ## Release email to existing paid subscribers
 
@@ -84,7 +84,7 @@ Every paid plan:
 
 The annual plan also gets a live session with us once a month, and the Real-or-Theatre Desk: send us one AI claim a month, such as a vendor pitch, a board slide or a press release, and get it back as a written teardown, every part stamped real or theatre.
 
-Founding members also get every brain module, free, and a monthly check-in with us to unpick your biggest AI bottleneck.
+Founding members also get every brain module, free, and a check-in with us once a month, whenever you want one, to unpick your biggest AI bottleneck.
 
 To claim any of it, hit reply. Ask for your brain module, paste in a claim for the Desk, or say you want a check-in. We read every reply.
 

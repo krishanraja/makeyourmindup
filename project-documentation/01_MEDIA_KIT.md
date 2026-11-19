@@ -245,8 +245,9 @@ template before then.
   reader's choice from the second payment. Annual: plus the monthly live session
   and the Real-or-Theatre Desk, one AI claim a month sent in by reply and returned
   as a private written teardown. Founding: plus every brain module free and a
-  monthly check-in to unpick the member's biggest AI bottlenecks, places limited
-  each month (the cap is Krish's to set). CTRL and the video editions are no
+  monthly check-in to unpick the member's biggest AI bottlenecks: one a month per
+  founding member, offered and booked by reply when they want it (Ruling, Krish,
+  2026-11-19). CTRL and the video editions are no
   longer paid perks. The verdict archive went with scored calls (Ruling, Krish,
   2026-11-17: no dated-and-scored calls anywhere).
 

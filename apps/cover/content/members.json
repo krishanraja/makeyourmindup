@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "Members",
+    "description": "The working behind every makeyourmindup piece, for paid subscribers."
+  },
+  "title": "Members",
+  "lead": "The working behind every piece: the diagrams and artifacts, as files you can take and reuse.",
+  "form": {
+    "label": "Your members code",
+    "button": "Open the files",
+    "hint": "It is in your paid welcome email. Lost it? Reply to any of our emails and we will send it again.",
+    "wrong": "That code does not open anything. Check your welcome email, or reply to any of our emails."
+  },
+  "closed": "The members page is not open yet. It opens the day the first files are ready.",
+  "empty": "The first files land here with the next piece. Until then, this is a very well-guarded empty room.",
+  "alsoHeading": "Also yours",
+  "also": [
+    "One brain module of your choice. Reply to any of our emails and we will send you a code for it.",
+    "On the annual plan: the monthly live session, and the Real-or-Theatre Desk. Reply with one AI claim a month and it comes back as a written teardown.",
+    "Founding members: every brain module, and a check-in with us once a month, whenever you want one. Reply to book it."
+  ],
+  "pieces": []
+}

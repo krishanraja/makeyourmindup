@@ -25,13 +25,13 @@ page; paying members get a Stripe code for brain modules; existing paying member
 
 | # | Thing | Where | Approval gate |
 |---|---|---|---|
-| 1 | Accept promotion codes at module checkout (`allow_promotion_codes: true`) | mindmake.co site repository (not in this session) | Its deploy |
-| 2 | One coupon, 100% off, duration once, `applies_to` the 8 module products; promotion codes from it: one per monthly or annual member (max 1 redemption), one per founding member (max 8) | Stripe `mind/make`, live | Creating the coupon and each code |
-| 3 | `makeyourmindup.ai/members`: one page, noindex, behind a shared code held in the Vercel env var `MEMBERS_CODE` (Krish sets it; never in the repo), checked by middleware and remembered in a cookie. Lists each piece's files | apps/cover in this repository | The production deploy, and setting the env var |
+| 1 | Built 2026-11-19 on mindmake branch `claude/great-keller-7jcddc`: checkout accepts codes; the webhook fulfils a free checkout only for `mymu-member-module`, so other 100% codes on the account fail closed | mindmake `supabase/functions` | Deploying `kits-checkout` and `kits-webhook` |
+| 2 | Done 2026-11-19: coupon `mymu-member-module`, 100% off, duration once, `applies_to` the 8 module products. Still to do, each when a member claims: promotion codes from it, one per monthly or annual member (max 1 redemption), one per founding member (max 8) | Stripe `mind/make`, live | Creating the coupon and each code |
+| 3 | Built 2026-11-19, not deployed: `makeyourmindup.ai/members`: one page, noindex, behind a shared code held in the Vercel env var `MEMBERS_CODE` (Krish sets it; never in the repo), checked by middleware and remembered in a cookie. Lists each piece's files | apps/cover in this repository | The production deploy, and setting the env var |
 | 4 | Publish each piece's diagrams and artifacts as files with a catalogue entry the members page reads | content-engine (separate repository) | Its own release |
 | 5 | The Desk: replies to the paid welcome already land in the publication's reply inbox. Add a Gmail filter that labels them "Desk" so none is missed; Krish answers each in writing, one per annual member a month | Krish's Gmail | Creating the filter |
 | 6 | The monthly live session for annual and founding: one recurring slot and its link | Krish's calendar and recording tool, his choice | Creating the event |
-| 7 | The founding check-in: a booking link limited to founding members, capped each month (cap still unset) | Calendly | Creating the event type |
+| 7 | The founding check-in: one a month per founding member, offered and booked by reply when they want it (Ruling, Krish, 2026-11-19). No booking tool needed yet | Krish's inbox | None |
 | 8 | Release to the 5 paying members: one email to paid subscribers only, from Substack | Substack, via the Cowork brief | Sending it |
 
 ## Shared code, and why not more
