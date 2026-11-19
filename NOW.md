@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE. (2026-11-19)
 - The cover no longer promises scored calls. Ruling (Krish, 2026-11-17): "I don't do dated-and-scored make-your-mind-up pieces because it felt quite tacky and gimmicky. I don't really have the clout such that my opinion can hold up in official scores." The scoreboard section, its components and config are removed; the marquee, captions, mind.the.gap line, legal note, Substack welcome and paid copy, media kit and step plan no longer mention dated or scored calls or the verdict archive. (2026-11-17)
 - Video rendering stays in content-engine's video engine on Remotion, which already draws this repository's brand kit (its three logo files match by sha256); HyperFrames is not installed. One branded component was rendered through it as proof (`docs/decisions/2026-11-15-video-rendering.md`). (2026-11-15)
 - The cover's Organization JSON-LD is named "Make Your Mind Up", with makeyourmindup as its alternateName, and its sameAs lists the publication's Facebook page beside Substack, YouTube and Instagram; llms.txt lists the Facebook page too. Facebook has no tile on the cover, and the structured data still carries no Person or founder node. (2026-11-13)
@@ -119,6 +120,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-19 Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
 - 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
 - 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
 - 2026-11-13 The requested schema.org block carried a founder node naming him; asked against the 28 October no-name ruling, he chose to leave the founder out (2026-11-13). The Facebook page sits in config.json under platforms as a profile with no tile (ProfileKey in apps/cover/lib/content.ts).
@@ -128,7 +130,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-17): the live Substack description and profile bio still carry the line; they change only on Krish's yes. History logs and dated decisions are left as the record of what was.
+- Next (2026-11-19): Krish sets MEMBERS_CODE in Vercel, then the Cowork brief in growth-makeyourmindup aligns Substack and releases the plans to the 5 paying members.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
