@@ -1,0 +1,3568 @@
+{
+  "photos": {
+    "evo-cover": {
+      "width": 1520,
+      "height": 2688,
+      "focus": {
+        "x": 0.025,
+        "y": 0.224,
+        "w": 0.9,
+        "h": 0.14
+      }
+    },
+    "evo-specimens": {
+      "width": 1520,
+      "height": 2688,
+      "focus": {
+        "x": 0.006,
+        "y": 0.17,
+        "w": 0.91,
+        "h": 0.234
+      }
+    },
+    "evo-topdown": {
+      "width": 1520,
+      "height": 2688,
+      "focus": {
+        "x": 0.09,
+        "y": 0.21,
+        "w": 0.89,
+        "h": 0.61
+      }
+    },
+    "still-jukebox": {
+      "width": 1520,
+      "height": 2688,
+      "focus": {
+        "x": 0.27,
+        "y": 0.28,
+        "w": 0.47,
+        "h": 0.45
+      }
+    },
+    "still-record-phone": {
+      "width": 1520,
+      "height": 2688,
+      "focus": {
+        "x": 0.155,
+        "y": 0.34,
+        "w": 0.72,
+        "h": 0.37
+      }
+    },
+    "still-timer": {
+      "width": 1520,
+      "height": 2688,
+      "focus": {
+        "x": 0.006,
+        "y": 0.29,
+        "w": 0.69,
+        "h": 0.42
+      }
+    }
+  },
+  "crops": {
+    "spotify-logo-heading": {
+      "logo": [
+        87,
+        17,
+        249,
+        70
+      ],
+      "lines": [
+        [
+          74,
+          474,
+          785,
+          204
+        ]
+      ]
+    },
+    "spotify-song-stream": {
+      "logo": [
+        87,
+        17,
+        249,
+        70
+      ],
+      "lines": [
+        [
+          157,
+          896,
+          789,
+          41
+        ],
+        [
+          157,
+          940,
+          345,
+          37
+        ]
+      ],
+      "wrap_first_at": 580
+    }
+  },
+  "items": [
+    {
+      "id": "video-vertical-title",
+      "family": "video-vertical",
+      "name": "Title",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "title",
+      "use": "Opening question, timed to the narration",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Rise 60 px in 8 frames per spoken line, staggered by 4 frames."
+      }
+    },
+    {
+      "id": "video-vertical-why-1",
+      "family": "video-vertical",
+      "name": "Why 1",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "why-1",
+      "use": "First question in the climb",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-vertical-why-2",
+      "family": "video-vertical",
+      "name": "Why 2",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "why-2",
+      "use": "Second question, beside the stream definition",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-vertical-why-3",
+      "family": "video-vertical",
+      "name": "Why 3",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "why-3",
+      "use": "Third question before the evidence review",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-vertical-document",
+      "family": "video-vertical",
+      "name": "Document",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "document",
+      "use": "Inspect the primary source",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-chart",
+      "family": "video-vertical",
+      "name": "Chart",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "chart",
+      "use": "Chart in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-place",
+      "family": "video-vertical",
+      "name": "Place",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "place",
+      "use": "Place in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-creative-work",
+      "family": "video-vertical",
+      "name": "Creative work",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "creative-work",
+      "use": "Creative work in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-quote",
+      "family": "video-vertical",
+      "name": "Quote",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "quote",
+      "use": "Quote in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-callout",
+      "family": "video-vertical",
+      "name": "Callout",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "callout",
+      "use": "Callout in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Draw the leader in 6 frames, then reveal the tag in 4."
+      }
+    },
+    {
+      "id": "video-vertical-documented",
+      "family": "video-vertical",
+      "name": "Evidence strength tags",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "strength-tags",
+      "use": "Documented source with all three strength tags at actual size",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Hold the source while the strength tag appears."
+      }
+    },
+    {
+      "id": "video-vertical-challenger",
+      "family": "video-vertical",
+      "name": "Challenger",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "challenger",
+      "use": "Park an alternative explanation for review",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-recap",
+      "family": "video-vertical",
+      "name": "Recap",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "recap",
+      "use": "Bring the three questions together before the answer",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Reveal each ruled row in 8 frames, staggered by 3."
+      }
+    },
+    {
+      "id": "video-vertical-landing",
+      "family": "video-vertical",
+      "name": "Landing",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "landing",
+      "use": "State what the evidence establishes",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "mint takeaway, italic open question, no wordmark"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Hold the insight for 12 frames before the question."
+      }
+    },
+    {
+      "id": "video-vertical-close",
+      "family": "video-vertical",
+      "name": "Close",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "close",
+      "use": "After the takeaway, before the next piece",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "V10 in closing ink band to bottom edge"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-vertical-lower-third",
+      "family": "video-vertical",
+      "name": "Lower third",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "lower-third",
+      "use": "Identify the source while the evidence is on screen",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-vertical-captions",
+      "family": "video-vertical",
+      "name": "Captions",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "captions",
+      "use": "Over the current spoken phrase",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "Fraunces 500, 2 to 5 words, current word mint"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Set the current spoken word in mint, advancing in pages of 2 to 5 words."
+      }
+    },
+    {
+      "id": "video-vertical-rail",
+      "family": "video-vertical",
+      "name": "Rail",
+      "platform": "Shorts / Reels / TikTok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "rail",
+      "use": "Between questions to show progress",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-title",
+      "family": "video-wide",
+      "name": "Title",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "title",
+      "use": "Opening question, timed to the narration",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Rise 60 px in 8 frames per spoken line, staggered by 4 frames."
+      }
+    },
+    {
+      "id": "video-wide-why-1",
+      "family": "video-wide",
+      "name": "Why 1",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "why-1",
+      "use": "First question in the climb",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-wide-why-2",
+      "family": "video-wide",
+      "name": "Why 2",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "why-2",
+      "use": "Second question, beside the stream definition",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-wide-why-3",
+      "family": "video-wide",
+      "name": "Why 3",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "why-3",
+      "use": "Third question before the evidence review",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-wide-document",
+      "family": "video-wide",
+      "name": "Document",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "document",
+      "use": "Inspect the primary source",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-chart",
+      "family": "video-wide",
+      "name": "Chart",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "chart",
+      "use": "Chart in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-place",
+      "family": "video-wide",
+      "name": "Place",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "place",
+      "use": "Place in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-creative-work",
+      "family": "video-wide",
+      "name": "Creative work",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "creative-work",
+      "use": "Creative work in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-quote",
+      "family": "video-wide",
+      "name": "Quote",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "quote",
+      "use": "Quote in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-callout",
+      "family": "video-wide",
+      "name": "Callout",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "callout",
+      "use": "Callout in the narrated cut",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Draw the leader in 6 frames, then reveal the tag in 4."
+      }
+    },
+    {
+      "id": "video-wide-documented",
+      "family": "video-wide",
+      "name": "Evidence strength tags",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "strength-tags",
+      "use": "Documented source with all three strength tags at actual size",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Hold the source while the strength tag appears."
+      }
+    },
+    {
+      "id": "video-wide-challenger",
+      "family": "video-wide",
+      "name": "Challenger",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "challenger",
+      "use": "Park an alternative explanation for review",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-recap",
+      "family": "video-wide",
+      "name": "Recap",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "recap",
+      "use": "Bring the three questions together before the answer",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Reveal each ruled row in 8 frames, staggered by 3."
+      }
+    },
+    {
+      "id": "video-wide-landing",
+      "family": "video-wide",
+      "name": "Landing",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "landing",
+      "use": "State what the evidence establishes",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "mint takeaway, italic open question, no wordmark"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Hold the insight for 12 frames before the question."
+      }
+    },
+    {
+      "id": "video-wide-close",
+      "family": "video-wide",
+      "name": "Close",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "close",
+      "use": "After the takeaway, before the next piece",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "V10 in closing ink band to bottom edge"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Wipe the colour block upwards in 8 frames."
+      }
+    },
+    {
+      "id": "video-wide-lower-third",
+      "family": "video-wide",
+      "name": "Lower third",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "lower-third",
+      "use": "Identify the source while the evidence is on screen",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "video-wide-captions",
+      "family": "video-wide",
+      "name": "Captions",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "captions",
+      "use": "Over the current spoken phrase",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "Fraunces 500, 2 to 5 words, current word mint"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Set the current spoken word in mint, advancing in pages of 2 to 5 words."
+      }
+    },
+    {
+      "id": "video-wide-rail",
+      "family": "video-wide",
+      "name": "Rail",
+      "platform": "YouTube",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "rail",
+      "use": "Between questions to show progress",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Slide in from 120 px right over 10 frames."
+      }
+    },
+    {
+      "id": "carousel-cover",
+      "family": "carousel",
+      "name": "Cover",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "cover",
+      "use": "Introduce the piece",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-why-1",
+      "family": "carousel",
+      "name": "Why 1",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "why-1",
+      "use": "First question in the climb",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-why-2",
+      "family": "carousel",
+      "name": "Why 2",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "why-2",
+      "use": "Second question, beside the stream definition",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-why-3",
+      "family": "carousel",
+      "name": "Why 3",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "why-3",
+      "use": "Third question before the evidence review",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "photo or document above a grained rung block of at least 40%",
+        "ink type on colour"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-document",
+      "family": "carousel",
+      "name": "Document",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "document",
+      "use": "Inspect the primary source",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-landing",
+      "family": "carousel",
+      "name": "Landing",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "landing",
+      "use": "State what the evidence establishes",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "mint takeaway, italic open question, no wordmark"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-close",
+      "family": "carousel",
+      "name": "Close",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "close",
+      "use": "After the takeaway, before the next piece",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "V10 in closing ink band to bottom edge"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-good-news-cover",
+      "family": "carousel",
+      "name": "Good news cover",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "good-news-cover",
+      "use": "Good news cover in the swipe sequence",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-good-news-item",
+      "family": "carousel",
+      "name": "Good news item",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "good-news-item",
+      "use": "Good news item in the swipe sequence",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-good-news-close",
+      "family": "carousel",
+      "name": "Good news close",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "good-news-close",
+      "use": "Good news close in the swipe sequence",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "V10 in closing ink band to bottom edge"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-simple-advice-cover",
+      "family": "carousel",
+      "name": "Simple advice cover",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "simple-advice-cover",
+      "use": "Simple advice cover in the swipe sequence",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-simple-advice-item",
+      "family": "carousel",
+      "name": "Simple advice item",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "simple-advice-item",
+      "use": "Simple advice item in the swipe sequence",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "carousel-simple-advice-close",
+      "family": "carousel",
+      "name": "Simple advice close",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "simple-advice-close",
+      "use": "Simple advice close in the swipe sequence",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "V10 in closing ink band to bottom edge"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-feed",
+      "family": "social",
+      "name": "Feed",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "feed",
+      "use": "Feed in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-square",
+      "family": "social",
+      "name": "Square",
+      "platform": "Instagram",
+      "width": 1080,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          81,
+          81,
+          918,
+          918
+        ]
+      },
+      "layout": "square",
+      "use": "Square in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-ig-story",
+      "family": "social",
+      "name": "Instagram story",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "safe": {
+          "overlay_top": 250,
+          "overlay_bottom_from": 1580
+        },
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "ig-story",
+      "use": "Instagram story in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-ig-reels-cover",
+      "family": "social",
+      "name": "Instagram reels cover",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "safe": {
+          "grid_crop": [
+            0,
+            240,
+            1080,
+            1440
+          ],
+          "overlay_top": 220,
+          "overlay_bottom_from": 1600
+        },
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "ig-reels-cover",
+      "use": "Instagram reels cover in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-tiktok-cover",
+      "family": "social",
+      "name": "Tiktok cover",
+      "platform": "tiktok",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "safe": {
+          "right_rail_from": 880,
+          "bottom_from": 1540,
+          "top": 130
+        },
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "tiktok-cover",
+      "use": "Tiktok cover in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-youtube-thumb",
+      "family": "social",
+      "name": "Youtube thumb",
+      "platform": "youtube",
+      "width": 1280,
+      "height": 720,
+      "safe_zones": {
+        "avoid": {
+          "timestamp": [
+            3300,
+            1880,
+            540,
+            280
+          ]
+        },
+        "coordinate_space": [
+          3840,
+          2160
+        ],
+        "content_box": [
+          96,
+          54,
+          1088,
+          612
+        ]
+      },
+      "layout": "youtube-thumb",
+      "use": "Youtube thumb in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-youtube-shorts-thumb",
+      "family": "social",
+      "name": "Youtube shorts thumb",
+      "platform": "youtube",
+      "width": 2160,
+      "height": 3840,
+      "safe_zones": {
+        "content_box": [
+          180,
+          538,
+          1512,
+          2419
+        ],
+        "scaled_from": "ig-reels-cover",
+        "grid_crop": [
+          0,
+          480,
+          2160,
+          2880
+        ],
+        "overlay_top": 440,
+        "overlay_bottom_from": 3200
+      },
+      "layout": "youtube-shorts-thumb",
+      "use": "Youtube shorts thumb in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-quote",
+      "family": "social",
+      "name": "Quote",
+      "platform": "Instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "quote",
+      "use": "Quote in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-number",
+      "family": "social",
+      "name": "Number",
+      "platform": "Instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "number",
+      "use": "Number in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-versus",
+      "family": "social",
+      "name": "Versus",
+      "platform": "Instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "versus",
+      "use": "Versus in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-poll-question",
+      "family": "social",
+      "name": "Poll question",
+      "platform": "Instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "poll-question",
+      "use": "Poll question in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-poll-result",
+      "family": "social",
+      "name": "Poll result",
+      "platform": "Instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "poll-result",
+      "use": "Poll result in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-clip-cover",
+      "family": "social",
+      "name": "Clip cover",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "safe": {
+          "grid_crop": [
+            0,
+            240,
+            1080,
+            1440
+          ],
+          "overlay_top": 220,
+          "overlay_bottom_from": 1600
+        },
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "clip-cover",
+      "use": "Clip cover in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-meme",
+      "family": "social",
+      "name": "Meme",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "safe": {
+          "grid_crop_3x4": [
+            34,
+            0,
+            1012,
+            1350
+          ],
+          "centre_1x1": [
+            0,
+            135,
+            1080,
+            1080
+          ],
+          "margin": 90
+        },
+        "content_box": [
+          65,
+          178,
+          950,
+          994
+        ]
+      },
+      "layout": "meme",
+      "use": "Meme in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-threads-text",
+      "family": "social",
+      "name": "Threads text",
+      "platform": "X / Threads",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "threads-text",
+      "use": "Threads text in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-linkedin-page",
+      "family": "social",
+      "name": "Linkedin page",
+      "platform": "LinkedIn PDF",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "linkedin-page",
+      "use": "Linkedin page in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "social-youtube-community",
+      "family": "social",
+      "name": "Youtube community",
+      "platform": "YouTube",
+      "width": 1080,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          81,
+          81,
+          918,
+          918
+        ]
+      },
+      "layout": "youtube-community",
+      "use": "Youtube community in the social feed",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-ig-avatar",
+      "family": "profile",
+      "name": "Instagram avatar",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1080,
+      "safe_zones": {
+        "safe": "circle, keep mark inside central 70%",
+        "content_box": [
+          81,
+          81,
+          918,
+          918
+        ]
+      },
+      "layout": "icon",
+      "use": "Instagram avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-tiktok-avatar",
+      "family": "profile",
+      "name": "Tiktok avatar",
+      "platform": "tiktok",
+      "width": 720,
+      "height": 720,
+      "safe_zones": {
+        "content_box": [
+          54,
+          54,
+          612,
+          612
+        ]
+      },
+      "layout": "icon",
+      "use": "Tiktok avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-youtube-avatar",
+      "family": "profile",
+      "name": "Youtube avatar",
+      "platform": "youtube",
+      "width": 800,
+      "height": 800,
+      "safe_zones": {
+        "content_box": [
+          60,
+          60,
+          680,
+          680
+        ]
+      },
+      "layout": "icon",
+      "use": "Youtube avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-x-avatar",
+      "family": "profile",
+      "name": "X avatar",
+      "platform": "x",
+      "width": 800,
+      "height": 800,
+      "safe_zones": {
+        "content_box": [
+          60,
+          60,
+          680,
+          680
+        ]
+      },
+      "layout": "icon",
+      "use": "X avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-linkedin-avatar",
+      "family": "profile",
+      "name": "Linkedin avatar",
+      "platform": "linkedin",
+      "width": 800,
+      "height": 800,
+      "safe_zones": {
+        "content_box": [
+          60,
+          60,
+          680,
+          680
+        ]
+      },
+      "layout": "icon",
+      "use": "Linkedin avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-substack-logo",
+      "family": "profile",
+      "name": "Substack logo",
+      "platform": "substack",
+      "width": 512,
+      "height": 512,
+      "safe_zones": {
+        "content_box": [
+          38,
+          38,
+          435,
+          435
+        ]
+      },
+      "layout": "icon",
+      "use": "Substack logo in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-youtube-banner",
+      "family": "profile",
+      "name": "Youtube banner",
+      "platform": "youtube",
+      "width": 2560,
+      "height": 1440,
+      "safe_zones": {
+        "safe": {
+          "all_devices": [
+            507,
+            508,
+            1546,
+            423
+          ],
+          "desktop_band": [
+            0,
+            508,
+            2560,
+            423
+          ]
+        },
+        "content_box": [
+          600,
+          525,
+          1360,
+          389
+        ]
+      },
+      "layout": "banner",
+      "use": "Youtube banner in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "climb steps on grained ink"
+      ],
+      "status": "proposed",
+      "banner_cap_ratio": 0.18
+    },
+    {
+      "id": "profile-facebook-cover",
+      "family": "profile",
+      "name": "Facebook cover",
+      "platform": "facebook",
+      "width": 1640,
+      "height": 856,
+      "safe_zones": {
+        "safe": {
+          "all_devices": [
+            59,
+            116,
+            1522,
+            624
+          ]
+        },
+        "content_box": [
+          492,
+          205,
+          984,
+          411
+        ]
+      },
+      "layout": "banner",
+      "use": "Facebook cover in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "climb steps on grained ink"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-x-header",
+      "family": "profile",
+      "name": "X header",
+      "platform": "x",
+      "width": 1500,
+      "height": 500,
+      "safe_zones": {
+        "avoid": {
+          "avatar": [
+            0,
+            320,
+            400,
+            180
+          ]
+        },
+        "content_box": [
+          450,
+          120,
+          900,
+          240
+        ]
+      },
+      "layout": "banner",
+      "use": "X header in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "climb steps on grained ink"
+      ],
+      "status": "proposed",
+      "banner_cap_ratio": 0.3
+    },
+    {
+      "id": "profile-linkedin-banner",
+      "family": "profile",
+      "name": "Linkedin banner",
+      "platform": "linkedin",
+      "width": 1584,
+      "height": 396,
+      "safe_zones": {
+        "avoid": {
+          "avatar_desktop": [
+            0,
+            170,
+            420,
+            226
+          ]
+        },
+        "content_box": [
+          475,
+          95,
+          950,
+          190
+        ]
+      },
+      "layout": "banner",
+      "use": "Linkedin banner in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "climb steps on grained ink"
+      ],
+      "status": "proposed",
+      "banner_cap_ratio": 0.3
+    },
+    {
+      "id": "profile-youtube-endscreen",
+      "family": "profile",
+      "name": "Youtube endscreen",
+      "platform": "youtube",
+      "width": 3840,
+      "height": 2160,
+      "safe_zones": {
+        "elements": {
+          "video_left": [
+            420,
+            1300,
+            1120,
+            630
+          ],
+          "subscribe": [
+            1700,
+            1395,
+            440,
+            440
+          ],
+          "video_right": [
+            2300,
+            1300,
+            1120,
+            630
+          ]
+        },
+        "content_box": [
+          288,
+          162,
+          3264,
+          1836
+        ]
+      },
+      "layout": "endscreen",
+      "use": "Youtube endscreen in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "note": "Hold for 20 seconds with the lower element zones clear."
+      }
+    },
+    {
+      "id": "profile-ig-highlight-start-here",
+      "family": "profile",
+      "name": "Instagram highlight start here",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "disc": [
+          220,
+          640,
+          640
+        ],
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "highlight",
+      "use": "Instagram highlight start here in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-ig-highlight-follow-the-money",
+      "family": "profile",
+      "name": "Instagram highlight follow the money",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "disc": [
+          220,
+          640,
+          640
+        ],
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "highlight",
+      "use": "Instagram highlight follow the money in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-ig-highlight-under-the-hood",
+      "family": "profile",
+      "name": "Instagram highlight under the hood",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "disc": [
+          220,
+          640,
+          640
+        ],
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "highlight",
+      "use": "Instagram highlight under the hood in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-ig-highlight-mind-the-gap",
+      "family": "profile",
+      "name": "Instagram highlight mind the gap",
+      "platform": "instagram",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "disc": [
+          220,
+          640,
+          640
+        ],
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "highlight",
+      "use": "Instagram highlight mind the gap in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-facebook-avatar",
+      "family": "profile",
+      "name": "Facebook avatar",
+      "platform": "facebook",
+      "width": 320,
+      "height": 320,
+      "safe_zones": {
+        "content_box": [
+          24,
+          24,
+          272,
+          272
+        ]
+      },
+      "layout": "icon",
+      "use": "Facebook avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-threads-avatar",
+      "family": "profile",
+      "name": "Threads avatar",
+      "platform": "threads",
+      "width": 320,
+      "height": 320,
+      "safe_zones": {
+        "content_box": [
+          24,
+          24,
+          272,
+          272
+        ]
+      },
+      "layout": "icon",
+      "use": "Threads avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-whatsapp-avatar",
+      "family": "profile",
+      "name": "Whatsapp avatar",
+      "platform": "whatsapp",
+      "width": 640,
+      "height": 640,
+      "safe_zones": {
+        "content_box": [
+          48,
+          48,
+          544,
+          544
+        ]
+      },
+      "layout": "icon",
+      "use": "Whatsapp avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-telegram-avatar",
+      "family": "profile",
+      "name": "Telegram avatar",
+      "platform": "telegram",
+      "width": 512,
+      "height": 512,
+      "safe_zones": {
+        "content_box": [
+          38,
+          38,
+          435,
+          435
+        ]
+      },
+      "layout": "icon",
+      "use": "Telegram avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-podcast-avatar",
+      "family": "profile",
+      "name": "Podcast avatar",
+      "platform": "podcast",
+      "width": 3000,
+      "height": 3000,
+      "safe_zones": {
+        "content_box": [
+          225,
+          225,
+          2550,
+          2550
+        ]
+      },
+      "layout": "icon",
+      "use": "Podcast avatar in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-favicon-16",
+      "family": "profile",
+      "name": "Favicon 16",
+      "platform": "Web",
+      "width": 16,
+      "height": 16,
+      "safe_zones": {
+        "content_box": [
+          1,
+          1,
+          14,
+          14
+        ]
+      },
+      "layout": "icon",
+      "use": "Favicon 16 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-favicon-32",
+      "family": "profile",
+      "name": "Favicon 32",
+      "platform": "Web",
+      "width": 32,
+      "height": 32,
+      "safe_zones": {
+        "content_box": [
+          2,
+          2,
+          27,
+          27
+        ]
+      },
+      "layout": "icon",
+      "use": "Favicon 32 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-favicon-48",
+      "family": "profile",
+      "name": "Favicon 48",
+      "platform": "Web",
+      "width": 48,
+      "height": 48,
+      "safe_zones": {
+        "content_box": [
+          4,
+          4,
+          41,
+          41
+        ]
+      },
+      "layout": "icon",
+      "use": "Favicon 48 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-favicon-180",
+      "family": "profile",
+      "name": "Favicon 180",
+      "platform": "Web",
+      "width": 180,
+      "height": 180,
+      "safe_zones": {
+        "content_box": [
+          14,
+          14,
+          153,
+          153
+        ]
+      },
+      "layout": "icon",
+      "use": "Favicon 180 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-favicon-192",
+      "family": "profile",
+      "name": "Favicon 192",
+      "platform": "Web",
+      "width": 192,
+      "height": 192,
+      "safe_zones": {
+        "content_box": [
+          14,
+          14,
+          163,
+          163
+        ]
+      },
+      "layout": "icon",
+      "use": "Favicon 192 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-favicon-512",
+      "family": "profile",
+      "name": "Favicon 512",
+      "platform": "Web",
+      "width": 512,
+      "height": 512,
+      "safe_zones": {
+        "content_box": [
+          38,
+          38,
+          435,
+          435
+        ]
+      },
+      "layout": "icon",
+      "use": "Favicon 512 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "profile-maskable-512",
+      "family": "profile",
+      "name": "Maskable 512",
+      "platform": "Web",
+      "width": 512,
+      "height": 512,
+      "safe_zones": {
+        "content_box": [
+          38,
+          38,
+          435,
+          435
+        ]
+      },
+      "layout": "icon",
+      "use": "Maskable 512 in the channel identity",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "D icon"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "podcast-show-art",
+      "family": "podcast",
+      "name": "Show art",
+      "platform": "spotify+apple",
+      "width": 3000,
+      "height": 3000,
+      "safe_zones": {
+        "content_box": [
+          225,
+          225,
+          2550,
+          2550
+        ]
+      },
+      "layout": "show",
+      "use": "Podcast directory and player shelf",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "S3h"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "podcast-episode-art",
+      "family": "podcast",
+      "name": "Episode art",
+      "platform": "Podcast",
+      "width": 3000,
+      "height": 3000,
+      "safe_zones": {
+        "content_box": [
+          225,
+          225,
+          2550,
+          2550
+        ]
+      },
+      "layout": "episode",
+      "use": "Episode art in the podcast directory",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "S3h above the cream Anton question on ink, photo-free"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "podcast-audiogram",
+      "family": "podcast",
+      "name": "Audiogram",
+      "platform": "Podcast",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "audiogram",
+      "use": "Recorded excerpt shared in a vertical player",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed",
+      "motion": {
+        "fps": 25,
+        "easing": "cubic-bezier(0.22,1,0.36,1)",
+        "note": "Reveal the quote over 8 frames. The mint waveform follows the recorded excerpt."
+      }
+    },
+    {
+      "id": "newsletter-weekly-edition",
+      "family": "newsletter",
+      "name": "Weekly edition",
+      "platform": "Substack",
+      "width": 600,
+      "height": 2350,
+      "safe_zones": {
+        "content_box": [
+          32,
+          24,
+          536,
+          2302
+        ]
+      },
+      "layout": "weekly-edition",
+      "use": "Weekly edition in the email or article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-post-header",
+      "family": "newsletter",
+      "name": "Post header",
+      "platform": "Substack",
+      "width": 1456,
+      "height": 816,
+      "safe_zones": {
+        "content_box": [
+          109,
+          61,
+          1238,
+          694
+        ]
+      },
+      "layout": "post-header",
+      "use": "Post header in the email or article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-substack-cover",
+      "family": "newsletter",
+      "name": "Substack cover",
+      "platform": "substack",
+      "width": 1200,
+      "height": 1200,
+      "safe_zones": {
+        "content_box": [
+          90,
+          90,
+          1020,
+          1020
+        ]
+      },
+      "layout": "substack-cover",
+      "use": "Substack cover in the email or article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-substack-post-social",
+      "family": "newsletter",
+      "name": "Substack post social",
+      "platform": "substack",
+      "width": 1456,
+      "height": 1048,
+      "safe_zones": {
+        "safe": {
+          "band_1_91": [
+            0,
+            237,
+            1456,
+            762
+          ]
+        },
+        "content_box": [
+          87,
+          267,
+          1281,
+          701
+        ]
+      },
+      "layout": "substack-post-social",
+      "use": "Substack post social in the email or article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-substack-email-header",
+      "family": "newsletter",
+      "name": "Substack email header",
+      "platform": "substack",
+      "width": 1100,
+      "height": 220,
+      "safe_zones": {
+        "content_box": [
+          82,
+          16,
+          935,
+          187
+        ]
+      },
+      "layout": "substack-email-header",
+      "use": "Substack email header in the email or article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-substack-wordmark",
+      "family": "newsletter",
+      "name": "Substack wordmark",
+      "platform": "substack",
+      "width": 1344,
+      "height": 256,
+      "safe_zones": {
+        "content_box": [
+          101,
+          19,
+          1142,
+          218
+        ]
+      },
+      "layout": "substack-wordmark",
+      "use": "Substack wordmark in the email or article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-figure-chart",
+      "family": "newsletter",
+      "name": "Figure chart",
+      "platform": "Substack",
+      "width": 1200,
+      "height": 800,
+      "safe_zones": {
+        "content_box": [
+          90,
+          60,
+          1020,
+          680
+        ]
+      },
+      "layout": "figure-chart",
+      "use": "Explain the streaming threshold in an article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "newsletter-figure-document",
+      "family": "newsletter",
+      "name": "Figure document",
+      "platform": "Substack",
+      "width": 1200,
+      "height": 800,
+      "safe_zones": {
+        "content_box": [
+          90,
+          60,
+          1020,
+          680
+        ]
+      },
+      "layout": "figure-document",
+      "use": "Embed the original source in an article",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "web-desktop",
+      "family": "web",
+      "name": "Desktop",
+      "platform": "Web",
+      "width": 1440,
+      "height": 900,
+      "safe_zones": {
+        "content_box": [
+          108,
+          68,
+          1224,
+          765
+        ]
+      },
+      "layout": "desktop",
+      "use": "Desktop in the publication website",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "web-mobile",
+      "family": "web",
+      "name": "Mobile",
+      "platform": "Web",
+      "width": 390,
+      "height": 844,
+      "safe_zones": {
+        "content_box": [
+          32,
+          118,
+          273,
+          532
+        ]
+      },
+      "layout": "mobile",
+      "use": "Mobile in the publication website",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "web-article",
+      "family": "web",
+      "name": "Article",
+      "platform": "Web",
+      "width": 1440,
+      "height": 2000,
+      "safe_zones": {
+        "content_box": [
+          108,
+          150,
+          1224,
+          1700
+        ]
+      },
+      "layout": "article",
+      "use": "Article in the publication website",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "web-og-card",
+      "family": "web",
+      "name": "Og card",
+      "platform": "web",
+      "width": 1200,
+      "height": 630,
+      "safe_zones": {
+        "safe": {
+          "centre": [
+            100,
+            65,
+            1000,
+            500
+          ],
+          "x_2to1": [
+            0,
+            15,
+            1200,
+            600
+          ]
+        },
+        "content_box": [
+          160,
+          85,
+          880,
+          460
+        ]
+      },
+      "layout": "og-card",
+      "use": "Og card in the publication website",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "email-signature",
+      "family": "email",
+      "name": "Signature",
+      "platform": "email",
+      "width": 800,
+      "height": 120,
+      "safe_zones": {
+        "content_box": [
+          60,
+          9,
+          680,
+          102
+        ]
+      },
+      "layout": "signature",
+      "use": "Sign off an outgoing email",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-deck-cover",
+      "family": "future",
+      "name": "Deck cover",
+      "platform": "Presentation",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "cover",
+      "use": "Introduce the piece",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-deck-section",
+      "family": "future",
+      "name": "Deck section",
+      "platform": "Presentation",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "section",
+      "use": "Deck section in a talk or workshop",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-deck-document",
+      "family": "future",
+      "name": "Deck document",
+      "platform": "Presentation",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "document",
+      "use": "Inspect the primary source",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-deck-quote",
+      "family": "future",
+      "name": "Deck quote",
+      "platform": "Presentation",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "quote",
+      "use": "Deck quote in a talk or workshop",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-deck-close",
+      "family": "future",
+      "name": "Deck close",
+      "platform": "Presentation",
+      "width": 1920,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          144,
+          81,
+          1632,
+          918
+        ]
+      },
+      "layout": "close",
+      "use": "After the takeaway, before the next piece",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used",
+        "V10 in closing ink band to bottom edge"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-press-kit",
+      "family": "future",
+      "name": "Press kit",
+      "platform": "Print A4",
+      "width": 1240,
+      "height": 1754,
+      "safe_zones": {
+        "content_box": [
+          93,
+          132,
+          1054,
+          1491
+        ]
+      },
+      "layout": "press-kit",
+      "use": "press kit artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-partner",
+      "family": "future",
+      "name": "Partner",
+      "platform": "Partner feed",
+      "width": 1080,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          81,
+          81,
+          918,
+          918
+        ]
+      },
+      "layout": "partner",
+      "use": "partner artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-event",
+      "family": "future",
+      "name": "Event",
+      "platform": "Event listing",
+      "width": 1080,
+      "height": 1350,
+      "safe_zones": {
+        "content_box": [
+          81,
+          101,
+          918,
+          1148
+        ]
+      },
+      "layout": "event",
+      "use": "event artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-ad-square",
+      "family": "future",
+      "name": "Ad square",
+      "platform": "Paid social",
+      "width": 1080,
+      "height": 1080,
+      "safe_zones": {
+        "content_box": [
+          81,
+          81,
+          918,
+          918
+        ]
+      },
+      "layout": "ad-square",
+      "use": "ad square artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-ad-vertical",
+      "family": "future",
+      "name": "Ad vertical",
+      "platform": "Paid social",
+      "width": 1080,
+      "height": 1920,
+      "safe_zones": {
+        "content_box": [
+          90,
+          269,
+          756,
+          1210
+        ]
+      },
+      "layout": "ad-vertical",
+      "use": "ad vertical artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-channel-header",
+      "family": "future",
+      "name": "Channel header",
+      "platform": "WhatsApp / Telegram",
+      "width": 1280,
+      "height": 720,
+      "safe_zones": {
+        "content_box": [
+          96,
+          54,
+          1088,
+          612
+        ]
+      },
+      "layout": "channel-header",
+      "use": "channel header artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "future-merch-marks",
+      "family": "future",
+      "name": "Merch marks",
+      "platform": "Merchandise",
+      "width": 1600,
+      "height": 1000,
+      "safe_zones": {
+        "content_box": [
+          120,
+          75,
+          1360,
+          850
+        ]
+      },
+      "layout": "merch-marks",
+      "use": "merch marks artwork",
+      "rules": [
+        "v5 palette and grain",
+        "Anton / Fraunces / DM Mono",
+        "W0 on ink where used"
+      ],
+      "status": "proposed"
+    }
+  ]
+}

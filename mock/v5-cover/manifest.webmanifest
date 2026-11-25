@@ -1,0 +1,14 @@
+{
+  "name": "makeyourmindup",
+  "short_name": "makeyourmindup",
+  "start_url": "./index.html",
+  "display": "browser",
+  "theme_color": "#0C1512",
+  "icons": [
+    {
+      "src": "assets/marks/d-face-off.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# makeyourmindup
+
+A publication that takes AI claims apart, one why at a time.
+
+Archive: https://home.makeyourmindup.ai/archive
+RSS: https://home.makeyourmindup.ai/feed
+Sitemap: https://home.makeyourmindup.ai/sitemap.xml

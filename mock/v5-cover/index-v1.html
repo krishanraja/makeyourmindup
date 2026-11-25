@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>makeyourmindup | This week</title>
+<style>
+@font-face{font-family:Anton;src:url(assets/fonts/Anton-Regular.ttf)}
+@font-face{font-family:Fraunces;src:url(assets/fonts/Fraunces-Upright-Variable.ttf)}
+@font-face{font-family:Fraunces;font-style:italic;src:url(assets/fonts/Fraunces-Italic-Variable.ttf)}
+@font-face{font-family:DM;src:url(assets/fonts/DMMono-Regular.ttf)}
+*{box-sizing:border-box}
+:root{--ink:#0C1512;--cream:#F4EFE4;--mint:#7EF0C0;color:var(--cream);background:var(--ink);font:14px/24px DM,monospace}
+body,h1,h2,h3,p{margin:0}
+body{position:relative;container-type:inline-size;margin-inline:auto}
+body.narrow{max-width:320px}body.wide{max-width:1920px}
+body::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' d='M0 0h128v128H0z'/%3E%3C/svg%3E")}
+.shell{--margin:64px;--gap:24px;--section:96px;position:relative;width:min(calc(100% - 2 * var(--margin)),1440px);margin:auto;padding:32px 0}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+header{align-items:center}header img{grid-column:span 4;width:100%;max-width:296px}
+.cta,button{display:inline-grid;place-items:center;background:var(--mint);color:var(--ink);font:inherit;border:0;text-decoration:none;padding:8px 16px;min-height:48px;cursor:pointer}
+header .cta{grid-column:10/-1;justify-self:end}
+:focus-visible{outline:2px solid var(--mint);outline-offset:4px}
+.hero,.week,.signup,footer{margin-top:var(--section)}
+h1{grid-column:span 5;width:min(100%,336px);aspect-ratio:645/631.237;overflow:hidden}
+h1 img{display:block;width:108.527%;transform:translate(-3.7143%,-5%)}
+.serif{font-family:Fraunces,Georgia,serif;font-variation-settings:"SOFT" 50,"WONK" 0}
+.hero p{grid-column:7/-1;font-size:clamp(32px,4.3cqw,72px);line-height:1.04;letter-spacing:-.035em}
+h2{font:inherit;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+article{grid-column:span 4;min-width:0;container-type:inline-size}
+.visual{aspect-ratio:4/3;position:relative;background:var(--rung)}
+.visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center var(--focus)}
+.visual:has(img)::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 65%,rgba(12,21,18,.82))}
+article h3,.fallback{font:normal clamp(25px,9cqw,52px)/1.06 Anton,sans-serif;text-transform:uppercase;overflow-wrap:anywhere}
+article h3{border-top:4px solid var(--rung);padding-top:16px}
+.fallback{display:grid;height:100%;align-content:center;padding:16px;color:var(--ink)}
+article p{margin-top:8px;font-size:20px;line-height:24px}
+.date{display:block;margin-top:16px}
+.one article{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:start}
+.one .visual{grid-column:span 6}.one .copy{grid-column:span 6}
+.signup{border-top:1px solid #74847b;padding-top:24px}
+form{grid-column:1/-1;display:flex;gap:8px}
+input{min-width:0;flex:1;background:var(--ink);border:1px solid #87978c;color:var(--cream);font:inherit;padding:8px 16px;border-radius:0}
+input::placeholder{color:#c7cabf}.signup p{grid-column:1/-1;margin-top:8px}
+#feedback:empty{display:none}
+footer{align-items:center;border-top:1px solid #74847b;padding-top:16px}
+nav{grid-column:1/11;display:flex;gap:24px}nav a{color:inherit;text-decoration:none;padding:8px 0}nav a:hover{text-decoration:underline}footer img{grid-column:11/-1;width:32px;justify-self:end}
+.guides{display:none;position:absolute;inset:0;pointer-events:none;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M0 .5H8' stroke='%237ef0c0' opacity='.4'/%3E%3C/svg%3E")}
+.debug .guides{display:grid}.guides i{background:#b7a6ff21;border-inline:1px solid #b7a6ff66}
+@container(max-width:760px){
+.shell{--margin:20px;--gap:8px;--section:56px;padding-block:24px}
+header img{grid-column:span 7}header .cta{grid-column:8/-1}
+h1{width:min(100%,224px);grid-column:1/-1}
+.hero p{grid-column:1/-1;margin-top:24px}
+article,.one article{grid-column:1/-1;display:block}.cards{row-gap:40px}
+nav{gap:16px}input{padding-inline:8px}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="grid"><img src="assets/marks/v9.svg" alt="makeyourmindup"><a class="cta" href="https://home.makeyourmindup.ai/subscribe">Subscribe</a></header>
+<main>
+<section class="hero grid"><h1><img src="assets/marks/s3h.svg" alt="makeyourmindup"></h1><p class="serif">Who gets paid. What's real. <i>Where the pitch and the product part ways.</i></p></section>
+<section class="week"><h2>This week</h2><div class="cards grid"></div></section>
+<section class="signup grid" aria-label="Subscribe"><form novalidate><input type="email" required aria-label="Email address" aria-describedby="feedback" autocomplete="email" placeholder="Email address"><button>Subscribe</button></form><p>Free to read. Unsubscribe any time.</p><p role="status" id="feedback"></p></section>
+</main>
+<footer class="grid"><nav aria-label="Publication"><a href="https://home.makeyourmindup.ai/about">About</a><a href="https://home.makeyourmindup.ai/account">Members</a><a href="https://makeyourmindup.ai/privacy">Privacy</a></nav><img src="assets/marks/d-face-off.svg" alt=""></footer>
+<div aria-hidden="true" class="guides grid"></div>
+</div>
+<script>
+const params = new URLSearchParams(location.search);
+const state = params.get('state');
+if (['one','wide','narrow'].includes(state)) document.body.classList.add(state);
+if (params.get('grid') === '1') {
+  document.body.classList.add('debug');
+  document.querySelector('.guides').innerHTML = '<i></i>'.repeat(12);
+}
+const pieces = [
+  ['Why did pop songs get shorter?', 'Spotify counts a stream at 30 seconds. Songwriters noticed.', 'still-record-phone', '54.3%', '#FF6A4D'],
+  ['[Second piece]', '[One line about the second piece.]', 'evo-specimens', '13.1%', '#FFD84D'],
+  ['[Third piece]', '[One line about the third piece.]', 'evo-cover', '14.2%', '#B7A6FF']
+];
+if (state === 'long') {
+  pieces[0][0] = 'Who gets paid\nwhen a song\ngets shorter?';
+  pieces[0][1] = 'A record on the shelf.\nA song in the queue.';
+  pieces[1][0] = '[Hypercommercialisation]';
+}
+for (const [i, [title, line, photo, focus, colour]] of pieces.entries()) {
+  if (state === 'one' && i > 0) break;
+  const card = document.createElement('article');
+  card.style.setProperty('--rung', colour);
+  card.style.setProperty('--focus', focus);
+  const media = state === 'nophoto' && i === 1
+    ? '<span aria-hidden="true" class="fallback">' + title + '</span>'
+    : '<img src="assets/photos/' + photo + '.png" alt="">';
+  card.innerHTML = '<div class="visual">' + media + '</div><div class="copy"><h3>' +
+    title.replaceAll('\n','<br>') + '</h3><p class="serif">' + line.replaceAll('\n','<br>') +
+    '</p><span class="date">[Publication date]</span></div>';
+  document.querySelector('.cards').append(card);
+}
+const form = document.querySelector('form');
+const input = form.querySelector('input');
+function feedback(valid) {
+  input.setAttribute('aria-invalid', String(!valid));
+  document.querySelector('#feedback').textContent = valid ? "You're in. The next one lands in your inbox." : 'Check the email address.';
+}
+if (state === 'error') feedback(false);
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  feedback(input.validity.valid);
+  if (!input.validity.valid) input.focus();
+});
+</script>
+</body>
+</html>
