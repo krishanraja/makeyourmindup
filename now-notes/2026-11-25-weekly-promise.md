@@ -1,0 +1,3 @@
+Status: The site's description and the Substack kit's copy promise the weekly edition, one email every Saturday with the week's pieces and the news that matters, in place of "Free, every Monday, Wednesday and Friday" and the welcome email's "Three emails a week" (Ruling, Krish, 2026-11-25: one email a week; design in growth-makeyourmindup docs/plans/2026-11-25-weekly-edition/). apps/cover/tests/promise.test.ts refuses the retired lines. Merge with edition one, so the site never promises an email that is not sending yet. The v5 site mock (PR 54) carries the same line when it is wired in.
+Next: merge this when the first weekly edition is approved to send.
+North Star check (2026-11-25): holds.
