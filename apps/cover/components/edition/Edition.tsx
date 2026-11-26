@@ -372,7 +372,7 @@ export default function Edition({
                   <h2>
                     Tomorrow's edition, <em>cut for your sector</em>, at seven.
                   </h2>
-                  <p>Three things today in your sector, plus the week's three pieces. Free.</p>
+                  <p>Get the week's pieces and the news that matters, in one email every Saturday.</p>
                 </div>
                 <div>
                   <form className="form" method="get" action="https://home.makeyourmindup.ai/subscribe">
@@ -389,7 +389,7 @@ export default function Edition({
                     />
                     <button>Get the edition</button>
                   </form>
-                  <div className="form-note">One email a morning. Unsubscribe in one tap.</div>
+                  <div className="form-note">Free. Unsubscribe in one tap.</div>
                 </div>
               </section>
               <footer className="foot">
