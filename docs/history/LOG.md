@@ -8,6 +8,7 @@ Older entries rolled out of `NOW.md`. Newest first.
 
 ## 2026-11-26 (moved from NOW.md, to keep it under its size cap)
 
+- a Claude Code SessionEnd hook (`scripts/taste_backstop.py`, from growth-makeyourmindup, tagged `publication` (the venture_registry slug) and `krishanraja/makeyourmindup`) keeps only Krish's own lines that a local filter flags as a correction or rejection, scrubbed of secrets, in the ignored `.scratch/taste/backstop.jsonl`; it sends nothing. (2026-10-29)
 - NOW.md is 11962 bytes under a 16 KB cap that `npm test` and the new `Check` workflow enforce (`scripts/qa/now-size.mjs`); its four "What changed recently" entries from 2026-09-24 to 2026-10-05 now sit verbatim in `docs/history/LOG.md`. (2026-10-29)
 - `apps/cover/vercel.json` carries `ignoreCommand: git diff --quiet HEAD^ HEAD -- .`, so once merged, Vercel builds production only when a push changes `apps/cover`; replayed on past commits it skips the AGENTS.md-only canon sync (`7402394`) and builds the tiles change (`a1cd10b`). (2026-10-29)
 - the cover's photo files are `editor-*.jpg`, so once deployed no served address names him; the build's `llms.txt` and JSON-LD name the publication only (verified in `.next/server/app`). The live site already serves the no-name copy: merging PR #29 deployed production at `8fbe692` on 2026-10-29, because every push to main deploys the cover. (2026-10-29)
