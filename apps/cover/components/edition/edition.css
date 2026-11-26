@@ -54,12 +54,10 @@
 :where(.edition-page) .idx-name{letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,228,.7)}
 :where(.edition-page) .idx-val{font-family:var(--font-anton),sans-serif;font-size:1.1875rem;letter-spacing:.02em;color:var(--cream);line-height:1}
 :where(.edition-page) .up{color:var(--mint)} :where(.edition-page) .down{color:var(--coral)}
-:where(.edition-page) .movers{display:flex;gap:22px;overflow:hidden;flex:1;min-width:0;position:relative}
 :where(.edition-page) .mv{display:flex;gap:7px;align-items:baseline}
 :where(.edition-page) .mv b{font-weight:500;color:var(--cream)}
 :where(.edition-page) .mv span.p{color:rgba(244,239,228,.62)}
 :where(.edition-page) .tick-label{color:rgba(244,239,228,.5);font-size:0.6875rem}
-:where(.edition-page) .tick-scope{color:var(--butter);font-size:0.6875rem;letter-spacing:.08em;text-transform:uppercase}
 :where(.edition-page) .all24{color:var(--cream);border-bottom:1px solid rgba(244,239,228,.35);font-family:var(--mono);font-size:0.75rem;padding-bottom:1px}
 :where(.edition-page) .all24:hover{border-color:var(--mint)}
 :where(.edition-page) .board{display:none;background:var(--ink-2);border-top:1px solid rgba(244,239,228,.1);padding:28px 0 32px;position:relative;z-index:2}
@@ -299,8 +297,6 @@
   :where(.edition-page) .idx-name{font-size:0.625rem}
   :where(.edition-page) .tick-row{gap:6px 14px;font-size:0.6875rem;flex-wrap:wrap;height:auto;padding:8px var(--gut) 9px}
   :where(.edition-page) .idx{height:auto;border-right:0;padding-right:0;flex:1}
-  :where(.edition-page) .movers{order:3;flex-basis:100%;border-top:1px solid rgba(244,239,228,.1);padding-top:7px}
-  :where(.edition-page) .tick-label,:where(.edition-page) .tick-scope{display:none}
   :where(.edition-page) .board-grid{grid-template-columns:1fr}
   :where(.edition-page) .edbar{padding:16px 0 14px;gap:12px}
   :where(.edition-page) .dateline .day{font-size:1.1875rem}
@@ -581,8 +577,6 @@
   :where(.edition-page) .tick-row{flex-wrap:nowrap;height:36px;padding:0 var(--gut);gap:12px}
   :where(.edition-page) .idx{flex:none;gap:7px}
   :where(.edition-page) .idx svg{display:none}
-  :where(.edition-page) .movers{order:0;flex:1 1 auto;flex-basis:auto;border-top:0;padding-top:0;gap:12px}
-  :where(.edition-page) .mv .p{display:none}
   :where(.edition-page) .edbar{padding:10px 0;gap:0}
   :where(.edition-page) .dateline{display:none}
   :where(.edition-page) .kicker .kdate{display:inline}
@@ -592,7 +586,6 @@
   :where(.edition-page) .lead-media .lead-fig{flex:none;height:240px;min-height:0}
   :where(.edition-page) .inset{left:auto;width:auto}
   :where(.edition-page) .inset img{width:64px;height:64px}
-  :where(.edition-page) .mv .nm{display:none} :where(.edition-page) .mv .sym{display:inline}
   :where(.edition-page) .idx-name{letter-spacing:.06em}
   :where(.edition-page) .lead .dek{font-size:1.0625rem}
   :where(.edition-page) .note.big p{font-size:1.0625rem}
@@ -614,7 +607,6 @@
   :where(.edition-page) .t-number .fig{font-size:6.875rem}
 }
 
-@media (min-width:861px){:where(.edition-page) .mv .sym{display:none}}
 :where(.edition-page) .cos li .cocard{margin:8px 0 10px}
 
 
@@ -622,10 +614,7 @@
 :where(.edition-page) .skip:focus { top:.5rem }
 :where(.edition-page) .idx svg,:where(.edition-page) .board-idx svg {color:var(--mint)}
 :where(.edition-page) .board-grid section { margin-bottom:18px }
-:where(.edition-page) .movers { visibility:hidden; flex-wrap:nowrap; column-gap:22px; line-height:1.5 }
-:where(.edition-page) .movers[data-fitted="true"] {visibility:visible}
 :where(.edition-page) .mv { flex:none }
-:where(.edition-page) .mv[hidden] { display:none }
 :where(.edition-page) .seg-wrap,:where(.edition-page) .desk,:where(.edition-page) .lead-head,:where(.edition-page) .lead-body,:where(.edition-page) .drill,:where(.edition-page) .room-grid>*,:where(.edition-page) .dr-cols>*,:where(.edition-page) .thing-text,:where(.edition-page) .strip-row>* { min-width:0 }
 :where(.edition-page) .text-piece {grid-template-columns:1fr}
 :where(.edition-page) .sp a {text-decoration:none}
@@ -642,7 +631,6 @@
 :where(.edition-page) .fi .prov a,:where(.edition-page) .inset .credit a {text-decoration:underline;text-underline-offset:2px}
 :where(.edition-page) .foot nav {font: .8rem var(--mono);line-height:1.9}
 @media(max-width:860px) {
-  :where(.edition-page) .movers{column-gap:12px}
   :where(.edition-page) .mast-right {gap:8px}
   :where(.edition-page) .room-grid,:where(.edition-page) .dr-cols{grid-template-columns:minmax(0,1fr)}
   :where(.edition-page) .dr-fig,:where(.edition-page) .cc-h{flex-wrap:wrap}

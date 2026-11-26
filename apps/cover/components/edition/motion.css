@@ -1,0 +1,35 @@
+/* A single copy is a native horizontal scroller until its measured lap is ready. */
+.edition-page .movers {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  line-height: 1.5;
+}
+.tape-track, .tape-group { display: flex; width: max-content; }
+.tape-group { flex: none; gap: 1.6rem; padding-inline-end: 1.6rem; }
+.tape-group[aria-hidden] { display: none; }
+.ticker .mv .sym { color: rgba(244,239,228,.66); font-size: .92em; }
+.edition-page .tick-label { flex: none; color: rgba(244,239,228,.72); }
+@media (max-width: 860px) {
+  .edition-page .tick-row {
+    display: grid;
+    grid-template: "index close action" auto "tape tape tape" auto / minmax(0,1fr) auto auto;
+    gap: 4px 10px;
+    height: auto;
+    padding-block: 5px;
+  }
+  .tick-row .idx { grid-area: index; flex-wrap: wrap; }
+  .tick-row .movers { grid-area: tape; padding-block-start: 3px; border-top: 1px solid rgba(244,239,228,.12); }
+  .tick-row .tick-label { grid-area: close; }
+  .tick-row .all24 { grid-area: action; }
+}
+
+@keyframes ticker-lap { to { transform: translateX(var(--lap-distance)); } }
+@media (prefers-reduced-motion: no-preference) {
+  .motion .movers[data-running] { overflow: hidden; }
+  .motion .movers[data-running] .tape-group[aria-hidden] { display: flex; }
+  .motion .movers[data-running] .tape-track { animation: ticker-lap var(--lap-time) linear infinite; }
+  .motion .movers:is(:hover, :focus-within) .tape-track { animation-play-state: paused; }
+}
