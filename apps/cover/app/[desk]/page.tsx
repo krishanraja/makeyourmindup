@@ -1,4 +1,5 @@
 import { SectionPage } from '@/components/edition/SectionPage'
+import { TickerTape } from '@/components/edition/TickerTape'
 import { StoryList } from '@/components/edition/StoryList'
 import { MarketTable } from '@/components/edition/MarketTable'
 import { deskEdition } from '@/lib/desk-edition'
@@ -25,7 +26,11 @@ export default async function Page({ params }: Props) {
   const [{ desk, key, stories, latest }, current] = await Promise.all([deskEdition((await params).desk), latestEdition()])
   const snapshot = current || latest
   const room = snapshot?.subsectors.find(r => r.key === key)
-  return <SectionPage title={'AI in ' + desk.subject} crumb={{ name: desk.label, path: '/' + desk.slug }}>
+  const stocks = snapshot ? Object.entries(snapshot.ticker.stocks).filter(([, stock]) => stock.subsector === key) : []
+  const ticker = snapshot && <TickerTape index={snapshot.ticker.index} asOf={snapshot.ticker.as_of} stocks={stocks} scope={desk.label}>
+    <a className="all24" href="/creative-24">All 24</a>
+  </TickerTape>
+  return <SectionPage ticker={ticker} title={'AI in ' + desk.subject} crumb={{ name: desk.label, path: '/' + desk.slug }}>
     {room?.line && <p className="section-dek">{room.line}</p>}
     <div className="desk-columns">
       <section><h2>From the last 14 editions</h2>
@@ -33,7 +38,7 @@ export default async function Page({ params }: Props) {
       </section>
       <aside><h2>{desk.label} index</h2>
         {snapshot && room ? <MarketTable index={room.index} asOf={snapshot.ticker.as_of}
-          stocks={Object.entries(snapshot.ticker.stocks).filter(([, s]) => s.subsector === key)} />
+          stocks={stocks} />
           : <p>Market data is currently unavailable.</p>}
         <a className="desk-source" href="/creative-24">The Creative 24 index ↗</a>
       </aside>

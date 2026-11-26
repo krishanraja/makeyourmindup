@@ -35,7 +35,7 @@ function portraitSubject(photo: HubImage, content: string) {
   }
 }
 
-function story(item: Item, fixture: boolean, why = item.why, sub = ''): Story {
+export function story(item: Item, fixture: boolean, why = item.why, sub = ''): Story {
   const art = item.image?.kind !== 'person' ? item.image : null
   const portrait = fixture ? (notes.portraits as unknown as Record<string, HubImage>)[item.id] : item.image
   const content = item.headline + ' ' + item.dek

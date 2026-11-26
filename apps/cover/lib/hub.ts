@@ -19,6 +19,7 @@ export type Item = {
   source: string
   url: string
   headline: string
+  series?: string
   dek: string
   why: string
   companies: string[]
@@ -106,7 +107,7 @@ function item(x: unknown): Item {
     Number(x.coverage) < 1
   )
     throw Error('Invalid story')
-  return { ...x, image: image(x.image) } as Item
+  return { ...x, series: string(x.series) ? x.series : undefined, image: image(x.image) } as Item
 }
 
 function piece(x: unknown): Piece[] {

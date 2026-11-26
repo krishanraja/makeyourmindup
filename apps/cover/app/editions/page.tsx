@@ -5,7 +5,7 @@ import { archiveDates } from '@/lib/published'
 
 export const revalidate = 900
 export const metadata = pageMeta('/editions', 'Daily edition archive | ' + publication,
-  'Browse every published edition of AI news from the creative industries, grouped by month.')
+  'Browse every published edition of AI news from the creative industries, grouped by month.', '/editions/opengraph-image', 'Edition archive')
 
 export default async function Page() {
   const dates = await archiveDates()

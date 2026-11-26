@@ -5,7 +5,7 @@ import { latestEdition } from '@/lib/published'
 
 export const revalidate = 900
 const path = '/creative-24'
-export const metadata = pageMeta(path, 'Creative 24: the creative industries stock index | ' + publication, indexDescription)
+export const metadata = pageMeta(path, 'Creative 24: the creative industries stock index | ' + publication, indexDescription, '/creative-24/opengraph-image', 'The Creative 24')
 
 export default async function Page() {
   const snapshot = await latestEdition()

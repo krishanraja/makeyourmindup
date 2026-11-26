@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { keys, type Desk, type Piece, type Snapshot } from '@/lib/hub'
+import { EditionMotion } from './EditionMotion'
 import { EditionLinks } from './EditionLinks'
 import { StoryList } from './StoryList'
 import { storyPath } from '@/lib/desks'
@@ -178,8 +179,7 @@ export default function Edition({
   const [desk, setDesk] = useState<Desk>('all'),
     [evening, setEvening] = useState(false),
     [feed, setFeed] = useState(false)
-  const editionEl = useRef<HTMLDivElement>(null),
-    origin = useRef({ y: 0, end: false })
+  const origin = useRef({ y: 0, end: false })
   useEffect(() => {
     try {
       const saved = localStorage.getItem('mymu-desk')
@@ -192,14 +192,6 @@ export default function Edition({
     try {
       localStorage.setItem('mymu-desk', d)
     } catch {}
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-      editionEl.current?.animate(
-        [
-          { opacity: 0.4, transform: 'translateY(4px)' },
-          { opacity: 1, transform: 'none' },
-        ],
-        { duration: 240 },
-      )
   }
   function openFeed(end: boolean) {
     origin.current = { y: window.scrollY, end }
@@ -232,6 +224,7 @@ export default function Edition({
   const flip = () => setEvening(!evening)
   return (
     <div className={'edition-page' + (evening ? ' evening' : '')}>
+      <EditionMotion key={desk + String(feed)} light={dated || feed} />
       {feed ? (
         <FullFeed snapshot={snapshot} initial={desk} close={closeFeed} dated={!isFixture} />
       ) : (
@@ -273,7 +266,7 @@ export default function Edition({
           </header>
           <main>
             <SectorBar snapshot={snapshot} desk={desk} select={select} evening={evening} flip={flip} />
-            <div id="edition" ref={editionEl}>
+            <div id="edition">
               <div className="wrap">
                 <Lead
                   dated={!isFixture}
@@ -285,17 +278,19 @@ export default function Edition({
                 />
                 <Pieces pieces={pieces} reserved={used} />
                 <section className="rooms" aria-labelledby="roomsH">
-                  <div className="sec-head">
-                    <h2 id="roomsH">
-                      The six <em>rooms</em>
-                    </h2>
-                    <div className="sec-meta">
-                      Tap a room to re-cut the edition
-                      <br />
-                      Moves are today's, closes delayed
+                  <div className="room-directory">
+                    <div className="sec-head">
+                      <h2 id="roomsH">
+                        The six <em>rooms</em>
+                      </h2>
+                      <div className="sec-meta">
+                        Tap a room to re-cut the edition
+                        <br />
+                        Moves are today's, closes delayed
+                      </div>
                     </div>
+                    <Rooms snapshot={snapshot} desk={desk} select={select} />
                   </div>
-                  <Rooms snapshot={snapshot} desk={desk} select={select} />
                   <div className="room-grid">
                     <Drill key={desk} snapshot={snapshot} cut={cut} />
                     <Ask

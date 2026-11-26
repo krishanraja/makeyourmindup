@@ -33,7 +33,7 @@ Substack builds the publication's own share card from the logo, name and short
 description, so there is no publication-level social image to upload.
 
 The theatre social card and welcome image belong to this archived kit. The
-Edition's current site share card lives in `public/opengraph-image.jpg`.
+Edition's current site share card is generated at `/opengraph-image`.
 
 Sizes follow Substack's own guidance (help centre, checked 2026-09-25): logo
 at least 256 square, wordmark 1344 x 256, cover at least 600 square, email
