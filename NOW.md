@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-19
+as_of: 2026-11-26
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -41,7 +41,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-19)
+## Where it is right now (as of 2026-11-26)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- makeyourmindup.ai has permanent dated edition pages, six subsector desks, a Creative 24 dataset page, an edition archive, sitemaps, a news sitemap, an Edition RSS feed and llms-full.txt, with per-page titles, canonicals and structured data. The build, 37 cover tests, the phone layout audit and a 9-route overflow audit at 320, 390 and 1280 px pass. The homepage keeps its dated fallback edition when the hub has none. (2026-11-26)
 - The brand-kit builder no longer writes the prediction format: mind.the.gap's device "says where they lead" instead of "ending in a dated call", and the house rules say "Where the record runs out, we say so." instead of "Misses go up as big as hits." (Ruling, Krish, 2026-11-18: "i have abandoned the prediction format, it feels lame"). The Drive brand kit and its PDFs still carry the old copy until the kit is rebuilt. (2026-11-18)
 - makeyourmindup.ai/members serves 10 figures from 4 published pieces (2, 4, 11 and 13 Nov) behind the members code, each labelled with its printed title; two figures that are screenshots of others' material stay off it. (2026-11-19)
 - Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE. (2026-11-19)
@@ -128,7 +129,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-18): rebuild the brand kit (npm run brand-kit in apps/cover) on Krish's PC so the Drive kit and both PDFs drop the old lines.
+- Next (2026-11-26): Growth owns discoverability from here: submit the sitemaps to Google Search Console and Bing, wire the IndexNow route into the daily edition, and ask the Answers engine to audit the new pages.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
@@ -151,7 +152,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-18): holds.
+- North Star check (2026-11-26): holds.
 
 ## Read next
 
