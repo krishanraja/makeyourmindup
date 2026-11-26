@@ -1,3 +1,3 @@
-Status: Implemented permanent edition URLs, six sector desks, the Creative 24 dataset, an edition archive, feeds, share images and crawler links. The local fixture build, metadata checks and 37 cover tests pass. Browser overflow checks and viewport screenshots remain open.
-Next: Run the phone layout audit and capture each discovery page at 390 and 1280 pixels in a browser-enabled review.
-North Star check (2026-11-26): holds.
+Status: makeyourmindup.ai has permanent dated edition pages, six subsector desks, a Creative 24 dataset page, an edition archive, sitemaps, a news sitemap, an Edition RSS feed and llms-full.txt, with per-page titles, canonicals and structured data. The build, 37 cover tests, the phone layout audit and a 9-route overflow audit at 320, 390 and 1280 px pass. The homepage keeps its dated fallback edition when the hub has none.
+Next: Growth owns discoverability from here: submit the sitemaps to Google Search Console and Bing, wire the IndexNow route into the daily edition, and ask the Answers engine to audit the new pages.
+North Star check (2026-11-26): holds. Search and answer-engine discovery serve subscriber growth.
