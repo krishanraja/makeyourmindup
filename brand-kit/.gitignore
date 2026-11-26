@@ -1,4 +1,4 @@
-# The unpacked kit is rebuilt by `npm run brand-kit` in apps/cover. Git keeps
+# The v5 kit is rebuilt by python scripts/brand-kit-v5/build.py --content-engine <checkout>. Git keeps
 # the zip that holds all of it, the readme and a preview.
 /*
 !/.gitignore

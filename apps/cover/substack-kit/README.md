@@ -3,7 +3,7 @@ kill_list_scope: canon
 ---
 # Substack refresh kit
 
-The archived Substack kit for the previous cover. Nothing here posts itself:
+The Substack kit, on the v5 brand (locked 2026-11-25). Nothing here posts itself:
 Krish pastes it in. The copy lives in `COPY.md`, and the paid-tier copy in
 `PAID.md`, both scanned by the kill list (`npm run kill-list`). This README is
 marked canon because it quotes the old tagline in order to remove it.
@@ -20,19 +20,29 @@ there, so the hub has to match the front door.
 
 ## The images
 
-| File | Where it goes in Substack | Size |
+The images are the v5 Channel art, not files in this folder. The retired
+images that used to sit in `images/` (the block mark logo, the old wordmarks,
+the 1100 x 220 email banner, the welcome image, the theatre social preview and
+the editor photo) are removed and must not be uploaded. Take every image from
+Google Drive, `makeyourmindup > 1 Brand kit (permanent) > Channel art` (folder
+id `1FVfcoSMT3DCzvyvsq0KHdSgr8JTzRBIe`), which is
+the `Channel art/` folder of `brand-kit/makeyourmindup-brand-kit.zip` in this
+repository (built by `scripts/brand-kit-v5/build.py`).
+
+| File in Channel art | Where it goes in Substack | Size |
 |---|---|---|
-| `images/logo-1024.png` | Website editor, Header, Logos: logo | 1024 square, the block mark on ink |
-| `images/wordmark-transparent-1344x256.png` | Website editor, Header, Logos: wordmark, while the site background is dark | 1344 x 256, transparent |
-| `images/wordmark-ink-1344x256.png` | The same slot, only if the site background is switched to light | 1344 x 256 |
-| `images/cover-1200x1200.png` | Website editor, Welcome page, Image | 1200 square |
-| `images/email-banner-1100x220.png` | Settings, Emails, Email header & footer: banner | 1100 x 220 at 2x |
-| `images/social-preview-1200x630.png` | Per post, not a setting: post Settings, Social preview, Upload New, for a post with no image of its own | 1200 x 630 |
+| `substack-logo-1024.png` | Website editor, Header, Logos: logo | 1024 square, the icon on ink |
+| `substack-wordmark-wide-1344x256.png` | Website editor, Header, Logos: wordmark (wide logo) | 1344 x 256, the ink wordmark on a transparent ground |
+| `substack-cover-1200x1200.png` | Website editor, Welcome page, Image (cover photo) | 1200 square |
+| `substack-email-banner-2200x440.png` | Settings, Emails, Email header & footer: banner, the one masthead on every email | 2200 x 440, so 1100 x 220 at 2x |
+| `social-card-1200x630.png` | Per post, not a setting: post Settings, Social preview, Upload New, for a post with no image of its own | 1200 x 630 |
+
+The short description is in `COPY.md`; `bios-and-descriptions.txt` in the same
+Drive folder holds the same line. `how-they-crop.jpg` shows what each platform
+crops.
 
 Substack builds the publication's own share card from the logo, name and short
-description, so there is no publication-level social image to upload.
-
-The theatre social card and welcome image belong to this archived kit. The
+description, so there is no publication-level social image to upload. The
 Edition's current site share card is generated at `/opengraph-image`.
 
 Sizes follow Substack's own guidance (help centre, checked 2026-09-25): logo
@@ -45,8 +55,9 @@ Website editor, Home page, Colors. On 2026-09-25 the live values were a dark
 teal background `#042f2e` and a green accent `#059669`.
 
 - Accent: mint `#7EF0C0`
-- Background, to feel like the cover: ink `#0C1512`, with the transparent wordmark
-- Background, to stay light: cream `#F4EFE4`, with the ink wordmark
+- Background: cream `#F4EFE4`, which the v5 wide logo (ink on transparent) is
+  made for. On a dark background the wide logo does not show; leave the
+  background light.
 
 ## Steps
 
@@ -56,12 +67,16 @@ website editor at `https://home.makeyourmindup.ai/publish/website-editor/home`.
 1. Publication name: already `makeyourmindup`. Leave it.
 2. Settings, Basics, Short description: the line under "Short description" in
    `COPY.md`.
-3. Website editor: logo, wordmark, colours and welcome page image, per the
-   tables above.
+3. Open Drive, `makeyourmindup > 1 Brand kit (permanent) > Channel art`, and
+   download the files named in the table above. Website editor: upload
+   `substack-logo-1024.png` as the logo, `substack-wordmark-wide-1344x256.png`
+   as the wordmark and `substack-cover-1200x1200.png` as the welcome page
+   image, then set the colours above.
 4. Settings, Website, Edit next to About page: delete everything and paste the
    About section of `COPY.md`.
-5. Settings, Emails, Edit next to Email header & footer: upload the banner,
-   then send a test email.
+5. Settings, Emails, Edit next to Email header & footer: upload
+   `substack-email-banner-2200x440.png` from the same Drive folder, then send a
+   test email.
 6. Settings, Emails, Edit next to each welcome email: free from `COPY.md`,
    paid from `PAID.md`, and founding as paid plus its extra line (Substack
    sends founding members the paid email by default). Leave the imported one.

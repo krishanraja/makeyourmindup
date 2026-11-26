@@ -50,4 +50,4 @@ makeyourmindup
 
 ## Image alt text
 
-The makeyourmindup logo above a felt robot standing on a plinth, waving, its chest seam unpicked. The wave is stamped theatre and the stuffing real. Below it, the line "AI, unpicked".
+The makeyourmindup logo on a dark green ground: a circle split into cream and mint halves, above the name in tall cream capitals with UP in mint. At the bottom, the lines "AI news for the creative industries, every morning." and "Creativity, AI and money, simplified."

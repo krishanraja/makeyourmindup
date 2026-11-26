@@ -1,21 +1,21 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
+<!-- The makeyourmindup v5 email signature strip. 520 x 80, rendered at 2x to
+     ../../public/brand/email-signature-banner.png (1040 x 160). Needs the kit's
+     logos/makeyourmindup-horizontal-on-dark.svg and fonts/Fraunces-Italic-Variable.ttf
+     beside this file; README.md says how. -->
 <style>
-@font-face{font-family:Archivo;src:url(Archivo-Variable.ttf);font-weight:100 900}
-@font-face{font-family:Plex;src:url(IBMPlexMono-SemiBold.ttf);font-weight:600}
-@font-face{font-family:Fraunces;src:url(Fraunces-Italic-Variable.ttf);font-style:italic;font-weight:100 900}
-html,body{margin:0;background:#fff}
-.b{width:520px;height:80px;background:#0C1512;box-sizing:border-box;position:relative;
-  display:flex;align-items:center;justify-content:space-between;padding:0 20px 3px 20px;overflow:hidden}
-.b:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:#7EF0C0}
-.logo{height:23px;display:block}
-.r{text-align:right}
-.t{font-family:Fraunces;font-style:italic;font-weight:400;font-size:15px;color:#F4EFE4;line-height:1.15;letter-spacing:0}
-.d{font-family:Plex;font-weight:600;font-size:9.5px;letter-spacing:.16em;color:#7EF0C0;margin-top:6px}
-.d span{color:#F4EFE4;opacity:.75}
+@font-face{font-family:'MYMU Fraunces';src:url(Fraunces-Italic-Variable.ttf);font-style:italic;font-weight:100 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0C1512}
+.b{width:520px;height:80px;background:#0C1512;position:relative;overflow:hidden}
+.grain{position:absolute;inset:0;opacity:.07;pointer-events:none}
+.logo{position:absolute;left:20px;top:15px;height:24px;width:248px;display:block}
+.m{position:absolute;left:20px;bottom:14px;font-family:'MYMU Fraunces';font-style:italic;font-weight:400;
+  font-size:15px;line-height:1.2;color:#7EF0C0}
 </style></head>
 <body><div class="b" id="banner">
-<img class="logo" src="makeyourmindup-horizontal-transparent-1200w.png" alt="">
-<div class="r"><div class="t">How AI really works, in plain words.</div>
-<div class="d"><span>MON · WED · FRI</span>&nbsp;&nbsp;FREE TO READ</div></div>
+<svg class="grain" width="100%" height="100%"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<img class="logo" src="makeyourmindup-horizontal-on-dark.svg" alt="makeyourmindup">
+<div class="m">Creativity, AI and money, simplified.</div>
 </div></body></html>
