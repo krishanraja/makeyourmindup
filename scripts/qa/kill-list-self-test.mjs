@@ -102,6 +102,7 @@ test('paid tier may name CTRL and nothing else is relaxed', () => {
 
 test('the legal entity scope allows the two company names and nothing else', () => {
   const legal = body => `---\nkill_list_scope: legal_entity\n---\n${body}\n`
+  assert.deepEqual(ids(legal('Mindmaker LLC').replaceAll('\n','\r\n')), [], 'Windows checkouts keep the legal scope')
   assert.deepEqual(ids(legal('Mindmaker LLC\nMindmaker Ltd')), [], 'the two operating companies may be named')
   assert.ok(ids('Run by Mindmaker LLC.\n').includes('retired_name'), 'the company name stays vetoed outside the scope')
   assert.ok(ids(legal('Mindmaker covered it.')).includes('retired_name'), 'bare Mindmaker stays vetoed in the scope')
