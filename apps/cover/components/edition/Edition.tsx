@@ -10,6 +10,7 @@ import { Drill, Rooms, Ticker } from './Markets'
 import { Ask, FullFeed, Listen } from './Reading'
 import { Lead, Note, Picture, Source, Visual } from './Story'
 import './edition.css'
+import './discovery.css'
 
 function dayLabel(date: string, short = false) {
   return new Date(date)

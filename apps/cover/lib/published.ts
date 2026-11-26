@@ -29,8 +29,12 @@ export const archiveDates = cache(async (): Promise<string[] | null> => {
 })
 
 export async function readDates(dates: string[]) {
-  const rows = await Promise.all(dates.map(day => datedEdition(day).catch(() => null)))
-  return rows.filter((row): row is Snapshot => row !== null)
+  const editions: Snapshot[] = []
+  for (let i = 0; i < dates.length; i += 8) {
+    const rows = await Promise.all(dates.slice(i, i + 8).map(day => datedEdition(day).catch(() => null)))
+    editions.push(...rows.filter((row): row is Snapshot => row !== null))
+  }
+  return editions
 }
 
 export const recentEditions = cache(async () => {

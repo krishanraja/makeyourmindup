@@ -7,6 +7,7 @@
     "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start -p 3100",
+    "lint": "npm run kill-list && npm run typecheck",
     "typecheck": "tsc --noEmit",
     "kill-list": "node ../../scripts/qa/kill-list.mjs content/site.json content/members.json content/legal-entities.md substack-kit/COPY.md substack-kit/PAID.md app/layout.tsx app/llms.txt/route.ts && node scripts/check-edition-copy.mjs",
     "shots": "node scripts/screenshots.mjs",

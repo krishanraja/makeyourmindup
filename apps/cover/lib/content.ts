@@ -28,7 +28,7 @@ export const SITE = site
 type Config = Omit<typeof config, 'platforms'> & {
   platforms: Record<ProfileKey, string | null>
 }
-export const CONFIG = config as unknown as Config
+export const CONFIG = { ...config as unknown as Config, indexNowKey: '5809d83541444029b40fe4a7abd97333' }
 
 /** Substack's subscribe page accepts ?email= and prefills the field. */
 export function subscribeUrl(email?: string) {

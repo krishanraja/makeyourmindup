@@ -4,6 +4,7 @@ import { type Crumb, breadcrumbs } from '@/lib/discovery'
 import { StructuredData } from '../StructuredData'
 import { EditionLinks } from './EditionLinks'
 import './edition.css'
+import './discovery.css'
 
 export function SectionPage({ title, crumb, children, nodes = [] }: {
   title: string; crumb?: Crumb; children: ReactNode; nodes?: object[]

@@ -68,6 +68,8 @@ try {
           console.error(width, scale, state, issues)
         }
       }
+      const editionLink = await page.locator('.edition-links a[href^="/edition/"]').first().getAttribute('href')
+      const routes = [editionLink, '/music', '/film-tv', '/gaming', '/sport', '/publishing-media', '/art-design', '/creative-24', '/editions']
       await check('front page')
       await page.locator('#all24').click()
       await check('all 24')
@@ -80,6 +82,15 @@ try {
       await check('company detail')
       await page.locator('.done .ghost').click()
       await check('full feed')
+      for (const route of routes) {
+        const response = await page.goto(new URL(route, url).href)
+        if (response.status() !== 200) throw Error('Failed to render ' + route)
+        await page.evaluate(async (s) => {
+          document.documentElement.style.fontSize = s * 100 + '%'
+          await document.fonts.ready
+        }, scale)
+        await check(route)
+      }
       await page.close()
       console.log('Checked', width + 'px', scale * 100 + '%')
     }

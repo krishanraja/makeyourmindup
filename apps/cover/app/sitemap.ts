@@ -1,12 +1,18 @@
 import type { MetadataRoute } from 'next'
-import { CONFIG } from '@/lib/content'
+import { absolute } from '@/lib/discovery'
+import { deskKeys, desks, editionPath } from '@/lib/desks'
+import { archiveDates, latestEdition } from '@/lib/published'
 
-// The cover changes with every new piece on the Substack, so it carries the
-// build date. The terms and privacy pages carry the date their text last changed.
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 900
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [archive, latest] = await Promise.all([archiveDates(), latestEdition()])
+  const dates = archive || []
+  const modified = latest?.generated_at || dates[0] || '2026-11-26'
   return [
-    { url: CONFIG.siteUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
-    { url: `${CONFIG.siteUrl}/terms`, lastModified: '2026-10-19', changeFrequency: 'yearly', priority: 0.2 },
-    { url: `${CONFIG.siteUrl}/privacy`, lastModified: '2026-10-19', changeFrequency: 'yearly', priority: 0.2 },
+    ...['/', ...deskKeys.map(k => '/' + desks[k].slug), '/creative-24', '/editions'].map(path => ({
+      url: absolute(path), lastModified: modified,
+    })),
+    ...dates.map(date => ({ url: absolute(editionPath(date)), lastModified: latest?.edition_date === date ? latest.generated_at : date })),
+    ...['/terms', '/privacy'].map(path => ({ url: absolute(path), lastModified: '2026-10-19' })),
   ]
 }
