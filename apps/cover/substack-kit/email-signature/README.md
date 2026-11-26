@@ -13,7 +13,7 @@ October strip (the old mark, the old tagline and the days), which is retired.
   https://www.makeyourmindup.ai/brand/email-signature-banner.png, the address
   the signature uses, so it keeps that path and that size.
 - `banner.html`: its source. To render it, put the brand kit's
-  `logos/makeyourmindup-horizontal-on-dark.svg` and
+  `logos/makeyourmindup-horizontal.svg` and
   `fonts/Fraunces-Italic-Variable.ttf` beside it (from
   `brand-kit/makeyourmindup-brand-kit.zip`, or content-engine's
   `assets/brand/makeyourmindup/v5/v9.svg` and

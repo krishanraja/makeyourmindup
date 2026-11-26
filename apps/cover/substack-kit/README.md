@@ -32,8 +32,8 @@ repository (built by `scripts/brand-kit-v5/build.py`).
 | File in Channel art | Where it goes in Substack | Size |
 |---|---|---|
 | `substack-logo-1024.png` | Website editor, Header, Logos: logo | 1024 square, the icon on ink |
-| `substack-wordmark-wide-1344x256.png` | Website editor, Header, Logos: wordmark (wide logo) | 1344 x 256, the ink wordmark on a transparent ground |
-| `substack-cover-1200x1200.png` | Website editor, Welcome page, Image (cover photo) | 1200 square |
+| `substack-wordmark-wide-1280x256.png` | Website editor, Header, Logos: wordmark (wide logo) | 1280 x 256, the email banner's lockup on ink, at 5:1 |
+| `substack-cover-1080.png` | Website editor, Welcome page, Image (cover photo) | 1080 square, S3h, the same image as the profile picture |
 | `substack-email-banner-2200x440.png` | Settings, Emails, Email header & footer: banner, the one masthead on every email | 2200 x 440, so 1100 x 220 at 2x |
 | `social-card-1200x630.png` | Per post, not a setting: post Settings, Social preview, Upload New, for a post with no image of its own | 1200 x 630 |
 
@@ -69,8 +69,8 @@ website editor at `https://home.makeyourmindup.ai/publish/website-editor/home`.
    `COPY.md`.
 3. Open Drive, `makeyourmindup > 1 Brand kit (permanent) > Channel art`, and
    download the files named in the table above. Website editor: upload
-   `substack-logo-1024.png` as the logo, `substack-wordmark-wide-1344x256.png`
-   as the wordmark and `substack-cover-1200x1200.png` as the welcome page
+   `substack-logo-1024.png` as the logo, `substack-wordmark-wide-1280x256.png`
+   as the wordmark and `substack-cover-1080.png` as the welcome page
    image, then set the colours above.
 4. Settings, Website, Edit next to About page: delete everything and paste the
    About section of `COPY.md`.
