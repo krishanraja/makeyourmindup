@@ -4,7 +4,7 @@
 // (2026-10-21). A page that sets its own openGraph must spread these in, or
 // Next drops the image for that page.
 const ALT =
-  'makeyourmindup: AI, unpicked. A felt robot lies open on an operating table. Its stuffing is labelled real and its visor theatre. Monday, Wednesday and Friday, free to read.'
+  'Make Your Mind Up. The Edition. EA brings back John Motson\'s voice with AI.'
 
 export const OG_IMAGES = [
   { url: '/opengraph-image.jpg', width: 1200, height: 630, type: 'image/jpeg', alt: ALT },
