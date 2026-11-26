@@ -57,8 +57,9 @@ at all; content-engine runs its kill list.
 `www.makeyourmindup.ai`, which serves the cover from `apps/cover/` (`73735f5`,
 ruling Krish 2026-09-25: the cover takes the domain, and the Cannes funnel stays
 offline until mm-ctrl hosts it). `apps/cover/README.md` says how it deploys and
-what regenerates its assets. The brand book and kit, v1.5 on 2026-10-05, are in
-`docs/brandbooknew/`, rebuilt by `npm run brand-kit` in `apps/cover`. This
+what regenerates its assets. The v5 brand kit is
+`brand-kit/makeyourmindup-brand-kit.zip`, built by `python
+scripts/brand-kit-v5/build.py --content-engine <checkout>`. This
 paragraph was corrected on 2026-09-26; it had still described the Cannes funnel
 as live.
 

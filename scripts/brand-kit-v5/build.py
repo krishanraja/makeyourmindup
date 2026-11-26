@@ -238,11 +238,11 @@ def write_text(kit: Path):
     (kit / 'Channel art' / 'bios-and-descriptions.txt').write_text('\n'.join([
         'Profile copy, v5 (26 Nov 2026). Paste exactly. No names, no series names, no em dashes.', '',
         'YouTube description:',
-        f'Short videos from makeyourmindup: {PROMISE[0].lower()}{PROMISE[1:]}', '', MOTTO, '', f"Read today's Edition at {SITE}", '',
+        f'Short videos from makeyourmindup: {PROMISE}', '', MOTTO, '', f"Read today's Edition at {SITE}", '',
         'Instagram bio:', PROMISE, MOTTO, SITE, '',
         f'Facebook intro: {PROMISE} {MOTTO}', '',
         f'Substack short description: {PROMISE} {MOTTO}', '',
-        f'X bio (Krish\'s own account): Editor of makeyourmindup: {PROMISE[0].lower()}{PROMISE[1:-1]}. {SITE}', '',
+        f'X bio (Krish\'s own account): Editor of makeyourmindup: {PROMISE} {SITE}', '',
         f'TikTok bio (Krish\'s own account): {PROMISE} {SITE}', '',
         'If a field cuts one of these, drop the second sentence; never reword.', '']), encoding='utf-8', newline='\n')
     rows = '\n'.join(f'| `logos/{n}` | {d} |' for n, d in MARKS.values())
