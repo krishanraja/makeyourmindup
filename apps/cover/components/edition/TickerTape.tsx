@@ -3,7 +3,6 @@
 import { useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import type { Snapshot, Stock } from '@/lib/hub'
 import { Percent } from './Story'
-import './motion.css'
 import { price, Spark } from './MarketValues'
 
 type Props = {

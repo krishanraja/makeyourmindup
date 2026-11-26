@@ -35,7 +35,7 @@ export function Ticker({ snapshot, desk }: { snapshot: Snapshot; desk: Desk }) {
               <div className="big">{last(idx)}</div>
               <Spark data={idx.series} width={220} height={54} />
               <p>
-                <Percent value={idx.day_pct} /> today Â· <Percent value={idx.month_pct} /> this month
+                <Percent value={idx.day_pct} /> today · <Percent value={idx.month_pct} /> this month
               </p>
               <p>Equal-weighted across the listed companies, rebased to 100 one month ago.</p>
             </div>
@@ -96,6 +96,10 @@ export function Rooms({
           <span className="rn">{r.label}</span>
           <span className="rl">{r.line}</span>
           <span className="rk">
+            <span className="room-index">
+              <span className="sr">Index level {last(r.index)}</span>
+              <span aria-hidden="true" data-from={r.index.series.at(-2)} data-level={r.index.series.at(-1)}>{last(r.index)}</span>
+            </span>
             <Spark data={r.index.series} />
           </span>
           <Percent className="rp" value={r.index.day_pct} />
@@ -126,7 +130,7 @@ export function Drill({ snapshot, cut }: { snapshot: Snapshot; cut: ReturnType<t
         {entry?.[0] || n?.dek || 'No source in this room gives that detail today.'}{' '}
         {refs.map((n) => (
           <a className="src" key={n.id} href={n.url} target="_blank" rel="noopener">
-            {n.source} â†—{' '}
+            {n.source} ↗{' '}
           </a>
         ))}
       </dd>
@@ -173,7 +177,7 @@ export function Drill({ snapshot, cut }: { snapshot: Snapshot; cut: ReturnType<t
                       <div className="cc-h">
                         <b>{s.name}</b>
                         <span className="sc">
-                          {k} Â· {snapshot.subsectors.find((r) => r.key === s.subsector)?.label}
+                          {k} · {snapshot.subsectors.find((r) => r.key === s.subsector)?.label}
                         </span>
                       </div>
                       <div className="cc-p">

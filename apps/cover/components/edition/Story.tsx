@@ -198,8 +198,9 @@ export function Lead({
     date = new Date(snapshot.edition_date)
       .toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })
       .replace(',', '')
+  const series = n.series || snapshot.pieces.find(piece => piece.link === n.url)?.series
   return (
-    <article className="lead" id="lead">
+    <article data-series={series} className="lead" id="lead">
       <div className="lead-head" id={n.id}>
         <div className="kicker">
           <span className="kdate">
@@ -208,7 +209,7 @@ export function Lead({
           The lead · {snapshot.subsectors.find((r) => r.key === n.subsector)?.label} ·{' '}
           {dateOf(n.date, snapshot.edition_date)}
         </div>
-        <h1><a href={dated ? storyPath(snapshot.edition_date, n.id) : n.url}>{n.headline}</a></h1>
+        <h1><a href={dated ? storyPath(snapshot.edition_date, n.id) : n.url}>{n.headline}</a><span className="headline-wipes" aria-hidden="true" /></h1>
       </div>
       <div className="lead-body">
         <p className="dek">{n.dek}</p>
