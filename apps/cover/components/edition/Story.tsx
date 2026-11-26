@@ -184,12 +184,14 @@ export function Lead({
   whyIn,
   edition,
   openFeed,
+  dated = true,
 }: {
   story: Story
   snapshot: Snapshot
   whyIn: string
   edition: string
   openFeed: () => void
+  dated?: boolean
 }) {
   const n = s.item,
     p = s.portrait,
@@ -206,7 +208,7 @@ export function Lead({
           The lead · {snapshot.subsectors.find((r) => r.key === n.subsector)?.label} ·{' '}
           {dateOf(n.date, snapshot.edition_date)}
         </div>
-        <h1><a href={storyPath(snapshot.edition_date, n.id)}>{n.headline}</a></h1>
+        <h1><a href={dated ? storyPath(snapshot.edition_date, n.id) : n.url}>{n.headline}</a></h1>
       </div>
       <div className="lead-body">
         <p className="dek">{n.dek}</p>

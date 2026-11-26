@@ -68,8 +68,10 @@ try {
           console.error(width, scale, state, issues)
         }
       }
-      const editionLink = await page.locator('.edition-links a[href^="/edition/"]').first().getAttribute('href')
-      const routes = [editionLink, '/music', '/film-tv', '/gaming', '/sport', '/publishing-media', '/art-design', '/creative-24', '/editions']
+      // The fallback edition has no dated page, so the homepage links to one only once an edition is published.
+      const editionLink = (await page.locator('.edition-links a[href^="/edition/"]').count())
+        ? await page.locator('.edition-links a[href^="/edition/"]').first().getAttribute('href') : null
+      const routes = [...(editionLink ? [editionLink] : []), '/music', '/film-tv', '/gaming', '/sport', '/publishing-media', '/art-design', '/creative-24', '/editions']
       await check('front page')
       await page.locator('#all24').click()
       await check('all 24')

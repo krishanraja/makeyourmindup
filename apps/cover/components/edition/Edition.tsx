@@ -233,7 +233,7 @@ export default function Edition({
   return (
     <div className={'edition-page' + (evening ? ' evening' : '')}>
       {feed ? (
-        <FullFeed snapshot={snapshot} initial={desk} close={closeFeed} />
+        <FullFeed snapshot={snapshot} initial={desk} close={closeFeed} dated={!isFixture} />
       ) : (
         <>
           <a className="skip" href="#lead">
@@ -276,6 +276,7 @@ export default function Edition({
             <div id="edition" ref={editionEl}>
               <div className="wrap">
                 <Lead
+                  dated={!isFixture}
                   story={cut.lead}
                   snapshot={snapshot}
                   whyIn={cut.scoped.length ? cut.whyIn : 'across the creative industries'}
@@ -333,7 +334,7 @@ export default function Edition({
                             {s.sub && ' · ' + s.sub}
                           </span>
                         </div>
-                        <h3><a href={storyPath(snapshot.edition_date, s.item.id)}>{s.item.headline}</a></h3>
+                        <h3><a href={isFixture ? s.item.url : storyPath(snapshot.edition_date, s.item.id)}>{s.item.headline}</a></h3>
                         <p className="dek">{s.item.dek}</p>
                         <Note label={'Why it matters ' + cut.whyIn} text={s.why} />
                         <Source n={s.item} snapshot={snapshot} />
@@ -369,7 +370,7 @@ export default function Edition({
             <div className="wrap">
               {dated && remaining.length > 0 && <section aria-labelledby="more-stories">
                 <div className="sec-head"><h2 id="more-stories">More from this edition</h2></div>
-                <StoryList anchors stories={remaining.map(item => ({ date: snapshot.edition_date, item }))} />
+                <StoryList anchors dated={!isFixture} stories={remaining.map(item => ({ date: snapshot.edition_date, item }))} />
               </section>}
               <section className="subs" id="subscribe">
                 <div>
@@ -409,7 +410,7 @@ export default function Edition({
                 </div>
                 <div>
                   <h4>The stories</h4>
-                  <EditionLinks date={snapshot.edition_date} />
+                  <EditionLinks date={isFixture ? undefined : snapshot.edition_date} />
                   <p>
                     The panel checks machine-written summaries of the linked sources, and some images are
                     illustrative.

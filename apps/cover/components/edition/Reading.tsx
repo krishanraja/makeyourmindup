@@ -96,10 +96,12 @@ export function FullFeed({
   snapshot,
   initial,
   close,
+  dated = true,
 }: {
   snapshot: Snapshot
   initial: Desk
   close: () => void
+  dated?: boolean
 }) {
   const [desk, setDesk] = useState(initial),
     [listed, setListed] = useState(false),
@@ -196,7 +198,7 @@ export function FullFeed({
                     <p className="d">{n.dek}</p>
                     <Note label="Why it matters" text={n.why} />
                     <Source n={n} snapshot={snapshot} />
-                    <a className="desk-source" href={storyPath(snapshot.edition_date, n.id)}>Edition permalink</a>
+                    {dated && <a className="desk-source" href={storyPath(snapshot.edition_date, n.id)}>Edition permalink</a>}
                   </div>
                 </article>
               </div>
