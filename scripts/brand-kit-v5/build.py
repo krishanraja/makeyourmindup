@@ -38,6 +38,7 @@ SITE = 'makeyourmindup.ai'
 
 MARKS = {
     # file in content-engine v5 -> (kit name, what it is)
+    's3h.svg': ('makeyourmindup-square.svg', 'The square lockup: MAKE YOUR MIND/UP stacked, with the icon as the O. Every profile picture and square slot (Krish, 26 Nov 2026).'),
     'd-face-off.svg': ('makeyourmindup-icon.svg', 'The icon: the split circle, cream and mint. Avatars, favicons, app icons.'),
     'v4.svg': ('makeyourmindup-wordmark-on-dark.svg', 'The wordmark for ink or dark grounds: cream, with UP in mint.'),
     'v4-ink.svg': ('makeyourmindup-wordmark-on-light.svg', 'The wordmark for cream or light grounds: all ink.'),
@@ -97,10 +98,13 @@ def lines(x, y_bottom, width, h_size, m_size, gap=0.42):
 
 def designs(marks: Path):
     v9, v10, icon = marks / 'makeyourmindup-horizontal-on-dark.svg', marks / 'makeyourmindup-stacked-on-dark.svg', marks / 'makeyourmindup-icon.svg'
+    square = marks / 'makeyourmindup-square-transparent.svg'
     ratio9 = 930.684 / 90
     out = {}
-    # The avatar: the icon inside the circle every platform crops to.
-    out['Channel art/avatar-1080.png'] = (1080, 1080, page(1080, 1080, img(icon, 'left:250px;top:250px;width:580px;height:580px')))
+    # The profile picture: the S3h square lockup, the icon as the O, inside the circle every platform crops to
+    # (Krish, 26 Nov 2026: "the makeyourmindup square", "Square word mark with the icon as the O").
+    out['Channel art/avatar-1080.png'] = (1080, 1080, page(1080, 1080, img(square, 'left:170px;top:170px;width:740px;height:740px')))
+    out['logos/makeyourmindup-square-on-ink-1080.png'] = out['Channel art/avatar-1080.png']
     out['logos/makeyourmindup-icon-on-ink-1024.png'] = (1024, 1024, page(1024, 1024, img(icon, 'left:212px;top:212px;width:600px;height:600px')))
     out['logos/makeyourmindup-icon-transparent-1024.png'] = (1024, 1024, page(1024, 1024, img(icon, 'left:0;top:0;width:1024px;height:1024px'), ground=False))
     for name, src, w in [('horizontal', v9, 2400), ('stacked', v10, 1600)]:
@@ -122,7 +126,7 @@ def designs(marks: Path):
     out['Channel art/x-header-1500x500.png'] = (1500, 500, page(1500, 500,
         img(v9, f'left:440px;top:84px;height:62px;width:{round(62 * ratio9)}px') + lines(440, 70, 1000, 40, 28)))
     # Substack.
-    out['Channel art/substack-logo-1024.png'] = out['logos/makeyourmindup-icon-on-ink-1024.png']
+    out['Channel art/substack-logo-1024.png'] = (1024, 1024, page(1024, 1024, img(square, 'left:161px;top:161px;width:702px;height:702px')))
     wl = marks / 'makeyourmindup-wordmark-on-light.svg'
     out['Channel art/substack-wordmark-wide-1344x256.png'] = (1344, 256, page(1344, 256,
         img(wl, f'left:32px;top:76px;height:104px;width:{round(104 * 752.684 / 89)}px'), ground=False))
@@ -176,6 +180,13 @@ def main():
     (kit / 'Channel art').mkdir()
     for f, (name, _) in MARKS.items():
         shutil.copy(src_marks / f, kit / 'logos' / name)
+    # The square lockup ships on its own ink and grain; this copy drops both, so it sits on any ground.
+    square = (kit / 'logos' / 'makeyourmindup-square.svg').read_text(encoding='utf-8')
+    for rect in ('<rect width="700" height="700" fill="#0C1512"/>', '<rect width="700" height="700" filter="url(#grain)" opacity=".07"/>'):
+        if rect not in square:
+            sys.exit(f's3h.svg no longer carries {rect}: update the transparent copy')
+        square = square.replace(rect, '')
+    (kit / 'logos' / 'makeyourmindup-square-transparent.svg').write_text(square, encoding='utf-8', newline='\n')
     for f, _, _ in FONTS:
         shutil.copy(src_fonts / f, kit / 'fonts' / f)
     for f in LICENCES:
@@ -271,6 +282,7 @@ watermark. The retired files are in Drive under `makeyourmindup > _Archive > 202
 | File | What it is |
 |---|---|
 {rows}
+| `logos/makeyourmindup-square-transparent.svg` | The square lockup without its own ink ground, for any background. |
 | `logos/*.png` | The icon on ink and transparent at 1024, and both lockups as transparent PNGs for dark and light grounds. |
 
 | File | Family | Use |
@@ -286,7 +298,7 @@ shows each one with the part each platform shows. Which file goes where:
 
 | File | Where |
 |---|---|
-| `avatar-1080.png` | Profile picture: YouTube, Instagram, the Facebook Page |
+| `avatar-1080.png` | Profile picture: YouTube, Instagram, the Facebook Page, Threads. The square lockup, the icon as the O |
 | `youtube-banner-2560x1440.png` | YouTube banner |
 | `facebook-cover-1640x856.png` | Facebook Page cover |
 | `x-header-1500x500.png` | Header on Krish's own X account |
