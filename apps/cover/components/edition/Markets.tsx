@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import type { Desk, Index, Snapshot, Stock } from '@/lib/hub'
 import type { recut } from '@/lib/edition'
 import { Percent } from './Story'
@@ -74,7 +74,7 @@ export function Ticker({ snapshot, desk }: { snapshot: Snapshot; desk: Desk }) {
           .sort((a, b) => Math.abs(Number(b[1].day_pct)) - Math.abs(Number(a[1].day_pct)))
   const rooms = [...subsectors].sort((a, b) => Number(b.key === desk) - Number(a.key === desk))
   const strip = useRef<HTMLDivElement>(null)
-  useEffect(() => {
+  useLayoutEffect(() => {
     const box = strip.current
     if (!box) return
     function fit() {
@@ -83,11 +83,12 @@ export function Ticker({ snapshot, desk }: { snapshot: Snapshot; desk: Desk }) {
       entries.forEach((el) => {
         el.hidden = false
       })
-      const first = entries[0]?.offsetTop
-      const clipped = entries.map((el) => el.offsetTop !== first || el.scrollWidth > box.clientWidth)
+      const edge = box.getBoundingClientRect().right
+      const clipped = entries.map((el) => el.getBoundingClientRect().right > edge)
       entries.forEach((el, i) => {
         el.hidden = clipped[i]
       })
+      box.dataset.fitted = 'true'
     }
     fit()
     const observer = new ResizeObserver(fit)

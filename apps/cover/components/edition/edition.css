@@ -622,8 +622,9 @@
 :where(.edition-page) .skip:focus { top:.5rem }
 :where(.edition-page) .idx svg,:where(.edition-page) .board-idx svg {color:var(--mint)}
 :where(.edition-page) .board-grid section { margin-bottom:18px }
-:where(.edition-page) .movers { flex-wrap:wrap; height:1.5em; align-content:flex-start; column-gap:22px; row-gap:8px; line-height:1.5 }
-:where(.edition-page) .mv { flex:none; max-width:100% }
+:where(.edition-page) .movers { visibility:hidden; flex-wrap:nowrap; column-gap:22px; line-height:1.5 }
+:where(.edition-page) .movers[data-fitted="true"] {visibility:visible}
+:where(.edition-page) .mv { flex:none }
 :where(.edition-page) .mv[hidden] { display:none }
 :where(.edition-page) .seg-wrap,:where(.edition-page) .desk,:where(.edition-page) .lead-head,:where(.edition-page) .lead-body,:where(.edition-page) .drill,:where(.edition-page) .room-grid>*,:where(.edition-page) .dr-cols>*,:where(.edition-page) .thing-text,:where(.edition-page) .strip-row>* { min-width:0 }
 :where(.edition-page) .text-piece {grid-template-columns:1fr}
