@@ -59,7 +59,6 @@ body {
 }
 
 @layer components {
-  /* Display type. Anton rhymes with the logo's condensed caps. */
   .display {
     font-family: var(--font-fraunces), Georgia, serif;
     font-weight: 400;
