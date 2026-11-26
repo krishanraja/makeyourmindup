@@ -74,6 +74,8 @@ async function photoLayers(photo?: HubImage | null): Promise<OverlayOptions[]> {
 }
 
 export async function shareCard(card: Card | null, ttl = 900) {
+  // With no published edition, the card still says what the site is, rather than showing the wordmark alone.
+  card ??= { label: 'The Edition', title: 'AI news for the creative industries, every morning.' }
   const [logo, photo, motto] = await Promise.all([
     sharp(path.join(publicDir, 'hub', 'wordmark.svg'), { density: 144 }).resize(486).png().toBuffer(),
     photoLayers(card?.photo),
