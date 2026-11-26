@@ -103,6 +103,8 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- Every page shares a generated card in the house design: ink ground, the v5 wordmark, a mint label, the Fraunces headline, the lead photo when there is one and the motto. With no published edition the homepage card reads "AI news for the creative industries, every morning." The v5 icons and manifest stay as they were. (2026-11-26)
+- The Edition cover scrolls every constituent's delayed close in a live-moving ticker, filters it by desk and animates from the lead to the sign-up, with a reduced-motion fallback. Chrome runs at 1280 and 390 px pass the layout audit, cut CLS to about 0 from 0.042 and 0.045, and keep LCP within noise. (2026-11-26)
 - makeyourmindup.ai has permanent dated edition pages, six subsector desks, a Creative 24 dataset page, an edition archive, sitemaps, a news sitemap, an Edition RSS feed and llms-full.txt, with per-page titles, canonicals and structured data. The build, 37 cover tests, the phone layout audit and a 9-route overflow audit at 320, 390 and 1280 px pass. The homepage keeps its dated fallback edition when the hub has none. (2026-11-26)
 - The brand-kit builder no longer writes the prediction format: mind.the.gap's device "says where they lead" instead of "ending in a dated call", and the house rules say "Where the record runs out, we say so." instead of "Misses go up as big as hits." (Ruling, Krish, 2026-11-18: "i have abandoned the prediction format, it feels lame"). The Drive brand kit and its PDFs still carry the old copy until the kit is rebuilt. (2026-11-18)
 - makeyourmindup.ai/members serves 10 figures from 4 published pieces (2, 4, 11 and 13 Nov) behind the members code, each labelled with its printed title; two figures that are screenshots of others' material stay off it. (2026-11-19)
@@ -124,7 +126,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-26): Growth owns discoverability from here: submit the sitemaps to Google Search Console and Bing, wire the IndexNow route into the daily edition, and ask the Answers engine to audit the new pages.
+- Next (2026-11-26): Once the first hub edition publishes, confirm /opengraph-image shows its lead.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
