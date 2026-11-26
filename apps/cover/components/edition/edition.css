@@ -1,3 +1,23 @@
+/* Fraunces narrows at headline optical sizes. Match the advance widths of its
+   display face separately from the text face so a font swap keeps the lines. */
+@font-face {
+  font-family: 'Edition Head Fallback';
+  src: local('Times New Roman Bold'), local('TimesNewRomanPS-BoldMT');
+  font-weight: 500 900;
+  size-adjust: 90.5%;
+  ascent-override: 108.07%;
+  descent-override: 28.18%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Edition Italic Fallback';
+  src: local('Georgia Italic'), local('Georgia-Italic');
+  font-style: italic;
+  size-adjust: 97%;
+  ascent-override: 100.82%;
+  descent-override: 26.29%;
+  line-gap-override: 0%;
+}
 .edition-page{
   --ink:#0C1512; --ink-2:#14201B; --ink-3:#1C2A24;
   --cream:#F4EFE4; --paper:#F4EFE4; --paper-2:#ECE5D6; --paper-3:#E3DAC7; --sheet:#FBF8F1;
@@ -7,7 +27,7 @@
   --up:#0F7A53; --down:#C93E22;
   --serif:var(--font-fraunces),Georgia,serif;
   --sans:var(--font-sans),system-ui,sans-serif;
-  --mono:var(--font-mono),ui-monospace,monospace;
+  --mono:var(--font-mono),'Courier New',monospace;
   --wrap:1320px; --gut:40px;
   --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   --grain-dark:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
@@ -76,13 +96,14 @@
 /* ---------- Edition bar: date, time of day, desk selector ---------- */
 :where(.edition-page) .edbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0 18px;border-bottom:1px solid var(--rule-strong)}
 :where(.edition-page) .dateline{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-:where(.edition-page) .dateline .day{font-family:var(--serif);font-style:italic;font-size:1.375rem;font-variation-settings:"opsz" 36}
+:where(.edition-page) .dateline .day{font-family:var(--font-fraunces),'Edition Italic Fallback',Georgia,serif;font-style:italic;font-size:1.375rem;font-variation-settings:"opsz" 36}
 :where(.edition-page) .dateline .ed{font-family:var(--mono);font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 :where(.edition-page) .mood{font-family:var(--mono);font-size:0.75rem;letter-spacing:.04em;color:var(--muted);border-bottom:1px dotted var(--faint)}
 :where(.edition-page) .mood:hover{color:var(--text)}
 :where(.edition-page) .desk{display:flex;align-items:center;gap:14px}
 :where(.edition-page) .desk-k{font-family:var(--mono);font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-:where(.edition-page) .seg{display:flex;background:var(--paper-2);border-radius:40px;padding:4px;gap:2px;border:1px solid var(--rule)}
+:where(.edition-page) .seg{display:flex;max-width:100%;overflow-x:auto;scrollbar-width:none;background:var(--paper-2);border-radius:40px;padding:4px;gap:2px;border:1px solid var(--rule)}
+:where(.edition-page) .seg::-webkit-scrollbar{display:none}
 :where(.edition-page) .seg button{font-size:0.875rem;font-weight:500;padding:7px 14px;border-radius:40px;white-space:nowrap;color:var(--muted);transition:background .2s,color .2s}
 :where(.edition-page) .seg button:hover{color:var(--text)}
 :where(.edition-page) .seg button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
@@ -93,14 +114,14 @@
 :where(.edition-page) #edition.swap{opacity:0;transform:translateY(8px)}
 
 /* ---------- Lead ---------- */
-:where(.edition-page) .lead{display:grid;grid-template-columns:5fr 7fr;grid-template-areas:"head media" "body media";grid-template-rows:auto 1fr;column-gap:52px;padding:30px 0 64px;align-items:stretch}
+:where(.edition-page) .lead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"head media" "body media";grid-template-rows:auto 1fr;column-gap:52px;padding:30px 0 64px;align-items:stretch}
 :where(.edition-page) .lead-head{grid-area:head;padding-top:4px}
 :where(.edition-page) .lead-body{grid-area:body;display:flex;flex-direction:column}
 :where(.edition-page) .lead-media{grid-area:media}
 :where(.edition-page) .kicker{font-family:var(--mono);font-size:0.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 :where(.edition-page) .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);display:inline-block}
-:where(.edition-page) .lead h1{font-family:var(--serif);font-weight:560;font-size:4.125rem;line-height:1.0;letter-spacing:-.008em;margin:18px 0 18px;font-variation-settings:"opsz" 144,"SOFT" 30}
-:where(.edition-page) .lead .dek{font-family:var(--serif);font-style:italic;font-size:1.375rem;line-height:1.38;color:var(--muted);margin:0 0 24px;font-variation-settings:"opsz" 30;max-width:30em}
+:where(.edition-page) .lead h1{font-family:var(--font-fraunces),'Edition Head Fallback',Georgia,serif;font-weight:560;font-size:4.125rem;line-height:1.0;letter-spacing:-.008em;margin:18px 0 18px;font-variation-settings:"opsz" 144,"SOFT" 30}
+:where(.edition-page) .lead .dek{font-family:var(--font-fraunces),'Edition Italic Fallback',Georgia,serif;font-style:italic;font-size:1.375rem;line-height:1.38;color:var(--muted);margin:0 0 24px;font-variation-settings:"opsz" 30;max-width:30em}
 :where(.edition-page) .prov{font-family:var(--mono);font-size:0.75rem;line-height:1.55;color:var(--muted);margin:0;letter-spacing:.02em}
 :where(.edition-page) .prov a{text-decoration:none;border-bottom:1px solid var(--faint);color:var(--text)}
 :where(.edition-page) .prov a:hover{border-color:var(--text)}
@@ -301,8 +322,7 @@
   :where(.edition-page) .edbar{padding:16px 0 14px;gap:12px}
   :where(.edition-page) .dateline .day{font-size:1.1875rem}
   :where(.edition-page) .desk{width:100%;flex-direction:column;align-items:flex-start;gap:8px}
-  :where(.edition-page) .seg{max-width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  :where(.edition-page) .seg::-webkit-scrollbar{display:none}
+  :where(.edition-page) .seg{-webkit-overflow-scrolling:touch}
   :where(.edition-page) .seg button{padding:7px 12px}
   :where(.edition-page) .lead{grid-template-columns:1fr;gap:22px;padding:18px 0 40px}
   :where(.edition-page) .lead-media{order:-1;margin:0 calc(-1 * var(--gut))}
@@ -456,7 +476,7 @@
 
 /* nameplate: the wordmark with the publication's line, in the masthead row */
 :where(.edition-page) .nameplate{display:flex;align-items:center;gap:18px;min-width:0;position:relative;z-index:2}
-:where(.edition-page) .motto{margin:0;padding-left:18px;border-left:1px solid rgba(244,239,228,.25);font-family:var(--serif);font-style:italic;font-weight:380;font-size:1.125rem;line-height:1.2;color:rgba(244,239,228,.86);white-space:nowrap;font-variation-settings:"opsz" 30}
+:where(.edition-page) .motto{margin:0;padding-left:18px;border-left:1px solid rgba(244,239,228,.25);font-family:var(--font-fraunces),'Edition Italic Fallback',Georgia,serif;font-style:italic;font-weight:380;font-size:1.125rem;line-height:1.2;color:rgba(244,239,228,.86);white-space:nowrap;font-variation-settings:"opsz" 30}
 
 /* lead: deeper, darker, bleeding to the page edge */
 :where(.edition-page) .lead{padding:22px 0 0;column-gap:52px}

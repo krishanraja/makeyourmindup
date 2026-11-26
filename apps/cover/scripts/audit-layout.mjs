@@ -34,6 +34,14 @@ async function overflow(page) {
           errors.add(node.textContent.trim().slice(0, 60))
       }
     }
+    const sector = document.querySelector('.seg')
+    if (sector && sector.scrollWidth > sector.clientWidth) {
+      const start = sector.scrollLeft
+      sector.scrollLeft = sector.scrollWidth
+      if (sector.lastElementChild.getBoundingClientRect().right > sector.getBoundingClientRect().right + 1)
+        errors.add('last desk is outside its scroll control')
+      sector.scrollLeft = start
+    }
     const strip = document.querySelector('.movers')
     if (strip) {
       const track = strip.firstElementChild

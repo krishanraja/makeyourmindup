@@ -7,11 +7,11 @@ import './globals.css'
 const fraunces = localFont({ src: [
   { path: './fonts/Fraunces-Upright-Variable.ttf', style: 'normal', weight: '100 900' },
   { path: './fonts/Fraunces-Italic-Variable.ttf', style: 'italic', weight: '100 900' },
-], variable: '--font-fraunces', display: 'swap' })
+], variable: '--font-fraunces', display: 'swap', adjustFontFallback: false })
 const mono = localFont({ src: [
   { path: './fonts/DMMono-Regular.ttf', weight: '400' },
   { path: './fonts/DMMono-Medium.ttf', weight: '500' },
-], variable: '--font-mono', display: 'swap' })
+], variable: '--font-mono', display: 'swap', adjustFontFallback: false })
 const sans = localFont({ src: './fonts/SchibstedGrotesk.ttf', weight: '400 900', variable: '--font-sans', display: 'swap' })
 const anton = localFont({ src: './fonts/Anton-Regular.ttf', weight: '400', variable: '--font-anton', display: 'swap' })
 
