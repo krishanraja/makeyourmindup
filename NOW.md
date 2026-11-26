@@ -104,6 +104,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- The brand-kit zip carries Drive's current Channel art note (00 WHICH FILE GOES WHERE), which now records that the Library matches (content-engine #1002) and the two Substack files are confirmed. (2026-11-26)
 - The brand kit draws no art of its own: scripts/brand-kit-v5/build.py packages Drive's Channel art (the v5 Library's renders) byte for byte against its MANIFEST.sha256, and logos/ ships only the icon, the wordmark, the horizontal lockup and S3h, on ink. The on-light and stacked lockups are retired. (2026-11-26)
 - AGENTS.md and project-documentation/02_REPO_BRIEF.md now carry Krish's ruling of 2026-11-26 ("I want everything to be one harmonious engine"): content-engine makes every asset, the derived posts and captions included, and growth-makeyourmindup posts, schedules, distributes, measures and grows subscribers, making no assets. (2026-11-26)
 - NOW.md is trimmed to leave room for the notes folding in from #51, #55, #58 and #61: its eight oldest dated entries now sit verbatim in docs/history/LOG.md. (2026-11-26)
@@ -126,7 +127,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-26): Re-run the build whenever Drive's Channel art changes, so the zip matches it.
+- Next (2026-11-26): Package again whenever Drive's Channel art changes.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
