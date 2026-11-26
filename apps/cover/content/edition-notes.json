@@ -1,0 +1,444 @@
+{
+  "cuts": {
+    "all": {
+      "lead": {
+        "id": "motson",
+        "why": "A family endorsed a recreated voice, and some fans still called it gross. Consent and acceptance came apart in public."
+      },
+      "things": [
+        {
+          "id": "tidal",
+          "sub": "Streaming",
+          "why": "The first big streamer to choose removal over labels. Watch whether Spotify follows or holds its line."
+        },
+        {
+          "id": "disney",
+          "sub": "Animation",
+          "why": "The studio that litigated against Midjourney is now shipping AI-rendered shows to its own subscribers."
+        },
+        {
+          "id": "magabala",
+          "sub": "Books",
+          "why": "A small publisher is naming the company it says took 37 of its books, a year before Australia's AI law."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "Publishers, through licences: Le Figaro with OpenAI, the AP with Anthropic.",
+          [
+            "figaro",
+            "ap"
+          ]
+        ],
+        "real": [
+          "Real: Tidal is deleting 29 million AI-made tracks, not labelling them.",
+          [
+            "tidal"
+          ]
+        ]
+      }
+    },
+    "music": {
+      "lead": {
+        "id": "tidal",
+        "why": "It is the first big streamer to remove fully AI-made tracks rather than label them, starting 9 December."
+      },
+      "things": [
+        {
+          "id": "motson",
+          "sub": "Voice rights",
+          "why": "Consent from a family is not the same as consent from a performer, and voice unions are saying so."
+        },
+        {
+          "id": "spotify-remix",
+          "sub": "Labels and licensing",
+          "why": "Labels get paid twice: once for the stream, once for the remix. Sony and Warner haven't signed yet."
+        },
+        {
+          "id": "soundcloud",
+          "sub": "Distribution",
+          "why": "SoundCloud keeps AI music and polices the label. Tidal removes it. The same track now meets two different rules."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "Labels, twice: Spotify's paid remix deals are filed with Universal, Merlin and Believe.",
+          [
+            "spotify-remix"
+          ]
+        ],
+        "real": [
+          "Real: Tidal is deleting 29 million AI-made tracks, not labelling them.",
+          [
+            "tidal"
+          ]
+        ]
+      }
+    },
+    "film_tv": {
+      "lead": {
+        "id": "disney",
+        "why": "The studio that sued over AI images is now putting an AI-rendered children's series, Ozzy Fox, on Disney+ in December."
+      },
+      "things": [
+        {
+          "id": "utopai",
+          "sub": "Production",
+          "why": "An AI studio valued at $1B plans about 500 production jobs worldwide in 2027."
+        },
+        {
+          "id": "netflix",
+          "sub": "Streaming",
+          "why": "Netflix is testing discovery by mood: pick a theme, get a suggestion. For now it's a small group of US members."
+        },
+        {
+          "id": "motson",
+          "sub": "Voice and performers",
+          "why": "EA had the family's blessing and still drew 'gross' from fans. Consent and acceptance are two separate things."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "Utopai's backers, at a $1B valuation, and about 500 production hires it plans for 2027.",
+          [
+            "utopai"
+          ]
+        ],
+        "real": [
+          "Real: Disney's AI-rendered series, Ozzy Fox, reaches Disney+ in December.",
+          [
+            "disney"
+          ]
+        ]
+      }
+    },
+    "gaming": {
+      "lead": {
+        "id": "finals",
+        "why": "AI voices standing in for human casters lasted one video. The studio pulled it and is rethinking recaps for other regions."
+      },
+      "things": [
+        {
+          "id": "motson",
+          "sub": "Sports games",
+          "why": "A licensed game shipped a recreated voice with the family's blessing, and some fans still called it gross."
+        },
+        {
+          "id": "allen",
+          "sub": "Art assets",
+          "why": "Whether AI-assisted art can be registered now sits with a court in Colorado."
+        },
+        {
+          "id": "spotify-remix",
+          "sub": "Fan creation",
+          "why": "Paid AI remixing by fans could arrive as early as February 2027, with label deals filed first."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "Not the casters: The Finals' recap swapped them for AI voices.",
+          [
+            "finals"
+          ]
+        ],
+        "real": [
+          "Theatre, briefly: the video was pulled and recaps are being rethought.",
+          [
+            "finals"
+          ]
+        ]
+      }
+    },
+    "sport": {
+      "lead": {
+        "id": "motson",
+        "why": "A much-loved commentator's voice is back in a game by AI, with his family's endorsement and some fans' disgust."
+      },
+      "things": [
+        {
+          "id": "finals",
+          "sub": "Broadcast",
+          "why": "A studio swapped its casters for AI voices and took the video down within the week."
+        },
+        {
+          "id": "tidal",
+          "sub": "Music in highlights",
+          "why": "Tidal will delete 29 million AI-made tracks, after 43% of recent uploads were detected as AI-generated."
+        },
+        {
+          "id": "ap",
+          "sub": "Data rights",
+          "why": "The AP licensed content and data to Anthropic, and neither side shared terms."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "EA Sports FC 27, which adds the recreated voice today with the family's endorsement.",
+          [
+            "motson"
+          ]
+        ],
+        "real": [
+          "Real, and divisive: some fans call it 'gross'.",
+          [
+            "motson"
+          ]
+        ]
+      }
+    },
+    "publishing_media": {
+      "lead": {
+        "id": "figaro",
+        "why": "Three major French groups have now licensed to OpenAI, and ChatGPT will link back to the articles it summarises."
+      },
+      "things": [
+        {
+          "id": "magabala",
+          "sub": "Books",
+          "why": "Magabala says Meta scraped 37 of its titles. Australia legislates next year, after the scraping."
+        },
+        {
+          "id": "brave",
+          "sub": "Newspapers",
+          "why": "Four papers led by the Times are suing Brave Software, the route in, and not only the AI firms."
+        },
+        {
+          "id": "ap",
+          "sub": "News licensing",
+          "why": "Anthropic's first deal with a news publisher, signed before the midterms. Neither side shared terms."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "Groupe Figaro and the AP, through licences with OpenAI and Anthropic.",
+          [
+            "figaro",
+            "ap"
+          ]
+        ],
+        "real": [
+          "Real money, private terms: neither the AP nor Anthropic shared them.",
+          [
+            "ap"
+          ]
+        ]
+      }
+    },
+    "art_design": {
+      "lead": {
+        "id": "allen",
+        "why": "A ruling in Colorado could decide whether AI-assisted artworks can be registered for copyright at all."
+      },
+      "things": [
+        {
+          "id": "anthropic-settle",
+          "sub": "Copyright",
+          "why": "The first money from an AI copyright settlement is moving, while the EU consults and Congress weighs a visual artists' bill."
+        },
+        {
+          "id": "magabala",
+          "sub": "Archives",
+          "why": "37 titles, one named company, and no Australian AI law until next year."
+        },
+        {
+          "id": "disney",
+          "sub": "Animation",
+          "why": "The studio that litigated against Midjourney is now shipping AI-rendered shows to its own subscribers."
+        }
+      ],
+      "behind": {
+        "paid": [
+          "Rights-holders in Anthropic's copyright settlement, with first payments due this week.",
+          [
+            "anthropic-settle"
+          ]
+        ],
+        "real": [
+          "Undecided: cross-motions for summary judgment are pending in Allen v. Perlmutter.",
+          [
+            "allen"
+          ]
+        ]
+      }
+    }
+  },
+  "portraits": {
+    "disney": {
+      "name": "Josh D'Amaro",
+      "role": "Disney CEO",
+      "story": "disney",
+      "credit": "Photo: Spc. Albert Juarez, Public domain, via Wikimedia Commons",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Josh_D%27Amaro_Warrior_Games_2022_(cropped).jpg",
+      "kind": "person",
+      "url": "/hub/people/damaro.jpg"
+    },
+    "netflix": {
+      "name": "Ted Sarandos",
+      "role": "Netflix co-CEO",
+      "story": "netflix",
+      "credit": "Photo: Kevin Paul, CC BY 4.0, via Wikimedia Commons",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Ted_Sarandos_at_TAFFF_2026-4.jpg",
+      "kind": "person",
+      "url": "/hub/people/sarandos.jpg"
+    },
+    "ap": {
+      "name": "Dario Amodei",
+      "role": "Anthropic CEO",
+      "story": "ap",
+      "credit": "Photo: TechCrunch, CC BY 2.0, via Wikimedia Commons",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01_(cropped).jpg",
+      "kind": "person",
+      "url": "/hub/people/amodei.jpg"
+    },
+    "motson": {
+      "name": "John Motson",
+      "role": "BBC football commentator",
+      "story": "motson",
+      "credit": "Photo: Everton Football Club, CC BY 3.0, via Wikimedia Commons",
+      "file_page": "https://commons.wikimedia.org/wiki/File:John_Motson_2018.jpg",
+      "kind": "person",
+      "url": "/hub/people/motson.jpg"
+    }
+  },
+  "material": {
+    "tidal": {
+      "number": {
+        "fig": "29",
+        "sup": "M",
+        "unit": "AI-made tracks Tidal says it will delete, as it stops accepting fully generated music from 9 December.",
+        "sub": "43%",
+        "subLabel": "of tracks submitted in the last 90 days were detected as AI-generated"
+      }
+    },
+    "utopai": {
+      "number": {
+        "fig": "$1",
+        "sup": "B",
+        "unit": "valuation for the AI film studio Utopai, after raising $60M.",
+        "sub": "~500",
+        "subLabel": "production jobs it says it plans worldwide in 2027"
+      }
+    },
+    "magabala": {
+      "number": {
+        "fig": "37",
+        "sup": "",
+        "unit": "titles Magabala Books says Meta scraped, apparently to train AI.",
+        "sub": "2027",
+        "subLabel": "Australia plans to legislate an AI framework next year"
+      },
+      "evidence": "Magabala Books says Meta scraped 37 of its titles"
+    },
+    "motson": {
+      "quote": {
+        "q": "gross",
+        "att": "Some fans, on the AI-recreated voice of John Motson in EA Sports FC 27. His family endorsed it."
+      }
+    },
+    "netflix": {
+      "quote": {
+        "q": "Scare Me",
+        "att": "One of the themes you can pick in AI Discover, Netflix's test tab for a small group of US members."
+      }
+    },
+    "soundcloud": {
+      "evidence": "its new rules ban presenting AI-generated music as entirely human-made"
+    },
+    "spotify-remix": {
+      "evidence": "Deals are filed with Universal, Merlin and Believe; Sony and Warner are still negotiating."
+    },
+    "figaro": {
+      "evidence": "ChatGPT will surface summaries with links back to the articles."
+    },
+    "ap": {
+      "evidence": "Neither side shared terms."
+    },
+    "brave": {
+      "evidence": "their articles were used by AI firms through Brave Software"
+    },
+    "allen": {
+      "evidence": "The ruling could decide whether AI-assisted artworks get copyright."
+    },
+    "anthropic-settle": {
+      "evidence": "Initial payments were expected this week."
+    }
+  },
+  "ask": {
+    "all": [
+      {
+        "q": "Who is getting paid for their content?",
+        "lines": [
+          [
+            "Le Figaro licensed its journalism to OpenAI, the third major French media group to sign.",
+            "figaro"
+          ],
+          [
+            "The AP signed Anthropic's first news deal, and neither side shared terms.",
+            "ap"
+          ],
+          [
+            "Spotify has filed remix deals with Universal, Merlin and Believe; Sony and Warner are still negotiating.",
+            "spotify-remix"
+          ],
+          [
+            "And the first payments from Anthropic's copyright settlement were expected this week.",
+            "anthropic-settle"
+          ]
+        ]
+      },
+      {
+        "q": "Who is in court over AI?",
+        "lines": [
+          [
+            "The New York Times, the Chicago Tribune, the Orlando Sentinel and the Daily News are suing Brave Software.",
+            "brave"
+          ],
+          [
+            "In Colorado, Allen v. Perlmutter will decide whether AI-assisted art can be registered.",
+            "allen"
+          ],
+          [
+            "And Disney, which once sued over AI, is now putting an AI-rendered series on Disney+.",
+            "disney"
+          ]
+        ]
+      }
+    ],
+    "music": [
+      {
+        "q": "What is each streamer doing about AI tracks?",
+        "lines": [
+          [
+            "Tidal stops accepting music made entirely with generative AI on 9 December and will delete 29 million AI-made tracks.",
+            "tidal"
+          ],
+          [
+            "Deezer plans a toggle that filters AI tracks out.",
+            "deezer"
+          ],
+          [
+            "Spotify and YouTube Music still label AI music rather than letting you hide it.",
+            "deezer"
+          ],
+          [
+            "SoundCloud still accepts it, but bans presenting AI-generated music as entirely human-made.",
+            "soundcloud"
+          ]
+        ]
+      },
+      {
+        "q": "Who gets paid from Spotify's AI remixes?",
+        "lines": [
+          [
+            "Labels: Spotify's paid remix and cover feature has deals filed with Universal, Merlin and Believe.",
+            "spotify-remix"
+          ],
+          [
+            "Sony and Warner are still negotiating, and the feature could arrive as early as February 2027.",
+            "spotify-remix"
+          ]
+        ]
+      }
+    ]
+  }
+}

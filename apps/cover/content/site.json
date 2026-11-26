@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "makeyourmindup: what's coming in AI, before it's obvious",
-    "description": "What's coming in AI, before it's obvious. Three times a week we take one AI story apart: who gets paid, what's real, and where it leads. In plain words, while it still counts. Free, with one email every Saturday: the week's pieces and the news that matters."
+    "title": "Make Your Mind Up: AI news for the creative industries, every morning",
+    "description": "Creativity, AI and money, simplified. Daily AI news from six creative industries, the Creative 24 stock index and the latest pieces from Make Your Mind Up."
   },
   "strap": {
     "centre": "Mon · Wed · Fri",
@@ -381,27 +381,39 @@
       "sections": [
         {
           "heading": "What this site is",
-          "body": ["This site is the cover of a publication. It is one page that shows what we publish and sends you to our Substack, where the writing lives."]
+          "body": [
+            "This site is the cover of a publication. It is one page that shows what we publish and sends you to our Substack, where the writing lives."
+          ]
         },
         {
           "heading": "Using what you find here",
-          "body": ["You are welcome to read, share and link to anything on this site. Please credit {brand} when you quote us. The words, pictures and logos are ours unless we say otherwise."]
+          "body": [
+            "You are welcome to read, share and link to anything on this site. Please credit {brand} when you quote us. The words, pictures and logos are ours unless we say otherwise."
+          ]
         },
         {
           "heading": "Substack",
-          "body": ["Subscribing, paying and commenting all happen on Substack. Substack's own terms and privacy policy apply there, not these."]
+          "body": [
+            "Subscribing, paying and commenting all happen on Substack. Substack's own terms and privacy policy apply there, not these."
+          ]
         },
         {
           "heading": "Not advice",
-          "body": ["What we publish is analysis and opinion. It is not financial, legal or investment advice. Some of what we think will turn out wrong."]
+          "body": [
+            "What we publish is analysis and opinion. It is not financial, legal or investment advice. Some of what we think will turn out wrong."
+          ]
         },
         {
           "heading": "Other sites",
-          "body": ["We link to other sites. We do not run them and we are not responsible for what they say or do."]
+          "body": [
+            "We link to other sites. We do not run them and we are not responsible for what they say or do."
+          ]
         },
         {
           "heading": "Changes",
-          "body": ["We may change these terms. When we do, we change the date at the top of this page."]
+          "body": [
+            "We may change these terms. When we do, we change the date at the top of this page."
+          ]
         }
       ]
     },
@@ -419,7 +431,9 @@
         },
         {
           "heading": "The subscribe box",
-          "body": ["If you type your email address into the subscribe box, your browser sends it straight to Substack to fill in its subscribe form. This site never receives it or stores it."]
+          "body": [
+            "If you type your email address into the subscribe box, your browser sends it straight to Substack to fill in its subscribe form. This site never receives it or stores it."
+          ]
         },
         {
           "heading": "Substack",
@@ -430,11 +444,15 @@
         },
         {
           "heading": "Other sites",
-          "body": ["Links to Substack, LinkedIn and other sites take you to services we do not run. Their own privacy policies apply there."]
+          "body": [
+            "Links to Substack, LinkedIn and other sites take you to services we do not run. Their own privacy policies apply there."
+          ]
         },
         {
           "heading": "Changes",
-          "body": ["If what this site does with information changes, we update this page and the date at the top."]
+          "body": [
+            "If what this site does with information changes, we update this page and the date at the top."
+          ]
         }
       ]
     }

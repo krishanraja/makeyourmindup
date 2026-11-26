@@ -1,17 +1,13 @@
 import type { Metadata } from 'next'
 import { LegalPage } from '@/components/LegalPage'
 import { SITE } from '@/lib/content'
-import { OG_IMAGES } from '@/lib/social'
+import { pageMeta, breadcrumbs } from '@/lib/discovery'
+import { StructuredData } from '@/components/StructuredData'
 
 const t = SITE.legal.terms
 
-export const metadata: Metadata = {
-  title: `${t.title} | ${SITE.footer.copyright}`,
-  description: t.description,
-  alternates: { canonical: '/terms' },
-  openGraph: { url: '/terms', title: `${t.title} | ${SITE.footer.copyright}`, description: t.description, images: OG_IMAGES },
-}
+export const metadata: Metadata = pageMeta('/terms', t.title + ' | ' + SITE.footer.copyright, t.description)
 
 export default function Terms() {
-  return <LegalPage title={t.title} lead={[SITE.legal.operator]} sections={t.sections} />
+  return <><StructuredData nodes={[breadcrumbs({ name: t.title, path: '/terms' })]} /><LegalPage title={t.title} lead={[SITE.legal.operator]} sections={t.sections} /></>
 }

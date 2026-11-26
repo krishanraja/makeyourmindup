@@ -39,15 +39,15 @@ import { dirname, join } from 'node:path'
 const HERE = dirname(fileURLToPath(import.meta.url))
 const RULES = JSON.parse(readFileSync(join(HERE, '../../quality/panel/kill-list.v1.json'), 'utf8'))
 
-const EM_DASH = '—'
+const EM_DASH = '\u2014'
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 /** Front matter, if any, and the body that follows it. */
 export function split(text) {
-  const m = /^---\n([\s\S]*?)\n---\n?/.exec(text)
+  const m = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(text)
   if (!m) return { front: {}, body: text, offset: 0 }
   const front = {}
-  for (const line of m[1].split('\n')) {
+  for (const line of m[1].split(/\r?\n/)) {
     const kv = /^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$/.exec(line)
     if (kv) front[kv[1]] = kv[2].trim()
   }

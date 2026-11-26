@@ -115,7 +115,7 @@ export function Receipt({ title, lines, total }: { title: string; lines: string[
     <InView className="receipt-wrap receipt-shadow mr-1.5 max-w-full rotate-3">
     <div
       className="receipt w-[250px] max-w-full bg-cream px-5 pb-8 pt-4 text-ink"
-      style={{ fontFamily: 'var(--font-plex-mono)' }}
+      style={{ fontFamily: 'var(--font-mono)' }}
       aria-hidden="true"
     >
       <p className="text-center text-sm font-bold tracking-[0.3em]">{title.toUpperCase()}</p>

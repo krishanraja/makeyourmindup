@@ -1,91 +1,81 @@
-// Renders the cover at phone and desktop widths, scrolling through first so
-// every in-view animation has fired. Usage: node scripts/screenshots.mjs [baseUrl] [outDir]
 import { chromium } from 'playwright-core'
-import { mkdirSync } from 'node:fs'
+import { mkdir } from 'node:fs/promises'
+import { join } from 'node:path'
 
-const BASE = process.argv[2] || 'http://localhost:3100'
-const OUT = process.argv[3] || '.shots'
-const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
-mkdirSync(OUT, { recursive: true })
-
-// In a proxied sandbox, pass the proxy so a deployed URL is reachable.
-const PROXY = process.env.SHOTS_PROXY || ''
-const browser = await chromium.launch({ executablePath: CHROME, ...(PROXY ? { proxy: { server: PROXY } } : {}) })
-
-async function walk(page) {
-  const h = await page.evaluate(() => document.documentElement.scrollHeight)
-  for (let y = 0; y <= h; y += 350) {
-    await page.evaluate(v => window.scrollTo(0, v), y)
-    await page.waitForTimeout(220)
+const url = process.argv[2] || 'http://localhost:3100'
+const out = process.argv[3] || '.shots'
+await mkdir(out, { recursive: true })
+const browser = process.env.CHROME_CDP_URL
+  ? await chromium.connectOverCDP(process.env.CHROME_CDP_URL)
+  : await chromium.launch({ executablePath: process.env.CHROME_PATH })
+async function pageAt(width, height) {
+  const page = process.env.CHROME_CDP_URL ? await browser.contexts()[0].newPage() : await browser.newPage()
+  await page.setViewportSize({ width, height })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.addInitScript(() => localStorage.removeItem('mymu-desk'))
+  return page
+}
+async function discoveryShots() {
+  for (const width of [390, 1280]) {
+    const page = await pageAt(width, width === 390 ? 844 : 900)
+    await page.goto(url)
+    const paths = await page.locator('nav.edition-links a').evaluateAll(links => links.map(a => a.pathname))
+    if (paths.length !== 9 || !paths.some(path => path.startsWith('/edition/'))) {
+      throw Error('A published fixture edition and all nine discovery links are required')
+    }
+    for (const path of ['/', ...paths]) {
+      const res = await page.goto(new URL(path, url).href)
+      if (!res?.ok()) throw Error('Could not render ' + path)
+      await page.evaluate(async () => {
+        for (const img of document.images) img.loading = 'eager'
+        await Promise.all([...document.images].map(img => img.decode().catch(() => {})))
+        await document.fonts.ready
+      })
+      const name = path.slice(1).replaceAll('/', '-') || 'home'
+      await page.screenshot({ path: join(out, name + '-' + width + '.png'), fullPage: true })
+    }
+    await page.close()
   }
-  await page.waitForTimeout(3500)
-  await page.evaluate(() => window.scrollTo(0, 0))
-  await page.waitForTimeout(600)
 }
 
-const runs = [
-  { name: 'phone', viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
-  { name: 'android', viewport: { width: 360, height: 780 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
-  { name: 'desktop', viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 },
-]
-
-for (const r of runs) {
-  const ctx = await browser.newContext({ viewport: r.viewport, deviceScaleFactor: r.deviceScaleFactor, isMobile: r.isMobile, hasTouch: r.hasTouch })
-  const page = await ctx.newPage()
-  const errors = []
-  page.on('pageerror', e => errors.push(String(e)))
-  page.on('console', m => m.type() === 'error' && errors.push(m.text()))
-  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
-  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
-  await page.evaluate(() => document.fonts.ready)
-  await page.waitForTimeout(3200)
-  await page.screenshot({ path: `${OUT}/${r.name}-fold.png` })
-  await walk(page)
-  // The sticky bar is fixed, so it would paint over every section capture.
-  await page.addStyleTag({ content: '[data-sticky]{display:none!important}' })
-  await page.screenshot({ path: `${OUT}/${r.name}-full.png`, fullPage: true })
-  for (const id of ['under_the_hood', 'follow_the_money', 'mind_the_gap', 'latest', 'platforms', 'staff']) {
-    await page.locator(`#${id}`).screenshot({ path: `${OUT}/${r.name}-${id}.png` })
+try {
+  if (process.argv.includes('--discovery')) await discoveryShots()
+  else for (const [name, width, height] of [
+    ['desk', 1440, 900],
+    ['phone', 390, 844],
+  ]) {
+    const page = await pageAt(width, height)
+    const cdp = await page.context().newCDPSession(page)
+    await cdp.send('Emulation.setScrollbarsHidden', { hidden: true })
+    await page.clock.setFixedTime(new Date('2026-11-26T09:00:00Z'))
+    await page.goto(url)
+    await page.locator('.room').first().waitFor()
+    async function shot(file, fullPage = false) {
+      await page.evaluate(async () => {
+        for (const image of document.images) image.loading = 'eager'
+        await Promise.all([...document.images].map((img) => img.decode().catch(() => {})))
+        await document.fonts.ready
+      })
+      await page.screenshot({ path: join(out, file + '.png'), fullPage })
+    }
+    await shot(name + '-fold')
+    await shot(name + '-full', true)
+    if (name === 'desk') {
+      await page.locator('.room[data-k=music]').click()
+      await page.locator('.cos button[data-t=SPOT]').click()
+      await page
+        .locator('.rooms')
+        .evaluate((el) => window.scrollTo({ top: el.offsetTop - 12, behavior: 'instant' }))
+      await shot('interaction')
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
+      await shot('music-fold')
+      await page.locator('.mood').click()
+      await shot('evening')
+    }
+    await page.locator('.lead .alt').click()
+    await shot(name + '-feed')
+    await page.close()
   }
-  // Page scroll width alone misses content clipped by overflow-hidden; run
-  // scripts/audit-layout.mjs for the full check.
-  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
-  console.log(r.name, 'horizontal overflow px:', overflow, 'errors:', errors.length ? errors : 'none')
-  await ctx.close()
+} finally {
+  await browser.close()
 }
-
-// Reduced motion: everything must be visible without any animation.
-{
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, reducedMotion: 'reduce' })
-  const page = await ctx.newPage()
-  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
-  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
-  await page.evaluate(() => document.fonts.ready)
-  await page.waitForTimeout(800)
-  await page.screenshot({ path: `${OUT}/reduced-full.png`, fullPage: true })
-  await ctx.close()
-}
-
-// JavaScript off: the page must still show everything.
-{
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false })
-  const page = await ctx.newPage()
-  await page.goto(BASE, { waitUntil: 'load', timeout: 90000 })
-  await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {})
-  await page.evaluate(() => document.fonts.ready)
-  await page.screenshot({ path: `${OUT}/nojs-full.png`, fullPage: true })
-  await ctx.close()
-}
-
-// The 404.
-{
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } })
-  const page = await ctx.newPage()
-  const res = await page.goto(`${BASE}/no-such-page`, { waitUntil: 'load', timeout: 90000 })
-  await page.waitForTimeout(500)
-  await page.screenshot({ path: `${OUT}/404.png` })
-  console.log('404 status', res?.status())
-  await ctx.close()
-}
-
-await browser.close()

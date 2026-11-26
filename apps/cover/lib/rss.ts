@@ -6,6 +6,7 @@ export type Post = {
   link: string
   date: string
   blurb: string
+  series?: string
   /** The post's own cover, as Substack holds it. */
   image?: string
   /** The video's length in seconds, as Substack holds it for a video post. */
@@ -76,7 +77,7 @@ export function readRss(xml: string): Post[] {
   })
 }
 
-type Entry = { article_url: string | null; video: Video | null; short: Video | null }
+type Entry = { article_url: string | null; series?: string | null; video: Video | null; short: Video | null }
 /** The content engine's catalogue: each published piece's article address and its YouTube cuts. */
 export function readCatalogue(raw: unknown): Map<string, Entry> {
   const out = new Map<string, Entry>()
@@ -98,7 +99,7 @@ export function select(posts: Post[], videos: Map<string, Entry>, limit: number)
     .slice(0, limit)
     .map(p => {
       const e = videos.get(postKey(p.link))
-      return { ...p, ...(e?.video && https(e.video.url) ? { video: e.video } : {}), ...(e?.short && https(e.short.url) ? { short: e.short } : {}) }
+      return { ...p, ...(typeof e?.series === 'string' ? { series: e.series.replaceAll('_','.') } : {}), ...(e?.video && https(e.video.url) ? { video: e.video } : {}), ...(e?.short && https(e.short.url) ? { short: e.short } : {}) }
     })
 }
 

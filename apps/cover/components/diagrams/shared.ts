@@ -7,9 +7,9 @@ export const C = {
   lilac: '#B7A6FF',
 }
 
-export const MONO = { fontFamily: 'var(--font-plex-mono), ui-monospace, monospace' }
-export const SANS = { fontFamily: 'var(--font-archivo), system-ui, sans-serif', fontWeight: 800 }
-export const DISPLAY = { fontFamily: 'var(--font-anton), sans-serif', textTransform: 'uppercase' as const }
+export const MONO = { fontFamily: 'var(--font-mono), ui-monospace, monospace' }
+export const SANS = { fontFamily: 'var(--font-sans), system-ui, sans-serif', fontWeight: 800 }
+export const DISPLAY = { fontFamily: 'var(--font-fraunces), Georgia, serif', textTransform: 'uppercase' as const }
 
 type Pt = [number, number]
 

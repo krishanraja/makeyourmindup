@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: '*', allow: '/', disallow: '/members' },
       { userAgent: AI_AGENTS, allow: '/', disallow: '/members' },
     ],
-    sitemap: [`${CONFIG.siteUrl}/sitemap.xml`, `${CONFIG.substackUrl}/sitemap.xml`],
+    sitemap: [`${CONFIG.siteUrl}/sitemap.xml`, `${CONFIG.siteUrl}/news-sitemap.xml`, `${CONFIG.substackUrl}/sitemap.xml`],
   }
 }
