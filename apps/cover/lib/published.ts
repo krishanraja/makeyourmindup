@@ -1,4 +1,5 @@
 import { cache } from 'react'
+import { recut } from './edition'
 import { isEditionDate, loadEdition, parseSnapshot, readHub, type Snapshot } from './hub'
 
 export const today = () => new Date().toISOString().slice(0, 10)
@@ -7,6 +8,11 @@ export const publishedDay = (day: unknown): day is string => isEditionDate(day) 
 export const latestEdition = cache(async () => {
   const { snapshot, isFixture } = await loadEdition()
   return !isFixture && publishedDay(snapshot.edition_date) ? snapshot : null
+})
+
+export const latestLead = cache(async () => {
+  const edition = await latestEdition()
+  return edition && { date: edition.edition_date, story: recut(edition, 'all').lead }
 })
 
 export const datedEdition = cache(async (date: string) => {

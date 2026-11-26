@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import { CONFIG, SITE } from '@/lib/content'
-import { OG_IMAGES, TWITTER_IMAGES } from '@/lib/social'
 import './globals.css'
 
 const fraunces = localFont({ src: [
@@ -26,11 +25,9 @@ export const metadata: Metadata = {
     siteName: 'makeyourmindup',
     title: SITE.meta.title,
     description: SITE.meta.description,
-    images: OG_IMAGES,
   },
   twitter: {
     card: 'summary_large_image',
-    images: TWITTER_IMAGES,
     title: SITE.meta.title,
     description: SITE.meta.description,
   },
