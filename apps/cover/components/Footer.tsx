@@ -11,7 +11,7 @@ export function Footer({ onCover = true }: { onCover?: boolean }) {
     <footer className="grain relative bg-ink-deep text-cream">
       <div className="page relative z-10 pb-[clamp(1rem,3svh,2.5rem)] pt-[clamp(1.5rem,6svh,7rem)]">
         <Image
-          src="/brand/wordmark.png"
+          src="/hub/wordmark.svg"
           alt="makeyourmindup"
           width={3319}
           height={391}

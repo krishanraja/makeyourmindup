@@ -112,7 +112,7 @@ export function RealOrTheatre({ centre, parts, real, theatre }: { centre: string
                   fontWeight="700"
                   letterSpacing="2"
                   fill={colour}
-                  style={{ fontFamily: 'var(--font-plex-mono), monospace' }}
+                  style={{ fontFamily: 'var(--font-mono), monospace' }}
                 >
                   {label}
                 </text>

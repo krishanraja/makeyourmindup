@@ -1,42 +1,23 @@
-import { AvatarSprite } from '@/components/AvatarSprite'
-import { Contents } from '@/components/Contents'
-import { Cover } from '@/components/Cover'
-import { Footer } from '@/components/Footer'
-import { Marquee } from '@/components/Marquee'
-import { Newsstand } from '@/components/Newsstand'
-import { PanelSheet } from '@/components/PanelSheet'
-import { Platforms } from '@/components/Platforms'
-import { StaffBox } from '@/components/StaffBox'
-import { StickyBar } from '@/components/StickyBar'
-import { CONFIG, SITE } from '@/lib/content'
-import { latestPosts } from '@/lib/rss'
+import Edition from '@/components/edition/Edition'
+import { loadEdition, fixturePieces } from '@/lib/hub'
+import { latestPosts, postKey } from '@/lib/rss'
 
-// Static, refreshed every 15 minutes (Krish, 2026-10-07: "how do I ensure it always stays up to date without me constantly having to ask you?"). If Substack is down, the last good page keeps serving.
 export const revalidate = 900
 
 export default async function Page() {
-  const posts = await latestPosts()
-  return (
-    <>
-      <a
-        href="#inside"
-        className="mono-label sr-only z-[60] bg-mint px-4 py-3 text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
-      >
-        {SITE.a11y.skip}
-      </a>
-      <span id="top" />
-      <AvatarSprite />
-      <StickyBar />
-      <main>
-        <Cover />
-        <Marquee />
-        <Newsstand posts={posts} />
-        <Contents />
-        <Platforms />
-        <StaffBox />
-        <PanelSheet />
-      </main>
-      <Footer />
-    </>
-  )
+  const [edition, posts] = await Promise.all([loadEdition(), latestPosts(3).catch(() => [])])
+  const catalogue = new Map(edition.snapshot.pieces.map((p) => [postKey(p.link), p]))
+  const pieces = posts.length
+    ? posts.map((p) => {
+        const match = catalogue.get(postKey(p.link))
+        return {
+          ...p,
+          series: p.series || match?.series,
+          image: edition.isFixture && match?.image ? match.image : p.image || match?.image,
+        }
+      })
+    : edition.snapshot.pieces.length
+      ? edition.snapshot.pieces
+      : fixturePieces
+  return <Edition {...edition} pieces={pieces} />
 }

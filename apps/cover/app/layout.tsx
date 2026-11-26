@@ -1,13 +1,19 @@
 import type { Metadata, Viewport } from 'next'
-import { Anton, Archivo, Fraunces, IBM_Plex_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import { CONFIG, SITE } from '@/lib/content'
 import { OG_IMAGES, TWITTER_IMAGES } from '@/lib/social'
 import './globals.css'
 
-const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton', display: 'swap' })
-const archivo = Archivo({ subsets: ['latin'], axes: ['wdth'], variable: '--font-archivo', display: 'swap' })
-const fraunces = Fraunces({ subsets: ['latin'], style: ['italic'], variable: '--font-fraunces', display: 'swap' })
-const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-plex-mono', display: 'swap' })
+const fraunces = localFont({ src: [
+  { path: './fonts/Fraunces-Upright-Variable.ttf', style: 'normal', weight: '100 900' },
+  { path: './fonts/Fraunces-Italic-Variable.ttf', style: 'italic', weight: '100 900' },
+], variable: '--font-fraunces', display: 'swap' })
+const mono = localFont({ src: [
+  { path: './fonts/DMMono-Regular.ttf', weight: '400' },
+  { path: './fonts/DMMono-Medium.ttf', weight: '500' },
+], variable: '--font-mono', display: 'swap' })
+const sans = localFont({ src: './fonts/SchibstedGrotesk.ttf', weight: '400 900', variable: '--font-sans', display: 'swap' })
+const anton = localFont({ src: './fonts/Anton-Regular.ttf', weight: '400', variable: '--font-anton', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.siteUrl),
@@ -69,21 +75,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" suppressHydrationWarning className={`${anton.variable} ${archivo.variable} ${fraunces.variable} ${plexMono.variable}`}>
+    <html lang="en-GB" suppressHydrationWarning className={`${anton.variable} ${sans.variable} ${fraunces.variable} ${mono.variable}`}>
       <head>
-        {/*
-          Marks the page as scripted before paint. If the app has not confirmed
-          it loaded within three seconds, the mark comes off and every hidden
-          starting state goes with it, so a failed bundle never hides content.
-          It says "ready || remove" rather than "if not ready, remove" in
-          code because the kill list reads this file and vetoes the mark.
-        */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "var d=document.documentElement;d.classList.add('js');setTimeout(function(){d.classList.contains('ready')||d.classList.remove('js')},3000)",
-          }}
-        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, '\\u003c') }} />
         <link rel="alternate" type="application/rss+xml" title="makeyourmindup" href={CONFIG.feedUrl} />
       </head>

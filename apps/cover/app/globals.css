@@ -38,7 +38,7 @@ html {
 body {
   background: var(--ink);
   color: var(--cream);
-  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -59,9 +59,8 @@ body {
 }
 
 @layer components {
-  /* Display type. Anton rhymes with the logo's condensed caps. */
   .display {
-    font-family: var(--font-anton), 'Arial Narrow', sans-serif;
+    font-family: var(--font-fraunces), Georgia, serif;
     font-weight: 400;
     text-transform: uppercase;
     line-height: 0.88;
@@ -70,7 +69,7 @@ body {
 
   /* The heavy rounded face of the logo's UP. */
   .heavy {
-    font-family: var(--font-archivo), system-ui, sans-serif;
+    font-family: var(--font-sans), system-ui, sans-serif;
     font-weight: 900;
     font-variation-settings: 'wdth' 112;
     letter-spacing: -0.02em;
@@ -83,7 +82,7 @@ body {
   }
 
   .mono-label {
-    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-family: var(--font-mono), ui-monospace, monospace;
     font-size: 0.75rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;

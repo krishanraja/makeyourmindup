@@ -15,8 +15,8 @@ const config: Config = {
         lilac: '#B7A6FF',
       },
       fontFamily: {
-        sans: ['var(--font-archivo)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-plex-mono)', 'ui-monospace', 'monospace'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
         serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
       },
       maxWidth: { page: '1400px' },
