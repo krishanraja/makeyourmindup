@@ -25,7 +25,8 @@
     height: auto;
     padding-block: 5px;
   }
-  .tick-row .idx { grid-area: index; flex-wrap: wrap; }
+  .tick-row .idx { grid-area: index; flex-wrap: wrap; row-gap: 2px; }
+  .tick-row .idx-name { white-space: normal; }
   .tick-row .movers { grid-area: tape; padding-block-start: 3px; border-top: 1px solid rgba(244,239,228,.12); }
   .tick-row .tick-label { grid-area: close; }
   .tick-row .all24 { grid-area: action; }
@@ -45,6 +46,8 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  /* A native scrollbar disappearing at hydration must not move the lead. */
+  .motion .movers { scrollbar-width: none; }
   .motion .movers[data-running] { overflow: hidden; }
   .motion .movers[data-running] .tape-group[aria-hidden] { display: flex; }
   .motion .movers[data-running] .tape-track { animation: ticker-lap var(--lap-time) linear infinite; }
