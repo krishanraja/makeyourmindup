@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- AGENTS.md and project-documentation/02_REPO_BRIEF.md now carry Krish's ruling of 2026-11-26 ("I want everything to be one harmonious engine"): content-engine makes every asset, the derived posts and captions included, and growth-makeyourmindup posts, schedules, distributes, measures and grows subscribers, making no assets. (2026-11-26)
 - NOW.md is trimmed to leave room for the notes folding in from #51, #55, #58 and #61: its eight oldest dated entries now sit verbatim in docs/history/LOG.md. (2026-11-26)
 - brand-kit/makeyourmindup-brand-kit.zip is the v5 kit, built by scripts/brand-kit-v5/build.py from content-engine's v5 marks and fonts: the icon and lockups, Anton, Archivo, Fraunces and DM Mono, the v5 colours, and every profile image and its copy under Channel art. Krish's PC unpacks it into Drive's 1 Brand kit (permanent). The v1.5 zips in docs/brandbooknew are removed. (2026-11-26)
 - Every page shares a generated card in the house design: ink ground, the v5 wordmark, a mint label, the Fraunces headline, the lead photo when there is one and the motto. With no published edition the homepage card reads "AI news for the creative industries, every morning." The v5 icons and manifest stay as they were. (2026-11-26)
@@ -114,13 +115,14 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-26 Krish ruled on 2026-11-26 that content-engine makes every asset (derived posts and captions included) and growth-makeyourmindup only grows the channel; AGENTS.md and the repo brief now say so.
 - 2026-11-19 The paid tier's reusable files now exist (Ruling, Krish, 2026-11-19: files on a code-gated members page).
 - 2026-11-19 Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
 
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-26): Merge #51, #58, #55 and #61 now that the fold has room.
+- Next (2026-11-26): growth-makeyourmindup PR 145 carries the same split on the Growth side.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
