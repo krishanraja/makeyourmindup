@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-19
+as_of: 2026-11-26
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -41,7 +41,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-19)
+## Where it is right now (as of 2026-11-26)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -103,6 +103,10 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- brand-kit/makeyourmindup-brand-kit.zip is the v5 kit, built by scripts/brand-kit-v5/build.py from content-engine's v5 marks and fonts: the icon and lockups, Anton, Archivo, Fraunces and DM Mono, the v5 colours, and every profile image and its copy under Channel art. Krish's PC unpacks it into Drive's 1 Brand kit (permanent). The v1.5 zips in docs/brandbooknew are removed. (2026-11-26)
+- Every page shares a generated card in the house design: ink ground, the v5 wordmark, a mint label, the Fraunces headline, the lead photo when there is one and the motto. With no published edition the homepage card reads "AI news for the creative industries, every morning." The v5 icons and manifest stay as they were. (2026-11-26)
+- The Edition cover scrolls every constituent's delayed close in a live-moving ticker, filters it by desk and animates from the lead to the sign-up, with a reduced-motion fallback. Chrome runs at 1280 and 390 px pass the layout audit, cut CLS to about 0 from 0.042 and 0.045, and keep LCP within noise. (2026-11-26)
+- makeyourmindup.ai has permanent dated edition pages, six subsector desks, a Creative 24 dataset page, an edition archive, sitemaps, a news sitemap, an Edition RSS feed and llms-full.txt, with per-page titles, canonicals and structured data. The build, 37 cover tests, the phone layout audit and a 9-route overflow audit at 320, 390 and 1280 px pass. The homepage keeps its dated fallback edition when the hub has none. (2026-11-26)
 - The brand-kit builder no longer writes the prediction format: mind.the.gap's device "says where they lead" instead of "ending in a dated call", and the house rules say "Where the record runs out, we say so." instead of "Misses go up as big as hits." (Ruling, Krish, 2026-11-18: "i have abandoned the prediction format, it feels lame"). The Drive brand kit and its PDFs still carry the old copy until the kit is rebuilt. (2026-11-18)
 - makeyourmindup.ai/members serves 10 figures from 4 published pieces (2, 4, 11 and 13 Nov) behind the members code, each labelled with its printed title; two figures that are screenshots of others' material stay off it. (2026-11-19)
 - Paid plans ruled and written into the media kit and PAID.md: monthly gets one brain module, annual adds the monthly live session and the Real-or-Theatre Desk, founding adds every brain module and a check-in once a month. Welcome emails carry the publication's humour. makeyourmindup.ai/members is built behind MEMBERS_CODE. (2026-11-19)
@@ -113,25 +117,17 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 - The newsstand takes each piece's cover from Substack's archive (the RSS enclosure has been the video post's sound file since 24 October) and its YouTube video and Short from content-engine's public catalogue (`catalogueUrl`, the engine's own Vercel host), fed by its hourly publish watcher; the cards show Watch and Short beside "Read it" (option A; Ruling, Krish, 2026-11-11: "A for the cards"). A failed feed keeps the last good page. Live on 2026-11-12. (2026-11-11)
 - The cover masthead no longer carries the dateline ("Vol. 01 · Issue 00", "Mon · Wed · Fri", "Free to read"), at Krish's request. On a phone the masthead is now the logo alone; on desk and landscape tablets it is the logo and the section key with its days. `cover.issue` and `strap.left` left `content/site.json` with it; `strap.centre` and `strap.right` stay, because the Substack kit (`scripts/render-kit.mjs`) still reads them. Kill list, type check, build and tests pass; checked in a browser at phone and desk width, no sideways scroll. (2026-11-11)
 - AGENTS.md, README.md, the repo brief, the step plan and the two machine scaffolds now say what is true: this repo is the cover and the canon; content-engine makes the publication and its publish board, the weekly content calendar that keeps itself current; Growth files every post in its 3 Posts folder; Control Center's Content tab was then two approval queues (since 11 November it is the one live board, above). (2026-11-03)
-- a Claude Code SessionEnd hook (`scripts/taste_backstop.py`, from growth-makeyourmindup, tagged `publication` (the venture_registry slug) and `krishanraja/makeyourmindup`) keeps only Krish's own lines that a local filter flags as a correction or rejection, scrubbed of secrets, in the ignored `.scratch/taste/backstop.jsonl`; it sends nothing. (2026-10-29)
 - `docs/decisions/2026-10-29-wave-3-for-krish.md` holds what waits on Krish here: the cover redeploy (live through PR #29's merge; the photo-file rename, PR #32, merged and live on 2026-10-29), the dry runs (calibrate or retire, recommended retire), the media kit's three dry-run decisions, the TikTok and X tiles (no tiles live; the handle version needs new publication accounts), and a Substack settings checklist read live on 2026-10-29. (2026-10-29)
-- NOW.md is 11962 bytes under a 16 KB cap that `npm test` and the new `Check` workflow enforce (`scripts/qa/now-size.mjs`); its four "What changed recently" entries from 2026-09-24 to 2026-10-05 now sit verbatim in `docs/history/LOG.md`. (2026-10-29)
-- `apps/cover/vercel.json` carries `ignoreCommand: git diff --quiet HEAD^ HEAD -- .`, so once merged, Vercel builds production only when a push changes `apps/cover`; replayed on past commits it skips the AGENTS.md-only canon sync (`7402394`) and builds the tiles change (`a1cd10b`). (2026-10-29)
-- the cover's photo files are `editor-*.jpg`, so once deployed no served address names him; the build's `llms.txt` and JSON-LD name the publication only (verified in `.next/server/app`). The live site already serves the no-name copy: merging PR #29 deployed production at `8fbe692` on 2026-10-29, because every push to main deploys the cover. (2026-10-29)
-- `npm run gate:canon` passes (12 files, 0 vetoes); AGENTS.md now opens with its `kill_list_scope: canon` front matter, above the hand-added North Star block, so the kill list reads it as canon again. (2026-10-29)
 
 ## What changed recently
 
 - 2026-11-19 The paid tier's reusable files now exist (Ruling, Krish, 2026-11-19: files on a code-gated members page).
 - 2026-11-19 Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
-- 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
-- 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
-- 2026-11-13 The requested schema.org block carried a founder node naming him; asked against the 28 October no-name ruling, he chose to leave the founder out (2026-11-13). The Facebook page sits in config.json under platforms as a profile with no tile (ProfileKey in apps/cover/lib/content.ts).
 
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-18): rebuild the brand kit (npm run brand-kit in apps/cover) on Krish's PC so the Drive kit and both PDFs drop the old lines.
+- Next (2026-11-26): Confirm the library sync unpacked the v5 kit into Drive, then upload the Channel art set to each profile.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
@@ -154,7 +150,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-18): holds.
+- North Star check (2026-11-26): holds.
 
 ## Read next
 

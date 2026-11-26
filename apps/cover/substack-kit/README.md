@@ -3,7 +3,7 @@ kill_list_scope: canon
 ---
 # Substack refresh kit
 
-Everything the Substack needs to match the cover. Nothing here posts itself:
+The archived Substack kit for the previous cover. Nothing here posts itself:
 Krish pastes it in. The copy lives in `COPY.md`, and the paid-tier copy in
 `PAID.md`, both scanned by the kill list (`npm run kill-list`). This README is
 marked canon because it quotes the old tagline in order to remove it.
@@ -32,21 +32,12 @@ there, so the hub has to match the front door.
 Substack builds the publication's own share card from the logo, name and short
 description, so there is no publication-level social image to upload.
 
-The social card is the cover itself: the operating-theatre photo, its REAL
-and THEATRE stamps and "AI, UNPICKED.", built from `public/cover/` and the words
-in `content/site.json`. It is also the site's own share image
-(`public/opengraph-image.jpg`). The welcome image is the same idea with the robot
-standing up to greet new readers: the wave is stamped THEATRE, the stuffing
-REAL. Its photo is `brand/robot-standing-source.webp`, whose stuffing was
-calmed with an image edit (GPT Image 2.5 through Higgsfield, 26 September 2026)
-so it is just visible, never a plume. The logo, wordmarks and
-email banner stay typographic: they identify the sender at sizes where a photo
-would be a smudge.
+The theatre social card and welcome image belong to this archived kit. The
+Edition's current site share card is generated at `/opengraph-image`.
 
 Sizes follow Substack's own guidance (help centre, checked 2026-09-25): logo
 at least 256 square, wordmark 1344 x 256, cover at least 600 square, email
-banner 1100 x 220, social preview at least 1200 x 630. Re-render with
-`npm run kit`.
+banner 1100 x 220, social preview at least 1200 x 630.
 
 ## Colours, if Substack's theme settings allow them
 
