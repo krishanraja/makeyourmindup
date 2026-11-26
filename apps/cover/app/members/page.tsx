@@ -1,3 +1,5 @@
+import { pageMeta, breadcrumbs } from '@/lib/discovery'
+import { StructuredData } from '@/components/StructuredData'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
@@ -8,8 +10,7 @@ import { configuredCode, COOKIE, isMember, MEMBERS, safePieces } from '@/lib/mem
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: `${MEMBERS.meta.title} | ${SITE.footer.copyright}`,
-  description: MEMBERS.meta.description,
+  ...pageMeta('/members', `${MEMBERS.meta.title} | ${SITE.footer.copyright}`, MEMBERS.meta.description),
   robots: { index: false, follow: false },
   alternates: { canonical: '/members' },
 }
@@ -21,6 +22,7 @@ export default async function Members({ searchParams }: { searchParams: Promise<
   const pieces = safePieces(MEMBERS.pieces)
   return (
     <>
+      <StructuredData nodes={[breadcrumbs({ name: MEMBERS.meta.title, path: '/members' })]} />
       <main className="bg-cream text-ink">
         <div className="page py-[clamp(2.5rem,8svh,6rem)]">
           <Link href="/" className="mono-label inline-flex min-h-[44px] items-center hover:underline">

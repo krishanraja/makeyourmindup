@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-19
+as_of: 2026-11-26
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -41,7 +41,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-19)
+## Where it is right now (as of 2026-11-26)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -124,9 +124,6 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 - 2026-11-19 The paid tier's reusable files now exist (Ruling, Krish, 2026-11-19: files on a code-gated members page).
 - 2026-11-19 Krish ruled the publication always has good humour, welcome emails included, and set what each paid plan gets (2026-11-19).
-- 2026-11-17 apps/cover (Scoreboard and FlapCounter removed, content and config edited), substack-kit/COPY.md and PAID.md, project-documentation/01_MEDIA_KIT.md and 03_STEP_PLAN.md.
-- 2026-11-15 docs/decisions/2026-11-15-video-rendering.md with its props and stills; the repo brief names the brand kit and the video engine that pins it.
-- 2026-11-13 The requested schema.org block carried a founder node naming him; asked against the 28 October no-name ruling, he chose to leave the founder out (2026-11-13). The Facebook page sits in config.json under platforms as a profile with no tile (ProfileKey in apps/cover/lib/content.ts).
 
 ## What is next and what is waiting on Krish
 
@@ -154,7 +151,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-18): holds.
+- North Star check (2026-11-26): holds.
 
 ## Read next
 

@@ -15,8 +15,32 @@ async function pageAt(width, height) {
   await page.addInitScript(() => localStorage.removeItem('mymu-desk'))
   return page
 }
+async function discoveryShots() {
+  for (const width of [390, 1280]) {
+    const page = await pageAt(width, width === 390 ? 844 : 900)
+    await page.goto(url)
+    const paths = await page.locator('nav.edition-links a').evaluateAll(links => links.map(a => a.pathname))
+    if (paths.length !== 9 || !paths.some(path => path.startsWith('/edition/'))) {
+      throw Error('A published fixture edition and all nine discovery links are required')
+    }
+    for (const path of ['/', ...paths]) {
+      const res = await page.goto(new URL(path, url).href)
+      if (!res?.ok()) throw Error('Could not render ' + path)
+      await page.evaluate(async () => {
+        for (const img of document.images) img.loading = 'eager'
+        await Promise.all([...document.images].map(img => img.decode().catch(() => {})))
+        await document.fonts.ready
+      })
+      const name = path.slice(1).replaceAll('/', '-') || 'home'
+      await page.screenshot({ path: join(out, name + '-' + width + '.png'), fullPage: true })
+    }
+    await page.close()
+  }
+}
+
 try {
-  for (const [name, width, height] of [
+  if (process.argv.includes('--discovery')) await discoveryShots()
+  else for (const [name, width, height] of [
     ['desk', 1440, 900],
     ['phone', 390, 844],
   ]) {

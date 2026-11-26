@@ -4,6 +4,8 @@ import { latestPosts, postKey } from '@/lib/rss'
 
 export const revalidate = 900
 
+// The homepage always shows an edition: the latest published one, or the dated fallback edition when the hub has none
+// (it is labelled with its own date). The fallback never links to a dated page, because it has none.
 export default async function Page() {
   const [edition, posts] = await Promise.all([loadEdition(), latestPosts(3).catch(() => [])])
   const catalogue = new Map(edition.snapshot.pieces.map((p) => [postKey(p.link), p]))

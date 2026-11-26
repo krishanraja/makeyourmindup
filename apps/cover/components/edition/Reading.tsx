@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Desk, Item, Snapshot } from '@/lib/hub'
 import { answer, suggestions, type Story } from '@/lib/edition'
+import { storyPath } from '@/lib/desks'
 import { Credit, dateOf, Note, Picture, Source } from './Story'
 
 export function Ask({
@@ -95,10 +96,12 @@ export function FullFeed({
   snapshot,
   initial,
   close,
+  dated = true,
 }: {
   snapshot: Snapshot
   initial: Desk
   close: () => void
+  dated?: boolean
 }) {
   const [desk, setDesk] = useState(initial),
     [listed, setListed] = useState(false),
@@ -168,7 +171,7 @@ export function FullFeed({
                     {n.date.length > 7 && ' ' + n.date.slice(0, 4)}
                   </div>
                 )}
-                <article className={'fi' + (open ? ' open' : '')}>
+                <article id={n.id} className={'fi' + (open ? ' open' : '')}>
                   {art ? (
                     <div className="th">
                       <Picture src={art.url} />
@@ -195,6 +198,7 @@ export function FullFeed({
                     <p className="d">{n.dek}</p>
                     <Note label="Why it matters" text={n.why} />
                     <Source n={n} snapshot={snapshot} />
+                    {dated && <a className="desk-source" href={storyPath(snapshot.edition_date, n.id)}>Edition permalink</a>}
                   </div>
                 </article>
               </div>

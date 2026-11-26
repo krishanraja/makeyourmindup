@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { storyPath } from '@/lib/desks'
 import type { HubImage, Item, Snapshot } from '@/lib/hub'
 import type { Story, Treatment } from '@/lib/edition'
 
@@ -183,12 +184,14 @@ export function Lead({
   whyIn,
   edition,
   openFeed,
+  dated = true,
 }: {
   story: Story
   snapshot: Snapshot
   whyIn: string
   edition: string
   openFeed: () => void
+  dated?: boolean
 }) {
   const n = s.item,
     p = s.portrait,
@@ -197,7 +200,7 @@ export function Lead({
       .replace(',', '')
   return (
     <article className="lead" id="lead">
-      <div className="lead-head">
+      <div className="lead-head" id={n.id}>
         <div className="kicker">
           <span className="kdate">
             {date} · {edition} ·{' '}
@@ -205,7 +208,7 @@ export function Lead({
           The lead · {snapshot.subsectors.find((r) => r.key === n.subsector)?.label} ·{' '}
           {dateOf(n.date, snapshot.edition_date)}
         </div>
-        <h1>{n.headline}</h1>
+        <h1><a href={dated ? storyPath(snapshot.edition_date, n.id) : n.url}>{n.headline}</a></h1>
       </div>
       <div className="lead-body">
         <p className="dek">{n.dek}</p>
