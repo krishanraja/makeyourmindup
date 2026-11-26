@@ -15,7 +15,7 @@ export function MarketTable({ index, stocks, asOf }: {
     <table><caption className="sr">Constituent prices and moves</caption><thead><tr>
       <th scope="col">Company</th><th scope="col">Price</th><th scope="col">Day</th><th scope="col">Month</th>
     </tr></thead><tbody>{stocks.map(([symbol, stock]) => <tr key={symbol}>
-      <th scope="row">{stock.name}<small>{symbol}</small></th><td>{price(stock)}</td>
+      <th scope="row">{stock.name}<small>{symbol}</small></th><td>{price(stock)}{stock.currency && <small>{stock.currency}</small>}</td>
       <td><Percent value={stock.day_pct} /></td><td><Percent value={stock.month_pct} /></td>
     </tr>)}</tbody></table>
   </section>

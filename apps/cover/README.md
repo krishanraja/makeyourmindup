@@ -57,4 +57,6 @@ The publication's kill list checks the existing copy and the Edition's fixture a
 
 The layout audit checks 320, 360, 390 and 412 pixel widths at 100% and 130% text. It exercises each room, the company detail, the expanded ticker, the full feed and every public HTML route added for discovery. Run against a published or locally served fixture snapshot. The horizontal sector selector and feed filter bar scroll within their own bounds.
 
+To save full-page fixture screenshots of the homepage, dated edition, six desks, index and archive at 390 and 1280 pixels, run `npm run shots -- http://localhost:3100 ../../.review/screenshots --discovery`.
+
 The Vercel project's root directory is `apps/cover`. The project's existing production and preview deployment settings apply.

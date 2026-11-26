@@ -5,10 +5,12 @@ import { StructuredData } from '@/components/StructuredData'
 import { editionPath, fullDate } from '@/lib/desks'
 import { breadcrumbs, editionSchema, pageMeta, publication } from '@/lib/discovery'
 import { recut } from '@/lib/edition'
-import { datedEdition } from '@/lib/published'
+import { archiveDates, datedEdition } from '@/lib/published'
 
 export const revalidate = 3600
-export function generateStaticParams() { return [] }
+export async function generateStaticParams() {
+  return (await archiveDates() || []).slice(0, 1).map(date => ({ date }))
+}
 
 type Props = { params: Promise<{ date: string }> }
 export async function generateMetadata({ params }: Props) {

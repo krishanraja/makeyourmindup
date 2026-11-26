@@ -14,9 +14,11 @@ type Props = { params: Promise<{ desk: string }> }
 export async function generateMetadata({ params }: Props) {
   const { desk, stories } = await deskEdition((await params).desk)
   const path = '/' + desk.slug
+  const lead = stories[0]
+  const card = path + '/opengraph-image' + (lead ? '?v=' + encodeURIComponent(lead.date + '-' + lead.item.id) : '')
   return pageMeta(path, 'AI in ' + desk.subject + ': news and market moves | ' + publication,
     'Daily reporting on how AI affects ' + desk.beat + ', with source links and listed company prices.',
-    path + '/opengraph-image', stories[0]?.item.headline)
+    card, lead?.item.headline)
 }
 
 export default async function Page({ params }: Props) {
