@@ -1,5 +1,4 @@
-Status: The Edition is built for local review. The dated snapshot renders all seven cuts. Chromium checked the reader interactions and all eight requested mobile layouts.
-
-Next: Claude reviews the local commits and the desktop and phone comparisons before Krish makes a release decision.
-
-North Star check (2026-11-26): holds. The cover gives readers a daily return visit and a direct subscription path towards 50,000 subscribers. Subscriber impact is unmeasured.
+Status: The Edition is live at makeyourmindup.ai: the daily creative-industry news hub with its six desks, the Creative 24 board, dated edition pages, the moving ticker, scroll motion and v5 share cards (#56, #57, #59).
+Changed: The cover now gives readers a reason to come back every morning and a direct path to subscribe; its effect on subscribers is not measured yet.
+Next: Check that the first automatic hub edition (06:00 UTC, 27 Nov) fills the homepage and its dated page.
+North Star check (2026-11-26): holds.
