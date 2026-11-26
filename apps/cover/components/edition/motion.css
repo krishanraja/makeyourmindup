@@ -1,0 +1,89 @@
+/* A single copy is a native horizontal scroller until its measured lap is ready. */
+.edition-page .movers {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  line-height: 1.5;
+}
+.tape-track, .tape-group { display: flex; width: max-content; }
+.tape-group { flex: none; gap: 1.6rem; padding-inline-end: 1.6rem; }
+.tape-group[aria-hidden] { display: none; }
+.ticker .mv .sym { color: rgba(244,239,228,.66); font-size: .92em; }
+.edition-page .tick-label { flex: none; color: rgba(244,239,228,.72); }
+.edition-page .rk { flex-direction: column; align-items: flex-end; }
+.room-index { font: .75rem/1.1 var(--mono); font-variant-numeric: tabular-nums; }
+.headline-wipes { position: absolute; inset: 0; pointer-events: none; }
+.edition-page .lead h1 { position: relative; }
+
+@media (max-width: 860px) {
+  .edition-page .tick-row {
+    display: grid;
+    grid-template: "index close action" auto "tape tape tape" auto / minmax(0,1fr) auto auto;
+    gap: 4px 10px;
+    height: auto;
+    padding-block: 5px;
+  }
+  .tick-row .idx { grid-area: index; flex-wrap: wrap; row-gap: 2px; }
+  .tick-row .idx-name { white-space: normal; }
+  .tick-row .movers { grid-area: tape; padding-block-start: 3px; border-top: 1px solid rgba(244,239,228,.12); }
+  .tick-row .tick-label { grid-area: close; }
+  .tick-row .all24 { grid-area: action; }
+}
+
+@keyframes ticker-lap { to { transform: translateX(var(--lap-distance)); } }
+@keyframes edition-enter {
+  from { opacity: .12; transform: translateY(var(--rise, 12px)); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes edition-rule { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes edition-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes edition-wipe {
+  0% { clip-path: inset(0 100% 0 0); }
+  43%, 54% { clip-path: inset(0); }
+  100% { clip-path: inset(0 0 0 100%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* A native scrollbar disappearing at hydration must not move the lead. */
+  .motion .movers { scrollbar-width: none; }
+  .motion .movers[data-running] { overflow: hidden; }
+  .motion .movers[data-running] .tape-group[aria-hidden] { display: flex; }
+  .motion .movers[data-running] .tape-track { animation: ticker-lap var(--lap-time) linear infinite; }
+  .motion .movers:is(:hover, :focus-within) .tape-track { animation-play-state: paused; }
+  .motion .headline-wipes i {
+    position: absolute;
+    background: var(--lead-colour, var(--coral));
+    animation: edition-wipe 420ms cubic-bezier(.65,0,.25,1) both;
+  }
+  .lead[data-series="follow.the.money"] { --lead-colour: var(--butter); }
+  .lead[data-series="under.the.hood"] { --lead-colour: var(--lilac); }
+  .motion [data-motion="light"] { --rise: 6px; }
+  .motion [data-entered] {
+    animation: edition-enter 440ms cubic-bezier(.22,.7,.25,1) var(--enter-delay, 0ms) backwards;
+  }
+  .motion [data-entered]:is(:focus-within, :target) { animation: none; }
+  .motion .sp[data-entered] { border-top-color: transparent; position: relative; }
+  .motion .sp[data-entered]::before {
+    content: ""; position: absolute; top: -2px; inset-inline: 0; height: 2px;
+    background: var(--c); transform-origin: left;
+    animation: edition-rule 520ms ease-out var(--enter-delay) backwards;
+  }
+  .motion .room[data-entered] .rk svg, .motion .done[data-entered] .ring svg,
+  .motion .idx svg { animation: edition-draw 580ms cubic-bezier(.2,.7,.3,1) backwards; }
+  .motion [data-motion="full"] .rooms { isolation: isolate; }
+  .motion .room-directory[data-sticky] {
+    position: sticky; top: 8vh; transform-origin: center top;
+  }
+  .motion .room-directory:has(:focus-visible) {
+    position: relative; top: auto; transform: none !important; z-index: 2; background: var(--paper);
+  }
+  .motion [data-motion="full"] .room-grid {
+    position: relative; z-index: 1; background: var(--paper);
+  }
+}
+@media print {
+  .edition-page .tape-track, .edition-page [data-entered] { animation: none !important; }
+  .edition-page .tape-group[aria-hidden], .headline-wipes { display: none !important; }
+}

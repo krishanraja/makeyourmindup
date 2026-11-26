@@ -3,7 +3,7 @@ import { SITE } from '@/lib/content'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'makeyourmindup',
+    name: 'Make Your Mind Up',
     short_name: 'makeyourmindup',
     description: SITE.meta.description,
     start_url: '/',

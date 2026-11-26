@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useState } from 'react'
+import { TickerTape } from './TickerTape'
 import type { Desk, Index, Snapshot } from '@/lib/hub'
 import type { recut } from '@/lib/edition'
 import { Percent } from './Story'
@@ -11,78 +12,21 @@ export function Ticker({ snapshot, desk }: { snapshot: Snapshot; desk: Desk }) {
   const [open, setOpen] = useState(false),
     { ticker, subsectors } = snapshot,
     idx = ticker.index
-  const byDay = Object.entries(ticker.stocks)
-    .filter(([, s]) => s.day_pct !== null)
-    .sort((a, b) => Number(b[1].day_pct) - Number(a[1].day_pct))
-  const movers =
-    desk === 'all'
-      ? [...new Map([...byDay.slice(0, 4), ...byDay.slice(-2).reverse()])]
-      : byDay
-          .filter(([, s]) => s.subsector === desk)
-          .sort((a, b) => Math.abs(Number(b[1].day_pct)) - Math.abs(Number(a[1].day_pct)))
+  const movers = Object.entries(ticker.stocks).filter(([, stock]) => desk === 'all' || stock.subsector === desk)
   const rooms = [...subsectors].sort((a, b) => Number(b.key === desk) - Number(a.key === desk))
-  const strip = useRef<HTMLDivElement>(null)
-  useLayoutEffect(() => {
-    const box = strip.current
-    if (!box) return
-    function fit() {
-      if (!box) return
-      const entries = Array.from(box.children) as HTMLElement[]
-      entries.forEach((el) => {
-        el.hidden = false
-      })
-      const edge = box.getBoundingClientRect().right
-      const clipped = entries.map((el) => el.getBoundingClientRect().right > edge)
-      entries.forEach((el, i) => {
-        el.hidden = clipped[i]
-      })
-      box.dataset.fitted = 'true'
-    }
-    fit()
-    const observer = new ResizeObserver(fit)
-    observer.observe(box)
-    document.fonts.addEventListener('loadingdone', fit)
-    return () => {
-      observer.disconnect()
-      document.fonts.removeEventListener('loadingdone', fit)
-    }
-  }, [desk, snapshot])
   return (
     <>
-      <div className="ticker">
-        <div className="wrap tick-row">
-          <div className="idx">
-            <span className="idx-name">{idx.name}</span>
-            <span className="idx-val">{last(idx)}</span>
-            <Spark data={idx.series} width={58} height={18} />
-            <Percent value={idx.day_pct} />
-          </div>
-          <span className="tick-scope">{desk === 'all' ? 'Top movers' : rooms[0].label}</span>
-          <div className="movers" ref={strip}>
-            {movers.map(([k, s]) => (
-              <span className="mv" key={k}>
-                <b className="nm">{s.name}</b>
-                <b className="sym">{k}</b>
-                <span className="p">{price(s)}</span>
-                <Percent value={s.day_pct} />
-              </span>
-            ))}
-          </div>
-          <span className="tick-label">
-            {ticker.as_of?.replace(/,?( \d{4})? \(delayed\)/, ', delayed').replace('Close,', 'Close') ||
-              'Close unavailable'}
-          </span>
-          <button
-            className="all24"
-            id="all24"
-            aria-expanded={open}
-            aria-controls="board"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? 'Close' : 'All 24'}
-          </button>
-        </div>
-      </div>
+      <TickerTape index={idx} asOf={ticker.as_of} stocks={movers} scope={desk === 'all' ? idx.name : rooms[0].label}>
+        <button
+          className="all24"
+          id="all24"
+          aria-expanded={open}
+          aria-controls="board"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? 'Close' : 'All 24'}
+        </button>
+      </TickerTape>
       <div id="board" className={'board' + (open ? ' open' : '')}>
         <div className="wrap">
           <div className="board-grid">
@@ -152,6 +96,10 @@ export function Rooms({
           <span className="rn">{r.label}</span>
           <span className="rl">{r.line}</span>
           <span className="rk">
+            <span className="room-index">
+              <span className="sr">Index level {last(r.index)}</span>
+              <span aria-hidden="true" data-from={r.index.series.at(-2)} data-level={r.index.series.at(-1)}>{last(r.index)}</span>
+            </span>
             <Spark data={r.index.series} />
           </span>
           <Percent className="rp" value={r.index.day_pct} />

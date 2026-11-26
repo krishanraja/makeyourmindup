@@ -2,19 +2,18 @@ import type { Metadata } from 'next'
 import { CONFIG } from './content'
 import { desks, editionPath, fullDate, storyPath } from './desks'
 import type { Snapshot } from './hub'
-import { OG_IMAGES, TWITTER_IMAGES } from './social'
 
 export const publication = 'Make Your Mind Up'
 export const absolute = (path: string) => new URL(path, CONFIG.siteUrl).href
 export const publisher = { '@id': absolute('/#publication') }
 export const indexDescription = 'The Creative 24 tracks listed companies across six creative industries. See the constituents, index level and daily and monthly price changes.'
 
-export function pageMeta(path: string, title: string, description: string, card?: string, alt?: string): Metadata {
-  const image = card && [{ url: absolute(card), width: 1200, height: 630, alt: alt || title }]
+export function pageMeta(path: string, title: string, description: string, card?: string, alt?: string, twitterCard?: string): Metadata {
+  const image = (url: string) => [{ url: absolute(url), width: 1200, height: 630, type: 'image/png', alt: alt || (card ? title : publication) }]
   return {
     title, description, alternates: { canonical: path },
-    openGraph: { type: 'website', siteName: publication, url: path, title, description, images: image || OG_IMAGES },
-    twitter: { card: 'summary_large_image', title, description, images: image || TWITTER_IMAGES },
+    openGraph: { type: 'website', siteName: publication, url: path, title, description, images: image(card || '/opengraph-image') },
+    twitter: { card: 'summary_large_image', title, description, images: image(twitterCard || card || '/twitter-image') },
   }
 }
 
