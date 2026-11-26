@@ -2,6 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { keys, type Desk, type Piece, type Snapshot } from '@/lib/hub'
+import { EditionLinks } from './EditionLinks'
+import { StoryList } from './StoryList'
+import { storyPath } from '@/lib/desks'
 import { assign, recut } from '@/lib/edition'
 import { Drill, Rooms, Ticker } from './Markets'
 import { Ask, FullFeed, Listen } from './Reading'
@@ -164,10 +167,12 @@ export default function Edition({
   snapshot,
   isFixture,
   pieces,
+  dated = false,
 }: {
   snapshot: Snapshot
   isFixture: boolean
   pieces: Piece[]
+  dated?: boolean
 }) {
   const [desk, setDesk] = useState<Desk>('all'),
     [evening, setEvening] = useState(false),
@@ -177,10 +182,10 @@ export default function Edition({
   useEffect(() => {
     try {
       const saved = localStorage.getItem('mymu-desk')
-      if (keys.some((k) => k === saved)) setDesk(saved as Desk)
+      if (!dated && keys.some((k) => k === saved)) setDesk(saved as Desk)
     } catch {}
     setEvening(new Date().getHours() >= 18)
-  }, [])
+  }, [dated])
   function select(d: Desk) {
     setDesk(d)
     try {
@@ -211,6 +216,8 @@ export default function Edition({
   }, [])
   const cut = recut(snapshot, desk, isFixture),
     mode = evening ? 'Evening wrap' : 'Morning edition'
+  const featured = new Set([cut.lead.item.id, ...cut.things.map(s => s.item.id)])
+  const remaining = snapshot.items.filter(n => !featured.has(n.id))
   const treatments = assign(cut.things, [cut.lead.art?.url, cut.lead.portrait?.url])
   const used = new Set(
     [
@@ -312,6 +319,7 @@ export default function Edition({
                   {cut.things.map((s, i) => (
                     <article
                       key={s.item.id}
+                      id={s.item.id}
                       className={'thing is-' + treatments[i] + (i % 2 ? ' flip' : '')}
                       data-treatment={treatments[i]}
                     >
@@ -324,7 +332,7 @@ export default function Edition({
                             {s.sub && ' · ' + s.sub}
                           </span>
                         </div>
-                        <h3>{s.item.headline}</h3>
+                        <h3><a href={storyPath(snapshot.edition_date, s.item.id)}>{s.item.headline}</a></h3>
                         <p className="dek">{s.item.dek}</p>
                         <Note label={'Why it matters ' + cut.whyIn} text={s.why} />
                         <Source n={s.item} snapshot={snapshot} />
@@ -358,6 +366,10 @@ export default function Edition({
               </div>
             </div>
             <div className="wrap">
+              {dated && remaining.length > 0 && <section aria-labelledby="more-stories">
+                <div className="sec-head"><h2 id="more-stories">More from this edition</h2></div>
+                <StoryList anchors stories={remaining.map(item => ({ date: snapshot.edition_date, item }))} />
+              </section>}
               <section className="subs" id="subscribe">
                 <div>
                   <h2>
@@ -396,6 +408,7 @@ export default function Edition({
                 </div>
                 <div>
                   <h4>The stories</h4>
+                  <EditionLinks date={snapshot.edition_date} />
                   <p>
                     The panel checks machine-written summaries of the linked sources, and some images are
                     illustrative.

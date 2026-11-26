@@ -47,7 +47,7 @@ const JSON_LD = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': 'NewsMediaOrganization',
       '@id': `${CONFIG.siteUrl}/#publication`,
       name: 'Make Your Mind Up',
       alternateName: 'makeyourmindup',
@@ -78,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-GB" suppressHydrationWarning className={`${anton.variable} ${sans.variable} ${fraunces.variable} ${mono.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, '\\u003c') }} />
+        <link rel="alternate" type="application/rss+xml" title="The Edition" href="/edition/feed.xml" />
         <link rel="alternate" type="application/rss+xml" title="makeyourmindup" href={CONFIG.feedUrl} />
       </head>
       <body>{children}</body>

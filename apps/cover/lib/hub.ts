@@ -77,6 +77,9 @@ function validDay(value: unknown) {
   const time = Date.parse(day)
   return Number.isFinite(time) && new Date(time).toISOString().slice(0, 10) === day
 }
+export function isEditionDate(day: unknown): day is string {
+  return typeof day === 'string' && day.length === 10 && validDay(day)
+}
 function image(x: unknown): HubImage | null {
   if (!obj(x) || !media(x.url) || !['person', 'generated', 'company'].includes(String(x.kind))) return null
   if (x.kind === 'person' && !(string(x.credit) && https(x.file_page))) return null
@@ -214,9 +217,11 @@ export async function loadEdition(read: () => Promise<unknown> = readHub, backup
     return { snapshot: parseSnapshot(backup), isFixture: true }
   } // If both fail, ISR retains the last successful page.
 }
-async function readHub() {
-  const url = process.env.HUB_URL || 'https://content-engine-flame-nu.vercel.app/api/hub/today'
-  const res = await fetch(url, { next: { revalidate: 900 }, signal: AbortSignal.timeout(6500) })
+export async function readHub(params: Record<string, string> = {}, revalidate = 900) {
+  const url = new URL(process.env.HUB_URL || 'https://content-engine-flame-nu.vercel.app/api/hub/today')
+  for (const [name, value] of Object.entries(params)) url.searchParams.set(name, value)
+  const res = await fetch(url, { next: { revalidate }, signal: AbortSignal.timeout(6500) })
+  if (res.status === 404) return null
   if (!res.ok) throw Error('Hub unavailable')
   return res.json()
 }
