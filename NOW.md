@@ -104,6 +104,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- Every makeyourmindup profile picture is the S3h square lockup, MAKE YOUR MIND/UP with the icon as the O, sized inside the circle crop: Channel art avatar-1080.png and substack-logo-1024.png, plus logos/makeyourmindup-square.svg, a transparent copy and a 1080 PNG on ink. (2026-11-26)
 - The last pre-v5 leftovers are gone. The retired Substack kit images are removed and the kit README points to the v5 Channel art in Drive. The email signature strip at /brand/email-signature-banner.png is the v5 lockup on ink with the motto, rendered from banner.html. NOW.md, the brand-kit ignore note, the welcome image alt text and site.json no longer describe v1.5 or the felt robot. The kit's bios keep "AI" capitalised and the zip is rebuilt. (2026-11-26)
 - The Edition is live at makeyourmindup.ai: the daily creative-industry news hub with its six desks, the Creative 24 board, dated edition pages, the moving ticker, scroll motion and v5 share cards (#56, #57, #59). (2026-11-26)
 - No branch is left unmerged: the hourly stray guard (.github/workflows/stray-guard.yml) deletes merged and closed-PR branches, opens a pull request for any branch idle six hours, marks drafts idle a day ready, merges green ones and lists the rest in one issue; AGENTS.md tells every session to read open pull requests first and land or delete its branch. (2026-11-26)
@@ -120,6 +121,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-26 Krish, 26 Nov 2026: "I wanted the makeyourmindup square", "Square word mark with the icon as the O"; the bare icon had been used as the avatar.
 - 2026-11-26 apps/cover/substack-kit (images removed, README, COPY.md, email-signature), apps/cover/public/brand/email-signature-banner.png, apps/cover/content/site.json, scripts/brand-kit-v5/build.py, brand-kit/makeyourmindup-brand-kit.zip, brand-kit/.gitignore, NOW.md.
 - 2026-11-26 The cover now gives readers a reason to come back every morning and a direct path to subscribe; its effect on subscribers is not measured yet.
 - 2026-11-25 apps/cover/substack-kit/COPY.md (About page and welcome email), apps/cover/components/edition/Edition.tsx (subscribe box), apps/cover/tests/promise.test.ts (refuses three emails a week, the Monday, Wednesday and Friday email and one email a morning).
@@ -130,7 +132,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-26): Once the cover deploys, confirm the live email signature banner shows the v5 strip.
+- Next (2026-11-26): Upload the square avatar to YouTube, Instagram, the Facebook Page, Threads and Substack.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
