@@ -44,8 +44,8 @@ The Edition has its own RSS feed at `/edition/feed.xml`. The Substack feed conti
 Configure the same `INDEXNOW_SECRET` in the cover and the edition cron's secret store. Once the morning snapshot has been published successfully, the cron should make this request from its server:
 
 ```sh
-curl --fail-with-body --request POST \\
-  --header "Authorization: Bearer ${INDEXNOW_SECRET}" \\
+curl --fail-with-body --request POST \
+  --header "Authorization: Bearer ${INDEXNOW_SECRET}" \
   https://www.makeyourmindup.ai/api/indexnow
 ```
 
