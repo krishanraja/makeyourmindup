@@ -103,6 +103,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- No branch is left unmerged: the hourly stray guard (.github/workflows/stray-guard.yml) deletes merged and closed-PR branches, opens a pull request for any branch idle six hours, marks drafts idle a day ready, merges green ones and lists the rest in one issue; AGENTS.md tells every session to read open pull requests first and land or delete its branch. (2026-11-26)
 - The Substack kit's copy carries the Saturday promise, one email a week with the week's pieces and the news that matters (Ruling, Krish, 2026-11-25: one email a week; design in growth-makeyourmindup docs/plans/2026-11-25-weekly-edition/). The site description moved to The Edition and promises no cadence. The Edition's subscribe box now promises the Saturday email in place of "One email a morning". (2026-11-25)
 - AGENTS.md and project-documentation/02_REPO_BRIEF.md now carry Krish's ruling of 2026-11-26 ("I want everything to be one harmonious engine"): content-engine makes every asset, the derived posts and captions included, and growth-makeyourmindup posts, schedules, distributes, measures and grows subscribers, making no assets. (2026-11-26)
 - NOW.md is trimmed to leave room for the notes folding in from #51, #55, #58 and #61: its eight oldest dated entries now sit verbatim in docs/history/LOG.md. (2026-11-26)
@@ -124,7 +125,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-25): the v5 Substack branding pass keeps the Saturday lines.
+- Next (2026-11-26): Fix or close anything the guard lists in its "Stray branches and pull requests" issue.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
