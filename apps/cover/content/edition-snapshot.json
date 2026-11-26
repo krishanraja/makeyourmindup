@@ -265,7 +265,10 @@
         "SoundCloud"
       ],
       "subsector": "music",
-      "image": null,
+      "image": {
+        "kind": null,
+        "url": null
+      },
       "why": "SoundCloud keeps AI music and polices the label. Tidal removes it.",
       "tickers": [],
       "coverage": 1
@@ -408,7 +411,10 @@
         "Meta"
       ],
       "subsector": "publishing_media",
-      "image": null,
+      "image": {
+        "kind": null,
+        "url": null
+      },
       "why": "A small publisher is naming the company it says took its books, before Australia's AI law exists.",
       "tickers": [],
       "coverage": 1
@@ -446,7 +452,10 @@
         "Associated Press"
       ],
       "subsector": "publishing_media",
-      "image": null,
+      "image": {
+        "kind": null,
+        "url": null
+      },
       "why": "Anthropic's first news deal, and neither side shared terms.",
       "tickers": [],
       "coverage": 1
@@ -466,7 +475,10 @@
         "NYT"
       ],
       "subsector": "publishing_media",
-      "image": null,
+      "image": {
+        "kind": null,
+        "url": null
+      },
       "why": "The suit targets Brave Software, the route in, and not only the AI firms.",
       "coverage": 1
     },
@@ -500,7 +512,10 @@
         "Anthropic"
       ],
       "subsector": "art_design",
-      "image": null,
+      "image": {
+        "kind": null,
+        "url": null
+      },
       "why": "The first money from an AI copyright settlement is moving this week.",
       "tickers": [],
       "coverage": 1
@@ -572,7 +587,8 @@
           616.46
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "UMG.AS": {
         "name": "Universal Music",
@@ -605,7 +621,8 @@
           16.92
         ],
         "as_of": "2026-11-25 16:35 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "WMG": {
         "name": "Warner Music",
@@ -639,7 +656,8 @@
           32.46
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "SONY": {
         "name": "Sony",
@@ -673,7 +691,8 @@
           28.49
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "RSVR": {
         "name": "Reservoir",
@@ -707,7 +726,8 @@
           10.13
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "SIRI": {
         "name": "SiriusXM",
@@ -741,7 +761,8 @@
           32.51
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "LYV": {
         "name": "Live Nation",
@@ -775,7 +796,8 @@
           181.73
         ],
         "as_of": "2026-11-25 21:03 UTC",
-        "subsector": "music"
+        "subsector": "music",
+        "missing": false
       },
       "DIS": {
         "name": "Disney",
@@ -809,7 +831,8 @@
           125.6
         ],
         "as_of": "2026-11-25 21:02 UTC",
-        "subsector": "film_tv"
+        "subsector": "film_tv",
+        "missing": false
       },
       "NFLX": {
         "name": "Netflix",
@@ -843,7 +866,8 @@
           59.41
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "film_tv"
+        "subsector": "film_tv",
+        "missing": false
       },
       "CMCSA": {
         "name": "Comcast",
@@ -877,7 +901,8 @@
           25.73
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "film_tv"
+        "subsector": "film_tv",
+        "missing": false
       },
       "IMAX": {
         "name": "IMAX",
@@ -911,7 +936,8 @@
           46.98
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "film_tv"
+        "subsector": "film_tv",
+        "missing": false
       },
       "CNK": {
         "name": "Cinemark",
@@ -945,7 +971,8 @@
           39.41
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "film_tv"
+        "subsector": "film_tv",
+        "missing": false
       },
       "TTWO": {
         "name": "Take-Two",
@@ -979,7 +1006,8 @@
           227.34
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "gaming"
+        "subsector": "gaming",
+        "missing": false
       },
       "RBLX": {
         "name": "Roblox",
@@ -1013,7 +1041,8 @@
           55.63
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "gaming"
+        "subsector": "gaming",
+        "missing": false
       },
       "UBI.PA": {
         "name": "Ubisoft",
@@ -1046,7 +1075,8 @@
           3.25
         ],
         "as_of": "2026-11-25 16:35 UTC",
-        "subsector": "gaming"
+        "subsector": "gaming",
+        "missing": false
       },
       "NTDOY": {
         "name": "Nintendo",
@@ -1080,7 +1110,8 @@
           14.27
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "gaming"
+        "subsector": "gaming",
+        "missing": false
       },
       "TKO": {
         "name": "TKO Group",
@@ -1114,7 +1145,8 @@
           191.44
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "sport"
+        "subsector": "sport",
+        "missing": false
       },
       "MANU": {
         "name": "Man Utd",
@@ -1148,7 +1180,8 @@
           21.48
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "sport"
+        "subsector": "sport",
+        "missing": false
       },
       "DKNG": {
         "name": "DraftKings",
@@ -1182,7 +1215,8 @@
           17.65
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "sport"
+        "subsector": "sport",
+        "missing": false
       },
       "ADBE": {
         "name": "Adobe",
@@ -1216,7 +1250,8 @@
           232.83
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "art_design"
+        "subsector": "art_design",
+        "missing": false
       },
       "FIG": {
         "name": "Figma",
@@ -1250,7 +1285,8 @@
           17.11
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "art_design"
+        "subsector": "art_design",
+        "missing": false
       },
       "NYT": {
         "name": "New York Times",
@@ -1284,7 +1320,8 @@
           71.7
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "publishing_media"
+        "subsector": "publishing_media",
+        "missing": false
       },
       "NWSA": {
         "name": "News Corp",
@@ -1318,7 +1355,8 @@
           26.08
         ],
         "as_of": "2026-11-25 21:00 UTC",
-        "subsector": "publishing_media"
+        "subsector": "publishing_media",
+        "missing": false
       },
       "VIV.PA": {
         "name": "Vivendi",
@@ -1351,7 +1389,8 @@
           1.57
         ],
         "as_of": "2026-11-25 16:37 UTC",
-        "subsector": "publishing_media"
+        "subsector": "publishing_media",
+        "missing": false
       }
     }
   },
@@ -1359,8 +1398,6 @@
   "pieces": [
     {
       "title": "Meta staff were ranked by AI use. They gamed it.",
-      "link": "https://home.makeyourmindup.ai/p/meta-staff-were-ranked-by-ai-use",
-      "date": "2026-11-13",
       "image": "/hub/piece-meta.jpg",
       "blurb": "Big tech companies started ranking staff by how much AI they used, and staff set AI to work on nothing to climb the charts. Why counting AI use backfires.",
       "series": "mind.the.gap",
@@ -1368,23 +1405,33 @@
         "url": "https://www.youtube.com/watch?v=atpegm6E34A",
         "id": "atpegm6E34A"
       },
-      "seconds": 327
+      "seconds": 327,
+      "article_url": "https://home.makeyourmindup.ai/p/meta-staff-were-ranked-by-ai-use",
+      "published_at": "2026-11-13",
+      "piece_id": "meta-staff-were-ranked-by-ai-use",
+      "short": null
     },
     {
       "title": "A Reiki master wrote a UK number two, and it's both AI and human",
-      "link": "https://home.makeyourmindup.ai/p/a-reiki-master-wrote-a-uk-number",
-      "date": "2026-11-11",
       "image": "/hub/piece-reiki.jpg",
       "blurb": "Movin' To The Sun started as an AI demo by a Reiki master, then a DJ and a house legend finished it. The Grammys split it in two. Here is who did which bit.",
-      "series": "under.the.hood"
+      "series": "under.the.hood",
+      "article_url": "https://home.makeyourmindup.ai/p/a-reiki-master-wrote-a-uk-number",
+      "published_at": "2026-11-11",
+      "piece_id": "a-reiki-master-wrote-a-uk-number",
+      "video": null,
+      "short": null
     },
     {
       "title": "Why is Disney eating the scraps of bankrupt Character.AI?",
-      "link": "https://home.makeyourmindup.ai/p/why-is-disney-eating-the-scraps-of",
-      "date": "2026-11-09",
       "image": "/hub/piece-disney.jpg",
       "blurb": "Why did Google and Disney both pay for Character.AI, and what does it mean for any business that runs on someone else's AI?",
-      "series": "follow.the.money"
+      "series": "follow.the.money",
+      "article_url": "https://home.makeyourmindup.ai/p/why-is-disney-eating-the-scraps-of",
+      "published_at": "2026-11-09",
+      "piece_id": "why-is-disney-eating-the-scraps-of",
+      "video": null,
+      "short": null
     }
   ]
 }

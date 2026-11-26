@@ -1,4 +1,5 @@
 import { CONFIG, SITE } from '@/lib/content'
+import { fixturePieces } from '@/lib/hub'
 import { latestPosts } from '@/lib/rss'
 
 // A plain-text map of the publication for answer engines and agents, in the
@@ -9,7 +10,7 @@ import { latestPosts } from '@/lib/rss'
 export const revalidate = 900
 
 export async function GET() {
-  const posts = await latestPosts(20)
+  const posts = await latestPosts(20).catch(() => fixturePieces)
   const platforms = Object.entries(CONFIG.platforms).filter(([, url]) => url)
   const lines = [
     '# makeyourmindup',
