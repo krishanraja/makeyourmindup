@@ -3,12 +3,19 @@ kill_list_scope: canon
 ---
 # Media kit v1.0
 
+**v5 (25 to 27 Nov 2026) overrides this kit where they differ:** the promise is "AI news for the creative industries, every morning." and the motto "Creativity, AI and money, simplified."; every piece is a 5 Whys ladder (content-engine `docs/FIVE-WHYS.md`), with no predictions, calls, odds or scores; the reader is in `docs/NORTH_STAR.md`; follow.the.money, under.the.hood and mind.the.gap stay internal routing and never appear on a new public surface; one email a week, every Saturday, goes to all subscribers; the one place Krish is named is the Saturday email's signed footnote and opener (growth `docs/V5-REBRAND.md`, section 3).
+
+Positioning (approved by Krish, 27 Nov 2026):
+
+- **Why it exists:** "makeyourmindup exists so the people who make the work, and the businesses around them, use AI rather than get used by it: what it lets them make, earn and express, and who gets paid."
+- **Why the creative industries:** "These industries run on creativity, and AI is changing how creative work makes money: who gets paid, what it costs, who wins the market. Our AI Music breakdown showed how much these readers want that explained."
+- **What makes it different:** "We don't hand you a verdict. Every piece climbs five whys from one story to how the money moves, so you make your own mind up. Positive about what AI lets makers do, honest about who gets paid."
+
 Derived from 63 stack-ranked questions across six interactive rounds on
 17 September 2026. Where a note contradicted a ranking, the note won, because it
 is the more considered statement.
 
-**Supersedes:** Built with AI, The Money of AI, Mindmaker Live,
-inspect.the.build, follow.the.money, Newsflash.
+**Supersedes:** Built with AI, The Money of AI, Mindmaker Live, inspect.the.build, Newsflash. (follow.the.money was retired on 17 Sep and revived on 25 Sep 2026.)
 
 ## The north star, in his words
 

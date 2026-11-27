@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-26
+as_of: 2026-11-27
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -17,10 +17,19 @@ never_publish: [the Supabase project ids, any credential or secret name, the cro
 
 ## What it is
 
-makeyourmindup is a publication that unpicks how AI really works. This repo
-hosts its cover at makeyourmindup.ai and holds its editorial canon: the media
-kit, the panel and its judges, the rubric and the kill list. content-engine
-produces the publication's content and runs that kill list from a pinned copy
+makeyourmindup is AI news for the creative industries, every morning: a daily
+Edition at makeyourmindup.ai, pieces built as 5 Whys (since 24 Nov 2026), and
+one Saturday email to every subscriber.
+
+Positioning (approved by Krish, 27 Nov 2026):
+
+- Why it exists: "makeyourmindup exists so the people who make the work, and the businesses around them, use AI rather than get used by it: what it lets them make, earn and express, and who gets paid."
+- Why the creative industries: "These industries run on creativity, and AI is changing how creative work makes money: who gets paid, what it costs, who wins the market. Our AI Music breakdown showed how much these readers want that explained."
+- What makes it different: "We don't hand you a verdict. Every piece climbs five whys from one story to how the money moves, so you make your own mind up. Positive about what AI lets makers do, honest about who gets paid."
+
+This repo hosts its cover at
+makeyourmindup.ai and holds its editorial canon: the media kit, the panel and its
+judges, the rubric and the kill list. content-engine produces the publication's content and runs that kill list from a pinned copy
 (Ruling, Krish, 2026-10-28: "Content-engine produces content for
 makeyourmindup.ai, which is hosted at makeyourmindup repo"). The machine this
 repo was to hold (watch, score, assemble, dispatch) is superseded by
@@ -28,11 +37,9 @@ content-engine's `plan-week`, the one ideation path.
 
 ## Who it is for and why it matters for Mindmake
 
-The reader is one person, written to directly: a senior leader in a business
-doing roughly five to fifty million pounds who will not admit, to anyone, that
-they are not ready for what is happening. Behind them, in ranked order: the
-curious professional keeping up without the jargon, the investor deciding what
-to fund and what to fix, the founder at a fork.
+The reader is the people who make the calls or make the work in the creative,
+arts, music, entertainment, media and sports industries (Krish, 26 Nov 2026;
+content-engine `config/beat.json`).
 
 The channel's first job is top of funnel for mind/make, and the funnel is
 indirect. Purpose ranked funnel first while success ranked direct conversion
@@ -41,7 +48,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-26)
+## Where it is right now (as of 2026-11-27)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -150,7 +157,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-26): holds.
+- North Star check (2026-11-27): holds.
 
 ## Read next
 
