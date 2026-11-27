@@ -1,0 +1,4 @@
+Status: The v5 docs now teach a cold session the rebrand: the narrowed North Star reader, the promise and the 5 Whys in NOW.md, a v5 header and Krish's approved positioning lines (27 Nov 2026) in the media kit, the Substack kit on ink with Edition-first draft copy, and the brand kit README and zip regenerated with the footnote and opener exception.
+Changed: docs/NORTH_STAR.md, NOW.md, project-documentation/01_MEDIA_KIT.md and 02_REPO_BRIEF.md, apps/cover/substack-kit/COPY.md and README.md, scripts/brand-kit-v5/build.py, brand-kit/README.md and makeyourmindup-brand-kit.zip (README and START HERE only), AGENTS.md stray-branch rule.
+Next: Krish approves the draft About page and welcome email in apps/cover/substack-kit/COPY.md before they are pasted into Substack.
+North Star check (2026-11-27): holds.

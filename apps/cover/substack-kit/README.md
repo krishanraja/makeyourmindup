@@ -37,8 +37,8 @@ repository (built by `scripts/brand-kit-v5/build.py`).
 | `substack-email-banner-2200x440.png` | Settings, Emails, Email header & footer: banner, the one masthead on every email | 2200 x 440, so 1100 x 220 at 2x |
 | `social-card-1200x630.png` | Per post, not a setting: post Settings, Social preview, Upload New, for a post with no image of its own | 1200 x 630 |
 
-The short description is in `COPY.md`; `bios-and-descriptions.txt` in the same
-Drive folder holds the same line. `how-they-crop.jpg` shows what each platform
+The short description in `COPY.md` must match `bios-and-descriptions.txt` in the
+same Drive folder word for word; if they differ, the Drive file wins. `how-they-crop.jpg` shows what each platform
 crops.
 
 Substack builds the publication's own share card from the logo, name and short
@@ -55,9 +55,8 @@ Website editor, Home page, Colors. On 2026-09-25 the live values were a dark
 teal background `#042f2e` and a green accent `#059669`.
 
 - Accent: mint `#7EF0C0`
-- Background: cream `#F4EFE4`, which the v5 wide logo (ink on transparent) is
-  made for. On a dark background the wide logo does not show; leave the
-  background light.
+- Background: ink `#0C1512`. The v5 wide logo is the lockup on its own ink
+  ground, so the page stays ink; never set it on cream.
 
 ## Steps
 

@@ -37,7 +37,7 @@ MOTTO = 'Creativity, AI and money, simplified.'
 MARKS = {  # content-engine v5 file -> (kit name, what it is)
     's3h.svg': ('makeyourmindup-square.svg', 'S3h, the square lockup: MAKE YOUR MIND/UP stacked, with the icon as the O, on its own grained ink. Every profile picture and square slot.'),
     'd-face-off.svg': ('makeyourmindup-icon.svg', 'The icon: the split circle, cream and mint. Favicons, app icons, the Substack logo.'),
-    'v4.svg': ('makeyourmindup-wordmark.svg', 'The wordmark (W0): cream with UP in mint, for ink only.'),
+    'v4.svg': ('makeyourmindup-wordmark.svg', 'The wordmark (V4, `v4.svg`; the Library calls it W0): cream with UP in mint, for ink only.'),
     'v9.svg': ('makeyourmindup-horizontal.svg', 'Icon and wordmark on one line (V9), for ink only: mastheads and email banners.'),
 }
 RETIRED_MARKS = 'v4-ink, v9-ink, v10, v10-ink, v6, v6-ink: the on-light variants and the stacked lockups'
@@ -150,7 +150,7 @@ Mono, the v1.5 brand book, the old intro sting and the YouTube watermark. Retire
    Instagram, the Facebook Page; Krish, 26 Nov: "Yes insta too"). The Substack logo is the icon.
 3. Ink is the page, always with 7% grain. Mint is the answer and the one accent. No badges, no watermark.
 4. makeyourmindup never names Krish, mind/make, Mindmake or CTRL, and never says "AI Brain". The one exception is the
-   Saturday email's signed footnote.
+   Saturday email's signed footnote and its handwritten opener (growth-makeyourmindup `docs/V5-REBRAND.md`, section 3).
 5. No em dashes.
 
 All makeyourmindup art comes from content-engine's v5 Library (`docs/ve/cards/library/`). This kit packages it; it draws
