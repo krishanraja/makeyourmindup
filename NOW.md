@@ -111,6 +111,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- The v5 docs now teach a cold session the rebrand: the narrowed North Star reader, the promise and the 5 Whys in NOW.md, a v5 header and Krish's approved positioning lines (27 Nov 2026) in the media kit, the Substack kit on ink with Edition-first draft copy, and the brand kit README and zip regenerated with the footnote and opener exception. (2026-11-27)
 - The brand-kit zip carries Drive's current Channel art note (00 WHICH FILE GOES WHERE), which now records that the Library matches (content-engine #1002) and the two Substack files are confirmed. (2026-11-26)
 - The brand kit draws no art of its own: scripts/brand-kit-v5/build.py packages Drive's Channel art (the v5 Library's renders) byte for byte against its MANIFEST.sha256, and logos/ ships only the icon, the wordmark, the horizontal lockup and S3h, on ink. The on-light and stacked lockups are retired. (2026-11-26)
 - AGENTS.md and project-documentation/02_REPO_BRIEF.md now carry Krish's ruling of 2026-11-26 ("I want everything to be one harmonious engine"): content-engine makes every asset, the derived posts and captions included, and growth-makeyourmindup posts, schedules, distributes, measures and grows subscribers, making no assets. (2026-11-26)
@@ -122,6 +123,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-27 docs/NORTH_STAR.md, NOW.md, project-documentation/01_MEDIA_KIT.md and 02_REPO_BRIEF.md, apps/cover/substack-kit/COPY.md and README.md, scripts/brand-kit-v5/build.py, brand-kit/README.md and makeyourmindup-brand-kit.zip (README and START HERE only), AGENTS.md stray-branch rule.
 - 2026-11-26 The 26 Nov kit had drawn its own profile set, which broke Krish's 25 Nov rulings (banners with text, the retired stacked lockup, an off-ink wordmark); the channels session caught it and rebuilt Channel art from the Library.
 - 2026-11-26 Krish, 26 Nov 2026: "I wanted the makeyourmindup square", "Square word mark with the icon as the O"; the bare icon had been used as the avatar.
 - 2026-11-26 apps/cover/substack-kit (images removed, README, COPY.md, email-signature), apps/cover/public/brand/email-signature-banner.png, apps/cover/content/site.json, scripts/brand-kit-v5/build.py, brand-kit/makeyourmindup-brand-kit.zip, brand-kit/.gitignore, NOW.md.
@@ -134,7 +136,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-26): Package again whenever Drive's Channel art changes.
+- Next (2026-11-27): Krish approves the draft About page and welcome email in apps/cover/substack-kit/COPY.md before they are pasted into Substack.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
