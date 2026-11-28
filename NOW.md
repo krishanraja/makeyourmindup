@@ -111,6 +111,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- The cover reads the edition's trend lanes (money, behaviour, technology) from content-engine's hub and shows them as "What's moving in AI" after this week's pieces, each lane's line of what is moving and why beside its own checked stories. The section stays hidden until a lane has a story, and a bad lane is left out, never the edition. (2026-11-28)
 - The Substack welcome email draft no longer offers an email per piece; v5 sends one email every Saturday to all subscribers. (2026-11-28)
 - The v5 docs now teach a cold session the rebrand: the narrowed North Star reader, the promise and the 5 Whys in NOW.md, a v5 header and Krish's approved positioning lines (27 Nov 2026) in the media kit, the Substack kit on ink with Edition-first draft copy, and the brand kit README and zip regenerated with the footnote and opener exception. (2026-11-27)
 - The brand-kit zip carries Drive's current Channel art note (00 WHICH FILE GOES WHERE), which now records that the Library matches (content-engine #1002) and the two Substack files are confirmed. (2026-11-26)
@@ -138,7 +139,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-28): Krish approves the Substack copy before it is pasted.
+- Next (2026-11-28): Once content-engine's first edition with trends is stored (after krishanraja/content-engine#1027 merges and the 06:00 UTC run), check the section on makeyourmindup.ai at phone and desk width.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
