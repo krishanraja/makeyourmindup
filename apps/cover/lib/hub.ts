@@ -37,6 +37,10 @@ export type Stock = Omit<Index, 'series'> & {
   spark: number[]
 }
 export type Piece = Post & { series?: string }
+/** One trend lane above the sectors (content-engine config/hub-sources.json trends): its checked stories and, when
+ *  they share a direction, what is moving and why, written only from those stories and checked against them. */
+export type TrendStory = { id: string; date: string; source: string; url: string; headline: string; dek: string; why: string }
+export type Trend = { key: string; label: string; line: string; moving: string | null; why: string | null; items: TrendStory[] }
 export type Snapshot = {
   ok: true
   version: 1
@@ -52,6 +56,7 @@ export type Snapshot = {
   }
   attention: { name: string; wiki_title: string; views_today: number; avg_30d: number; spiking: boolean }[]
   pieces: Piece[]
+  trends: Trend[]
 }
 
 const obj = (x: unknown): x is Record<string, unknown> => !!x && typeof x === 'object' && !Array.isArray(x)
@@ -131,6 +136,22 @@ function piece(x: unknown): Piece[] {
   ]
 }
 
+/** The edition's trend lanes, read leniently: a lane or story that is not well formed is left out, never the edition. */
+export function trends(raw: unknown): Trend[] {
+  if (!Array.isArray(raw)) return []
+  const out: Trend[] = []
+  for (const t of raw) {
+    if (!obj(t) || !string(t.key) || !string(t.label) || out.some((o) => o.key === t.key)) continue
+    const items = (Array.isArray(t.items) ? t.items : [])
+      .filter((i): i is Record<string, unknown> => obj(i) && [i.id, i.source, i.headline, i.dek, i.why].every(string) && validDay(i.date) && https(i.url))
+      .slice(0, 3)
+      .map((i) => ({ id: String(i.id), date: String(i.date), source: String(i.source), url: String(i.url), headline: String(i.headline), dek: String(i.dek), why: String(i.why) }))
+    const line = items.length && string(t.moving) && string(t.why) ? { moving: t.moving, why: t.why } : null
+    out.push({ key: t.key, label: t.label, line: typeof t.line === 'string' ? t.line : '', moving: line?.moving ?? null, why: line?.why ?? null, items })
+  }
+  return out
+}
+
 export function parseSnapshot(raw: unknown): Snapshot {
   if (
     !obj(raw) ||
@@ -207,6 +228,7 @@ export function parseSnapshot(raw: unknown): Snapshot {
     ticker: t as Snapshot['ticker'],
     attention,
     pieces: raw.pieces.flatMap(piece),
+    trends: trends(raw.trends),
   }
 }
 

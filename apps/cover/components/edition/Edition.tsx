@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { keys, type Desk, type Piece, type Snapshot } from '@/lib/hub'
+import { keys, type Desk, type Piece, type Snapshot, type Trend } from '@/lib/hub'
 import { EditionMotion } from './EditionMotion'
 import { EditionLinks } from './EditionLinks'
 import { StoryList } from './StoryList'
@@ -22,6 +22,51 @@ function dayLabel(date: string, short = false) {
       timeZone: 'UTC',
     })
     .replace(',', '')
+}
+
+/** The trend lanes above the six rooms: what is moving in AI and why, each line drawn only from its own checked stories. */
+function Trends({ trends }: { trends: Trend[] }) {
+  const lanes = trends.filter((t) => t.items.length)
+  if (!lanes.length) return null
+  return (
+    <section className="trends" aria-labelledby="trendsH">
+      <div className="sec-head">
+        <h2 id="trendsH">
+          What's <em>moving</em> in AI
+        </h2>
+        <div className="sec-meta">
+          Money, behaviour and technology
+          <br />
+          Each line from its own sources
+        </div>
+      </div>
+      <div className="trend-row">
+        {lanes.map((t) => (
+          <article key={t.key} className={'trend t-' + t.key}>
+            <span className="sc trend-k">{t.label}</span>
+            {t.moving ? (
+              <>
+                <h3>{t.moving}</h3>
+                <p className="trend-why">{t.why}</p>
+              </>
+            ) : (
+              <p className="trend-line">{t.line}</p>
+            )}
+            <ul>
+              {t.items.map((i) => (
+                <li key={i.id}>
+                  <a href={i.url}>{i.headline}</a>
+                  <span className="sc quiet">
+                    {i.source} · {dayLabel(i.date, true)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
 }
 
 function Pieces({ pieces, reserved }: { pieces: Piece[]; reserved: Set<string> }) {
@@ -277,6 +322,7 @@ export default function Edition({
                   openFeed={() => openFeed(false)}
                 />
                 <Pieces pieces={pieces} reserved={used} />
+                <Trends trends={snapshot.trends || []} />
                 <section className="rooms" aria-labelledby="roomsH">
                   <div className="room-directory">
                     <div className="sec-head">

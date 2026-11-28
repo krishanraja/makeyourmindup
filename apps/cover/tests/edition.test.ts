@@ -147,3 +147,21 @@ describe('attribution', () => {
     )
   })
 })
+
+test('reads the trend lanes leniently: a bad lane or story is left out, never the edition', () => {
+  const story = { id: 't1', date: '2026-11-26', source: 'BBC', url: 'https://www.bbc.co.uk/news/1', headline: 'AI spending rose', dek: 'A firm said so.', why: 'Demand grew.' }
+  const s = parseSnapshot({
+    ...raw,
+    trends: [
+      { key: 'money', label: 'Money', line: 'Where the money goes.', moving: 'Spending on AI is rising.', why: 'Demand grew.', items: [story, { ...story, id: 't2', url: 'http://insecure.example' }] },
+      { key: 'behaviour', label: 'Behaviour', line: 'How people use AI.', moving: 'A line with no stories.', why: 'None.', items: [] },
+      { key: 'money', label: 'Money again', items: [story] },
+      'not a lane',
+    ],
+  })
+  assert.equal(s.trends.length, 2)
+  assert.deepEqual(s.trends[0].items.map((i) => i.id), ['t1'])
+  assert.equal(s.trends[0].moving, 'Spending on AI is rising.')
+  assert.equal(s.trends[1].moving, null, 'a line is shown only beside its own stories')
+  assert.deepEqual(parseSnapshot(raw).trends, [], 'an edition without trends still reads')
+})
