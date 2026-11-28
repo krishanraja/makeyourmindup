@@ -2,7 +2,7 @@
 kill_list_scope: canon
 repo: krishanraja/makeyourmindup
 product: makeyourmindup
-as_of: 2026-11-27
+as_of: 2026-11-28
 head: 45f76de
 lifecycle: building
 production_url: https://makeyourmindup.ai
@@ -48,7 +48,7 @@ optimises this channel for click-through. Its second job is public proof that
 the operator opens the machine rather than talking about it. Its third is its
 own revenue through paid subscriptions.
 
-## Where it is right now (as of 2026-11-27)
+## Where it is right now (as of 2026-11-28)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": null, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (no Substack reading)"} --> **North Star number: U4, far behind.** Publication subscribers: not measured yet (no Substack reading), against week one set by the first reading this week, on the way to 50,000 by 27 December 2027. A bold swing every day; work that does not move the number waits.
 
@@ -111,6 +111,7 @@ format because none of them was ever composed. The content-engine key once
 reported rejected here works: its fact gate and judges metered hundreds of
 Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
+- The Substack welcome email draft no longer offers an email per piece; v5 sends one email every Saturday to all subscribers. (2026-11-28)
 - The v5 docs now teach a cold session the rebrand: the narrowed North Star reader, the promise and the 5 Whys in NOW.md, a v5 header and Krish's approved positioning lines (27 Nov 2026) in the media kit, the Substack kit on ink with Edition-first draft copy, and the brand kit README and zip regenerated with the footnote and opener exception. (2026-11-27)
 - The brand-kit zip carries Drive's current Channel art note (00 WHICH FILE GOES WHERE), which now records that the Library matches (content-engine #1002) and the two Substack files are confirmed. (2026-11-26)
 - The brand kit draws no art of its own: scripts/brand-kit-v5/build.py packages Drive's Channel art (the v5 Library's renders) byte for byte against its MANIFEST.sha256, and logos/ ships only the icon, the wordmark, the horizontal lockup and S3h, on ink. The on-light and stacked lockups are retired. (2026-11-26)
@@ -123,6 +124,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 
 ## What changed recently
 
+- 2026-11-28 apps/cover/substack-kit/COPY.md (welcome email, still marked Draft until approved for pasting).
 - 2026-11-27 docs/NORTH_STAR.md, NOW.md, project-documentation/01_MEDIA_KIT.md and 02_REPO_BRIEF.md, apps/cover/substack-kit/COPY.md and README.md, scripts/brand-kit-v5/build.py, brand-kit/README.md and makeyourmindup-brand-kit.zip (README and START HERE only), AGENTS.md stray-branch rule.
 - 2026-11-26 The 26 Nov kit had drawn its own profile set, which broke Krish's 25 Nov rulings (banners with text, the retired stacked lockup, an off-ink wordmark); the channels session caught it and rebuilt Channel art from the Library.
 - 2026-11-26 Krish, 26 Nov 2026: "I wanted the makeyourmindup square", "Square word mark with the icon as the O"; the bare icon had been used as the avatar.
@@ -136,7 +138,7 @@ Anthropic calls with none failed from 9 to 12 November (`meter_daily`).
 ## What is next and what is waiting on Krish
 
 
-- Next (2026-11-27): Krish approves the draft About page and welcome email in apps/cover/substack-kit/COPY.md before they are pasted into Substack.
+- Next (2026-11-28): Krish approves the Substack copy before it is pasted.
 Waiting on Krish, none of which a tool should answer:
 
 - **Change Substack's byline, author, copyright, footer, sender and second
@@ -159,7 +161,7 @@ Waiting on Krish, none of which a tool should answer:
 - **The story shape collision.** Five names are retired publication formats in
   the fleet brief and live story shapes in content-engine's `api/_formats.ts`.
   Listed in `project-documentation/02_REPO_BRIEF.md`.
-- North Star check (2026-11-27): holds.
+- North Star check (2026-11-28): holds.
 
 ## Read next
 
