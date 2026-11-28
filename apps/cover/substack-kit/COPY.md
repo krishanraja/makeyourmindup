@@ -36,7 +36,7 @@ Every morning there is a new Edition at makeyourmindup.ai: the AI news for the c
 
 One email every Saturday brings you the week's pieces and the creative-industry news that matters.
 
-Every piece is free, in full, and every number names whoever produced it. If you want each piece by email the day it goes up, switch it on in your email settings.
+Every piece is free, in full, and every number names whoever produced it.
 
 One small job, about ten seconds: hit reply and tell us which AI claim you most want taken apart. We read every reply, and a reply also tells your email app that we're welcome. If the pictures in these emails don't show, add this sender to your contacts and they'll appear.
 
